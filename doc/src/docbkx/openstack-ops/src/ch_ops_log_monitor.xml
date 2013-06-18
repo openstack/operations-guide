@@ -104,7 +104,7 @@
         <title>How to Read the Logs</title>
         <para>OpenStack services use the standard logging levels, at
             increasing severity: DEBUG, INFO, AUDIT, WARNING, ERROR,
-            CRITICAL, TRACE. That is, messages only appear in the logs
+            CRITICAL, and TRACE. That is, messages only appear in the logs
             if they are more "severe" than the particular log level
             with DEBUG allowing all log statements through. For
             example, TRACE is logged only if the software has a stack
@@ -116,7 +116,7 @@
         <para>Keystone is handled a little differently. To modify the
             logging level, edit the
                 <code>/etc/keystone/logging.conf</code> file and look
-            at the <code>logger_root and handler_file</code>
+            at the <code>logger_root</code> and <code>handler_file</code>
             sections.</para>
         <para>Logging for Horizon is configured in
                 <code>/etc/openstack_dashboard/local_settings.py</code>.
@@ -194,7 +194,7 @@
                 <code>faf7ded8-4a46-413b-b113-f19590746ffe</code>. If
             you search for this string on the cloud controller in the
                 <code>/var/log/nova-*.log</code> files, it appears in
-                <code>nova-api.log</code>,
+                <code>nova-api.log</code>, and
                 <code>nova-scheduler.log</code>. If you search for
             this on the compute nodes in
                 <code>/var/log/nova-*.log</code>, it appears
