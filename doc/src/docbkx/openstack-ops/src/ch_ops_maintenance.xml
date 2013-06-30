@@ -972,6 +972,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 starting d-bus set the entire chain back on track and
                 soon everything was back up and running.</para>
         </section>
+    </section>
         <section xml:id="upgrades">
             <?dbhtml stop-chunking?>
             <title>Upgrades</title>
@@ -1066,5 +1067,24 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 successful otherwise an inconsistent cluster state could
                 arise.</para>
         </section>
-    </section>
+        <section xml:id="uninstalling">
+            <?dbhtml stop-chunking?>
+            <title>Uninstalling</title>
+            <para>While we'd always recommend using your automated 
+            deployment system to re-install systems from scratch,
+            sometimes you do need to remove OpenStack from a system
+            the hard way. Here's how:</para>
+            <itemizedlist>
+                <listitem><para>Remove all packages</para></listitem>
+                <listitem><para>Remove reamining files</para></listitem>
+                <listitem><para>Remove databases</para></listitem>
+            </itemizedlist>
+            <para>These steps depend on your underlying distribution,
+            but in general you should be looking for 'purge' commands
+            in your package manager, like <literal> aptitude purge ~c $package</literal>.
+            Following this, you can look for orphaned files in the
+            directories referenced throughout this guide. For uninstalling
+            the database properly, refer to the manual appropriate for
+            the product in use. </para>
+        </section> 
 </chapter>
