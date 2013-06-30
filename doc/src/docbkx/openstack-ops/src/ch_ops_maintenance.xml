@@ -498,7 +498,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
             <para>You should see a message about /dev/sdb.</para>
             <para>Because it is recommended to not use partitions on a
                 swift disk, simply format the disk as a whole:</para>
-            <programlisting><?db-font-size 65%?># mkfs.xfs -i size=1024 /dev/sdb</programlisting>
+            <programlisting><?db-font-size 65%?># mkfs.xfs /dev/sdb</programlisting>
             <para>Finally, mount the disk:</para>
             <programlisting><?db-font-size 65%?># mount -a</programlisting>
             <para>Swift should notice the new disk and that no data
