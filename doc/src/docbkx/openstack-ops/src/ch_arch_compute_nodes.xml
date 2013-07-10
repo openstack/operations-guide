@@ -321,8 +321,7 @@
         </itemizedlist>
         <para>The default CPU allocation ratio of 16 means that the
             scheduler allocates up to 16 virtual cores on a node per
-            physical cores. For example, if a physical node has 12
-            cores, and each virtual machine instance uses 4 virtual
+            physical core. For example, if a physical node has 12
             cores, the scheduler allocates up to 192 virtual cores to
             instances (such as, 48 instances, in the case where each
             instance has 4 virtual cores).</para>
