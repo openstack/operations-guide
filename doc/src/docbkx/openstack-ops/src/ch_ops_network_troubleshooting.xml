@@ -38,7 +38,7 @@
 4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN 
 6: br100: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP</programlisting>
         <para>You can safely ignore the state of virbr0, which is a
-            default bridge created by QEMU and not used by
+            default bridge created by libvirt and not used by
             OpenStack.</para>
     </section>
     <section xml:id="network_traffic_in_cloud">
