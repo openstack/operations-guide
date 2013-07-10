@@ -144,7 +144,7 @@
                         <para>quota_fixed_ips=-1</para>
                     </td>
                     <td>
-                        <para>(IntOpt) number of floating ips allowed
+                        <para>(IntOpt) number of fixed ips allowed
                             per project (this should be at least the 
                             number of instances allowed). -1 is unlimited</para>
                     </td>
@@ -510,7 +510,7 @@ cores: 2048</programlisting>
                 operation or a specific attribute being used in a
                 given operation. For instance, the engine tests the
                     <code>create:compute</code> policy every time a
-                user sends a <code>POST /v2/{tenant_id}servers</code>
+                user sends a <code>POST /v2/{tenant_id}/servers</code>
                 request to the OpenStack Compute API server. Policies
                 can be also related to specific <glossterm>API
                     extension</glossterm>s. For instance, if a user
