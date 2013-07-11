@@ -52,14 +52,7 @@
             maximum number of bytes that the interface accepts for
             each packet. If two interfaces have two different MTUs,
             bytes might get chopped off and weird things happen --
-            such as random session lockups.<note>
-                <para>Not all packets have a size of 1500. Running the
-                    ls command over SSH might only create a single
-                    packets less than 1500 bytes. However, running a
-                    command with heavy output, such as <command>ps
-                        aux</command> requires several packets of 1500
-                    bytes. </para>
-            </note></para>
+            such as random session lockups.</para>
         <note>
             <para>Not all packets have a size of 1500. Running the ls
                 command over SSH might only create a single packets
