@@ -227,7 +227,7 @@
             <para>VLAN configuration can be as simple or as
                 complicated as desired. The use of VLANs has the
                 benefit of allowing each project its own subnet and
-                broadcast segregation from other projects. to allow
+                broadcast segregation from other projects. To allow
                 OpenStack to efficiently use VLANs, you must allocate
                 a VLAN range (one for each project) and turn each
                 compute node switch port into a trunk port.</para>

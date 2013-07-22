@@ -387,8 +387,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 regenerating their XML files at the same time:</para>
             <programlisting><?db-font-size 65%?># nova reboot --hard &lt;uuid&gt;</programlisting>
             <para>Finally, re-attach volumes using the same method
-                described in <emphasis role="bold">After a compute
-                    node Reboots</emphasis>.</para>
+                described in <emphasis role="bold">Volumes</emphasis>.</para>
         </section>
         <section xml:id="var_lib_nova_instances">
             <?dbhtml stop-chunking?>
