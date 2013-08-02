@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+type = PO
+
+[openstack-manuals-i18n.openstack-ops]
+file_filter = doc/src/docbkx/openstack-ops/locale/<lang>.po
+source_file = doc/src/docbkx/openstack-ops/locale/openstack-ops.pot
+source_lang = en
+
