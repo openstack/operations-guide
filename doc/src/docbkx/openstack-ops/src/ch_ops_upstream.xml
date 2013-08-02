@@ -43,9 +43,9 @@
             <listitem>
                 <para>
                     <link 
-                        xlink:href="https://launchpad.net/~openstack"
+                        xlink:href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack"
                         >General
-                        list</link>: <code>openstack@lists.launchpad.net</code>.
+                        list</link>: <code>openstack@lists.openstack.org</code>.
                     The scope of this list is the current state of
                     OpenStack. This is a very high traffic mailing
                     list, with many, many emails per day.</para>
