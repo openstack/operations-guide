@@ -1065,6 +1065,17 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 is critical to ensure that database changes are
                 successful otherwise an inconsistent cluster state could
                 arise.</para>
+            <para>Performing some 'cleaning' of the cluster prior to
+                starting the upgrade is also a good idea, to ensure
+                the state is consistent. For example
+                some have reported issues with instances that were
+                not fully removed from the system after their
+                deletion. Running a command equivalent to:
+                <screen><prompt>$</prompt> <userinput>virsh list --all</userinput></screen>
+                to find deleted instances that are still registered
+                in the hypervisor and removing them prior to running
+                the upgrade can avoid issues.
+            </para>
         </section>
         <section xml:id="uninstalling">
             <?dbhtml stop-chunking?>
