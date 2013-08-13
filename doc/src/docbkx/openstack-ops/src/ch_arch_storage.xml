@@ -390,7 +390,7 @@ format="SVG" scale="60"/>
                         consolidate your object storage and file
                         storage into one unified file and object
                         storage solution, which is called Gluster UFO.
-                        Gluster UFO uses a customizes version of Swift
+                        Gluster UFO uses a customized version of Swift
                         that uses Gluster as the back-end. </para>
                     <para>The main advantage of using Gluster UFO over
                         regular Swift is if you also want to support a
