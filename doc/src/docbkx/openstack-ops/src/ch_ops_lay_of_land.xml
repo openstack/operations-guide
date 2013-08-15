@@ -423,6 +423,9 @@ cloud.example.com nova</programlisting>
                     <emphasis>endpoint</emphasis>. Note the different
                 URLs and ports between the public URL and the admin
                 URL for some services.</para>
+            <para>You can find the version of the Compute installation by using the
+                    <command>nova-manage</command> command:
+                <screen><prompt>$</prompt> <userinput>nova-manage version list</userinput></screen></para>
         </section>
     </section>
     <section xml:id="network">
