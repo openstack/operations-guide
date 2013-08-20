@@ -24,47 +24,47 @@ xml:id="acknowledgments">
         collaborate intensively for a week in the same room at the
         Rackspace Austin office. The authors are all members of
         the OpenStack Foundation, which you can join. Go to the
-        <link 
+        <link
             xlink:href="https://www.openstack.org/join">Foundation
-            web site</link> at http://openstack.org/join.</para>
+            web site</link> at <uri>http://openstack.org/join</uri>.</para>
     <para>We want to acknowledge our excellent host Rackers at
         Rackspace in Austin: <itemizedlist>
             <listitem>
                 <para>Emma Richards of Rackspace Guest Relations
                     took excellent care of our lunch orders and
                     even set aside a pile of sticky notes that had
-                    fallen off the walls. </para>
+                    fallen off the walls.</para>
             </listitem>
             <listitem>
                 <para>Betsy Hagemeier, a Fanatical Executive
                     Assistant, took care of a room reshuffle and
-                    helped us settle in for the week. </para>
+                    helped us settle in for the week.</para>
             </listitem>
             <listitem>
                 <para>The Real Estate team at Rackspace in Austin,
                     also known as "The Victors," were super
-                    responsive. </para>
+                    responsive.</para>
             </listitem>
             <listitem>
                 <para>Adam Powell in Racker IT supplied us with
                     bandwidth each day and second monitors for
-                    those of us needing more screens. </para>
+                    those of us needing more screens.</para>
             </listitem>
             <listitem>
                 <para>On Wednesday night we had a fun happy hour
                     with the Austin OpenStack Meetup group and
                     Racker Katie Schmidt took great care of our
-                    group. </para>
+                    group.</para>
             </listitem>
             <listitem>
                 <para>We also had some excellent input from
                     outside of the room. Tim Bell from CERN gave
                     us feedback on the outline before we started
-                    and reviewed it mid-week. </para>
+                    and reviewed it mid-week.</para>
                 <para>Sébastien Han has written excellent blogs
-                    and generously gave his permission for re-use. </para>
+                    and generously gave his permission for re-use.</para>
                 <para>Oisin Feeley read it, made some edits, and
-                    provided emailed feedback right when we asked. </para>
+                    provided emailed feedback right when we asked.</para>
             </listitem>
         </itemizedlist></para>
     <para>We couldn't have pulled it off without so much
