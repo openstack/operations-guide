@@ -116,8 +116,7 @@
                     <td xmlns:db="http://docbook.org/ns/docbook"
                             ><para>If many users will make multiple
                             requests, make sure that the CPU load for
-                            the cloud controller can handle.
-                            it.</para></td>
+                            the cloud controller can handle it.</para></td>
                 </tr>
                 <tr>
                     <td xmlns:db="http://docbook.org/ns/docbook"
