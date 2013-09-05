@@ -5,7 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -78,12 +77,12 @@
                 interface (CLI):</para>
             <para>To add a project through the command line, you must
                 use the keystone utility, which uses "tenant" in place
-                of "project": </para>
+                of "project":</para>
             <programlisting><?db-font-size 75%?><prompt>#</prompt> keystone tenant-create --name=demo</programlisting>
             <para>This command creates a project named "demo".
                 Optionally, you can add a description string by
                 appending <code>--description
-                    &lt;tenant-description&gt;,</code> which can be
+                  <replaceable>tenant-description</replaceable></code> which can be
                 very useful. You can also create a group in a disabled
                 state by appending <code>--enabled false</code> to the
                 command. By default, projects are created in an
@@ -93,251 +92,491 @@
     <?hard-pagebreak?>
     <section xml:id="quotas">
         <title>Quotas</title>
-        <para>OpenStack provides a number of quotas which are all
-            enforced at the project (rather than user) level. As an
-            administrative user in the Dashboard you can see (but not
-            edit) the default quotas using the "Quotas" link in the
-            navigation sidebar. These default project quotas are
-            specified in the <code>nova.conf</code> file on your cloud
-            controller.</para>
-        <para>If you do not make quota-related changes, the system
-            uses the following defaults.</para>
-        <table xml:id="nova_conf" rules="all">
-            <caption>Description of nova.conf file configuration
-                options for
-                quotas<!--<superscript
-                    xmlns:db="http://docbook.org/ns/docbook">
-                    <link xlink:href="#InsertNoteID_1">???? </link>
-                </superscript> -->
-            </caption>
-            <colgroup>
-                <col width="50%"/>
-                <col width="50%"/>
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Configuration option=Default value </th>
-                    <th>(Type) Description </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <para>quota_cores=20</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of instance cores
-                            allowed per project (tenant)</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_floating_ips=10</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of floating ips allowed
-                            per project (tenant)</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_fixed_ips=-1</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of fixed ips allowed
-                            per project (this should be at least the 
-                            number of instances allowed). -1 is unlimited</para>
-                    </td>
-                </tr>
- 
-                <tr>
-                    <td>
-                        <para>quota_gigabytes=1000</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of volume gigabytes
-                            allowed per project (tenant)</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_injected_file_content_bytes=10240</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of bytes allowed per
-                            injected file</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_injected_file_path_bytes=255</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of bytes allowed per
-                            injected file path</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_injected_files=5</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of injected files
-                            allowed</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_instances=10</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of instances allowed per
-                            project (tenant)</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_key_pairs=100</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of key pairs allowed per
-                            user</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_metadata_items=128</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of metadata items
-                            allowed per instance</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_ram=51200</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) megabytes of instance ram
-                            allowed per project (tenant)</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_security_group_rules=20</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of security rules per
-                            security group</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_security_groups=10</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of security groups per
-                            project (tenant)</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>quota_volumes=10</para>
-                    </td>
-                    <td>
-                        <para>(IntOpt) number of volumes allowed per
-                            project (tenant)</para>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <para>Configuration table excerpted from http://docs.openstack.org/folsom/openstack-compute/admin/content/list-of-compute-config-options.html.</para>
-        <para>The simplest way to change the default project quotas is
-            to edit the <code>nova.conf</code> file on your cloud
-            controller. Quotas are enforced by the
-                <code>nova-scheduler</code> service, so you must
-            restart that service once you change these options.</para>
-        <para>If your site implementation varies from our example
-            architecture, ensure any changes you make to quota default
-            options in <code>/etc/nova/nova.conf</code> are applied to
-            the host(s) running the <code>nova-scheduler</code>
-            service. It is critical for consistent quota enforcement
-            that all schedulers have identical quotas. Assuming you
-            are following the best practices recommended in this
-            guide, your configuration management system will
-            automatically ensure all your schedulers have consistent
-            configurations.</para>
-        <para>To view and edit quotas for an individual project through the
-            Dashboard:</para>
-        <orderedlist>
-            <listitem>
-                <para>Use the "Projects" navigation link to get a list
-                    of your existing projects.</para>
-            </listitem>
-            <listitem>
-                <para>Locate the project you want to modify and select
-                    "Modify Quotas" from the "Actions" drop down menu
-                    a the end of the line.  </para>
-            </listitem>
-        </orderedlist>
-        <para>To view and edit quotas for an individual project through the
-            CLI, follow these steps:</para>
-        <para>You can access and modify quotas from the command line
-            but it is a bit complicated. This is done using Keystone
-            to get the ID and then <code>nova-manage.</code>
-        </para>
-        <orderedlist><listitem>
-                <para>To list a project's quota, you must first find
-                    its ID using the Keystone CLI tool.</para>
-                <programlisting><?db-font-size 65%?># keystone tenant-list | grep &lt;tenant-name&gt; 
-| 98333a1a28e746fa8c629c83a818ad57 | &lt;tenant-name&gt; | True | </programlisting>
-            </listitem>
-            <listitem>
-                <para>Recall that the Keystone CLI tool uses "tenant"
-                    where the Nova CLI tool uses "project" for the
-                    same concept. </para>
-                <para>To show the quota for the project, for the
-                    example above, we must use the ID
-                        <code>98333a1a28e746fa8c629c83a818ad57</code>:</para>
-                <programlisting language="bash"># nova-manage project quota 98333a1a28e746fa8c629c83a818ad57</programlisting>
-                <programlisting language="bash">metadata_items: 128
-volumes: 10
-gigabytes: 1000
-ram: 6291456
-security_group_rules: 20
-instances: 1024
-security_groups: 10
-injected_file_content_bytes: 10240
-floating_ips: 10
-injected_files: 5
-cores: 2048</programlisting>
-                <note>
-                    <para>Confusingly, <code>nova-manage project
-                            quota</code> silently accepts any string
-                        at the end of the command and reports the
-                        default quotas. In particular, if you enter
-                        the project name rather than the ID,
-                            <code>nova-manage</code> does not
-                        complain, it just lies.</para>
-                </note>
-                <para>To change these values you append
-                        <code>--key</code> and <code>--value</code>
-                    flags to the above command. To increase the tenant
-                    quota of Floating IPs from 10 to 20:</para>
-                <programlisting><?db-font-size 65%?># nova-manage project quota 98333a1a28e746fa8c629c83a818ad57 --key floating_ips --value 20 </programlisting>
-                <programlisting><?db-font-size 65%?>metadata_items: 128 
-volumes: 10
-gigabytes: 1000
-ram: 6291456
-security_group_rules: 20
-instances: 1024
-security_groups: 10
-injected_file_content_bytes: 10240
-floating_ips: 20
-injected_files: 5
-cores: 2048</programlisting>
-            </listitem>
-        </orderedlist>
+        <para>To prevent system capacities from being exhausted without
+      notification, you can set up quotas. Quotas are operational limits.
+      For example, the number of gigabytes allowed per tenant can be
+      controlled to ensure that a single tenant cannot consume all of
+      the disk space. Quotas are currently enforced at the tenant (or
+      project) level, rather than by user.
+    </para>
+    <para>Using the command-line interface, you can manage quotas for the OpenStack Compute Service and the Block Storage Service.
+    </para>
+    <para>Typically, default values are changed because a tenant requires
+      more than the OpenStack default of 10 volumes per tenant, or more
+      than the OpenStack default of 1TB of disk space on a Compute node.
+    </para>
+     <note><para>To view all tenants, run:
+          <screen><prompt>$</prompt> <userinput>keystone tenant-list</userinput>
+<computeroutput>+----------------------------------+----------+---------+
+|                id                |   name   | enabled |
++----------------------------------+----------+---------+
+| a981642d22c94e159a4a6540f70f9f8d |  admin   |   True  |
+| 934b662357674c7b9f5e4ec6ded4d0e7 | tenant01 |   True  |
+| 7bc1dbfd7d284ec4a856ea1eb82dca80 | tenant02 |   True  |
+| 9c554aaef7804ba49e1b21cbd97d218a | services |   True  |
++----------------------------------+----------+---------+</computeroutput></screen>
+        </para></note>
+ <section xml:id="cli_set_compute_quotas">
+    <title>Set Compute Service Quotas</title>
+    <para>As an administrative user, you can update the Compute Service quotas for an existing tenant, as well as update the quota
+    defaults for a new tenant.
+    </para>
+      <table rules="all">
+      <caption>Compute Quota Descriptions</caption>
+      <col width="20%"/>
+      <col width="45%"/>
+       <col width="35%"/>
+       <thead>
+          <tr>
+            <td>
+              Quota
+            </td>
+            <td>
+              Description
+            </td>
+            <td>
+              Property Name
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+               <tr>
+            <td>
+              <para>
+                Fixed Ips
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of fixed IP addresses allowed per tenant. This number
+                must be equal to or greater than the number of allowed
+                instances.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>fixed-ips</systemitem>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                Floating Ips
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of floating IP addresses allowed per tenant.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>floating-ips</systemitem>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                Injected File Content Bytes
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of content bytes allowed per injected file.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>injected-file-content-bytes</systemitem>
+              </para>
+            </td>
+          </tr>
+                  <tr>
+            <td>
+              <para>
+                Injected File Path Bytes
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of bytes allowed per injected file path.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>injected-file-path-bytes</systemitem>
+              </para>
+            </td>
+          </tr>
+                  <tr>
+            <td>
+              <para>
+                Injected Files
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of injected files allowed per tenant.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>injected-files</systemitem>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                Instances
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of instances allowed per tenant.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>instances</systemitem>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                Key Pairs
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of key pairs allowed per user.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>key-pairs</systemitem>
+              </para>
+            </td>
+          </tr>
+                  <tr>
+            <td>
+              <para>
+                Metadata Items
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of metadata items allowed per instance.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>metadata-items</systemitem>
+              </para>
+            </td>
+          </tr>
+                  <tr>
+            <td>
+              <para>
+                Ram
+              </para>
+            </td>
+            <td>
+              <para>
+                Megabytes of instance ram allowed per tenant.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>ram</systemitem>
+              </para>
+            </td>
+          </tr>
+                  <tr>
+            <td>
+              <para>
+                Security Group Rules
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of rules per security group.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>security-group-rules</systemitem>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                Security Groups
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of security groups per tenant.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>security-groups</systemitem>
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                VCPUs
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of instance cores allowed per tenant.
+              </para>
+            </td>
+            <td>
+              <para>
+                <systemitem>cores</systemitem>
+              </para>
+            </td>
+          </tr>
+              </tbody>
+     </table>
+      <section xml:id="cli_set_compute_quotas_procedure">
+    <title>View and update Compute quotas for a tenant (project)</title>
+      <para>As an administrative user, you can use the <command>nova quota-*</command>
+        commands, which are provided by the <literal>python-novaclient</literal>
+        package, to view and update tenant quotas.</para>
+      <procedure>
+        <title>To view and update default quota values</title>
+        <step>
+            <para>List all default quotas for all tenants, as follows:</para>
+            <screen><prompt>$</prompt> <userinput>nova quota-defaults</userinput></screen>
+            <para>For example:
+            </para>
+            <screen><prompt>$</prompt> <userinput>nova quota-defaults</userinput>
+<computeroutput>+-----------------------------+-------+
+| Property                    | Value |
++-----------------------------+-------+
+| metadata_items              | 128   |
+| injected_file_content_bytes | 10240 |
+| ram                         | 51200 |
+| floating_ips                | 10    |
+| key_pairs                   | 100   |
+| instances                   | 10    |
+| security_group_rules        | 20    |
+| injected_files              | 5     |
+| cores                       | 20    |
+| fixed_ips                   | -1    |
+| injected_file_path_bytes    | 255   |
+| security_groups             | 10    |
++-----------------------------+-------+</computeroutput></screen>
+        </step>
+        <step>
+          <para>Update a default value for a new tenant, as follows:
+          </para>
+          <screen><prompt>$</prompt> <userinput>nova quota-class-update default <replaceable>key</replaceable> <replaceable>value</replaceable></userinput></screen>
+          <para>For example:
+          </para>
+         <screen><prompt>$</prompt> <userinput>nova quota-class-update default instances 15</userinput></screen>
+        </step>
+    </procedure>
+    <procedure>
+        <title>To view quota values for a tenant (project)</title>
+        <step><para>Place the tenant ID in a useable variable, as follows:</para>
+<screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
+        </step>
+        <step>
+            <para>List the currently set quota values for a
+                tenant, as follows:</para>
+<screen><prompt>$</prompt> <userinput>nova quota-show --tenant $tenant</userinput></screen>
+<para>For example:</para>
+<screen><prompt>$</prompt> <userinput>nova quota-show --tenant $tenant</userinput>
+<computeroutput>+-----------------------------+-------+
+| Property                    | Value |
++-----------------------------+-------+
+| metadata_items              | 128   |
+| injected_file_content_bytes | 10240 |
+| ram                         | 51200 |
+| floating_ips                | 12    |
+| key_pairs                   | 100   |
+| instances                   | 10    |
+| security_group_rules        | 20    |
+| injected_files              | 5     |
+| cores                       | 20    |
+| fixed_ips                   | -1    |
+| injected_file_path_bytes    | 255   |
+| security_groups             | 10    |
++-----------------------------+-------+</computeroutput></screen>
+        </step>
+    </procedure>
+     <procedure>
+        <title>To update quota values for a tenant (project)</title>
+        <step><para>Obtain the tenant ID, as follows:</para>
+            <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
+        </step>
+        <step>
+          <para>Update a particular quota value, as follows:</para>
+          <screen><prompt>#</prompt> <userinput>nova quota-update --<replaceable>quotaName</replaceable> <replaceable>quotaValue</replaceable> <replaceable>tenantID</replaceable></userinput></screen>
+        <para>For example:</para>
+        <screen><prompt>#</prompt> <userinput>nova quota-update --floating-ips 20 $tenant
+<prompt>#</prompt> nova quota-show --tenant $tenant</userinput>
+<computeroutput>+-----------------------------+-------+
+| Property                    | Value |
++-----------------------------+-------+
+| metadata_items              | 128   |
+| injected_file_content_bytes | 10240 |
+| ram                         | 51200 |
+| floating_ips                | 20    |
+| key_pairs                   | 100   |
+| instances                   | 10    |
+| security_group_rules        | 20    |
+| injected_files              | 5     |
+| cores                       | 20    |
+| fixed_ips                   | -1    |
+| injected_file_path_bytes    | 255   |
+| security_groups             | 10    |
++-----------------------------+-------+</computeroutput></screen>
+            <note>
+            <para>To view a list of options for the
+                    <command>quota-update</command> command, run:
+            </para>
+<screen><prompt>$</prompt> <userinput>nova help quota-update</userinput></screen></note>
+        </step>
+    </procedure>
+      </section>
+ </section>
+ <section xml:id="cli_set_block_storage_quotas">
+    <title>Set Block Storage quotas</title>
+    <para>As an administrative user, you can update
+      the Block Storage Service quotas for a tenant,
+      as well as update the quota defaults for a new tenant.
+    </para>
+    <para>
+    <table rules="all">
+      <caption>Block Storage Quota Descriptions</caption>
+      <col width="20%"/>
+      <col width="80%"/>
+      <thead>
+          <tr>
+            <td>
+              Property Name
+            </td>
+            <td>
+              Description
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <para>
+                gigabytes
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of volume gigabytes allowed per tenant.
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                snapshots
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of Block Storage snapshots allowed per tenant.
+              </para>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <para>
+                volumes
+              </para>
+            </td>
+            <td>
+              <para>
+                Number of Block Storage volumes allowed per tenant.
+              </para>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </para>
+   <section xml:id="cli_set_block_storage_quotas_procedure">
+    <title>View and update Block Storage quotas for a tenant (project)</title>
+    <para>As an administrative user, you can use the <command>cinder quota-*</command>
+        commands, which are provided by the <literal>python-cinderclient</literal>
+        package, to view and update tenant quotas.</para>
+    <procedure>
+        <title>To view and update default Block Storage quota values</title>
+        <step>
+            <para>List all default quotas for all tenants, as follows:</para>
+            <screen><prompt>$</prompt> <userinput>cinder quota-defaults</userinput></screen>
+        <para>For example:</para>
+        <screen><prompt>$</prompt> <userinput>cinder quota-defaults</userinput>
+<computeroutput>+-----------+-------+
+|  Property | Value |
++-----------+-------+
+| gigabytes |  1000 |
+| snapshots |   10  |
+|  volumes  |   10  |
++-----------+-------+</computeroutput></screen>
+        </step>
+        <step>
+          <para>To update a default value for a new tenant, update the property
+            in the <filename>/etc/cinder/cinder.conf</filename> file.
+      </para>
+     </step>
+    </procedure>
+    <procedure>
+    <title>To view Block Storage quotas for a tenant</title>
+    <step>
+      <para>View quotas for the tenant, as follows:</para>
+      <screen><prompt>#</prompt> <userinput>cinder quota-show <replaceable>tenantName</replaceable></userinput></screen>
+        <para>For example:</para>
+        <screen><prompt>#</prompt> <userinput>cinder quota-show tenant01</userinput>
+<computeroutput>+-----------+-------+
+|  Property | Value |
++-----------+-------+
+| gigabytes |  1000 |
+| snapshots |   10  |
+|  volumes  |   10  |
++-----------+-------+</computeroutput></screen>
+    </step>
+    </procedure>
+    <procedure>
+    <title>To update Compute service quotas</title>
+    <step><para>Place the tenant ID in a useable variable, as follows:</para>
+            <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
+        </step>
+    <step>
+      <para>Update a particular quota value, as follows:</para>
+      <screen><prompt>#</prompt> <userinput>cinder quota-update --<replaceable>quotaName</replaceable> <replaceable>NewValue</replaceable> <replaceable>tenantID</replaceable></userinput></screen>
+        <para>For example:</para>
+        <screen><prompt>#</prompt> <userinput>cinder quota-update --volumes 15 $tenant</userinput>
+<prompt>#</prompt> <userinput>cinder quota-show tenant01</userinput>
+<computeroutput>+-----------+-------+
+|  Property | Value |
++-----------+-------+
+| gigabytes |  1000 |
+| snapshots |   10  |
+|  volumes  |   15  |
++-----------+-------+</computeroutput></screen>
+    </step>
+    </procedure>
+  </section>
+    </section>
     </section>
     <section xml:id="user_mgmt">
         <title>User Management</title>
@@ -386,10 +625,10 @@ cores: 2048</programlisting>
             the box, OpenStack comes with two roles defined:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para>"member":  a typical user.</para>
+                <para>"member": a typical user.</para>
             </listitem>
             <listitem>
-                <para>"admin":  an administrative super user which has
+                <para>"admin": an administrative super user which has
                     full permissions across all projects and should be
                     used with great care.</para>
             </listitem>
