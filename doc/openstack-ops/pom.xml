@@ -39,7 +39,7 @@
                             <!-- These parameters only apply to webhelp -->
                             <!-- <pdfUrl>../openstack-ops-manual-${operating.system}-${release.path.name}.pdf</pdfUrl> -->
                             <enableDisqus>${comments.enabled}</enableDisqus>
-                            <sourceDirectory>src</sourceDirectory>
+                            <sourceDirectory>.</sourceDirectory>
                             <disqusShortname>openstack-ops</disqusShortname>
                             <enableGoogleAnalytics>1</enableGoogleAnalytics>
                             <googleAnalyticsId>UA-17511903-1</googleAnalyticsId>
@@ -96,7 +96,7 @@
                 <configuration>
                     <!-- These parameters apply to pdf and webhelp -->
                     <xincludeSupported>true</xincludeSupported>
-                    <sourceDirectory>src</sourceDirectory>
+                    <sourceDirectory>.</sourceDirectory>
                     <includes>bk_ops_guide.xml </includes>
                     <profileSecurity>reviewer</profileSecurity>
                     <branding>openstack</branding>
