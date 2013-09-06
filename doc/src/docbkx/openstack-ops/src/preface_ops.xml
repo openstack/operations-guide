@@ -36,10 +36,7 @@
         also have access to a network hardware expert who can
         configure the switches and routers required in your OpenStack
         cloud. </para>
-    <section xmlns="http://docbook.org/ns/docbook"
-        xmlns:xi="http://www.w3.org/2001/XInclude"
-        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-        xml:id="chapter_gk2_jpr_lj">
+    <section xml:id="chapter_gk2_jpr_lj">
 
         <title>Why and How We Wrote This Book</title>
         <para>We wrote this book because we have deployed and
@@ -72,7 +69,6 @@
         <para>We wrote this book in a Book Sprint, which is a
             facilitated rapid development production method for books.
             For more information see the <link
-                xlink:title="Foundation web site"
                 xlink:href="http://www.booksprints.net">Book Sprint
                 site</link>. Your authors cobbled this book together
             in five days during February 2013, fueled by caffeine and
@@ -137,7 +133,7 @@
                     facilitated this Book Sprint. He also founded the
                     Book Sprint methodology and is the most
                     experienced Book Sprint facilitator around. See
-                    http://www.booksprints.net/ for more information.
+                    <uri>http://www.booksprints.net/</uri> for more information.
                     Adam founded FLOSS Manuals—a community of some
                     3,000 individuals developing Free Manuals about
                     Free Software. He is also the founder and project
