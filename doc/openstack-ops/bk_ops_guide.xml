@@ -148,6 +148,7 @@
 	<xi:include href="ch_ops_backup_recovery.xml"/>
 	<xi:include href="ch_ops_customize.xml"/>
 	<xi:include href="ch_ops_upstream.xml"/>
+        <xi:include href="ch_ops_advanced_configuration.xml"/>
 	<!-- appendices -->
 	<xi:include href="app_usecases.xml"/>
 	<xi:include href="app_crypt.xml"/>

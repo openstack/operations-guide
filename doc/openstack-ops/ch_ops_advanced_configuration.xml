@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        <!ENTITY plusmn "&#xB1;">
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="advanced_configuration">
+    <?dbhtml stop-chunking?>
+    <title>Advanced Configuration</title>
+    <para>OpenStack is intended to work well across a variety of installation
+          flavors, from very small private clouds to large public clouds. In
+          order to achieve this the developers add configuration options to
+          their code which allow the behaviour of the various components to be
+          tweaked depending on your needs. Unfortunately it is not possible to
+          cover all possible deployments with the default configuration values.</para>
+
+    <para>At the time of writing, OpenStack has over 1,500 configuration options.
+          You can see them documented at
+          <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/config_overview.html">the OpenStack configuration reference guide</link>. This chapter cannot hope to
+          document all of these, but however we do try to introduce the important
+          concepts so that you know where to go digging for more information.</para>
+
+    <section xml:id="driver_differences">
+    <title>Differences between various drivers</title>
+    <para>Many OpenStack projects implement a driver layer, and each of these
+          drivers will implement their own configuration options. For example
+          in OpenStack Compute (Nova), there are various hypervisor drivers
+          implemented -- libvirt, xenserver, hyper-v and vmware for example.
+          Not all of these hypervisor drivers have the same features, and each
+          has different tuning requirements.</para>
+
+    <note><para>The currently implemented hypervisors are listed on
+          <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html">the OpenStack documentation website</link>. You can see a matrix of the
+          various features in OpenStack Compute
+          (Nova) hypervisor drivers on the OpenStack wiki at
+          <link xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix">the Hypervisor support matrix page</link>.</para></note>
+
+    <para>The point we are trying to make here is that just because an option
+          exists doesn't mean that option is relevant to your driver choices.
+          Normally the documentation notes which drivers the configuration
+          applies to.</para>
+    </section>
+
+    <section xml:id="periodic_tasks">
+    <title>Periodic tasks</title>
+    <para>Another common concept across various OpenStack projects is that of
+          periodic tasks. Pediodic tasks are much like cron jobs on traditional
+          Unix systems, but they are run inside of an OpenStack process. For
+          example, when OpenStack Compute (Nova) needs to work out what images
+          it can remove from its local cache, it runs a periodic task to do this.</para>
+
+    <para>Periodic tasks are important to understand because of limitations in
+          the threading model that OpenStack uses. OpenStack uses cooperative
+          threading in python, which means that if something long and
+          complicated is running, it will block other tasks inside that process
+          from running unless it voluntarily yields execution to another
+          cooperative thread.</para>
+
+    <para>A tangible example of this is the nova-compute process. In order to
+          manage the image cache with libvirt, nova-compute has a periodic
+          process which scans the contents of the image cache. Part of this
+          scan is calculating a checksum for each of the images and making sure
+          that checksum matches what nova-compute expects it to be. However,
+          images can be very large and these checksums can take a long time to
+          generate. At one point, before it was reported as a bug and fixed,
+          nova-compute would block on this task and stop responding to RPC
+          requests. This was visible to users as failure of operations such
+          as spawning or deleting instances.</para>
+
+    <para>The take away from this is if you observe an OpenStack process which
+          appears to "stop" for a while and then continue to process normally,
+          you should check that periodic tasks aren't the problem. One way to
+          do this is to disable the periodic tasks by setting their interval to
+          zero. Additionally, you can configure how often these periodic tasks
+          run -- in some cases it might make sense to run them at a different
+          frequency from the default.</para>
+
+    <para>The frequency is defined separately for each periodic task.
+          Therefore, to disable every periodic task in OpenStack Compute
+          (Nova), you would need to set a number of configuration
+          options to zero. The current list of configuration options
+          you would need to set to zero are:</para>
+
+                <itemizedlist>
+                <listitem><para>bandwidth_poll_interval</para></listitem>
+                <listitem><para>sync_power_state_interval</para></listitem>
+                <listitem><para>heal_instance_info_cache_interval</para></listitem>
+                <listitem><para>host_state_interval</para></listitem>
+                <listitem><para>image_cache_manager_interval</para></listitem>
+                <listitem><para>reclaim_instance_interval</para></listitem>
+                <listitem><para>volume_usage_poll_interval</para></listitem>
+                <listitem><para>shelved_poll_interval</para></listitem>
+                <listitem><para>shelved_offload_time</para></listitem>
+                <listitem><para>instance_delete_interval</para></listitem>
+                </itemizedlist>
+
+    <para>To set a configuration option to zero, include a line such as
+          <literal>image_cache_manager_interval=0</literal> to your
+          <filename>nova.conf</filename> file.</para>
+
+    <para>This list will change between releases, so please refer to
+          your configuration guide for up to date information.</para>
+
+    </section>
+
+    <section xml:id="specific-advanced-config-topics">
+    <title>Specific configuration topics</title>
+    <para>This section covers specific examples of configuration options you
+          might consider tuning. It is by no means an exhaustive list.</para>
+
+        <section xml:id="specific-advance-config-nova">
+        <title>OpenStack Compute (Nova)</title>
+
+            <section xml:id="specific-advanced-config-period-tasks">
+            <title>Periodic task frequency</title>
+            <para>Before the Grizzly release, the frequency of periodic tasks
+                  was specified in seconds between runs. This meant that if the
+                  periodic task took 30 minutes to run and the frequency was
+                  set to hourly, then the periodic task actually ran every 90
+                  minutes, because the task would wait an hour after running
+                  before running again. This changed in Grizzly, and we now
+                  time the frequency of periodic tasks from the start of the
+                  work the task does. So, our 30 minute periodic task will run
+                  every hour, with a 30 minute wait between the end of the
+                  first run and the start of the next.</para>
+            </section>
+        </section>
+    </section>
+</chapter>
