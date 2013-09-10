@@ -303,6 +303,7 @@ wget: can't connect to remote host (169.254.169.254): Network is unreachable</pr
             root:</para>
         <programlisting># killall dnsmasq
 # restart nova-network</programlisting>
+        <note><para>It's openstack-nova-network on RHEL/CentOS/Fedora but nova-network on Ubuntu/Debian.</para></note>
         <para>Several minutes after nova-network is restarted, you
             should see new dnsmasq processes running:</para>
         <programlisting># ps aux | grep dnsmasq
