@@ -976,7 +976,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 system with the following command, as root, inside of
                 the instance:</para>
             <programlisting><?db-font-size 65%?><prompt>#</prompt> fsfreeze -u /mnt</programlisting>
-            <para>If you want to backup the root files ystem, you
+            <para>If you want to backup the root file system, you
                 can't simply do the command above because it will
                 freeze the prompt. Instead, run the following
                 one-liner, as root, inside of the instance:</para>

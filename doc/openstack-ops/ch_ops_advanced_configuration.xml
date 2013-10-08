@@ -49,7 +49,7 @@
     <section xml:id="periodic_tasks">
     <title>Periodic tasks</title>
     <para>Another common concept across various OpenStack projects is that of
-          periodic tasks. Pediodic tasks are much like cron jobs on traditional
+          periodic tasks. Periodic tasks are much like cron jobs on traditional
           Unix systems, but they are run inside of an OpenStack process. For
           example, when OpenStack Compute (Nova) needs to work out what images
           it can remove from its local cache, it runs a periodic task to do this.</para>

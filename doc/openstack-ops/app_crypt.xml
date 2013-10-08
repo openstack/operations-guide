@@ -422,7 +422,7 @@
             in by SSH. The bond0 NIC was DOWN but the 1gb NIC was
             active.</para>
         <para>And the best part: the same user had just tried creating
-            a CentOS instance. Wat?</para>
+            a CentOS instance. What?</para>
         <para>I was totally confused at this point, so I texted our
             network admin to see if he was available to help. He
             logged in to both switches and immediately saw the

@@ -1086,7 +1086,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
             the hard way. Here's how:</para>
             <itemizedlist>
                 <listitem><para>Remove all packages</para></listitem>
-                <listitem><para>Remove reamining files</para></listitem>
+                <listitem><para>Remove remaining files</para></listitem>
                 <listitem><para>Remove databases</para></listitem>
             </itemizedlist>
             <para>These steps depend on your underlying distribution,

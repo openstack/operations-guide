@@ -596,7 +596,7 @@ root 24121 0.0 0.0 11688 912 pts/5 S+ 13:07 0:00 grep nova-api</programlisting>
                 check this by doing a quick image upload:</para>
             <programlisting><?db-font-size 75%?>#!/bin/bash 
 # 
-# assumes that resonable credentials have been stored at 
+# assumes that reasonable credentials have been stored at
 # /root/auth 
  
       
