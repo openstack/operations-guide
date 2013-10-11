@@ -13,8 +13,8 @@
     xml:id="app_crypt" label="B">
     <title>Tales From the Cryp^H^H^H^H Cloud</title>
 
-    <para>Herein lies a selection of takes from OpenStack cloud
-        operators. Read, and learn from their wisdom.</para>
+    <para>Herein lies a selection of tales from OpenStack cloud operators. Read,
+        and learn from their wisdom.</para>
 
     <section xml:id="double_vlan">
         <title>Double VLAN</title>
