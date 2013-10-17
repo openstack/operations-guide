@@ -137,7 +137,7 @@
 
 	<xi:include href="ch_arch_example.xml"/>
 
-	<xi:include href="ch_arch_whats_next.xml"/>
+	<!--<xi:include href="ch_arch_whats_next.xml"/>-->
 	<!--<xi:include href="part_operations.xml"/> -->
 	<xi:include href="ch_ops_lay_of_land.xml"/>
 	<xi:include href="ch_ops_projects_users.xml"/>
