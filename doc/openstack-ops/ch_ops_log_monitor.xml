@@ -343,13 +343,11 @@ $template DynFile,"/var/log/rsyslog/%HOSTNAME%/syslog.log"
 local0.* ?NovaFile 
 local0.* ?NovaAll 
 &amp; ~</programlisting>
-            <para>The above example configuration handles the nova
-                service only. It first configures rsyslog to act as a
-                server that runs on port 512. Next, it creates a
-                series of logging templates. Logging templates control
-                where received logs are stored. Using the example
-                above, a nova log from c01.example.com goes to the
-                following locations:</para>
+            <para>The above example configuration handles the nova service only. It first configures
+                rsyslog to act as a server that runs on port 514. Next, it creates a series of
+                logging templates. Logging templates control where received logs are stored. Using
+                the example above, a nova log from c01.example.com goes to the following
+                locations:</para>
             <itemizedlist>
                 <listitem>
                     <para>
