@@ -1,0 +1,15 @@
+{
+  "files": [
+    "doc/openstack-ops/bk_ops_guide.xml"
+  ],
+  "formats": {
+    "pdf": {
+      "version": "web"
+    },
+    "epub": {},
+    "mobi": {},
+    "html": {}
+  },
+  "theme": "oreillymedia/animal_theme",
+  "title": "openstack operations guide"
+}
