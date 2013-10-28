@@ -3,7 +3,9 @@
     "doc/openstack-ops/bk_ops_guide.xml"
   ],
   "formats": {
-    "pdf": {},
+    "pdf": {
+      "version": "web"
+    },
     "epub": {},
     "mobi": {},
     "html": {}
