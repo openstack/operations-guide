@@ -8,6 +8,6 @@
     "mobi": {},
     "html": {}
   },
-  "theme": "",
+  "theme": "oreillymedia/animal_theme",
   "title": "openstack operations guide"
 }
