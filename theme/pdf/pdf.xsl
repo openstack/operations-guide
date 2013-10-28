@@ -4,6 +4,7 @@
                 xmlns="http://www.w3.org/1999/xhtml"
                 exclude-result-prefixes="exsl h">
 
-<xsl:template match="processing-instruction()[contains(name(), 'pagebreak')]"/>
+<!-- Drop hard pagebreak PIs from OpenStack source -->
+<xsl:template match="processing-instruction()[contains(name(), 'hard-pagebreak')]"/>
 
 </xsl:stylesheet>
