@@ -204,7 +204,8 @@ export OS_PASSWORD=$OS_PASSWORD_INPUT</programlisting>
             <programlisting><?db-font-size 50%?>#!/bin/bash
       
 NOVARC=$(readlink -f "${BASH_SOURCE:-${0}}" 2&gt;/dev/null) ||\
-NOVARC=$(python -c 'import os,sys; print os.path.abspath(os.path.realpath(sys.argv[1]))' "${BASH_SOURCE:-${0}}")
+NOVARC=$(python -c 'import os,sys; \
+print os.path.abspath(os.path.realpath(sys.argv[1]))' "${BASH_SOURCE:-${0}}")
 NOVA_KEY_DIR=${NOVARC%/*}
 export EC2_ACCESS_KEY=df7f93ec47e84ef8a347bbb3d598449a
 export EC2_SECRET_KEY=ead2fff9f8a344e489956deacd47e818
@@ -213,10 +214,12 @@ export EC2_USER_ID=42 # nova does not use user id, but bundling requires it
 export EC2_PRIVATE_KEY=${NOVA_KEY_DIR}/pk.pem
 export EC2_CERT=${NOVA_KEY_DIR}/cert.pem
 export NOVA_CERT=${NOVA_KEY_DIR}/cacert.pem
-export EUCALYPTUS_CERT=${NOVA_CERT} # euca-bundle-image seems to require this set
-      
-alias ec2-bundle-image="ec2-bundle-image --cert $EC2_CERT --privatekey $EC2_PRIVATE_KEY --user 42 --ec2cert $NOVA_CERT"
-alias ec2-upload-bundle="ec2-upload-bundle -a $EC2_ACCESS_KEY -s $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
+export EUCALYPTUS_CERT=${NOVA_CERT} # euca-bundle-image seems to require this 
+
+alias ec2-bundle-image="ec2-bundle-image --cert $EC2_CERT --privatekey \
+$EC2_PRIVATE_KEY --user 42 --ec2cert $NOVA_CERT"
+alias ec2-upload-bundle="ec2-upload-bundle -a $EC2_ACCESS_KEY -s \
+$EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
             <para>To put the EC2 credentials into your environment
                 source the <code>ec2rc.sh</code> file.</para>
         </section>
@@ -290,9 +293,10 @@ alias ec2-upload-bundle="ec2-upload-bundle -a $EC2_ACCESS_KEY -s $EC2_SECRET_KEY
 
                             <para>Look at your OpenStack service
                                    <glossterm>catalog</glossterm>:</para>
-                            <programlisting language="bash"><?db-font-size 55%?><prompt>$</prompt> curl -s -X POST http://203.0.113.10:35357/v2.0/tokens \
-    -d '{"auth": {"passwordCredentials": {"username":"test-user", "password":"test-password"}, "tenantName":"test-project"}}' \
-    -H "Content-type: application/json" | jq .</programlisting>
+                            <programlisting language="bash"><?db-font-size 55%?>
+<prompt>$</prompt> curl -s -X POST http://203.0.113.10:35357/v2.0/tokens \
+-d '{"auth": {"passwordCredentials": {"username":"test-user", "password":"test-password"}, "tenantName":"test-project"}}' \
+-H "Content-type: application/json" | jq .</programlisting>
                         </listitem>
                         <listitem>
                             <para>Read through the JSON response to
@@ -301,9 +305,10 @@ alias ec2-upload-bundle="ec2-upload-bundle -a $EC2_ACCESS_KEY -s $EC2_SECRET_KEY
                             <para>To make working with subsequent
                                 requests easier, store the token in an
                                 environment variable.</para>
-                            <programlisting language="bash"><?db-font-size 55%?><prompt>$</prompt> TOKEN=`curl -s -X POST http://203.0.113.10:35357/v2.0/tokens \
-    -d '{"auth": {"passwordCredentials": {"username":"test-user", "password":"test-password"}, "tenantName":"test-project"}}' \
-    -H "Content-type: application/json" |  jq -r .access.token.id`</programlisting>
+                            <programlisting language="bash"><?db-font-size 55%?>
+<prompt>$</prompt> TOKEN=`curl -s -X POST http://203.0.113.10:35357/v2.0/tokens \
+-d '{"auth": {"passwordCredentials": {"username":"test-user", "password":"test-password"}, "tenantName":"test-project"}}' \
+-H "Content-type: application/json" |  jq -r .access.token.id`</programlisting>
                             <para>Now you can refer to your token on
                                 the command line as $TOKEN.</para>
                         </listitem>
@@ -312,9 +317,10 @@ alias ec2-upload-bundle="ec2-upload-bundle -a $EC2_ACCESS_KEY -s $EC2_SECRET_KEY
                                 service catalog, such as compute, and
                                 try out a request like listing
                                 instances (servers).</para>
-                            <programlisting><?db-font-size 60%?><prompt>$</prompt> curl -s \
-                                  -H "X-Auth-Token: $TOKEN" \
-                                   http://203.0.113.10:8774/v2/98333aba48e756fa8f629c83a818ad57/servers | jq .</programlisting>
+                            <programlisting><?db-font-size 60%?>
+<prompt>$</prompt> curl -s \
+-H "X-Auth-Token: $TOKEN" \
+http://203.0.113.10:8774/v2/98333aba48e756fa8f629c83a818ad57/servers | jq .</programlisting>
 
 </listitem>
                     </orderedlist>
@@ -409,20 +415,29 @@ cloud.example.com nova</programlisting>
                 configured.</para>
             <para>To see the endpoint of each service, run: </para>
             <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone endpoint-list</programlisting>
-            <programlisting><?db-font-size 55%?>+-----+-----------------------------------------+-/+-----------------------------------------+
-| id  |            publicurl                    | \|               adminurl                  |
-+-----+-----------------------------------------+-/+-----------------------------------------+
-| ... | http://example.com:8774/v2/%(tenant_id)s| \| http://example.com:8774/v2/%(tenant_id)s|
-| ... | http://example.com:8773/services/Cloud  | /| http://example.com:8773/services/Admin  |
-| ... | http://example.com:9292/v1              | \| http://example.com:9292/v1              |
-| ... | http://example.com:5000/v2.0            | /| http://example.com:35357/v2.0           |
-| ... | http://example.com:8776/v1/%(tenant_id)s| \| http://example.com:8776/v1/%(tenant_id)s|
-+-----+-----------------------------------------+-/+-----------------------------------------+</programlisting>
-            <para>There should be a one-to-one mapping between a
+            <programlisting><?db-font-size 55%?>---+------------------------------------------+--
+   |                publicurl                 |
+---+------------------------------------------+--
+   | http://example.com:8774/v2/%(tenant_id)s |
+   |          http://example.com:9292         |
+   |        http://example.com:8000/v1        |
+   |       http://example.com:5000/v2.0       |
+---+------------------------------------------+--
+
+---+------------------------------------------+--
+   |                 adminurl                 |
+---+------------------------------------------+--
+   | http://example.com:8774/v2/%(tenant_id)s |
+   |          http://example.com:9292         |
+   |        http://example.com:8000/v1        |
+   |       http://example.com:5000/v2.0       |
+---+------------------------------------------+--</programlisting>
+            <para>This example shows two columns pulled from the larger listing.
+                There should be a one-to-one mapping between a
                     <emphasis>service</emphasis> and
-                    <emphasis>endpoint</emphasis>. Note the different
-                URLs and ports between the public URL and the admin
-                URL for some services.</para>
+                    <emphasis>endpoint</emphasis>. Note the different URLs and
+                ports between the public URL and the admin URL for some
+                services.</para>
             <para>You can find the version of the Compute installation by using the
                     <command>nova-manage</command> command:
                 <screen><prompt>$</prompt> <userinput>nova-manage version list</userinput></screen></para>
@@ -436,7 +451,8 @@ cloud.example.com nova</programlisting>
             <screen><prompt>$</prompt> <userinput>nova diagnostics &lt;serverID&gt;</userinput></screen>
             <para>The output of this command will vary depending on the
                 hypervisor. Example output when the hypervisor is Xen:
-                <screen><computeroutput>+----------------+-----------------+
+                <screen><computeroutput>
++----------------+-----------------+
 |    Property    |      Value      |
 +----------------+-----------------+
 | cpu0           | 4.3627          |
@@ -453,7 +469,8 @@ cloud.example.com nova</programlisting>
                 controlled through libvirt (e.g., KVM, QEMU, LXC), it has only
                 been tested with KVM. Example output when the hypervisor is
                 KVM:</para>
-            <screen><computeroutput>+------------------+------------+
+            <screen><computeroutput>
++------------------+------------+
 | Property         | Value      |
 +------------------+------------+
 | cpu0_time        | 2870000000 |

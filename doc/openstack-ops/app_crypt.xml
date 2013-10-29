@@ -240,7 +240,7 @@
         <para>
             <link
                 xlink:href="http://www.gossamer-threads.com/lists/openstack/dev/14696"
-                >instances loosing IP address while running, due to No
+                >instances losing IP address while running, due to No
                 DHCPOFFER</link>
             (http://www.gossamer-threads.com/lists/openstack/dev/14696)</para>
         <para>Seriously, Google.</para>
