@@ -38,6 +38,7 @@
     <?hard-pagebreak?>
     <section xml:id="hypervisor_choice">
         <title>Hypervisor Choice</title>
+        <!-- FIXME: Needs updating for Havana-->
         <para>OpenStack Compute supports many hypervisors to various
             degrees, including <link xlink:title="reference manual"
                 xlink:href="http://www.linux-kvm.org/page/Main_Page"
@@ -73,10 +74,10 @@
                 xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix"
                 >Hypervisor Support Matrix</link>
             (https://wiki.openstack.org/wiki/HypervisorSupportMatrix),
-            and in the <link xlink:title="reference manual"
-                xlink:href="http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_hypervisors.html"
-                >reference manual</link>
-            (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_hypervisors.html).</para>
+            and in the <link xlink:title="configuration reference"
+                xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html"
+                >configuration reference</link>
+            (http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html).</para>
         <note>
             <para>It is also possible to run multiple hypervisors in a
                 single deployment using Host Aggregates or Cells.

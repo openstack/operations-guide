@@ -82,6 +82,7 @@
             and Artificial Intelligence Lab.</para>
         <section xml:id="mit_csail_deploy">
             <title>Deployment</title>
+            <!--FIXME - update numbers and release information for 2013 -->
             <para>The CSAIL cloud is currently 64 physical nodes with
                 a total of 768 physical cores and 3,456 GB of RAM.
                 Persistent data storage is largely outside of the
@@ -180,8 +181,11 @@
                 Directory and imported into the Identity Service using
                 LDAP. CLIs are available for Nova and Euca2ools to do
                 this.</para>
-            <para>CERN is currently running around 250 Nova Compute
-                nodes with approximately 1,000 instances.</para>
+            <para>There are 3 clouds currently running at CERN, totaling
+            around 3400 Nova Compute nodes, with approximately 60,000 cores.
+            The CERN IT cloud aims to expand to 300,000 cores by 2015.
+             </para>
+            <!--FIXME - update numbers and release information for 2014 -->
         </section>
         <section xml:id="cern_resources">
             <title>Resources</title>
@@ -189,9 +193,9 @@
                 <listitem>
                     <para>
                         <link
-                            xlink:href="http://www.slideshare.net/noggin143/20121017-openstack-accelerating-science"
-                            >San Diego 2012 Summit presentation</link>
-                        (http://www.slideshare.net/noggin143/20121017-openstack-accelerating-science)
+                            xlink:href="http://openstack-in-production.blogspot.com/2013/09/a-tale-of-3-openstack-clouds-50000.html"
+                            >OpenStack in Production: A tale of 3 OpenStack Clouds</link>
+                        (openstack-in-production.blogspot.com/2013/09/a-tale-of-3-openstack-clouds-50000.html)
                     </para>
                 </listitem>
                 <listitem>

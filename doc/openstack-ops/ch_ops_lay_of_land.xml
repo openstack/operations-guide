@@ -367,10 +367,6 @@ nova-scheduler   cloud.example.com nova enabled  :-)  2013-02-25 19:32:33</progr
                 longer available, the <code>:-)</code> changes to an
                     <code>XXX</code>. This is an indication that you
                 should troubleshoot why the service is down.</para>
-            <para>If you are still using <code>nova-volume</code>
-                (this service is deprecated after the Folsom release),
-                you might also see entries for the nova-volume
-                service.</para>
             <para>If you are using Cinder, run the following command
                 to see a similar listing:</para>
 

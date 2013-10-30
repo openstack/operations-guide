@@ -54,6 +54,7 @@
             install with the Object Store enabled.</para>
 
         <procedure>
+           <!-- FIXME - needs to be updated and tested for Havana -->
             <title>To run DevStack for the stable Folsom branch on an
                 instance:</title>
 
@@ -260,7 +261,7 @@ SWIFT_REPLICAS=1
 # unified auth system (manages accounts/tokens)
 KEYSTONE_BRANCH=stable/folsom
 # object storage
-SWIFT_BRANCH=stable/folsom 
+SWIFT_BRANCH=stable/folsom
             
 disable_all_services
 enable_service key swift mysql</programlisting>
@@ -282,16 +283,16 @@ VOLUME_BACKING_FILE_SIZE=20480M
 # For stable versions, look for branches named stable/[milestone]. 
             
 # compute service
-NOVA_BRANCH=stable/folsom 
+NOVA_BRANCH=stable/folsom
             
 # volume service
-CINDER_BRANCH=stable/folsom 
+CINDER_BRANCH=stable/folsom
             
 # image catalog service
-GLANCE_BRANCH=stable/folsom 
+GLANCE_BRANCH=stable/folsom
             
 # unified auth system (manages accounts/tokens)
-KEYSTONE_BRANCH=stable/folsom 
+KEYSTONE_BRANCH=stable/folsom
             
 # django powered web control panel for openstack
 HORIZON_BRANCH=stable/folsom</programlisting>
@@ -663,9 +664,9 @@ proxy-server IP 198.51.100.12 denied access to Account=AUTH_... Container=None. 
             easily plug in a new scheduler for nova. The existing
             schedulers for nova are feature full and well documented
             at <link
-                xlink:href="http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html"
+                xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html"
                 >Scheduling</link>
-            (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html).
+            (http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html).
             However, depending on your user's use cases, the existing
             schedulers might not meet your requirements. You might
             need to create a new scheduler.</para>

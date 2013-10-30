@@ -152,8 +152,9 @@
             occurrence.</para>
         <para>A few nights later, it happened again.</para>
         <para>We reviewed both sets of logs. The one thing that stood
-            out the most was DHCP. OpenStack, by default, sets DHCP
-            leases for one minute. This means that every instance
+            out the most was DHCP. At the time, OpenStack, by default,
+            set DHCP leases for one minute (it's now two minutes). 
+            This means that every instance
             contacts the cloud controller (DHCP server) to renew its
             fixed IP. For some reason, this instance could not renew
             its IP. We correlated the instance's logs with the logs on
@@ -511,3 +512,5 @@ adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
             discussion at the next summit.</para>
     </section>
 </appendix>
+<!-- FIXME: Add more stories, especially more up-to-date ones -->
+<!-- STAUS: OK for Havana -->

@@ -17,20 +17,29 @@
     </para>
     <para>
         <link
-            xlink:href="http://docs.openstack.org/folsom/openstack-compute/admin/content/"
-            >OpenStack Compute Administration Manual</link>
-        (http://docs.openstack.org/folsom/openstack-compute/admin/content/)</para>
+            xlink:href="http://docs.openstack.org/trunk/config-reference/content/"
+            >OpenStack Configuration Reference</link>
+        (http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html)</para>
     <para>
         <link
-            xlink:href="http://docs.openstack.org/folsom/openstack-compute/install/apt/content/"
-            >OpenStack Compute Install and Deploy Manual -
-            Ubuntu</link>
-        (http://docs.openstack.org/folsom/openstack-compute/install/apt/content/)</para>
+            xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/"
+            >OpenStack Install Guide - Ubuntu</link>
+        (http://docs.openstack.org/havana/install-guide/install/apt/content/)</para>
     <para>
         <link
-            xlink:href="http://www.packtpub.com/openstack-cloud-computing-cookbook/book"
+            xlink:href="http://docs.openstack.org/admin-guide-cloud/content/"
+            >OpenStack Cloud Administrator Guide</link>
+        (http://docs.openstack.org/admin-guide-cloud/content/)</para>
+    <para>
+        <link
+            xlink:href="http://docs.openstack.org/security-guide/content/"
+            >OpenStack Security Guide</link>
+        (http://docs.openstack.org/security-guide/content/)</para>
+    <para>
+        <link
+            xlink:href="http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book"
             >OpenStack Cloud Computing Cookbook</link>
-        (http://www.packtpub.com/openstack-cloud-computing-cookbook/book)</para>
+        (http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book)</para>
     <para>
         <emphasis role="bold">Cloud (general)</emphasis>
     </para>
