@@ -185,11 +185,11 @@
             instance across the service logs.</para>
         <para>Consider the following example:</para>
         <programlisting><?db-font-size 60%?>ubuntu@initial:~$ nova list
-+--------------------------------------+--------+--------+---------------------------+
-| ID                                   | Name   | Status | Networks                  |
-+--------------------------------------+--------+--------+---------------------------+
-| faf7ded8-4a46-413b-b113-f19590746ffe | cirros | ACTIVE | novanetwork=192.168.100.3 |
-+--------------------------------------+--------+--------+---------------------------+</programlisting>
++--------------------------------+--------+--------+--------------------------+
+| ID                             | Name   | Status | Networks                 |
++--------------------------------+--------+--------+--------------------------+
+| fafed8-4a46-413b-b113-f1959ffe | cirros | ACTIVE | novanetwork=192.168.100.3|
++--------------------------------------+--------+--------+--------------------+</programlisting>
         <para>Here the ID associated with the instance is
                 <code>faf7ded8-4a46-413b-b113-f19590746ffe</code>. If
             you search for this string on the cloud controller in the
@@ -547,27 +547,28 @@ root 24121 0.0 0.0 11688 912 pts/5 S+ 13:07 0:00 grep nova-api</programlisting>
                 10, then they are using 10% of their Floating IP
                 quota. You can take this procedure and turn it into a
                 formatted report:</para>
-            <programlisting><?db-font-size 65%?>+-----------------------------------+------------+-------------+---------------+ 
-| some_tenant                                                                  | 
-+-----------------------------------+------------+-------------+---------------+ 
-| Resource                          | Used       | Limit       |               | 
-+-----------------------------------+------------+-------------+---------------+ 
-| cores                             | 1          | 20          |           5 % | 
-| floating_ips                      | 1          | 10          |          10 % | 
-| gigabytes                         | 12         | 1000        |           1 % | 
-| images                            | 1          | 4           |          25 % | 
-| injected_file_content_bytes       | 0          | 10240       |           0 % | 
-| injected_file_path_bytes          | 0          | 255         |           0 % | 
-| injected_files                    | 0          | 5           |           0 % | 
-| instances                         | 1          | 10          |          10 % | 
-| key_pairs                         | 0          | 100         |           0 % | 
-| metadata_items                    | 0          | 128         |           0 % | 
-| ram                               | 512        | 51200       |           1 % | 
-| reservation_expire                | 0          | 86400       |           0 % | 
-| security_group_rules              | 0          | 20          |           0 % | 
-| security_groups                   | 0          | 10          |           0 % | 
-| volumes                           | 2          | 10          |          20 % | 
-+-----------------------------------+------------+-------------+---------------+</programlisting>
+            <programlisting><?db-font-size 65%?>
++----------------------------------+------------+-------------+---------------+
+| some_tenant                                                                 |
++-----------------------------------+------------+------------+---------------+
+| Resource                          | Used       | Limit      |               |
++-----------------------------------+------------+------------+---------------+
+| cores                             | 1          | 20         |           5 % |
+| floating_ips                      | 1          | 10         |          10 % |
+| gigabytes                         | 12         | 1000       |           1 % |
+| images                            | 1          | 4          |          25 % |
+| injected_file_content_bytes       | 0          | 10240      |           0 % |
+| injected_file_path_bytes          | 0          | 255        |           0 % |
+| injected_files                    | 0          | 5          |           0 % |
+| instances                         | 1          | 10         |          10 % |
+| key_pairs                         | 0          | 100        |           0 % |
+| metadata_items                    | 0          | 128        |           0 % |
+| ram                               | 512        | 51200      |           1 % |
+| reservation_expire                | 0          | 86400      |           0 % |
+| security_group_rules              | 0          | 20         |           0 % |
+| security_groups                   | 0          | 10         |           0 % |
+| volumes                           | 2          | 10         |          20 % |
++-----------------------------------+------------+------------+---------------+</programlisting>
             <para>The above was generated using a custom script which
                 can be found on GitHub
                 (https://github.com/cybera/novac/blob/dev/libexec/novac-quota-report). </para>

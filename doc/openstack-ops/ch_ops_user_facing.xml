@@ -529,31 +529,32 @@ Optional snapshot description. (Default=None)</programlisting>
 
             <programlisting><prompt>$</prompt> nova show test-instance</programlisting>
 
-            <programlisting><?db-font-size 55%?>+------------------------+--------------------------------------------------------------\
-| Property               | Value                                                        /
-+------------------------+--------------------------------------------------------------\
-| OS-DCF:diskConfig      | MANUAL                                                       /
-| OS-EXT-STS:power_state | 0                                                            \
-| OS-EXT-STS:task_state  | None                                                         /
-| OS-EXT-STS:vm_state    | error                                                        \
-| accessIPv4             |                                                              /
-| accessIPv6             |                                                              \
-| config_drive           |                                                              /
-| created                | 2013-03-01T19:28:24Z                                         \
-| fault                  | {u'message': u'NoValidHost', u'code': 500, u'created': u'2013/
-| flavor                 | xxl.super (11)                                               \
-| hostId                 |                                                              /
-| id                     | 940f3b2f-bd74-45ad-bee7-eb0a7318aa84                         \
-| image                  | quantal-test (65b4f432-7375-42b6-a9b8-7f654a1e676e)          /
-| key_name               | None                                                         \
-| metadata               | {}                                                           /
-| name                   | test-instance                                                \
-| security_groups        | [{u'name': u'default'}]                                      /
-| status                 | ERROR                                                        \
-| tenant_id              | 98333a1a28e746fa8c629c83a818ad57                             /
-| updated                | 2013-03-01T19:28:26Z                                         \
-| user_id                | a1ef823458d24a68955fec6f3d390019                             /
-+------------------------+--------------------------------------------------------------\   </programlisting>
+            <programlisting><?db-font-size 55%?>
++------------------------+-----------------------------------------------------\
+| Property               | Value                                               /
++------------------------+-----------------------------------------------------\
+| OS-DCF:diskConfig      | MANUAL                                              /
+| OS-EXT-STS:power_state | 0                                                   \
+| OS-EXT-STS:task_state  | None                                                /
+| OS-EXT-STS:vm_state    | error                                               \
+| accessIPv4             |                                                     /
+| accessIPv6             |                                                     \
+| config_drive           |                                                     /
+| created                | 2013-03-01T19:28:24Z                                \
+| fault                  | {u'message': u'NoValidHost', u'code': 500, u'created/
+| flavor                 | xxl.super (11)                                      \
+| hostId                 |                                                     /
+| id                     | 940f3b2f-bd74-45ad-bee7-eb0a7318aa84                \
+| image                  | quantal-test (65b4f432-7375-42b6-a9b8-7f654a1e676e) /
+| key_name               | None                                                \
+| metadata               | {}                                                  /
+| name                   | test-instance                                       \
+| security_groups        | [{u'name': u'default'}]                             /
+| status                 | ERROR                                               \
+| tenant_id              | 98333a1a28e746fa8c629c83a818ad57                    /
+| updated                | 2013-03-01T19:28:26Z                                \
+| user_id                | a1ef823458d24a68955fec6f3d390019                    /
++------------------------+-----------------------------------------------------\   </programlisting>
             <para>In this case looking at the "fault" message shows
                 NoValidHost indicating the scheduler was unable to
                 match the instance requirements.</para>

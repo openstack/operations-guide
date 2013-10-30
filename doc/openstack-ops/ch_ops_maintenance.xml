@@ -353,11 +353,12 @@ cinder.volumes.attach_status, cinder.volumes.mountpoint, cinder.volumes.display_
 inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid 
  where nova.instances.host = 'c01.example.com';</programlisting>
             <para>You should see a result like the following:</para>
-            <programlisting><?db-font-size 55%?>+---------------+-------------+--------+---------------+------------+--------------+ 
-| instance_uuid | volume_uuid | status | attach_status | mountpoint | display_name | 
-+---------------+-------------+--------+---------------+------------+--------------+ 
-| 9b969a05      | 1f0fbf36    | in-use | attached      | /dev/vdc   | test         | 
-+---------------+-------------+--------+---------------+------------+--------------+ 
+            <programlisting><?db-font-size 55%?>
++--------------+------------+-------+--------------+-----------+--------------+
+|instance_uuid |volume_uuid |status |attach_status |mountpoint | display_name |
++--------------+------------+-------+--------------+-----------+--------------+
+|9b969a05      |1f0fbf36    |in-use |attached      |/dev/vdc   | test         |
++--------------+------------+-------+--------------+-----------+--------------+
 1 row in set (0.00 sec)</programlisting>
             <para>Next, manually detach and reattach the
                 volumes:</para>
