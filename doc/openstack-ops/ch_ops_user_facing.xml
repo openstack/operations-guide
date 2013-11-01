@@ -813,7 +813,7 @@ Optional snapshot description. (Default=None)</programlisting>
         <para>To boot normally from an image and attach block storage,
             map to a device other than vda.</para>
     </section>
-    <section xml:id="snapsnots">
+    <section xml:id="snapshots">
         <?dbhtml stop-chunking?>
         <title>Taking Snapshots</title>
         <para>OpenStack's snapshot mechanism allows you to create new
