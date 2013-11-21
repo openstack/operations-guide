@@ -224,11 +224,11 @@
             operators. Additionally, the dashboard's use of Django
             makes it a flexible framework for extension.</para>
 
-        <section xml:id="quantum">
+        <section xml:id="neutron">
             <title>Why Not Use the OpenStack Network Service
-                (quantum)?</title>
+                (neutron)?</title>
             <para>We do not discuss the OpenStack Network Service
-                (quantum) in this guide, because the authors of this
+                (neutron) in this guide, because the authors of this
                 guide only have production deployment experience using
                     <code>nova-network</code>. Additionally, it does
                 not yet support multi-host networking.</para>

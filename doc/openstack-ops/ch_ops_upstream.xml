@@ -162,15 +162,15 @@
             <listitem>
                 <para>Report a bug in <link
                         
-                        xlink:href="https://bugs.launchpad.net/quantum/+filebug"
-                        >Quantum</link> (https://bugs.launchpad.net/quantum/+filebug)</para>
+                        xlink:href="https://bugs.launchpad.net/neutron/+filebug"
+                        >Quantum</link> (https://bugs.launchpad.net/neutron/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
                         
-                        xlink:href="https://bugs.launchpad.net/python-quantumclient/+filebug"
-                        >python-quantumclient</link>
-                    (https://bugs.launchpad.net/python-quantumclient/+filebug)</para>
+                        xlink:href="https://bugs.launchpad.net/python-neutronclient/+filebug"
+                        >python-neutronclient</link>
+                    (https://bugs.launchpad.net/python-neutronclient/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link

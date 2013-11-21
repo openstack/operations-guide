@@ -62,8 +62,8 @@
                     CLI)</para>
             </listitem>
             <listitem>
-                <para>python-quantumclient
-                        (<glossterm>quantum</glossterm> CLI)</para>
+                <para>python-neutronclient
+                        (<glossterm>neutron</glossterm> CLI)</para>
             </listitem>
         </itemizedlist>
         <section xml:id="install_tools">
