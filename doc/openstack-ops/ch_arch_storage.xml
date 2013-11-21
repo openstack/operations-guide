@@ -400,6 +400,8 @@ format="SVG" scale="60"/>
                         you wish to manage your object and file
                         storage within a single system, you should
                         consider Gluster UFO.</para>
+                </listitem>
+                <listitem>
                     <para><emphasis role="bold">LVM</emphasis>. The
                         Logical Volume Manager, a Linux-based system
                         that provides an abstraction layer on top of
@@ -422,9 +424,11 @@ format="SVG" scale="60"/>
                             against a failure of the entire
                             host.</para>
                     </note>
-                    <para>The Solaris iSCSI driver for OpenStack Block
-                        Storage implements blocks as <emphasis
-                            role="bold">ZFS</emphasis> entities. ZFS
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">ZFS</emphasis>. The
+                        Solaris iSCSI driver for OpenStack Block
+                        Storage implements blocks as ZFS entities. ZFS
                         is a file system that also has functionality
                         of a volume manager. This is unlike on a Linux
                         system, where there is a separation of volume
