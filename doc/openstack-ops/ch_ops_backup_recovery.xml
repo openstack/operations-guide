@@ -174,8 +174,6 @@ find $backup_dir -ctime +7 -type f -delete</programlisting>
       # stop nova-novncproxy
       # stop nova-objectstore
       # stop nova-scheduler</programlisting>
-        <para>Once that's done, stop MySQL:</para>
-        <programlisting language="bash"><?db-font-size 65%?><prompt>#</prompt> stop mysql</programlisting>
         <para>Now you can import a previously backed up
             database:</para>
         <programlisting language="bash"><?db-font-size 65%?><prompt>#</prompt> mysql nova &lt; nova.sql</programlisting>
