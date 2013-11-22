@@ -14,29 +14,23 @@
     xml:id="user_facing_operations">
 
     <title>User-facing Operations</title>
-    <para>This guide is for OpenStack operators and does not seek to
-        be an exhaustive reference for users, but as an operator it is
-        important that you have a basic understanding of how to use
-        the cloud facilities. This chapter looks at OpenStack from a
-        basic user perspective, which helps you understand your users'
-        needs and determine when you get a trouble ticket whether it
-        is a user issue or a service issue. The main concepts covered
-        are images, flavors, security groups, blocks storage and
-        instances.</para>
+    <para>This guide is for OpenStack operators and does not seek to be an exhaustive reference for
+        users, but as an operator it is important that you have a basic understanding of how to use
+        the cloud facilities. This chapter looks at OpenStack from a basic user perspective, which
+        helps you understand your users' needs and determine when you get a trouble ticket whether
+        it is a user issue or a service issue. The main concepts covered are images, flavors,
+        security groups, blocks storage, and instances.</para>
     <section xml:id="user_facing_images">
         <title>Images</title>
         <?dbhtml stop-chunking?>
-        <para>OpenStack images can often be thought of as "virtual
-            machine templates". Images can also be standard
-            installation mediums like ISO images. Essentially, they
-            contain bootable file systems which are used to launch
-            instances.</para>
+        <para>OpenStack images can often be thought of as "virtual machine templates." Images can
+            also be standard installation media like ISO images. Essentially, they contain bootable
+            file systems that are used to launch instances.</para>
         <section xml:id="add_images">
             <title>Adding Images</title>
-            <para>Several pre-made images exist and can easily be
-                imported into the Image Service. A common image to add
-                is the CirrOS image which is very small and used for
-                testing purposes. To add this image, simply do:</para>
+            <para>Several pre-made images exist and can easily be imported into the Image Service. A
+                common image to add is the CirrOS image, which is very small and used for testing
+                purposes. To add this image, simply do:</para>
             <programlisting><?db-font-size 65%?># wget https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img # glance image-create --name='cirros image' --is-public=true --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.0-x86_64-disk.img</programlisting>
             <para>The <code>glance image-create</code> command
                 provides a large set of options to give your image.
@@ -115,16 +109,12 @@
      
         <title>Flavors</title>
 
-        <para>Virtual hardware templates are called "flavors" in
-            OpenStack, defining sizes for RAM, disk, number of cores
-            and so on. The default install provides a range of five
-            flavors. These are configurable by admin users (this too
-            is configurable and may be delegated by redefining the
-            access controls for
-                <code>compute_extension:flavormanage</code> in
-                <code>/etc/nova/policy.json</code> on the
-                <code>nova-api</code> server). To get a list of
-            available flavors on your system run:</para>
+        <para>Virtual hardware templates are called "flavors" in OpenStack, defining sizes for RAM,
+            disk, number of cores, and so on. The default install provides five flavors. These are
+            configurable by admin users (this too is configurable and may be delegated by redefining
+            the access controls for <code>compute_extension:flavormanage</code> in
+                <code>/etc/nova/policy.json</code> on the <code>nova-api</code> server). To get the
+            list of available flavors on your system, run:</para>
             <programlisting><?db-font-size 65%?>$ nova flavor-list</programlisting>
 
         <programlisting><?db-font-size 65%?>+----+-----------+-----------+------+-----------+\+-------+-\+-------------+
@@ -138,7 +128,7 @@
 +----+-----------+-----------+------+-----------+\+-------+-\+-------------+</programlisting>
         <para>The <code>nova flavor-create</code> command allows authorized users to create new
             flavors. Additional flavor manipulation commands can be shown with the command:
-                <programlisting language="bash"><?db-font-size 75%?><prompt>$</prompt> nova help | grep flavor.</programlisting>
+            <programlisting language="bash"><?db-font-size 75%?><prompt>$</prompt> nova help | grep flavor</programlisting>
         </para>
         <?hard-pagebreak?>
         <para>Flavors define a number of elements:</para>
@@ -171,8 +161,8 @@
                         <para>Name</para>
                     </td>
                     <td xmlns:db="http://docbook.org/ns/docbook">
-                        <para>a descriptive name. xx.size_name is conventional not required, though
-                            some third party tools may rely on it.</para>
+                        <para>A descriptive name, such as xx.size_name is conventional but not
+                            required, though some third-party tools may rely on it.</para>
                     </td>
                 </tr>
                 <tr>
@@ -180,7 +170,7 @@
                         <para>Memory_MB</para>
                     </td>
                     <td xmlns:db="http://docbook.org/ns/docbook">
-                        <para>Memory_MB: virtual machine memory in megabytes.</para>
+                        <para>Virtual machine memory in megabytes.</para>
                     </td>
                 </tr>
                 <tr>
@@ -189,9 +179,9 @@
                     </td>
                     <td xmlns:db="http://docbook.org/ns/docbook">
                         <para>Virtual root disk size in gigabytes. This is an ephemeral disk the
-                            base image is copied into. When booting from a persistent volume it is
-                            not used. The "0" size is a special case which uses the native base
-                            image size as the size of the ephemeral root volume.</para>
+                            base image is copied into. You don't use it when you boot from a
+                            persistent volume. The "0" size is a special case that uses the native
+                            base image size as the size of the ephemeral root volume.</para>
                     </td>
                 </tr>
                 <tr>
@@ -228,7 +218,7 @@
                         <para>Optional property allows created servers to have a different bandwidth
                             cap than that defined in the network they are attached to. This factor
                             is multiplied by the rxtx_base property of the network. Default value is
-                            1.0 (that is, the same as attached network).</para>
+                            1.0 (that is, the same as the attached network).</para>
                     </td>
                 </tr>
                 <tr>
@@ -267,9 +257,8 @@
     <section xml:id="security_groups">
         <?dbhtml stop-chunking?>
         <title>Security groups</title>
-        <para>One of the most common new user issues with OpenStack is
-            failing to set appropriate security group when launching
-            an instance and are then unable to contact the instance on
+        <para>A common new-user issue with OpenStack is failing to set an appropriate security group
+            when launching an instance. As a result, the user is unable to contact the instance on
             the network.</para>
         <para>Security groups are sets of IP filter rules that are
             applied to an instance's networking. They are project
@@ -821,7 +810,7 @@ Optional snapshot description. (Default=None)</programlisting>
             for upgrading base images or taking a published image and
             customizing for local use. To snapshot a running instance
             to an image using the CLI:</para>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</programlisting>
+        <programlisting><?db-font-size 65%?><prompt>#</prompt> nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</programlisting>
         <para>The Dashboard interface for snapshots can be confusing
             because the Images &amp; Snapshots page splits content up
             into:</para>
@@ -880,6 +869,13 @@ Optional snapshot description. (Default=None)</programlisting>
                 </tr>
             </tbody>
         </informaltable>
+        <section xml:id="live-snapshots">
+            <title>Live snapshots</title>
+            <para>Live snapshots is a feature that allows users to snapshot the running virtual
+                machines without pausing them. These snapshots are simply disk-only snapshots.
+                Snapshotting an instance can now be performed with no downtime (assuming QEMU 1.3+
+                and libvirt 1.0+ are used).</para>
+        </section>
         <section xml:id="consistent_snapshots">
             <title>Ensuring snapshots are consistent</title>
             <para>Content from Sébastien Han's <link
