@@ -321,17 +321,16 @@
             physical nova-compute nodes is a challenging problem -
             researched generically in Computer Science as a packing
             problem. </para>
-        <para>You can use various techniques to handle this problem,
-            one of which is to have flavor sizes scale linearly, be a
-            proportional fraction of your physical node capacity,
-            though solving this problem is out of the scope of this
-            book. To support your scheduling choices, OpenStack
-            Compute provides several different types of scheduling
-            drivers, a full discussion of which is found in the <link
-                xlink:title="API Specifications"
-                xlink:href="http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html"
-                >reference manual</link>
-            (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html).</para>
+        <para>You can use various techniques to handle this problem
+                   though solving this problem is out of the scope of this
+                   book. To support your scheduling choices, OpenStack
+                   Compute provides several types of scheduling drivers. For
+                   information, see <link
+             xlink:title="OpenStack Configuration Reference"
+             xlink:href="http://docs.openstack.org/havana/config-reference/content/section_compute-scheduler.html"
+             >Scheduling</link> in the <citetitle>OpenStack
+             Configuration Reference</citetitle>
+             (http://docs.openstack.org/havana/config-reference/content/section_compute-scheduler.html).</para>
         <para>For availability purposes, or for very large or
             high-schedule frequency installations, you should consider
             running multiple nova-scheduler services. No special load
