@@ -10,8 +10,7 @@
 <imagedata fileref="figures/Check_mark_23x20_02.svg"
 format="SVG" scale="60"/>
 </imageobject>
-</inlinemediaobject>'>        
-     
+</inlinemediaobject>'>
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -118,13 +117,13 @@ format="SVG" scale="60"/>
                 storage system, as an alternative to storing the
                 images on a file system.</para>
         </section>
-      
+
         <section xml:id="block_storage">
             <title>Block Storage</title>
             <para>Block storage (sometimes referred to as volume
                 storage) exposes a block device to the user. Users
                 interact with block storage by attaching volumes to
-                their running VM instances. </para>
+                their running VM instances.</para>
             <para>These volumes are persistent: they can be detached
                 from one instance and re-attached to another, and the
                 data remains intact. Block storage is implemented in
@@ -157,7 +156,7 @@ format="SVG" scale="60"/>
                 solution before, have encountered this form of
                 networked storage. In the Unix world, the most common
                 form of this is NFS. In the Windows world, the most
-                common form is called CIFS (previously, SMB). </para>
+                common form is called CIFS (previously, SMB).</para>
             <para>OpenStack clouds do not present file-level storage
                 to end users. However, it is important to consider
                 file-level storage for storing instances under
@@ -210,7 +209,7 @@ format="SVG" scale="60"/>
         </itemizedlist>
         <para>To deploy your storage by using entirely commodity
             hardware, you can use a number of open-source packages, as
-            shown in the following table: </para>
+            shown in the following table:</para>
         <informaltable rules="all">
             <thead>
                 <tr>
@@ -294,7 +293,7 @@ format="SVG" scale="60"/>
                 xlink:title="OpenStack wiki"
                 xlink:href="https://wiki.openstack.org/wiki/CinderSupportMatrix"
                 >OpenStack wiki</link>
-            (https://wiki.openstack.org/wiki/CinderSupportMatrix). </para>
+            (https://wiki.openstack.org/wiki/CinderSupportMatrix).</para>
         <para>Also, you need to decide whether you want to support
             object storage in your cloud. The two common use cases for
             providing object storage in a compute cloud are:</para>
@@ -312,7 +311,7 @@ format="SVG" scale="60"/>
             <title>Commodity Storage Back-end Technologies</title>
             <para>This section provides a high-level overview of the
                 differences among the different commodity storage
-                back-end technologies. </para>
+                back-end technologies.</para>
 
             <itemizedlist role="compact">
                 <listitem>
@@ -330,7 +329,7 @@ format="SVG" scale="60"/>
                         Dashboard interface), and better support for
                         multiple data center deployment through
                         support of asynchronous eventual consistency
-                        replication. </para>
+                        replication.</para>
                     <para>Therefore, if you eventually plan on
                         distributing your storage cluster across
                         multiple data centers, if you need unified
@@ -347,7 +346,7 @@ format="SVG" scale="60"/>
                         across commodity storage nodes. Ceph was
                         originally developed by one of the founders of
                         DreamHost and is currently used in production
-                        there. </para>
+                        there.</para>
                     <para>Ceph was designed to expose different types
                         of storage interfaces to the end-user: it
                         supports object storage, block storage, and
@@ -358,13 +357,13 @@ format="SVG" scale="60"/>
                         back-end for Cinder block storage, as well as
                         back-end storage for Glance images. Ceph
                         supports "thin provisioning", implemented
-                        using copy-on-write. </para>
+                        using copy-on-write.</para>
                     <para>This can be useful when booting from volume
                         because a new volume can be provisioned very
                         quickly. Ceph also supports keystone-based
                         authentication (as of version 0.56), so it can
                         be a seamless swap in for the default
-                        OpenStack Swift implementation. </para>
+                        OpenStack Swift implementation.</para>
                     <para>Ceph's advantages are that it gives the
                         administrator more fine-grained control over
                         data distribution and replication strategies,
@@ -377,7 +376,7 @@ format="SVG" scale="60"/>
                             xlink:href="http://ceph.com/docs/master/faq/"
                             >not yet recommended</link>
                         (http://ceph.com/docs/master/faq/) for use in
-                        production deployment by the Ceph project. </para>
+                        production deployment by the Ceph project.</para>
                     <para>If you wish to manage your object and block
                         storage within a single system, or if you wish
                         to support fast boot-from-volume, you should
@@ -391,7 +390,7 @@ format="SVG" scale="60"/>
                         storage into one unified file and object
                         storage solution, which is called Gluster UFO.
                         Gluster UFO uses a customizes version of Swift
-                        that uses Gluster as the back-end. </para>
+                        that uses Gluster as the back-end.</para>
                     <para>The main advantage of using Gluster UFO over
                         regular Swift is if you also want to support a
                         distributed file system, either to support
@@ -408,7 +407,7 @@ format="SVG" scale="60"/>
                         physical disks to expose logical volumes to
                         the operating system. The LVM (Logical Volume
                         Manager) back-end implements block storage as
-                        LVM logical partitions. </para>
+                        LVM logical partitions.</para>
                     <para>On each host that will house block storage,
                         an administrator must initially create a
                         volume group dedicated to Block Storage
@@ -435,7 +434,7 @@ format="SVG" scale="60"/>
                         manager (LVM) and file system (such as, ext3,
                         ext4, xfs, btrfs). ZFS has a number of
                         advantages over ext4, including improved data
-                        integrity checking. </para>
+                        integrity checking.</para>
                     <para>The ZFS back-end for OpenStack Block Storage
                         only supports Solaris-based systems such as
                         Illumos. While there is a Linux port of ZFS,
@@ -446,7 +445,7 @@ format="SVG" scale="60"/>
                         hosts on its own, you need to add a
                         replication solution on top of ZFS if your
                         cloud needs to be able to handle storage node
-                        failures. </para>
+                        failures.</para>
                     <para>We don't recommend ZFS unless you have
                         previous experience with deploying it, since
                         the ZFS back-end for Block Storage requires a
@@ -526,7 +525,7 @@ format="SVG" scale="60"/>
             traffic, which is predominantly "Do you have the
             object?"/"Yes I have the object!." Of course, if the
             answer to the aforementioned question is negative or times
-            out, replication of the object begins. </para>
+            out, replication of the object begins.</para>
         <para>Consider the scenario where an entire server fails, and
             24 TB of data needs to be transferred "immediately" to
             remain at three copies - this can put significant load on
@@ -545,7 +544,7 @@ format="SVG" scale="60"/>
         <para>The remaining point on bandwidth is the public facing
             portion. swift-proxy is stateless, which means that you
             can easily add more and use http load-balancing methods to
-            share bandwidth and availability between them. </para>
+            share bandwidth and availability between them.</para>
         <para>More proxies means more bandwidth, if your storage can
             keep up.</para>
     </section>

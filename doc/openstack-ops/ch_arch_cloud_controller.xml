@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -18,9 +16,9 @@
         which allows all services to be distributed widely. However,
         to simplify this guide we have decided to discuss services of
         a more central nature using the concept of a single
-            <emphasis>cloud controller</emphasis>. </para>
+            <emphasis>cloud controller</emphasis>.</para>
     <para>For more details about the overall architecture, see the
-            <xref linkend="example_architecture"/>. </para>
+            <xref linkend="example_architecture"/>.</para>
     <para>As described in this guide, the cloud controller is a single
         node that hosts the databases, message queue service,
         authentication and authorization service, image management
@@ -29,7 +27,7 @@
     <para>The cloud controller provides the central management system
         for multi-node OpenStack deployments. Typically the cloud
         controller manages authentication and sends messaging to all
-        the systems through a message queue. </para>
+        the systems through a message queue.</para>
     <para>For our example, the cloud controller has a collection of
             <code>nova-*</code> components that represent the global
         state of the cloud, talks to services such as authentication,
@@ -44,7 +42,7 @@
         <title>Hardware Considerations</title>
         <para>A cloud controller's hardware can be the same as a
             compute node, though you may want to further specify based
-            on the size and type of cloud that you run. </para>
+            on the size and type of cloud that you run.</para>
         <para>It's also possible to use virtual machines for all or
             some of the services that the cloud controller manages,
             such as the message queuing. In this guide, we assume that
@@ -273,12 +271,12 @@
             EC2 compatibility APIs, or just the OpenStack APIs. One
             issue you might encounter when running both APIs is an
             inconsistent experience when referring to images and
-            instances. </para>
+            instances.</para>
         <para>For example, the EC2 API refers to instances using IDs
             that contain hexadecimal whereas the OpenStack API uses
             names and digits. Similarly, the EC2 API tends to rely on
             DNS aliases for contacting virtual machines, as opposed to
-            OpenStack which typically lists IP addresses. </para>
+            OpenStack which typically lists IP addresses.</para>
         <para>If OpenStack is not set up in the right way, it is
             simple to have scenarios where users are unable to contact
             their instances due to only having an incorrect DNS alias.
@@ -320,7 +318,7 @@
                 <emphasis>flavors</emphasis>) into different sized
             physical nova-compute nodes is a challenging problem -
             researched generically in Computer Science as a packing
-            problem. </para>
+            problem.</para>
         <para>You can use various techniques to handle this problem
                    though solving this problem is out of the scope of this
                    book. To support your scheduling choices, OpenStack
@@ -359,7 +357,7 @@
                     store the images as files.</para>
             </listitem>
             <listitem>
-                <para>S3. Allows you to fetch images from Amazon S3. </para>
+                <para>S3. Allows you to fetch images from Amazon S3.</para>
             </listitem>
             <listitem>
                 <para>HTTP. Allows you to fetch images from a web
@@ -381,7 +379,6 @@
             API servers (including their admin endpoints) over the
             network.</para>
     </section>
-  
     <section xml:id="authentication">
         <title>Authentication and Authorization</title>
         <para>The concepts supporting OpenStack's authentication and
@@ -389,7 +386,7 @@
             used systems of a similar nature. Users have credentials
             they can use to authenticate, and they can be a member of
             one or more groups (known as projects or tenants
-            interchangeably). </para>
+            interchangeably).</para>
         <para>For example, a cloud administrator might be able to list
             all instances in the cloud, whereas a user can only see
             those in their current group. Resources quotas, such as
@@ -438,7 +435,7 @@
             networking where the cloud controller is the network
             gateway for all instances, then the Cloud Controller must
             support the total amount of traffic that travels between
-            your cloud and the public Internet. </para>
+            your cloud and the public Internet.</para>
         <para>We recommend that you use a fast NIC, such as 10 GB. You
             can also choose to use two 10 GB NICs and bond them
             together. While you might not be able to get a full bonded

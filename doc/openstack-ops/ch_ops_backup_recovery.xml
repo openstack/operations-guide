@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -71,7 +69,7 @@
 backup_dir="/var/lib/backups/mysql"
 filename="${backup_dir}/mysql-`hostname`-`eval date +%Y%m%d`.sql.gz"
 # Dump the entire MySQL database
-/usr/bin/mysqldump --opt --all-databases | gzip &gt; $filename 
+/usr/bin/mysqldump --opt --all-databases | gzip &gt; $filename
 # Delete backups older than 7 days
 find $backup_dir -ctime +7 -type f -delete</programlisting>
         <para>This script dumps the entire MySQL database and delete
@@ -79,7 +77,7 @@ find $backup_dir -ctime +7 -type f -delete</programlisting>
     </section>
     <section xml:id="file_system_backups">
         <title>File System Backups</title>
-        <para>This section discusses which files and directories should be backed up regularly, organized by service. </para>
+        <para>This section discusses which files and directories should be backed up regularly, organized by service.</para>
         <section xml:id="compute">
             <title>Compute</title>
             <para>The <code>/etc/nova</code> directory on both the

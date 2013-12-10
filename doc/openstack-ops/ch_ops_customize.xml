@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -319,10 +317,10 @@ HORIZON_BRANCH=stable/folsom</programlisting>
             what you really want to restrict it to is a set of IPs
             based on a whitelist.</para>
         <warning>
-            <para> This example is for illustrative purposes only. It
+            <para>This example is for illustrative purposes only. It
                 should not be used as a container IP whitelist
                 solution without further development and extensive
-                security testing. </para>
+                security testing.</para>
         </warning>
         <para>When you join the screen session that
                 <code>stack.sh</code> starts with <code>screen -r
@@ -644,7 +642,7 @@ proxy-server IP 198.51.100.12 denied access to Account=AUTH_... Container=None. 
                 <code>pipeline</code> value in the project's
                 <code>conf</code> or <code>ini</code> configuration
             files in <code>/etc/&lt;project&gt;</code> to identify
-            projects that use Paste. </para>
+            projects that use Paste.</para>
         <para>When your middleware is done, we encourage you to open
             source it and let the community know on the OpenStack
             mailing list. Perhaps others need the same functionality.
@@ -710,7 +708,7 @@ proxy-server IP 198.51.100.12 denied access to Account=AUTH_... Container=None. 
         <note>
             <para>This example is for illustrative purposes only. It
                 should not be used as a scheduler for Nova without
-                further development and testing. </para>
+                further development and testing.</para>
         </note>
         <para>When you join the screen session that
                 <code>stack.sh</code> starts with <code>screen -r

@@ -5,8 +5,6 @@
         <!ENTITY mdash  "&#x2014;">
         <!ENTITY hellip "&#x2026;">
         <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -51,7 +49,7 @@
                 same thing is done when using the STDIN redirection
                 such as shown in the example.</para>
             <para>Run the following command to view the properties of
-                existing images: </para>
+                existing images:</para>
             <programlisting><?db-font-size 65%?>$ glance details</programlisting>
         </section>
         <section xml:id="delete_images">
@@ -106,7 +104,6 @@
     </section>
 
     <section xml:id="flavors">
-     
         <title>Flavors</title>
 
         <para>Virtual hardware templates are called "flavors" in OpenStack, defining sizes for RAM,
@@ -251,7 +248,6 @@
                 modify a flavor by deleting an existing flavor and creating a new one with the same
                 name.</para>
         </simplesect>
-        
     </section>
     <?hard-pagebreak?>
     <section xml:id="security_groups">
@@ -307,12 +303,12 @@
 
         <programlisting><prompt>$</prompt> nova secgroup-list-rules open</programlisting>
 
-        <programlisting><?db-font-size 65%?>+-------------+-----------+---------+-----------+--------------+ 
- | IP Protocol | From Port | To Port | IP Range  | Source Group | 
- +-------------+-----------+---------+-----------+--------------+ 
- | icmp        | -1        | 255     | 0.0.0.0/0 |              | 
- | tcp         | 1         | 65535   | 0.0.0.0/0 |              | 
- | udp         | 1         | 65535   | 0.0.0.0/0 |              | 
+        <programlisting><?db-font-size 65%?>+-------------+-----------+---------+-----------+--------------+
+ | IP Protocol | From Port | To Port | IP Range  | Source Group |
+ +-------------+-----------+---------+-----------+--------------+
+ | icmp        | -1        | 255     | 0.0.0.0/0 |              |
+ | tcp         | 1         | 65535   | 0.0.0.0/0 |              |
+ | udp         | 1         | 65535   | 0.0.0.0/0 |              |
  +-------------+-----------+---------+-----------+--------------+ </programlisting>
         <para>These rules are all "allow" type rules as the default is
             deny. The first column is the IP protocol (one of icmp,
@@ -378,20 +374,20 @@ $ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
         <para>The inverse operation is called secgroup-delete-rule,
             using the same format. Whole security groups can be
             removed with secgroup-delete.</para>
-        <para> To create security group rules for a cluster of
-            instances: </para>
+        <para>To create security group rules for a cluster of
+            instances:</para>
         <para>SourceGroups are a special dynamic way of defining the
             CIDR of allowed sources. The user specifies a SourceGroup
             (Security Group name), all the users' other Instances
             using the specified SourceGroup are selected dynamically.
             This alleviates the need for a individual rules to allow
-            each new member of the cluster.usage: </para>
+            each new member of the cluster.usage:</para>
         <para>usage: nova secgroup-add-group-rule &lt;secgroup&gt;
             &lt;source-group&gt; &lt;ip-proto&gt; &lt;from-port&gt;
             &lt;to-port&gt; </para>
         <programlisting><prompt>$</prompt> nova secgroup-add-group-rule cluster global-http tcp 22 22</programlisting>
-        <para> The "cluster" rule allows ssh access from any other
-            instance that uses the "global-http" group. </para>
+        <para>The "cluster" rule allows ssh access from any other
+            instance that uses the "global-http" group.</para>
     </section>
     <?hard-pagebreak?>
     <section xml:id="user_facing_block_storage">
@@ -466,7 +462,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 volume's UUID. First try the log files on the cloud
                 controller and then try the storage node where they
                 volume was attempted to be created:</para>
-            <programlisting><?db-font-size 65%?><prompt>#</prompt> grep 903b85d0-bacc-4855-a261-10843fc2d65b /var/log/cinder/*.log </programlisting>
+            <programlisting><?db-font-size 65%?><prompt>#</prompt> grep 903b85d0-bacc-4855-a261-10843fc2d65b /var/log/cinder/*.log</programlisting>
         </section>
     </section>
     <section xml:id="instances">
@@ -592,7 +588,7 @@ Optional snapshot description. (Default=None)</programlisting>
             <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add --pub-key mykey.pub mykey</programlisting>
             <para>You must have the matching private key to access
                 instances associated with this key.</para>
-            <para> To associate a key with an instance on boot add
+            <para>To associate a key with an instance on boot add
                 --key_name mykey to your command line for
                 example:</para>
             <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --key_name mykey</programlisting>
@@ -649,7 +645,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 system and then passed in at instance creation with
                 the flag --user-data &lt;user-data-file&gt; for
                 example:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file </programlisting>
+            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</programlisting>
             <para>Arbitrary local files can also be placed into the
                 instance file system at creation time using the --file
                 &lt;dst-path=src-path&gt; option. You may store up to
@@ -709,9 +705,9 @@ Optional snapshot description. (Default=None)</programlisting>
         <para>You can attach block storage to instances from the
             dashboard on the <guilabel>Volumes</guilabel> page. Click
             the <guibutton>Edit Attachments</guibutton> action next to
-            the volume you wish to attach. </para>
+            the volume you wish to attach.</para>
         <para>To perform this action from command line, run the
-            following command: </para>
+            following command:</para>
         <programlisting><prompt>$</prompt> nova volume-attach &lt;server&gt; &lt;volume&gt; </programlisting>
         <para>You can also specify block device mapping at instance
             boot time through the nova command-line client, as
@@ -797,7 +793,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 xlink:href="https://bugs.launchpad.net/nova/+bug/1163566"
             >1163566</link>
             (https://bugs.launchpad.net/nova/+bug/1163566) you must
-            specify an image when booting from a volume in Horizon, 
+            specify an image when booting from a volume in Horizon,
             even though this image is not used.</para>
         <para>To boot normally from an image and attach block storage,
             map to a device other than vda.</para>

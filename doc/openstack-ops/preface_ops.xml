@@ -25,7 +25,7 @@
             computing platform that meets the needs of public and private cloud
             providers regardless of size. OpenStack services control large pools
             of compute, storage, and networking resources throughout a data
-            center. </para>
+            center.</para>
         <para>Each service provides a REST API so that all these resources can
             be managed through a dashboard that gives administrators control
             while empowering users to provision resources through a web
@@ -71,7 +71,7 @@
             Linux machines for networking. You must install and maintain a
             MySQL database, and occasionally run SQL queries against it.
             </para>
-        <para> One of the most complex aspects of an OpenStack cloud is the
+        <para>One of the most complex aspects of an OpenStack cloud is the
             networking configuration. You should be familiar with concepts such
             as DHCP, Linux bridges, VLANs, and iptables. You must also have
             access to a network hardware expert who can configure the switches
@@ -121,7 +121,7 @@
             users, give them quotas to parcel out resources, and so on.</para>
         <para>Chapter 10: User-facing Operations: This chapter moves along to
             show you how to use OpenStack cloud resources and train your users
-            as well. </para>
+            as well.</para>
         <para>Chapter 11: Maintenance, Failures, and Debugging: This chapter
             goes into the common failures the authors have seen while running
             clouds in production, including troubleshooting.</para>
@@ -132,10 +132,10 @@
             debugging related services like DHCP and DNS.</para>
         <para>Chapter 13: Logging and Monitoring: This chapter shows you where
             OpenStack places logs and how to best to read and manage logs for
-            monitoring purposes. </para>
+            monitoring purposes.</para>
         <para>Chapter 14: Backup and Recovery: This chapter describes what you
             need to back up within OpenStack as well as best practices for
-            recovering backups. </para>
+            recovering backups.</para>
         <para>Chapter 15: Customize: When you need to get a specialized feature
             into OpenStack, this chapter describes how to use DevStack to write
             custom middleware or a custom scheduler to rebalance your
@@ -179,7 +179,7 @@
                         non-trivial OpenStack cloud. After you read this guide,
                         you'll know which questions to ask and how to organize
                         your compute, networking, storage resources, and the
-                        associated software packages. </para>
+                        associated software packages.</para>
                 </listitem>
                 <listitem>
                     <para>Perform the day-to-day tasks required to administer a
@@ -191,7 +191,7 @@
             the <link xlink:href="http://www.booksprints.net">Book Sprint
                 site</link>. Your authors cobbled this book together in five
             days during February 2013, fueled by caffeine and the best take-out
-            food that Austin, Texas could offer. </para>
+            food that Austin, Texas could offer.</para>
         <para>On the first day we filled white boards with colorful sticky notes
             to start to shape this nebulous book about how to architect and
             operate clouds. <informalfigure>
@@ -310,7 +310,7 @@
                 <literal>ops-guide</literal> tag to indicate that the
             bug is in this guide. You can assign the bug to yourself
             if you know how to fix it. Also, a member of the OpenStack
-            doc-core team can triage the doc bug. </para>
+            doc-core team can triage the doc bug.</para>
     </section>
 
 </preface>

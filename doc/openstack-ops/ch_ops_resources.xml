@@ -47,13 +47,13 @@
         <link
             xlink:href="http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf"
             >NIST Cloud Computing Definition</link>
-        (http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf) </para>
+        (http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf)</para>
     <para>
         <emphasis role="bold"> Python </emphasis>
     </para>
     <para>
         <link xlink:href="http://www.diveintopython.net">Dive Into
-            Python</link> (http://www.diveintopython.net) </para>
+            Python</link> (http://www.diveintopython.net)</para>
     <para>
         <emphasis role="bold"> Networking </emphasis>
     </para>
@@ -61,33 +61,33 @@
         <link
             xlink:href="http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page"
             >TCP/IP Illustrated</link>
-        (http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page) </para>
+        (http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page)</para>
     <para>
         <link xlink:href="http://nostarch.com/tcpip.htm">The TCP/IP
-            Guide</link> (http://nostarch.com/tcpip.htm) </para>
+            Guide</link> (http://nostarch.com/tcpip.htm)</para>
     <para>
         <link xlink:href="http://danielmiessler.com/study/tcpdump/">A
             tcpdump Tutorial and Primer</link>
-        (http://danielmiessler.com/study/tcpdump/) </para>
+        (http://danielmiessler.com/study/tcpdump/)</para>
     <para>
         <emphasis role="bold"> Systems administration </emphasis>
     </para>
     <para>
         <link xlink:href="http://www.admin.com/">UNIX and Linux
             Systems Administration Handbook</link>
-        (http://www.admin.com/) </para>
+        (http://www.admin.com/)</para>
     <para>
         <emphasis role="bold"> Virtualization </emphasis>
     </para>
     <para>
         <link xlink:href="http://nostarch.com/xen.htm">The Book of
-            Xen</link> (http://nostarch.com/xen.htm) </para>
+            Xen</link> (http://nostarch.com/xen.htm)</para>
     <para>
         <emphasis role="bold"> Configuration management </emphasis>
     </para>
     <para>
         <link xlink:href="http://docs.puppetlabs.com/">Puppet Labs
-            Documentation</link> (http://docs.puppetlabs.com/) </para>
+            Documentation</link> (http://docs.puppetlabs.com/)</para>
     <para>
         <link xlink:href="http://www.apress.com/9781430230571">Pro
             Puppet</link> (http://www.apress.com/9781430230571)

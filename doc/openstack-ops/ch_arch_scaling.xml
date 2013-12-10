@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-      
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -104,7 +102,7 @@
         <para>However, you need more than the core count alone to
             estimate the load that the API services, database servers,
             and queue servers are likely to encounter. You must also
-            consider the usage patterns of your cloud. </para>
+            consider the usage patterns of your cloud.</para>
         <para>As a specific example, compare a cloud that supports a
             managed web hosting platform with one running integration
             tests for a development project that creates one VM per
@@ -113,7 +111,6 @@
             constant heavy load on the cloud controller. You must
             consider your average VM lifetime, as a larger number
             generally means less load on the cloud controller.</para>
-     
         <para>Aside from the creation and termination of VMs, you must
             consider the impact of users accessing the service
             — particularly on nova-api and its associated database.
@@ -249,7 +246,7 @@
                             <itemizedlist>
                                 <listitem>
                                    <para>A different API endpoint for
-                                   every region. </para>
+                                   every region.</para>
                                 </listitem>
                                 <listitem>
                                    <para>Each region has a full nova
@@ -335,7 +332,7 @@
         <section xml:id="availability_zones">
             <title>Availability Zones and Host Aggregates</title>
             <para>You can use availability zones, host aggregates, or
-                both to partition a nova deployment. </para>
+                both to partition a nova deployment.</para>
             <para>Availability zones are implemented through and
                 configured in a similar way to host aggregates.</para>
             <para>However, you use an availability zone and a host
@@ -347,7 +344,7 @@
                         and provides a form of physical isolation and
                         redundancy from other availability zones, such
                         as by using separate power supply or network
-                        equipment. </para>
+                        equipment.</para>
                     <para>You define the availability zone in which a
                         specified Compute host resides locally on each
                         server. An availability zone is commonly used
@@ -357,7 +354,7 @@
                         power source, you can put servers in those
                         racks in their own availability zone.
                         Availability zones can also help separate
-                        different classes of hardware. </para>
+                        different classes of hardware.</para>
                     <para>When users provision resources, they can
                         specify from which availability zone they
                         would like their instance to be built. This
@@ -384,7 +381,7 @@
                         provide information for use with the
                         nova-scheduler. For example, you might use a
                         host aggregate to group a set of hosts that
-                        share specific flavors or images. </para>
+                        share specific flavors or images.</para>
                 </listitem></itemizedlist>
             <note><para>Previously, all services had an availability zone. Currently,
                     only the nova-compute service has its own
@@ -394,11 +391,11 @@
                     appear in their own internal availability zone
                     (CONF.internal_service_availability_zone): <itemizedlist>
                         <listitem>
-                            <para>nova host-list (os-hosts) </para>
+                            <para>nova host-list (os-hosts)</para>
                         </listitem>
                         <listitem>
                             <para>euca-describe-availability-zones
-                                verbose </para>
+                                verbose</para>
                         </listitem>
                         <listitem>
                             <para>nova-manage service list</para>
@@ -408,7 +405,7 @@
                     (non-verbose).</para>
                 <para>CONF.node_availability_zone has been renamed to
                     CONF.default_availability_zone and is only used by
-                    the nova-api and nova-scheduler services. </para>
+                    the nova-api and nova-scheduler services.</para>
                 <para>CONF.node_availability_zone still works but is
                     deprecated.</para></note>
         </section>

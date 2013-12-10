@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -32,10 +30,10 @@
             difficulty, one good initial sanity check is to make sure
             that your interfaces are up. For example:</para>
         <programlisting>$ ip a | grep state
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN 
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN
 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
 3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master br100 state UP qlen 1000
-4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN 
+4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
 6: br100: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP</programlisting>
         <para>You can safely ignore the state of virbr0, which is a
             default bridge created by libvirt and not used by
@@ -58,7 +56,7 @@
             <listitem>
                 <para>The instance generates a packet and places it on
                     the virtual NIC inside the instance, such as,
-                    eth0. </para>
+                    eth0.</para>
             </listitem>
             <listitem>
                 <para>The packet transfers to the virtual NIC of the
@@ -72,9 +70,9 @@
                     bridge on the compute node, such as,
                         <code>br100.</code>
                 </para>
-                <para> If you run FlatDHCPManager, one bridge is on
+                <para>If you run FlatDHCPManager, one bridge is on
                     the compute node. If you run VlanManager, one
-                    bridge exists for each VLAN. </para>
+                    bridge exists for each VLAN.</para>
                 <para>To see which bridge the packet will use, run the
                     command:
                     <programlisting><prompt>$</prompt> brctl show</programlisting>
@@ -160,23 +158,23 @@
             addresses:</para>
         <remark>DWC: Check formatting of the following:</remark>
         <programlisting>
-			  Instance  
-			  10.0.2.24 
-			  203.0.113.30
-			  Compute Node  
-			  10.0.0.42 
-			  203.0.113.34
-			  External Server 
-			  1.2.3.4
-			</programlisting>
+                          Instance
+                          10.0.2.24
+                          203.0.113.30
+                          Compute Node
+                          10.0.0.42
+                          203.0.113.34
+                          External Server
+                          1.2.3.4
+                        </programlisting>
         <para>Next, open a new shell to the instance and then ping the
             external host where tcpdump is running. If the network
             path to the external server and back is fully functional,
             you see something like the following:</para>
         <para>On the external server:</para>
         <programlisting>12:51:42.020227 IP (tos 0x0, ttl 61, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
-    203.0.113.30 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64 
-12:51:42.020255 IP (tos 0x0, ttl 64, id 8137, offset 0, flags [none], proto ICMP (1), length 84) 
+    203.0.113.30 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
+12:51:42.020255 IP (tos 0x0, ttl 64, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
     1.2.3.4 &gt; 203.0.113.30: ICMP echo reply, id 24895, seq 1, length 64</programlisting>
         <para>On the Compute Node:</para>
         <programlisting>12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
@@ -221,19 +219,19 @@
             networking information:</para>
         <itemizedlist>
             <listitem>
-                <para> fixed_ips: contains each possible IP address
+                <para>fixed_ips: contains each possible IP address
                     for the subnet(s) added to Nova. This table is
                     related to the instances table by way of the
                     fixed_ips.instance_uuid column.</para>
             </listitem>
             <listitem>
-                <para> floating_ips: contains each floating IP address
+                <para>floating_ips: contains each floating IP address
                     that was added to nova. This table is related to
                     the fixed_ips table by way of the
                     floating_ips.fixed_ip_id column.</para>
             </listitem>
             <listitem>
-                <para> instances: not entirely network specific, but
+                <para>instances: not entirely network specific, but
                     it contains information about the instance that is
                     utilizing the fixed_ip and optional
                     floating_ip.</para>
@@ -307,12 +305,12 @@ wget: can't connect to remote host (169.254.169.254): Network is unreachable</pr
         <para>Several minutes after nova-network is restarted, you
             should see new dnsmasq processes running:</para>
         <programlisting># ps aux | grep dnsmasq
-nobody 3735 0.0 0.0 27540 1044 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file= 
-    --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1 
+nobody 3735 0.0 0.0 27540 1044 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
+    --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
     --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
     --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro
-root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file= 
-     --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1 
+root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
+     --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
      --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
      --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</programlisting>
         <para>If your instances are still not able to obtain IP
@@ -323,9 +321,9 @@ root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bi
             see the dnsmasq output. If dnsmasq is seeing the request
             properly and handing out an IP, the output looks
             like:</para>
-        <programlisting>Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPDISCOVER(br100) fa:16:3e:56:0b:6f 
-Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPOFFER(br100) 192.168.100.3 fa:16:3e:56:0b:6f 
-Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPREQUEST(br100) 192.168.100.3 fa:16:3e:56:0b:6f 
+        <programlisting>Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPDISCOVER(br100) fa:16:3e:56:0b:6f
+Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPOFFER(br100) 192.168.100.3 fa:16:3e:56:0b:6f
+Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPREQUEST(br100) 192.168.100.3 fa:16:3e:56:0b:6f
 Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPACK(br100) 192.168.100.3 fa:16:3e:56:0b:6f test</programlisting>
         <para>If you do not see the DHCPDISCOVER, a problem exists
             with the packet getting from the instance to the machine
@@ -352,11 +350,11 @@ Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPACK(br100) 192.168.100.3 fa:16:3e
  --dhcp-lease-max=253 --dhcp-no-override
 nobody 2438 0.0 0.0 27540 1096 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
  --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
- --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256 
+ --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
  --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro
-root 2439 0.0 0.0 27512 472 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file= 
- --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1 
- --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256 
+root 2439 0.0 0.0 27512 472 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
+ --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
+ --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
  --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</programlisting>
         <para>If the problem does not seem to be related to dnsmasq
             itself, at this point, use tcpdump on the interfaces to
@@ -387,8 +385,8 @@ root 2439 0.0 0.0 27512 472 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order --bi
         <para>When debugging DNS issues, start by making sure the host
             where the dnsmasq process for that instance runs is able
             to correctly resolve. If the host cannot resolve, then the
-            instances won't be able either.  </para>
-        <para>A quick way to check if DNS is working is to 
+            instances won't be able either.</para>
+        <para>A quick way to check if DNS is working is to
             resolve a hostname inside your instance using the
                 <code>host</code> command. If DNS is working, you
             should see:</para>

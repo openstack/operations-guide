@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-        
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -176,10 +174,10 @@
             <tbody>
                 <tr valign="top">
                     <td><para>Flat</para></td>
-                    <td><para>Extremely simple.</para><para> No DHCP
+                    <td><para>Extremely simple.</para><para>No DHCP
                             broadcasts.</para></td>
                     <td><para>Requires file injection into the
-                            instance.</para><para> Limited to certain
+                            instance.</para><para>Limited to certain
                             distributions of Linux.</para><para>
                             Difficult to configure and is not
                             recommended.</para></td>
@@ -187,7 +185,7 @@
                 <tr valign="top">
                     <td><para>FlatDHCP</para></td>
                     <td><para>Relatively simple to setup.</para><para>
-                            Standard networking.</para><para> Works
+                            Standard networking.</para><para>Works
                             with all operating systems.</para></td>
                     <td><para>Requires its own DHCP broadcast
                             domain.</para></td>
@@ -198,24 +196,24 @@
                             VLANs.</para></td>
                     <td><para>More complex to set up.</para><para>
                             Requires its own DHCP broadcast
-                            domain.</para><para> Requires many VLANs
+                            domain.</para><para>Requires many VLANs
                             to be trunked onto a single
-                            port.</para><para> Standard VLAN number
-                            limitation.</para><para> Switches must
+                            port.</para><para>Standard VLAN number
+                            limitation.</para><para>Switches must
                             support 802.1q VLAN tagging.</para></td>
                 </tr>
                 <tr valign="top">
                     <td><para>FlatDHCP Multi-host HA</para></td>
                     <td><para>Networking failure is isolated to the
                             VMs running on the hypervisor
-                            affected.</para><para> DHCP traffic can be
+                            affected.</para><para>DHCP traffic can be
                             isolated within an individual
-                            host.</para><para> Network traffic is
+                            host.</para><para>Network traffic is
                             distributed to the compute
                         nodes.</para></td>
-                    <td><para>More complex to set up.</para><para> By
+                    <td><para>More complex to set up.</para><para>By
                             default, compute nodes need public IP
-                            addresses.</para><para> Options must be
+                            addresses.</para><para>Options must be
                             carefully configured for live migration to
                             work with networking.</para></td>
                 </tr>

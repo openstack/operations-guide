@@ -692,7 +692,7 @@
             purposefully show and administrative user where this value
             is "admin".</para><important><para>The "admin" is global not per project so granting a user the
                 admin role in any project gives the administrative
-                rights across the whole cloud. </para></important>
+                rights across the whole cloud.</para></important>
         <para>Typical use is to only create administrative users in a
             single project, by convention the "admin" project which is
             created by default during cloud setup. If your

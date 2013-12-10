@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-        
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -33,7 +31,7 @@
             of from the Ubuntu or Fedora packages. The clients are
             under heavy development and it is very likely at any given
             time the version of the packages distributed by your
-            operating system vendor are out of date. </para>
+            operating system vendor are out of date.</para>
         <para>The "pip" utility is used to manage package installation
             from the PyPI archive and is available in the "python-pip"
             package in most Linux distributions. Each OpenStack
@@ -153,25 +151,25 @@
                 a file called <code>openrc.sh</code>, which looks
                 something like this:</para>
             <programlisting><?db-font-size 60%?>#!/bin/bash
-      
+
 # With the addition of Keystone, to use an openstack cloud you should
 # authenticate against keystone, which returns a **Token** and **Service
 # Catalog**. The catalog contains the endpoint for all services the
 # user/tenant has access to - including nova, glance, keystone, swift.
 #
-# *NOTE*: Using the 2.0 *auth api* does not mean that compute api is 2.0. 
+# *NOTE*: Using the 2.0 *auth api* does not mean that compute api is 2.0.
 # We use the 1.1 *compute api*
 export OS_AUTH_URL=http://203.0.113.10:5000/v2.0
-      
+
 # With the addition of Keystone we have standardized on the term **tenant**
 # as the entity that owns the resources.
 export OS_TENANT_ID=98333aba48e756fa8f629c83a818ad57
 export OS_TENANT_NAME="test-project"
-      
+
 # In addition to the owning entity (tenant), openstack stores the entity
 # performing the action as the **user**.
 export OS_USERNAME=test-user
-      
+
 # With Keystone you pass the keystone password.
 echo "Please enter your OpenStack Password: "
 read -s OS_PASSWORD_INPUT
@@ -202,7 +200,7 @@ export OS_PASSWORD=$OS_PASSWORD_INPUT</programlisting>
                 and pk.pem. The <code>ec2rc.sh</code> is similar to
                 this:</para>
             <programlisting><?db-font-size 50%?>#!/bin/bash
-      
+
 NOVARC=$(readlink -f "${BASH_SOURCE:-${0}}" 2&gt;/dev/null) ||\
 NOVARC=$(python -c 'import os,sys; \
 print os.path.abspath(os.path.realpath(sys.argv[1]))' "${BASH_SOURCE:-${0}}")
@@ -214,7 +212,7 @@ export EC2_USER_ID=42 # nova does not use user id, but bundling requires it
 export EC2_PRIVATE_KEY=${NOVA_KEY_DIR}/pk.pem
 export EC2_CERT=${NOVA_KEY_DIR}/cert.pem
 export NOVA_CERT=${NOVA_KEY_DIR}/cacert.pem
-export EUCALYPTUS_CERT=${NOVA_CERT} # euca-bundle-image seems to require this 
+export EUCALYPTUS_CERT=${NOVA_CERT} # euca-bundle-image seems to require this
 
 alias ec2-bundle-image="ec2-bundle-image --cert $EC2_CERT --privatekey \
 $EC2_PRIVATE_KEY --user 42 --ec2cert $NOVA_CERT"
@@ -243,7 +241,7 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
                     >bug report</link>
                 (https://bugs.launchpad.net/python-novaclient/+bug/1020238)
                 which has been open, closed as invalid, and reopened
-                through a few cycles. </para>
+                through a few cycles.</para>
             <para>The issue is that under some conditions the command
                 line tools try to use a Python keyring as a credential
                 cache and, under a subset of those conditions, another
@@ -277,7 +275,7 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
 
                 <para>The first thing you must do is authenticate with
                     the cloud using your credentials to get an
-                        <glossterm>authentication token</glossterm>. </para>
+                        <glossterm>authentication token</glossterm>.</para>
                 <para>Your credentials are a combination of username,
                     password, and tenant (project). You can extract
                     these values from the <code>openrc.sh</code>
@@ -409,7 +407,7 @@ cloud.example.com nova</programlisting>
 +-----+----------+----------+----------------------------+</programlisting>
             <para>The output above shows that there are five services
                 configured.</para>
-            <para>To see the endpoint of each service, run: </para>
+            <para>To see the endpoint of each service, run:</para>
             <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone endpoint-list</programlisting>
             <programlisting><?db-font-size 55%?>---+------------------------------------------+--
    |                publicurl                 |
@@ -570,7 +568,7 @@ None                             1.2.3.5 48a415e7-6f07-4d33-ad00-814e60b010ff no
             <para>Sometimes a user and a group have a one-to-one
                 mapping. This happens for standard system accounts,
                 such as cinder, glance, nova, and swift, or when only
-                one user is ever part of a group. </para>
+                one user is ever part of a group.</para>
         </note>
     </section>
     <section xml:id="running_instances">

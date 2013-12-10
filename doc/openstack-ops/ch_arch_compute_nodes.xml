@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-      
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -33,7 +31,7 @@
             depends upon your use case. We recommend you do
             performance testing with your local workload with both
             hyper-threading on and off to determine what is more
-            appropriate in your case. </para>
+            appropriate in your case.</para>
     </section>
     <?hard-pagebreak?>
     <section xml:id="hypervisor_choice">
@@ -62,7 +60,7 @@
             hypervisor is your current usage or experience. Aside from
             that, there are practical concerns to do with feature
             parity, documentation, and the level of community
-            experience. </para>
+            experience.</para>
         <para>For example, KVM is the most widely adopted hypervisor
             in the OpenStack community. Besides KVM, more deployments
             exist running Xen, LXC, VMWare and Hyper-V than the others
@@ -93,7 +91,7 @@
             instantiated instance runs. There are three main
             approaches to providing this temporary-style storage, and
             it is important to understand the implications of the
-            choice. </para>
+            choice.</para>
         <para>They are:</para>
         <itemizedlist role="compact">
             <listitem>
@@ -147,7 +145,7 @@
                 long as you don't have any instances currently running
                 on a compute host, you can take it offline or wipe it
                 completely without having any effect on the rest of
-                your cloud. </para>
+                your cloud.</para>
             <para>However, if you are more restricted in the number of
                 physical hosts you have available for creating your
                 cloud and you want to be able to dedicate as many of
@@ -198,7 +196,7 @@
                 distributed file system ties the disks from each
                 compute node into a single mount. The main advantage
                 of this option is that it scales to external storage
-                when you require additional storage. </para>
+                when you require additional storage.</para>
             <para>However, this option has several downsides:</para>
             <itemizedlist role="compact">
                 <listitem>
@@ -271,7 +269,7 @@
                 ability to seamlessly move instances from one physical
                 host to another, a necessity for performing upgrades
                 that require reboots of the compute hosts, but only
-                works well with shared storage. </para>
+                works well with shared storage.</para>
             <para>Live migration can be also done with non-shared storage, using a feature known as
                     <emphasis>KVM live block migration</emphasis>. While an earlier implementation
                 of block-based migration in KVM and QEMU was considered unreliable, there is a
@@ -283,7 +281,7 @@
             <title>Choice of File System</title>
             <para>If you want to support shared storage live
                 migration, you'll need to configure a distributed file
-                system. </para>
+                system.</para>
             <para>Possible options include:</para>
             <itemizedlist role="compact">
                 <listitem>
@@ -330,7 +328,7 @@
             that the scheduler allocates instances to a physical node
             as long as the total amount of RAM associated with the
             instances is less than 1.5 times the amount of RAM
-            available on the physical node. </para>
+            available on the physical node.</para>
         <para>For example, if a physical node has 48 GB of RAM, the
             scheduler allocates instances to that node until the sum
             of the RAM associated with the instances reaches 72 GB
@@ -344,7 +342,7 @@
         <para>Logging is detailed more fully in <xref
                 linkend="logging"/>. However it is an important design
             consideration to take into account before commencing
-            operations of your cloud. </para>
+            operations of your cloud.</para>
         <para>OpenStack produces a great deal of useful logging
             information, however, in order for it to be useful for
             operations purposes you should consider having a central

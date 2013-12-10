@@ -5,8 +5,6 @@
         <!ENTITY mdash  "&#x2014;">
         <!ENTITY hellip "&#x2026;">
         <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -596,7 +594,7 @@
     <section xml:id="contribute_to_docs">
         <title>How to Contribute to the Documentation</title>
         <para>OpenStack documentation efforts encompass operator and
-            administrator docs, API docs, and user docs. </para>
+            administrator docs, API docs, and user docs.</para>
         <para>The genesis of this book was an in-person event, but now
             that the book is in your hands we want you to contribute
             to it. OpenStack documentation follows the coding

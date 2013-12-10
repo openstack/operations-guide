@@ -5,8 +5,6 @@
         <!ENTITY mdash  "&#x2014;">
         <!ENTITY hellip "&#x2026;">
         <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -128,7 +126,7 @@
             framework conventions.</para>
         <para>The first step in finding the source of an error is
             typically to search for a CRITICAL, TRACE, or ERROR
-            message in the log starting at the bottom of the log file. </para>
+            message in the log starting at the bottom of the log file.</para>
         <para>An example of a CRITICAL log message, with the
             corresponding TRACE (Python traceback) immediately
             following:</para>
@@ -571,7 +569,7 @@ root 24121 0.0 0.0 11688 912 pts/5 S+ 13:07 0:00 grep nova-api</programlisting>
 +-----------------------------------+------------+------------+---------------+</programlisting>
             <para>The above was generated using a custom script which
                 can be found on GitHub
-                (https://github.com/cybera/novac/blob/dev/libexec/novac-quota-report). </para>
+                (https://github.com/cybera/novac/blob/dev/libexec/novac-quota-report).</para>
             <note>
                 <para>This script is specific to a certain OpenStack
                     installation and must be modified to fit your

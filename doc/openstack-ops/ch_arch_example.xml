@@ -343,7 +343,7 @@
                     >OpenStack Install and Deploy Manual - Ubuntu</link>
                 (http://docs.openstack.org/havana/install-guide/install/apt/),
                 which contains a step-by-step guide on how to manually install
-                the OpenStack packages and dependencies on your cloud. </para>
+                the OpenStack packages and dependencies on your cloud.</para>
             <para>While it is important for an operator to be familiar with
                 the steps involved in deploying OpenStack, we also strongly
                 encourage you to evaluate configuration management tools such

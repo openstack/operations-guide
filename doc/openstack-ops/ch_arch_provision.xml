@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -17,7 +15,7 @@
     <para>A critical part of a cloud's scalability is the amount of
         effort that it takes to run your cloud. To minimize the
         operational cost of running your cloud, set up and use an
-        automated deployment and configuration infrastructure. </para>
+        automated deployment and configuration infrastructure.</para>
     <para>This infrastructure includes systems to automatically
         install the operating system's initial configuration and later
         coordinate the configuration of all services automatically and
@@ -162,7 +160,7 @@
             management tools ensures that components of the cloud
             systems are in particular states, in addition to
             simplifying deployment, and configuration change
-            propagation. </para>
+            propagation.</para>
         <para>These tools also make it possible to test and roll back
             changes, as they are fully repeatable. Conveniently, a
             large body of work has been done by the OpenStack
@@ -181,7 +179,7 @@
             to the servers running the cloud, and many don't
             necessarily enjoy visiting the data center. OpenStack
             should be entirely remotely configurable, but sometimes
-            not everything goes according to plan. </para>
+            not everything goes according to plan.</para>
         <para>In this instance, having an out-of-band access into
             nodes running OpenStack components, is a boon. The IPMI
             protocol is the de-facto standard here, and acquiring

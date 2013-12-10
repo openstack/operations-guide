@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-        
-       
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -180,7 +178,7 @@
                 command to start each instance:</para>
             <programlisting><?db-font-size 65%?># nova reboot &lt;uuid&gt;</programlisting>
             <note>
-                <para> Any time an instance shuts down unexpectedly,
+                <para>Any time an instance shuts down unexpectedly,
                     it might have problems on boot. For example, the
                     instance might require an <code>fsck</code> on the
                     root partition. If this happens, the user can use
@@ -261,9 +259,9 @@
 Id Name                 State
 ----------------------------------
 1 instance-00000981    running
-2 instance-000009f5    running 
+2 instance-000009f5    running
 30 instance-0000274a    running
-                  
+
 root@compute-node:~# virsh suspend 30
 Domain 30 suspended</programlisting>
                 </listitem>
@@ -276,7 +274,7 @@ total 33M
 -rw-r--r-- 1 libvirt-qemu kvm   33M Oct 15 22:06 disk
 -rw-r--r-- 1 libvirt-qemu kvm  384K Oct 15 22:06 disk.local
 -rw-rw-r-- 1 nova         nova 1.7K Oct 15 11:30 libvirt.xml
-root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -c /dev/nbd0 `pwd`/disk             </programlisting>
+root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -c /dev/nbd0 `pwd`/disk</programlisting>
                 </listitem>
                 <listitem>
                     <para>Mount the qemu-nbd device.</para>
@@ -336,7 +334,7 @@ Id Name                 State
 1 instance-00000981    running
 2 instance-000009f5    running
 30 instance-0000274a    paused
-                  
+
 root@compute-node:/var/lib/nova/instances/instance-0000274a# virsh resume 30
 Domain 30 resumed</programlisting>
                 </listitem>
@@ -348,9 +346,9 @@ Domain 30 resumed</programlisting>
             <para>If the affected instances also had attached volumes,
                 first generate a list of instance and volume
                 UUIDs:</para>
-            <programlisting><?db-font-size 65%?>mysql&gt; select nova.instances.uuid as instance_uuid, cinder.volumes.id as volume_uuid, cinder.volumes.status, 
+            <programlisting><?db-font-size 65%?>mysql&gt; select nova.instances.uuid as instance_uuid, cinder.volumes.id as volume_uuid, cinder.volumes.status,
 cinder.volumes.attach_status, cinder.volumes.mountpoint, cinder.volumes.display_name from cinder.volumes
-inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid 
+inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
  where nova.instances.host = 'c01.example.com';</programlisting>
             <para>You should see a result like the following:</para>
             <programlisting><?db-font-size 55%?>
@@ -460,13 +458,13 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
 # swift-ring-builder object.builder remove &lt;ip address of storage node&gt;
 # swift-ring-builder account.builder rebalance
 # swift-ring-builder container.builder rebalance
-# swift-ring-builder object.builder rebalance   </programlisting>
+# swift-ring-builder object.builder rebalance</programlisting>
             <para>Next, redistribute the ring files to the other
                 nodes:</para>
             <programlisting><?db-font-size 65%?># for i in s01.example.com s02.example.com s03.example.com
 &gt; do
 &gt; scp *.ring.gz $i:/etc/swift
-&gt; done    </programlisting>
+&gt; done</programlisting>
             <para>These actions effectively take the storage node out
                 of the storage cluster.</para>
             <para>When the node is able to rejoin the cluster, just
@@ -751,13 +749,13 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 each OpenStack component accesses its corresponding
                 database. Look for either <code>sql_connection</code>
                 or simply <code>connection</code>:</para>
-            <programlisting><?db-font-size 65%?># grep -hE "connection ?=" /etc/nova/nova.conf /etc/glance/glance-*.conf 
+            <programlisting><?db-font-size 65%?># grep -hE "connection ?=" /etc/nova/nova.conf /etc/glance/glance-*.conf
 /etc/cinder/cinder.conf /etc/keystone/keystone.conf
-	sql_connection = mysql://nova:nova@cloud.alberta.sandbox.cybera.ca/nova
-	sql_connection = mysql://glance:password@cloud.example.com/glance 
-	sql_connection = mysql://glance:password@cloud.example.com/glance 
-    sql_connection=mysql://cinder:password@cloud.example.com/cinder 
-	connection = mysql://keystone_admin:password@cloud.example.com/keystone</programlisting>
+        sql_connection = mysql://nova:nova@cloud.alberta.sandbox.cybera.ca/nova
+        sql_connection = mysql://glance:password@cloud.example.com/glance
+        sql_connection = mysql://glance:password@cloud.example.com/glance
+    sql_connection=mysql://cinder:password@cloud.example.com/cinder
+        connection = mysql://keystone_admin:password@cloud.example.com/keystone</programlisting>
             <para>The connection strings take this format:</para>
             <programlisting><?db-font-size 65%?>mysql:// &lt;username&gt; : &lt;password&gt; @ &lt;hostname&gt; / &lt;database name&gt;</programlisting>
         </section>
@@ -957,7 +955,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 that a certain instance was unable to be started. This
                 ended up being a red herring because the instance was
                 simply the first instance in alphabetical order, so it
-                was the first instance that nova-compute would touch. </para>
+                was the first instance that nova-compute would touch.</para>
             <para>Further troubleshooting showed that libvirt was not
                 running at all. This made more sense. If libvirt
                 wasn't running, then no instance could be virtualized
@@ -1081,7 +1079,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
         <section xml:id="uninstalling">
             <?dbhtml stop-chunking?>
             <title>Uninstalling</title>
-            <para>While we'd always recommend using your automated 
+            <para>While we'd always recommend using your automated
             deployment system to re-install systems from scratch,
             sometimes you do need to remove OpenStack from a system
             the hard way. Here's how:</para>
@@ -1092,10 +1090,10 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
             </itemizedlist>
             <para>These steps depend on your underlying distribution,
             but in general you should be looking for 'purge' commands
-            in your package manager, like <literal> aptitude purge ~c $package</literal>.
+            in your package manager, like <literal>aptitude purge ~c $package</literal>.
             Following this, you can look for orphaned files in the
             directories referenced throughout this guide. For uninstalling
             the database properly, refer to the manual appropriate for
-            the product in use. </para>
-        </section> 
+            the product in use.</para>
+        </section>
 </chapter>
