@@ -248,19 +248,19 @@
 MYSQL_PASSWORD=devstack
 RABBIT_PASSWORD=devstack
 SERVICE_PASSWORD=devstack
-SERVICE_TOKEN=devstack 
-            
+SERVICE_TOKEN=devstack
+
 SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5
-SWIFT_REPLICAS=1 
-            
+SWIFT_REPLICAS=1
+
 # Uncomment the BRANCHes below to use stable versions
-            
-            
+
+
 # unified auth system (manages accounts/tokens)
 KEYSTONE_BRANCH=stable/folsom
 # object storage
 SWIFT_BRANCH=stable/folsom
-            
+
 disable_all_services
 enable_service key swift mysql</programlisting>
         <para>
@@ -271,27 +271,27 @@ enable_service key swift mysql</programlisting>
 MYSQL_PASSWORD=devstack
 RABBIT_PASSWORD=devstack
 SERVICE_PASSWORD=devstack
-SERVICE_TOKEN=devstack 
-            
+SERVICE_TOKEN=devstack
+
 FLAT_INTERFACE=br100
 PUBLIC_INTERFACE=eth0
-            
-VOLUME_BACKING_FILE_SIZE=20480M 
-            
-# For stable versions, look for branches named stable/[milestone]. 
-            
+
+VOLUME_BACKING_FILE_SIZE=20480M
+
+# For stable versions, look for branches named stable/[milestone].
+
 # compute service
 NOVA_BRANCH=stable/folsom
-            
+
 # volume service
 CINDER_BRANCH=stable/folsom
-            
+
 # image catalog service
 GLANCE_BRANCH=stable/folsom
-            
+
 # unified auth system (manages accounts/tokens)
 KEYSTONE_BRANCH=stable/folsom
-            
+
 # django powered web control panel for openstack
 HORIZON_BRANCH=stable/folsom</programlisting>
     </section>
@@ -379,7 +379,7 @@ HORIZON_BRANCH=stable/folsom</programlisting>
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-                     
+
 #    http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
@@ -389,11 +389,11 @@ HORIZON_BRANCH=stable/folsom</programlisting>
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import socket
- 
+
 from swift.common.utils import get_logger
 from swift.proxy.controllers.base import get_container_info
 from swift.common.swob import Request, Response
- 
+
 class IPWhitelistMiddleware(object):
     """
     IP Whitelist Middleware

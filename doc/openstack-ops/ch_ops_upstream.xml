@@ -30,7 +30,7 @@
             documentation, found on http://docs.openstack.org.</para>
         <para>You can get questions answered on the ask.openstack.org site.</para>
         <para>
-            <link 
+            <link
                 xlink:href="https://wiki.openstack.org/wiki/Mailing_Lists"
                 >Mailing
             Lists</link> (https://wiki.openstack.org/wiki/Mailing_Lists)
@@ -40,7 +40,7 @@
         <itemizedlist>
             <listitem>
                 <para>
-                    <link 
+                    <link
                         xlink:href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack"
                         >General
                         list</link>: <code>openstack@lists.openstack.org</code>.
@@ -50,7 +50,7 @@
             </listitem>
             <listitem>
                 <para>
-                    <link 
+                    <link
                         xlink:href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-operators"
                         >Operators
                         list</link>: <code>openstack-operators@lists.openstack.org.</code>
@@ -61,7 +61,7 @@
             </listitem>
             <listitem>
                 <para>
-                    <link 
+                    <link
                         xlink:href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev"
                         >Development
                         list</link>: <code>openstack-dev@lists.openstack.org</code>.
@@ -77,7 +77,7 @@
             wiki page where you can search through the
             discussions.</para>
         <para>
-            <link 
+            <link
                 xlink:href="https://wiki.openstack.org/wiki/IRC"
                 >Multiple IRC
             channels</link> (https://wiki.openstack.org/wiki/IRC) are
@@ -94,7 +94,6 @@
             essential to learn how to easily submit a bug
             report.</para>
         <para>All OpenStack projects use <link
-                
                 xlink:href="http://launchpad.net/"
             >Launchpad</link> for bug tracking. You'll need to create
             an account on Launchpad before you can submit a bug
@@ -108,96 +107,81 @@
         <itemizedlist>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/nova/+filebug"
                         >Nova</link> (https://bugs.launchpad.net/nova/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/python-novaclient/+filebug"
                         >python-novaclient</link> (https://bugs.launchpad.net/python-novaclient/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/swift/+filebug"
                         >Swift</link> (https://bugs.launchpad.net/swift/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/python-swiftclient/+filebug"
                         >python-swiftclient</link>
                     (https://bugs.launchpad.net/python-swiftclient/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/glance/+filebug"
                         >Glance</link> (https://bugs.launchpad.net/glance/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/python-glanceclient/+filebug"
                         >python-glanceclient</link>
                     (https://bugs.launchpad.net/python-glanceclient/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/keystone/+filebug"
                         >Keystone</link> (https://bugs.launchpad.net/keystone/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/python-keystoneclient/+filebug"
                         >python-keystoneclient</link>
                     (https://bugs.launchpad.net/python-keystoneclient/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/neutron/+filebug"
                         >Quantum</link> (https://bugs.launchpad.net/neutron/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/python-neutronclient/+filebug"
                         >python-neutronclient</link>
                     (https://bugs.launchpad.net/python-neutronclient/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/cinder/+filebug"
                         >Cinder</link> (https://bugs.launchpad.net/cinder/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/python-cinderclient/+filebug"
                         >python-cinderclient</link>
                     (https://bugs.launchpad.net/python-cinderclient/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
-                        
                         xlink:href="https://bugs.launchpad.net/horizon/+filebug"
                         >Horizon</link> (https://bugs.launchpad.net/horizon/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug with the <link
-                        
                         xlink:href="http://bugs.launchpad.net/openstack-manuals/+filebug"
                         >documentation</link> (http://bugs.launchpad.net/openstack-manuals/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug with the <link
-                        
                         xlink:href="http://bugs.launchpad.net/openstack-api-site/+filebug"
                         >API
                     documentation</link> (http://bugs.launchpad.net/openstack-api-site/+filebug)</para>
@@ -353,7 +337,6 @@
                     <para>Status: <emphasis>Fix released</emphasis>
                     </para>
                 </listitem>
-                
             </itemizedlist>
         </section>
     </section>
@@ -361,7 +344,7 @@
         <title>Join the OpenStack Community</title>
         <para>Since you've made it this far in the book, you should
             consider becoming an official individual member of the
-            community and <link 
+            community and <link
                 xlink:href="https://www.openstack.org/join/">Join The
                 OpenStack Foundation</link>
             (https://www.openstack.org/join/). The OpenStack
@@ -413,29 +396,26 @@
             ideas and propose a session to the design summit. If the
             design summit has already passed, you may also create a
             blueprint directly. Read this <link
-                
                 xlink:href="http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/"
                 >blog post about how to work with
             blueprints</link> (http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/)
             for a developer intern's perspective, Victoria
             Martínez.</para>
         <para>The roadmap for the next release as it is developed can
-            be seen at <link 
+            be seen at <link
                 xlink:href="http://status.openstack.org/release/"
                 >Releases</link>
             (http://status.openstack.org/release/).</para>
         <para>To determine the potential features going in to future
             releases, or to look at features implemented previously,
             take a look at the existing blueprints such as <link
-                
                 xlink:href="https://blueprints.launchpad.net/nova"
                 >OpenStack Compute (nova) Blueprints</link>
             (https://blueprints.launchpad.net/nova), <link
-                
                 xlink:href="https://blueprints.launchpad.net/keystone"
                 >OpenStack Identity (keystone) Blueprints</link>
             (https://blueprints.launchpad.net/keystone) and release
-            notes. 
+            notes.
         </para>
         <?hard-pagebreak?>
         <para>Release notes are maintained on the OpenStack
@@ -453,7 +433,7 @@
                 <tr>
                     <td><para>Grizzly</para></td>
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/GrizzlyReleaseSchedule"
                                 >Under development, Release
                                 schedule</link>
@@ -466,7 +446,7 @@
                     <td rowspan="4"><para>Current stable release,
                             security-supported</para></td>
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Folsom"
                                 >2012.2</link>
                         </para></td>
@@ -476,7 +456,7 @@
 
 
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.1"
                                 >2012.2.1</link>
                         </para></td>
@@ -485,7 +465,7 @@
                 <tr>
 
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.2"
                                 >2012.2.2</link>
                         </para></td>
@@ -494,7 +474,7 @@
                 <tr>
 
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.3"
                                 >2012.2.3</link>
                         </para></td>
@@ -505,7 +485,7 @@
                     <td rowspan="4"><para>Community-supported,
                             security-supported</para></td>
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Essex"
                                 >2012.1</link>
                         </para></td>
@@ -514,7 +494,7 @@
                 <tr>
 
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.1"
                                 >2012.1.1</link>
                         </para></td>
@@ -523,7 +503,7 @@
                 <tr>
 
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.2"
                                 >2012.1.2</link>
                         </para></td>
@@ -532,7 +512,7 @@
                 <tr>
 
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.3"
                                 >2012.1.3</link>
                         </para></td>
@@ -543,7 +523,7 @@
                     <td rowspan="2"
                         ><para>Community-supported</para></td>
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Diablo"
                                 >2011.3</link>
                         </para></td>
@@ -552,7 +532,7 @@
                 <tr>
 
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2011.3.1"
                                 >2011.3.1</link>
                         </para></td>
@@ -562,7 +542,7 @@
                     <td><para>Cactus</para></td>
                     <td><para>Deprecated</para></td>
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Cactus"
                                 >2011.2</link>
                         </para></td>
@@ -572,7 +552,7 @@
                     <td><para>Bexar</para></td>
                     <td><para>Deprecated</para></td>
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Bexar"
                                 >2011.1</link>
                         </para></td>
@@ -582,7 +562,7 @@
                     <td><para>Austin</para></td>
                     <td><para>Deprecated</para></td>
                     <td><para>
-                            <link 
+                            <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Austin"
                                 >2010.1</link>
                         </para></td>
@@ -601,29 +581,29 @@
             principles of iterative work, with bug logging,
             investigating, and fixing.</para>
         <para>Just like the code, the <link
-                
+
                 xlink:href="http://docs.openstack.org"
                 >docs.openstack.org</link> site is updated constantly
             using the Gerrit review system, with source stored in
-            GitHub in the <link 
+            GitHub in the <link
                 xlink:href="http://github.com/openstack/openstack-manuals/"
                 >openstack-manuals</link> (http://github.com/openstack/openstack-manuals/)
-            repository and the <link 
+            repository and the <link
                 xlink:href="http://github.com/openstack/api-site/"
                 >api-site</link> (http://github.com/openstack/api-site/)
             repository, in DocBook format.</para>
         <para>To review the documentation before it's published, go to
             the OpenStack Gerrit server at <link
-                
+
                 xlink:href="http://review.openstack.org"
                 >review.openstack.org</link> and search for <link
-                
+
                 xlink:href="https://review.openstack.org/#/q/status:open+project:openstack/openstack-manuals,n,z"
                 >project:openstack/openstack-manuals</link> or <link
-                
+
                 xlink:href="https://review.openstack.org/#/q/status:open+project:openstack/api-site,n,z"
                 >project:openstack/api-site</link>.</para>
-        <para>See the <link 
+        <para>See the <link
                 xlink:href="https://wiki.openstack.org/wiki/How_To_Contribute"
                 >How To
             Contribute</link> (https://wiki.openstack.org/wiki/How_To_Contribute)
@@ -681,19 +661,19 @@
                 <para>If the issue is extremely sensitive, send
                     an encrypted email to one of the Team's
                     members. Find their GPG keys at <link
-                        
+
                         xlink:href="http://www.openstack.org/projects/openstack-security/"
                         >OpenStack Security</link>
                     (http://www.openstack.org/projects/openstack-security/).</para>
             </listitem>
         </itemizedlist>
         <para>You can find the full list of security-oriented teams
-            you can join at <link 
+            you can join at <link
                 xlink:href="https://wiki.openstack.org/wiki/SecurityTeams"
                 >Security
             Teams</link> (http://wiki.openstack.org/SecurityTeams).
             The Vulnerability Management process is fully documented
-            at <link 
+            at <link
                 xlink:href="https://wiki.openstack.org/wiki/VulnerabilityManagement"
                 >Vulnerability
             Management</link> (https://wiki.openstack.org/wiki/VulnerabilityManagement).</para>
@@ -702,17 +682,17 @@
         <title>Finding Additional Information</title>
         <para>In addition to this book, there are many other sources
             of information about OpenStack. The <link
-                
+
                 xlink:href="http://www.openstack.org">OpenStack
                 website</link> (http://www.openstack.org) is a good
-            starting point, with <link 
+            starting point, with <link
                 xlink:href="http://docs.openstack.org">OpenStack
                 Docs</link> (http://docs.openstack.org) and <link
-                
+
                 xlink:href="http://api.openstack.org">OpenStack API
                 Docs</link> (http://api.openstack.org) providing
             technical documentation about OpenStack. The <link
-                
+
                 xlink:href="https://wiki.openstack.org">OpenStack
                 wiki</link> contains a lot of general information that
             cuts across the OpenStack projects including a list of
@@ -721,7 +701,7 @@
                 >recommended tools</link>
             (https://wiki.openstack.org/wiki/OperationsTools ).
             Finally, there are a number of blogs aggregated at <link
-                
+
                 xlink:href="http://planet.openstack.org">Planet
                 OpenStack</link> (http://planet.openstack.org).</para>
     </section>
