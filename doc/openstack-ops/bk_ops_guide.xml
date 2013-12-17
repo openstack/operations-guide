@@ -45,8 +45,21 @@
 				operating OpenStack clouds.</para>
 		</abstract>
 		<revhistory>
+			<!-- ... continue adding more revisions here as you change this
+				document using the markup shown below... -->
 			<revision>
-				<!-- ... continue adding more revisions here as you change this document using the markup shown below... -->
+				<date>2013-12-12</date>
+				<revdescription>
+					<itemizedlist spacing="compact">
+						<listitem>
+							<para>Additions to acknowledgements and preface to
+								situate this guide relative to other OpenStack
+								guides.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
+			<revision>
 				<date>2013-05-13</date>
 				<revdescription>
 					<itemizedlist spacing="compact">
@@ -55,7 +68,8 @@
 						</listitem>
 					</itemizedlist>
 				</revdescription>
-			</revision><revision>
+			</revision>
+			<revision>
 				<date>2013-04-02</date>
 				<revdescription>
 					<itemizedlist spacing="compact">
@@ -74,8 +88,6 @@
 							<para>Stopped chunking in HTML
 								output.</para>
 						</listitem>
-
-
 					</itemizedlist>
 				</revdescription>
 			</revision>

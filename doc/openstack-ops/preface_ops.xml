@@ -64,24 +64,139 @@
             great flexibility, but the number of options might be bewildering at
             first.</para>
     </section>
-    <section xml:id="who-this-book-is-for"><title>Who This Book Is For</title>
+    <section xml:id="who-this-book-is-for">
+        <title>Who This Book Is For</title>
         <para>This guide assumes that you are familiar with the Ubuntu
-            distribution of Linux, SQL databases, and virtualization. You
-            must be comfortable administering and configuring multiple
-            Linux machines for networking. You must install and maintain a
-            MySQL database, and occasionally run SQL queries against it.
-            </para>
+            distribution of Linux, SQL databases, and virtualization. You must
+            be comfortable administering and configuring multiple Linux machines
+            for networking. You must install and maintain a MySQL database, and
+            occasionally run SQL queries against it.</para>
         <para>One of the most complex aspects of an OpenStack cloud is the
             networking configuration. You should be familiar with concepts such
             as DHCP, Linux bridges, VLANs, and iptables. You must also have
             access to a network hardware expert who can configure the switches
             and routers required in your OpenStack cloud.</para>
-        <para>This book is for those of you starting to run OpenStack
-            clouds as well as those of you who were handed a running one and
-            want to keep it running well. Perhaps you're on a devops team,
-            perhaps you are a system administrator starting to dabble in the
-            cloud, or maybe you want to get on that OpenStack cloud team at your
-            company. This book is for all of you.</para></section>
+        <para>This book is for those of you starting to run OpenStack clouds as
+            well as those of you who were handed a running one and want to keep
+            it running well. Perhaps you're on a devops team, perhaps you are a
+            system administrator starting to dabble in the cloud, or maybe you
+            want to get on that OpenStack cloud team at your company. This book
+            is for all of you.</para>
+        <para>There are other books on the OpenStack documentation web site at
+                <link xlink:href="http://docs.openstack.org"
+                >docs.openstack.org</link> that can help you get the job
+            done.</para>
+        <variablelist>
+            <title>OpenStack Guides</title>
+            <varlistentry>
+                <term>OpenStack Installation Guides</term>
+                <listitem>
+                    <para>Describe a manual install process, as in, by hand, no
+                        automation, for multiple distributions based on packaging
+                        system:</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para><link
+                                    xlink:href="http://docs.openstack.org/havana/install-guide/install/apt-debian/content/"
+                                    >Installation Guide for Debian 7.0</link>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para><link
+                                    xlink:href="http://docs.openstack.org/havana/install-guide/install/zypper/content/"
+                                    >Installation Guide for openSUSE and SUSE
+                                    Linux Enterprise Server</link>
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para><link
+                                    xlink:href="http://docs.openstack.org/havana/install-guide/install/yum/content/"
+                                    >Installation Guide for Red Hat Enterprise
+                                    Linux, CentOS, and Fedora</link></para>
+                        </listitem>
+                        <listitem>
+                            <para><link
+                                    xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/"
+                                    >Installation Guide for Ubuntu 12.04 (LTS)
+                                    Server</link></para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link
+                        xlink:href="http://docs.openstack.org/havana/config-reference/content/"
+                        >OpenStack Configuration Reference</link>
+                </term>
+                <listitem>
+                    <para>Contains a reference listing of all configuration
+                        options for core and integrated OpenStack services by
+                        release version.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link
+                        xlink:href="http://docs.openstack.org/admin-guide-cloud/content/"
+                        >OpenStack Cloud Administrator Guide</link></term>
+                <listitem>
+                    <para>Contains how-to information for managing an OpenStack
+                        cloud as needed for your use cases, such as storage,
+                        computing, or software-defined-networking.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link
+                        xlink:href="http://docs.openstack.org/high-availability-guide/content/index.html"
+                        >OpenStack High Availability Guide</link>
+                </term>
+                <listitem>
+                    <para>Describes potential strategies for making your
+                        OpenStack services and related controllers and data
+                        stores highly available.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link xlink:href="http://docs.openstack.org/sec/"
+                        >OpenStack Security Guide</link></term>
+                <listitem>
+                    <para>Provide best practices and conceptual information
+                        about securing an OpenStack cloud.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link xlink:href="http://docs.openstack.org/image-guide/content/">Virtual Machine Image Guide</link></term>
+                <listitem>
+                    <para>Shows you how to obtain, create, and modify virtual
+                        machine images that are compatible with
+                        OpenStack.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link xlink:href="http://docs.openstack.org/user-guide/content/">OpenStack End User Guide</link></term>
+                <listitem>
+                    <para>Shows OpenStack end users how to create and manage
+                        resources in an OpenStack cloud with the OpenStack
+                        dashboard and OpenStack client commands.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link xlink:href="http://docs.openstack.org/user-guide-admin/content/">OpenStack Admin User Guide</link></term>
+                <listitem>
+                    <para>Shows OpenStack administrators how to create and
+                        manage resources in an OpenStack cloud with the
+                        OpenStack dashboard and OpenStack client
+                        commands.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><link xlink:href="http://docs.openstack.org/api/quick-start/content/">OpenStack API Quick Start</link></term>
+                <listitem>
+                    <para>A brief overview of how to send REST API requests to
+                        endpoints for OpenStack services.</para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
+    </section>
     <section xml:id="how-this-book-is-organized">
         <title>How This Book Is Organized</title>
         <para>This book is organized in two parts, the architecture decisions
