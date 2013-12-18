@@ -59,6 +59,17 @@
                                 </revdescription>
                         </revision>
                         <revision>
+                                <date>2013-12-18</date>
+                                <revdescription>
+                                         <itemizedlist spacing="compact">
+                                           <listitem>
+                                             <para>Adds additional explanation and detail to
+                                             Provisioning and Deployment.</para>
+                                           </listitem>
+                                         </itemizedlist>
+                                </revdescription>
+                        </revision>
+                        <revision>
                                 <date>2013-12-12</date>
                                 <revdescription>
                                    <itemizedlist spacing="compact">
@@ -128,7 +139,6 @@
                                 </revdescription>
                         </revision>
                         <revision>
-                                <!-- ... continue addding more revisions here as you change this document using the markup shown below... -->
                                 <date>2013-03-11</date>
                                 <revdescription>
                                    <itemizedlist spacing="compact">
@@ -140,6 +150,17 @@
                                 </revdescription>
                         </revision>
                 </revhistory>
+                <pubdate/>
+                <legalnotice role="cc-by">
+                        <annotation>
+                                <remark>Copyright details are filled in by the
+                                        template.</remark>
+                        </annotation>
+                </legalnotice>
+                <abstract>
+                        <para>This book provides information about designing and
+                                operating OpenStack clouds.</para>
+                </abstract>
         </info>
         <!-- front matter -->
         <xi:include href="acknowledgements.xml"/>
