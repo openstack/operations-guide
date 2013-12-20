@@ -332,6 +332,9 @@
             "global_http" which is clear and reasonably concise,
             encapsulating what is allowed and from where. From the
             command line:</para>
+
+        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova secgroup-create global_http "allow web traffic from the internet"</programlisting>
+
         <programlisting><?db-font-size 65%?>+-------------+-------------------------------------+
 | Name        | Description                         |
 +-------------+-------------------------------------+
