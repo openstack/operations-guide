@@ -242,11 +242,16 @@
     </section>
     <section xml:id="database">
         <title>Database</title>
-        <para>Most OpenStack Compute central services, and currently
-            also the nova-compute nodes, use the database for stateful
-            information. Loss of this ability leads to errors. As a
-            result, we recommend that you cluster your databases in
-            some way to make them failure tolerant.</para>
+        <para>OpenStack Compute uses a SQL database to store and
+            retrieve stateful information. MySQL is the popular
+            database choice in the OpenStack community.</para>
+        <para>Loss of the database leads to errors. As a result, we
+            recommend that you cluster your database to make it
+            failure tolerant. Configuring and maintaining a database
+            cluster is done outside of OpenStack and is determined by
+            the database software you choose to use in your cloud
+            environment. MySQL/Galera is a popular option for
+            MySQL-based databases.</para>
     </section>
     <section xml:id="message_queue">
         <title>Message Queue</title>
