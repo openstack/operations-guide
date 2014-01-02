@@ -312,19 +312,43 @@
             Compute uses the following ratios by default:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para>CPU allocation ratio: 16</para>
+                <para>CPU allocation ratio: 16:1</para>
             </listitem>
             <listitem>
-                <para>RAM allocation ratio: 1.5</para>
+                <para>RAM allocation ratio: 1.5:1</para>
             </listitem>
         </itemizedlist>
-        <para>The default CPU allocation ratio of 16 means that the
-            scheduler allocates up to 16 virtual cores on a node per
-            physical core. For example, if a physical node has 12
-            cores, the scheduler allocates up to 192 virtual cores to
-            instances (such as, 48 instances, in the case where each
-            instance has 4 virtual cores).</para>
-        <para>Similarly, the default RAM allocation ratio of 1.5 means
+        <para>The default CPU allocation ratio of 16:1 means that the
+            scheduler allocates up to 16 virtual cores per physical
+            core. For example, if a physical node has 12 cores, then
+            192 virtual cores would be available and with typical
+            flavours, of 4 virtual cores per instance, this would
+            provide 48 instances on a physical node.</para>
+        <para>The formula for the number of virtual instances on a
+            compute node is <emphasis>(OR*PC)/VC</emphasis>, where:
+        </para>
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>OR</emphasis></term>
+                <listitem>
+                    <para>CPU overcommit ratio (virtual cores per physical
+                        core).</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>PC</emphasis></term>
+                <listitem>
+                    <para>Number of physical cores.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>VC</emphasis></term>
+                <listitem>
+                    <para>Number of virtual cores per instance.</para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
+        <para>Similarly, the default RAM allocation ratio of 1.5:1 means
             that the scheduler allocates instances to a physical node
             as long as the total amount of RAM associated with the
             instances is less than 1.5 times the amount of RAM
