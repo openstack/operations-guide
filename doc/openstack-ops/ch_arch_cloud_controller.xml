@@ -11,34 +11,88 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="cloud_controller_design">
     <?dbhtml stop-chunking?>
-    <title>Cloud Controller Design</title>
-    <para>OpenStack is designed to be massively horizontally scalable,
-        which allows all services to be distributed widely. However,
-        to simplify this guide we have decided to discuss services of
-        a more central nature using the concept of a single
-            <emphasis>cloud controller</emphasis>.</para>
-    <para>For more details about the overall architecture, see the
-            <xref linkend="example_architecture"/>.</para>
-    <para>As described in this guide, the cloud controller is a single
-        node that hosts the databases, message queue service,
-        authentication and authorization service, image management
-        service, user dashboard, and <glossterm>API
-            endpoint</glossterm>s.</para>
-    <para>The cloud controller provides the central management system
-        for multi-node OpenStack deployments. Typically the cloud
-        controller manages authentication and sends messaging to all
-        the systems through a message queue.</para>
+    <title>Designing for Cloud Controllers and Cloud Management</title>
+    <para>OpenStack is designed to be massively horizontally scalable, which
+        allows all services to be distributed widely. However, to simplify this
+        guide we have decided to discuss services of a more central nature using
+        the concept of a <emphasis>cloud controller</emphasis>. A cloud
+        controller is just a conceptual simplification, and in the real world
+        you likely will design an architecture for your cloud controller that
+        enables high availability so the cloud controller tasks are spread out
+        across more than a single node. The cloud controller provides the
+        central management system for OpenStack deployments. Typically the cloud
+        controller manages authentication and sends messaging to all the systems
+        through a message queue.</para>
+    <para>For more details about an overall example architecture, see the <xref
+            linkend="example_architecture"/>.</para>
+    <para>For many deployments, the cloud controller is a single node, but for
+        high availability, you have considerations about the design to explore
+        further in this chapter. The concept of a cloud controller hosts these
+        necessary management services for the cloud:</para>
+    <itemizedlist>
+            <listitem>
+                <para>Databases (tracks current information about users and
+                    instances for example in a database, typically one database
+                    instance managed per service)</para>
+            </listitem>
+            <listitem>
+                <para>Message queue services (all AMQP - Advanced Message Queue
+                    Protocol - messages for services are received and sent
+                    according to the queue broker)</para>
+            </listitem>
+            <listitem>
+                <para>Authentication and authorization for identity management
+                    (indicates which users can do what actions on certain cloud
+                    resources, quota management is spread out among services
+                    however)</para>
+            </listitem>
+            <listitem>
+                <para>Image management services (stores and serves images with
+                    metadata on each, for launching in the cloud)</para>
+            </listitem>
+            <listitem>
+                <para>Scheduling services (indicates which resources to use
+                    first, for example, spreading out where instances are
+                    launched based on an algorithm)</para>
+            </listitem>
+            <listitem>
+                <para>User dashboard (provides a web-based front-end for users
+                    to consume OpenStack cloud services)</para>
+            </listitem>
+            <listitem>
+                <para>API endpoints (offers each service's REST API access,
+                    where the API endpoint catalog is managed by the identity
+                    service)</para>
+            </listitem>
+        </itemizedlist>
     <para>For our example, the cloud controller has a collection of
-            <code>nova-*</code> components that represent the global
-        state of the cloud, talks to services such as authentication,
-        maintains information about the cloud in a database,
-        communicates to all compute nodes and storage
-            <glossterm>worker</glossterm>s through a queue, and
-        provides API access. Each service running on a designated
-        cloud controller may be broken out into separate nodes for
-        scalability or availability.</para>
+            <code>nova-*</code> components that represent the global state of
+        the cloud, talks to services such as authentication, maintains
+        information about the cloud in a database, communicates to all compute
+        nodes and storage <glossterm>worker</glossterm>s through a queue, and
+        provides API access. Each service running on a designated cloud
+        controller may be broken out into separate nodes for scalability or
+        availability.</para>
+    <para>As another example, you could use pairs of servers for a collective
+        cloud controller - one active, one standby, for redundant nodes
+        providing a given set of related services such as:</para>
+    <itemizedlist>
+            <listitem>
+                <para>Front-end web for API requests, the scheduler for choosing
+                    which compute node to boot an instance on, identity
+                    services, and the dashboard</para>
+            </listitem>
+            <listitem>
+                <para>Database and message queue server (such as MySQL,
+                    RabbitMQ)</para>
+            </listitem>
+            <listitem>
+                <para>Image Service for the image management</para>
+            </listitem>
+        </itemizedlist>
+    <para>Now that you see the myriad designs for controlling your cloud, read
+        more about the further considerations to help with your design decisions.</para>
     <section xml:id="hardware_consid">
-
         <title>Hardware Considerations</title>
         <para>A cloud controller's hardware can be the same as a
             compute node, though you may want to further specify based
@@ -76,9 +130,8 @@
                     run</para>
             </listitem>
         </itemizedlist>
-        <para>The following table contains common considerations to
-            review when sizing hardware for the Cloud
-            Controller:</para>
+        <para>The following table contains common considerations to review when
+            sizing hardware for the cloud controller design:</para>
         <informaltable rules="all">
             <col width="25%"/>
             <col width="75%"/>
@@ -258,14 +311,27 @@
     </section>
     <section xml:id="message_queue">
         <title>Message Queue</title>
-        <para>Most OpenStack Compute services communicate with each
-            other using the Message Queue. In general, if the message
-            queue fails or becomes inaccessible, the cluster grinds to
-            a halt and ends up in a "read only" state, with
-            information stuck at the point where the last message was
-            sent. Accordingly, we recommend that you cluster the
-            message queue - and RabbitMQ has in-build abilities to do
-            this.</para>
+        <para>Most OpenStack services communicate with each other using the
+            Message Queue. As an example, Compute communicates to block storage
+            services and networking services through the message queue. Also,
+            you can optionally enable notifications for any service. RabbitMQ,
+            Qpid, and 0mq are all popular choices for a message queue service.
+            In general, if the message queue fails or becomes inaccessible, the
+            cluster grinds to a halt and ends up in a "read only" state, with
+            information stuck at the point where the last message was sent.
+            Accordingly, we recommend that you cluster the message queue. Be
+            aware that clustered message queues can be a pain point for many
+            OpenStack deployments. While RabbitMQ has native clustering support,
+            there have been reports of issues when running it at a large scale.
+            While there are other queuing solutions
+            available such as 0mq and Qpid, 0mq does not offer stateful queues.
+            Qpid is the messaging system of choice for RedHat and its
+            derivatives. Qpid does not have native clustering capabilities and
+            requires a supplemental service like Pacemaker or Corsync. For your
+            message queue, you need to determine a) what level of data loss you
+            are comfortable with, and b) whether to use an OpenStack project's
+            ability to retry multiple MQ hosts in the event of a failure, such
+            as using Compute's ability to do so.</para>
     </section>
 
     <section xml:id="api">

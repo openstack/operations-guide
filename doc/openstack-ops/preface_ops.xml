@@ -202,75 +202,75 @@
         <para>This book is organized in two parts, the architecture decisions
             for designing OpenStack clouds and the repeated operations for
             running OpenStack clouds.</para>
-        <para>Chapter 1: Provisioning and Deployment: While this book doesn't
+        <para><xref linkend="example_architecture"/>: Because of all the decisions the
+            other chapters discuss, this chapter describes the decisions made
+            for this particular book and much of the justification for the
+            example architecture.</para>
+        <para><xref linkend="section_arch_provision"/>: While this book doesn't
             describe installation, we do recommend automation for deployment and
             configuration, discussed in this chapter.</para>
-        <para>Chapter 2: Cloud Controller Design: The cloud controller is an
+        <para><xref linkend="cloud_controller_design"/>: The cloud controller is an
             invention for the sake of consolidating and describing which
             services run on which nodes. The chapter discusses hardware and
             network considerations as well as how to design the cloud controller
             for performance and separation of services.</para>
-        <para>Chapter 3: Compute Nodes: This chapter describes the compute
+        <para><xref linkend="scaling"/>: This chapter discusses the growth of your
+            cloud resources through scaling and segregation
+            considerations.</para>
+        <para><xref linkend="compute_nodes"/>: This chapter describes the compute
             nodes, which are dedicated to run virtual machines. Some hardware
             choices come into play here as well as logging and networking
             descriptions.</para>
-        <para>Chapter 4: Scaling: This chapter discusses the growth of your
-            cloud resources through scaling and segregation
-            considerations.</para>
-        <para>Chapter 5: Storage Decisions: Along with other architecture
+        <para><xref linkend="storage_decision"/>: Along with other architecture
             decisions, storage concepts within OpenStack take a lot of
             consideration, and this chapter lays out the choices for you.</para>
-        <para>Chapter 6: Network Design: Your OpenStack cloud networking needs
+        <para><xref linkend="network_design"/>: Your OpenStack cloud networking needs
             to fit into your existing networks while also enabling the best
             design for your users and administrators, and this chapter gives you
             in-depth information about networking decisions.</para>
-        <para>Chapter 7:  Example Architecture: Because of all the decisions the
-            previous chapters discuss, this chapter describes the decisions made
-            for this particular book and much of the justification for the
-            example architecture.</para>
-        <para>Chapter 8: Lay of the Land: This chapter is written to let you get
+        <para><xref linkend="lay_of_the_land"/>: This chapter is written to let you get
             your hands wrapped around your OpenStack cloud through command line
             tools and understanding what is already set up in your cloud.</para>
-        <para>Chapter 9: Managing Projects and Users: This chapter walks through
+        <para><xref linkend="projects_users"/>: This chapter walks through
             those user-enabling processes that all admins must face to manage
             users, give them quotas to parcel out resources, and so on.</para>
-        <para>Chapter 10: User-facing Operations: This chapter moves along to
+        <para><xref linkend="user_facing_operations"/>: This chapter moves along to
             show you how to use OpenStack cloud resources and train your users
             as well.</para>
-        <para>Chapter 11: Maintenance, Failures, and Debugging: This chapter
+        <para><xref linkend="maintenance"/>: This chapter
             goes into the common failures the authors have seen while running
             clouds in production, including troubleshooting.</para>
-        <para>Chapter 12: Network Troubleshooting: Because network
+        <para><xref linkend="network_troubleshooting"/>: Because network
             troubleshooting is especially difficult with virtual resources, this
             chapter is chock-full of helpful tips and tricks to tracing network
             traffic, finding the root cause of networking failures, and
             debugging related services like DHCP and DNS.</para>
-        <para>Chapter 13: Logging and Monitoring: This chapter shows you where
+        <para><xref linkend="logging_monitoring"/>: This chapter shows you where
             OpenStack places logs and how to best to read and manage logs for
             monitoring purposes.</para>
-        <para>Chapter 14: Backup and Recovery: This chapter describes what you
+        <para><xref linkend="backup_and_recovery"/>: This chapter describes what you
             need to back up within OpenStack as well as best practices for
             recovering backups.</para>
-        <para>Chapter 15: Customize: When you need to get a specialized feature
+        <para><xref linkend="customize"/>: When you need to get a specialized feature
             into OpenStack, this chapter describes how to use DevStack to write
             custom middleware or a custom scheduler to rebalance your
             resources.</para>
-        <para>Chapter 16: Upstream OpenStack: Because OpenStack is so, well,
+        <para><xref linkend="upstream_openstack"/>: Because OpenStack is so, well,
             open, this chapter is dedicated to helping you navigate the
             community and find out where you can help and where you can get
             help.</para>
-        <para>Chapter 17: Advanced Configuration: Much of OpenStack is
+        <para><xref linkend="advanced_configuration"/>: Much of OpenStack is
             driver-oriented, where you can plug in different solutions to the
             base set of services. This chapter describes some advanced
             configuration topics.</para>
-        <para>Appendix A: Use Cases: You can read a small selection of use cases
+        <para><xref linkend="use-cases"/>: You can read a small selection of use cases
             from the OpenStack community with some technical detail and further
             resources.</para>
-        <para>Appendix B: Tales From the Cryp^H^H^H^H Cloud: These are shared
+        <para><xref linkend="app_crypt"/>: These are shared
             legendary tales of image disappearances, VM massacres, and crazy
             troubleshooting techniques to share those hard-learned lessons and
             wisdom.</para>
-        <para>Appendix C: Resources: So many OpenStack resources are available
+        <para><xref linkend="recommended-reading"/>: So many OpenStack resources are available
             online due to the fast-moving nature of the project, but there are
             also listed resources the authors found helpful while learning
             themselves.</para>
