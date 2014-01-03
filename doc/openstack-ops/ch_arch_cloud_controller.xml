@@ -377,8 +377,14 @@
     </section>
     <section xml:id="dashboard">
         <title>Dashboard</title>
-        <para>The OpenStack Dashboard is implemented as a Python web
-            application that runs in <glossterm>Apache</glossterm>
+        <para>The OpenStack Dashboard (Horizon) provides a web-based
+            user interface to the various OpenStack components. The
+            dashboard includes an end-user area for users to manage
+            their virtual infrastructure as well as an admin area for
+            cloud operators to manage the OpenStack environment as a
+            whole.</para>
+        <para>The dashboard is implemented as a Python web
+            application that normally runs in <glossterm>Apache</glossterm>
             <code>httpd</code>. Therefore, you may treat it the same
             as any other web application, provided it can reach the
             API servers (including their admin endpoints) over the
