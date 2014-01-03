@@ -76,6 +76,9 @@
                     run</para>
             </listitem>
         </itemizedlist>
+        <para>The following table contains common considerations to
+            review when sizing hardware for the Cloud
+            Controller:</para>
         <informaltable rules="all">
             <col width="25%"/>
             <col width="75%"/>
