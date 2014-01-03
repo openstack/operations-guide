@@ -139,9 +139,9 @@
 
 	<xi:include href="ch_arch_cloud_controller.xml"/>
 
-	<xi:include href="ch_arch_scaling.xml"/>
-
 	<xi:include href="ch_arch_compute_nodes.xml"/>
+
+	<xi:include href="ch_arch_scaling.xml"/>
 
 	<xi:include href="ch_arch_storage.xml"/>
 
