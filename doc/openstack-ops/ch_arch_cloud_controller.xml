@@ -401,25 +401,27 @@
             that provides the authentication decisions and user
             attribute information, which is then used by the other
             OpenStack services to perform authorization. Policy is set
-            in the policy.json file. For information on how to
-            configure these, see <xref linkend="projects_users"
-            />.</para>
+            in the <filename>policy.json</filename> file. For
+            information on how to configure these, see <xref
+                linkend="projects_users"/>.</para>
         <para>The Identity Service supports different plugins for
-            back-end authentication decisions, and storing
-            information. These range from pure storage choices to
-            external systems and currently include:</para>
+            authentication decisions and identity storage. Examples of
+            these plugins include:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para>In-memory Key-Value Store</para>
+                <para>In-memory Key-Value Store (a simplified internal
+                    storage structure)</para>
             </listitem>
             <listitem>
-                <para>SQL database</para>
+                <para>SQL database (such as MySQL or
+                    PostgreSQL)</para>
             </listitem>
             <listitem>
-                <para>PAM</para>
+                <para>PAM (Pluggable Authentication Module)</para>
             </listitem>
             <listitem>
-                <para>LDAP</para>
+                <para>LDAP (such as OpenLDAP or Microsoft's Active
+                    Directory)</para>
             </listitem>
         </itemizedlist>
         <para>Many deployments use the SQL database, however LDAP is
