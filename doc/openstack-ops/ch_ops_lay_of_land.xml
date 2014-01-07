@@ -232,25 +232,15 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
                 helpful in creating custom tools written to the
                 OpenStack API.</para>
             <para><link
-                    xlink:href="https://wiki.openstack.org/wiki/KeyringSupport"
-                    >Keyring Support</link>
-                (https://wiki.openstack.org/wiki/KeyringSupport) can
-                be a source of confusion to the point that, as of the
-                time of this writing, there is a <link
-                    xlink:href="https://bugs.launchpad.net/python-novaclient/+bug/1020238"
-                    >bug report</link>
-                (https://bugs.launchpad.net/python-novaclient/+bug/1020238)
-                which has been open, closed as invalid, and reopened
-                through a few cycles.</para>
-            <para>The issue is that under some conditions the command
-                line tools try to use a Python keyring as a credential
-                cache and, under a subset of those conditions, another
-                condition can arise where the tools prompt for a
-                keyring password on each use. If you find yourself in
-                this unfortunate subset, adding the
-                    <code>--no-cache</code> flag or setting the
-                environment variable <code>OS_NO_CACHE=1</code> avoids
-                the credentials cache.</para>
+                xlink:href="https://wiki.openstack.org/wiki/KeyringSupport"
+                >Keyring Support</link>
+                (https://wiki.openstack.org/wiki/KeyringSupport)
+                enables you to securely save your OpenStack password
+                in an encrypted file. 
+            </para>
+            <para>This feature is disabled by default. To enable it,
+                add the <code>--os-cache</code> flag or set the
+                environment variable <code>OS_CACHE=1</code>.</para>
             <note>
                 <para>This causes the command line tool to
                     authenticate on each and every interaction with
