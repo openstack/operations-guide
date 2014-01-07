@@ -210,13 +210,13 @@
             services run on which nodes. The chapter discusses hardware and
             network considerations as well as how to design the cloud controller
             for performance and separation of services.</para>
-        <para>Chapter 3: Scaling: This chapter discusses the growth of your
-            cloud resources through scaling and segregation
-            considerations.</para>
-        <para>Chapter 4: Compute Nodes: This chapter describes the compute
+        <para>Chapter 3: Compute Nodes: This chapter describes the compute
             nodes, which are dedicated to run virtual machines. Some hardware
             choices come into play here as well as logging and networking
             descriptions.</para>
+        <para>Chapter 4: Scaling: This chapter discusses the growth of your
+            cloud resources through scaling and segregation
+            considerations.</para>
         <para>Chapter 5: Storage Decisions: Along with other architecture
             decisions, storage concepts within OpenStack take a lot of
             consideration, and this chapter lays out the choices for you.</para>
