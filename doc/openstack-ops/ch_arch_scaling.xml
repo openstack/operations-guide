@@ -137,7 +137,7 @@
     </section>
     <?hard-pagebreak?>
     <section xml:id="add_controller_nodes">
-        <title>Adding Controller Nodes</title>
+        <title>Adding Cloud Controller Nodes</title>
         <para>You can facilitate the horizontal expansion of your
             cloud by adding nodes. Adding compute nodes is
             straightforward — they are easily picked up by the
