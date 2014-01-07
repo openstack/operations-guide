@@ -28,10 +28,11 @@
             server that supports multiple CPUs, the number of cores is
             further multiplied.</para>
         <para>Whether you should enable hyper-threading on your CPUs
-            depends upon your use case. We recommend you do
-            performance testing with your local workload with both
-            hyper-threading on and off to determine what is more
-            appropriate in your case.</para>
+            depends upon your use case. For example, disabling
+            hyper-threading can be beneficial in intense computing
+            environments. We recommend you do performance testing with
+            your local workload with both hyper-threading on and off
+            to determine what is more appropriate in your case.</para>
     </section>
     <?hard-pagebreak?>
     <section xml:id="hypervisor_choice">
