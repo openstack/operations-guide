@@ -810,27 +810,27 @@
             <para>Here are snippets of the default nova
                     <filename>policy.json</filename> file:</para>
             <programlisting><?db-font-size 65%?>{
-	"context_is_admin":  [["role:admin"]],
-	"admin_or_owner":  [["is_admin:True"], ["project_id:%(project_id)s"]], <emphasis role="bold">[1]</emphasis>
-	"default": [["rule:admin_or_owner"]], <emphasis role="bold">[2]</emphasis>
-	"compute:create": [ ],
-	"compute:create:attach_network": [ ],
-	"compute:create:attach_volume": [ ],
-	"compute:get_all": [ ],
+        "context_is_admin":  [["role:admin"]],
+        "admin_or_owner":  [["is_admin:True"], ["project_id:%(project_id)s"]], <emphasis role="bold">[1]</emphasis>
+        "default": [["rule:admin_or_owner"]], <emphasis role="bold">[2]</emphasis>
+        "compute:create": [ ],
+        "compute:create:attach_network": [ ],
+        "compute:create:attach_volume": [ ],
+        "compute:get_all": [ ],
     "admin_api": [["is_admin:True"]],
-	"compute_extension:accounts": [["rule:admin_api"]],
-	"compute_extension:admin_actions": [["rule:admin_api"]],
-	"compute_extension:admin_actions:pause": [["rule:admin_or_owner"]],
-	"compute_extension:admin_actions:unpause": [["rule:admin_or_owner"]],
-	...
-	"compute_extension:admin_actions:migrate": [["rule:admin_api"]],
-	"compute_extension:aggregates": [["rule:admin_api"]],
-	"compute_extension:certificates": [ ],
-	...
-	"compute_extension:flavorextraspecs": [ ],
-	"compute_extension:flavormanage": [["rule:admin_api"]],  <emphasis role="bold">[3]</emphasis>
-	}
-	</programlisting>
+        "compute_extension:accounts": [["rule:admin_api"]],
+        "compute_extension:admin_actions": [["rule:admin_api"]],
+        "compute_extension:admin_actions:pause": [["rule:admin_or_owner"]],
+        "compute_extension:admin_actions:unpause": [["rule:admin_or_owner"]],
+        ...
+        "compute_extension:admin_actions:migrate": [["rule:admin_api"]],
+        "compute_extension:aggregates": [["rule:admin_api"]],
+        "compute_extension:certificates": [ ],
+        ...
+        "compute_extension:flavorextraspecs": [ ],
+        "compute_extension:flavormanage": [["rule:admin_api"]],  <emphasis role="bold">[3]</emphasis>
+        }
+        </programlisting>
             <para>[1] Shows a rule which evaluates successfully if the
                 current user is an administrator or the owner of the
                 resource specified in the request (tenant identifier
