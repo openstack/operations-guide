@@ -13,17 +13,22 @@
     xml:id="example_architecture">
     <?dbhtml stop-chunking?>
     <title>Example Architecture</title>
-    <para>Because OpenStack is highly configurable, with many
-        different <glossterm>back-ends</glossterm> and network
-        configuration options, it is difficult to write documentation
-        that covers all possible OpenStack deployments. Therefore,
-        this guide defines an <emphasis>example
-            architecture</emphasis> to simplify the task of
-        documenting, as well as to scope this guide so that it is
-        focused on a configuration where the authors have direct
-        deployment experience.</para>
+    <para>Because OpenStack is highly configurable, with many different
+            <glossterm>back-ends</glossterm> and network configuration options,
+        it is difficult to write documentation that covers all possible
+        OpenStack deployments. Therefore, this guide defines an
+            <emphasis>example architecture</emphasis> to simplify the task of
+        documenting, as well as to scope this guide.</para>
     <section xml:id="overview">
         <title>Overview</title>
+        <para>The simplest architecture you can build upon for Compute has a
+            single cloud controller and multiple compute nodes. The simplest
+            architecture for Object Storage has five nodes: one for identifying
+            users and proxying requests to the API, then four for storage itself
+            to provide enough replication for eventual consistency. This example
+            architecture does not dictate a particular number of nodes, but
+            shows the thinking and considerations that went into choosing this
+            architecture including the features offered.</para>
         <informaltable rules="all">
             <col width="40%"/>
             <col width="60%"/>

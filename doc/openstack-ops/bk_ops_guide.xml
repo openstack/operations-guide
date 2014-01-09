@@ -27,7 +27,6 @@
 			</affiliation>
 		</author>
 		<copyright>
-
 			<year>2013</year>
 			<holder>OpenStack Foundation</holder>
 		</copyright>
@@ -47,6 +46,16 @@
 		<revhistory>
 			<!-- ... continue adding more revisions here as you change this
 				document using the markup shown below... -->
+			<revision>
+				<date>2013-01-04</date>
+				<revdescription>
+					<itemizedlist spacing="compact">
+						<listitem>
+							<para>Addresses detail needed in cloud controller.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-12-12</date>
 				<revdescription>
@@ -135,6 +144,8 @@
 	<xi:include href="preface_ops.xml"/>
 
 	<!--<xi:include href="part_architecture.xml"/> -->
+	<xi:include href="ch_arch_example.xml"/>
+
 	<xi:include href="ch_arch_provision.xml"/>
 
 	<xi:include href="ch_arch_cloud_controller.xml"/>
@@ -146,8 +157,6 @@
 	<xi:include href="ch_arch_storage.xml"/>
 
 	<xi:include href="ch_arch_network_design.xml"/>
-
-	<xi:include href="ch_arch_example.xml"/>
 
 	<!--<xi:include href="ch_arch_whats_next.xml"/>-->
 	<!--<xi:include href="part_operations.xml"/> -->
