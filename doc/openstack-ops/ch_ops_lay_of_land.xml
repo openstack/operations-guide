@@ -122,34 +122,27 @@
         <?hard-pagebreak?>
         <section xml:id="get_creds">
             <title>Getting Credentials</title>
-            <para>You must have the appropriate credentials if you
-                wish to use the command line tools to make queries
-                against your OpenStack cloud. By far the easiest way
-                to obtain <glossterm>authentication</glossterm>
-                credentials to use with command line clients is to use
-                the horizon dashboard. From the top right navigation
-                row, select the <guilabel>Settings</guilabel> link to
-                access the user settings page where you can set your
-                language and timezone preferences for the dashboard
-                view. More importantly, this action changes the left
-                hand navigation column to include <guilabel>OpenStack
-                    API</guilabel> and <guilabel>EC2
-                    Credentials</guilabel> links, which let you to
-                generate files you can source in your shell to
-                populate the environment variables the command line
-                tools need to know where your service endpoints are as
-                well as your authentication information.</para>
-            <para>For using the OpenStack native tools follow the
-                    <guilabel>OpenStack API</guilabel> link. The top
-                section lists the URLs of your service endpoints and
-                below that is a section titled <guilabel>Download
-                    OpenStack RC File</guilabel>. For looking at the
-                cloud as an administrator, you can choose admin from
-                the drop-down menu. In this section select the project
-                you wish to get credentials for and click
-                    <guibutton>Download RC</guibutton>. This generates
-                a file called <code>openrc.sh</code>, which looks
-                something like this:</para>
+            <para>You must have the appropriate credentials if you wish to use
+                the command line tools to make queries against your OpenStack
+                cloud. By far the easiest way to obtain
+                    <glossterm>authentication</glossterm> credentials to use
+                with command line clients is to use the OpenStack Dashboard.
+                From the top right navigation row, select
+                    <guimenuitem>Project</guimenuitem>, then <guimenuitem>Access
+                    &amp; Security</guimenuitem>, then <guimenuitem>API
+                    Access</guimenuitem> to access the user settings page where
+                you can set your language and timezone preferences for the
+                dashboard view. This action displays two buttons,
+                    <guilabel>Download OpenStack RC File</guilabel> and
+                    <guilabel>Download EC2 Credentials</guilabel>, which let you
+                to generate files you can source in your shell to populate the
+                environment variables the command line tools need to know where
+                your service endpoints are as well as your authentication
+                information. The user you logged into the dashboard dictates
+                the filename for the openrc file, such as <filename>demo-openrc.sh</filename>. When logged
+                in as admin, the file is named <filename>admin-openrc.sh</filename>.</para>
+            <para>The generated file looks something like
+                this:</para>
             <programlisting><?db-font-size 60%?>#!/bin/bash
 
 # With the addition of Keystone, to use an openstack cloud you should
@@ -168,37 +161,37 @@ export OS_TENANT_NAME="test-project"
 
 # In addition to the owning entity (tenant), openstack stores the entity
 # performing the action as the **user**.
-export OS_USERNAME=test-user
+export OS_USERNAME=demo
 
 # With Keystone you pass the keystone password.
 echo "Please enter your OpenStack Password: "
 read -s OS_PASSWORD_INPUT
 export OS_PASSWORD=$OS_PASSWORD_INPUT</programlisting>
             <note>
-                <para>This does not save your password in plain text,
-                    which is a good thing. But when you source or run
-                    the script, it prompts for your password and then
-                    stores your response in the environment variable
-                        <code>OS_PASSWORD</code>. It is important to
-                    note that this does require interactivity. It is
-                    possible to store a value directly in the script
-                    if you require a non interactive operation, but
-                    you then need to be extremely cautious with the
-                    security and permissions of this file.</para>
+                <para>This does not save your password in plain text, which is a
+                    good thing. But when you source or run the script, it
+                    prompts for your password and then stores your response in
+                    the environment variable <code>OS_PASSWORD</code>. It is
+                    important to note that this does require interactivity. It
+                    is possible to store a value directly in the script if you
+                    require a non interactive operation, but you then need to be
+                    extremely cautious with the security and permissions of this
+                    file.</para>
             </note>
-            <para>EC2 compatibility credentials can be downloaded from
-                the "EC2 Credentials" link in the left hand navigation
-                bar, then selecting the project you want credentials
-                for and clicking "Download EC2 Credentials". This
-                generates a zip file with server x509 certificates and
-                a shell script fragment. Create a new directory in a
-                secure location as, unlike the default
-                    <code>openrc</code>, these are live credentials
-                containing all the authentication information required
-                to access your cloud identity. Extract the zip file
-                here. You should have cacert.pem, cert.pem, ec2rc.sh
-                and pk.pem. The <code>ec2rc.sh</code> is similar to
-                this:</para>
+            <para>EC2 compatibility credentials can be downloaded from the
+                    <guimenuitem>Project</guimenuitem>, then <guimenuitem>Access
+                    &amp; Security</guimenuitem>, then <guimenuitem>API
+                    Access</guimenuitem> to display the <guilabel>Download EC2
+                    Credentials</guilabel> button. Click the button to generate
+                a zip file with server x509 certificates and a shell script
+                fragment. Create a new directory in a secure location because
+                these are live credentials containing all the authentication
+                information required to access your cloud identity, unlike the
+                default <code>user-openrc</code>. Extract the zip file here. You
+                should have <filename>cacert.pem</filename>,
+                    <filename>cert.pem</filename>, <filename>ec2rc.sh</filename>
+                and <filename>pk.pem</filename>. The
+                    <filename>ec2rc.sh</filename> is similar to this:</para>
             <programlisting><?db-font-size 50%?>#!/bin/bash
 
 NOVARC=$(readlink -f "${BASH_SOURCE:-${0}}" 2&gt;/dev/null) ||\
@@ -218,8 +211,8 @@ alias ec2-bundle-image="ec2-bundle-image --cert $EC2_CERT --privatekey \
 $EC2_PRIVATE_KEY --user 42 --ec2cert $NOVA_CERT"
 alias ec2-upload-bundle="ec2-upload-bundle -a $EC2_ACCESS_KEY -s \
 $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
-            <para>To put the EC2 credentials into your environment
-                source the <code>ec2rc.sh</code> file.</para>
+            <para>To put the EC2 credentials into your environment source the
+                    <code>ec2rc.sh</code> file.</para>
         </section>
         <section xml:id="cli_tricks">
             <title>Command Line Tricks and Traps</title>
@@ -236,7 +229,7 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
                 >Keyring Support</link>
                 (https://wiki.openstack.org/wiki/KeyringSupport)
                 enables you to securely save your OpenStack password
-                in an encrypted file. 
+                in an encrypted file.
             </para>
             <para>This feature is disabled by default. To enable it,
                 add the <code>--os-cache</code> flag or set the
