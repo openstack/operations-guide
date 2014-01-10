@@ -1432,6 +1432,13 @@
                                 </glossdef>
                         </glossentry>
                         <glossentry>
+                          <glossterm>Havana</glossterm>
+                          <glossdef>
+                            <para>Project name for the eighth release of
+                            OpenStack.</para>
+                          </glossdef>
+                        </glossentry>
+                        <glossentry>
                                 <glossterm>Heat</glossterm>
                                 <glossdef>
                                         <para>An integrated project that aims to
@@ -1491,6 +1498,12 @@
                 </glossdiv>
                 <glossdiv>
                         <title>I</title>
+                        <glossentry>
+                          <glossterm>Icehouse</glossterm>
+                          <glossdef>
+                            <para>Project name for the ninth release of OpenStack.</para>
+                          </glossdef>
+                        </glossentry>
                         <glossentry>
                                 <glossterm>ID number</glossterm>
                                 <glossdef>
@@ -1720,6 +1733,12 @@
                                         <para>Tool used for OpenStack development to run
                                                 jobs automatically.</para>
                                 </glossdef>
+                        </glossentry>
+                        <glossentry>
+                          <glossterm>Juno</glossterm>
+                          <glossdef>
+                            <para>Project name for the tenth release of OpenStack.</para>
+                          </glossdef>
                         </glossentry>
                         <glossentry>
                                 <glossterm/>
