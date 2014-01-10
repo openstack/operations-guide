@@ -344,6 +344,7 @@ nova-compute     c02.example.com   nova enabled  :-)  2013-02-25 19:32:32
 nova-compute     c03.example.com   nova enabled  :-)  2013-02-25 19:32:36
 nova-compute     c04.example.com   nova enabled  :-)  2013-02-25 19:32:32
 nova-compute     c05.example.com   nova enabled  :-)  2013-02-25 19:32:41
+nova-conductor   cloud.example.com nova enabled  :-)  2013-02-25 19:32:40
 nova-consoleauth cloud.example.com nova enabled  :-)  2013-02-25 19:32:36
 nova-network     cloud.example.com nova enabled  :-)  2013-02-25 19:32:32
 nova-scheduler   cloud.example.com nova enabled  :-)  2013-02-25 19:32:33</programlisting>
