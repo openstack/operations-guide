@@ -430,21 +430,85 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><para>Grizzly</para></td>
+                 <tr>
+                    <td><para>Icehouse</para></td>
                     <td><para>
                             <link
-                                xlink:href="https://wiki.openstack.org/wiki/GrizzlyReleaseSchedule"
+                                xlink:href="https://wiki.openstack.org/wiki/Icehouse_Release_Schedule"
                                 >Under development, Release
                                 schedule</link>
                         </para></td>
                     <td><para>Due</para></td>
+                    <td><para>Apr 17, 2013</para></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><para>Havana</para></td>
+                    <td rowspan="2"><para>
+                     Current stable release, security-supported
+                        </para></td>
+                        <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana"
+                                >2013.2</link>
+                        </para></td>
                     <td><para>Apr 4, 2013</para></td>
                 </tr>
                 <tr>
-                    <td rowspan="4"><para>Folsom</para></td>
-                    <td rowspan="4"><para>Current stable release,
-                            security-supported</para></td>
+                    <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1"
+                                >2013.2.1</link>
+                        </para></td>
+                    <td><para>Dec 16, 2013</para></td>
+                </tr>
+                <tr>
+                    <td rowspan="5"><para>Grizzly</para></td>
+                    <td rowspan="5"><para>Security-supported</para></td>
+                        <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly"
+                                >2013.1</link>
+                        </para></td>
+                    <td><para>Apr 4, 2013</para></td>
+                </tr>
+                <tr>
+                    <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.1"
+                                >2013.1.1</link>
+                        </para></td>
+                    <td><para>May 9, 2013</para></td>
+                </tr>
+                <tr>
+
+                    <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.2"
+                                >2013.1.2</link>
+                        </para></td>
+                    <td><para>Jun 6, 2013</para></td>
+                </tr>
+                <tr>
+
+                    <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.3"
+                                >2013.1.3</link>
+                        </para></td>
+                    <td><para>Aug 8, 2013</para></td>
+                </tr>
+                <tr>
+
+                    <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.4"
+                                >2013.1.4</link>
+                        </para></td>
+                    <td><para>Oct 17, 2013</para></td>
+                </tr>
+                <tr>
+                    <td rowspan="5"><para>Folsom</para></td>
+                    <td rowspan="5"><para>Community-supported</para></td>
                     <td><para>
                             <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Folsom"
@@ -453,8 +517,6 @@
                     <td><para>Sep 27, 2012</para></td>
                 </tr>
                 <tr>
-
-
                     <td><para>
                             <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.1"
@@ -478,12 +540,20 @@
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.3"
                                 >2012.2.3</link>
                         </para></td>
-                    <td><para>Jan 31, 2012</para></td>
+                    <td><para>Jan 31, 2013</para></td>
+                </tr>
+                <tr>
+
+                    <td><para>
+                            <link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.4"
+                                >2012.2.4</link>
+                        </para></td>
+                    <td><para>Apr 11, 2013</para></td>
                 </tr>
                 <tr>
                     <td rowspan="4"><para>Essex</para></td>
-                    <td rowspan="4"><para>Community-supported,
-                            security-supported</para></td>
+                    <td rowspan="4"><para>Community-supported</para></td>
                     <td><para>
                             <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Essex"
@@ -521,7 +591,7 @@
                 <tr>
                     <td rowspan="2"><para>Diablo</para></td>
                     <td rowspan="2"
-                        ><para>Community-supported</para></td>
+                        ><para>Deprecated</para></td>
                     <td><para>
                             <link
                                 xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Diablo"
