@@ -33,7 +33,7 @@ options = {
 }
 
 ignore_folder = {"docbkx-example"}
-root = "./doc/src/docbkx"
+root = "./doc"
 
 def mergeback (folder, language):
     if (folder==None) :
@@ -120,7 +120,7 @@ def get_xml_list (sms, dr, flst):
             sms.append(os.path.join(dr,f))
 
 def main(argv):
-
+    print "This is not from openstack-doc-tools, please update jobs."
     usage = "usage: %prog [options] command [cmd_options]"
     description = "This is the tool to generate translated docbooks, which"\
         " will be stored in 'generated/[language]/"
