@@ -386,28 +386,25 @@
             functionality.</para>
     </section>
     <?hard-pagebreak?>
-    <section xml:id="scheduler">
-        <title>Scheduler</title>
-        <para>Fitting various sized virtual machines (different
-                <emphasis>flavors</emphasis>) into different sized
-            physical nova-compute nodes is a challenging problem -
-            researched generically in Computer Science as a packing
-            problem.</para>
-        <para>You can use various techniques to handle this problem
-                   though solving this problem is out of the scope of this
-                   book. To support your scheduling choices, OpenStack
-                   Compute provides several types of scheduling drivers. For
-                   information, see <link
-             xlink:title="OpenStack Configuration Reference"
-             xlink:href="http://docs.openstack.org/havana/config-reference/content/section_compute-scheduler.html"
-             >Scheduling</link> in the <citetitle>OpenStack
-             Configuration Reference</citetitle>
-             (http://docs.openstack.org/havana/config-reference/content/section_compute-scheduler.html).</para>
-        <para>For availability purposes, or for very large or
+    <section xml:id="scheduling">
+        <title>Scheduling</title>
+        <para>The scheduling services are responsible for determining
+            the compute or storage node where a virtual machine or
+            block storage volume should be created. The scheduling
+            services receive creation requests for these resources
+            from the message queue and then begin the process of
+            determining the appropriate node where the resource should
+            reside. This process is done by applying a series
+            user-configurable filters against the available collection
+            of nodes.</para>
+        <para>There are currently two schedulers: nova-scheduler for
+            virtual machines and cinder-scheduler for block storage
+            volumes. Both schedulers are able to scale horizontally,
+            so for high availability purposes, or for very large or
             high-schedule frequency installations, you should consider
-            running multiple nova-scheduler services. No special load
-            balancing is required, as the nova-scheduler communicates
-            entirely using the message queue.</para>
+            running multiple instances of each scheduler. The
+            schedulers all listen to the shared message queue, so no
+            special load balancing is required.</para>
     </section>
     <section xml:id="images">
         <title>Images</title>
