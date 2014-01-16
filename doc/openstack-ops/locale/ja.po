@@ -9,7 +9,7 @@
 # masayukig <masayuki.igawa@gmail.com>, 2013
 # masayukig <masayuki.igawa@gmail.com>, 2013
 # *はたらくpokotan* <>, 2013
-# *はたらくpokotan* <>, 2013
+# *pokotan-in-Eorzea* <>, 2013
 # Shirayuki/しらゆき Shira <shirayuking@gmail.com>, 2013
 # Tsutomu Takekawa <takekawa@gmail.com>, 2013
 # thatsdone <masanori.itoh@gmail.com>, 2013
@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
 "POT-Creation-Date: 2013-05-08 15:45+0800\n"
-"PO-Revision-Date: 2013-08-30 08:40+0000\n"
+"PO-Revision-Date: 2014-01-14 15:05+0000\n"
 "Last-Translator: Akihiro MOTOKI <amotoki@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -450,13 +450,13 @@ msgstr "次はどうする？"
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_whats_next.xml17(para)
 msgid ""
 "Congratulations! By now, you should have a solid design for your cloud. We "
-"now recommend that you turn to the <link xlink:title=\"OpenStack Install and "
-"Deploy Manual - Ubuntu\" xlink:href=\"http://docs.openstack.org/folsom/openstack-"
+"now recommend that you turn to the <link title=\"OpenStack Install and "
+"Deploy Manual - Ubuntu\" href=\"http://docs.openstack.org/folsom/openstack-"
 "compute/install/apt/content/\">OpenStack Install and Deploy Manual - "
 "Ubuntu</link> (http://docs.openstack.org/folsom/openstack-"
 "compute/install/apt/content/), which contains a step-by-step guide on how to"
 " manually install the OpenStack packages and dependencies on your cloud."
-msgstr "おめでとうございます！ ここまでで、あなたのクラウドのしっかりとした基本設計ができたことでしょう。ここまで来たら、<link xlink:title=\"OpenStack Install and Deploy Manual - Ubuntu\" xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/install/apt/content/\">OpenStack Install and Deploy Manual - Ubuntu</link> (http://docs.openstack.org/folsom/openstack-compute/install/apt/content/) を見ることをお薦めします。このマニュアルには、OpenStack パッケージと依存モジュールをあなたのクラウドに手動でインストールする方法がステップバイステップで説明されています。"
+msgstr "おめでとうございます！ ここまでで、あなたのクラウドのしっかりとした基本設計ができたことでしょう。ここまで来たら、<link title=\"OpenStack Install and Deploy Manual - Ubuntu\" href=\"http://docs.openstack.org/folsom/openstack-compute/install/apt/content/\">OpenStack Install and Deploy Manual - Ubuntu</link> (http://docs.openstack.org/folsom/openstack-compute/install/apt/content/) を見ることをお薦めします。このマニュアルには、OpenStack パッケージと依存モジュールをあなたのクラウドに手動でインストールする方法がステップバイステップで説明されています。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_whats_next.xml25(para)
 msgid ""
@@ -538,37 +538,37 @@ msgstr "ask.openstack.org では、すでに回答されている質問を見る
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml34(para)
 msgid ""
-"<link xlink:href=\"https://wiki.openstack.org/wiki/Mailing_Lists\">Mailing "
+"<link href=\"https://wiki.openstack.org/wiki/Mailing_Lists\">Mailing "
 "Lists</link> (https://wiki.openstack.org/wiki/Mailing_Lists) are also a "
 "great place to get help. The wiki page has more information about the "
 "various lists. As an operator, the main lists you should be aware of are:"
-msgstr "<link xlink:href=\"https://wiki.openstack.org/wiki/Mailing_Lists\">メーリングリスト</link> (https://wiki.openstack.org/wiki/Mailing_Lists) もアドバイスをもらうのに素晴らしい場所です。 Wiki ページにメーリングリストの詳しい情報が載っています。運用者としては、確認しておくべき主要なメーリングリストは以下です。"
+msgstr "<link href=\"https://wiki.openstack.org/wiki/Mailing_Lists\">メーリングリスト</link> (https://wiki.openstack.org/wiki/Mailing_Lists) もアドバイスをもらうのに素晴らしい場所です。 Wiki ページにメーリングリストの詳しい情報が載っています。運用者としては、確認しておくべき主要なメーリングリストは以下です。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml44(para)
 msgid ""
-"<link xlink:href=\"https://launchpad.net/~openstack\">General list</link>: "
+"<link href=\"https://launchpad.net/~openstack\">General list</link>: "
 "<code>openstack@lists.launchpad.net</code>. The scope of this list is the "
 "current state of OpenStack. This is a very high traffic mailing list, with "
 "many, many emails per day."
-msgstr "<link xlink:href=\"https://launchpad.net/~openstack\">一般向けメーリングリスト</link>: <code>openstack@lists.launchpad.net</code>. このリストでは、OpenStackの現行リリースに関する話題を扱います。流量は非常に多く、1日にとてもたくさんのメールが流れます。"
+msgstr "<link href=\"https://launchpad.net/~openstack\">一般向けメーリングリスト</link>: <code>openstack@lists.launchpad.net</code>. このリストでは、OpenStackの現行リリースに関する話題を扱います。流量は非常に多く、1日にとてもたくさんのメールが流れます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml54(para)
 msgid ""
-"<link xlink:href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-"
+"<link href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-"
 "operators\">Operators list</link>: <code>openstack-"
 "operators@lists.openstack.org.</code> This list is intended for discussion "
 "among existing OpenStack cloud operators, such as yourself. Currently, this "
 "list is relatively low traffic, on the order of one email a day."
-msgstr "<link xlink:href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-operators\">運用者向けリスト</link>: <code>openstack-operators@lists.openstack.org.</code> このリストは、あなたのように、実際にOpenStackクラウドの運用者間での議論を目的としています。現在のところ、メールの流量はかなり少なく、１日に１通といったレベルです。"
+msgstr "<link href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-operators\">運用者向けリスト</link>: <code>openstack-operators@lists.openstack.org.</code> このリストは、あなたのように、実際にOpenStackクラウドの運用者間での議論を目的としています。現在のところ、メールの流量はかなり少なく、１日に１通といったレベルです。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml65(para)
 msgid ""
-"<link xlink:href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-"
+"<link href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-"
 "dev\">Development list</link>: <code>openstack-"
 "dev@lists.openstack.org</code>. The scope of this list is the future state "
 "of OpenStack. This is a high traffic mailing list, with multiple emails per "
 "day."
-msgstr "<link xlink:href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev\">開発者向けリスト</link>: <code>openstack-dev@lists.openstack.org</code>. このリストでは、OpenStackの今後についての話題を扱います。流量は多く、1日に何通もメールが流れます。"
+msgstr "<link href=\"http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev\">開発者向けリスト</link>: <code>openstack-dev@lists.openstack.org</code>. このリストでは、OpenStackの今後についての話題を扱います。流量は多く、1日に何通もメールが流れます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml75(para)
 msgid ""
@@ -580,11 +580,11 @@ msgstr "一般向けリストと運用者向けリストを購読するのがお
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml81(para)
 msgid ""
-"<link xlink:href=\"https://wiki.openstack.org/wiki/IRC\">Multiple IRC "
+"<link href=\"https://wiki.openstack.org/wiki/IRC\">Multiple IRC "
 "channels</link> (https://wiki.openstack.org/wiki/IRC) are available for "
 "general questions and developer discussions. The general discussion channel "
 "is <code>#openstack</code> on <code>irc.freenode.net</code>."
-msgstr "一般的な質問用や開発者の議論用など、<link xlink:href=\"https://wiki.openstack.org/wiki/IRC\">複数の IRC チャネル</link> (https://wiki.openstack.org/wiki/IRC) があります。一般的な議論用のチャネルは <code>irc.freenode.net</code> の <code>#openstack</code>です。"
+msgstr "一般的な質問用や開発者の議論用など、<link href=\"https://wiki.openstack.org/wiki/IRC\">複数の IRC チャネル</link> (https://wiki.openstack.org/wiki/IRC) があります。一般的な議論用のチャネルは <code>irc.freenode.net</code> の <code>#openstack</code>です。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml91(title)
 msgid "Reporting Bugs"
@@ -601,9 +601,9 @@ msgstr "運用者として、あなたは、あなたのクラウドでの予期
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml98(para)
 msgid ""
 "All OpenStack projects use <link "
-"xlink:href=\"http://launchpad.net/\">Launchpad</link> for bug tracking. You'll "
+"href=\"http://launchpad.net/\">Launchpad</link> for bug tracking. You'll "
 "need to create an account on Launchpad before you can submit a bug report."
-msgstr "全ての OpenStack プロジェクトでは、バグ管理に <link xlink:href=\"http://launchpad.net/\">Launchpad</link> を使っています。バグ報告を行う前に、Launchpad のアカウントを作る必要があります。"
+msgstr "全ての OpenStack プロジェクトでは、バグ管理に <link href=\"http://launchpad.net/\">Launchpad</link> を使っています。バグ報告を行う前に、Launchpad のアカウントを作る必要があります。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml104(para)
 msgid ""
@@ -616,107 +616,107 @@ msgstr "Launchpad のアカウントを作った後は、バグを報告する�
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml112(para)
 msgid ""
 "Report a bug in <link "
-"xlink:href=\"https://bugs.launchpad.net/nova/+filebug\">Nova</link> "
+"href=\"https://bugs.launchpad.net/nova/+filebug\">Nova</link> "
 "(https://bugs.launchpad.net/nova/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/nova/+filebug\">Nova</link> のバグ報告 (https://bugs.launchpad.net/nova/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/nova/+filebug\">Nova</link> のバグ報告 (https://bugs.launchpad.net/nova/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml118(para)
 msgid ""
-"Report a bug in <link xlink:href=\"https://bugs.launchpad.net/python-"
+"Report a bug in <link href=\"https://bugs.launchpad.net/python-"
 "novaclient/+filebug\">python-novaclient</link> (https://bugs.launchpad.net"
 "/python-novaclient/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/python-novaclient/+filebug\">python-novaclient</link> のバグ報告 (https://bugs.launchpad.net/python-novaclient/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/python-novaclient/+filebug\">python-novaclient</link> のバグ報告 (https://bugs.launchpad.net/python-novaclient/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml124(para)
 msgid ""
 "Report a bug in <link "
-"xlink:href=\"https://bugs.launchpad.net/swift/+filebug\">Swift</link> "
+"href=\"https://bugs.launchpad.net/swift/+filebug\">Swift</link> "
 "(https://bugs.launchpad.net/swift/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/swift/+filebug\">Swift</link> のバグ報告 (https://bugs.launchpad.net/swift/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/swift/+filebug\">Swift</link> のバグ報告 (https://bugs.launchpad.net/swift/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml130(para)
 msgid ""
-"Report a bug in <link xlink:href=\"https://bugs.launchpad.net/python-"
+"Report a bug in <link href=\"https://bugs.launchpad.net/python-"
 "swiftclient/+filebug\">python-swiftclient</link> (https://bugs.launchpad.net"
 "/python-swiftclient/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/python-swiftclient/+filebug\">python-swiftclient</link> のバグ報告(https://bugs.launchpad.net/python-swiftclient/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/python-swiftclient/+filebug\">python-swiftclient</link> のバグ報告(https://bugs.launchpad.net/python-swiftclient/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml137(para)
 msgid ""
 "Report a bug in <link "
-"xlink:href=\"https://bugs.launchpad.net/glance/+filebug\">Glance</link> "
+"href=\"https://bugs.launchpad.net/glance/+filebug\">Glance</link> "
 "(https://bugs.launchpad.net/glance/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/glance/+filebug\">Glance</link> のバグ報告 (https://bugs.launchpad.net/glance/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/glance/+filebug\">Glance</link> のバグ報告 (https://bugs.launchpad.net/glance/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml143(para)
 msgid ""
-"Report a bug in <link xlink:href=\"https://bugs.launchpad.net/python-"
+"Report a bug in <link href=\"https://bugs.launchpad.net/python-"
 "glanceclient/+filebug\">python-glanceclient</link> "
 "(https://bugs.launchpad.net/python-glanceclient/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/python-glanceclient/+filebug\">python-glanceclient</link> のバグ報告(https://bugs.launchpad.net/python-glanceclient/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/python-glanceclient/+filebug\">python-glanceclient</link> のバグ報告(https://bugs.launchpad.net/python-glanceclient/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml150(para)
 msgid ""
 "Report a bug in <link "
-"xlink:href=\"https://bugs.launchpad.net/keystone/+filebug\">Keystone</link> "
+"href=\"https://bugs.launchpad.net/keystone/+filebug\">Keystone</link> "
 "(https://bugs.launchpad.net/keystone/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/keystone/+filebug\">Keystone</link> のバグ報告 (https://bugs.launchpad.net/keystone/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/keystone/+filebug\">Keystone</link> のバグ報告 (https://bugs.launchpad.net/keystone/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml156(para)
 msgid ""
-"Report a bug in <link xlink:href=\"https://bugs.launchpad.net/python-"
+"Report a bug in <link href=\"https://bugs.launchpad.net/python-"
 "keystoneclient/+filebug\">python-keystoneclient</link> "
 "(https://bugs.launchpad.net/python-keystoneclient/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/python-keystoneclient/+filebug\">python-keystoneclient</link> のバグ報告(https://bugs.launchpad.net/python-keystoneclient/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/python-keystoneclient/+filebug\">python-keystoneclient</link> のバグ報告(https://bugs.launchpad.net/python-keystoneclient/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml163(para)
 msgid ""
 "Report a bug in <link "
-"xlink:href=\"https://bugs.launchpad.net/quantum/+filebug\">Quantum</link> "
+"href=\"https://bugs.launchpad.net/quantum/+filebug\">Quantum</link> "
 "(https://bugs.launchpad.net/quantum/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/quantum/+filebug\">Quantum</link> のバグ報告 (https://bugs.launchpad.net/quantum/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/quantum/+filebug\">Quantum</link> のバグ報告 (https://bugs.launchpad.net/quantum/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml169(para)
 msgid ""
-"Report a bug in <link xlink:href=\"https://bugs.launchpad.net/python-"
+"Report a bug in <link href=\"https://bugs.launchpad.net/python-"
 "quantumclient/+filebug\">python-quantumclient</link> "
 "(https://bugs.launchpad.net/python-quantumclient/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/python-quantumclient/+filebug\">python-quantumclient</link> のバグ報告(https://bugs.launchpad.net/python-quantumclient/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/python-quantumclient/+filebug\">python-quantumclient</link> のバグ報告(https://bugs.launchpad.net/python-quantumclient/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml176(para)
 msgid ""
 "Report a bug in <link "
-"xlink:href=\"https://bugs.launchpad.net/cinder/+filebug\">Cinder</link> "
+"href=\"https://bugs.launchpad.net/cinder/+filebug\">Cinder</link> "
 "(https://bugs.launchpad.net/cinder/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/cinder/+filebug\">Cinder</link> のバグ報告 (https://bugs.launchpad.net/cinder/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/cinder/+filebug\">Cinder</link> のバグ報告 (https://bugs.launchpad.net/cinder/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml182(para)
 msgid ""
-"Report a bug in <link xlink:href=\"https://bugs.launchpad.net/python-"
+"Report a bug in <link href=\"https://bugs.launchpad.net/python-"
 "cinderclient/+filebug\">python-cinderclient</link> "
 "(https://bugs.launchpad.net/python-cinderclient/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/python-cinderclient/+filebug\">python-cinderclient</link> のバグ報告(https://bugs.launchpad.net/python-cinderclient/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/python-cinderclient/+filebug\">python-cinderclient</link> のバグ報告(https://bugs.launchpad.net/python-cinderclient/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml189(para)
 msgid ""
 "Report a bug in <link "
-"xlink:href=\"https://bugs.launchpad.net/horizon/+filebug\">Horizon</link> "
+"href=\"https://bugs.launchpad.net/horizon/+filebug\">Horizon</link> "
 "(https://bugs.launchpad.net/horizon/+filebug)"
-msgstr "<link xlink:href=\"https://bugs.launchpad.net/horizon/+filebug\">Horizon</link> のバグ報告 (https://bugs.launchpad.net/horizon/+filebug)"
+msgstr "<link href=\"https://bugs.launchpad.net/horizon/+filebug\">Horizon</link> のバグ報告 (https://bugs.launchpad.net/horizon/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml195(para)
 msgid ""
-"Report a bug with the <link xlink:href=\"http://bugs.launchpad.net/openstack-"
+"Report a bug with the <link href=\"http://bugs.launchpad.net/openstack-"
 "manuals/+filebug\">documentation</link> (http://bugs.launchpad.net"
 "/openstack-manuals/+filebug)"
-msgstr "<link xlink:href=\"http://bugs.launchpad.net/openstack-manuals/+filebug\">ドキュメントdocumentation</link> に関するバグ報告 (http://bugs.launchpad.net/openstack-manuals/+filebug)"
+msgstr "<link href=\"http://bugs.launchpad.net/openstack-manuals/+filebug\">ドキュメントdocumentation</link> に関するバグ報告 (http://bugs.launchpad.net/openstack-manuals/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml201(para)
 msgid ""
-"Report a bug with the <link xlink:href=\"http://bugs.launchpad.net/openstack-api-"
+"Report a bug with the <link href=\"http://bugs.launchpad.net/openstack-api-"
 "site/+filebug\">API documentation</link> (http://bugs.launchpad.net"
 "/openstack-api-site/+filebug)"
-msgstr "<link xlink:href=\"http://bugs.launchpad.net/openstack-api-site/+filebug\">API ドキュメント</link> に関するバグ報告 (http://bugs.launchpad.net/openstack-api-site/+filebug)"
+msgstr "<link href=\"http://bugs.launchpad.net/openstack-api-site/+filebug\">API ドキュメント</link> に関するバグ報告 (http://bugs.launchpad.net/openstack-api-site/+filebug)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml208(para)
 msgid ""
@@ -788,7 +788,7 @@ msgstr "Status: <emphasis>Incomplete</emphasis>"
 msgid ""
 "Once you have reproduced the issue (or are 100% confident that this is "
 "indeed a valid bug) and have permissions to do so, set:"
-msgstr "にセットされます。問題を再現できた場合 (もしくはこの報告がバグであると 100％ 確信を持てる場合) で、セットする権限を持っている場合には、"
+msgstr "にセットされます。問題を再現できた場合 (もしくはこの報告がバグであると 100％ 確信を持てる場合) で、セットする権限を持っている場合には、%c_dummy"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml272(para)
 msgid "Status: <emphasis>Confirmed</emphasis>"
@@ -899,7 +899,7 @@ msgstr "OpenStack コミュニティに参加する"
 msgid ""
 "Since you've made it this far in the book, you should consider becoming an "
 "official individual member of the community and <link "
-"xlink:href=\"https://www.openstack.org/join/\">Join The OpenStack "
+"href=\"https://www.openstack.org/join/\">Join The OpenStack "
 "Foundation</link> (https://www.openstack.org/join/). The OpenStack "
 "Foundation is an independent body providing shared resources to help achieve"
 " the OpenStack mission by protecting, empowering, and promoting OpenStack "
@@ -908,7 +908,7 @@ msgid ""
 " best it can possibly be and signing up to be a member is the first step to "
 "participating. Like the software, individual membership within the OpenStack"
 " Foundation is free and accessible to anyone."
-msgstr "この本をここまで読んで来たので、あなたはコミュニティの正式な個人メンバーになって、<link xlink:href=\"https://www.openstack.org/join/\">Join The OpenStack Foundation</link> (https://www.openstack.org/join/) に加入することを考えていることでしょう。 OpenStack Foundation は、共有リソースを提供し OpenStack の目的の達成を支援する独立組織で、OpenStack ソフトウェア、およびユーザ、開発者、エコシステム全体といった OpenStack を取り巻くコニュニティを守り、活力を与え、普及の促進を行います。我々全員がこのコミュニティをできる限りよいものにしていく責任を共有します。メンバーになることはコミュニティに参加する最初のステップです。ソフトウェア同様、 OpenStack Foundation の個人会員は無料で誰でもなることができます。"
+msgstr "この本をここまで読んで来たので、あなたはコミュニティの正式な個人メンバーになって、<link href=\"https://www.openstack.org/join/\">Join The OpenStack Foundation</link> (https://www.openstack.org/join/) に加入することを考えていることでしょう。 OpenStack Foundation は、共有リソースを提供し OpenStack の目的の達成を支援する独立組織で、OpenStack ソフトウェア、およびユーザ、開発者、エコシステム全体といった OpenStack を取り巻くコニュニティを守り、活力を与え、普及の促進を行います。我々全員がこのコミュニティをできる限りよいものにしていく責任を共有します。メンバーになることはコミュニティに参加する最初のステップです。ソフトウェア同様、 OpenStack Foundation の個人会員は無料で誰でもなることができます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml382(title)
 msgid "Features and the Development Roadmap"
@@ -943,30 +943,30 @@ msgid ""
 "Therefore, the fastest way to get your feature request up for consideration "
 "is to create an Etherpad with your ideas and propose a session to the design"
 " summit. If the design summit has already passed, you may also create a "
-"blueprint directly. Read this <link xlink:href=\"http://vmartinezdelacruz.com/how-"
+"blueprint directly. Read this <link href=\"http://vmartinezdelacruz.com/how-"
 "to-work-with-blueprints-without-losing-your-mind/\">blog post about how to "
 "work with blueprints</link> (http://vmartinezdelacruz.com/how-to-work-with-"
 "blueprints-without-losing-your-mind/) for a developer intern's perspective, "
 "Victoria Martínez."
-msgstr "あなたの機能追加リクエストを新機能として検討してもらうのに一番早い方法は、アイデアを書いた Etherpad を作成し、デザインサミットのセッションを提案することです。デザインサミットが終わっている場合には、blueprint を直接作成することもできます。 Victoria Martínez の <link xlink:href=\"http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/\">blueprint での開発の進め方についてのブログ</link> (http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/) を是非読んで下さい。 OpenStack 開発者のインターンの視点で書かれた記事です。"
+msgstr "あなたの機能追加リクエストを新機能として検討してもらうのに一番早い方法は、アイデアを書いた Etherpad を作成し、デザインサミットのセッションを提案することです。デザインサミットが終わっている場合には、blueprint を直接作成することもできます。 Victoria Martínez の <link href=\"http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/\">blueprint での開発の進め方についてのブログ</link> (http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/) を是非読んで下さい。 OpenStack 開発者のインターンの視点で書かれた記事です。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml424(para)
 msgid ""
 "The roadmap for the next release as it is developed can be seen at <link "
-"xlink:href=\"http://status.openstack.org/release/\">Releases</link> "
+"href=\"http://status.openstack.org/release/\">Releases</link> "
 "(http://status.openstack.org/release/)."
-msgstr "次のリリースに向けたロードマップと開発状況は <link xlink:href=\"http://status.openstack.org/release/\">Releases</link> (http://status.openstack.org/release/) で見ることができます。"
+msgstr "次のリリースに向けたロードマップと開発状況は <link href=\"http://status.openstack.org/release/\">Releases</link> (http://status.openstack.org/release/) で見ることができます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml429(para)
 msgid ""
 "To determine the potential features going in to future releases, or to look "
 "at features implemented previously, take a look at the existing blueprints "
-"such as <link xlink:href=\"https://blueprints.launchpad.net/nova\">OpenStack "
+"such as <link href=\"https://blueprints.launchpad.net/nova\">OpenStack "
 "Compute (nova) Blueprints</link> (https://blueprints.launchpad.net/nova), "
-"<link xlink:href=\"https://blueprints.launchpad.net/keystone\">OpenStack Identity "
+"<link href=\"https://blueprints.launchpad.net/keystone\">OpenStack Identity "
 "(keystone) Blueprints</link> (https://blueprints.launchpad.net/keystone) and"
 " release notes."
-msgstr "将来のリリースで検討されている機能を確認したり、過去に実装された機能を見るには、<link xlink:href=\"https://blueprints.launchpad.net/nova\">OpenStack Compute (nova) Blueprints</link> (https://blueprints.launchpad.net/nova), <link xlink:href=\"https://blueprints.launchpad.net/keystone\">OpenStack Identity (keystone) Blueprints</link> (https://blueprints.launchpad.net/keystone) などの既存の Blueprint やリリースノートを見て下さい。"
+msgstr "将来のリリースで検討されている機能を確認したり、過去に実装された機能を見るには、<link href=\"https://blueprints.launchpad.net/nova\">OpenStack Compute (nova) Blueprints</link> (https://blueprints.launchpad.net/nova), <link href=\"https://blueprints.launchpad.net/keystone\">OpenStack Identity (keystone) Blueprints</link> (https://blueprints.launchpad.net/keystone) などの既存の Blueprint やリリースノートを見て下さい。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml443(para)
 msgid "Release notes are maintained on the OpenStack wiki:"
@@ -1180,33 +1180,33 @@ msgstr "この本の元は人が集まったイベントで作成されました
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml605(para)
 msgid ""
 "Just like the code, the <link "
-"xlink:href=\"http://docs.openstack.org\">docs.openstack.org</link> site is updated"
+"href=\"http://docs.openstack.org\">docs.openstack.org</link> site is updated"
 " constantly using the Gerrit review system, with source stored in GitHub in "
-"the <link xlink:href=\"http://github.com/openstack/openstack-manuals/\">openstack-"
+"the <link href=\"http://github.com/openstack/openstack-manuals/\">openstack-"
 "manuals</link> (http://github.com/openstack/openstack-manuals/) repository "
-"and the <link xlink:href=\"http://github.com/openstack/api-site/\">api-site</link>"
+"and the <link href=\"http://github.com/openstack/api-site/\">api-site</link>"
 " (http://github.com/openstack/api-site/) repository, in DocBook format."
-msgstr "コードと全く同じく、<link xlink:href=\"http://docs.openstack.org\">docs.openstack.org</link> サイトは Gerrit レビューシステムを使って常に更新されています。ソースは、GitHub の <link xlink:href=\"http://github.com/openstack/openstack-manuals/\">openstack-manuals</link> (http://github.com/openstack/openstack-manuals/) レポジトリと <link xlink:href=\"http://github.com/openstack/api-site/\">api-site</link> (http://github.com/openstack/api-site/) レポジトリに、それぞれ DocBook 形式で保存されています。"
+msgstr "コードと全く同じく、<link href=\"http://docs.openstack.org\">docs.openstack.org</link> サイトは Gerrit レビューシステムを使って常に更新されています。ソースは、GitHub の <link href=\"http://github.com/openstack/openstack-manuals/\">openstack-manuals</link> (http://github.com/openstack/openstack-manuals/) レポジトリと <link href=\"http://github.com/openstack/api-site/\">api-site</link> (http://github.com/openstack/api-site/) レポジトリに、それぞれ DocBook 形式で保存されています。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml617(para)
 msgid ""
 "To review the documentation before it's published, go to the OpenStack "
 "Gerrit server at <link "
-"xlink:href=\"http://review.openstack.org\">review.openstack.org</link> and search "
+"href=\"http://review.openstack.org\">review.openstack.org</link> and search "
 "for <link "
-"xlink:href=\"https://review.openstack.org/#/q/status:open+project:openstack"
+"href=\"https://review.openstack.org/#/q/status:open+project:openstack"
 "/openstack-manuals,n,z\">project:openstack/openstack-manuals</link> or <link"
-" xlink:href=\"https://review.openstack.org/#/q/status:open+project:openstack/api-"
+" href=\"https://review.openstack.org/#/q/status:open+project:openstack/api-"
 "site,n,z\">project:openstack/api-site</link>."
-msgstr "公開される前にドキュメントのレビューを行うには、OpenStack Gerrit サーバー <link xlink:href=\"http://review.openstack.org\">review.openstack.org</link> に行って、<link xlink:href=\"https://review.openstack.org/#/q/status:open+project:openstack/openstack-manuals,n,z\">project:openstack/openstack-manuals</link> や <link xlink:href=\"https://review.openstack.org/#/q/status:open+project:openstack/api-site,n,z\">project:openstack/api-site</link> を検索して下さい。"
+msgstr "公開される前にドキュメントのレビューを行うには、OpenStack Gerrit サーバー <link href=\"http://review.openstack.org\">review.openstack.org</link> に行って、<link href=\"https://review.openstack.org/#/q/status:open+project:openstack/openstack-manuals,n,z\">project:openstack/openstack-manuals</link> や <link href=\"https://review.openstack.org/#/q/status:open+project:openstack/api-site,n,z\">project:openstack/api-site</link> を検索して下さい。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml628(para)
 msgid ""
-"See the <link xlink:href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">How"
+"See the <link href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">How"
 " To Contribute</link> (https://wiki.openstack.org/wiki/How_To_Contribute) "
 "page on the wiki for more information on the steps you need to take to "
 "submit your first documentation review or change."
-msgstr "ドキュメントのレビューや変更を最初に行うのに必要な手続きについての詳しい情報は、Wiki の <link xlink:href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">How To Contribute</link> (https://wiki.openstack.org/wiki/How_To_Contribute) ページを参照して下さい。"
+msgstr "ドキュメントのレビューや変更を最初に行うのに必要な手続きについての詳しい情報は、Wiki の <link href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">How To Contribute</link> (https://wiki.openstack.org/wiki/How_To_Contribute) ページを参照して下さい。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml637(title)
 msgid "Security Information"
@@ -1262,20 +1262,20 @@ msgstr "Launchpad でバグ報告を行い、'security bug' のマークを付�
 msgid ""
 "If the issue is extremely sensitive, send an encrypted email to one of the "
 "Team's members. Find their GPG keys at <link "
-"xlink:href=\"http://www.openstack.org/projects/openstack-security/\">OpenStack "
+"href=\"http://www.openstack.org/projects/openstack-security/\">OpenStack "
 "Security</link> (http://www.openstack.org/projects/openstack-security/)."
-msgstr "問題が極めて慎重に扱うべき情報の場合は、脆弱性管理チームのメンバーの誰かに暗号化したメールを送って下さい。メンバーの GPG 鍵は <link xlink:href=\"http://www.openstack.org/projects/openstack-security/\">OpenStack Security</link> (http://www.openstack.org/projects/openstack-security/) で入手できます。"
+msgstr "問題が極めて慎重に扱うべき情報の場合は、脆弱性管理チームのメンバーの誰かに暗号化したメールを送って下さい。メンバーの GPG 鍵は <link href=\"http://www.openstack.org/projects/openstack-security/\">OpenStack Security</link> (http://www.openstack.org/projects/openstack-security/) で入手できます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml692(para)
 msgid ""
 "You can find the full list of security-oriented teams you can join at <link "
-"xlink:href=\"https://wiki.openstack.org/wiki/SecurityTeams\">Security Teams</link>"
+"href=\"https://wiki.openstack.org/wiki/SecurityTeams\">Security Teams</link>"
 " (http://wiki.openstack.org/SecurityTeams). The Vulnerability Management "
 "process is fully documented at <link "
-"xlink:href=\"https://wiki.openstack.org/wiki/VulnerabilityManagement\">Vulnerability"
+"href=\"https://wiki.openstack.org/wiki/VulnerabilityManagement\">Vulnerability"
 " Management</link> "
 "(https://wiki.openstack.org/wiki/VulnerabilityManagement)."
-msgstr "あなたが参加できるセキュリティ関連のチームのリストは <link xlink:href=\"https://wiki.openstack.org/wiki/SecurityTeams\">セキュリティチーム</link> (http://wiki.openstack.org/SecurityTeams) にあります。脆弱性管理プロセスはすべてドキュメントにまとめられており、<link xlink:href=\"https://wiki.openstack.org/wiki/VulnerabilityManagement\">脆弱性管理</link> (https://wiki.openstack.org/wiki/VulnerabilityManagement) で参照できます。"
+msgstr "あなたが参加できるセキュリティ関連のチームのリストは <link href=\"https://wiki.openstack.org/wiki/SecurityTeams\">セキュリティチーム</link> (http://wiki.openstack.org/SecurityTeams) にあります。脆弱性管理プロセスはすべてドキュメントにまとめられており、<link href=\"https://wiki.openstack.org/wiki/VulnerabilityManagement\">脆弱性管理</link> (https://wiki.openstack.org/wiki/VulnerabilityManagement) で参照できます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml704(title)
 msgid "Finding Additional Information"
@@ -1284,21 +1284,21 @@ msgstr "さらに情報を見つける"
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_upstream.xml705(para)
 msgid ""
 "In addition to this book, there are many other sources of information about "
-"OpenStack. The <link xlink:href=\"http://www.openstack.org\">OpenStack "
+"OpenStack. The <link href=\"http://www.openstack.org\">OpenStack "
 "website</link> (http://www.openstack.org) is a good starting point, with "
-"<link xlink:href=\"http://docs.openstack.org\">OpenStack Docs</link> "
+"<link href=\"http://docs.openstack.org\">OpenStack Docs</link> "
 "(http://docs.openstack.org) and <link "
-"xlink:href=\"http://api.openstack.org\">OpenStack API Docs</link> "
+"href=\"http://api.openstack.org\">OpenStack API Docs</link> "
 "(http://api.openstack.org) providing technical documentation about "
-"OpenStack. The <link xlink:href=\"https://wiki.openstack.org\">OpenStack "
+"OpenStack. The <link href=\"https://wiki.openstack.org\">OpenStack "
 "wiki</link> contains a lot of general information that cuts across the "
 "OpenStack projects including a list of <link "
-"xlink:href=\"https://wiki.openstack.org/wiki/OperationsTools\">recommended "
+"href=\"https://wiki.openstack.org/wiki/OperationsTools\">recommended "
 "tools</link> (https://wiki.openstack.org/wiki/OperationsTools ). Finally, "
 "there are a number of blogs aggregated at <link "
-"xlink:href=\"http://planet.openstack.org\">Planet OpenStack</link> "
+"href=\"http://planet.openstack.org\">Planet OpenStack</link> "
 "(http://planet.openstack.org)."
-msgstr "この本以外にも、OpenStack に関する情報源はたくさんあります。 <link xlink:href=\"http://www.openstack.org\">OpenStack ウェブサイト</link> (http://www.openstack.org) は最初に見るといいでしょう。ここには、<link xlink:href=\"http://docs.openstack.org\">OpenStack ドキュメント</link> (http://docs.openstack.org) と <link xlink:href=\"http://api.openstack.org\">OpenStack API ドキュメント</link> (http://api.openstack.org) があり、OpenStack に関する技術情報が提供されています。 <link xlink:href=\"https://wiki.openstack.org\">OpenStack wiki</link> には、OpenStack の各プロジェクトの範囲にとどらまらない汎用的な情報が多数あり、例えば <link xlink:href=\"https://wiki.openstack.org/wiki/OperationsTools\">お薦めツールのリスト</link> (https://wiki.openstack.org/wiki/OperationsTools ) といった情報も載っています。最後に、<link xlink:href=\"http://planet.openstack.org\">Planet OpenStack</link> (http://planet.openstack.org) には多くのブログが集められています。"
+msgstr "この本以外にも、OpenStack に関する情報源はたくさんあります。 <link href=\"http://www.openstack.org\">OpenStack ウェブサイト</link> (http://www.openstack.org) は最初に見るといいでしょう。ここには、<link href=\"http://docs.openstack.org\">OpenStack ドキュメント</link> (http://docs.openstack.org) と <link href=\"http://api.openstack.org\">OpenStack API ドキュメント</link> (http://api.openstack.org) があり、OpenStack に関する技術情報が提供されています。 <link href=\"https://wiki.openstack.org\">OpenStack wiki</link> には、OpenStack の各プロジェクトの範囲にとどらまらない汎用的な情報が多数あり、例えば <link href=\"https://wiki.openstack.org/wiki/OperationsTools\">お薦めツールのリスト</link> (https://wiki.openstack.org/wiki/OperationsTools ) といった情報も載っています。最後に、<link href=\"http://planet.openstack.org\">Planet OpenStack</link> (http://planet.openstack.org) には多くのブログが集められています。"
 
 #: ./doc/src/docbkx/openstack-ops/src/acknowledgements.xml19(title)
 msgid "Acknowledgments"
@@ -1311,9 +1311,9 @@ msgid ""
 "after a windstorm), and delicious food. For about USD $10,000, we could "
 "collaborate intensively for a week in the same room at the Rackspace Austin "
 "office. The authors are all members of the OpenStack Foundation, which you "
-"can join. Go to the <link xlink:href=\"https://www.openstack.org/join\">Foundation"
+"can join. Go to the <link href=\"https://www.openstack.org/join\">Foundation"
 " web site</link> at http://openstack.org/join."
-msgstr "OpenStack Foundationは、オースチンへの航空券、(暴風後の停電によるドキドキの夜を含む)宿、そして美味しい食事で、この本の作成をサポートしました。約10,000USドルで、Rackspaceのオースチンオフィスの同じ部屋の中で、私たちは1週間で集中的に共同作業をすることができました。著者たちはすべてOpenStack Foundationのメンバーであり、それにはあなたも参加することができます。<link xlink:href=\"https://www.openstack.org/join\">FoundationのWebサイト</link> (http://openstack.org/join) に行ってみてください。"
+msgstr "OpenStack Foundationは、オースチンへの航空券、(暴風後の停電によるドキドキの夜を含む)宿、そして美味しい食事で、この本の作成をサポートしました。約10,000USドルで、Rackspaceのオースチンオフィスの同じ部屋の中で、私たちは1週間で集中的に共同作業をすることができました。著者たちはすべてOpenStack Foundationのメンバーであり、それにはあなたも参加することができます。<link href=\"https://www.openstack.org/join\">FoundationのWebサイト</link> (http://openstack.org/join) に行ってみてください。"
 
 #: ./doc/src/docbkx/openstack-ops/src/acknowledgements.xml33(para)
 msgid ""
@@ -1513,11 +1513,11 @@ msgstr "Keystoneは少し異なる動作をします。ロギングレベルを�
 msgid ""
 "Logging for Horizon is configured in "
 "<code>/etc/openstack_dashboard/local_settings.py</code>. As Horizon is a "
-"Django web application, it follows the <link xlink:title=\"Django Logging\" "
-"xlink:href=\"https://docs.djangoproject.com/en/dev/topics/logging/\">Django "
+"Django web application, it follows the <link title=\"Django Logging\" "
+"href=\"https://docs.djangoproject.com/en/dev/topics/logging/\">Django "
 "Logging</link> (https://docs.djangoproject.com/en/dev/topics/logging/) "
 "framework conventions."
-msgstr "Horizon のロギング設定は <code>/etc/openstack_dashboard/local_settings.py</code> で行います。Horizon は Django web アプリケーションですので、<link xlink:title=\"Django Logging\" xlink:href=\"https://docs.djangoproject.com/en/dev/topics/logging/\">Django Logging</link> (https://docs.djangoproject.com/en/dev/topics/logging/) フレームワークの規約に従います。"
+msgstr "Horizon のロギング設定は <code>/etc/openstack_dashboard/local_settings.py</code> で行います。Horizon は Django web アプリケーションですので、<link title=\"Django Logging\" href=\"https://docs.djangoproject.com/en/dev/topics/logging/\">Django Logging</link> (https://docs.djangoproject.com/en/dev/topics/logging/) フレームワークの規約に従います。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_log_monitor.xml129(para)
 msgid ""
@@ -1621,13 +1621,13 @@ msgstr "以下に例を示しますが、全てのログメッセージはアン
 msgid ""
 "This is used to support translation of logging messages into different "
 "languages using the <link "
-"xlink:href=\"http://docs.python.org/2/library/gettext.html\">gettext</link> "
+"href=\"http://docs.python.org/2/library/gettext.html\">gettext</link> "
 "(http://docs.python.org/2/library/gettext.html) internationalization "
 "library. You don't need to do this for your own custom log messages. "
 "However, if you want to contribute the code back to the OpenStack project "
 "that includes logging statements, you must surround your log messages with "
 "underscore and parentheses."
-msgstr "これは、ログメッセージを異なる言語に翻訳するために<link xlink:href=\"http://docs.python.org/2/library/gettext.html\">gettext</link> (http://docs.python.org/2/library/gettext.html) 国際化ライブラリ を利用しているためです。カスタムログには必要ありませんが、もし、OpenStackプロジェクトにログステートメントを含むコードを提供する場合は、アンダースコアと括弧でログメッセージを囲わなければなりません。"
+msgstr "これは、ログメッセージを異なる言語に翻訳するために<link href=\"http://docs.python.org/2/library/gettext.html\">gettext</link> (http://docs.python.org/2/library/gettext.html) 国際化ライブラリ を利用しているためです。カスタムログには必要ありませんが、もし、OpenStackプロジェクトにログステートメントを含むコードを提供する場合は、アンダースコアと括弧でログメッセージを囲わなければなりません。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_log_monitor.xml237(title)
 msgid "RabbitMQ Web Management Interface or rabbitmqctl"
@@ -1788,10 +1788,10 @@ msgid ""
 "StackTach is a tool created by Rackspace to collect and report the "
 "notifications sent by <code>nova</code>. Notifications are essentially the "
 "same as logs, but can be much more detailed. A good overview of "
-"notifications can be found at <link xlink:title=\"StackTach GitHub repo\" "
-"xlink:href=\"https://wiki.openstack.org/wiki/SystemUsageData\">System Usage "
+"notifications can be found at <link title=\"StackTach GitHub repo\" "
+"href=\"https://wiki.openstack.org/wiki/SystemUsageData\">System Usage "
 "Data</link> (https://wiki.openstack.org/wiki/SystemUsageData)."
-msgstr "StackTachはRackspaceによって作られたツールで、<code>nova</code>から送られた通知を収集してレポートします。通知は本質的にはログと同じですが、より詳細な情報を持ちます。通知の概要のよい資料は、<link xlink:title=\"StackTach GitHub repo\" xlink:href=\"https://wiki.openstack.org/wiki/SystemUsageData\">System Usage Data</link>(https://wiki.openstack.org/wiki/SystemUsageData)にあります。"
+msgstr "StackTachはRackspaceによって作られたツールで、<code>nova</code>から送られた通知を収集してレポートします。通知は本質的にはログと同じですが、より詳細な情報を持ちます。通知の概要のよい資料は、<link title=\"StackTach GitHub repo\" href=\"https://wiki.openstack.org/wiki/SystemUsageData\">System Usage Data</link>(https://wiki.openstack.org/wiki/SystemUsageData)にあります。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_log_monitor.xml394(para)
 msgid ""
@@ -1804,10 +1804,10 @@ msgid ""
 "Once <code>nova</code> is sending notifications, install and configure "
 "StackTach. Since StackTach is relatively new and constantly changing, "
 "installation instructions would quickly become outdated. Please refer to the"
-" <link xlink:href=\"https://github.com/rackerlabs/stacktach\">StackTach GitHub "
+" <link href=\"https://github.com/rackerlabs/stacktach\">StackTach GitHub "
 "repo</link> (https://github.com/rackerlabs/stacktach) for instructions as "
 "well as a demo video."
-msgstr "<code>nova</code>が通知を送信するように設定後、StackTachをインストールします。StackTachは新しく、頻繁に更新されるので、インストール手順はすぐに古くなります。<link xlink:href=\"https://github.com/rackerlabs/stacktach\">StackTach GitHub repo</link> (https://github.com/rackerlabs/stacktach) とデモビデオを参照して下さい。"
+msgstr "<code>nova</code>が通知を送信するように設定後、StackTachをインストールします。StackTachは新しく、頻繁に更新されるので、インストール手順はすぐに古くなります。<link href=\"https://github.com/rackerlabs/stacktach\">StackTach GitHub repo</link> (https://github.com/rackerlabs/stacktach) とデモビデオを参照して下さい。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_log_monitor.xml408(title)
 msgid "Monitoring"
@@ -1901,7 +1901,7 @@ msgstr "コンピュートノード上では、次のようなNRPE設定を追�
 msgid ""
 "Nagios alerts you with a WARNING when any disk on the compute node is 80% "
 "full and CRITICAL when 90% is full."
-msgstr "Naigosは、80%のディスク使用率でWARNING、90%でCRITICALを警告します。"
+msgstr "Naigosは、80%のディスク使用率でWARNING、90%でCRITICALを警告します。%i_dummy%f_dummy"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_log_monitor.xml492(title)
 msgid "OpenStack-specific Resources"
@@ -2840,16 +2840,16 @@ msgstr "カスタマイズ"
 msgid ""
 "OpenStack might not do everything you need it to do out of the box. In these"
 " cases, you can follow one of two major paths. First, you can learn <link "
-"xlink:href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">How To "
+"href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">How To "
 "Contribute</link> (https://wiki.openstack.org/wiki/How_To_Contribute), "
 "follow the <link "
-"xlink:href=\"https://wiki.openstack.org/wiki/GerritWorkflow\">Code Review "
+"href=\"https://wiki.openstack.org/wiki/GerritWorkflow\">Code Review "
 "Workflow</link> (https://wiki.openstack.org/wiki/GerritWorkflow), make your "
 "changes and contribute them back to the upstream OpenStack project. This "
 "path is recommended if the feature you need requires deep integration with "
 "an existing project. The community is always open to contributions and "
 "welcomes new functionality that follows the feature development guidelines."
-msgstr "OpenStack はあなたが必要とするすべてのことをしてくれるわけではないかもしれません。この場合、主に2つのやり方のうちのいずれかに従ってください。まず最初に、<link xlink:href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">貢献するには</link> (https://wiki.openstack.org/wiki/How_To_Contribute) を学び、<link xlink:href=\"https://wiki.openstack.org/wiki/GerritWorkflow\">Code Review Workflow</link> (https://wiki.openstack.org/wiki/GerritWorkflow) に従って、あなたの修正を上流の OpenStack プロジェクトへコントリビュートしてください。もし、あなたが必要な機能が既存のプロジェクトと密にインテグレーションする必要がある場合、これが推奨される選択肢です。コミュニティは、いつでも貢献に対して開かれていますし、機能開発ガイドラインに従う新機能を歓迎します。"
+msgstr "OpenStack はあなたが必要とするすべてのことをしてくれるわけではないかもしれません。この場合、主に2つのやり方のうちのいずれかに従ってください。まず最初に、<link href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">貢献するには</link> (https://wiki.openstack.org/wiki/How_To_Contribute) を学び、<link href=\"https://wiki.openstack.org/wiki/GerritWorkflow\">Code Review Workflow</link> (https://wiki.openstack.org/wiki/GerritWorkflow) に従って、あなたの修正を上流の OpenStack プロジェクトへコントリビュートしてください。もし、あなたが必要な機能が既存のプロジェクトと密にインテグレーションする必要がある場合、これが推奨される選択肢です。コミュニティは、いつでも貢献に対して開かれていますし、機能開発ガイドラインに従う新機能を歓迎します。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml33(para)
 msgid ""
@@ -2877,12 +2877,12 @@ msgstr "DevStack"
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml48(para)
 msgid ""
 "You can find all of the documentation at the <link "
-"xlink:href=\"http://devstack.org/\">DevStack</link> (http://devstack.org/) "
+"href=\"http://devstack.org/\">DevStack</link> (http://devstack.org/) "
 "website. Depending on which project you would like to customize, either "
 "Object Storage (swift) or another project, you must configure DevStack "
 "differently. For the middleware example below, you must install with the "
 "Object Store enabled."
-msgstr "ドキュメンテーションはすべて <link xlink:href=\"http://devstack.org/\">DevStack</link> (http://devstack.org/) のウェブサイトにあります。 どのプロジェクトをカスタマイズしたいかによって、つまり Object Storage (swift) なのか他のプロジェクトなのかによって、DevStack の環境設定が異なります。以下のミドルウェアの例では、Object Storage を有効にしてインストールしなければなりません。"
+msgstr "ドキュメンテーションはすべて <link href=\"http://devstack.org/\">DevStack</link> (http://devstack.org/) のウェブサイトにあります。 どのプロジェクトをカスタマイズしたいかによって、つまり Object Storage (swift) なのか他のプロジェクトなのかによって、DevStack の環境設定が異なります。以下のミドルウェアの例では、Object Storage を有効にしてインストールしなければなりません。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml57(title)
 msgid "To run DevStack for the stable Folsom branch on an instance:"
@@ -2959,9 +2959,9 @@ msgstr "<placeholder-1/> "
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml206(para)
 msgid ""
 "The <code>stack.sh</code> script takes a while to run. Perhaps take this "
-"opportunity to <link xlink:href=\"http://www.openstack.org/join/\">join the "
+"opportunity to <link href=\"http://www.openstack.org/join/\">join the "
 "OpenStack foundation</link> (http://www.openstack.org/join/)."
-msgstr "<code>stack.sh</code> の実行には、しばらく時間がかかります。できれば、この時間を使って <link xlink:href=\"http://www.openstack.org/join/\">OpenStack ファウンデーションに参加</link>してください (http://www.openstack.org/join/)。"
+msgstr "<code>stack.sh</code> の実行には、しばらく時間がかかります。できれば、この時間を使って <link href=\"http://www.openstack.org/join/\">OpenStack ファウンデーションに参加</link>してください (http://www.openstack.org/join/)。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml215(para)
 msgid ""
@@ -2975,9 +2975,9 @@ msgstr "<code>stack.sh</code> を実行する際、“ERROR: at least one RPC ba
 msgid ""
 "Screen is a useful program for viewing many related services at once. For "
 "more information, see <link "
-"xlink:href=\"http://aperiodic.net/screen/quick_reference\">GNU screen quick "
+"href=\"http://aperiodic.net/screen/quick_reference\">GNU screen quick "
 "reference</link>. (http://aperiodic.net/screen/quick_reference)"
-msgstr "Screen は、多くの関連するサービスを同時に見るための便利なプログラムです。<link xlink:href=\"http://aperiodic.net/screen/quick_reference\">GNU screen quick reference</link>. (http://aperiodic.net/screen/quick_reference) を参照してください。"
+msgstr "Screen は、多くの関連するサービスを同時に見るための便利なプログラムです。<link href=\"http://aperiodic.net/screen/quick_reference\">GNU screen quick reference</link>. (http://aperiodic.net/screen/quick_reference) を参照してください。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml239(para)
 msgid ""
@@ -3013,14 +3013,14 @@ msgstr "ミドルウェア例"
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml303(para)
 msgid ""
 "Most OpenStack projects are based on the Python <link "
-"xlink:href=\"http://pythonpaste.org/\">Paste</link>(http://pythonpaste.org/) "
+"href=\"http://pythonpaste.org/\">Paste</link>(http://pythonpaste.org/) "
 "framework. The best introduction to its architecture is <link "
-"xlink:href=\"http://pythonpaste.org/do-it-yourself-framework.html\">A Do-It-"
+"href=\"http://pythonpaste.org/do-it-yourself-framework.html\">A Do-It-"
 "Yourself Framework</link> (http://pythonpaste.org/do-it-yourself-"
 "framework.html). Due to the use of this framework, you are able to add "
 "features to a project by placing some custom code in a project's pipeline "
 "without having to change any of the core code."
-msgstr "ほとんどの OpenStack プロジェクトは Python <link xlink:href=\"http://pythonpaste.org/\">Paste</link>(http://pythonpaste.org/) フレームワークに基づいています。<link xlink:href=\"http://pythonpaste.org/do-it-yourself-framework.html\">A Do-It-Yourself Framework</link> (http://pythonpaste.org/do-it-yourself-framework.html) は、このアーキテクチャの最良の紹介です。このフレームワークを使っているため、コードに一切手をいれずに、プロジェクトの処理パイプラインになんらかのカスタム・コードを入れて機能追加を行うことができます。"
+msgstr "ほとんどの OpenStack プロジェクトは Python <link href=\"http://pythonpaste.org/\">Paste</link>(http://pythonpaste.org/) フレームワークに基づいています。<link href=\"http://pythonpaste.org/do-it-yourself-framework.html\">A Do-It-Yourself Framework</link> (http://pythonpaste.org/do-it-yourself-framework.html) は、このアーキテクチャの最良の紹介です。このフレームワークを使っているため、コードに一切手をいれずに、プロジェクトの処理パイプラインになんらかのカスタム・コードを入れて機能追加を行うことができます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml314(para)
 msgid ""
@@ -3264,9 +3264,9 @@ msgid ""
 "functionality. They can use your code, provide feedback, and possibly "
 "contribute. If enough support exists for it, perhaps you can propose that it"
 " be added to the official Swift <link "
-"xlink:href=\"https://github.com/openstack/swift/tree/master/swift/common/middleware\">middleware</link>"
+"href=\"https://github.com/openstack/swift/tree/master/swift/common/middleware\">middleware</link>"
 " (https://github.com/openstack/swift/tree/master/swift/common/middleware)."
-msgstr "あなたのミドルウェアが完成したら、オープンソースにし、OpenStack メーリングリストでコミュニティに知らせることを薦めます。コミュニティの人々はあなたのコードを使い、フィードバックし、おそらくコントリビュートするでしょう。もし十分な支持があれば、公式なSwift <link xlink:href=\"https://github.com/openstack/swift/tree/master/swift/common/middleware\">ミドルウェア</link> (https://github.com/openstack/swift/tree/master/swift/common/middleware) に追加するように提案することもできるでしょう。"
+msgstr "あなたのミドルウェアが完成したら、オープンソースにし、OpenStack メーリングリストでコミュニティに知らせることを薦めます。コミュニティの人々はあなたのコードを使い、フィードバックし、おそらくコントリビュートするでしょう。もし十分な支持があれば、公式なSwift <link href=\"https://github.com/openstack/swift/tree/master/swift/common/middleware\">ミドルウェア</link> (https://github.com/openstack/swift/tree/master/swift/common/middleware) に追加するように提案することもできるでしょう。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml660(title)
 msgid "Nova Scheduler Example"
@@ -3279,13 +3279,13 @@ msgid ""
 "interface and plug it in through configuration. For example, you can easily "
 "plug in a new scheduler for nova. The existing schedulers for nova are "
 "feature full and well documented at <link "
-"xlink:href=\"http://docs.openstack.org/folsom/openstack-"
+"href=\"http://docs.openstack.org/folsom/openstack-"
 "compute/admin/content/ch_scheduling.html\">Scheduling</link> "
 "(http://docs.openstack.org/folsom/openstack-"
 "compute/admin/content/ch_scheduling.html). However, depending on your user's"
 " use cases, the existing schedulers might not meet your requirements. You "
 "might need to create a new scheduler."
-msgstr "多くの OpenStack のプロジェクトでは、ドライバ・アーキテクチャを使うことによって、特定の機能をカスタマイズすることができます。特定のインターフェースに適合するドライバを書き、環境定義によって組み込むことができます。例えば、簡単に nova に新しいスケジューラーを組み込むことができます。nova の既存のスケジューラーは、フル機能であり、<link xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html\">スケジューリング</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html) によくドキュメントされています。しかし、あなたのユーザのユース・ケースに依存して、既存のスケジューラで要件が満たせないかもしれません。この場合は、新しいスケジューラーを作成する必要があるでしょう。"
+msgstr "多くの OpenStack のプロジェクトでは、ドライバ・アーキテクチャを使うことによって、特定の機能をカスタマイズすることができます。特定のインターフェースに適合するドライバを書き、環境定義によって組み込むことができます。例えば、簡単に nova に新しいスケジューラーを組み込むことができます。nova の既存のスケジューラーは、フル機能であり、<link href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html\">スケジューリング</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html) によくドキュメントされています。しかし、あなたのユーザのユース・ケースに依存して、既存のスケジューラで要件が満たせないかもしれません。この場合は、新しいスケジューラーを作成する必要があるでしょう。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml674(para)
 msgid ""
@@ -3460,9 +3460,9 @@ msgid ""
 "functionality. They can use your code, provide feedback, and possibly "
 "contribute. If enough support exists for it, perhaps you can propose that it"
 " be added to the official Nova <link "
-"xlink:href=\"https://github.com/openstack/nova/tree/master/nova/scheduler\">schedulers</link>"
+"href=\"https://github.com/openstack/nova/tree/master/nova/scheduler\">schedulers</link>"
 " (https://github.com/openstack/nova/tree/master/nova/scheduler)."
-msgstr "あなたのスケジューラーが完成したら、オープンソースにし、OpenStack メーリングリストでコミュニティに知らせることをお薦めします。もしかしたら他の人も同じ機能を必要としているかもしれません。彼らはあなたのコードを使い、フィードバックし、おそらくコントリビュートするでしょう。もし十分な支持があれば、もしかしたら公式なNova <link xlink:href=\"https://github.com/openstack/nova/tree/master/nova/scheduler\">スケジューラー</link> (https://github.com/openstack/nova/tree/master/nova/scheduler) への追加を提案してもよいでしょう。"
+msgstr "あなたのスケジューラーが完成したら、オープンソースにし、OpenStack メーリングリストでコミュニティに知らせることをお薦めします。もしかしたら他の人も同じ機能を必要としているかもしれません。彼らはあなたのコードを使い、フィードバックし、おそらくコントリビュートするでしょう。もし十分な支持があれば、もしかしたら公式なNova <link href=\"https://github.com/openstack/nova/tree/master/nova/scheduler\">スケジューラー</link> (https://github.com/openstack/nova/tree/master/nova/scheduler) への追加を提案してもよいでしょう。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml1001(title)
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_cloud_controller.xml381(title)
@@ -3472,13 +3472,13 @@ msgstr "ダッシュボード"
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_customize.xml1002(para)
 msgid ""
 "The Dashboard is based on the Python <link "
-"xlink:href=\"https://www.djangoproject.com/\">Django</link> "
+"href=\"https://www.djangoproject.com/\">Django</link> "
 "(https://www.djangoproject.com/) web application framework. The best guide "
 "to customizing it has already been written and can be found at <link "
-"xlink:href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Build"
+"href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Build"
 " on Horizon</link> "
 "(http://docs.openstack.org/developer/horizon/topics/tutorial.html)."
-msgstr "ダッシュボードは、Python <link xlink:href=\"https://www.djangoproject.com/\">Django</link> (https://www.djangoproject.com/) Webアプリケーションフレームワークに基づいています。カスタマイズのための最良のガイドは既に執筆されており、 <link xlink:href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Build on Horizon</link> (http://docs.openstack.org/developer/horizon/topics/tutorial.html) にあります。"
+msgstr "ダッシュボードは、Python <link href=\"https://www.djangoproject.com/\">Django</link> (https://www.djangoproject.com/) Webアプリケーションフレームワークに基づいています。カスタマイズのための最良のガイドは既に執筆されており、 <link href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Build on Horizon</link> (http://docs.openstack.org/developer/horizon/topics/tutorial.html) にあります。"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -3534,9 +3534,9 @@ msgstr "OpenStack パッケージリポジトリ"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_example.xml41(para)
 msgid ""
-"<link xlink:href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud "
+"<link href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud "
 "Archive</link> (https://wiki.ubuntu.com/ServerTeam/CloudArchive) *"
-msgstr "<link xlink:href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud Archive</link> (https://wiki.ubuntu.com/ServerTeam/CloudArchive) *"
+msgstr "<link href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud Archive</link> (https://wiki.ubuntu.com/ServerTeam/CloudArchive) *"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_example.xml48(para)
 msgid "Hypervisor"
@@ -3689,11 +3689,11 @@ msgstr "まず最初に、すべての物理ノードで動作させるオペレ
 msgid ""
 "We recommend that you do not use the default Ubuntu OpenStack install "
 "packages and instead use the <link "
-"xlink:href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud "
+"href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud "
 "Archive</link> (https://wiki.ubuntu.com/ServerTeam/CloudArchive). The Cloud "
 "Archive is a package repository supported by Canonical that allows you to "
 "upgrade to future OpenStack releases while remaining on Ubuntu 12.04."
-msgstr "Ubuntu のデフォルトの OpenStack インストールパッケージではなく、<link xlink:href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud Archive</link> (https://wiki.ubuntu.com/ServerTeam/CloudArchive) を使うことをお薦めします。Cloud Archive は Canonical がサポートしているパッケージレポジトリで、このレポジトリを使うことで Ubuntu 12.04 を使い続けながら新しい OpenStack リリースにアップグレードすることができます。"
+msgstr "Ubuntu のデフォルトの OpenStack インストールパッケージではなく、<link href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud Archive</link> (https://wiki.ubuntu.com/ServerTeam/CloudArchive) を使うことをお薦めします。Cloud Archive は Canonical がサポートしているパッケージレポジトリで、このレポジトリを使うことで Ubuntu 12.04 を使い続けながら新しい OpenStack リリースにアップグレードすることができます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_example.xml156(para)
 msgid ""
@@ -3760,12 +3760,12 @@ msgid ""
 "(keystone)</emphasis> over others, such as LDAP. This back-end is simple to "
 "install and is robust. The authors acknowledge that many installations want "
 "to bind with existing directory services, and caution careful understanding "
-"of the <link xlink:title=\"LDAP config options\" "
-"xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content"
+"of the <link title=\"LDAP config options\" "
+"href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content"
 "/reference-for-ldap-config-options.html\">array of options available</link> "
 "(http://docs.openstack.org/folsom/openstack-compute/admin/content/reference-"
 "for-ldap-config-options.html)"
-msgstr "<emphasis role=\"bold\">Identity サービス (keystone)</emphasis> のバックエンドとして、LDAP などの他の選択肢ではなく <emphasis role=\"bold\">SQL バックエンド</emphasis>を選択しました。 SQL バックエンドはインストールが簡単で、堅牢性があります。多くのシステムで既存のディレクトリサービスと接続したいという要望があることは理解しています。その場合は、<link xlink:title=\"LDAP config options\" xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/reference-for-ldap-config-options.html\">設定オプションリスト</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/reference-for-ldap-config-options.html) を注意深く理解してから使って下さい。"
+msgstr "<emphasis role=\"bold\">Identity サービス (keystone)</emphasis> のバックエンドとして、LDAP などの他の選択肢ではなく <emphasis role=\"bold\">SQL バックエンド</emphasis>を選択しました。 SQL バックエンドはインストールが簡単で、堅牢性があります。多くのシステムで既存のディレクトリサービスと接続したいという要望があることは理解しています。その場合は、<link title=\"LDAP config options\" href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/reference-for-ldap-config-options.html\">設定オプションリスト</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/reference-for-ldap-config-options.html) を注意深く理解してから使って下さい。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_example.xml213(para)
 msgid ""
@@ -3814,14 +3814,14 @@ msgstr "デフォルトの OpenStack の構成では、<code>nova-network</code>
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_example.xml249(para)
 msgid ""
-"<link xlink:title=\"Multi-host\" xlink:href=\"http://docs.openstack.org/folsom"
+"<link title=\"Multi-host\" href=\"http://docs.openstack.org/folsom"
 "/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906"
 "\">Multi-host</link> (http://docs.openstack.org/folsom/openstack-"
 "compute/admin/content/existing-ha-networking-options.html#d6e8906) is a "
 "high-availability option for the network configuration where the nova-"
 "network service is run on every compute node instead of running on only a "
 "single node."
-msgstr "<link xlink:title=\"Multi-host\" xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906\">マルチホスト</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906) は、ネットワーク設定の高可用性オプションで、 nova-network サービスを1台のノードだけで動かすのではなく、各コンピュートノードで動作させるものです。"
+msgstr "<link title=\"Multi-host\" href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906\">マルチホスト</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906) は、ネットワーク設定の高可用性オプションで、 nova-network サービスを1台のノードだけで動かすのではなく、各コンピュートノードで動作させるものです。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_example.xml262(title)
 msgid "Detailed Description"
@@ -4052,10 +4052,10 @@ msgid ""
 "to use tcpdump. It's recommended to use tcpdump at several points along the "
 "network path to correlate where a problem might be. If you prefer working "
 "with a GUI, either live or by using a tcpdump capture do also check out "
-"<link xlink:title=\"Wireshark\" "
-"xlink:href=\"http://www.wireshark.org/\">Wireshark</link> "
+"<link title=\"Wireshark\" "
+"href=\"http://www.wireshark.org/\">Wireshark</link> "
 "(http://www.wireshark.org/)."
-msgstr "ネットワーク問題の解決を徹底的に行う方法のひとつは、tcpdumpです。tcpdumpを使い、ネットワーク経路上の数点、問題のありそうなところから情報を収集することをおすすめします。もしGUIが好みであれば、<link xlink:title=\"Wireshark\" xlink:href=\"http://www.wireshark.org/\">Wireshark</link> (http://www.wireshark.org/)を試してみてはいかがでしょう。"
+msgstr "ネットワーク問題の解決を徹底的に行う方法のひとつは、tcpdumpです。tcpdumpを使い、ネットワーク経路上の数点、問題のありそうなところから情報を収集することをおすすめします。もしGUIが好みであれば、<link title=\"Wireshark\" href=\"http://www.wireshark.org/\">Wireshark</link> (http://www.wireshark.org/)を試してみてはいかがでしょう。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_network_troubleshooting.xml141(para)
 msgid "For example, run the following command:"
@@ -4670,8 +4670,8 @@ msgstr "Application Programming Interface (API)"
 msgid ""
 "All public access, whether direct, through a command line client, or through"
 " the web-based dashboard, uses the API service. Find the API reference at "
-"<link xlink:href=\"http://api.openstack.org/\">http://api.openstack.org/</link>."
-msgstr "直接であっても、コマンドラインクライアントであっても、Web ベースのダッシュボードであっても、一般ユーザーからのアクセスはAPIサービスを利用します。 API リファレンスは <link xlink:href=\"http://api.openstack.org/\">http://api.openstack.org/</link> にあります。"
+"<link href=\"http://api.openstack.org/\">http://api.openstack.org/</link>."
+msgstr "直接であっても、コマンドラインクライアントであっても、Web ベースのダッシュボードであっても、一般ユーザーからのアクセスはAPIサービスを利用します。 API リファレンスは <link href=\"http://api.openstack.org/\">http://api.openstack.org/</link> にあります。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_cloud_controller.xml273(para)
 msgid ""
@@ -4711,7 +4711,7 @@ msgstr "API 拡張"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_cloud_controller.xml296(para)
 msgid ""
-"The <link xlink:title=\"API Specifications\" xlink:href=\"http://docs.openstack.org/api"
+"The <link title=\"API Specifications\" href=\"http://docs.openstack.org/api"
 "/api-specs.html\">API Specifications</link> (http://docs.openstack.org/api"
 "/api-specs.html) define the core actions, capabilities, and media-types of "
 "the OpenStack API. A client can always depend on the availability of this "
@@ -4719,7 +4719,7 @@ msgid ""
 " Requiring strict adherence to the core API allows clients to rely upon a "
 "minimal level of functionality when interacting with multiple "
 "implementations of the same API."
-msgstr "<link xlink:title=\"API Specifications\" xlink:href=\"http://docs.openstack.org/api/api-specs.html\">API Specifications</link> (http://docs.openstack.org/api/api-specs.html) に OpenStack API コアのアクション、ケーパビリティ、メディアタイプが定義されています。クライアントはいつでもこのコアAPIが使えることに依存することができますし、実装者はいつでも完全にサポートすることが求められます。コアAPIの厳守を要求することにより、クライアントは同じAPIの複数の実装とやりとりする際に、最小限のレベルの機能に依存することができます。"
+msgstr "<link title=\"API Specifications\" href=\"http://docs.openstack.org/api/api-specs.html\">API Specifications</link> (http://docs.openstack.org/api/api-specs.html) に OpenStack API コアのアクション、ケーパビリティ、メディアタイプが定義されています。クライアントはいつでもこのコアAPIが使えることに依存することができますし、実装者はいつでも完全にサポートすることが求められます。コアAPIの厳守を要求することにより、クライアントは同じAPIの複数の実装とやりとりする際に、最小限のレベルの機能に依存することができます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_cloud_controller.xml307(para)
 msgid ""
@@ -4750,12 +4750,12 @@ msgid ""
 "physical node capacity, though solving this problem is out of the scope of "
 "this book. To support your scheduling choices, OpenStack Compute provides "
 "several different types of scheduling drivers, a full discussion of which is"
-" found in the <link xlink:title=\"API Specifications\" "
-"xlink:href=\"http://docs.openstack.org/folsom/openstack-"
+" found in the <link title=\"API Specifications\" "
+"href=\"http://docs.openstack.org/folsom/openstack-"
 "compute/admin/content/ch_scheduling.html\">reference manual</link> "
 "(http://docs.openstack.org/folsom/openstack-"
 "compute/admin/content/ch_scheduling.html)."
-msgstr "この問題に対しては様々なテクニックを使うことができます。ひとつの方法は、フレーバーのサイズを線形にすること、つまり、物理ノードの容量に比例した割合にすることですが、この問題を解くことは本書のスコープ外です。スケジューリングの選択肢の助けとなるために、OpenStack Compute はいくつかの異なるタイプのスケジューリングドライバーを提供しており、この議論の全体は <link xlink:title=\"API Specifications\" xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html\">リファレンスマニュアル</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html) にあります。"
+msgstr "この問題に対しては様々なテクニックを使うことができます。ひとつの方法は、フレーバーのサイズを線形にすること、つまり、物理ノードの容量に比例した割合にすることですが、この問題を解くことは本書のスコープ外です。スケジューリングの選択肢の助けとなるために、OpenStack Compute はいくつかの異なるタイプのスケジューリングドライバーを提供しており、この議論の全体は <link title=\"API Specifications\" href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html\">リファレンスマニュアル</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_scheduling.html) にあります。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_cloud_controller.xml336(para)
 msgid ""
@@ -4954,21 +4954,21 @@ msgstr "ハイパーバイザーの選択"
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_compute_nodes.xml41(para)
 msgid ""
 "OpenStack Compute supports many hypervisors to various degrees, including "
-"<link xlink:title=\"reference manual\" xlink:href=\"http://www.linux-"
-"kvm.org/page/Main_Page\">KVM</link>, <link xlink:title=\"reference manual\" "
-"xlink:href=\"http://lxc.sourceforge.net/\">LXC</link>, <link xlink:title=\"reference "
-"manual\" xlink:href=\"http://wiki.qemu.org/Manual\">QEMU</link>, <link "
-"xlink:title=\"reference manual\" xlink:href=\"http://user-mode-"
-"linux.sourceforge.net/\">UML</link>, <link xlink:title=\"reference manual\" "
-"xlink:href=\"http://www.vmware.com/products/vsphere-"
-"hypervisor/support.html\">VMWare ESX/ESXi</link>, <link xlink:title=\"reference "
-"manual\" xlink:href=\"http://www.xen.org\">Xen</link>, <link xlink:title=\"reference "
+"<link title=\"reference manual\" href=\"http://www.linux-"
+"kvm.org/page/Main_Page\">KVM</link>, <link title=\"reference manual\" "
+"href=\"http://lxc.sourceforge.net/\">LXC</link>, <link title=\"reference "
+"manual\" href=\"http://wiki.qemu.org/Manual\">QEMU</link>, <link "
+"title=\"reference manual\" href=\"http://user-mode-"
+"linux.sourceforge.net/\">UML</link>, <link title=\"reference manual\" "
+"href=\"http://www.vmware.com/products/vsphere-"
+"hypervisor/support.html\">VMWare ESX/ESXi</link>, <link title=\"reference "
+"manual\" href=\"http://www.xen.org\">Xen</link>, <link title=\"reference "
 "manual\" "
-"xlink:href=\"http://www-03.ibm.com/systems/power/software/virtualization/features.html\">PowerVM</link>,"
-" <link xlink:title=\"reference manual\" xlink:href=\"http://www.microsoft.com/en-us"
+"href=\"http://www-03.ibm.com/systems/power/software/virtualization/features.html\">PowerVM</link>,"
+" <link title=\"reference manual\" href=\"http://www.microsoft.com/en-us"
 "/server-cloud/windows-server/server-virtualization-"
 "features.aspx\">Hyper-V</link>."
-msgstr "OpenStack Compute は多数のハイパーバイザーをサポートしており、その程度も様々です。 サポートされているハイパーバイザーは、<link xlink:title=\"reference manual\" xlink:href=\"http://www.linux-kvm.org/page/Main_Page\">KVM</link>, <link xlink:title=\"reference manual\" xlink:href=\"http://lxc.sourceforge.net/\">LXC</link>, <link xlink:title=\"reference manual\" xlink:href=\"http://wiki.qemu.org/Manual\">QEMU</link>, <link xlink:title=\"reference manual\" xlink:href=\"http://user-mode-linux.sourceforge.net/\">UML</link>, <link xlink:title=\"reference manual\" xlink:href=\"http://www.vmware.com/products/vsphere-hypervisor/support.html\">VMWare ESX/ESXi</link>, <link xlink:title=\"reference manual\" xlink:href=\"http://www.xen.org\">Xen</link>, <link xlink:title=\"reference manual\" xlink:href=\"http://www-03.ibm.com/systems/power/software/virtualization/features.html\">PowerVM</link>, <link xlink:title=\"reference manual\" xlink:href=\"http://www.microsoft.com/en-us/server-cloud/windows-server/server-virtualization-features.aspx\">Hyper-V</link> です。"
+msgstr "OpenStack Compute は多数のハイパーバイザーをサポートしており、その程度も様々です。 サポートされているハイパーバイザーは、<link title=\"reference manual\" href=\"http://www.linux-kvm.org/page/Main_Page\">KVM</link>, <link title=\"reference manual\" href=\"http://lxc.sourceforge.net/\">LXC</link>, <link title=\"reference manual\" href=\"http://wiki.qemu.org/Manual\">QEMU</link>, <link title=\"reference manual\" href=\"http://user-mode-linux.sourceforge.net/\">UML</link>, <link title=\"reference manual\" href=\"http://www.vmware.com/products/vsphere-hypervisor/support.html\">VMWare ESX/ESXi</link>, <link title=\"reference manual\" href=\"http://www.xen.org\">Xen</link>, <link title=\"reference manual\" href=\"http://www-03.ibm.com/systems/power/software/virtualization/features.html\">PowerVM</link>, <link title=\"reference manual\" href=\"http://www.microsoft.com/en-us/server-cloud/windows-server/server-virtualization-features.aspx\">Hyper-V</link> です。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_compute_nodes.xml60(para)
 msgid ""
@@ -4990,15 +4990,15 @@ msgstr "例えば、 KVM は OpenStack コミュニティでは最も多く採�
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_compute_nodes.xml71(para)
 msgid ""
 "The best information available to support your choice is found on the <link "
-"xlink:title=\"reference manual\" "
-"xlink:href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">Hypervisor "
+"title=\"reference manual\" "
+"href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">Hypervisor "
 "Support Matrix</link> "
 "(https://wiki.openstack.org/wiki/HypervisorSupportMatrix), and in the <link "
-"xlink:title=\"reference manual\" xlink:href=\"http://docs.openstack.org/folsom"
+"title=\"reference manual\" href=\"http://docs.openstack.org/folsom"
 "/openstack-compute/admin/content/ch_hypervisors.html\">reference "
 "manual</link> (http://docs.openstack.org/folsom/openstack-"
 "compute/admin/content/ch_hypervisors.html)."
-msgstr "ハイパーバイザー選択の参考になる情報は、<link xlink:title=\"reference manual\" xlink:href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">Hypervisor Support Matrix</link> (https://wiki.openstack.org/wiki/HypervisorSupportMatrix) と <link xlink:title=\"reference manual\" xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_hypervisors.html\">レファレンスマニュアル</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_hypervisors.html) です。"
+msgstr "ハイパーバイザー選択の参考になる情報は、<link title=\"reference manual\" href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">Hypervisor Support Matrix</link> (https://wiki.openstack.org/wiki/HypervisorSupportMatrix) と <link title=\"reference manual\" href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_hypervisors.html\">レファレンスマニュアル</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/ch_hypervisors.html) です。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_compute_nodes.xml81(para)
 msgid ""
@@ -5586,12 +5586,12 @@ msgid ""
 " method (DNS round robin, hardware load balancer, software like Pound or "
 "HAProxy). One caveat with Dashboard is the VNC proxy, which uses the "
 "WebSocket protocol — something that a L7 load balancer might struggle with. "
-"See also <link xlink:title=\"Horizon session storage\" "
-"xlink:href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html"
+"See also <link title=\"Horizon session storage\" "
+"href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html"
 "#session-storage\">Horizon session storage</link> "
 "(http://docs.openstack.org/developer/horizon/topics/deployment.html#session-"
 "storage)."
-msgstr "ダッシュボードや<code>nova-api</code> 、Object Storage proxy のようなユーザー向けのサービスは負荷分散するべきです。任意の標準的なHTTP負荷分散方法 (DNSラウンドロビン、ハードウェアロードバランサ、Pound や HAProxy のようなソフトウェア) を使ってください。ダッシュボードに関する注意事項の一つは、VNC proxy が使う WebSocket プロトコルです。これは、L7ロードバランサで苦労することになるかもしれません。以下のリンクも参照してください。 <link xlink:title=\"Horizon session storage\" xlink:href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#session-storage\">Horizon session storage</link> (http://docs.openstack.org/developer/horizon/topics/deployment.html#session-storage)."
+msgstr "ダッシュボードや<code>nova-api</code> 、Object Storage proxy のようなユーザー向けのサービスは負荷分散するべきです。任意の標準的なHTTP負荷分散方法 (DNSラウンドロビン、ハードウェアロードバランサ、Pound や HAProxy のようなソフトウェア) を使ってください。ダッシュボードに関する注意事項の一つは、VNC proxy が使う WebSocket プロトコルです。これは、L7ロードバランサで苦労することになるかもしれません。以下のリンクも参照してください。 <link title=\"Horizon session storage\" href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#session-storage\">Horizon session storage</link> (http://docs.openstack.org/developer/horizon/topics/deployment.html#session-storage)."
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_scaling.xml168(para)
 msgid ""
@@ -6002,11 +6002,11 @@ msgstr "次のような場面であなたの助けとなるように、この本
 msgid ""
 "We wrote this book in a Book Sprint, which is a facilitated rapid "
 "development production method for books. For more information see the <link "
-"xlink:title=\"Foundation web site\" xlink:href=\"http://www.booksprints.net\">Book "
+"title=\"Foundation web site\" href=\"http://www.booksprints.net\">Book "
 "Sprint site</link>. Your authors cobbled this book together in five days "
 "during February 2013, fueled by caffeine and the best take-out food that "
 "Austin, Texas could offer."
-msgstr "私たちはこの本を Book Sprint で執筆しました。 Book Sprint は短い期間で本を建設的に作成できるメソッドです。詳しい情報は、 <link xlink:title=\"Foundation web site\" xlink:href=\"http://www.booksprints.net\">Book Sprint のサイト</link> を参照して下さい。著者らは2013年2月の5日間でこの本をまとめあげました。カフェインと、テキサス州オースティンの素晴らしいテイクアウトの食事は力になりました。"
+msgstr "私たちはこの本を Book Sprint で執筆しました。 Book Sprint は短い期間で本を建設的に作成できるメソッドです。詳しい情報は、 <link title=\"Foundation web site\" href=\"http://www.booksprints.net\">Book Sprint のサイト</link> を参照して下さい。著者らは2013年2月の5日間でこの本をまとめあげました。カフェインと、テキサス州オースティンの素晴らしいテイクアウトの食事は力になりました。"
 
 #: ./doc/src/docbkx/openstack-ops/src/preface_ops.xml80(para)
 msgid ""
@@ -6111,20 +6111,20 @@ msgstr "この本の作成に参加するには"
 #: ./doc/src/docbkx/openstack-ops/src/preface_ops.xml203(para)
 msgid ""
 "Learn more about how to contribute to the OpenStack docs at <link "
-"xlink:href=\"http://wiki.openstack.org/Documentation/HowTo\">Documentation How "
+"href=\"http://wiki.openstack.org/Documentation/HowTo\">Documentation How "
 "To</link> (http://wiki.openstack.org/Documentation/HowTo)."
-msgstr "OpenStack ドキュメント作成プロジェクトに参加する方法については、<link xlink:href=\"http://wiki.openstack.org/Documentation/HowTo\">Documentation How To</link> (http://wiki.openstack.org/Documentation/HowTo) を見て下さい。"
+msgstr "OpenStack ドキュメント作成プロジェクトに参加する方法については、<link href=\"http://wiki.openstack.org/Documentation/HowTo\">Documentation How To</link> (http://wiki.openstack.org/Documentation/HowTo) を見て下さい。"
 
 #: ./doc/src/docbkx/openstack-ops/src/preface_ops.xml208(para)
 msgid ""
 "If you find a bug and can't fix it or aren't sure it's really a doc bug, log"
-" a bug at <link xlink:href=\"http://bugs.launchpad.net/openstack-"
+" a bug at <link href=\"http://bugs.launchpad.net/openstack-"
 "manuals\">OpenStack Manuals</link> (http://bugs.launchpad.net/openstack-"
 "manuals). Tag the bug under <guilabel>Extra</guilabel> options with <literal"
 ">ops-guide</literal> tag to indicate that the bug is in this guide. You can "
 "assign the bug to yourself if you know how to fix it. Also, a member of the "
 "OpenStack doc-core team can triage the doc bug."
-msgstr "バグを見つけたが、どのように直せばよいか分からない場合や本当にドキュメントのバグか自信が持てない場合は、 <link xlink:href=\"http://bugs.launchpad.net/openstack-manuals\">OpenStack Manuals</link> (http://bugs.launchpad.net/openstack-manuals) にバグを登録して、バグの <guilabel>Extra</guilabel> オプションで <literal>ops-guide</literal> タグを付けて下さい。 <literal>ops-guide</literal> タグは、そのバグがこのガイドに関するものであることを示します。どのように直せばよいか分かる場合には、そのバグの担当者を自分に割り当てることもできます。また、OpenStack doc-core チームのメンバーがドキュメントバグを分類することもできます。"
+msgstr "バグを見つけたが、どのように直せばよいか分からない場合や本当にドキュメントのバグか自信が持てない場合は、 <link href=\"http://bugs.launchpad.net/openstack-manuals\">OpenStack Manuals</link> (http://bugs.launchpad.net/openstack-manuals) にバグを登録して、バグの <guilabel>Extra</guilabel> オプションで <literal>ops-guide</literal> タグを付けて下さい。 <literal>ops-guide</literal> タグは、そのバグがこのガイドに関するものであることを示します。どのように直せばよいか分かる場合には、そのバグの担当者を自分に割り当てることもできます。また、OpenStack doc-core チームのメンバーがドキュメントバグを分類することもできます。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml16(title)
 msgid "User-facing Operations"
@@ -6211,11 +6211,11 @@ msgstr "オプションの完全な一覧は、以下を使用して見つけら
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml76(para)
 msgid ""
-"or the <link xlink:href=\"http://docs.openstack.org/cli/quick-start/content"
+"or the <link href=\"http://docs.openstack.org/cli/quick-start/content"
 "/glance-cli-reference.html\">OpenStack Image Service</link> CLI Guide. "
 "(http://docs.openstack.org/cli/quick-start/content/glance-cli-"
 "reference.html)"
-msgstr "または <link xlink:href=\"http://docs.openstack.org/cli/quick-start/content/glance-cli-reference.html\">OpenStack Image Service</link> CLI Guide. (http://docs.openstack.org/cli/quick-start/content/glance-cli-reference.html)"
+msgstr "または <link href=\"http://docs.openstack.org/cli/quick-start/content/glance-cli-reference.html\">OpenStack Image Service</link> CLI Guide. (http://docs.openstack.org/cli/quick-start/content/glance-cli-reference.html)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml82(title)
 msgid "The Image Service and the Database"
@@ -6778,12 +6778,12 @@ msgstr "サーバーの情報を表示するとき、メタデータ行に含ま
 msgid ""
 "User Data is a special key in the metadata service which holds a file that "
 "cloud aware applications within the guest instance can access. For example "
-"<link xlink:title=\"OpenStack Image Service\" "
-"xlink:href=\"https://help.ubuntu.com/community/CloudInit\">cloudinit</link> "
+"<link title=\"OpenStack Image Service\" "
+"href=\"https://help.ubuntu.com/community/CloudInit\">cloudinit</link> "
 "(https://help.ubuntu.com/community/CloudInit) is an open source package from"
 " Ubuntu that handles early initialization of a cloud instance that makes use"
 " of this user data."
-msgstr "ユーザーデータはメタデータサービスにおける特別なキーで、ゲストインスタンス内のクラウド対応アプリケーションがアクセスできるファイルを保持します。たとえば、 <link xlink:title=\"OpenStack Image Service\" xlink:href=\"https://help.ubuntu.com/community/CloudInit\">cloudinit</link> (https://help.ubuntu.com/community/CloudInit) は、このユーザーデータを使用するクラウドインスタンスの初期設定を処理する、Ubuntu のオープンソースパッケージです。"
+msgstr "ユーザーデータはメタデータサービスにおける特別なキーで、ゲストインスタンス内のクラウド対応アプリケーションがアクセスできるファイルを保持します。たとえば、 <link title=\"OpenStack Image Service\" href=\"https://help.ubuntu.com/community/CloudInit\">cloudinit</link> (https://help.ubuntu.com/community/CloudInit) は、このユーザーデータを使用するクラウドインスタンスの初期設定を処理する、Ubuntu のオープンソースパッケージです。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml658(para)
 msgid ""
@@ -6949,11 +6949,11 @@ msgstr "ブート可能なファイルシステムイメージでブロックス
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml805(para)
 msgid ""
-"Because of bug <link xlink:title=\"OpenStack Image Service\" "
-"xlink:href=\"https://bugs.launchpad.net/nova/+bug/1163566\">1163566</link> "
+"Because of bug <link title=\"OpenStack Image Service\" "
+"href=\"https://bugs.launchpad.net/nova/+bug/1163566\">1163566</link> "
 "(https://bugs.launchpad.net/nova/+bug/1163566) you must specify an image "
 "when booting from a volume in Horizon, even though this image is not used."
-msgstr "バグ <link xlink:title=\"OpenStack Image Service\" xlink:href=\"https://bugs.launchpad.net/nova/+bug/1163566\">1163566</link> (https://bugs.launchpad.net/nova/+bug/1163566) のため、Horizon においてボリュームからブートするとき、このイメージを使用しないにも関わらず、イメージを指定しなければいけません。"
+msgstr "バグ <link title=\"OpenStack Image Service\" href=\"https://bugs.launchpad.net/nova/+bug/1163566\">1163566</link> (https://bugs.launchpad.net/nova/+bug/1163566) のため、Horizon においてボリュームからブートするとき、このイメージを使用しないにも関わらず、イメージを指定しなければいけません。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml812(para)
 msgid ""
@@ -7040,12 +7040,12 @@ msgstr "スナップショットの一貫性の保証"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml884(para)
 msgid ""
-"Content from Sébastien Han's <link xlink:title=\"OpenStack Image Service\" "
-"xlink:href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-"
+"Content from Sébastien Han's <link title=\"OpenStack Image Service\" "
+"href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-"
 "consistent-snapshots/\">OpenStack: Perform Consistent Snapshots blog "
 "entry</link> (http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-"
 "consistent-snapshots/)"
-msgstr "Sébastien Han さんの <link xlink:title=\"OpenStack Image Service\" xlink:href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/\">OpenStack: Perform Consistent Snapshots ブログエントリー</link> (http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/) からのコンテンツです。"
+msgstr "Sébastien Han さんの <link title=\"OpenStack Image Service\" href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/\">OpenStack: Perform Consistent Snapshots ブログエントリー</link> (http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/) からのコンテンツです。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_user_facing.xml890(para)
 msgid ""
@@ -10941,25 +10941,25 @@ msgstr "リソース"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml18(para)
 msgid ""
-"<link xlink:href=\"http://docs.openstack.org/folsom/openstack-"
+"<link href=\"http://docs.openstack.org/folsom/openstack-"
 "compute/admin/content/\">OpenStack Compute Administration Manual</link> "
 "(http://docs.openstack.org/folsom/openstack-compute/admin/content/)"
-msgstr "<link xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/\">OpenStack Compute Administration Manual</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/)"
+msgstr "<link href=\"http://docs.openstack.org/folsom/openstack-compute/admin/content/\">OpenStack Compute Administration Manual</link> (http://docs.openstack.org/folsom/openstack-compute/admin/content/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml23(para)
 msgid ""
-"<link xlink:href=\"http://docs.openstack.org/folsom/openstack-"
+"<link href=\"http://docs.openstack.org/folsom/openstack-"
 "compute/install/apt/content/\">OpenStack Compute Install and Deploy Manual -"
 " Ubuntu</link> (http://docs.openstack.org/folsom/openstack-"
 "compute/install/apt/content/)"
-msgstr "<link xlink:href=\"http://docs.openstack.org/folsom/openstack-compute/install/apt/content/\">OpenStack Compute Install and Deploy Manual - Ubuntu</link> (http://docs.openstack.org/folsom/openstack-compute/install/apt/content/)"
+msgstr "<link href=\"http://docs.openstack.org/folsom/openstack-compute/install/apt/content/\">OpenStack Compute Install and Deploy Manual - Ubuntu</link> (http://docs.openstack.org/folsom/openstack-compute/install/apt/content/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml29(para)
 msgid ""
-"<link xlink:href=\"http://www.packtpub.com/openstack-cloud-computing-"
+"<link href=\"http://www.packtpub.com/openstack-cloud-computing-"
 "cookbook/book\">OpenStack Cloud Computing Cookbook</link> "
 "(http://www.packtpub.com/openstack-cloud-computing-cookbook/book)"
-msgstr "<link xlink:href=\"http://www.packtpub.com/openstack-cloud-computing-cookbook/book\">OpenStack Cloud Computing Cookbook</link> (http://www.packtpub.com/openstack-cloud-computing-cookbook/book)"
+msgstr "<link href=\"http://www.packtpub.com/openstack-cloud-computing-cookbook/book\">OpenStack Cloud Computing Cookbook</link> (http://www.packtpub.com/openstack-cloud-computing-cookbook/book)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml35(emphasis)
 msgid "Cloud (general)"
@@ -10968,36 +10968,36 @@ msgstr "クラウド (全般)"
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml37(para)
 msgid ""
 "<link "
-"xlink:href=\"http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf\">NIST"
+"href=\"http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf\">NIST"
 " Cloud Computing Definition</link> "
 "(http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf)"
-msgstr "<link xlink:href=\"http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf\">NIST Cloud Computing Definition</link> (http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf)"
+msgstr "<link href=\"http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf\">NIST Cloud Computing Definition</link> (http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml45(para)
 msgid ""
-"<link xlink:href=\"http://www.diveintopython.net\">Dive Into Python</link> "
+"<link href=\"http://www.diveintopython.net\">Dive Into Python</link> "
 "(http://www.diveintopython.net)"
-msgstr "<link xlink:href=\"http://www.diveintopython.net\">Dive Into Python</link> (http://www.diveintopython.net)"
+msgstr "<link href=\"http://www.diveintopython.net\">Dive Into Python</link> (http://www.diveintopython.net)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml51(para)
 msgid ""
-"<link xlink:href=\"http://www.pearsonhighered.com/educator/product/TCPIP-"
+"<link href=\"http://www.pearsonhighered.com/educator/product/TCPIP-"
 "Illustrated-Volume-1-The-Protocols/9780321336316.page\">TCP/IP "
 "Illustrated</link> (http://www.pearsonhighered.com/educator/product/TCPIP-"
 "Illustrated-Volume-1-The-Protocols/9780321336316.page)"
-msgstr "<link xlink:href=\"http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page\">TCP/IP Illustrated</link> (http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page)"
+msgstr "<link href=\"http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page\">TCP/IP Illustrated</link> (http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml56(para)
 msgid ""
-"<link xlink:href=\"http://nostarch.com/tcpip.htm\">The TCP/IP Guide</link> "
+"<link href=\"http://nostarch.com/tcpip.htm\">The TCP/IP Guide</link> "
 "(http://nostarch.com/tcpip.htm)"
-msgstr "<link xlink:href=\"http://nostarch.com/tcpip.htm\">The TCP/IP Guide</link> (http://nostarch.com/tcpip.htm)"
+msgstr "<link href=\"http://nostarch.com/tcpip.htm\">The TCP/IP Guide</link> (http://nostarch.com/tcpip.htm)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml59(para)
 msgid ""
-"<link xlink:href=\"http://danielmiessler.com/study/tcpdump/\">A tcpdump Tutorial "
+"<link href=\"http://danielmiessler.com/study/tcpdump/\">A tcpdump Tutorial "
 "and Primer</link> (http://danielmiessler.com/study/tcpdump/)"
-msgstr "<link xlink:href=\"http://danielmiessler.com/study/tcpdump/\">A tcpdump Tutorial and Primer</link> (http://danielmiessler.com/study/tcpdump/)"
+msgstr "<link href=\"http://danielmiessler.com/study/tcpdump/\">A tcpdump Tutorial and Primer</link> (http://danielmiessler.com/study/tcpdump/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml64(emphasis)
 msgid "Systems administration"
@@ -11005,9 +11005,9 @@ msgstr "システム管理"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml66(para)
 msgid ""
-"<link xlink:href=\"http://www.admin.com/\">UNIX and Linux Systems Administration "
+"<link href=\"http://www.admin.com/\">UNIX and Linux Systems Administration "
 "Handbook</link> (http://www.admin.com/)"
-msgstr "<link xlink:href=\"http://www.admin.com/\">UNIX and Linux Systems Administration Handbook</link> (http://www.admin.com/)"
+msgstr "<link href=\"http://www.admin.com/\">UNIX and Linux Systems Administration Handbook</link> (http://www.admin.com/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml71(emphasis)
 msgid "Virtualization"
@@ -11015,9 +11015,9 @@ msgstr "仮想化"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml73(para)
 msgid ""
-"<link xlink:href=\"http://nostarch.com/xen.htm\">The Book of Xen</link> "
+"<link href=\"http://nostarch.com/xen.htm\">The Book of Xen</link> "
 "(http://nostarch.com/xen.htm)"
-msgstr "<link xlink:href=\"http://nostarch.com/xen.htm\">The Book of Xen</link> (http://nostarch.com/xen.htm)"
+msgstr "<link href=\"http://nostarch.com/xen.htm\">The Book of Xen</link> (http://nostarch.com/xen.htm)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml77(emphasis)
 msgid "Configuration management"
@@ -11025,15 +11025,15 @@ msgstr "設定管理"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml79(para)
 msgid ""
-"<link xlink:href=\"http://docs.puppetlabs.com/\">Puppet Labs Documentation</link> "
+"<link href=\"http://docs.puppetlabs.com/\">Puppet Labs Documentation</link> "
 "(http://docs.puppetlabs.com/)"
-msgstr "<link xlink:href=\"http://docs.puppetlabs.com/\">Puppet Labs Documentation</link> (http://docs.puppetlabs.com/)"
+msgstr "<link href=\"http://docs.puppetlabs.com/\">Puppet Labs Documentation</link> (http://docs.puppetlabs.com/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_resources.xml82(para)
 msgid ""
-"<link xlink:href=\"http://www.apress.com/9781430230571\">Pro Puppet</link> "
+"<link href=\"http://www.apress.com/9781430230571\">Pro Puppet</link> "
 "(http://www.apress.com/9781430230571)"
-msgstr "<link xlink:href=\"http://www.apress.com/9781430230571\">Pro Puppet</link> (http://www.apress.com/9781430230571)"
+msgstr "<link href=\"http://www.apress.com/9781430230571\">Pro Puppet</link> (http://www.apress.com/9781430230571)"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -11366,11 +11366,11 @@ msgstr "残念ながら、これはひどい状況です。クラウドコント
 msgid ""
 "To avoid this situation, create a highly available cloud controller cluster."
 " This is outside the scope of this document, but you can read more in the "
-"draft <link xlink:title=\"OpenStack High Availability Guide\" "
-"xlink:href=\"http://docs.openstack.org/trunk/openstack-ha/content/ch-"
+"draft <link title=\"OpenStack High Availability Guide\" "
+"href=\"http://docs.openstack.org/trunk/openstack-ha/content/ch-"
 "intro.html\">OpenStack High Availability Guide</link> "
 "(http://docs.openstack.org/trunk/openstack-ha/content/ch-intro.html)."
-msgstr "この状況を避けるために、高可用なクラウドコントローラークラスターを作成します。このことは、このドキュメントの範囲外ですが、ドラフト版の <link xlink:title=\"OpenStack High Availability Guide\" xlink:href=\"http://docs.openstack.org/trunk/openstack-ha/content/ch-intro.html\">OpenStack High Availability Guide</link> が http://docs.openstack.org/trunk/openstack-ha/content/ch-intro.html にあります。"
+msgstr "この状況を避けるために、高可用なクラウドコントローラークラスターを作成します。このことは、このドキュメントの範囲外ですが、ドラフト版の <link title=\"OpenStack High Availability Guide\" href=\"http://docs.openstack.org/trunk/openstack-ha/content/ch-intro.html\">OpenStack High Availability Guide</link> が http://docs.openstack.org/trunk/openstack-ha/content/ch-intro.html にあります。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_maintenance.xml94(para)
 msgid ""
@@ -11957,22 +11957,22 @@ msgstr "OpenStack クラウドをメンテナンスするには、複数の物�
 msgid ""
 "Several configuration management tools are available, and this guide does "
 "not recommend a specific one. The two most popular ones in the OpenStack "
-"community are <link xlink:href=\"https://puppetlabs.com/\">Puppet</link> "
-"(https://puppetlabs.com/) with available <link xlink:title=\"Optimization "
-"Overview\" xlink:href=\"http://github.com/puppetlabs/puppetlabs-"
+"community are <link href=\"https://puppetlabs.com/\">Puppet</link> "
+"(https://puppetlabs.com/) with available <link title=\"Optimization "
+"Overview\" href=\"http://github.com/puppetlabs/puppetlabs-"
 "openstack\">OpenStack Puppet modules</link> (http://github.com/puppetlabs"
 "/puppetlabs-openstack) and <link "
-"xlink:href=\"http://www.opscode.com/chef/\">Chef</link> (http://opscode.com/chef) "
-"with available <link xlink:href=\"https://github.com/opscode/openstack-chef-"
+"href=\"http://www.opscode.com/chef/\">Chef</link> (http://opscode.com/chef) "
+"with available <link href=\"https://github.com/opscode/openstack-chef-"
 "repo\">OpenStack Chef recipes</link> (https://github.com/opscode/openstack-"
 "chef-repo). Other newer configuration tools include <link "
-"xlink:href=\"https://juju.ubuntu.com/\">Juju</link> (https://juju.ubuntu.com/) "
-"<link xlink:href=\"http://ansible.cc\">Ansible</link> (http://ansible.cc) and "
-"<link xlink:href=\"http://saltstack.com/\">Salt</link> (http://saltstack.com), and"
+"href=\"https://juju.ubuntu.com/\">Juju</link> (https://juju.ubuntu.com/) "
+"<link href=\"http://ansible.cc\">Ansible</link> (http://ansible.cc) and "
+"<link href=\"http://saltstack.com/\">Salt</link> (http://saltstack.com), and"
 " more mature configuration management tools include <link "
-"xlink:href=\"http://cfengine.com/\">CFEngine</link> (http://cfengine.com) and "
-"<link xlink:href=\"http://bcfg2.org/\">Bcfg2</link> (http://bcfg2.org)."
-msgstr "いくつかの構成管理ツールがあります。このガイドでは特定のものを推奨しません。OpenStack コミュニティで人気があるものは <link xlink:href=\"https://puppetlabs.com/\">Puppet</link> (https://puppetlabs.com/) と <link xlink:href=\"http://www.opscode.com/chef/\">Chef</link> (http://opscode.com/chef) の 2 つで、OpenStack 用の設定集がそれぞれ <link xlink:title=\"Optimization Overview\" xlink:href=\"http://github.com/puppetlabs/puppetlabs-openstack\">OpenStack Puppet modules</link> (http://github.com/puppetlabs/puppetlabs-openstack) と <link xlink:href=\"https://github.com/opscode/openstack-chef-repo\">OpenStack Chef recipes</link> (https://github.com/opscode/openstack-chef-repo) にあります。比較的新しい他のツールとしては、<link xlink:href=\"https://juju.ubuntu.com/\">Juju</link> (https://juju.ubuntu.com/)、<link xlink:href=\"http://ansible.cc\">Ansible</link> (http://ansible.cc) や <link xlink:href=\"http://saltstack.com/\">Salt</link> (http://saltstack.com) があります。もう少し成熟したツールとしては <link xlink:href=\"http://cfengine.com/\">CFEngine</link> (http://cfengine.com) や <link xlink:href=\"http://bcfg2.org/\">Bcfg2</link> (http://bcfg2.org) があります。"
+"href=\"http://cfengine.com/\">CFEngine</link> (http://cfengine.com) and "
+"<link href=\"http://bcfg2.org/\">Bcfg2</link> (http://bcfg2.org)."
+msgstr "いくつかの構成管理ツールがあります。このガイドでは特定のものを推奨しません。OpenStack コミュニティで人気があるものは <link href=\"https://puppetlabs.com/\">Puppet</link> (https://puppetlabs.com/) と <link href=\"http://www.opscode.com/chef/\">Chef</link> (http://opscode.com/chef) の 2 つで、OpenStack 用の設定集がそれぞれ <link title=\"Optimization Overview\" href=\"http://github.com/puppetlabs/puppetlabs-openstack\">OpenStack Puppet modules</link> (http://github.com/puppetlabs/puppetlabs-openstack) と <link href=\"https://github.com/opscode/openstack-chef-repo\">OpenStack Chef recipes</link> (https://github.com/opscode/openstack-chef-repo) にあります。比較的新しい他のツールとしては、<link href=\"https://juju.ubuntu.com/\">Juju</link> (https://juju.ubuntu.com/)、<link href=\"http://ansible.cc\">Ansible</link> (http://ansible.cc) や <link href=\"http://saltstack.com/\">Salt</link> (http://saltstack.com) があります。もう少し成熟したツールとしては <link href=\"http://cfengine.com/\">CFEngine</link> (http://cfengine.com) や <link href=\"http://bcfg2.org/\">Bcfg2</link> (http://bcfg2.org) があります。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_maintenance.xml658(title)
 msgid "Working with Hardware"
@@ -12104,10 +12104,10 @@ msgid ""
 "As your cloud grows, MySQL is utilized more and more. If you suspect that "
 "MySQL might be becoming a bottleneck, you should start researching MySQL "
 "optimization. The MySQL manual has an entire section dedicated to this topic"
-" <link xlink:href=\"http://dev.mysql.com/doc/refman/5.5/en/optimize-"
+" <link href=\"http://dev.mysql.com/doc/refman/5.5/en/optimize-"
 "overview.html\">Optimization Overview</link> "
 "(http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html)."
-msgstr "クラウドが大きくなるにつれて、MySQL がさらに使用されてきます。MySQL がボトルネックになってきたことが疑われる場合、MySQL 最適化の調査から始めるとよいでしょう。MySQL のマニュアルでは、<link xlink:href=\"http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html\">Optimization Overview</link> (http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html) というセクションがあり、一つのセクション全部をあててこの話題を扱っています。"
+msgstr "クラウドが大きくなるにつれて、MySQL がさらに使用されてきます。MySQL がボトルネックになってきたことが疑われる場合、MySQL 最適化の調査から始めるとよいでしょう。MySQL のマニュアルでは、<link href=\"http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html\">Optimization Overview</link> (http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html) というセクションがあり、一つのセクション全部をあててこの話題を扱っています。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_maintenance.xml779(title)
 msgid "HDWMY"
@@ -12448,10 +12448,10 @@ msgstr "事例"
 msgid ""
 "This section contains a small selection of use cases from the community with"
 " more technical detail than usual. Further examples can be found on the "
-"<link xlink:title=\"OpenStack Website\" xlink:href=\"https://www.openstack.org/user-"
+"<link title=\"OpenStack Website\" href=\"https://www.openstack.org/user-"
 "stories/\">OpenStack Website</link> (https://www.openstack.org/user-"
 "stories/)"
-msgstr "この節ではコミュニティからを事例をいくつか紹介します。これらでは通常より多くの技術的詳細情報が提供されています。他の事例は <link xlink:title=\"OpenStack Website\" xlink:href=\"https://www.openstack.org/user-stories/\">OpenStack ウェブサイト</link> (https://www.openstack.org/user-stories/) で探して下さい。"
+msgstr "この節ではコミュニティからを事例をいくつか紹介します。これらでは通常より多くの技術的詳細情報が提供されています。他の事例は <link title=\"OpenStack Website\" href=\"https://www.openstack.org/user-stories/\">OpenStack ウェブサイト</link> (https://www.openstack.org/user-stories/) で探して下さい。"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml23(title)
 msgid "NeCTAR"
@@ -12506,22 +12506,22 @@ msgstr "全サイトは Ubuntu 12.04 をベースにしており、ハイパー�
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml58(para)
 msgid ""
-"<link xlink:title=\"OpenStack Website\" xlink:href=\"https://www.openstack.org/user-"
+"<link title=\"OpenStack Website\" href=\"https://www.openstack.org/user-"
 "stories/nectar/\">OpenStack.org Case Study</link> (https://www.openstack.org"
 "/user-stories/nectar/)"
-msgstr "<link xlink:title=\"OpenStack Website\" xlink:href=\"https://www.openstack.org/user-stories/nectar/\">OpenStack.org Case Study</link> (https://www.openstack.org/user-stories/nectar/)"
+msgstr "<link title=\"OpenStack Website\" href=\"https://www.openstack.org/user-stories/nectar/\">OpenStack.org Case Study</link> (https://www.openstack.org/user-stories/nectar/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml65(para)
 msgid ""
-"<link xlink:title=\"OpenStack Website\" xlink:href=\"https://github.com/NeCTAR-RC"
+"<link title=\"OpenStack Website\" href=\"https://github.com/NeCTAR-RC"
 "/\">NeCTAR-RC GitHub</link> (https://github.com/NeCTAR-RC/)"
-msgstr "<link xlink:title=\"OpenStack Website\" xlink:href=\"https://github.com/NeCTAR-RC/\">NeCTAR-RC GitHub</link> (https://github.com/NeCTAR-RC/)"
+msgstr "<link title=\"OpenStack Website\" href=\"https://github.com/NeCTAR-RC/\">NeCTAR-RC GitHub</link> (https://github.com/NeCTAR-RC/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml72(para)
 msgid ""
-"<link xlink:title=\"OpenStack Website\" xlink:href=\"https://www.nectar.org.au/\">NeCTAR"
+"<link title=\"OpenStack Website\" href=\"https://www.nectar.org.au/\">NeCTAR"
 " Website</link> (https://www.nectar.org.au/)"
-msgstr "<link xlink:title=\"OpenStack Website\" xlink:href=\"https://www.nectar.org.au/\">NeCTAR Web サイト</link> (https://www.nectar.org.au/)"
+msgstr "<link title=\"OpenStack Website\" href=\"https://www.nectar.org.au/\">NeCTAR Web サイト</link> (https://www.nectar.org.au/)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml82(title)
 msgid "MIT CSAIL"
@@ -12609,10 +12609,10 @@ msgstr "ネットワーク管理は VlanManager が広範囲に使用されて�
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml155(para)
 msgid ""
-"<link xlink:title=\"OpenStack Website\" xlink:href=\"http://www.canarie.ca/en/dair-"
+"<link title=\"OpenStack Website\" href=\"http://www.canarie.ca/en/dair-"
 "program/about\">DAIR Homepage</link> (http://www.canarie.ca/en/dair-"
 "program/about)"
-msgstr "<link xlink:title=\"OpenStack Website\" xlink:href=\"http://www.canarie.ca/en/dair-program/about\">DAIR ホームページ</link> (http://www.canarie.ca/en/dair-program/about)"
+msgstr "<link title=\"OpenStack Website\" href=\"http://www.canarie.ca/en/dair-program/about\">DAIR ホームページ</link> (http://www.canarie.ca/en/dair-program/about)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml165(title)
 msgid "CERN"
@@ -12653,26 +12653,26 @@ msgstr "CERN は現在、約 250 台の Nova コンピュートノード上で �
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml191(para)
 msgid ""
-"<link xlink:title=\"OpenStack Website\" "
-"xlink:href=\"http://www.slideshare.net/noggin143/20121017-openstack-accelerating-"
+"<link title=\"OpenStack Website\" "
+"href=\"http://www.slideshare.net/noggin143/20121017-openstack-accelerating-"
 "science\">San Diego 2012 Summit</link> "
 "(http://www.slideshare.net/noggin143/20121017-openstack-accelerating-"
 "science)"
-msgstr "<link xlink:title=\"OpenStack Website\" xlink:href=\"http://www.slideshare.net/noggin143/20121017-openstack-accelerating-science\">San Diego 2012 Summit</link> (http://www.slideshare.net/noggin143/20121017-openstack-accelerating-science)"
+msgstr "<link title=\"OpenStack Website\" href=\"http://www.slideshare.net/noggin143/20121017-openstack-accelerating-science\">San Diego 2012 Summit</link> (http://www.slideshare.net/noggin143/20121017-openstack-accelerating-science)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml198(para)
 msgid ""
-"<link xlink:title=\"OpenStack Website\" xlink:href=\"http://cern.ch/go/N8wp\">Review of "
+"<link title=\"OpenStack Website\" href=\"http://cern.ch/go/N8wp\">Review of "
 "CERN Data Centre Infrastructure</link> (http://cern.ch/go/N8wp)"
-msgstr "<link xlink:title=\"OpenStack Website\" xlink:href=\"http://cern.ch/go/N8wp\">Review of CERN Data Centre Infrastructure</link> (http://cern.ch/go/N8wp)"
+msgstr "<link title=\"OpenStack Website\" href=\"http://cern.ch/go/N8wp\">Review of CERN Data Centre Infrastructure</link> (http://cern.ch/go/N8wp)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_usecases.xml205(para)
 msgid ""
-"<link xlink:title=\"OpenStack Website\" xlink:href=\"http://information-"
+"<link title=\"OpenStack Website\" href=\"http://information-"
 "technology.web.cern.ch/book/cern-private-cloud-user-guide\">CERN Cloud "
 "Infrastructure User Guide</link> (http://information-"
 "technology.web.cern.ch/book/cern-private-cloud-user-guide)"
-msgstr "<link xlink:title=\"OpenStack Website\" xlink:href=\"http://information-technology.web.cern.ch/book/cern-private-cloud-user-guide\">CERN Cloud Infrastructure User Guide</link> (http://information-technology.web.cern.ch/book/cern-private-cloud-user-guide)"
+msgstr "<link title=\"OpenStack Website\" href=\"http://information-technology.web.cern.ch/book/cern-private-cloud-user-guide\">CERN Cloud Infrastructure User Guide</link> (http://information-technology.web.cern.ch/book/cern-private-cloud-user-guide)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_storage.xml21(title)
 msgid "Storage Decisions"
@@ -13024,10 +13024,10 @@ msgstr "SolidFire"
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_storage.xml292(para)
 msgid ""
 "You can find a matrix of the functionality provided by all of the supported "
-"Block Storage drivers on the <link xlink:title=\"OpenStack wiki\" "
-"xlink:href=\"https://wiki.openstack.org/wiki/CinderSupportMatrix\">OpenStack "
+"Block Storage drivers on the <link title=\"OpenStack wiki\" "
+"href=\"https://wiki.openstack.org/wiki/CinderSupportMatrix\">OpenStack "
 "wiki</link> (https://wiki.openstack.org/wiki/CinderSupportMatrix)."
-msgstr "こちらのリンクからドライバごとにサポートされている機能マトリックスを参照できます。 <link xlink:title=\"OpenStack wiki\" xlink:href=\"https://wiki.openstack.org/wiki/CinderSupportMatrix\">OpenStack wiki</link> (https://wiki.openstack.org/wiki/CinderSupportMatrix)"
+msgstr "こちらのリンクからドライバごとにサポートされている機能マトリックスを参照できます。 <link title=\"OpenStack wiki\" href=\"https://wiki.openstack.org/wiki/CinderSupportMatrix\">OpenStack wiki</link> (https://wiki.openstack.org/wiki/CinderSupportMatrix)"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_storage.xml298(para)
 msgid ""
@@ -13111,10 +13111,10 @@ msgid ""
 "consolidate your object and block storage, enables very fast provisioning of"
 " boot-from-volume instances using thin provisioning, and supports a "
 "distributed file system interface, though this interface is <link "
-"xlink:title=\"OpenStack wiki\" xlink:href=\"http://ceph.com/docs/master/faq/\">not yet "
+"title=\"OpenStack wiki\" href=\"http://ceph.com/docs/master/faq/\">not yet "
 "recommended</link> (http://ceph.com/docs/master/faq/) for use in production "
 "deployment by the Ceph project."
-msgstr "Cephのメリットは、管理者がデータの分散とレプリケーションを細かく計画する事ができること、ブロックストレージとオブジェクトストレージを統合できること、シンプロビジョニングを使ってインスタンスのboot-from-volumeを高速で行えること、 <link xlink:title=\"OpenStack wiki\" xlink:href=\"http://ceph.com/docs/master/faq/\">商用利用にはまだ推奨されていませんが</link> (http://ceph.com/docs/master/faq/) 分散ファイルシステムのインターフェースを利用できることです。"
+msgstr "Cephのメリットは、管理者がデータの分散とレプリケーションを細かく計画する事ができること、ブロックストレージとオブジェクトストレージを統合できること、シンプロビジョニングを使ってインスタンスのboot-from-volumeを高速で行えること、 <link title=\"OpenStack wiki\" href=\"http://ceph.com/docs/master/faq/\">商用利用にはまだ推奨されていませんが</link> (http://ceph.com/docs/master/faq/) 分散ファイルシステムのインターフェースを利用できることです。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_storage.xml381(para)
 msgid ""
@@ -13219,14 +13219,14 @@ msgstr "OpenStack Object Storage は従来のファイルシステムの制約�
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_storage.xml479(para)
 msgid ""
 "A good document describing the Object Storage architecture is found within "
-"<link xlink:title=\"OpenStack wiki\" "
-"xlink:href=\"http://docs.openstack.org/developer/swift/overview_architecture.html\">the"
+"<link title=\"OpenStack wiki\" "
+"href=\"http://docs.openstack.org/developer/swift/overview_architecture.html\">the"
 " developer documentation</link> "
 "(http://docs.openstack.org/developer/swift/overview_architecture.html) - "
 "read this first. Once you have understood the architecture, you should know "
 "what a proxy server does and how zones work. However, some there important "
 "points that are often missed at first glance."
-msgstr "オブジェクトストレージのアーキテクチャについて <link xlink:title=\"OpenStack wiki\" xlink:href=\"http://docs.openstack.org/developer/swift/overview_architecture.html\">the developer documentation</link> (http://docs.openstack.org/developer/swift/overview_architecture.html) に記述されています。まずアーキテクチャを理解し、プロキシサーバーとZoneがどのように働くか知る必要があります。重要なポイント見逃さないように注意してください。"
+msgstr "オブジェクトストレージのアーキテクチャについて <link title=\"OpenStack wiki\" href=\"http://docs.openstack.org/developer/swift/overview_architecture.html\">the developer documentation</link> (http://docs.openstack.org/developer/swift/overview_architecture.html) に記述されています。まずアーキテクチャを理解し、プロキシサーバーとZoneがどのように働くか知る必要があります。重要なポイント見逃さないように注意してください。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_arch_storage.xml489(para)
 msgid ""
@@ -13330,12 +13330,12 @@ msgstr "OpenStack command line interface (CLI) クライアントツールとOpe
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_lay_of_land.xml29(para)
 msgid ""
 "We strongly suggest that you install the command-line clients from the <link"
-" xlink:href=\"https://pypi.python.org/\">Python Package Index</link>(PyPI) "
+" href=\"https://pypi.python.org/\">Python Package Index</link>(PyPI) "
 "(https://pypi.python.org/) instead of from the Ubuntu or Fedora packages. "
 "The clients are under heavy development and it is very likely at any given "
 "time the version of the packages distributed by your operating system vendor"
 " are out of date."
-msgstr "コマンドラインツールは、UbuntuやFedoraのパッケージからではなく、<link xlink:href=\"https://pypi.python.org/\">Python Package Index</link>(PyPI) (https://pypi.python.org/) から導入することを強くおすすめします。クライアントツールは開発が活発であり、OSベンダーが配布しているパッケージのバージョンが古くなりがちなためです。"
+msgstr "コマンドラインツールは、UbuntuやFedoraのパッケージからではなく、<link href=\"https://pypi.python.org/\">Python Package Index</link>(PyPI) (https://pypi.python.org/) から導入することを強くおすすめします。クライアントツールは開発が活発であり、OSベンダーが配布しているパッケージのバージョンが古くなりがちなためです。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_lay_of_land.xml37(para)
 msgid ""
@@ -13523,14 +13523,14 @@ msgstr "この例は、クライアントからのHTTPリクエストとエン�
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_lay_of_land.xml233(para)
 msgid ""
-"<link xlink:href=\"https://wiki.openstack.org/wiki/KeyringSupport\">Keyring "
+"<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">Keyring "
 "Support</link> (https://wiki.openstack.org/wiki/KeyringSupport) can be a "
 "source of confusion to the point that, as of the time of this writing, there"
-" is a <link xlink:href=\"https://bugs.launchpad.net/python-"
+" is a <link href=\"https://bugs.launchpad.net/python-"
 "novaclient/+bug/1020238\">bug report</link> (https://bugs.launchpad.net"
 "/python-novaclient/+bug/1020238) which has been open, closed as invalid, and"
 " reopened through a few cycles."
-msgstr "<link xlink:href=\"https://wiki.openstack.org/wiki/KeyringSupport\">Keyring Support</link> (https://wiki.openstack.org/wiki/KeyringSupport)は、このガイドの執筆時点では混乱の元になるかもしれません。この<link xlink:href=\"https://bugs.launchpad.net/python-novaclient/+bug/1020238\">バグレポート</link> (https://bugs.launchpad.net/python-novaclient/+bug/1020238)はオープンされた後、無効(invalid)としてクローズされ、何度かやり取りがあって再度オープンされています。"
+msgstr "<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">Keyring Support</link> (https://wiki.openstack.org/wiki/KeyringSupport)は、このガイドの執筆時点では混乱の元になるかもしれません。この<link href=\"https://bugs.launchpad.net/python-novaclient/+bug/1020238\">バグレポート</link> (https://bugs.launchpad.net/python-novaclient/+bug/1020238)はオープンされた後、無効(invalid)としてクローズされ、何度かやり取りがあって再度オープンされています。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_lay_of_land.xml244(para)
 msgid ""
@@ -13558,11 +13558,11 @@ msgid ""
 "a RESTful API that runs over HTTP. There may be cases where you want to "
 "interact with the API directly or need to use it because of a suspected bug "
 "in one of the CLI tools. The best way to do this is use a combination of "
-"<link xlink:href=\"http://curl.haxx.se/\">cURL</link> (http://curl.haxx.se/) and "
+"<link href=\"http://curl.haxx.se/\">cURL</link> (http://curl.haxx.se/) and "
 "another tool to parse the JSON, such as <link "
-"xlink:href=\"http://stedolan.github.com/jq/\">jq</link> "
+"href=\"http://stedolan.github.com/jq/\">jq</link> "
 "(http://stedolan.github.com/jq/), from the responses."
-msgstr "コマンドラインツールの内部ではOpenStack APIが使用されます。OpenStack APIはHTTP上で動作するRESTful APIです。時に、APIと直接やりとりしたい、CLIツールのバグを疑っている、ということがあるでしょう。その際に最適な方法は、<link xlink:href=\"http://curl.haxx.se/\">cURL</link> (http://curl.haxx.se/)と、JSONレスポンスを解析する<link xlink:href=\"http://stedolan.github.com/jq/\">jq</link> (http://stedolan.github.com/jq/)などのツールを組み合わせることです。"
+msgstr "コマンドラインツールの内部ではOpenStack APIが使用されます。OpenStack APIはHTTP上で動作するRESTful APIです。時に、APIと直接やりとりしたい、CLIツールのバグを疑っている、ということがあるでしょう。その際に最適な方法は、<link href=\"http://curl.haxx.se/\">cURL</link> (http://curl.haxx.se/)と、JSONレスポンスを解析する<link href=\"http://stedolan.github.com/jq/\">jq</link> (http://stedolan.github.com/jq/)などのツールを組み合わせることです。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_lay_of_land.xml275(para)
 msgid ""
@@ -13609,12 +13609,12 @@ msgstr "あなたのサービスカタログからコンピュートなどのエ
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_lay_of_land.xml322(para)
 msgid ""
 "To discover how API requests should be structured, read the <link "
-"xlink:href=\"http://api.openstack.org/api-ref.html\">OpenStack API "
+"href=\"http://api.openstack.org/api-ref.html\">OpenStack API "
 "Reference</link> (http://api.openstack.org/api-ref.html). To chew through "
 "the responses using jq, see the <link "
-"xlink:href=\"http://stedolan.github.com/jq/manual/\">jq Manual</link> "
+"href=\"http://stedolan.github.com/jq/manual/\">jq Manual</link> "
 "(http://stedolan.github.com/jq/manual/)."
-msgstr "APIリクエストがどのような構造かを知るには、<link xlink:href=\"http://api.openstack.org/api-ref.html\">OpenStack API Reference</link> (http://api.openstack.org/api-ref.html)を参照してください。また、jqを使ってレスポンスを理解するには、<link xlink:href=\"http://stedolan.github.com/jq/manual/\">jq Manual</link> (http://stedolan.github.com/jq/manual/)も参考になるでしょう。"
+msgstr "APIリクエストがどのような構造かを知るには、<link href=\"http://api.openstack.org/api-ref.html\">OpenStack API Reference</link> (http://api.openstack.org/api-ref.html)を参照してください。また、jqを使ってレスポンスを理解するには、<link href=\"http://stedolan.github.com/jq/manual/\">jq Manual</link> (http://stedolan.github.com/jq/manual/)も参考になるでしょう。"
 
 #: ./doc/src/docbkx/openstack-ops/src/ch_ops_lay_of_land.xml331(para)
 msgid ""
@@ -14032,12 +14032,12 @@ msgstr "この情報により、我々は問題が DHCP 実行に起因するも
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml197(para)
 msgid ""
-"A quick Google search turned up this: <link xlink:title=\"DAIR project\" "
-"xlink:href=\"https://lists.launchpad.net/openstack/msg11696.html\">DHCP lease "
+"A quick Google search turned up this: <link title=\"DAIR project\" "
+"href=\"https://lists.launchpad.net/openstack/msg11696.html\">DHCP lease "
 "errors in VLAN mode</link> "
 "(https://lists.launchpad.net/openstack/msg11696.html) which further "
 "supported our DHCP theory."
-msgstr "ちょっと Google 検索した結果、これを見つけた。<link xlink:title=\"DAIR project\" xlink:href=\"https://lists.launchpad.net/openstack/msg11696.html\">VLAN モードでの DHCPリースエラー</link> (https://lists.launchpad.net/openstack/msg11696.html) 。この情報はその後の我々の DHCP 方針の支えになった。"
+msgstr "ちょっと Google 検索した結果、これを見つけた。<link title=\"DAIR project\" href=\"https://lists.launchpad.net/openstack/msg11696.html\">VLAN モードでの DHCPリースエラー</link> (https://lists.launchpad.net/openstack/msg11696.html) 。この情報はその後の我々の DHCP 方針の支えになった。"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml203(para)
 msgid ""
@@ -14090,19 +14090,19 @@ msgstr "探し続けてきた Google の検索結果が突然得られたとい�
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml236(para)
 msgid ""
-"<link xlink:title=\"DAIR project\" xlink:href=\"http://www.gossamer-"
+"<link title=\"DAIR project\" href=\"http://www.gossamer-"
 "threads.com/lists/openstack/operators/18197\">Problem with Heavy Network IO "
 "and Dnsmasq</link> (http://www.gossamer-"
 "threads.com/lists/openstack/operators/18197)"
-msgstr "<link xlink:title=\"DAIR project\" xlink:href=\"http://www.gossamer-threads.com/lists/openstack/operators/18197\">高負荷ネットワークと Dnsmasq における問題</link> (http://www.gossamer-threads.com/lists/openstack/operators/18197)"
+msgstr "<link title=\"DAIR project\" href=\"http://www.gossamer-threads.com/lists/openstack/operators/18197\">高負荷ネットワークと Dnsmasq における問題</link> (http://www.gossamer-threads.com/lists/openstack/operators/18197)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml241(para)
 msgid ""
-"<link xlink:title=\"DAIR project\" xlink:href=\"http://www.gossamer-"
+"<link title=\"DAIR project\" href=\"http://www.gossamer-"
 "threads.com/lists/openstack/dev/14696\">instances loosing IP address while "
 "running, due to No DHCPOFFER</link> (http://www.gossamer-"
 "threads.com/lists/openstack/dev/14696)"
-msgstr "<link xlink:title=\"DAIR project\" xlink:href=\"http://www.gossamer-threads.com/lists/openstack/dev/14696\">DHCPOFFER が無いために起動中のインスタンスが IP アドレスを失う問題</link> (http://www.gossamer-threads.com/lists/openstack/dev/14696)"
+msgstr "<link title=\"DAIR project\" href=\"http://www.gossamer-threads.com/lists/openstack/dev/14696\">DHCPOFFER が無いために起動中のインスタンスが IP アドレスを失う問題</link> (http://www.gossamer-threads.com/lists/openstack/dev/14696)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml247(para)
 msgid "Seriously, Google."
@@ -14114,11 +14114,11 @@ msgstr "このバグ報告は全ての鍵だった。"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml249(para)
 msgid ""
-"<link xlink:title=\"DAIR project\" "
-"xlink:href=\"https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978\"> KVM"
+"<link title=\"DAIR project\" "
+"href=\"https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978\"> KVM"
 " images lose connectivity with bridged network</link> "
 "(https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978)"
-msgstr "<link xlink:title=\"DAIR project\" xlink:href=\"https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978\"> KVMイメージがブリッジネットワークで接続を失う</link> (https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978)"
+msgstr "<link title=\"DAIR project\" href=\"https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978\"> KVMイメージがブリッジネットワークで接続を失う</link> (https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978)"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml255(para)
 msgid ""
@@ -14154,13 +14154,13 @@ msgstr "イメージの消失"
 msgid ""
 "At the end of 2012, Cybera (a nonprofit with a mandate to oversee the "
 "development of cyberinfrastructure in Alberta, Canada) deployed an updated "
-"OpenStack cloud for their <link xlink:title=\"DAIR project\" "
-"xlink:href=\"http://www.canarie.ca/en/dair-program/about\">DAIR project</link> "
+"OpenStack cloud for their <link title=\"DAIR project\" "
+"href=\"http://www.canarie.ca/en/dair-program/about\">DAIR project</link> "
 "(http://www.canarie.ca/en/dair-program/about). A few days into production, a"
 " compute node locks up. Upon rebooting the node, I checked to see what "
 "instances were hosted on that node so I could boot them on behalf of the "
 "customer. Luckily, only one instance."
-msgstr "2012年の終わり、Cybera （カナダ アルバータ州にある、サイバーインフラのデプロイを監督する権限を持つ非営利団体）が、彼らの <link xlink:title=\"DAIR project\" xlink:href=\"http://www.canarie.ca/en/dair-program/about\">DAIR プロジェクト</link> (http://www.canarie.ca/en/dair-program/about) 用に新しい OpenStack クラウドをデプロイした。サービスインから数日後、あるコンピュートノードがロックアップした。問題のノードの再起動にあたり、私は顧客の権限でインスタンスを起動するため、そのノード上で何のインスタンスがホスティングされていたかを確認した。幸運にも、インスタンスは１つだけだった。"
+msgstr "2012年の終わり、Cybera （カナダ アルバータ州にある、サイバーインフラのデプロイを監督する権限を持つ非営利団体）が、彼らの <link title=\"DAIR project\" href=\"http://www.canarie.ca/en/dair-program/about\">DAIR プロジェクト</link> (http://www.canarie.ca/en/dair-program/about) 用に新しい OpenStack クラウドをデプロイした。サービスインから数日後、あるコンピュートノードがロックアップした。問題のノードの再起動にあたり、私は顧客の権限でインスタンスを起動するため、そのノード上で何のインスタンスがホスティングされていたかを確認した。幸運にも、インスタンスは１つだけだった。"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml284(para)
 msgid ""
@@ -14247,10 +14247,10 @@ msgid ""
 " idea sounds innocent enough and has some good qualities to it. But how did "
 "this feature end up turned on? It was disabled by default in Essex. As it "
 "should be. It was <link "
-"xlink:href=\"https://bugs.launchpad.net/nova/+bug/1029674\">decided to be turned "
+"href=\"https://bugs.launchpad.net/nova/+bug/1029674\">decided to be turned "
 "on in Folsom</link> (https://bugs.launchpad.net/nova/+bug/1029674). I cannot"
 " emphasize enough that:"
-msgstr "Essex で、_base 下の任意のファイルが使用されていないかどうか定期的にチェックして確認する機能が導入された。もしあれば、Nova はそのファイルを削除する。このアイデアは問題がないように見え、品質的にも良いようだった。しかし、この機能を有効にすると最終的にどうなるのか？Essex ではこの機能がデフォルトで無効化されていた。そうあるべきであったからだ。これは、<link xlink:href=\"https://bugs.launchpad.net/nova/+bug/1029674 \">Folsom で有効になることが決定された</link> (https://bugs.launchpad.net/nova/+bug/1029674)。私はそうあるべきとは思わない。何故なら"
+msgstr "Essex で、_base 下の任意のファイルが使用されていないかどうか定期的にチェックして確認する機能が導入された。もしあれば、Nova はそのファイルを削除する。このアイデアは問題がないように見え、品質的にも良いようだった。しかし、この機能を有効にすると最終的にどうなるのか？Essex ではこの機能がデフォルトで無効化されていた。そうあるべきであったからだ。これは、<link href=\"https://bugs.launchpad.net/nova/+bug/1029674 \">Folsom で有効になることが決定された</link> (https://bugs.launchpad.net/nova/+bug/1029674)。私はそうあるべきとは思わない。何故なら"
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml353(emphasis)
 msgid "Actions which delete things should not be enabled by default."
@@ -14449,11 +14449,11 @@ msgstr "我々はユーザを呼び、しばらくダッシュボードの更新
 
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml504(para)
 msgid ""
-"To this day, <link xlink:href=\"https://bugs.launchpad.net/nova/+bug/832507\">the "
+"To this day, <link href=\"https://bugs.launchpad.net/nova/+bug/832507\">the "
 "issue</link> (https://bugs.launchpad.net/nova/+bug/832507) doesn't have a "
 "permanent resolution, but we look forward to the discussion at the next "
 "summit."
-msgstr "今日に至るまで、<link xlink:href=\"https://bugs.launchpad.net/nova/+bug/832507\">この問題</link> (https://bugs.launchpad.net/nova/+bug/832507) には完全な解決策がないが、我々は次回のサミットの議論に期待している。"
+msgstr "今日に至るまで、<link href=\"https://bugs.launchpad.net/nova/+bug/832507\">この問題</link> (https://bugs.launchpad.net/nova/+bug/832507) には完全な解決策がないが、我々は次回のサミットの議論に期待している。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ./doc/src/docbkx/openstack-ops/src/app_crypt.xml0(None)
