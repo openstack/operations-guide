@@ -41,6 +41,10 @@
                     according to the queue broker)</para>
             </listitem>
             <listitem>
+            <para>Conductor services (proxies requests to a
+                database)</para>
+            </listitem>
+            <listitem>
                 <para>Authentication and authorization for identity management
                     (indicates which users can do what actions on certain cloud
                     resources, quota management is spread out among services
@@ -333,7 +337,39 @@
             ability to retry multiple MQ hosts in the event of a failure, such
             as using Compute's ability to do so.</para>
     </section>
-
+    <section xml:id="conductor">
+        <title>Conductor Services</title>
+        <para>In previous version of OpenStack, all nova-compute
+            services required direct access to the database hosted on
+            the cloud controller. This was problematic for two
+            reasons: security and performance. With regard to
+            security, if a compute node is compromised, then the
+            attacker inherently has access to the database. With
+            regard to performance, nova-compute calls to the database
+            are single-threaded and blocking. This creates a
+            performance bottleneck as database requests are fulfilled
+            serially rather than parallel.</para>
+        <para>The conductor service resolves both of these issues by
+            acting as a proxy for the nova-compute service. Now
+            instead of nova-compute directly accessing the database,
+            it will contact the nova-conductor service and
+            nova-conductor will access the database on nova-compute's
+            behalf. Since nova-compute no longer has direct access to
+            the database, the security issue is resolved.
+            Additionally, nova-conductor is a non-blocking service so
+            requests from all compute nodes are fulfilled in
+            parallel.</para>
+        <note>
+            <para>If you are using nova-network and multi-host
+                networking in your cloud environment, nova-compute
+                still requires direct access to the database.</para>
+        </note>
+        <para>The nova-conductor service is horizontally scalable. To
+            make nova-conductor highly available and fault tolerant,
+            just launch more instances of the
+                <code>nova-conductor</code> process, either on the
+            same server or across multiple servers.</para>
+    </section>
     <section xml:id="api">
         <title>Application Programming Interface (API)</title>
         <para>All public access, whether direct, through a command
