@@ -142,34 +142,9 @@
         <xi:include href="acknowledgements.xml"/>
         <xi:include href="ch_ops_dochistory.xml"/>
         <xi:include href="preface_ops.xml"/>
-
-        <!--<xi:include href="part_architecture.xml"/> -->
-        <xi:include href="ch_arch_example.xml"/>
-
-        <xi:include href="ch_arch_provision.xml"/>
-
-        <xi:include href="ch_arch_cloud_controller.xml"/>
-
-        <xi:include href="ch_arch_compute_nodes.xml"/>
-
-        <xi:include href="ch_arch_scaling.xml"/>
-
-        <xi:include href="ch_arch_storage.xml"/>
-
-        <xi:include href="ch_arch_network_design.xml"/>
-
-        <!--<xi:include href="ch_arch_whats_next.xml"/>-->
-        <!--<xi:include href="part_operations.xml"/> -->
-        <xi:include href="ch_ops_lay_of_land.xml"/>
-        <xi:include href="ch_ops_projects_users.xml"/>
-        <xi:include href="ch_ops_user_facing.xml"/>
-        <xi:include href="ch_ops_maintenance.xml"/>
-        <xi:include href="ch_ops_network_troubleshooting.xml"/>
-        <xi:include href="ch_ops_log_monitor.xml"/>
-        <xi:include href="ch_ops_backup_recovery.xml"/>
-        <xi:include href="ch_ops_customize.xml"/>
-        <xi:include href="ch_ops_upstream.xml"/>
-        <xi:include href="ch_ops_advanced_configuration.xml"/>
+        <!-- parts: architecture and operations -->
+        <xi:include href="part_architecture.xml"/>
+        <xi:include href="part_operations.xml"/>
         <!-- appendices -->
         <xi:include href="app_usecases.xml"/>
         <xi:include href="app_crypt.xml"/>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE part [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+]>
+<part xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="architecture">
+    <title>Architecture</title>
+    <xi:include href="ch_arch_example.xml"/>
+    <xi:include href="ch_arch_provision.xml"/>
+    <xi:include href="ch_arch_cloud_controller.xml"/>
+    <xi:include href="ch_arch_compute_nodes.xml"/>
+    <xi:include href="ch_arch_scaling.xml"/>
+    <xi:include href="ch_arch_storage.xml"/>
+    <xi:include href="ch_arch_network_design.xml"/>
+</part>
