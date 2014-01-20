@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="example_architecture">
+    <?dbhtml stop-chunking?>
+    <title>Example Architectures</title>
+    <xi:include href="section_arch_example-nova.xml"/>
+    <xi:include href="section_arch_example-neutron.xml"/>
+</chapter>
+

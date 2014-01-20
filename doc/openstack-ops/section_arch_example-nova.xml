@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
+<!DOCTYPE section [
 <!-- Some useful entities borrowed from HTML -->
 <!ENTITY ndash  "&#x2013;">
 <!ENTITY mdash  "&#x2014;">
@@ -7,12 +7,12 @@
 <!ENTITY plusmn "&#xB1;">
 
 ]>
-<chapter xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="example_architecture">
+<section xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0"
+    xml:id="example_architecture-nova">
     <?dbhtml stop-chunking?>
-    <title>Example Architecture</title>
+    <title>Example Architecture - Legacy Networking (nova)</title>
     <para>Because OpenStack is highly configurable, with many different
             <glossterm>back-ends</glossterm> and network configuration options,
         it is difficult to write documentation that covers all possible
@@ -34,6 +34,8 @@
             architecture does not dictate a particular number of nodes, but
             shows the thinking and considerations that went into choosing this
             architecture including the features offered.</para>
+    <section xml:id="overview_components-nova">
+        <title>Components</title>
         <informaltable rules="all">
             <col width="40%"/>
             <col width="60%"/>
@@ -142,20 +144,22 @@
 
     <section xml:id="rationale">
         <title>Rationale</title>
-        <para>This example architecture has been selected based on the current
-            default feature set of OpenStack <glossterm>Folsom</glossterm>, with
-            an emphasis on stability. We believe that many clouds that
-            currently run OpenStack in production have made similar
-            choices.</para>
-        <para>You must first choose the operating system that runs on all of the
-            physical nodes. While OpenStack is supported on several
-            distributions of Linux, we used <emphasis role="bold">Ubuntu 12.04
-                LTS (Long Term Support)</emphasis>, which is used by the
-            majority of the development community, has feature completeness
-            compared with other distributions, and has clear future support
-            plans.</para>
-        <para>We recommend that you do not use the default Ubuntu OpenStack
-            install packages and instead use the <link
+        <para>This example architecture has been selected based on the
+            current default feature set of OpenStack
+                <glossterm>Havana</glossterm>, with an emphasis on
+            stability. We believe that many
+            clouds that currently run OpenStack in production have
+            made similar choices.</para>
+        <para>You must first choose the operating system that runs on
+            all of the physical nodes. While OpenStack is supported on
+            several distributions of Linux, we used <emphasis
+                role="bold">Ubuntu 12.04 LTS (Long Term
+                Support)</emphasis>, which is used by the majority of
+            the development community, has feature completeness
+            compared with other distributions, and has clear future
+            support plans.</para>
+        <para>We recommend that you do not use the default Ubuntu
+            OpenStack install packages and instead use the <link
                 xlink:href="https://wiki.ubuntu.com/ServerTeam/CloudArchive"
                 >Ubuntu Cloud Archive</link>
             (https://wiki.ubuntu.com/ServerTeam/CloudArchive). The Cloud Archive
@@ -219,15 +223,15 @@
             indispensable, not just for user interaction with the cloud, but
             also as a tool for operators. Additionally, the dashboard's use of
             Django makes it a flexible framework for extension.</para>
-
-        <section xml:id="neutron">
-            <title>Why Not Use the OpenStack Network Service (neutron)?</title>
-            <para>We do not discuss the OpenStack Network Service (neutron) in
-                this guide, because the authors of this guide only have
-                production deployment experience using
-                <code>nova-network</code>. Additionally, it does not yet support
-                multi-host networking.</para>
-        </section>
+            <section xml:id="neutron">
+                <title>Why Not Use the OpenStack Network Service
+                    (neutron)?</title>
+                <para>This example architecture does not use the OpenStack
+                    Network Service (neutron), because it does not yet support
+                    multi-host networking and our organizations (university,
+                    government) have access to a large range of
+                    publicly-accessible IPv4 addresses.</para>
+            </section>
         <section xml:id="multi-host-networking">
             <title>Why Use Multi-host Networking?</title>
             <para>In a default OpenStack deployment, there is a single
@@ -241,17 +245,16 @@
                 become a bottleneck if excessive network traffic comes in and
                 goes out of the cloud.</para>
             <para>
-                <!-- FIXME - need to find the place for multu-host in havana -->
-                <link xlink:title="Multi-host"
-                    xlink:href="http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906"
+                <link xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/nova-network.html"
                     >Multi-host</link>
-                (http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906)
-                is a high-availability option for the network configuration
-                where the nova-network service is run on every compute node
-                instead of running on only a single node.</para>
+                (http://docs.openstack.org/havana/install-guide/install/apt/content/nova-network.html)
+                is a high-availability option for the network
+                configuration where the nova-network service is run on
+                every compute node instead of running on only a single
+                node.</para>
         </section>
     </section>
-
+    </section>
     <section xml:id="detailed_desc">
         <title>Detailed Description</title>
         <para>The reference architecture consists of multiple compute
@@ -330,4 +333,4 @@
             </listitem>
         </itemizedlist>
     </section>
-</chapter>
+</section>

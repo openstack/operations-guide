@@ -21,7 +21,7 @@
         decisions you will need to make during the process.
       </para>
     </partintro>
-    <xi:include href="ch_arch_example.xml"/>
+    <xi:include href="ch_arch_examples.xml"/>
     <xi:include href="ch_arch_provision.xml"/>
     <xi:include href="ch_arch_cloud_controller.xml"/>
     <xi:include href="ch_arch_compute_nodes.xml"/>
