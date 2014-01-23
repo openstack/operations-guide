@@ -22,81 +22,99 @@
         <para>On Ubuntu, most services use the convention of writing
             their log files to subdirectories of the <code>/var/log
                 directory</code>.</para>
-        <section xml:id="cloud_controller_ops">
-            <title>Cloud Controller</title>
             <informaltable rules="all">
                 <thead>
                     <tr>
+                        <th>Node Type</th>
                         <th>Service</th>
                         <th>Log Location</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                        <td><para>Cloud Controller</para></td>
+                        <td><para>
                                 <code>nova-*</code>
                             </para></td>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                        <td><para>
                                 <code>/var/log/nova</code>
                             </para></td>
                     </tr>
                     <tr>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                         <td><para>Cloud Controller</para></td>
+                        <td><para>
                                 <code>glance-*</code>
                             </para></td>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                        <td><para>
                                 <code>/var/log/glance</code>
                             </para></td>
                     </tr>
                     <tr>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                         <td><para>Cloud Controller</para></td>
+                        <td><para>
                                 <code>cinder-*</code>
                             </para></td>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                        <td><para>
                                 <code>/var/log/cinder</code>
                             </para></td>
                     </tr>
                     <tr>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
-                                <code>keystone</code>
+                         <td><para>Cloud Controller</para></td>
+                        <td><para>
+                                <code>keystone-*</code>
                             </para></td>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                        <td><para>
                                 <code>/var/log/keystone</code>
                             </para></td>
                     </tr>
                     <tr>
-                        <td xmlns:db="http://docbook.org/ns/docbook"
-                                ><para>horizon</para></td>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                         <td><para>Cloud Controller</para></td>
+                        <td><para>
+                                <code>neutron-*</code>
+                            </para></td>
+                        <td><para>
+                                <code>/var/log/neutron</code>
+                            </para></td>
+                    </tr>
+                    <tr>
+                         <td><para>Cloud Controller</para></td>
+                        <td><para>horizon</para></td>
+                        <td><para>
                                 <code>/var/log/apache2/</code>
                             </para></td>
                     </tr>
                     <tr>
-                        <td xmlns:db="http://docbook.org/ns/docbook"
-                                ><para>misc (Swift,
+                         <td><para>All nodes</para></td>
+                        <td><para>misc (Swift,
                             dnsmasq)</para></td>
-                        <td xmlns:db="http://docbook.org/ns/docbook"><para>
+                        <td><para>
                                 <code>/var/log/syslog</code>
+                            </para></td>
+                    </tr>
+                    <tr>
+                        <td><para>Compute Nodes</para></td>
+                        <td><para>libvirt</para></td>
+                        <td><para>
+                                <code>/var/log/libvirt/libvirtd.log</code>
+                            </para></td>
+                    </tr>
+                    <tr>
+                        <td><para>Compute Nodes</para></td>
+                        <td><para>Console (boot up messages) for VM instances:</para></td>
+                        <td><para>
+                                <code>/var/lib/nova/instances/instance-&lt;instance
+                    id&gt;/console.log</code>
+                            </para></td>
+                    </tr>
+                    <tr>
+                        <td><para>Block Storage Nodes</para></td>
+                        <td><para>cinder-volume</para></td>
+                        <td><para>
+                                <code>/var/log/cinder/cinder-volume.log</code>
                             </para></td>
                     </tr>
                 </tbody>
             </informaltable>
-        </section>
-        <section xml:id="compute_nodes_ops">
-            <title>Compute Nodes</title>
-            <para>libvirt: <code>/var/log/libvirt/libvirtd.log</code>
-            </para>
-            <para>Console (boot up messages) for VM instances:
-                    <code>/var/lib/nova/instances/instance-&lt;instance
-                    id&gt;/console.log</code>
-            </para>
-        </section>
-        <section xml:id="block_storage_nodes">
-            <title>Block Storage Nodes</title>
-            <para>cinder:
-                    <code>/var/log/cinder/cinder-volume.log</code>
-            </para>
-        </section>
     </section>
     <section xml:id="how_to_read_logs">
         <title>How to Read the Logs</title>
@@ -372,7 +390,7 @@ local0.* ?NovaAll
                     </para>
                 </listitem>
             </itemizedlist>
-            <para>So you have an individual log file for each compute
+            <para>You have an individual log file for each compute
                 node as well as an aggregated log that contains nova
                 logs from all nodes.</para>
         </section>
