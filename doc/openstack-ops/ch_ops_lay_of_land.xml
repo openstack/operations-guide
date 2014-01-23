@@ -12,8 +12,7 @@
     xml:id="lay_of_the_land">
     <?dbhtml stop-chunking?>
     <title>Lay of the Land</title>
-    <para>From this point forward in the guide, we assume that you
-        have an OpenStack cloud up and running. This section helps you
+    <para>This section helps you
         set up your working environment and use it to take a look
         around your cloud.</para>
     <section xml:id="cli_tools">
