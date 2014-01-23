@@ -27,7 +27,7 @@
             clients from the <link
                 xlink:href="https://pypi.python.org/">Python Package
                 Index</link>(PyPI) (https://pypi.python.org/) instead
-            of from the Ubuntu or Fedora packages. The clients are
+            of from the distribution packages. The clients are
             under heavy development and it is very likely at any given
             time the version of the packages distributed by your
             operating system vendor are out of date.</para>
