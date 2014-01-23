@@ -11,6 +11,16 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="architecture">
     <title>Architecture</title>
+    <partintro>
+      <para>
+        Designing an OpenStack cloud is a great achievement. It requires a
+        robust understanding of the requirements and needs of the cloud
+        users to determine the best possible configuration to meet them.
+        OpenStack provides a great deal of flexibility to achieve your
+        needs, and this part of the book aims to shine light on many of the
+        decisions you will need to make during the process.
+      </para>
+    </partintro>
     <xi:include href="ch_arch_example.xml"/>
     <xi:include href="ch_arch_provision.xml"/>
     <xi:include href="ch_arch_cloud_controller.xml"/>
