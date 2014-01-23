@@ -630,9 +630,9 @@ proxy-server IP 198.51.100.12 denied access to Account=AUTH_... Container=None. 
                     succeeds.</para>
             </step>
         </procedure>
-        <para>Functional testing like this is not a replacement for
+        <warning><para>Functional testing like this is not a replacement for
             proper unit and integration testing but it serves to get
-            you started.</para>
+            you started.</para></warning>
         <para>A similar pattern can be followed in all other projects
             that use the Python Paste framework. Simply create a
             middleware module and plug it in through configuration.
