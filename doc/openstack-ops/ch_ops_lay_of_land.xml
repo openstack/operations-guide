@@ -374,48 +374,39 @@ cloud.example.com nova</programlisting>
                 see what services are available in your cloud as well
                 as what endpoints have been configured for the
                 services.</para>
-            <para>The following commands require you to have your
+            <para>The following command requires you to have your
                 shell environment configured with the proper
                 administrative variables.</para>
 
-            <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone service-list</programlisting>
+            <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone catalog</programlisting>
 
-            <programlisting><?db-font-size 60%?>+-----+----------+----------+----------------------------+
-| id  | name     | type     | description                |
-+-----+----------+----------+----------------------------+
-| ... | cinder   | volume   | Cinder Service             |
-| ... | glance   | image    | OpenStack Image Service    |
-| ... | nova_ec2 | ec2      | EC2 Service                |
-| ... | keystone | identity | OpenStack Identity Service |
-| ... | nova     | compute  | OpenStack Compute Service  |
-+-----+----------+----------+----------------------------+</programlisting>
-            <para>The output above shows that there are five services
-                configured.</para>
-            <para>To see the endpoint of each service, run:</para>
-            <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone endpoint-list</programlisting>
-            <programlisting><?db-font-size 55%?>---+------------------------------------------+--
-   |                publicurl                 |
----+------------------------------------------+--
-   | http://example.com:8774/v2/%(tenant_id)s |
-   |          http://example.com:9292         |
-   |        http://example.com:8000/v1        |
-   |       http://example.com:5000/v2.0       |
----+------------------------------------------+--
+            <programlisting><?db-font-size 60%?>Service: image
++-------------+----------------------------------------+
+|   Property  |                 Value                  |
++-------------+----------------------------------------+
+|   adminURL  | http://cloud.internal.example.com:9292 |
+| internalURL | http://cloud.example.com:9292          |
+|  publicURL  | http://cloud.example.com:9292          |
+|    region   |               RegionOne                |
++-------------+----------------------------------------+
 
----+------------------------------------------+--
-   |                 adminurl                 |
----+------------------------------------------+--
-   | http://example.com:8774/v2/%(tenant_id)s |
-   |          http://example.com:9292         |
-   |        http://example.com:8000/v1        |
-   |       http://example.com:5000/v2.0       |
----+------------------------------------------+--</programlisting>
-            <para>This example shows two columns pulled from the larger listing.
-                There should be a one-to-one mapping between a
-                    <emphasis>service</emphasis> and
-                    <emphasis>endpoint</emphasis>. Note the different URLs and
-                ports between the public URL and the admin URL for some
-                services.</para>
+Service: identity
++-------------+----------------------------------------------+
+|   Property  |                   Value                      |
++-------------+----------------------------------------------+
+|   adminURL  | http://cloud.internal.example.com:35357/v2.0 |
+| internalURL | http://cloud.example.com:5000/v2.0           |
+|  publicURL  | http://cloud.example.com:5000/v2.0           |
+|    region   |                 RegionOne                    |
++-------------+----------------------------------------------+</programlisting>
+            <para>The output above has been truncated to show only two
+                services. You will see one service block for each
+                service that your cloud provides. Note how the
+                endpoint domain can be different depending on the
+                endpoint type. Different endpoint domains per type are
+                not required, but can be done for different reasons
+                such as endpoint privacy or network traffic
+                segregation.</para>
             <para>You can find the version of the Compute installation by using the
                     <command>nova-manage</command> command:
                 <screen><prompt>$</prompt> <userinput>nova-manage version list</userinput></screen></para>
