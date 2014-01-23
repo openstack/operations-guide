@@ -17,8 +17,11 @@
         data is closely related to how quickly you need to recover
         from data loss.</para>
         <note><para>If you cannot have any data loss at
-        all, you should focus on High Availability as well as
-        backups.</para></note>
+        all, you should also focus on high availability deployment
+        methodologies at all layers - from your hardware capability
+        to your control infrastructure segregation. Running multiple services
+        storing your back-end data decreases the risk that there will
+        be a data loss event in the event one fails.</para></note>
     <para>Other backup considerations include:</para>
     <itemizedlist>
         <listitem>
