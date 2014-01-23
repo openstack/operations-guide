@@ -10,7 +10,6 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="maintenance">
-
     <?dbhtml stop-chunking?>
     <title>Maintenance, Failures, and Debugging</title>
     <para>Downtime, whether planned or unscheduled, is a certainty
@@ -202,31 +201,26 @@
         </section>
         <section xml:id="inspect_and_recover_failed_instances">
             <?dbhtml stop-chunking?>
-            <title>Inspecting and Recovering Data from Failed
-                Instances</title>
-            <para>In some scenarios, instances are running but are
-                inaccessible through SSH and do not respond to any
-                command. VNC console could be displaying a boot
-                failure or kernel panic error messages. This could be
-                an indication of a file system corruption on the VM
-                itself. If you need to recover files or inspect the
-                content of the instance, qemu-nbd can be used to mount
-                the disk.</para>
-            <note>
-                <para>If you access or view the user's content and
-                    data, get their approval first!</para>
-            </note>
+            <title>Inspecting and Recovering Data from Failed Instances</title>
+            <para>In some scenarios, instances are running but are inaccessible
+                through SSH and do not respond to any command. VNC console could
+                be displaying a boot failure or kernel panic error messages.
+                This could be an indication of a file system corruption on the
+                VM itself. If you need to recover files or inspect the content
+                of the instance, qemu-nbd can be used to mount the disk.</para>
+            <warning>
+                <para>If you access or view the user's content and data, get
+                    their approval first!</para>
+            </warning>
             <para>To access the instance's disk
-                (/var/lib/nova/instances/instance-xxxxxx/disk), the
-                following steps must be followed:</para>
+                (/var/lib/nova/instances/instance-xxxxxx/disk), the following
+                steps must be followed:</para>
             <orderedlist>
                 <listitem>
-                    <para>Suspend the instance using the virsh
-                        command</para>
+                    <para>Suspend the instance using the virsh command</para>
                 </listitem>
                 <listitem>
-                    <para>Connect the qemu-nbd device to the
-                        disk</para>
+                    <para>Connect the qemu-nbd device to the disk</para>
                 </listitem>
                 <listitem>
                     <para>Mount the qemu-nbd device</para>
@@ -241,20 +235,21 @@
                     <para>Resume the instance</para>
                 </listitem>
             </orderedlist>
-            <para>If you do not follow the steps from 4-6, OpenStack
-                Compute cannot manage the instance any longer. It
-                fails to respond to any command issued by OpenStack
-                Compute and it is marked as shutdown.</para>
-            <para>Once you mount the disk file, you should be able
-                access it and treat it as normal directories with
-                files and a directory structure. However, we do not
-                recommend that you edit or touch any files because
-                this could change the acls and make the instance
-                unbootable if it is not already.</para>
+            <para>If you do not follow the steps from 4-6, OpenStack Compute
+                cannot manage the instance any longer. It fails to respond to
+                any command issued by OpenStack Compute and it is marked as
+                shutdown.</para>
+            <para>Once you mount the disk file, you should be able access it and
+                treat it as normal directories with files and a directory
+                structure. However, we do not recommend that you edit or touch
+                any files because this could change the Access Control Lists
+                (ACLs) which are used to determine which accounts can perform
+                what operations on files and directories. Changing ACLs can make
+                the instance unbootable if it is not already.</para>
             <orderedlist>
                 <listitem>
-                    <para>Suspend the instance using the virsh command
-                        - taking note of the internal ID.</para>
+                    <para>Suspend the instance using the virsh command - taking
+                        note of the internal ID.</para>
                     <programlisting><?db-font-size 65%?>root@compute-node:~# virsh list
 Id Name                 State
 ----------------------------------
@@ -266,8 +261,7 @@ root@compute-node:~# virsh suspend 30
 Domain 30 suspended</programlisting>
                 </listitem>
                 <listitem>
-                    <para>Connect the qemu-nbd device to the
-                        disk</para>
+                    <para>Connect the qemu-nbd device to the disk</para>
                     <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# ls -lh
 total 33M
 -rw-rw---- 1 libvirt-qemu kvm  6.3K Oct 15 11:31 console.log
@@ -278,20 +272,18 @@ root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -c /dev/nb
                 </listitem>
                 <listitem>
                     <para>Mount the qemu-nbd device.</para>
-                    <para>The qemu-nbd device tries to export the
-                        instance disk's different partitions as
-                        separate devices. For example if vda as the
-                        disk and vda1 as the root partition, qemu-nbd
-                        exports the device as /dev/nbd0 and
+                    <para>The qemu-nbd device tries to export the instance
+                        disk's different partitions as separate devices. For
+                        example if vda as the disk and vda1 as the root
+                        partition, qemu-nbd exports the device as /dev/nbd0 and
                         /dev/nbd0p1 respectively.</para>
                     <programlisting><?db-font-size 65%?>#mount the root partition of the device
 root@compute-node:/var/lib/nova/instances/instance-0000274a# mount /dev/nbd0p1 /mnt/
 # List the directories of mnt, and the vm's folder is display
 # You can inspect the folders and access the /var/log/ files</programlisting>
-                    <para>To examine the secondary or ephemeral disk,
-                        use an alternate mount point if you want both
-                        primary and secondary drives mounted at the
-                        same time.</para>
+                    <para>To examine the secondary or ephemeral disk, use an
+                        alternate mount point if you want both primary and
+                        secondary drives mounted at the same time.</para>
                     <programlisting><?db-font-size 65%?># umount /mnt
 # qemu-nbd -c /dev/nbd1 `pwd`/disk.local
 # mount /dev/nbd1 /mnt/</programlisting>
@@ -319,9 +311,8 @@ drwxr-xr-x. 13 root root 4.0K Oct 15 00:44 usr
 drwxr-xr-x. 17 root root 4.0K Oct 15 00:44 var</programlisting>
                 </listitem>
                 <listitem>
-                    <para>Once you have completed the inspection,
-                        umount the mount point and release the
-                        qemu-nbd device</para>
+                    <para>Once you have completed the inspection, umount the
+                        mount point and release the qemu-nbd device</para>
                     <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# umount /mnt
 root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -d /dev/nbd0
 /dev/nbd0 disconnected</programlisting>
@@ -623,7 +614,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
             you to maintain your configuration information (such as
             packages and configuration options) in a version
             controlled repository.</para>
-        <para>Several configuration management tools are available,
+        <tip><para>Several configuration management tools are available,
             and this guide does not recommend a specific one. The two
             most popular ones in the OpenStack community are <link
                 xlink:href="https://puppetlabs.com/">Puppet</link>
@@ -649,7 +640,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 xlink:href="http://cfengine.com/">CFEngine</link>
             (http://cfengine.com) and <link
                 xlink:href="http://bcfg2.org/">Bcfg2</link>
-            (http://bcfg2.org).</para>
+            (http://bcfg2.org).</para></tip>
     </section>
     <section xml:id="hardware">
         <?dbhtml stop-chunking?>
