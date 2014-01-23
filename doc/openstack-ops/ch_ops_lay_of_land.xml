@@ -109,7 +109,7 @@
                     <code>/etc/nova/nova.conf</code> and make queries
                 directly against the database rather than against the
                 OpenStack <glossterm>API endpoint</glossterm>s.</para>
-            <para>The existence of the <code>*-manage</code> tools is
+            <warning><para>The existence of the <code>*-manage</code> tools is
                 a legacy issue. It is a goal of the OpenStack project
                 to eventually migrate all of the remaining
                 functionality in the <code>*-manage</code> tools into
@@ -117,7 +117,7 @@
                 SSH into the <glossterm>cloud controller
                     node</glossterm> to perform some maintenance
                 operations that require one of the
-                    <code>*-manage</code> tools.</para>
+                    <code>*-manage</code> tools.</para></warning>
         </section>
         <?hard-pagebreak?>
         <section xml:id="get_creds">
@@ -167,7 +167,7 @@ export OS_USERNAME=demo
 echo "Please enter your OpenStack Password: "
 read -s OS_PASSWORD_INPUT
 export OS_PASSWORD=$OS_PASSWORD_INPUT</programlisting>
-            <note>
+            <warning>
                 <para>This does not save your password in plain text, which is a
                     good thing. But when you source or run the script, it
                     prompts for your password and then stores your response in
@@ -177,7 +177,7 @@ export OS_PASSWORD=$OS_PASSWORD_INPUT</programlisting>
                     require a non interactive operation, but you then need to be
                     extremely cautious with the security and permissions of this
                     file.</para>
-            </note>
+            </warning>
             <para>EC2 compatibility credentials can be downloaded from the
                     <guimenuitem>Project</guimenuitem>, then <guimenuitem>Access
                     &amp; Security</guimenuitem>, then <guimenuitem>API
@@ -237,7 +237,9 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
             <note>
                 <para>This causes the command line tool to
                     authenticate on each and every interaction with
-                    the cloud.</para>
+                    the cloud. This can assist with working around this
+                    scenario. However, it increases the time taken to run commands
+                    and also the load on the server.</para>
             </note>
             <section xml:id="curl">
                 <title>cURL</title>
@@ -419,7 +421,9 @@ Service: identity
                     diagnostics</command> command with a server ID:</para>
             <screen><prompt>$</prompt> <userinput>nova diagnostics &lt;serverID&gt;</userinput></screen>
             <para>The output of this command will vary depending on the
-                hypervisor. Example output when the hypervisor is Xen:
+                hypervisor, as they support different attributes. The following
+                demonstrates the difference between the two most popular hypervisors.
+                 Example output when the hypervisor is Xen:
                 <screen><computeroutput>
 +----------------+-----------------+
 |    Property    |      Value      |
