@@ -626,6 +626,9 @@
                     <imagedata width="5in"
                         fileref="figures/horizon-user-project.png"/>
                 </imageobject>
+                <caption><para><guilabel>Edit Project Members</guilabel> tab of the
+                dashboard, from which you can perform actions on
+                users.</para></caption>
             </mediaobject>
         </informalfigure>
         <para>From this view you can do a number of useful and a few
@@ -642,12 +645,12 @@
             remove them.</para>
         <para>The dangerous possibility comes in the ability to change
             member roles. This is the drop down list after the user
-            name in the "Project Members" list. In virtually all cases
+            name in the <guilabel>Project Members</guilabel> list. In virtually all cases
             this value should be set to "Member". This example
             purposefully show and administrative user where this value
-            is "admin".</para><important><para>The "admin" is global not per project so granting a user the
+            is "admin".</para><warning><para>The "admin" is global not per project so granting a user the
                 admin role in any project gives the administrative
-                rights across the whole cloud.</para></important>
+                rights across the whole cloud.</para></warning>
         <para>Typical use is to only create administrative users in a
             single project, by convention the "admin" project which is
             created by default during cloud setup. If your
