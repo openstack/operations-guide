@@ -128,7 +128,8 @@
     <section xml:id="tcpdump">
         <title>tcpdump</title>
         <para>One great, although very in-depth, way of
-            troubleshooting network issues is to use tcpdump. It's
+            troubleshooting network issues is to use tcpdump. The tcpdump
+            tool captures network packets for analysis. It's
             recommended to use tcpdump at several points along the
             network path to correlate where a problem might be. If you
             prefer working with a GUI, either live or by using a
