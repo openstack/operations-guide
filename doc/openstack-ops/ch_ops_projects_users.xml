@@ -419,6 +419,66 @@
         </procedure>
       </section>
     </section>
+ <section xml:id="cli_set_object_storage_quotas">
+   <title>Set Object Storage Quotas</title>
+   <para>Object Storage quotas were introduced in Swift 1.8 (OpenStack Grizzly). There are currently two categories of quotas for Object Storage:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Container Quotas: Limits the total size (in bytes) or number of
+            objects that can be stored in a single container.</para>
+        </listitem>
+        <listitem>
+          <para>Account Quotas: Limits the total size (in bytes) that a user has
+            available in the Object Storage service.</para>
+        </listitem>
+      </itemizedlist>
+      <para>In order to take advantage of either container quotas or account
+        quotas, your Object Storage proxy server must have
+          <code>container_quotas</code> or <code>account_quotas</code> (or both)
+        added to the [pipeline:main] pipeline. Each quota type also requires its
+        own section in the <filename>proxy-server.conf</filename> file:</para>
+      <programlisting language="ini">[pipeline:main]
+pipeline = healthcheck [...] container_quotas account_quotas proxy-server
+
+[filter:account_quotas]
+use = egg:swift#account_quotas
+
+[filter:container_quotas]
+use = egg:swift#container_quotas
+   </programlisting>
+      <para>To view and update Object Storage quotas, use the <code>swift</code>
+        command provided by the <code>python-swiftclient</code> package. Any
+        user included in the project can view the quotas placed on their
+        project. In order to update Object Storage quotas on a project, you must
+        have the role of ResellerAdmin in the project that the quota is being
+        applied to.</para>
+   <para>To view account quotas placed on a project:</para>
+   <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
+   <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
+Containers: 0
+   Objects: 0
+     Bytes: 0
+Meta Quota-Bytes: 214748364800
+X-Timestamp: 1351050521.29419
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes</computeroutput></screen>
+   <para>To apply or update account quotas on a project:</para>
+   <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
+     &lt;bytes&gt;</userinput></screen>
+   <para>For example, to place a 5 GB quota on an account:</para>
+   <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
+     5368709120</userinput></screen>
+   <para>To verify the quota, run the <command>swift stat</command> command again:</para>
+   <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
+   <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
+Containers: 0
+   Objects: 0
+     Bytes: 0
+Meta Quota-Bytes: 5368709120
+X-Timestamp: 1351541410.38328
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes</computeroutput></screen>
+ </section>
     <section xml:id="cli_set_block_storage_quotas">
       <title>Set Block Storage quotas</title>
       <para>As an administrative user, you can update the Block Storage Service
