@@ -10,7 +10,6 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="user_facing_operations">
-
     <title>User-facing Operations</title>
     <para>This guide is for OpenStack operators and does not seek to be an exhaustive reference for
         users, but as an operator it is important that you have a basic understanding of how to use
@@ -169,47 +168,47 @@
             <col width="75%"/>
             <tbody>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>
                             <emphasis role="bold">Column</emphasis>
                         </para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>
                             <emphasis role="bold">Description</emphasis>
                         </para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>ID</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>A unique numeric id.</para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Name</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>A descriptive name, such as xx.size_name is conventional but not
                             required, though some third-party tools may rely on it.</para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Memory_MB</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Virtual machine memory in megabytes.</para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Disk</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Virtual root disk size in gigabytes. This is an ephemeral disk the
                             base image is copied into. You don't use it when you boot from a
                             persistent volume. The "0" size is a special case that uses the native
@@ -217,36 +216,36 @@
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Ephemeral</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Specifies the size of a secondary ephemeral data disk. This is an
                             empty, unformatted disk and exists only for the life of the
                             instance.</para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Swap</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Optional swap space allocation for the instance.</para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>VCPUs</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Number of virtual CPUs presented to the instance.</para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>RXTX_Factor</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Optional property allows created servers to have a different bandwidth
                             cap than that defined in the network they are attached to. This factor
                             is multiplied by the rxtx_base property of the network. Default value is
@@ -254,19 +253,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Is_Public</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Boolean value, whether flavor is available to all users or private to
                             the tenant it was created in. Defaults to True.</para>
                     </td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>extra_specs</para>
                     </td>
-                    <td xmlns:db="http://docbook.org/ns/docbook">
+                    <td>
                         <para>Additional optional restrictions on which compute nodes the flavor can
                             run on. This is implemented as key/value pairs that must match against
                             the corresponding key/value pairs on compute nodes. Can be used to
@@ -741,16 +740,15 @@ Optional snapshot description. (Default=None)</programlisting>
     </section>
     <section xml:id="attach_block_storage">
         <title>Attaching Block Storage</title>
-        <para>You can attach block storage to instances from the
-            dashboard on the <guilabel>Volumes</guilabel> page. Click
-            the <guibutton>Edit Attachments</guibutton> action next to
-            the volume you wish to attach.</para>
-        <para>To perform this action from command line, run the
-            following command:</para>
+        <para>You can attach block storage to instances from the dashboard on
+            the <guilabel>Volumes</guilabel> page. Click the <guibutton>Edit
+                Attachments</guibutton> action next to the volume you wish to
+            attach.</para>
+        <para>To perform this action from command line, run the following
+            command:</para>
         <programlisting><prompt>$</prompt> nova volume-attach &lt;server&gt; &lt;volume&gt; </programlisting>
-        <para>You can also specify block device mapping at instance
-            boot time through the nova command-line client, as
-            follows:</para>
+        <para>You can also specify block device mapping at instance boot time
+            through the nova command-line client, as follows:</para>
         <programlisting>--block-device-mapping &lt;dev-name=mapping&gt; </programlisting>
         <para>The block device mapping format is
                 <code>&lt;dev-name=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:&lt;delete-on-terminate&gt;</code>,
@@ -759,83 +757,64 @@ Optional snapshot description. (Default=None)</programlisting>
             <varlistentry>
                 <term>dev-name</term>
                 <listitem>
-                    <para>A device name where the volume is attached
-                        in the system at
-                                <code>/dev/<replaceable>dev_name</replaceable>
+                    <para>A device name where the volume is attached in the
+                        system at <code>/dev/<replaceable>dev_name</replaceable>
                         </code>.</para>
                     <para>
                         <literal
-                            xmlns:db="http://docbook.org/ns/docbook"
                             >id</literal>
                     </para>
-                    <para>The ID of the volume to boot from, as shown
-                        in the output of nova volume-list.</para>
+                    <para>The ID of the volume to boot from, as shown in the
+                        output of nova volume-list.</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term>type</term>
                 <listitem>
                     <para>Either <literal
-                            xmlns:db="http://docbook.org/ns/docbook"
-                            >snap</literal>, which means that the
-                        volume was created from a snapshot, or
-                        anything other than <literal
-                            xmlns:db="http://docbook.org/ns/docbook"
-                            >snap</literal> (a blank string is valid).
-                        In the example above, the volume was not
-                        created from a snapshot, so we leave this
-                        field blank in our example below.</para>
+                            >snap</literal>, which means that the volume was
+                        created from a snapshot, or anything other than <literal
+                            >snap</literal> (a blank string is valid). In the
+                        example above, the volume was not created from a
+                        snapshot, so we leave this field blank in our example
+                        below.</para>
                 </listitem>
             </varlistentry>
 
             <varlistentry>
                 <term>size (GB)</term>
                 <listitem>
-                    <para>The size of the volume, in GB. It is safe to
-                        leave this blank and have the Compute service
-                        infer the size.</para>
+                    <para>The size of the volume, in GB. It is safe to leave
+                        this blank and have the Compute service infer the
+                        size.</para>
                 </listitem>
             </varlistentry>
             <varlistentry>
                 <term>delete-on-terminate</term>
                 <listitem>
-                    <para>A boolean to indicate whether the volume
-                        should be deleted when the instance is
-                        terminated. True can be specified as <literal
-                            xmlns:db="http://docbook.org/ns/docbook"
-                            >True</literal> or <literal
-                            xmlns:db="http://docbook.org/ns/docbook"
-                            >1</literal>. False can be specified as
-                            <literal
-                            xmlns:db="http://docbook.org/ns/docbook"
-                            >False</literal> or <literal
-                            xmlns:db="http://docbook.org/ns/docbook"
-                            >0</literal>.</para>
+                    <para>A boolean to indicate whether the volume should be
+                        deleted when the instance is terminated. True can be
+                        specified as <literal>True</literal> or
+                        <literal>1</literal>. False can be specified as
+                  <literal>False</literal> or <literal>0</literal>.</para>
                 </listitem>
             </varlistentry>
-
-
-
         </variablelist>
-        <para>If you have previously prepared the block storage with a
-            bootable file system image it is even possible to boot
-            from persistent block storage. The following example will
-            attempt boot from volume with ID=<literal
-                xmlns:db="http://docbook.org/ns/docbook">13</literal>,
-            it does not delete on terminate. Replace the <literal
-                xmlns:db="http://docbook.org/ns/docbook"
-                >--key-name</literal> with a valid keypair
+        <para>If you have previously prepared the block storage with a bootable
+            file system image it is even possible to boot from persistent block
+            storage. The following example will attempt boot from volume with
+                ID=<literal>13</literal>, it does not delete on terminate.
+            Replace the <literal>--key-name</literal> with a valid keypair
             name:</para>
         <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --flavor 2 --key-name mykey --block-device-mapping vda=13:::0 boot-from-vol-test</programlisting>
-        <para>Because of bug <link
-                xlink:title="OpenStack Image Service"
-                xlink:href="https://bugs.launchpad.net/nova/+bug/1163566"
-            >1163566</link>
-            (https://bugs.launchpad.net/nova/+bug/1163566) you must
-            specify an image when booting from a volume in Horizon,
-            even though this image is not used.</para>
-        <para>To boot normally from an image and attach block storage,
-            map to a device other than vda.</para>
+        <para>Read more detailed instructions for launching an instance from a
+            bootable volume in the <link
+                xlink:href="http://docs.openstack.org/user-guide/content/boot_from_volume.html"
+                >OpenStack End User Guide</link>.</para>
+        <para>To boot normally from an image and attach block storage, map to a
+            device other than vda. You can find instructions for launching an
+            instance and attaching a volume to the instance, copying the image
+            to the attached volume in the <link xlink:href="http://docs.openstack.org/user-guide/content/dashboard_launch_instances_from_volume.html">OpenStack End User Guide</link>.</para>
     </section>
     <section xml:id="snapshots">
         <?dbhtml stop-chunking?>
@@ -876,31 +855,23 @@ Optional snapshot description. (Default=None)</programlisting>
             </thead>
             <tbody>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>image_type</para></td>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>snapshot</para></td>
+                    <td><para>image_type</para></td>
+                    <td><para>snapshot</para></td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>instance_uuid</para></td>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>&lt;uuid of instance that was
+                    <td><para>instance_uuid</para></td>
+                    <td><para>&lt;uuid of instance that was
                             snapshotted&gt;</para></td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>base_image_ref</para></td>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>&lt;uuid of original image of
+                    <td><para>base_image_ref</para></td>
+                    <td><para>&lt;uuid of original image of
                             instance that was
                         snapshotted&gt;</para></td>
                 </tr>
                 <tr>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>image_location</para></td>
-                    <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>snapshot</para></td>
+                    <td><para>image_location</para></td>
+                    <td><para>snapshot</para></td>
                 </tr>
             </tbody>
         </informaltable>
