@@ -667,7 +667,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
             <para>If you find that you have reached or are reaching
                 the capacity limit of your computing resources, you
                 should plan to add additional compute nodes. Adding
-                more nodes is quite easy. The process for adding nodes
+                more nodes is quite easy. The process for adding compute nodes
                 is the same as when the initial compute nodes were
                 deployed to your cloud: use an automated deployment
                 system to bootstrap the bare-metal server with the
