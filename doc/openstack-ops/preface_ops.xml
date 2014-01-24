@@ -11,7 +11,7 @@
 <preface xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="section_yk2_jpr_lj">
+    xml:id="openstack-ops_preface">
     <?dbhtml stop-chunking?>
     <title>Preface</title>
     <para>OpenStack is an open source platform that lets you build an
@@ -19,56 +19,73 @@
         hardware.</para>
     <section xml:id="introduction-to-openstack">
         <title>Introduction to OpenStack</title>
-        <para>OpenStack believes in open source, open design, open development,
-            all in an open community so anyone can participate. The long-term
-            vision for OpenStack is to produce a ubiquitous open source cloud
-            computing platform that meets the needs of public and private cloud
-            providers regardless of size. OpenStack services control large pools
-            of compute, storage, and networking resources throughout a data
-            center.</para>
-        <para>Each service provides a REST API so that all these resources can
-            be managed through a dashboard that gives administrators control
-            while empowering users to provision resources through a web
-            interface, through a command-line client, or through software
-            development kits that support the API. Many OpenStack APIs are
-            extensible, meaning you can keep compatibility with a core set of
-            calls while providing access to more resources and innovating
-            through API extensions. The OpenStack project is a global
-            collaboration of developers and cloud computing technologists
-            producing the open standard cloud computing platform for both public
-            and private clouds. The project aims to deliver solutions for all
-            types of clouds by being simple to implement, massively scalable,
-            and feature-rich. The technology consists of a series of
-            interrelated projects delivering various components for a cloud
-            infrastructure solution.</para>
-        <para>Okay, you say, OpenStack is open source cloud. Are there others?
-            Yes, Eucalyptus offers an open source version of their private cloud
-            offering that provides services compatible with Amazon Web Services
-            (AWS) APIs such as EC2 and S3. With Ubuntu Server 11.10 release,
-            OpenStack became supported by default rather than Eucalyptus for
-            Ubuntu Server releases. The product targets private cloud deployers
-            who want to maintain compatibility with Amazon Web Services by
-            partnering with Amazon. Apache CloudStack is another example of an
-            open source cloud project, but it only runs on Ubuntu 10.04. It
-            offers computing as a core service, with connections to storage
-            services. Citrix purchased the project technology for $200 million
-            in 2011 when buying cloud.com, then released it to Apache in April
-            2012. The API compatibility for CloudStack centers on AWS
-            APIs.</para>
+        <para>OpenStack believes in open source, open design, open development, all in an open
+            community encouraging participation by anyone. The long-term vision for OpenStack
+            is to produce a ubiquitous open source cloud computing platform that meets the needs of public and
+            private cloud providers regardless of size. OpenStack services control large pools of
+            compute, storage, and networking resources throughout a data center.</para>
+        <para>The technology behind OpenStack consists of a series of interrelated projects
+            delivering various components for a cloud infrastructure solution.
+            Each service provides an open API so that all of these resources can be managed through a
+            dashboard that gives administrators control while empowering users to provision
+            resources through a web interface, a command-line client, or software
+            development kits that support the API. Many OpenStack APIs are extensible, meaning you
+            can keep compatibility with a core set of calls while providing access to more resources
+            and innovating through API extensions. The OpenStack project is a global collaboration
+            of developers and cloud computing technologists producing the open standard cloud
+            computing platform for both public and private clouds. By focusing on ease of
+            implementation, massive scalability, a variety of rich features and tremendous
+            extensibility, the project aims to deliver a practical and reliable cloud solution for
+            all types of organisations.</para>
+        <para>As an open source project, one of the unique aspects about OpenStack is that there are
+            many different levels you can begin to engage with it &mdash; you don't have to do everything
+            yourself.</para>
+        <para>You could ask, "do I even need to build a cloud?". If you just want to start using a
+            service like Amazon Web Services Elastic Compute Cloud (EC2) or Simple Storage Solution
+            (S3), you can today swipe your credit card at eNovance, HP, Rackspace and other
+            organisations to start using their public OpenStack clouds.</para>
+        <para>However, the enticing part of OpenStack might be to build your own private
+            cloud, and there are several ways to accomplish this goal. Perhaps the simplest of all is an
+            appliance-style solution. You purchase an appliance, un-box it, plug in the power and the
+            network and watch it transform into an OpenStack cloud with minimal additional
+            configuration. Few, if any, other open source cloud products that have such 'turn key' options.</para>
+        <para>However, hardware choice is important for many applications, so if that applies to you,
+            consider that there are several software distributions available that you can run on
+            servers, storage and network products of your choosing. Canonical (where OpenStack replaced Eucalyptus as
+            the default cloud option in 2011), Red Hat and SUSE offer enterprise OpenStack
+            solutions and support. You may also want to take a look also at some of the
+            specialized distributions, such as those from Rackspace, Piston, SwiftStack or
+            Cloudscaling. Also, a hat tip to Apache CloudStack, which Citrix donated to the Apache
+            Foundation after its US $200 million purchase of Cloud.com. While not currently packaged
+            in any distributions, like Eucalyptus it is an example of an alternative private
+            cloud software developed in an open source-like manner.</para>
+        <para>Alternately, if you want someone to help guide you through the decisions from the
+            underlying hardware up to your applications, perhaps adding in a few features or integrating
+            components along the way, consider contacting one of the system integrators with
+            OpenStack experience like Mirantis or Metacloud.</para>
+        <para>If your preference is to build your own OpenStack expertise internally, a good way to
+            kick start that might be to attend or arrange a training session. The OpenStack
+            Foundation recently launched a <link
+xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace
+            (http://www.openstack.org/marketplace/training)</link>, where you can look for nearby events.
+            Also the OpenStack community is <link xlink:href="https://wiki.openstack.org/wiki/Training-manuals">working to produce
+            (https://wiki.openstack.org/wiki/Training-manuals)</link>open source training materials.</para>
+        <para>However, this guide has a different audience &mdash; those seeking to derive the most
+            flexibility from the OpenStack framework; conducting 'Do-It-Yourself' solutions, if you
+            will.</para>
         <para>OpenStack is designed for scalability, so you can easily add new
-            compute and storage resources to grow your cloud over time.
-            Organizations such as HP and Rackspace have built massive public
-            clouds on top of OpenStack. OpenStack is more than a software
-            package that you run as-is. It lets you integrate a number of
-            different technologies to construct a cloud. This approach provides
-            great flexibility, but the number of options might be bewildering at
-            first.</para>
+        compute, network and storage resources to grow your cloud over time. In addition to several
+        massive OpenStack public clouds, a considerable number of other organisations (such as
+        Paypal, Intel and Comcast) have built large-scale private clouds. OpenStack offers much
+        more than a typical software package because it lets you integrate a number of different
+        technologies to construct a cloud. This approach provides great flexibility, but the
+        number of options might be bewildering at first.</para>
     </section>
     <section xml:id="who-this-book-is-for">
         <title>Who This Book Is For</title>
-        <para>This guide assumes that you are familiar with the Ubuntu
-            distribution of Linux, SQL databases, and virtualization. You must
-            be comfortable administering and configuring multiple Linux machines
+        <para>This guide assumes that you are familiar with a Linux
+            distribution supporting OpenStack, SQL databases, and virtualization.
+             You must be comfortable administering and configuring multiple Linux machines
             for networking. You must install and maintain a MySQL database, and
             occasionally run SQL queries against it.</para>
         <para>One of the most complex aspects of an OpenStack cloud is the
