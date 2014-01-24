@@ -18,7 +18,12 @@
         it is difficult to write documentation that covers all possible
         OpenStack deployments. Therefore, this guide defines an
             <emphasis>example architecture</emphasis> to simplify the task of
-        documenting, as well as to scope this guide.</para>
+        documenting, as well as to scope this guide. You can find additional
+        architectures in the <link linkend="use-cases">Use Cases</link>
+        appendix, the <link xlink:href="http://docs.openstack.org/">OpenStack
+            Installation Guides</link>, or the <link
+            xlink:href="http://openstack.org/user-stories/">OpenStack User
+            Stories page</link>.</para>
     <section xml:id="overview">
         <title>Overview</title>
         <para>The simplest architecture you can build upon for Compute has a
