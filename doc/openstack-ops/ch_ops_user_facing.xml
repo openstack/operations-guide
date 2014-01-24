@@ -339,16 +339,16 @@
         <programlisting><prompt>$</prompt> nova secgroup-list-rules open</programlisting>
 
         <programlisting><?db-font-size 65%?>+-------------+-----------+---------+-----------+--------------+
- | IP Protocol | From Port | To Port | IP Range  | Source Group |
- +-------------+-----------+---------+-----------+--------------+
- | icmp        | -1        | 255     | 0.0.0.0/0 |              |
- | tcp         | 1         | 65535   | 0.0.0.0/0 |              |
- | udp         | 1         | 65535   | 0.0.0.0/0 |              |
- +-------------+-----------+---------+-----------+--------------+ </programlisting>
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| icmp        | -1        | 255     | 0.0.0.0/0 |              |
+| tcp         | 1         | 65535   | 0.0.0.0/0 |              |
+| udp         | 1         | 65535   | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+ </programlisting>
         <para>These rules are all "allow" type rules as the default is
             deny. The first column is the IP protocol (one of icmp,
             tcp, or udp) the second and third columns specify the
-            affected port range. The third column specifies the IP
+            affected port range. The fourth column specifies the IP
             range in CIDR format. This example shows the full port
             range for all protocols allowed from all IPs.</para>
         <para>As noted in the previous chapter the number of rules per
