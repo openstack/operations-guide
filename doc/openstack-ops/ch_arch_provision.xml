@@ -16,11 +16,11 @@
         effort that it takes to run your cloud. To minimize the
         operational cost of running your cloud, set up and use an
         automated deployment and configuration infrastructure.</para>
-    <para>This infrastructure includes systems to automatically
-        install the operating system's initial configuration and later
-        coordinate the configuration of all services automatically and
-        centrally, which reduces both manual effort and chance for
-        error.</para>
+    <para>This infrastructure includes automatic installation of the operating
+        system's initial configuration with systems like preseed or kickstart.
+        It also includes the configuration of all services automatically
+        and centrally with systems like Puppet or Chef. Combined, these systems
+        greatly reduce manual effort and chance for operator error.</para>
     <section xml:id="automated_deploy">
         <title>Automated Deployment</title>
         <para>An automated deployment system installs and configures
@@ -42,8 +42,7 @@
             separate your control services and physical
             infrastructure.</para>
         <para>When you create a deployment plan, focus on a few vital
-            areas because they are very hard to modify
-            post-deployment.</para>
+            areas because they are very hard to modify post-deployment.</para>
         <?hard-pagebreak?>
         <section xml:id="disk_partition_raid">
             <title>Disk Partitioning and RAID</title>
@@ -71,7 +70,7 @@
             </itemizedlist>
             <para>RAID is not used in this setup.</para>
             <note>
-                <para>This option is not recommended for production
+                <para>Using RAID is recommended for production
                     because if the hard drive fails, that entire
                     server is down. Instead, we recommend that you use
                     more than one disk. The number of disks determine
@@ -106,7 +105,7 @@
                     <para>While you might end up with unused
                         partitions, such as partition 1 in disk three
                         and four of this example, it allows for
-                        maximum utilization off disk space. I/O
+                        maximum utilization of disk space. I/O
                         performance might be an issue due to all disks
                         being used for all tasks.</para>
                 </listitem>
@@ -134,7 +133,9 @@
                 </listitem>
             </itemizedlist>
             <para>As with most architecture choices, the right answer
-                depends on your environment.</para>
+                depends on your environment. You will have to make your
+                decision based on the trade-offs between space utilization,
+                simplicity, and I/O performance.</para>
         </section>
         <section xml:id="network_config">
             <title>Network Configuration</title>
@@ -166,11 +167,12 @@
             large body of work has been done by the OpenStack
             community in this space. Puppet – a configuration
             management tool – even provides official modules for
-            OpenStack.</para>
+            OpenStack. Puppet, Chef, and other such tools are
+            discussed in <xref linkend="config_mgmt"/>.</para>
         <para>An integral part of a configuration management system is
             the items that it controls. You should carefully consider
-            all of the items that you want, or do not want, to be
-            automatically managed.</para>
+            all of the items that you want to be automatically managed,
+            such as OpenStack configuration files and package updates.</para>
     </section>
     <?hard-pagebreak?>
     <section xml:id="remote_mgmt">
@@ -190,5 +192,15 @@
             having remote access to the PDU that the server is plugged
             into can really be useful for situations when everything
             seems wedged.</para>
+    </section>
+    <section xml:id="provision_conclusion">
+        <title>Conclusion</title>
+        <para>The decisions you make with respect to provisioning and
+            deployment will affect your day-to-day, week-to-week, and
+            month-to-month maintenance of the cloud. Your configuration
+            management will be able to evolve over time. However, more thought
+            and design will need to be done for the upfront choices to be
+            made when doing deployment, disk partitioning, and network
+            configuration.</para>
     </section>
 </chapter>
