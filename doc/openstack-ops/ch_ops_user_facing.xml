@@ -276,12 +276,41 @@
                 </tr>
             </tbody>
         </informaltable>
+        <section xml:id="private-flavors">
+            <title>Private Flavors</title>
+            <para>A user might need a custom flavor that is uniquely-tuned for a
+                project they are working on. For example, the user might require
+                128 GB of memory. If you create a new flavor as described above,
+                the user would have access to the custom flavor, but so will all
+                other tenants in your cloud. Sometimes this sharing isn't desirable. In
+                this scenario, allowing all users to have access to a flavor
+                with 128 GB of memory might cause your cloud to reach full
+                capacity very quickly. To prevent this, you can restrict access
+                to the custom flavor using the <command>nova</command> command:</para>
+            <screen><prompt>$</prompt> <userinput>nova flavor-access-add \
+&lt;flavor-id&gt; &lt;project-id&gt;</userinput></screen>
+            <para>To view a flavor's access list, do the following:</para>
+            <screen><prompt>$</prompt> <userinput>nova flavor-access-list &lt;flavor-id&gt;</userinput></screen>
+            <note>
+                <title>Best practices</title>
+                <para>Once access to a flavor has been restricted, no other
+                    projects besides the ones granted explicit access will be
+                    able to see the flavor. This includes the admin project.
+                    Make sure to add the admin project in addition to the
+                    original project.</para>
+                <para>It's also helpful to allocate a specific numeric range for
+                    custom and private flavors. On UNIX-based systems,
+                    non-system accounts usually have a UID starting at 500. A
+                    similar approach can be taken with custom flavors. This
+                    helps you easily identify what flavors are custom, private,
+                    and public for the entire cloud.</para>
+            </note>
+        </section>
         <simplesect>
             <title>How do I modify an existing flavor?</title>
-            <para>Unfortunately, OpenStack does not provide an interface for modifying flavors, only
-                for creating and deleting them. The OpenStack Dashboard simulates the ability to
-                modify a flavor by deleting an existing flavor and creating a new one with the same
-                name.</para>
+            <para>The OpenStack Dashboard simulates the ability to modify a
+                flavor by deleting an existing flavor and creating a new one
+                with the same name.</para>
         </simplesect>
     </section>
     <?hard-pagebreak?>
