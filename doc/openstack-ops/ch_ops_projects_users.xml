@@ -7,59 +7,55 @@
 <!ENTITY plusmn "&#xB1;">
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="projects_users">
-    <?dbhtml stop-chunking?>
-    <title>Managing Projects and Users</title>
-    <para>An OpenStack cloud does not have much value without users.
-        This chapter covers topics that relate to managing users,
-        projects, and quotas.</para>
-    <section xml:id="projects_or_tenants">
-        <title>Projects or Tenants?</title>
-        <para>In OpenStack user interfaces and documentation, a group
-            of users is referred to as a
-                <glossterm>project</glossterm> or
-                <glossterm>tenant</glossterm>. These terms are
-            interchangeable.</para>
-        <para>The initial implementation of the OpenStack Compute
-            Service (nova) had its own authentication system and used
-            the term <literal>project</literal>. When authentication
-            moved into the OpenStack Identity Service (keystone)
-            project, it used the term <literal>tenant</literal> to
-            refer to a group of users. Because of this legacy, some of
-            the OpenStack tools refer to projects and some refer to
-            tenants.</para>
-        <para>This guide uses the term <literal>project</literal>,
-            unless an example shows interaction with a tool that uses
-            the term <literal>tenant</literal>.</para>
-    </section>
-    <section xml:id="managing_projects">
-        <title>Managing Projects</title>
-        <para>Users must be associated with at least one project,
-            though they may belong to many. Therefore, you should add
-            at least one project before adding users.</para>
-        <section xml:id="add_projects">
-            <title>Adding Projects</title>
-            <para>To create a project through the dashboard:</para>
-            <orderedlist>
-                <listitem>
-                    <para>Log in as an administrative user.</para>
-                </listitem>
-                <listitem>
-                    <para>Select the "Projects" link in the left hand
-                        navigation bar.</para>
-                </listitem>
-                <listitem>
-                    <para>Click on the "Create Project" button at the
-                        top right.</para>
-                </listitem>
-            </orderedlist>
-            <para>You are prompted for a project name and an optional,
-                but recommended, description. Select the check box at
-                the bottom of the form to enable this project. By
-                default, this is enabled.</para>
-          <!--  <informalfigure>
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+  xml:id="projects_users">
+  <?dbhtml stop-chunking?>
+  <title>Managing Projects and Users</title>
+  <para>An OpenStack cloud does not have much value without users. This chapter
+    covers topics that relate to managing users, projects, and quotas. This
+    chapter describes users and projects as described by version 2 of the
+    OpenStack Identity API.</para>
+  <section xml:id="projects_or_tenants">
+    <title>Projects or Tenants?</title>
+    <para>In OpenStack user interfaces and documentation, a group of users is
+      referred to as a <glossterm>project</glossterm> or
+        <glossterm>tenant</glossterm>. These terms are interchangeable.</para>
+    <para>The initial implementation of the OpenStack Compute Service (nova) had
+      its own authentication system and used the term
+      <literal>project</literal>. When authentication moved into the OpenStack
+      Identity Service (keystone) project, it used the term
+        <literal>tenant</literal> to refer to a group of users. Because of this
+      legacy, some of the OpenStack tools refer to projects and some refer to
+      tenants.</para>
+    <para>This guide uses the term <literal>project</literal>, unless an example
+      shows interaction with a tool that uses the term
+      <literal>tenant</literal>.</para>
+  </section>
+  <section xml:id="managing_projects">
+    <title>Managing Projects</title>
+    <para>Users must be associated with at least one project, though they may
+      belong to many. Therefore, you should add at least one project before
+      adding users.</para>
+    <section xml:id="add_projects">
+      <title>Adding Projects</title>
+      <para>To create a project through the dashboard:</para>
+      <orderedlist>
+        <listitem>
+          <para>Log in as an administrative user.</para>
+        </listitem>
+        <listitem>
+          <para>Select the "Projects" link in the left hand navigation
+            bar.</para>
+        </listitem>
+        <listitem>
+          <para>Click on the "Create Project" button at the top right.</para>
+        </listitem>
+      </orderedlist>
+      <para>You are prompted for a project name and an optional, but
+        recommended, description. Select the check box at the bottom of the form
+        to enable this project. By default, this is enabled.</para>
+      <!--  <informalfigure>
                 <mediaobject>
                     <imageobject>
                         <imagedata width="5in"
@@ -68,28 +64,22 @@
                     </imageobject>
                 </mediaobject>
             </informalfigure> -->
-            <para>It is also possible to add
-                project members and adjust the project quotas. We'll
-                discuss those later, but in practice it can be quite
-                convenient to deal with all these operations at one
-                time.</para>
-            <para>To create a project through the command-line
-                interface (CLI):</para>
-            <para>To add a project through the command line, you must
-                use the keystone utility, which uses "tenant" in place
-                of "project":</para>
-            <programlisting><?db-font-size 75%?><prompt>#</prompt> keystone tenant-create --name=demo</programlisting>
-            <para>This command creates a project named "demo".
-                Optionally, you can add a description string by
-                appending <code>--description
-                  <replaceable>tenant-description</replaceable></code> which can be
-                very useful. You can also create a group in a disabled
-                state by appending <code>--enabled false</code> to the
-                command. By default, projects are created in an
-                enabled state.</para>
-        </section>
+      <para>It is also possible to add project members and adjust the project
+        quotas. We'll discuss those later, but in practice it can be quite
+        convenient to deal with all these operations at one time.</para>
+      <para>To create a project through the command-line interface (CLI):</para>
+      <para>To add a project through the command line, you must use the keystone
+        utility, which uses "tenant" in place of "project":</para>
+      <programlisting><?db-font-size 75%?><prompt>#</prompt> keystone tenant-create --name=demo</programlisting>
+      <para>This command creates a project named "demo". Optionally, you can add
+        a description string by appending <code>--description
+            <replaceable>tenant-description</replaceable></code> which can be
+        very useful. You can also create a group in a disabled state by
+        appending <code>--enabled false</code> to the command. By default,
+        projects are created in an enabled state.</para>
     </section>
-    <?hard-pagebreak?>
+  </section>
+  <?hard-pagebreak?>
   <section xml:id="quotas">
     <title>Quotas</title>
     <para>To prevent system capacities from being exhausted without
@@ -160,8 +150,8 @@
               <para>Fixed Ips</para>
             </td>
             <td>
-              <para>Number of fixed IP addresses allowed per tenant. This
-                number must be equal to or greater than the number of allowed
+              <para>Number of fixed IP addresses allowed per tenant. This number
+                must be equal to or greater than the number of allowed
                 instances.</para>
             </td>
             <td>
@@ -419,9 +409,11 @@
         </procedure>
       </section>
     </section>
- <section xml:id="cli_set_object_storage_quotas">
-   <title>Set Object Storage Quotas</title>
-   <para>Object Storage quotas were introduced in Swift 1.8 (OpenStack Grizzly). There are currently two categories of quotas for Object Storage:</para>
+    <section xml:id="cli_set_object_storage_quotas">
+      <title>Set Object Storage Quotas</title>
+      <para>Object Storage quotas were introduced in Swift 1.8 (OpenStack
+        Grizzly). There are currently two categories of quotas for Object
+        Storage:</para>
       <itemizedlist>
         <listitem>
           <para>Container Quotas: Limits the total size (in bytes) or number of
@@ -452,9 +444,9 @@ use = egg:swift#container_quotas
         project. In order to update Object Storage quotas on a project, you must
         have the role of ResellerAdmin in the project that the quota is being
         applied to.</para>
-   <para>To view account quotas placed on a project:</para>
-   <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
-   <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
+      <para>To view account quotas placed on a project:</para>
+      <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
+      <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
 Containers: 0
    Objects: 0
      Bytes: 0
@@ -462,15 +454,16 @@ Meta Quota-Bytes: 214748364800
 X-Timestamp: 1351050521.29419
 Content-Type: text/plain; charset=utf-8
 Accept-Ranges: bytes</computeroutput></screen>
-   <para>To apply or update account quotas on a project:</para>
-   <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
+      <para>To apply or update account quotas on a project:</para>
+      <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
      &lt;bytes&gt;</userinput></screen>
-   <para>For example, to place a 5 GB quota on an account:</para>
-   <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
+      <para>For example, to place a 5 GB quota on an account:</para>
+      <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
      5368709120</userinput></screen>
-   <para>To verify the quota, run the <command>swift stat</command> command again:</para>
-   <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
-   <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
+      <para>To verify the quota, run the <command>swift stat</command> command
+        again:</para>
+      <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
+      <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
 Containers: 0
    Objects: 0
      Bytes: 0
@@ -478,7 +471,7 @@ Meta Quota-Bytes: 5368709120
 X-Timestamp: 1351541410.38328
 Content-Type: text/plain; charset=utf-8
 Accept-Ranges: bytes</computeroutput></screen>
- </section>
+    </section>
     <section xml:id="cli_set_block_storage_quotas">
       <title>Set Block Storage quotas</title>
       <para>As an administrative user, you can update the Block Storage Service
@@ -786,48 +779,33 @@ Accept-Ranges: bytes</computeroutput></screen>
                 are the rules defined:</para>
             <itemizedlist role="compact">
                 <listitem>
-
-                    <para>
-                        <emphasis role="bold">Role-based
-                            rules</emphasis>: evaluate successfully if
-                        the user submitting the request has the
-                        specified role. For instance
-                            <code>"role:admin"</code>is successful if
-                        the user submitting the request is an
-                        administrator.</para>
-
-                </listitem>
-                <listitem>
-
-                    <para>
-                        <emphasis role="bold">Field-based rules:
-                        </emphasis>evaluate successfully if a field of
-                        the resource specified in the current request
-                        matches a specific value. For instance
-                            <code>"field:networks:shared=True"</code>
-                        is successful if the attribute shared of the
-                        network resource is set to true.</para>
-
-                </listitem>
-                <listitem>
-
-                    <para>
-                        <emphasis role="bold">Generic
-                            rules:</emphasis> compare an attribute in
-                        the resource with an attribute extracted from
-                        the user's security credentials and evaluates
-                        successfully if the comparison is successful.
-                        For instance
-                            <code>"tenant_id:%(tenant_id)s"</code> is
-                        successful if the tenant identifier in the
-                        resource is equal to the tenant identifier of
-                        the user submitting the request.</para>
-
-                </listitem>
-            </itemizedlist>
-            <para>Here are snippets of the default nova
-                    <filename>policy.json</filename> file:</para>
-            <programlisting><?db-font-size 65%?>{
+          <para>
+            <emphasis role="bold">Role-based rules</emphasis>: evaluate
+            successfully if the user submitting the request has the specified
+            role. For instance <code>"role:admin"</code>is successful if the
+            user submitting the request is an administrator.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="bold">Field-based rules: </emphasis>evaluate
+            successfully if a field of the resource specified in the current
+            request matches a specific value. For instance
+              <code>"field:networks:shared=True"</code> is successful if the
+            attribute shared of the network resource is set to true.</para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="bold">Generic rules:</emphasis> compare an attribute
+            in the resource with an attribute extracted from the user's security
+            credentials and evaluates successfully if the comparison is
+            successful. For instance <code>"tenant_id:%(tenant_id)s"</code> is
+            successful if the tenant identifier in the resource is equal to the
+            tenant identifier of the user submitting the request.</para>
+        </listitem>
+      </itemizedlist>
+      <para>Here are snippets of the default nova
+          <filename>policy.json</filename> file:</para>
+      <programlisting><?db-font-size 65%?>{
         "context_is_admin":  [["role:admin"]],
         "admin_or_owner":  [["is_admin:True"], ["project_id:%(project_id)s"]], <emphasis role="bold">[1]</emphasis>
         "default": [["rule:admin_or_owner"]], <emphasis role="bold">[2]</emphasis>
@@ -849,64 +827,56 @@ Accept-Ranges: bytes</computeroutput></screen>
         "compute_extension:flavormanage": [["rule:admin_api"]],  <emphasis role="bold">[3]</emphasis>
         }
         </programlisting>
-            <para>[1] Shows a rule which evaluates successfully if the
-                current user is an administrator or the owner of the
-                resource specified in the request (tenant identifier
-                is equal).</para>
-            <para>[2] Shows the default policy which is always
-                evaluated if an API operation does not match any of
-                the policies in <code>policy.json</code>.</para>
-            <para>[3] Shows a policy restricting the ability of
-                manipulating flavors to administrators using the Admin
-                API only.</para>
-            <para>In some cases, some operations should be restricted
-                to administrators only. Therefore, as a further
-                example, let us consider how this sample policy file
-                could be modified in a scenario where we enable users
-                to create their own flavors:</para>
-            <programlisting><?db-font-size 65%?>"compute_extension:flavormanage": [ ],</programlisting>
-        </section>
-        <section xml:id="problem_users">
-            <title>Users that Disrupt Other Users</title>
-            <para>Users on your cloud can disrupt other users,
-                sometimes intentionally and maliciously and other
-                times by accident. Understanding the situation allows
-                you to make a better decision on how to handle the
-                disruption.</para>
-            <para>For example: A group of users have instances that
-                are utilizing a large amount of compute resources for
-                very compute-intensive tasks. This is driving the load
-                up on compute nodes and affecting other users. In this
-                situation, review your user use cases. You may find
-                that high compute scenarios are common and should then
-                plan for proper segregation in your cloud such as host
-                aggregation or regions.</para>
-            <para>Another example is a user consuming a very large
-                amount of bandwidth. Again, the key is to understand
-                what the user is doing. If they naturally need a high
-                amount of bandwidth, you might have to limit their
-                transmission rate as to not affect other users or move
-                them to an area with more bandwidth available. On the
-                other hand, maybe the user's instance has been hacked
-                and is part of a botnet launching DDOS attacks.
-                Resolution to this issue is the same as if any other
-                server on your network has been hacked. Contact the
-                user and give them time to respond. If they don't
-                respond, shut the instance down.</para>
-            <para>A final example is if a user is hammering cloud
-                resources repeatedly. Contact the user and learn what
-                they are trying to do. Maybe they don't understand
-                that what they're doing is inappropriate or maybe
-                there is an issue with the resource they are trying to
-                access that is causing their requests to queue or
-                lag.</para>
-            <para>One key element of systems administration that is
-                often overlooked is that end users are the reason why
-                systems administrators exist. Don't go the BOFH route
-                and terminate every user who causes an alert to go
-                off. Work with them to understand what they're trying
-                to accomplish and see how your environment can better
-                assist them in achieving their goals.</para>
-        </section>
+      <para>[1] Shows a rule which evaluates successfully if the current user is
+        an administrator or the owner of the resource specified in the request
+        (tenant identifier is equal).</para>
+      <para>[2] Shows the default policy which is always evaluated if an API
+        operation does not match any of the policies in
+        <code>policy.json</code>.</para>
+      <para>[3] Shows a policy restricting the ability of manipulating flavors
+        to administrators using the Admin API only.</para>
+      <para>In some cases, some operations should be restricted to
+        administrators only. Therefore, as a further example, let us consider
+        how this sample policy file could be modified in a scenario where we
+        enable users to create their own flavors:</para>
+      <programlisting><?db-font-size 65%?>"compute_extension:flavormanage": [ ],</programlisting>
     </section>
+    <section xml:id="problem_users">
+      <title>Users that Disrupt Other Users</title>
+      <para>Users on your cloud can disrupt other users, sometimes intentionally
+        and maliciously and other times by accident. Understanding the situation
+        allows you to make a better decision on how to handle the
+        disruption.</para>
+      <para>For example: A group of users have instances that are utilizing a
+        large amount of compute resources for very compute-intensive tasks. This
+        is driving the load up on compute nodes and affecting other users. In
+        this situation, review your user use cases. You may find that high
+        compute scenarios are common and should then plan for proper segregation
+        in your cloud such as host aggregation or regions.</para>
+      <para>Another example is a user consuming a very large amount of
+        bandwidth. Again, the key is to understand what the user is doing. If
+        they naturally need a high amount of bandwidth, you might have to limit
+        their transmission rate as to not affect other users or move them to an
+        area with more bandwidth available. On the other hand, maybe the user's
+        instance has been hacked and is part of a botnet launching DDOS attacks.
+        Resolution to this issue is the same as if any other server on your
+        network has been hacked. Contact the user and give them time to respond.
+        If they don't respond, shut the instance down.</para>
+      <para>A final example is if a user is hammering cloud resources
+        repeatedly. Contact the user and learn what they are trying to do. Maybe
+        they don't understand that what they're doing is inappropriate or maybe
+        there is an issue with the resource they are trying to access that is
+        causing their requests to queue or lag.</para>
+    </section>
+  </section>
+  <section xml:id="projects_users_summary">
+    <title>Summary</title>
+    <para>One key element of systems administration that is often overlooked is
+      that end users are the reason why systems administrators exist. Don't go
+      the BOFH route and terminate every user who causes an alert to go off.
+      Work with them to understand what they're trying to accomplish and see how
+      your environment can better assist them in achieving their goals. Meet
+      your users needs by organizing your users into projects, applying
+      policies, managing quotas, and working with them.</para>
+  </section>
 </chapter>
