@@ -922,7 +922,7 @@ LOG.debug("filter_properties = %(filter_properties)s" % locals())</programlistin
             (http://docs.openstack.org/developer/horizon/topics/tutorial.html).
         </para>
     </section>
-    <section xml:id="conclusion">
+    <section xml:id="customize_conclusion">
         <title>Conclusion</title>
         <para>When operating an OpenStack cloud you may discover that your
             users can be quite demanding. If OpenStack doesn't do what your
