@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+]>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="ch_ops_upgrades">
+    <title>Upgrades</title>
+    <para>With the exception of Object Storage, upgrading from one version
+        of OpenStack to another can take a great deal of effort. Until the
+        situation improves, this chapter provides some guidance on the
+        operational aspects that you should consider for performing an
+        upgrade based on detailed steps for a basic architecture.</para>
+    <section xml:id="ops_upgrades-pre-testing">
+        <title>Pre-upgrade Testing Environment</title>
+            <para>Probably the most important step of all is the
+                pre-upgrade testing. Especially if you are upgrading
+                immediately after release of a new version,
+                undiscovered bugs might hinder your progress. Some
+                deployers prefer to wait until the first point release
+                is announced. However, if you have a significant
+                deployment, you might follow the development and
+                testing of the release, thereby ensuring that bugs for
+                your use cases are fixed.</para>
+            <para>Each OpenStack cloud is different and as a result, even with
+                what may seem a near-identical architecture to this guide, you
+                must still test upgrades between versions in your environment.
+                For this, you will need an approximate clone of your
+                environment.</para>
+        <para>However, that is not to say that it needs to be the same size, or using identical
+            hardware as the production environment &mdash; few of us have that luxury. It is
+            important to consider the hardware, and scale of the cloud you are upgrading, but here
+            are some tips to avoid that incredible cost:</para>
+        <itemizedlist>
+          <listitem><para>Use your own cloud. The simplest place to start
+          testing the next version of OpenStack is by setting up a new environment
+          inside your own cloud. This may seem odd - especially the double
+          virtualisation used in running compute nodes - but it's a sure way to
+          very quickly test your configuration.</para></listitem>
+          <listitem><para>Use a public cloud. Especially as your own cloud is
+          unlikely to have sufficient space to scale test to the level of the entire
+          cloud, consider using a public cloud to test the scalability limits
+          of your cloud controller configuration. Most public clouds bill by
+          the hour, which means it can be inexpensive to perform even a test
+          with many nodes.</para></listitem>
+          <listitem><para>Make another storage endpoint on the same system.
+          If you use an external storage plugin or shared filesystem with your
+          cloud, in many cases it's possible to test that it works by creating
+          a second share or endpoint. This will enable you to test the
+          system before entrusting the new version onto your storage.</para></listitem>
+          <listitem><para>Watch the network. Even at smaller scale testing, it
+          should be possible to determine if something is going horribly wrong
+          in inter-component communication if you look at the network packets
+          and see too many.</para></listitem>
+        </itemizedlist>
+        <para>To actually set up the test environment, there are several
+        methods. Some prefer to do a full manual install using the
+        <link xlink:href="http://docs.openstack.org"><citetitle>OpenStack
+        Installation Guides</citetitle></link>, and then see what
+        the final configuration files look like, and which packages were
+        installed. Others prefer to create a clone of their Automated
+        Configuration infrastructure with changed package repository URLs and
+        then alter the configuration until it starts working. Either approach
+        is valid, and depends on experience.</para>
+        <para>An upgrade pre-testing system is excellent for getting the
+        configuration to work, however it is important to note that the
+        historical use of the system and differences in user interaction can
+        affect the successfulness of upgrades, too. We've seen experiences where
+        database migrations encountered a bug (later fixed!) due to slight
+        table differences between fresh Grizzly installs and those which
+        migrated from Folsom to Grizzly.</para>
+        <para>As artificial scale testing can only go so far, once upgraded,
+        you'll also need to pay careful attention to the performance aspects of
+        your cloud.</para>
+    </section>
+    <section xml:id="ops_upgrades-prepare-roll-back">
+        <title>Preparing for a Roll Back</title>
+        <para>Like all major system upgrades, your upgrade could fail for
+            one or more difficult-to-determine reasons. You should prepare for
+            this situation by leaving the ability to roll back your environment
+            to the previous release including databases, configuration files,
+            and packages. We provide an example process for rolling back your
+            environment in <xref linkend="ops_upgrades-roll-back"/>.</para>
+    </section>
+    <section xml:id="ops_upgrades-general-steps">
+        <title>Upgrades</title>
+            <para>The upgrade process generally follows these steps:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Perform some 'cleaning' of the environment prior to
+                        starting the upgrade process to ensure a consistent
+                        state. For example, instances not fully purged from the
+                        system after deletion may cause indeterminate
+                        behavior.</para>
+                </listitem>
+                <listitem>
+                    <para>Read the release notes and
+                        documentation.</para>
+                </listitem>
+                <listitem>
+                    <para>Find incompatibilities between your versions.</para>
+                </listitem>
+                <listitem>
+                    <para>Develop an upgrade procedure and assess it thoroughly
+                        using a test environment similar to your production
+                        environment.</para>
+                </listitem>
+                <listitem>
+                    <para>Run the upgrade procedure on the production
+                        environment.</para>
+                </listitem>
+            </orderedlist>
+            <para>You can perform an upgrade with operational instances, but
+                this strategy can be dangerous. You might consider using
+                live migration to temporarily relocate instances to other
+                compute nodes while performing upgrades. However, you must
+                ensure database consistency throughout the process otherwise
+                your environment may become unstable. Also, don't forget to
+                provide sufficient notice to your users including giving
+                them plenty of time to perform their own backups.</para>
+            <para>The following order for service upgrades seems the most
+                successful:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Upgrade the OpenStack Identity Service
+                        (keystone).</para>
+                </listitem>
+                <listitem>
+                    <para>Upgrade the OpenStack Image Service (glance).</para>
+                </listitem>
+                <listitem>
+                    <para>Upgrade OpenStack Compute (nova) including
+                        networking components.</para>
+                </listitem>
+                <listitem>
+                    <para>Upgrade OpenStack Block Storage (cinder).</para>
+                </listitem>
+                <listitem>
+                    <para>Upgrade the OpenStack dashboard.</para>
+                </listitem>
+            </orderedlist>
+            <para>The general upgrade process includes the following steps:
+            </para>
+            <orderedlist>
+                <listitem>
+                    <para>Create a backup of configuration files and
+                        databases.</para>
+                </listitem>
+                <listitem>
+                    <para>Update the configuration files according to
+                        the release notes.</para>
+                </listitem>
+                <listitem>
+                    <para>Upgrade the packages using your
+                        distribution's package manager.</para>
+                </listitem>
+                <listitem>
+                    <para>Stop services, update database schemas, and restart
+                        services.</para>
+                </listitem>
+                <listitem>
+                    <para>Verify proper operation of your environment.</para>
+                </listitem>
+            </orderedlist>
+    </section>
+    <section xml:id="ops_upgrades_grizzly_havana-ubuntu">
+        <title>How to Perform an Upgrade from Grizzly to Havana - Ubuntu</title>
+        <?dbhtml stop-chunking?>
+        <para>For this section, we assume that you are starting with the
+            architecture provided in the OpenStack <link
+                xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/"
+                >Installation Guide</link> and upgrading to the same
+            architecture for Havana. All nodes should run Ubuntu 12.04 LTS.
+            This section primarily addresses upgrading core OpenStack services
+            such as the Identity Service (keystone), Image Service (glance),
+            Compute (nova) including networking, Block Storage (cinder),
+            and the dashboard.</para>
+        <section xml:id="upgrade_impact_users-ubuntu">
+            <title>Impact on Users</title>
+            <para>The upgrade process will interrupt management of your
+                environment including the dashboard. If you properly prepare
+                for this upgrade, tenant instances will continue to operate
+                normally.</para>
+        </section>
+        <section xml:id="upgrade_considerations-ubuntu">
+            <title>Upgrade Considerations</title>
+            <para>Always review the <link
+                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana">release notes</link>
+                before performing an upgrade to learn about newly available
+                features that you may want to enable and deprecated features
+                that you should disable.</para>
+        </section>
+        <section xml:id="upgrade_backup-ubuntu">
+            <title>Perform a Backup</title>
+            <para>Save the configuration files on all nodes.</para>
+            <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
+<prompt>&gt;</prompt> <userinput>do mkdir $i-grizzly</userinput>
+<prompt>&gt;</prompt> <userinput>done</userinput>
+<prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
+<prompt>&gt;</prompt> <userinput>do cp -r /etc/$i/* $i-grizzly/</userinput>
+<prompt>&gt;</prompt> <userinput>done</userinput></screen>
+            <note>
+                <para>You can modify this example script on each node to handle
+                    different services.</para>
+            </note>
+            <para>Back up all databases on the controller.</para>
+            <screen><prompt>#</prompt> <userinput>mysqldump -u root -p --opt --add-drop-database --all-databases &gt; grizzly-db-backup.sql</userinput></screen>
+        </section>
+        <section xml:id="upgrade_manage_repos-ubuntu">
+            <title>Manage Repositories</title>
+            <para>On all nodes, remove the repository for Grizzly packages and
+                add the repository for Havana packages.</para>
+            <screen><prompt>#</prompt> <userinput>apt-add-repository -r cloud-archive:grizzly</userinput>
+<prompt>#</prompt> <userinput>apt-add-repository cloud-archive:havana</userinput></screen>
+            <warning>
+                <para>Make sure any automatic updates are disabled.</para>
+            </warning>
+        </section>
+        <section xml:id="upgrade_update_configuration-ubuntu">
+            <title>Update Configuration Files</title>
+            <para>Update the Glance configuration on the controller node for
+                compatibility with Havana.</para>
+            <para>If not currently present and configured as follows, add or
+                modify the following keys in
+                <filename>/etc/glance/glance-api.conf</filename> and
+                <filename>/etc/glance/glance-registry.conf</filename>.</para>
+            <programlisting language="ini">[keystone_authtoken]
+auth_uri = http://controller:5000
+auth_host = controller
+admin_tenant_name = service
+admin_user = glance
+admin_password = GLANCE_PASS
+
+[paste_deploy]
+flavor = keystone</programlisting>
+            <para>If currently present, remove the following key from the
+                [filter:authtoken] section in
+                <filename>/etc/glance/glance-api-paste.conf</filename> and
+                <filename>/etc/glance/glance-registry-paste.conf</filename>.
+            </para>
+            <programlisting language="ini">[filter:authtoken]
+flavor = keystone</programlisting>
+            <para>Update the Nova configuration on all nodes for compatibility
+                with Havana.</para>
+            <para>Add the new [database] section and associated key to
+                <filename>/etc/nova/nova.conf</filename>.</para>
+            <programlisting language="ini">[database]
+connection = mysql://nova:NOVA_DBPASS@controller/nova</programlisting>
+            <para>Remove defunct configuration from the [DEFAULT] section in
+                <filename>/etc/nova/nova.conf</filename>.</para>
+            <programlisting language="ini">[DEFAULT]
+sql_connection = mysql://nova:NOVA_DBPASS@controller/nova</programlisting>
+            <para>If not already present and configured as follows, add or
+                modify the following keys in
+                <filename>/etc/nova/nova.conf</filename>.</para>
+            <programlisting language="ini">[keystone_authtoken]
+auth_uri = http://controller:5000/v2.0
+auth_host = controller
+auth_port = 35357
+auth_protocol = http
+admin_tenant_name = service
+admin_user = nova
+admin_password = NOVA_PASS</programlisting>
+            <para>On all compute nodes, increase the DHCP lease time (measured
+                in seconds) in <filename>/etc/nova/nova.conf</filename> to
+                enable currently active instances to continue leasing their IP
+                addresses during the upgrade process.</para>
+            <warning>
+                <para>Setting this value too high may cause more dynamic
+                    environments to run out of available IP addresses. Use an
+                    appropriate value for your environment.</para>
+            </warning>
+            <programlisting language="ini">[DEFAULT]
+dhcp_lease_time = 86400
+</programlisting>
+            <para>You must restart Dnsmasq and the networking component of
+                Compute to enable the new DHCP lease time.</para>
+            <screen><prompt>#</prompt> <userinput>pkill -9 dnsmasq</userinput>
+<prompt>#</prompt> <userinput>service nova-network restart</userinput></screen>
+            <para>Update the Cinder configuration on the controller and storage
+                nodes for compatibility with Havana.</para>
+            <para>Add the new [database] section and associated key to
+                <filename>/etc/cinder/cinder.conf</filename>.</para>
+            <programlisting language="ini">[database]
+connection = mysql://cinder:CINDER_DBPASS@controller/cinder</programlisting>
+            <para>Remove defunct configuration from the [DEFAULT] section in
+                <filename>/etc/cinder/cinder.conf</filename>.</para>
+            <programlisting language="ini">[DEFAULT]
+sql_connection = mysql://cinder:CINDER_DBPASS@controller/cinder</programlisting>
+            <para>If not currently present and configured as follows, add or
+                modify the following key in
+                <filename>/etc/cinder/cinder.conf</filename>.</para>
+            <programlisting language="ini">[keystone_authtoken]
+auth_uri = http://controller:5000</programlisting>
+            <para>Update the dashboard configuration on the controller node for
+                compatibility with Havana.</para>
+            <para>The dashboard installation procedure and configuration
+                file changed substantially between Grizzly and Havana.
+                Particularly, if you are running Django 1.5 or later, you
+                must ensure that
+                <filename>/etc/openstack-dashboard/local_settings</filename>
+                contains a correctly configured ALLOWED_HOSTS key which
+                contains a list of hostnames recognized by the dashboard.</para>
+            <para>If users will access your dashboard using
+                "http://dashboard.example.com", you would set:</para>
+            <programlisting language="ini">ALLOWED_HOSTS=['dashboard.example.com']</programlisting>
+            <para>If users will access your dashboard on the local system,
+                you would set:</para>
+            <programlisting language="ini">ALLOWED_HOSTS=['localhost']</programlisting>
+            <para>If users will access your dashboard using an IP address
+                in addition to a hostname, you would set:</para>
+            <programlisting language="ini">ALLOWED_HOSTS=['dashboard.example.com', '192.168.122.200']</programlisting>
+        </section>
+        <section xml:id="upgrade_packages_controller-ubuntu">
+            <title>Upgrade Packages on the Controller Node</title>
+            <para>Upgrade packages on the controller node to Havana.</para>
+            <note>
+                <para>Depending on your specific configuration, performing a
+                <code>dist-upgrade</code> may restart services supplemental
+                to your OpenStack environment. For example, if you use
+                Open-iSCSI for Block Storage volumes and the upgrade includes
+                a new <code>open-scsi</code> package, the package manager
+                will restart Open-iSCSI services which may cause disconnection
+                of volumes for your users.</para>
+            </note>
+            <screen><prompt>#</prompt> <userinput>apt-get update</userinput>
+<prompt>#</prompt> <userinput>apt-get dist-upgrade</userinput></screen>
+            <para>The package manager will ask you about updating various
+                configuration files. We recommend denying these changes. The
+                package manager will append <code>.dpkg-dist</code> to the
+                end of newer versions of existing configuration files. You
+                should consider adopting conventions associated with the
+                newer configuration files and merging them with your existing
+                configuration files after completing the upgrade process.</para>
+        </section>
+        <section xml:id="upgrade_database_restart-ubuntu">
+            <title>Stop Services, Update Database Schemas, and Restart Services on the Controller Node</title>
+            <para>Stop each service, run the database synchronization command if
+                necessary to update the associated database schema, and
+                restart each service to apply the new configuration. Some
+                services require additional commands.</para>
+            <screen><prompt>#</prompt> <userinput>service keystone stop</userinput>
+<prompt>#</prompt> <userinput>keystone-manage token_flush</userinput>
+<prompt>#</prompt> <userinput>keystone-manage db_sync</userinput>
+<prompt>#</prompt> <userinput>service keystone start</userinput>
+<prompt>#</prompt> <userinput>service glance-api stop</userinput>
+<prompt>#</prompt> <userinput>service glance-registry stop</userinput>
+<prompt>#</prompt> <userinput>glance-manage db_sync</userinput>
+<prompt>#</prompt> <userinput>service glance-api start</userinput>
+<prompt>#</prompt> <userinput>service glance-registry start</userinput>
+<prompt>#</prompt> <userinput>service nova-api restart</userinput>
+<prompt>#</prompt> <userinput>service nova-scheduler restart</userinput>
+<prompt>#</prompt> <userinput>service nova-conductor restart</userinput>
+<prompt>#</prompt> <userinput>service nova-cert restart</userinput>
+<prompt>#</prompt> <userinput>service nova-consoleauth restart</userinput>
+<prompt>#</prompt> <userinput>service nova-novncproxy restart</userinput>
+<prompt>#</prompt> <userinput>service cinder-api stop</userinput>
+<prompt>#</prompt> <userinput>service cinder-scheduler stop</userinput>
+<prompt>#</prompt> <userinput>cinder-manage db sync</userinput>
+<prompt>#</prompt> <userinput>service cinder-api start</userinput>
+<prompt>#</prompt> <userinput>service cinder-scheduler start</userinput></screen>
+            <note>
+                <para>The Compute services only need restarting because the
+                    package manager handles database synchronization.</para>
+            </note>
+            <para>The controller node update is complete. Now you can upgrade
+                the compute nodes.</para>
+        </section>
+        <section xml:id="upgrade_packages_compute-ubuntu">
+            <title>Upgrade Packages and Restart Services on the Compute Nodes</title>
+            <para>Upgrade packages on the compute nodes to Havana.</para>
+            <note>
+                <para>Make sure you have removed the repository for Grizzly
+                packages and added the repository for Havana packages.</para>
+            </note>
+            <screen><prompt>#</prompt> <userinput>apt-get update</userinput>
+<prompt>#</prompt> <userinput>apt-get dist-upgrade</userinput></screen>
+            <warning><para>Due to a packaging issue, this command may fail with
+                the following error:</para>
+                <screen><computeroutput>Errors were encountered while processing:
+        /var/cache/apt/archives/qemu-utils_1.5.0+dfsg-3ubuntu5~cloud0_amd64.deb
+        /var/cache/apt/archives/qemu-system-common_1.5.0+dfsg-3ubuntu5~cloud0_amd64.deb
+        E: Sub-process /usr/bin/dpkg returned an error code (1)</computeroutput></screen>
+                <para>You can fix this issue using the following
+                    command.</para>
+                <screen><prompt>#</prompt> <userinput>apt-get -f install</userinput></screen>
+            </warning>
+            <para>The packaging system will ask about updating the
+                <filename>/etc/nova/api-paste.ini</filename> file. Like the
+                controller upgrade, we recommend denying these changes and
+                reviewing the <code>.dpkg-dist</code> file after completing
+                the upgrade process.</para>
+            <para>Restart Compute services.</para>
+            <screen><prompt>#</prompt> <userinput>service nova-compute restart</userinput>
+<prompt>#</prompt> <userinput>service nova-network restart</userinput>
+<prompt>#</prompt> <userinput>service nova-api-metadata restart</userinput></screen>
+        </section>
+        <section xml:id="upgrade_packages_storage-ubuntu">
+            <title>Upgrade Packages and Restart Services on the Block Storage Nodes</title>
+            <para>Upgrade packages on the storage nodes to Havana.</para>
+            <note>
+                <para>Make sure you have removed the repository for Grizzly
+                packages and added the repository for Havana packages.</para>
+            </note>
+            <screen><prompt>#</prompt> <userinput>apt-get update</userinput>
+<prompt>#</prompt> <userinput>apt-get dist-upgrade</userinput></screen>
+            <para>The packaging system will ask about updating the
+                <filename>/etc/cinder/api-paste.ini</filename> file. Like the
+                controller upgrade, we recommend denying these changes and
+                reviewing the <code>.dpkg-dist</code> file after completing
+                the upgrade process.</para>
+            <para>Restart Block Storage services.</para>
+            <screen><prompt>#</prompt> <userinput>service cinder-volume restart</userinput></screen>
+        </section>
+    </section>
+    <section xml:id="ops_upgrades_grizzly_havana-rhel">
+        <title>How to Perform an Upgrade from Grizzly to Havana - Red Hat Enterprise Linux and Derivatives</title>
+        <?dbhtml stop-chunking?>
+        <para>For this section, we assume that you are starting with the
+            architecture provided in the OpenStack <link
+                xlink:href="http://docs.openstack.org/havana/install-guide/install/yum/content/"
+                >Installation Guide</link> and upgrading to the same
+            architecture for Havana. All nodes should run Red Hat Enterprise
+            Linux 6.4 or compatible derivatives. Newer minor releases should
+            also work. This section primarily addresses upgrading core
+            OpenStack services such as the Identity Service (keystone), Image
+            Service (glance), Compute (nova) including networking, Block
+            Storage (cinder), and the dashboard.</para>
+        <section xml:id="upgrade_impact_users-rhel">
+            <title>Impact on Users</title>
+            <para>The upgrade process will interrupt management of your
+                environment including the dashboard. If you properly prepare
+                for this upgrade, tenant instances will continue to operate
+                normally.</para>
+        </section>
+        <section xml:id="upgrade_considerations-rhel">
+            <title>Upgrade Considerations</title>
+            <para>Always review the <link
+                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana"                >release notes</link> before performing an upgrade
+                to learn about newly available features that you may want to
+                enable and deprecated features that you should disable.</para>
+        </section>
+        <section xml:id="upgrade_backup-rhel">
+            <title>Perform a Backup</title>
+            <para>Save the configuration files on all nodes.</para>
+            <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
+<prompt>&gt;</prompt> <userinput>do mkdir $i-grizzly</userinput>
+<prompt>&gt;</prompt> <userinput>done</userinput>
+<prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
+<prompt>&gt;</prompt> <userinput>do cp -r /etc/$i/* $i-grizzly/</userinput>
+<prompt>&gt;</prompt> <userinput>done</userinput></screen>
+            <note>
+                <para>You can modify this example script on each node to handle
+                    different services.</para>
+            </note>
+            <para>Back up all databases on the controller.</para>
+            <screen><prompt>#</prompt> <userinput>mysqldump -u root -p --opt --add-drop-database --all-databases &gt; grizzly-db-backup.sql</userinput></screen>
+        </section>
+        <section xml:id="upgrade_manage_repos-rhel">
+            <title>Manage Repositories</title>
+            <para>On all nodes, remove the repository for Grizzly packages and
+                add the repository for Havana packages.</para>
+            <screen><prompt>#</prompt> <userinput>yum erase rdo-release-grizzly</userinput>
+<prompt>#</prompt> <userinput>yum install http://repos.fedorapeople.org/repos/openstack/openstack-havana/rdo-release-havana-7.noarch.rpm</userinput></screen>
+            <warning>
+                <para>Make sure any automatic updates are disabled.</para>
+            </warning>
+            <note>
+                <para>Consider checking for newer versions of the <link
+                    xlink:href="http://repos.fedorapeople.org/repos/openstack/openstack-havana">Havana repository</link>.</para>
+            </note>
+        </section>
+        <section xml:id="upgrade_update_configuration-rhel">
+            <title>Update Configuration Files</title>
+            <para>Update the Glance configuration on the controller node for
+                compatibility with Havana.</para>
+            <para>If not currently present and configured as follows, add or
+                modify the following keys in
+                <filename>/etc/glance/glance-api.conf</filename> and
+                <filename>/etc/glance/glance-registry.conf</filename>.</para>
+            <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-api.conf keystone_authtoken \
+  auth_uri http://controller:5000</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-api.conf keystone_authtoken \
+  auth_host controller</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-api.conf keystone_authtoken \
+  admin_tenant_name service</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-api.conf keystone_authtoken \
+  admin_user glance</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-api.conf keystone_authtoken \
+  admin_password GLANCE_PASS</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-api.conf paste_deploy \
+  flavor keystone</userinput></screen>
+            <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-registry.conf keystone_authtoken \
+  auth_uri http://controller:5000</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-registry.conf keystone_authtoken \
+  auth_host controller</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-registry.conf keystone_authtoken \
+  admin_tenant_name service</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-registry.conf keystone_authtoken \
+  admin_user glance</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-registry.conf keystone_authtoken \
+  admin_password GLANCE_PASS</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/glance/glance-registry.conf paste_deploy \
+  flavor keystone</userinput></screen>
+            <para>If currently present, remove the following key from the
+                [filter:authtoken] section in
+                <filename>/etc/glance/glance-api-paste.ini</filename> and
+                <filename>/etc/glance/glance-registry-paste.ini</filename>.
+            </para>
+            <programlisting language="ini">[filter:authtoken]
+flavor = keystone</programlisting>
+            <para>Update the Nova configuration on all nodes for compatibility
+                with Havana.</para>
+            <para>Add the new [database] section and associated key to
+                <filename>/etc/nova/nova.conf</filename>.</para>
+            <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf database \
+  connection mysql://nova:NOVA_DBPASS@controller/nova</userinput></screen>
+            <para>Remove defunct database configuration from
+                <filename>/etc/nova/nova.conf</filename>.</para>
+            <screen><prompt>#</prompt> <userinput>openstack-config --del /etc/nova/nova.conf DEFAULT sql_connection</userinput></screen>
+            <para>If not already present and configured as follows, add or
+                modify the following keys in
+                <filename>/etc/nova/nova.conf</filename>.</para>
+            <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf keystone_authtoken \
+  auth_uri http://controller:5000/v2.0</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf keystone_authtoken \
+  auth_host controller</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf keystone_authtoken \
+  admin_tenant_name service</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf keystone_authtoken \
+  admin_user nova</userinput>
+<prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf keystone_authtoken \
+  admin_password NOVA_PASS</userinput></screen>
+            <para>On all compute nodes, increase the DHCP lease time (measured
+                in seconds) in <filename>/etc/nova/nova.conf</filename> to
+                enable currently active instances to continue leasing their IP
+                addresses during the upgrade process.</para>
+            <warning>
+                <para>Setting this value too high may cause more dynamic
+                    environments to run out of available IP addresses. Use an
+                    appropriate value for your environment.</para>
+            </warning>
+            <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf DEFAULT \
+  dhcp_lease_time 86400</userinput></screen>
+            <para>You must restart Dnsmasq and the Nova networking service to
+                enable the new DHCP lease time.</para>
+            <screen><prompt>#</prompt> <userinput>pkill -9 dnsmasq</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-network restart</userinput></screen>
+            <para>Update the Cinder configuration on the controller and storage
+                nodes for compatibility with Havana.</para>
+            <para>Add the new [database] section and associated key to
+                <filename>/etc/cinder/cinder.conf</filename>.</para>
+            <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/cinder/cinder.conf database \
+  connection mysql://cinder:CINDER_DBPASS@controller/cinder</userinput></screen>
+            <para>Remove defunct database configuration from
+                <filename>/etc/cinder/cinder.conf</filename>.</para>
+            <screen><prompt>#</prompt> <userinput>openstack-config --del /etc/cinder/cinder.conf DEFAULT sql_connection</userinput></screen>
+            <para>If not currently present and configured as follows, add or
+                modify the following key in
+                <filename>/etc/cinder/cinder.conf</filename>.</para>
+            <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/cinder/cinder.conf keystone_authtoken \
+  auth_uri http://controller:5000</userinput></screen>
+            <para>Update the dashboard configuration on the controller node for
+                compatibility with Havana.</para>
+            <para>The dashboard installation procedure and configuration
+                file changed substantially between Grizzly and Havana.
+                Particularly, if you are running Django 1.5 or later, you
+                must ensure that
+                <filename>/etc/openstack-dashboard/local_settings</filename>
+                contains a correctly configured ALLOWED_HOSTS key which
+                contains a list of hostnames recognized by the dashboard.</para>
+            <para>If users will access your dashboard using
+                "http://dashboard.example.com", you would set:</para>
+            <programlisting language="ini">ALLOWED_HOSTS=['dashboard.example.com']</programlisting>
+            <para>If users will access your dashboard on the local system,
+                you would set:</para>
+            <programlisting language="ini">ALLOWED_HOSTS=['localhost']</programlisting>
+            <para>If users will access your dashboard using an IP address
+                in addition to a hostname, you would set:</para>
+            <programlisting language="ini">ALLOWED_HOSTS=['dashboard.example.com', '192.168.122.200']</programlisting>
+        </section>
+        <section xml:id="upgrade_packages_controller-rhel">
+            <title>Upgrade Packages on the Controller Node</title>
+            <para>Upgrade packages on the controller node to Havana.</para>
+            <note>
+                <para>Some services may terminate with an error during the
+                    package upgrade process. If this may cause a problem with
+                    your environment, consider stopping all services before
+                    upgrading them to Havana.</para>
+            </note>
+            <screen><prompt>#</prompt> <userinput>yum upgrade</userinput></screen>
+            <note>
+                <para>The package manager will append <code>.rpmnew</code> to
+                    the end of newer versions of existing configuration files.
+                    You should consider adopting conventions associated with
+                    the newer configuration files and merging them with your
+                    existing configuration files after completing the upgrade
+                    process.</para>
+            </note>
+            <para>Install the OpenStack SELinux package on the controller
+                node.</para>
+            <screen><prompt>#</prompt> <userinput>yum install openstack-selinux</userinput></screen>
+        </section>
+        <section xml:id="upgrade_database_restart-rhel">
+            <title>Stop Services, Update Database Schemas, and Restart Services on the Controller Node</title>
+            <para>Stop each service, run the database synchronization command if
+                necessary to update the associated database schema, and
+                restart each service to apply the new configuration. Some
+                services require additional commands.</para>
+            <screen><prompt>#</prompt> <userinput>service openstack-keystone stop</userinput>
+<prompt>#</prompt> <userinput>keystone-manage token_flush</userinput>
+<prompt>#</prompt> <userinput>keystone-manage db_sync</userinput>
+<prompt>#</prompt> <userinput>service openstack-keystone start</userinput>
+<prompt>#</prompt> <userinput>service openstack-glance-api stop</userinput>
+<prompt>#</prompt> <userinput>service openstack-glance-registry stop</userinput>
+<prompt>#</prompt> <userinput>glance-manage db_sync</userinput>
+<prompt>#</prompt> <userinput>service openstack-glance-api start</userinput>
+<prompt>#</prompt> <userinput>service openstack-glance-registry start</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-api stop</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-scheduler stop</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-conductor stop</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-cert stop</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-consoleauth stop</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-novncproxy stop</userinput>
+<prompt>#</prompt> <userinput>nova-manage db sync</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-api start</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-scheduler start</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-conductor start</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-cert start</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-consoleauth start</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-novncproxy start</userinput>
+<prompt>#</prompt> <userinput>service openstack-cinder-api stop</userinput>
+<prompt>#</prompt> <userinput>service openstack-cinder-scheduler stop</userinput>
+<prompt>#</prompt> <userinput>cinder-manage db sync</userinput>
+<prompt>#</prompt> <userinput>service openstack-cinder-api start</userinput>
+<prompt>#</prompt> <userinput>service openstack-cinder-scheduler start</userinput></screen>
+            <para>The controller node update is complete. Now you can upgrade
+                the compute nodes.</para>
+        </section>
+        <section xml:id="upgrade_packages_compute-rhel">
+            <title>Upgrade Packages and Restart Services on the Compute Nodes</title>
+            <para>Upgrade packages on the compute nodes to Havana.</para>
+            <note>
+                <para>Make sure you have removed the repository for Grizzly
+                packages and added the repository for Havana packages.</para>
+            </note>
+            <screen><prompt>#</prompt> <userinput>yum upgrade</userinput></screen>
+            <para>Install the OpenStack SELinux package on the compute
+                nodes.</para>
+            <screen><prompt>#</prompt> <userinput>yum install openstack-selinux</userinput></screen>
+            <para>Restart Compute services.</para>
+            <screen><prompt>#</prompt> <userinput>service openstack-nova-compute restart</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-network restart</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-metadata-api restart</userinput></screen>
+        </section>
+        <section xml:id="upgrade_packages_storage-rhel">
+            <title>Upgrade Packages and Restart Services on the Block Storage Nodes</title>
+            <para>Upgrade packages on the storage nodes to Havana.</para>
+            <note>
+                <para>Make sure you have removed the repository for Grizzly
+                packages and added the repository for Havana packages.</para>
+            </note>
+            <screen><prompt>#</prompt> <userinput>yum upgrade</userinput></screen>
+            <para>Install the OpenStack SELinux package on the storage
+                nodes.</para>
+            <screen><prompt>#</prompt> <userinput>yum install openstack-selinux</userinput></screen>
+            <para>Restart Block Storage services.</para>
+            <screen><prompt>#</prompt> <userinput>service openstack-cinder-volume restart</userinput></screen>
+        </section>
+    </section>
+    <section xml:id="ops_upgrades-final-steps">
+        <title>Cleaning Up and Final Configuration File Updates</title>
+        <para>On all distributions, you will need to perform some final tasks
+            to complete the upgrade process.</para>
+        <para>Decrease DHCP timeouts by modifying
+             <filename>/etc/nova/nova.conf</filename> on the compute nodes back
+             to the original value for your environment.</para>
+        <para>Update all of the <filename>.ini</filename> files to match
+            passwords and pipelines as required for Havana in your
+            environment.</para>
+        <para>After a migration, your users will see different results from
+            <systemitem class="service">nova image-list</systemitem> and
+            <systemitem class="service">glance image-list</systemitem> unless
+            you match up policies for access to private images. To do so,
+            edit <filename>/etc/glance/policy.json</filename> and
+            <filename>/etc/nova/policy.json</filename> to contain
+            <code>"context_is_admin":  "role:admin",</code> which limits
+            access to private images for projects.</para>
+        <para>Thoroughly test the environment and then let your users know
+            that their cloud is running normally again.</para>
+    </section>
+    <section xml:id="ops_upgrades-roll-back">
+        <title>Rolling Back a Failed Upgrade</title>
+        <para>While we do not wish this fate upon anyone, upgrades involve
+            complex operations and can fail. This section provides guidance
+            for rolling back to a previous release of OpenStack. Although only
+            tested on Ubuntu, other distributions follow a similar procedure.
+        </para>
+        <para>In this section, we only consider the most immediate case: You
+            have taken down production management services in preparation for
+            an upgrade, completed part of the upgrade process, discovered one
+            or more problems not encountered during testing, and need to roll
+            back your environment to the original "known good" state. We
+            specifically assume that you did not make any state changes after
+            attempting the upgrade process: No new instances, networks, storage
+            volumes, etc.</para>
+        <para>Within this scope, you need to accomplish three main steps to
+            successfully roll back your environment:</para>
+        <itemizedlist>
+            <listitem><para>Roll back configuration files</para></listitem>
+            <listitem><para>Roll back databases</para></listitem>
+            <listitem><para>Roll back packages</para></listitem>
+        </itemizedlist>
+        <para>The upgrade instructions provided in earlier sections ensure that
+            you have proper backups of your databases and configuration files.
+            You should read through this section carefully and verify that you
+            have the requisite backups to restore. Rolling back upgrades is a
+            tricky process as distributions tend to put much more effort into
+            testing upgrades than downgrades. Broken downgrades often take
+            significantly more effort to troubleshoot and hopefully resolve
+            than broken upgrades. Only you can weigh the risks of trying to
+            push a failed upgrade forward versus rolling it back. Generally,
+            we consider rolling back the very last option.</para>
+        <para>The steps described below for Ubuntu have worked on at
+            least one production environment, but may not work for
+            all environments.</para>
+        <procedure>
+            <title>Perform the Roll Back from Havana to Grizzly</title>
+            <step>
+                <para>Stop all OpenStack services.</para>
+            </step>
+            <step>
+                <para>Copy contents of configuration backup directories
+                    <filename>/etc/&lt;service&gt;.grizzly</filename> that
+                    you created during the upgrade process back to
+                    <filename>/etc/&lt;service&gt;</filename>.</para>
+            </step>
+            <step>
+                <para>Restore databases from the backup file
+                    <filename>grizzly-db-backup.sql</filename> that you created
+                    with <command>mysqldump</command> during the upgrade
+                    process.</para>
+                <screen><prompt>#</prompt> <userinput>mysql -u root -p &lt; grizzly-db-backup.sql</userinput></screen>
+                <para>If you created this backup using the
+                    <command>--add-drop-database</command> flag as instructed,
+                    you can proceed to the next step. If you omitted this flag,
+                    MySQL will revert all of the tables that existed in
+                    Grizzly, but not drop any tables created during the
+                    database migration for Havana. In this case, you will
+                    need to manually determine which tables should not exist
+                    and drop them to prevent issues with your next upgrade
+                    attempt.</para>
+            </step>
+            <step>
+                <para>Downgrade OpenStack packages.</para>
+                <warning><para>We consider downgrading packages by far the most
+                    complicated step and highly dependent on the
+                    distribution as well as overall administration of the
+                    system.</para>
+                </warning>
+                <substeps>
+                    <step>
+                        <para>Determine the OpenStack packages installed on
+                            your system. This is done using
+                            <command>dpkg --get-selections</command>,
+                            filtering for OpenStack packages, filtering
+                            again to omit packages explicitly marked in the
+                            <code>deinstall</code> state, and saving the final
+                            output to a file. For example, the following
+                            command covers a controller node with keystone,
+                            glance, nova, neutron, and cinder:</para>
+                        <screen><prompt>#</prompt> <userinput>dpkg --get-selections | grep -e keystone -e glance -e nova -e neutron -e cinder \
+  | grep -v deinstall | tee openstack-selections</userinput>
+<computeroutput>cinder-api                                      install
+cinder-common                                   install
+cinder-scheduler                                install
+cinder-volume                                   install
+glance                                          install
+glance-api                                      install
+glance-common                                   install
+glance-registry                                 install
+neutron-common                                  install
+neutron-dhcp-agent                              install
+neutron-l3-agent                                install
+neutron-lbaas-agent                             install
+neutron-metadata-agent                          install
+neutron-plugin-openvswitch                      install
+neutron-plugin-openvswitch-agent                install
+neutron-server                                  install
+nova-api                                        install
+nova-cert                                       install
+nova-common                                     install
+nova-conductor                                  install
+nova-consoleauth                                install
+nova-novncproxy                                 install
+nova-objectstore                                install
+nova-scheduler                                  install
+python-cinder                                   install
+python-cinderclient                             install
+python-glance                                   install
+python-glanceclient                             install
+python-keystone                                 install
+python-keystoneclient                           install
+python-neutron                                  install
+python-neutronclient                            install
+python-nova                                     install
+python-novaclient                               install
+</computeroutput></screen>
+                        <note>
+                            <para>Depending on the type of server, the contents
+                                and order of your package list may vary from
+                                this example.</para>
+                        </note>
+                    </step>
+                    <step>
+                        <para>You can determine the package versions available
+                            for reversion by using
+                            <command>apt-cache policy</command>. If you removed
+                            the Grizzly repositories, you must first reinstall
+                            them and run <command>apt-get update</command>.
+                        </para>
+                        <screen><prompt>#</prompt> <userinput>apt-cache policy nova-common</userinput>
+<computeroutput>nova-common:
+  Installed: 1:2013.2-0ubuntu1~cloud0
+  Candidate: 1:2013.2-0ubuntu1~cloud0
+  Version table:
+ *** 1:2013.2-0ubuntu1~cloud0 0
+        500 http://ubuntu-cloud.archive.canonical.com/ubuntu/ precise-updates/havana/main amd64 Packages
+        100 /var/lib/dpkg/status
+     1:2013.1.4-0ubuntu1~cloud0 0
+        500 http://ubuntu-cloud.archive.canonical.com/ubuntu/ precise-updates/grizzly/main amd64 Packages
+     2012.1.3+stable-20130423-e52e6912-0ubuntu1.2 0
+        500 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main amd64 Packages
+        500 http://security.ubuntu.com/ubuntu/ precise-security/main amd64 Packages
+     2012.1-0ubuntu2 0
+        500 http://us.archive.ubuntu.com/ubuntu/ precise/main amd64 Packages
+</computeroutput></screen>
+                        <para>This tells us the currently installed version
+                            of the package, newest candidate version, and
+                            all versions along with the repository that contains
+                            each version. Look for the appropriate Grizzly
+                            version, in this case
+                            <code>1:2013.1.4-0ubuntu1~cloud0</code>. The
+                            process of manually picking through this list of
+                            packages is rather tedious and prone to errors.
+                            You should consider using the following script
+                            to help with this process:</para>
+                        <screen><prompt>#</prompt> <userinput>for i in `cut -f 1 openstack-selections | sed 's/neutron/quantum/;'`; \
+  do echo -n $i ;apt-cache policy $i | grep -B 1 grizzly | grep -v Packages \
+  | awk '{print "="$1}';done | tr '\n' ' ' | tee openstack-grizzly-versions</userinput>
+<computeroutput>cinder-api=1:2013.1.4-0ubuntu1~cloud0 cinder-common=1:2013.1.4-0ubuntu1~cloud0 cinder-scheduler=1:2013.1.4-0ubuntu1~cloud0 cinder-volume=1:2013.1.4-0ubuntu1~cloud0 glance=1:2013.1.4-0ubuntu1~cloud0 glance-api=1:2013.1.4-0ubuntu1~cloud0 glance-common=1:2013.1.4-0ubuntu1~cloud0 glance-registry=1:2013.1.4-0ubuntu1~cloud0 quantum-common=1:2013.1.4-0ubuntu1~cloud0 quantum-dhcp-agent=1:2013.1.4-0ubuntu1~cloud0 quantum-l3-agent=1:2013.1.4-0ubuntu1~cloud0 quantum-lbaas-agent=1:2013.1.4-0ubuntu1~cloud0 quantum-metadata-agent=1:2013.1.4-0ubuntu1~cloud0 quantum-plugin-openvswitch=1:2013.1.4-0ubuntu1~cloud0 quantum-plugin-openvswitch-agent=1:2013.1.4-0ubuntu1~cloud0 quantum-server=1:2013.1.4-0ubuntu1~cloud0 nova-api=1:2013.1.4-0ubuntu1~cloud0 nova-cert=1:2013.1.4-0ubuntu1~cloud0 nova-common=1:2013.1.4-0ubuntu1~cloud0 nova-conductor=1:2013.1.4-0ubuntu1~cloud0 nova-consoleauth=1:2013.1.4-0ubuntu1~cloud0 nova-novncproxy=1:2013.1.4-0ubuntu1~cloud0 nova-objectstore=1:2013.1.4-0ubuntu1~cloud0 nova-scheduler=1:2013.1.4-0ubuntu1~cloud0 python-cinder=1:2013.1.4-0ubuntu1~cloud0 python-cinderclient=1:1.0.3-0ubuntu1~cloud0 python-glance=1:2013.1.4-0ubuntu1~cloud0 python-glanceclient=1:0.9.0-0ubuntu1.2~cloud0 python-quantum=1:2013.1.4-0ubuntu1~cloud0 python-quantumclient=1:2.2.0-0ubuntu1~cloud0 python-nova=1:2013.1.4-0ubuntu1~cloud0 python-novaclient=1:2.13.0-0ubuntu1~cloud0
+</computeroutput></screen>
+                        <note><para>If you decide to continue this step
+                            manually, don't forget to change
+                            <code>neutron</code> to <code>quantum</code> where
+                            applicable.</para>
+                        </note>
+                    </step>
+                    <step>
+                        <para>Use <command>apt-get install</command> to install
+                           specific versions of each package by specifying
+                           <code>&lt;package-name&gt;=&lt;version&gt;</code>.
+                           The script in the previous step conveniently created
+                           a list of <code>package=version</code> pairs for
+                           you.</para>
+                        <screen><prompt>#</prompt> <userinput>apt-get install `cat openstack-grizzly-versions`</userinput></screen>
+                        <para>This completes the roll back procedure. You
+                            should remove the Havana repository and run
+                            <command>apt-get update</command> to prevent
+                            accidental upgrades until you solve whatever issue
+                            caused you to roll back your environment.</para>
+                    </step>
+                </substeps>
+            </step>
+        </procedure>
+    </section>
+</chapter>

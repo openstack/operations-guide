@@ -346,29 +346,22 @@ the Icehouse release and perhaps further afield.</para>
                                 an automated external testing system for use
                                 during the development process.</para>
                 </section>
-                <section xml:id="roadmap-easier-upgrades">
-                        <title>Easier Upgrades</title>
-                        <para>One of the most requested features since OpenStack
-                                began (for components other than Object Storage,
-                                which tends to "just work"): easier upgrades.
-                                From Grizzly onward (and significantly improved
-                                in Havana) internal messaging communication is
-                                versioned, meaning services can theoretically
-                                drop back to backward-compatible behaviour. This
-                                allows you to run later versions of some
-                                components, while keeping older versions of
-                                others.</para>
-                        <para>In addition, a lot of focus has been placed on
-                                database migrations. These are now better
-                                managed, including the use of the Turbo Hipster
-                                tool during development - which tests database
-                                migration performance on copies of real-world
-                                user databases.</para>
-                        <para>These changes have facilitated the first proper
-                                OpenStack upgrade guide, found in CHAPTER XXX
-                                TODO, and will continue to improve in
-                                Icehouse.</para>
-                </section>
+        <section xml:id="roadmap-easier-upgrades">
+            <title>Easier Upgrades</title>
+            <para>One of the most requested features since OpenStack began (for components other
+                than Object Storage, which tends to "just work"): easier upgrades. From Grizzly
+                onward (and significantly improved in Havana) internal messaging communication is
+                versioned, meaning services can theoretically drop back to backward-compatible
+                behaviour. This allows you to run later versions of some components, while keeping
+                older versions of others.</para>
+            <para>In addition, a lot of focus has been placed on database migrations. These are now
+                better managed, including the use of the Turbo Hipster tool during development -
+                which tests database migration performance on copies of real-world user
+                databases.</para>
+            <para>These changes have facilitated the first proper OpenStack upgrade guide, found in
+                    <xref linkend="ch_ops_upgrades"/>, and will continue to improve in
+                Icehouse.</para>
+        </section>
                 <section xml:id="nova-network-deprecation">
                         <title>Deprecation of Nova Network</title>
                         <para>With the introduction of the full software defined
