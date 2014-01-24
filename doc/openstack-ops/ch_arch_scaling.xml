@@ -336,53 +336,98 @@
             <para>Availability zones are implemented through and
                 configured in a similar way to host aggregates.</para>
             <para>However, you use an availability zone and a host
-                aggregate for different reasons:</para><itemizedlist>
+                aggregate for different reasons:</para>
+            <itemizedlist>
                 <listitem>
-                    <para><emphasis role="bold">Availability
-                            zone</emphasis>. Enables you to arrange
-                        OpenStack Compute hosts into logical groups,
-                        and provides a form of physical isolation and
-                        redundancy from other availability zones, such
-                        as by using separate power supply or network
+                    <para><emphasis role="bold">Availability zone</emphasis>.
+                        Enables you to arrange OpenStack Compute hosts into
+                        logical groups, and provides a form of physical
+                        isolation and redundancy from other availability zones,
+                        such as by using separate power supply or network
                         equipment.</para>
-                    <para>You define the availability zone in which a
-                        specified Compute host resides locally on each
-                        server. An availability zone is commonly used
-                        to identify a set of servers that have a
-                        common attribute. For instance, if some of the
-                        racks in your data center are on a separate
-                        power source, you can put servers in those
-                        racks in their own availability zone.
-                        Availability zones can also help separate
-                        different classes of hardware.</para>
-                    <para>When users provision resources, they can
-                        specify from which availability zone they
-                        would like their instance to be built. This
-                        allows cloud consumers to ensure that their
-                        application resources are spread across
-                        disparate machines to achieve high
-                        availability in the event of hardware
-                        failure.</para>
+                    <para>You define the availability zone in which a specified
+                        Compute host resides locally on each server. An
+                        availability zone is commonly used to identify a set of
+                        servers that have a common attribute. For instance, if
+                        some of the racks in your data center are on a separate
+                        power source, you can put servers in those racks in
+                        their own availability zone. Availability zones can also
+                        help separate different classes of hardware.</para>
+                    <para>When users provision resources, they can specify from
+                        which availability zone they would like their instance
+                        to be built. This allows cloud consumers to ensure that
+                        their application resources are spread across disparate
+                        machines to achieve high availability in the event of
+                        hardware failure.</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">Host
-                            aggregate</emphasis>. Enables you to
-                        partition OpenStack Compute deployments into
-                        logical groups for load balancing and instance
-                        distribution. You can use host aggregates to
-                        further partition an availability zone. For
-                        example, you might use host aggregates to
-                        partition an availability zone into groups of
-                        hosts that either share common resources, such
-                        as storage and network, or have a special
-                        property, such as trusted computing
-                        hardware.</para>
-                    <para>A common use of host aggregates is to
-                        provide information for use with the
-                        nova-scheduler. For example, you might use a
-                        host aggregate to group a set of hosts that
-                        share specific flavors or images.</para>
-                </listitem></itemizedlist>
+                    <para><emphasis role="bold">Host aggregates</emphasis>
+                        enable you to partition OpenStack Compute deployments
+                        into logical groups for load balancing and instance
+                        distribution. You can use host aggregates to further
+                        partition an availability zone. For example, you might
+                        use host aggregates to partition an availability zone
+                        into groups of hosts that either share common resources,
+                        such as storage and network, or have a special property,
+                        such as trusted computing hardware.</para>
+                    <para>A common use of host aggregates is to provide
+                        information for use with the nova-scheduler. For
+                        example, you might use a host aggregate to group a set
+                        of hosts that share specific flavors or images.</para>
+                    <para>The general case for this is setting key value pairs
+                        in the aggregate metadata and matching key value pairs
+                        in instance type extra specs. The
+                        <parameter>AggregateInstanceExtraSpecsFilter</parameter> in the filter
+                        scheduler will enforce that instances will only be
+                        scheduled on hosts in aggregates that define the same
+                        key to the same value.</para>
+                    <para>An advanced use of this general concept allows
+                        different instance types to run with different CPU and
+                        RAM allocation rations so that high intensity computing
+                        loads and low intensity development and testing systems
+                        can share the same cloud without either starving the
+                        high use systems or wasting resources on low utilization
+                        systems. This works by setting
+                            <parameter>metadata</parameter> in your host
+                        aggregates and matching
+                            <parameter>extra_specs</parameter> in your instance
+                        types.</para>
+                    <para>The first step is setting the aggregate metadata keys
+                            <parameter>cpu_allocation_ratio</parameter> and
+                            <parameter>ram_allocation_ration</parameter> to a
+                        floating point value. The filter schedulers
+                            <parameter>AggregateCoreFilter</parameter> and
+                            <parameter>AggregateRamFilter</parameter> will use
+                        those values rather than the global defaults in
+                            <filename>nova.conf</filename> when scheduling to
+                        hosts in the aggregate. It is important to be cautious
+                        when using this feature since each host can be in multiple
+                        aggregates but should only have one allocation ratio for
+                        each resources. It is left up to you to avoid
+                        putting a host in multiple aggregates that define
+                        different values for the same resource.</para>
+                    <para>This is the first half of the equation. To get
+                        instance types that are guaranteed a particular ratio
+                        you must set the <parameter>extra_specs</parameter> in
+                        the instance type to the key value pair you want to
+                        match in the aggregate. For example if you define extra
+                        specs <parameter>cpu_allocation_ratio</parameter> to
+                        '1.0' then instances of that type will only run in
+                        aggregates where the metadata key
+                            <parameter>cpu_allocation_ratio</parameter> is also
+                        defined as '1.0'. In practice it is better to define an
+                        additional key value pair in the aggregate metadata to
+                        match on rather than match directly on
+                            <parameter>cpu_allocation_ratio</parameter> or
+                            <parameter>core_allocation_ratio</parameter>. This
+                        allows better abstraction. For example, defining a key
+                            <parameter>overcommit</parameter> and setting value
+                        of 'high', 'medium', and 'low' you could then tune the
+                        numeric allocation ratios in the aggregates without also
+                        needing to change all instance types relating to
+                        them.</para>
+                </listitem>
+            </itemizedlist>
             <note><para>Previously, all services had an availability zone. Currently,
                     only the nova-compute service has its own
                     availability zone. Services such as
