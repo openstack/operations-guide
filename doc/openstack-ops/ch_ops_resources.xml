@@ -22,6 +22,21 @@
         (http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html)</para>
     <para>
         <link
+            xlink:href="http://docs.openstack.org/havana/install-guide/install/apt-debian/content/"
+            >OpenStack Install Guide - Debian</link>
+        (http://docs.openstack.org/havana/install-guide/install/apt-debian/content/)</para>
+    <para>
+        <link
+            xlink:href="http://docs.openstack.org/havana/install-guide/install/yum/content/"
+            >OpenStack Install Guide - Fedora, CentOS, Red Hat Enterprise Linux</link>
+        (http://docs.openstack.org/havana/install-guide/install/yum/content/)</para>
+    <para>
+        <link
+            xlink:href="http://docs.openstack.org/havana/install-guide/install/zypper/content/"
+            >OpenStack Install Guide - openSUSE, SUSE Linux Enterprise Server</link>
+        (http://docs.openstack.org/havana/install-guide/install/zypper/content/)</para>
+    <para>
+        <link
             xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/"
             >OpenStack Install Guide - Ubuntu</link>
         (http://docs.openstack.org/havana/install-guide/install/apt/content/)</para>

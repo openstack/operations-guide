@@ -676,7 +676,8 @@ Optional snapshot description. (Default=None)</programlisting>
                     xlink:href="https://help.ubuntu.com/community/CloudInit"
                     >cloudinit</link>
                 (https://help.ubuntu.com/community/CloudInit) is an
-                open source package from Ubuntu that handles early
+                open source package from Ubuntu, but available in
+                most distributions that handles early
                 initialization of a cloud instance that makes use of
                 this user data.</para>
             <para>This user-data can be put in a file on your local

@@ -19,7 +19,7 @@
 
     <section xml:id="where_are_logs">
         <title>Where Are the Logs?</title>
-        <para>On Ubuntu, most services use the convention of writing
+        <para>Most services use the convention of writing
             their log files to subdirectories of the <code>/var/log
                 directory</code>.</para>
             <informaltable rules="all">

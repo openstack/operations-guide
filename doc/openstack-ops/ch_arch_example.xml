@@ -332,8 +332,9 @@
                         linkend="maintenance"/>).</para>
             </listitem>
             <listitem>
-                <para>Add an OpenStack Storage service
-                    (http://docs.openstack.org/havana/install-guide/install/apt/content/ch_swift.html)</para>
+                <para>Add an OpenStack Storage service (see the Object Storage
+                chapter in the <citetitle>OpenStack Installation
+                Guide</citetitle> for your distribution.</para>
             </listitem>
             <listitem>
                 <para>Add additional OpenStack Block Storage hosts

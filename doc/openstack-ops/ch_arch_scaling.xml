@@ -430,9 +430,7 @@
                 hardware environment so you can host a cloud that
                 users may treat as unstable and volatile.</para>
             <para>OpenStack can be deployed on any hardware supported
-                by an OpenStack-compatible Linux distribution, such as
-                Ubuntu 12.04 as used in this books' reference
-                architecture.</para>
+                by an OpenStack-compatible Linux distribution.</para>
             <para>Hardware does not have to be consistent, but should
                 at least have the same type of CPU to support instance
                 migration.</para>
