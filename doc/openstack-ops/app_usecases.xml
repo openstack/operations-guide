@@ -82,33 +82,76 @@
             and Artificial Intelligence Lab.</para>
         <section xml:id="mit_csail_deploy">
             <title>Deployment</title>
-            <!--FIXME - update numbers and release information for 2013 -->
             <para>The CSAIL cloud is currently 64 physical nodes with
-                a total of 768 physical cores and 3,456 GB of RAM.
-                Persistent data storage is largely outside of the
-                cloud on NFS with cloud resources focused on compute
-                resources. There are 65 users in 23 projects with
-                typical capacity utilization nearing 90% we are
-                looking to expand.</para>
-            <para>The software stack is Ubuntu 12.04 LTS with
-                OpenStack Folsom from the Ubuntu Cloud Archive. KVM is
-                the hypervisor, deployed using
-                <link xlink:href="http://fai-project.org">FAI</link>
-                (http://fai-project.org/)
-                and Puppet for configuration
-                management. The FAI and Puppet combination is used lab
-                wide, not only for OpenStack. There is a single cloud
-                controller node, with the remainder of the server
-                hardware dedicated to compute nodes. Due to the
-                compute intensive nature of the use case, the ratio of
-                physical CPU and RAM to virtual is 1:1 in nova.conf.
-                Although hyper-threading is enabled so, given the way
-                Linux counts CPUs, this is actually 2:1 in
-                practice.</para>
-            <para>On the network side, physical systems have two
-                network interfaces and a separate management card for
-                IPMI management. The OpenStack network service uses
-                multi-host networking and the FlatDHCP.</para>
+            a total of 768 physical cores and 3,456 GB of RAM.
+            Persistent data storage is largely outside of the cloud on
+            NFS with cloud resources focused on compute
+            resources. There are more than 130 users in more than 40
+            projects with typically running 2,000 - 2,500 vCPUs in 300
+            to 400 instances.</para>
+            <para>We initially deployed on Ubuntu 12.04 with the Essex
+            release of OpenStack using FlatDHCP multi host
+            networking.</para>
+            <para>The software stack is still Ubuntu 12.04 LTS but now
+            with OpenStack Havana from the Ubuntu Cloud Archive. KVM
+            is the hypervisor, deployed using <link
+            xlink:href="http://fai-project.org">FAI</link>
+            (http://fai-project.org/) and Puppet for configuration
+            management. The FAI and Puppet combination is used lab
+            wide, not only for OpenStack. There is a single cloud
+            controller node, which also acts as network controller,
+            the remainder of the server hardware dedicated to compute
+            nodes.</para>
+            <para>Host aggregates and instance type extra specs are
+            used to provide two different resource allocation
+            ratios. The default resource allocation ratios we use are
+            4:1 CPU and 1.5:1 RAM. Compute intensive workload use
+            instance types that require non-oversubscribed hosts where
+            cpu_ratio and ram_ration are both set to 1.0.  Since we
+            have HyperThreading enabled on our compute nodes this
+            provides one vCPU per CPU thread, or two vCPU per
+            physical core.</para>
+            <para>With our upgrade to Grizzly in August 2013 we moved
+            to OpenStack Networking Service, Neutron (Quantum at the
+            time). Compute nodes have two gigabit network interfaces
+            and a separate management card for IPMI management. One
+            network interface is used for node to node
+            communications. The other is used as a trunk port for
+            OpenStack managed VLANs. The controller node uses two
+            bonded 10g network interfaces for it's public IP
+            communications. Big pipes are used here because images are
+            served over this port and it is also used to connect to
+            iSCSI storage backending the image storage and
+            database. The controller node also has a gigabit interface
+            that is used in trunk mode for OpenStack managed VLAN
+            traffic, this port handles traffic to the dhcp-agent and
+            metadata-proxy.</para>
+            <para>We approximate the older nova-networking multi-host
+            HA setup by using 'provider vlan networks' that connect
+            instances directly to existing publicly addressable
+            networks and use existing physical routers as their
+            default gateway.  This means that if our network
+            controller goes down running instances will still have
+            their network available and no single Linux host becomes a
+            traffic bottleneck. We are able to to this because we have
+            a sufficient supply of IPv4 addresses to cover all of our
+            instances and thus don't need NAT and don't use floating
+            IP address.  We provide a single generic public network to
+            all projects and additional existing VLANs on a project by
+            project basis as needed.  Individual projects are also
+            allowed to create their own private GRE based
+            networks.</para>
+        </section>
+        <section xml:id="CSAIL_resources">
+            <title>Resources</title>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <link xlink:href="http://www.csail.mit.edu"
+                            >CSAIL Homepage</link>
+                        (http://www.csail.mit.edu)</para>
+                </listitem>
+            </itemizedlist>
         </section>
     </section>
 
