@@ -98,8 +98,9 @@
                     <xincludeSupported>true</xincludeSupported>
                     <sourceDirectory>.</sourceDirectory>
                     <includes>bk_ops_guide.xml </includes>
-                    <profileSecurity>reviewer</profileSecurity>
                     <branding>openstack</branding>
+                    <glossaryCollection>glossary-terms.xml</glossaryCollection>
+                    <canonicalUrlBase>http://docs.openstack.org/${release.path.name}/openstack-ops/content/</canonicalUrlBase>
                 </configuration>
             </plugin>
         </plugins>
