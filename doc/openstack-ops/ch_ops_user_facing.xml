@@ -143,7 +143,7 @@
 
         <para>Virtual hardware templates are called "flavors" in OpenStack, defining sizes for RAM,
             disk, number of cores, and so on. The default install provides five flavors. These are
-            configurable by admin users (this too is configurable and may be delegated by redefining
+            configurable by admin users (the rights may also be be delegated to other users by redefining
             the access controls for <code>compute_extension:flavormanage</code> in
                 <code>/etc/nova/policy.json</code> on the <code>nova-api</code> server). To get the
             list of available flavors on your system, run:</para>
@@ -163,7 +163,13 @@
             <programlisting language="bash"><?db-font-size 75%?><prompt>$</prompt> nova help | grep flavor</programlisting>
         </para>
         <?hard-pagebreak?>
-        <para>Flavors define a number of elements:</para>
+        <para>Flavors define a number of parameters, resulting in the
+        user having a choice of what type of virtual machine to run - just
+        like they would have if they were purchasing a physical server.
+        The following table contains the elements that can be set. Note
+        in particular <literal>extra_specs</literal> which can be used to
+        define free-form characteristics, giving a lot of flexibility beyond
+        just size of RAM, CPU and Disk.</para>
         <informaltable rules="all">
             <col width="25%"/>
             <col width="75%"/>
@@ -746,24 +752,30 @@ Optional snapshot description. (Default=None)</programlisting>
     </section>
     <section xml:id="floating_ips">
         <title>Floating IPs</title>
-        <para>Projects have a quota controlled number of Floating IPs,
-            however these need to be allocated by a user before they
-            are available for use. To allocate a Floating IP to a
-            project there is an "Allocate IP to Project" button on the
-            "Access &amp; Security" page of the dashboard or on the
-            command line by using:</para>
-        <programlisting><prompt>$</prompt> nova floating-ip-create</programlisting>
+        <para>Where Floating IPs are configured in a deployment,
+            each project will have a limited number of Floating IPs
+            controlled by a quota. However, these need to
+            be allocated to the project from the central pool prior
+            to their use - usually by the administrator of the project.
+            To allocate a Floating IP to a project there is an
+            <guibutton>Allocate IP to Project</guibutton> button on the
+            "Access &amp; Security" page of the dashboard. The command
+            line can also be used:</para>
+        <programlisting><prompt>$</prompt>nova floating-ip-create</programlisting>
 
-        <para>Once allocated, Floating IP can be assigned to running
+        <para>Once allocated, a Floating IP can be assigned to running
             instances from the Dashboard either by selecting the
-            "Associate Floating IP" from the actions drop down next to
-            the IP on the "Access &amp; Security" page or the same
+            <guibutton>Associate Floating IP</guibutton> from the actions drop down next to
+            the IP on the <guilabel>Access &amp; Security</guilabel> page or the same
             action next to the instance you wish to associate it with
-            on the "Instances" page. The inverse action, "Dissociate
-            Floating IP", is only available from the "Access &amp;
-            Security" page and not from the Instances page.</para>
-        <para>From the command line, enter the following command to
-            complete these tasks:</para>
+            on the <guilabel>Instances</guilabel> page. The inverse action,
+            <guibutton>Dissociate Floating IP</guibutton>, is only available from the
+            <guilabel>Access &amp;
+            Security</guilabel> page and not from the
+            <guilabel>Instances</guilabel> page.</para>
+        <para>To associate or disassociate a Floating IP to a server
+            from the command line, use the following commands:
+        </para>
         <programlisting><prompt>$</prompt> nova add-floating-ip &lt;server&gt; &lt;address&gt;</programlisting>
         <programlisting><prompt>$</prompt> nova remove-floating-ip &lt;server&gt; &lt;address&gt;</programlisting>
 
@@ -1055,27 +1067,29 @@ Optional snapshot description. (Default=None)</programlisting>
             related to both running and deleted instances. It has a
             bewildering array of fields, for an exhaustive list look
             at the database. These are the most useful fields for
-            operators looking to form queries.</para>
-        <para>The "deleted" field is set to "1" if the instance has
+            operators looking to form queries:</para>
+        <itemizedlist>
+        <listitem><para>The "deleted" field is set to "1" if the instance has
             been deleted and NULL if it has not been deleted this
             important for excluding deleted instances from your
-            queries.</para>
-        <para>The "uuid" field is the UUID of the instance and is used
+            queries.</para></listitem>
+        <listitem><para>The "uuid" field is the UUID of the instance and is used
             through out other tables in the database as a foreign key.
             This id is also reported in logs, the dashboard and
             command line tools to uniquely identify an
-            instance.</para>
-        <para>A collection of foreign keys are available to find
+            instance.</para></listitem>
+        <listitem><para>A collection of foreign keys are available to find
             relations to the instance. The most useful of these are
             "user_id" and "project_id" are the UUIDs of the user who
             launched the instance and the project it was launched
-            in.</para>
-        <para>The "host" field tells which compute node is hosting the
-            instance.</para>
-        <para>The "hostname" field holds the name of the instance when
+            in.</para></listitem>
+        <listitem><para>The "host" field tells which compute node is hosting the
+            instance.</para></listitem>
+        <listitem><para>The "hostname" field holds the name of the instance when
             it is launched. The "display-name" is initially the same
             as hostname but can be reset using the nova rename
-            command.</para>
+            command.</para></listitem>
+        </itemizedlist>
         <para>A number of time related fields are useful for tracking
             when state changes happened on an instance:</para>
         <itemizedlist role="compact">
@@ -1098,5 +1112,18 @@ Optional snapshot description. (Default=None)</programlisting>
                 <para>terminated_at</para>
             </listitem>
         </itemizedlist>
+    </section>
+    <section xml:id="user-facing-outro">
+        <title>Good Luck!</title>
+        <para>This section was intended as a brief introduction to
+        some of the more useful of OpenStack's thousand commands. For
+        an exhaustive list please refer to the <link
+        xlink:href="http://docs.openstack.org/user-guide-admin/content/">Admin User
+        Guide</link>, and for additional hints and tips please see
+        the <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">Cloud Admin Guide</link>.
+        We hope your users
+        remain happy and recognise your hard work! (For hard work, turn
+        the page to the next chapter where we discuss the system-facing
+        operations: Maintenance, Failures and Debugging.)</para>
     </section>
 </chapter>
