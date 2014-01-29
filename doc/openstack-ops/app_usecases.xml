@@ -175,7 +175,7 @@
                 that is in charge of central authentication and
                 quotas. This is done through custom scripts and light
                 modifications to OpenStack. DAIR is currently running
-                Folsom.</para>
+                Grizzly.</para>
             <para>For Object Storage, each region has a Swift
                 environment.</para>
             <para>A NetApp appliance is used in each region for both
