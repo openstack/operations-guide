@@ -131,15 +131,15 @@
                 and data loss.</para></section>
             <section xml:id="adv-config-ipv6">
                   <title>Enabling IPv6 Support</title>
-                  <para>The Havana release with OpenStack Networking (Neutron) does not offer complete support of
-                        IPv6 IP addresses due to known issues with Open vSwitch
-                        and dnsmasq, as documented in this white paper (<link
-                              xlink:href="http://www.nephos6.com/pdf/OpenStack-Havana-on-IPv6.pdf"
-                              >http://www.nephos6.com/pdf/OpenStack-Havana-on-IPv6.pdf</link>).
-                        Their support definition includes both setting up the
-                        infrastructure nodes to communicate by IPv6 and enabling
-                        virtual machines to be assigned IPv6 IP addresses and
-                        gain connectivity to networks.</para>
+                  <para>The Havana release with OpenStack Networking
+                        (Neutron) does not offer complete support of
+                        IPv6. Better support is planned for the
+                        Icehouse release. You can follow along the
+                        progress being made by watching the Neutron
+                        IPv6 Subteam at work (<link
+                              xlink:href="https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam"
+                              >https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam</link>).
+                  </para>
                   <para>By modifying your configuration setup you can set up
                         IPv6 when using nova-network for networking and a tested
                         setup is documented for FlatDHCP and a multi-host
