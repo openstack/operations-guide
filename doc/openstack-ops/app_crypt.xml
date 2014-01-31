@@ -511,6 +511,73 @@ adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
             a permanent resolution, but we look forward to the
             discussion at the next summit.</para>
     </section>
+    <section xml:id="haunted">
+        <title>Havana Haunted by the Dead</title>
+        <para>Felix Lee of Academia Sinica Grid Computing Centre in Taiwan
+            contributed this story.</para>
+        <para>I just upgraded OpenStack from Grizzly to Havana 2013.2-2 using
+            the RDO repository and everything was running pretty well
+            -- except the EC2 API.</para>
+        <para>I noticed that the API would suffer from a heavy load and
+            respond slowly to particular EC2 requests such as
+            <literal>RunInstances</literal>.</para>
+        <para>Output from <filename>/var/log/nova/nova-api.log</filename> on
+            Havana:</para>
+        <screen><computeroutput>2014-01-10 09:11:45.072 129745 INFO nova.ec2.wsgi.server
+[req-84d16d16-3808-426b-b7af-3b90a11b83b0
+0c6e7dba03c24c6a9bce299747499e8a 7052bd6714e7460caeb16242e68124f9]
+117.103.103.29 "GET
+/services/Cloud?AWSAccessKeyId=[something]&amp;Action=RunInstances&amp;ClientToken=[something]&amp;ImageId=ami-00000001&amp;InstanceInitiatedShutdownBehavior=terminate...
+HTTP/1.1" status: 200 len: 1109 time: 138.5970151
+</computeroutput></screen>
+        <para>This request took over two minutes to process, but executed
+            quickly on another co-existing Grizzly deployment using the same
+            hardware and system configuration.</para>
+        <para>Output from <filename>/var/log/nova/nova-api.log</filename> on
+            Grizzly:</para>
+        <screen><computeroutput>2014-01-08 11:15:15.704 INFO nova.ec2.wsgi.server
+[req-ccac9790-3357-4aa8-84bd-cdaab1aa394e
+ebbd729575cb404081a45c9ada0849b7 8175953c209044358ab5e0ec19d52c37]
+117.103.103.29 "GET
+/services/Cloud?AWSAccessKeyId=[something]&amp;Action=RunInstances&amp;ClientToken=[something]&amp;ImageId=ami-00000007&amp;InstanceInitiatedShutdownBehavior=terminate...
+HTTP/1.1" status: 200 len: 931 time: 3.9426181
+</computeroutput></screen>
+        <para>While monitoring system resources, I noticed
+            a significant increase in memory consumption while the EC2 API
+            processed this request. I thought it wasn't handling memory
+            properly -- possibly not releasing memory. If the API received
+            several of these requests, memory consumption quickly grew until
+            the system ran out of RAM and began using swap. Each node has
+            48 GB of RAM and the "nova-api" process would consume all of it
+            within minutes. Once this happened, the entire system would become
+            unusably slow until I restarted the
+            <systemitem class="service">nova-api</systemitem> service.</para>
+        <para>So, I found myself wondering what changed in the EC2 API on
+            Havana that might cause this to happen. Was it a bug or a normal
+            behavior that I now need to work around?</para>
+        <para>After digging into the Nova code, I noticed two areas in
+            <filename>api/ec2/cloud.py</filename> potentially impacting my
+            system:</para>
+        <programlisting language="python">
+        instances = self.compute_api.get_all(context,
+                                             search_opts=search_opts,
+                                             sort_dir='asc')
+
+        sys_metas = self.compute_api.get_all_system_metadata(
+            context, search_filts=[{'key': ['EC2_client_token']},
+                                   {'value': [client_token]}])
+</programlisting>
+        <para>Since my database contained many records -- over 1 million
+            metadata records and over 300,000 instance records in "deleted"
+            or "errored" states -- each search took ages. I decided to clean
+            up the database by first archiving a copy for backup and then
+            performing some deletions using the MySQL client. For example, I
+            ran the following SQL command to remove rows of instances deleted
+            for over a year:</para>
+            <screen><prompt>mysql></prompt> <userinput>delete from nova.instances where deleted=1 and terminated_at &lt; (NOW() - INTERVAL 1 YEAR);</userinput></screen>
+        <para>Performance increased greatly after deleting the old records and
+            my new deployment continues to behave well.</para>
+    </section>
 </appendix>
 <!-- FIXME: Add more stories, especially more up-to-date ones -->
 <!-- STAUS: OK for Havana -->
