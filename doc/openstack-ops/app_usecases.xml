@@ -35,7 +35,7 @@
                 resource <glossterm>cell</glossterm>s in an OpenStack
                 Compute cells setup. Some sites span multiple data
                 centers, some use off compute node storage with a
-                shared file system and some use on compute node
+                shared file system and some use on compute node
                 storage with a non-shared file system. Each site
                 deploys the Image Service with an Object Storage
                 back-end. A central Identity Service, Dashboard and
@@ -121,7 +121,7 @@
             bonded 10g network interfaces for it's public IP
             communications. Big pipes are used here because images are
             served over this port and it is also used to connect to
-            iSCSI storage backending the image storage and
+            iSCSI storage back-ending the image storage and
             database. The controller node also has a gigabit interface
             that is used in trunk mode for OpenStack managed VLAN
             traffic, this port handles traffic to the dhcp-agent and
@@ -133,10 +133,10 @@
             default gateway.  This means that if our network
             controller goes down running instances will still have
             their network available and no single Linux host becomes a
-            traffic bottleneck. We are able to to this because we have
+            traffic bottleneck. We are able to do this because we have
             a sufficient supply of IPv4 addresses to cover all of our
             instances and thus don't need NAT and don't use floating
-            IP address.  We provide a single generic public network to
+            IP addresses.  We provide a single generic public network to
             all projects and additional existing VLANs on a project by
             project basis as needed.  Individual projects are also
             allowed to create their own private GRE based
@@ -168,7 +168,7 @@
             facilitate a faster time to market.</para>
         <section xml:id="dair_deploy">
             <title>Deployment</title>
-            <para>DAIR is hosted at two different data centres across
+            <para>DAIR is hosted at two different data centers across
                 Canada: one in Alberta and the other in Quebec. It
                 consists of a cloud controller at each location,
                 however, one is designated as the "master" controller
