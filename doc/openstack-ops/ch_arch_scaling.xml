@@ -12,11 +12,16 @@
     xml:id="scaling">
     <?dbhtml stop-chunking?>
     <title>Scaling</title>
-    <para>If your cloud is successful, eventually you must add
-        resources to meet the increasing demand. OpenStack is designed
+    <para>Where traditional applications required larger hardware to scale
+        ("vertical scaling"), cloud based applications typically request more,
+        discrete hardware ("horizontal scaling"). If your cloud is successful,
+        eventually you must add resources to meet the increasing demand.
+        To suit the cloud paradigm, OpenStack itself is designed
         to be horizontally scalable. Rather than switching to larger
-        servers, you procure more servers. Ideally, you scale out and
-        load balance among functionally-identical services.</para>
+        servers, you procure more servers and simply install identically
+        configured services. Ideally, you scale out and load balance among
+        groups of functionally-identical services (for example, "compute
+        nodes", "nova-api nodes"), which communicate on a message bus.</para>
     <section xml:id="starting">
         <title>The Starting Point</title>
         <para>Determining the scalability of your cloud and how to
@@ -26,10 +31,16 @@
             metrics.</para>
         <para>The starting point for most is the core count of your
             cloud. By applying some ratios, you can gather information
-            about the number of virtual machines (VMs) you expect to
-            run <code>((overcommit fraction × cores) / virtual cores
-                per instance)</code>, how much storage is required
+            about:
+           <itemizedlist>
+                <listitem><para>the number of virtual machines (VMs) you
+                  expect to run
+                <code>((overcommit fraction × cores) / virtual cores per instance)</code>,
+                </para></listitem>
+                <listitem><para>how much storage is required
                 <code>(flavor disk size × number of instances)</code>.
+                </para></listitem>
+            </itemizedlist>
             You can use these ratios to determine how much additional
             infrastructure you need to support your cloud.</para>
         <para>The default OpenStack flavors are:</para>
@@ -82,7 +93,7 @@
             </tbody>
         </informaltable>
         <?hard-pagebreak?>
-        <para>Assume that the following set-up supports (200 / 2) × 16
+        <para>The following set-up supports (200 / 2) × 16
             = 1600 VM instances and requires 80 TB of storage for
                 <code>/var/lib/nova/instances</code>:</para>
         <itemizedlist>
@@ -131,9 +142,10 @@
             performance (spindles/core), memory availability
             (RAM/core), network bandwidth (Gbps/core), and overall CPU
             performance (CPU/core).</para>
-        <para>For which metrics to track to determine how to scale
-            your cloud, see <xref linkend="logging_monitoring"/>.
-        </para>
+        <tip><para>For further discussion of metric tracking, including
+        how to extract metrics from your cloud, see
+        <xref linkend="logging_monitoring"/>.
+        </para></tip>
     </section>
     <?hard-pagebreak?>
     <section xml:id="add_controller_nodes">
@@ -181,8 +193,19 @@
             your cloud: <emphasis>cells</emphasis>,
                 <emphasis>regions</emphasis>,
                 <emphasis>zones</emphasis> and <emphasis>host
-                aggregates</emphasis>. Each method provides different
-            functionality, as described in the following table:</para>
+                aggregates</emphasis>.</para>
+        <para>Each method provides different functionality, and can be best
+            divided into two groups:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Cells and regions, which segregate an entire cloud and
+                    result in running separate Compute deployments.</para>
+            </listitem>
+            <listitem>
+                <para><glossterm>Availability zone</glossterm>s and host
+                    aggregates which merely divide a single Compute deployment.</para>
+            </listitem>
+        </itemizedlist>
         <informaltable rules="all">
             <thead>
                 <tr>
@@ -285,12 +308,7 @@
                 </tr>
             </tbody>
         </informaltable>
-        <para>This array of options can be best divided into two
-            — those which result in running separate nova deployments
-            (cells and regions), and those which merely divide a
-            single deployment (<glossterm>availability
-                zone</glossterm>s and host aggregates).</para>
-        <?hard-pagebreak?>
+       <?hard-pagebreak?>
         <section xml:id="cells_regions">
             <title>Cells and Regions</title>
             <para>OpenStack Compute cells are designed to allow
