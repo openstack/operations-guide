@@ -284,7 +284,7 @@ the Icehouse release and perhaps further afield.</para>
         and highly values feedback from real-world users of the software.
         By learning a little about the process that drives feature
         development, you can participate and perhaps get the additions
-        you desired.</para>
+        you desire.</para>
         <para>Feature requests typically start their life in Etherpad,
             a collaborative editing tool, which is used to take
             coordinating notes at a design summit session specific to
@@ -323,8 +323,8 @@ the Icehouse release and perhaps further afield.</para>
         well-regarded mechanism to influence the development roadmap: the
         user survey. Found at <link xlink:href="http://openstack.org/user-survey">
         http://openstack.org/user-survey</link>, it allows you to provide
-        details of your deployments and needs, anonymously by deafult.
-        Each cycle, the user committee analyses the results and produces a
+        details of your deployments and needs, anonymously by default.
+        Each cycle, the user committee analyzes the results and produces a
         report, including providing specific information to the technical
         committee and technical leads of the projects.</para>
     </section>
