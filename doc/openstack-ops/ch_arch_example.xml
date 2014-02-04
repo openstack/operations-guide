@@ -40,11 +40,12 @@
             <tbody>
                 <tr>
                     <td><para>OpenStack release</para></td>
-                    <td><para>Folsom</para></td>
+                    <td><para>Havana</para></td>
                 </tr>
                 <tr>
                     <td><para>Host operating system</para></td>
-                    <td><para>Ubuntu 12.04 LTS</para></td>
+                    <td><para>Ubuntu 12.04 LTS or Red Hat Enterprise Linux 6.5
+                        including derivatives such as CentOS and Scientific Linux</para></td>
                 </tr>
                 <tr>
                     <td><para>OpenStack package repository</para></td>
@@ -52,6 +53,8 @@
                                 xlink:href="https://wiki.ubuntu.com/ServerTeam/CloudArchive"
                                 >Ubuntu Cloud Archive</link>
                             (https://wiki.ubuntu.com/ServerTeam/CloudArchive)
+                            or <link xlink:href="http://openstack.redhat.com/Frequently_Asked_Questions">RDO</link>
+                            (http://openstack.redhat.com/Frequently_Asked_Questions)
                             *</para></td>
                 </tr>
                 <tr>
@@ -64,7 +67,8 @@
                 </tr>
                 <tr>
                     <td><para>Message queue</para></td>
-                    <td><para>RabbitMQ</para></td>
+                    <td><para>RabbitMQ for Ubuntu, Qpid for Red Hat Enterprise
+                            Linux and derivatives</para></td>
                 </tr>
                 <tr>
                     <td><para>Networking service</para></td>
@@ -138,134 +142,113 @@
 
     <section xml:id="rationale">
         <title>Rationale</title>
-        <para>This example architecture has been selected based on the
-            current default feature set of OpenStack
-                <glossterm>Folsom</glossterm>, with an emphasis on
-            stability. In particular, if none of the guide authors had
-            experience deploying the Folsom release of OpenStack with
-            a specific back-end or configuration, we did not consider
-            it for the example architecture. We believe that many
-            clouds that currently run OpenStack in production have
-            made similar choices.</para>
-        <para>You must first choose the operating system that runs on
-            all of the physical nodes. While OpenStack is supported on
-            several distributions of Linux, we used <emphasis
-                role="bold">Ubuntu 12.04 LTS (Long Term
-                Support)</emphasis>, which is used by the majority of
-            the development community, has feature completeness
-            compared with other distributions, and has clear future
-            support plans.</para>
-        <para>We recommend that you do not use the default Ubuntu
-            OpenStack install packages and instead use the <link
+        <para>This example architecture has been selected based on the current
+            default feature set of OpenStack <glossterm>Folsom</glossterm>, with
+            an emphasis on stability. We believe that many clouds that
+            currently run OpenStack in production have made similar
+            choices.</para>
+        <para>You must first choose the operating system that runs on all of the
+            physical nodes. While OpenStack is supported on several
+            distributions of Linux, we used <emphasis role="bold">Ubuntu 12.04
+                LTS (Long Term Support)</emphasis>, which is used by the
+            majority of the development community, has feature completeness
+            compared with other distributions, and has clear future support
+            plans.</para>
+        <para>We recommend that you do not use the default Ubuntu OpenStack
+            install packages and instead use the <link
                 xlink:href="https://wiki.ubuntu.com/ServerTeam/CloudArchive"
                 >Ubuntu Cloud Archive</link>
-            (https://wiki.ubuntu.com/ServerTeam/CloudArchive). The
-            Cloud Archive is a package repository supported by
-            Canonical that allows you to upgrade to future OpenStack
-            releases while remaining on Ubuntu 12.04.</para>
+            (https://wiki.ubuntu.com/ServerTeam/CloudArchive). The Cloud Archive
+            is a package repository supported by Canonical that allows you to
+            upgrade to future OpenStack releases while remaining on Ubuntu
+            12.04.</para>
         <para><emphasis role="bold">KVM</emphasis> as a
-                <glossterm>hypervisor</glossterm> complements the
-            choice of Ubuntu - being a matched pair in terms of
-            support, and also because of the significant degree of
-            attention it garners from the OpenStack development
-            community (including the authors, who mostly use KVM). It
-            is also feature complete, free from licensing charges and
+                <glossterm>hypervisor</glossterm> complements the choice of
+            Ubuntu - being a matched pair in terms of support, and also because
+            of the significant degree of attention it garners from the OpenStack
+            development community (including the authors, who mostly use KVM).
+            It is also feature complete, free from licensing charges and
             restrictions.</para>
-        <para><emphasis role="bold">MySQL</emphasis> follows a similar
-            trend. Despite its recent change of ownership, this
-            database is the most tested for use with OpenStack and is
-            heavily documented for running on Ubuntu. We deviate from
-            the default database, <emphasis>SQLite</emphasis>, because
-            SQLite is not an appropriate database for production
-            usage.</para>
-        <para>The choice of <emphasis role="bold"> RabbitMQ</emphasis>
-            over other AMQP compatible options that are gaining
-            support in OpenStack, such as ZeroMQ and Qpid is due to
-            its ease of use with Ubuntu and significant testing in
-            production. It also is the only option which supports
-            features such as Compute Cells. We recommend clustering
-            with RabbitMQ, as it is an integral component of the
-            system, and fairly simple to implement due to its inbuilt
-            nature.</para>
-        <para>As discussed in previous chapters, there are several
-            options for networking in OpenStack Compute. We recommend
-                <emphasis role="bold">FlatDHCP</emphasis> and to use
-                <emphasis role="bold">Multi-Host</emphasis> networking
-            mode for high availability, running one
-                <code>nova-network</code> daemon per OpenStack Compute
-            host. This provides a robust mechanism for ensuring
-            network interruptions are isolated to individual compute
-            hosts, and allows for the direct use of hardware network
-            gateways.</para>
-        <para><emphasis role="bold">Live Migration</emphasis> is
-            supported by way of shared storage, with <emphasis
-                role="bold">NFS</emphasis> as the distributed file
-            system.</para>
-        <para>Acknowledging that many small-scale deployments see
-            running an Object Storage service just for the storage of
-            virtual machine images as too costly, we opted for the
-            file back-end in the OpenStack Image Catalog and Delivery
-            Service (Glance). If the cloud you are designing also
-            intends to run Object Storage, it is trivial to enable
-            this as the back-end instead, and a recommended
+        <para><emphasis role="bold">MySQL</emphasis> follows a similar trend.
+            Despite its recent change of ownership, this database is the most
+            tested for use with OpenStack and is heavily documented. We deviate
+            from the default database, <emphasis>SQLite</emphasis>, because
+            SQLite is not an appropriate database for production usage.</para>
+        <para>The choice of <emphasis role="bold"> RabbitMQ</emphasis> over
+            other AMQP compatible options that are gaining support in OpenStack,
+            such as ZeroMQ and Qpid is due to its ease of use and
+            significant testing in production. It also is the only option which
+            supports features such as Compute cells. We recommend clustering
+            with RabbitMQ, as it is an integral component of the system, and
+            fairly simple to implement due to its inbuilt nature.</para>
+        <para>As discussed in previous chapters, there are several options for
+            networking in OpenStack Compute. We recommend <emphasis role="bold"
+                >FlatDHCP</emphasis> and to use <emphasis role="bold"
+                >Multi-Host</emphasis> networking mode for high availability,
+            running one <code>nova-network</code> daemon per OpenStack Compute
+            host. This provides a robust mechanism for ensuring network
+            interruptions are isolated to individual compute hosts, and allows
+            for the direct use of hardware network gateways.</para>
+        <para><emphasis role="bold">Live Migration</emphasis> is supported by
+            way of shared storage, with <emphasis role="bold">NFS</emphasis> as
+            the distributed file system.</para>
+        <para>Acknowledging that many small-scale deployments see running an
+            Object Storage service just for the storage of virtual machine
+            images as too costly, we opted for the file back-end in the
+            OpenStack Image Catalog and Delivery Service (Glance). If the cloud
+            you are designing also intends to run Object Storage, it is trivial
+            to enable this as the back-end instead, and a recommended
             approach.</para>
-
-        <para>We chose the <emphasis role="bold">SQL back-end for
-                Identity Service (keystone)</emphasis> over others,
-            such as LDAP. This back-end is simple to install and is
-            robust. The authors acknowledge that many installations
-            want to bind with existing directory services, and caution
-            careful understanding of the <link
+        <para>We chose the <emphasis role="bold">SQL back-end for Identity
+                Service (keystone)</emphasis> over others, such as LDAP. This
+            back-end is simple to install and is robust. The authors acknowledge
+            that many installations want to bind with existing directory
+            services, and caution careful understanding of the <link
                 xlink:title="LDAP config options"
                 xlink:href="http://docs.openstack.org/trunk/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend"
                 >array of options available</link>
             (http://docs.openstack.org/trunk/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend)</para>
-        <para>The Block Storage service (cinder) is installed natively
-            on external storage nodes and uses the <emphasis
-                role="bold">LVM/iSCSI plugin</emphasis>. Most Block
-            Storage Service plugins are tied to particular vendor
-            products and implementations limiting their use to
-            consumers of those hardware platforms, but LVM/iSCSI is
-            robust and stable on commodity hardware.</para>
-        <para>While the cloud can be run without the <emphasis
-                role="bold">OpenStack Dashboard</emphasis>, we
-            consider it to be indispensable, not just for user
-            interaction with the cloud, but also as a tool for
-            operators. Additionally, the dashboard's use of Django
-            makes it a flexible framework for extension.</para>
+        <para>The Block Storage service (cinder) is installed natively on
+            external storage nodes and uses the <emphasis role="bold">LVM/iSCSI
+                plugin</emphasis>. Most Block Storage Service plugins are tied
+            to particular vendor products and implementations limiting their use
+            to consumers of those hardware platforms, but LVM/iSCSI is robust
+            and stable on commodity hardware.</para>
+        <para>While the cloud can be run without the <emphasis role="bold"
+                >OpenStack Dashboard</emphasis>, we consider it to be
+            indispensable, not just for user interaction with the cloud, but
+            also as a tool for operators. Additionally, the dashboard's use of
+            Django makes it a flexible framework for extension.</para>
 
         <section xml:id="neutron">
-            <title>Why Not Use the OpenStack Network Service
-                (neutron)?</title>
-            <para>We do not discuss the OpenStack Network Service
-                (neutron) in this guide, because the authors of this
-                guide only have production deployment experience using
-                    <code>nova-network</code>. Additionally, it does
-                not yet support multi-host networking.</para>
+            <title>Why Not Use the OpenStack Network Service (neutron)?</title>
+            <para>We do not discuss the OpenStack Network Service (neutron) in
+                this guide, because the authors of this guide only have
+                production deployment experience using
+                <code>nova-network</code>. Additionally, it does not yet support
+                multi-host networking.</para>
         </section>
         <section xml:id="multi-host-networking">
             <title>Why Use Multi-host Networking?</title>
             <para>In a default OpenStack deployment, there is a single
-                    <code>nova-network</code> service that runs within
-                the cloud (usually on the cloud controller) that
-                provides services such as network address translation
-                (NAT), DHCP, and DNS to the guest instances. If the
-                single node that runs the <code>nova-network</code>
-                service goes down, you cannot access your instances
-                and the instances cannot access the Internet. The
-                single node that runs the nova-network service can
-                become a bottleneck if excessive network traffic comes
-                in and goes out of the cloud.</para>
+                    <code>nova-network</code> service that runs within the cloud
+                (usually on the cloud controller) that provides services such as
+                network address translation (NAT), DHCP, and DNS to the guest
+                instances. If the single node that runs the
+                    <code>nova-network</code> service goes down, you cannot
+                access your instances and the instances cannot access the
+                Internet. The single node that runs the nova-network service can
+                become a bottleneck if excessive network traffic comes in and
+                goes out of the cloud.</para>
             <para>
                 <!-- FIXME - need to find the place for multu-host in havana -->
                 <link xlink:title="Multi-host"
                     xlink:href="http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906"
                     >Multi-host</link>
                 (http://docs.openstack.org/folsom/openstack-compute/admin/content/existing-ha-networking-options.html#d6e8906)
-                is a high-availability option for the network
-                configuration where the nova-network service is run on
-                every compute node instead of running on only a single
-                node.</para>
+                is a high-availability option for the network configuration
+                where the nova-network service is run on every compute node
+                instead of running on only a single node.</para>
         </section>
     </section>
 
