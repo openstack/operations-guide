@@ -12,6 +12,7 @@
 # Build directories
 target/
 publish-docs/
+generated/
 
 # Editors
 *~
