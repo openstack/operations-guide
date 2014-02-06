@@ -170,10 +170,10 @@
                                             services which all other components in the environment talk
                                             to.</para></listitem>
                                 <listitem>
-                                        <para>Run a number of services in a highly available fashion,
-                                            utilising Packemaker and HAProxy to provide a virtual IP and
-                                            load-balancing functions so all controller nodes are being
-                                            used.</para></listitem>
+                                        <para>Run a number of services in a highly available
+                                            fashion, utilising Pacemaker and HAProxy to provide a
+                                            virtual IP and load-balancing functions so all
+                                            controller nodes are being used.</para></listitem>
                                 <listitem>
                                         <para>Supply highly available "infrastructure" services as MySQL and
                                             Qpid which underpin all the services.</para></listitem>
@@ -501,12 +501,11 @@
                         <td>GlusterFS</td>
                         <td><systemitem>glusterfs</systemitem> performance profile "virt" enabled on
                             all volumes. Volumes are setup in 2-node replication.</td>
-                        <td>Glusterfs is a clustered file system that is run on the storage
-                            nodes to provide persistent scalable data storage the the environment.
-                            Because all connections to gluster use the
-                                <systemitem>gluster</systemitem> native mount points, the
-                                <systemitem>gluster</systemitem> instances themselves provide
-                            availability and failover functionality.</td>
+                        <td>Glusterfs is a clustered file system that is run on the storage nodes to
+                            provide persistent scalable data storage in the environment. Because all
+                            connections to gluster use the <systemitem>gluster</systemitem> native
+                            mount points, the <systemitem>gluster</systemitem> instances themselves
+                            provide availability and failover functionality.</td>
                         <td>The scalability of GlusterFS storage can be achieved by adding in more
                             storage volumes.</td>
                     </tr>

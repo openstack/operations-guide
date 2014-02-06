@@ -275,7 +275,6 @@ the Icehouse release and perhaps further afield.</para>
             Rough-draft design discussions ("etherpads"), from the last design summit</link></para></listitem>
             <listitem><para><link xlink:href="http://review.openstack.org">List of individual code
             changes under review</link></para></listitem>
-            <listitem><para></para></listitem>
         </itemizedlist>
     </section>
     <section xml:id="roadmap-influencing">

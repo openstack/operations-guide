@@ -142,8 +142,8 @@
 
         <para>Virtual hardware templates are called "flavors" in OpenStack, defining sizes for RAM,
             disk, number of cores, and so on. The default install provides five flavors. These are
-            configurable by admin users (the rights may also be be delegated to other users by redefining
-            the access controls for <code>compute_extension:flavormanage</code> in
+            configurable by admin users (the rights may also be delegated to other users by
+            redefining the access controls for <code>compute_extension:flavormanage</code> in
                 <code>/etc/nova/policy.json</code> on the <code>nova-api</code> server). To get the
             list of available flavors on your system, run:</para>
             <programlisting><?db-font-size 65%?>$ nova flavor-list</programlisting>
@@ -448,15 +448,12 @@ $ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
             removed with secgroup-delete.</para>
         <para>To create security group rules for a cluster of
             instances:</para>
-        <para>SourceGroups are a special dynamic way of defining the
-            CIDR of allowed sources. The user specifies a SourceGroup
-            (Security Group name), all the users' other Instances
-            using the specified SourceGroup are selected dynamically.
-            This alleviates the need for a individual rules to allow
-            each new member of the cluster.usage:</para>
-        <para>usage: nova secgroup-add-group-rule &lt;secgroup&gt;
-            &lt;source-group&gt; &lt;ip-proto&gt; &lt;from-port&gt;
-            &lt;to-port&gt; </para>
+        <para>SourceGroups are a special dynamic way of defining the CIDR of allowed sources. The
+            user specifies a SourceGroup (Security Group name), all the users' other Instances using
+            the specified SourceGroup are selected dynamically. This alleviates the need for a
+            individual rules to allow each new member of the cluster.</para>
+        <para>Example usage: nova secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt;
+            &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt; </para>
         <programlisting><prompt>$</prompt> nova secgroup-add-group-rule cluster global-http tcp 22 22</programlisting>
         <para>The "cluster" rule allows ssh access from any other
             instance that uses the "global-http" group.</para>

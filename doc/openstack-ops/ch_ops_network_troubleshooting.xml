@@ -919,14 +919,12 @@ qdhcp-fe178706-9942-4600-9224-b2ae7c61db71
 qdhcp-0a1d0a27-cffa-4de3-92c5-9d3fd3f2e74d
 qrouter-0a1d0a27-cffa-4de3-92c5-9d3fd3f2e74d
       </computeroutput></screen>
-      <para>L3-agent router namespaces are named
-      qrouter-&lt;net_uuid&gt;, and dhcp-agent name spaces are named
-      qdhcp-&lt;net_uuid&gt;. This output shows a network node with
-      four networks running dhcp-agents, one of which is also running
-      running an l3-agent router. It's important to know which network
-      you need to be working in. A list of existing networks and their
-      UUIDs can be obtained buy running <command>neutron
-      net-list</command> with administrative credentials.</para>
+      <para>L3-agent router namespaces are named qrouter-&lt;net_uuid&gt;, and dhcp-agent name
+            spaces are named qdhcp-&lt;net_uuid&gt;. This output shows a network node with four
+            networks running dhcp-agents, one of which is also running an l3-agent router. It's
+            important to know which network you need to be working in. A list of existing networks
+            and their UUIDs can be obtained buy running <command>neutron net-list</command> with
+            administrative credentials.</para>
       <para>Once you've determined which namespace you need to work in,
       you can use any of the debugging tools mention above by prefixing
       the command with <command>ip netns exec
