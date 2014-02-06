@@ -51,5 +51,6 @@
     <xi:include href="ch_ops_customize.xml"/>
     <xi:include href="ch_ops_upstream.xml"/>
     <xi:include href="ch_ops_advanced_configuration.xml"/>
+    <xi:include href="ch_ops_upgrades.xml"/>
 
 </part>
