@@ -77,7 +77,7 @@
             <?dbhtml stop-chunking?>
             <title>Total Cloud Controller Failure</title>
             <para>Unfortunately, this is a rough situation. The cloud
-                controller is a integral part of your cloud. If you
+                controller is an integral part of your cloud. If you
                 have only one controller, many services are
                 missing.</para>
             <para>To avoid this situation, create a highly available
@@ -249,7 +249,7 @@
             <orderedlist>
                 <listitem>
                     <para>Suspend the instance using the virsh command - taking
-                        note of the internal ID.</para>
+                        note of the internal ID:</para>
                     <programlisting><?db-font-size 65%?>root@compute-node:~# virsh list
 Id Name                 State
 ----------------------------------
@@ -261,7 +261,7 @@ root@compute-node:~# virsh suspend 30
 Domain 30 suspended</programlisting>
                 </listitem>
                 <listitem>
-                    <para>Connect the qemu-nbd device to the disk</para>
+                    <para>Connect the qemu-nbd device to the disk:</para>
                     <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# ls -lh
 total 33M
 -rw-rw---- 1 libvirt-qemu kvm  6.3K Oct 15 11:31 console.log
@@ -276,14 +276,14 @@ root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -c /dev/nb
                         disk's different partitions as separate devices. For
                         example if vda as the disk and vda1 as the root
                         partition, qemu-nbd exports the device as /dev/nbd0 and
-                        /dev/nbd0p1 respectively.</para>
-                    <programlisting><?db-font-size 65%?>#mount the root partition of the device
+                        /dev/nbd0p1 respectively:</para>
+                    <programlisting><?db-font-size 65%?># mount the root partition of the device
 root@compute-node:/var/lib/nova/instances/instance-0000274a# mount /dev/nbd0p1 /mnt/
 # List the directories of mnt, and the vm's folder is display
 # You can inspect the folders and access the /var/log/ files</programlisting>
                     <para>To examine the secondary or ephemeral disk, use an
                         alternate mount point if you want both primary and
-                        secondary drives mounted at the same time.</para>
+                        secondary drives mounted at the same time:</para>
                     <programlisting><?db-font-size 65%?># umount /mnt
 # qemu-nbd -c /dev/nbd1 `pwd`/disk.local
 # mount /dev/nbd1 /mnt/</programlisting>
@@ -312,13 +312,13 @@ drwxr-xr-x. 17 root root 4.0K Oct 15 00:44 var</programlisting>
                 </listitem>
                 <listitem>
                     <para>Once you have completed the inspection, umount the
-                        mount point and release the qemu-nbd device</para>
+                        mount point and release the qemu-nbd device:</para>
                     <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# umount /mnt
 root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -d /dev/nbd0
 /dev/nbd0 disconnected</programlisting>
                 </listitem>
                 <listitem>
-                    <para>Resume the instance using virsh</para>
+                    <para>Resume the instance using virsh:</para>
                     <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# virsh list
 Id Name                 State
 ----------------------------------

@@ -196,23 +196,21 @@
         <para><emphasis role="bold">Live Migration</emphasis> is supported by
             way of shared storage, with <emphasis role="bold">NFS</emphasis> as
             the distributed file system.</para>
-        <para>Acknowledging that many small-scale deployments see running an
-            Object Storage service just for the storage of virtual machine
-            images as too costly, we opted for the file back-end in the
-            OpenStack Image Catalog and Delivery Service (Glance). If the cloud
-            you are designing also intends to run Object Storage, it is trivial
-            to enable this as the back-end instead, and a recommended
-            approach.</para>
+        <para>Acknowledging that many small-scale deployments see running Object
+            Storage just for the storage of virtual machine images as too
+            costly, we opted for the file back-end in the OpenStack Image
+            Service (Glance). If your cloud will include Object Storage, you can
+            easily add it as a back-end.</para>
         <para>We chose the <emphasis role="bold">SQL back-end for Identity
                 Service (keystone)</emphasis> over others, such as LDAP. This
             back-end is simple to install and is robust. The authors acknowledge
             that many installations want to bind with existing directory
             services, and caution careful understanding of the <link
                 xlink:title="LDAP config options"
-                xlink:href="http://docs.openstack.org/trunk/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend"
+                xlink:href="http://docs.openstack.org/havana/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend"
                 >array of options available</link>
-            (http://docs.openstack.org/trunk/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend)</para>
-        <para>The Block Storage service (cinder) is installed natively on
+            (http://docs.openstack.org/havana/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend).</para>
+        <para>Block Storage (cinder) is installed natively on
             external storage nodes and uses the <emphasis role="bold">LVM/iSCSI
                 plugin</emphasis>. Most Block Storage Service plugins are tied
             to particular vendor products and implementations limiting their use
@@ -235,7 +233,7 @@
         <section xml:id="multi-host-networking">
             <title>Why Use Multi-host Networking?</title>
             <para>In a default OpenStack deployment, there is a single
-                    <code>nova-network</code> service that runs within the cloud
+                <code>nova-network</code> service that runs within the cloud
                 (usually on the cloud controller) that provides services such as
                 network address translation (NAT), DHCP, and DNS to the guest
                 instances. If the single node that runs the
@@ -261,7 +259,7 @@
             nodes, a cloud controller, an external NFS storage server
             for instance storage and an OpenStack Block Storage server
             for <glossterm>volume</glossterm> storage. A network time
-            service (Network Time Protocol, NTP) synchronizes time for
+            service (Network Time Protocol, NTP) synchronizes time on
             all the nodes. FlatDHCPManager in multi-host mode is used
             for the networking.</para>
         <informalfigure>
@@ -279,7 +277,7 @@
                 <code>nova-consoleauth</code>), Image services
                 (<code>glance-api</code>,
             <code>glance-registry</code>), services for console access
-            of guests, and block storage services including the
+            of guests, and Block Storage services including the
             scheduler for storage resources (<code>cinder-api</code>
             and <code>cinder-scheduler</code>).</para>
         <?hard-pagebreak?>
@@ -290,8 +288,8 @@
                 <code>nova-compute</code>,
                 <code>nova-api-metadata</code> (generally only used
             when running in multi-host mode, it retrieves
-            instance-specific metadata), nova-vncproxy, and
-                <code>nova-network.</code>
+            instance-specific metadata), <code>nova-vncproxy</code>,
+                and <code>nova-network</code>.
         </para>
         <para>The network consists of two switches, one for the
             management or private traffic, and one which covers public
@@ -299,7 +297,7 @@
             controller and the compute nodes have two network cards.
             The OpenStack Block Storage and NFS storage servers only
             need to access the private network and therefore only need
-            one network card, but multiple cards run in a bonded
+            one network card, but multiple cards running in a bonded
             configuration are recommended if possible. Floating IP
             access is direct to the internet, whereas Flat IP access
             goes through a NAT.</para>

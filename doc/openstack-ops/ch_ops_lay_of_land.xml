@@ -26,7 +26,7 @@
         <para>We strongly suggest that you install the command-line
             clients from the <link
                 xlink:href="https://pypi.python.org/">Python Package
-                Index</link>(PyPI) (https://pypi.python.org/) instead
+                Index</link> (PyPI) (https://pypi.python.org/) instead
             of from the distribution packages. The clients are
             under heavy development and it is very likely at any given
             time the version of the packages distributed by your
@@ -216,8 +216,8 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
         <section xml:id="cli_tricks">
             <title>Command Line Tricks and Traps</title>
             <para>The command line tools can be made to show the
-                OpenStack API calls it's making by passing it the
-                    <code>--debug</code> flag for example:</para>
+                OpenStack API calls they make by passing the
+                <code>--debug</code> flag to them. For example:</para>
             <programlisting><?db-font-size 60%?><prompt>#</prompt> nova --debug list</programlisting>
             <para>This example shows the HTTP requests from the client
                 and the responses from the endpoints, which can be
@@ -336,7 +336,7 @@ http://203.0.113.10:8774/v2/98333aba48e756fa8f629c83a818ad57/servers | jq .</pro
                 cloud, its shape, size, and current state.</para>
             <para>First, you can discover what servers belong to your
                 OpenStack cloud by running:</para>
-            <programlisting><?db-font-size 60%?><prompt>$</prompt> nova-manage service list | sort</programlisting>
+            <programlisting><?db-font-size 60%?><prompt>#</prompt> nova-manage service list | sort</programlisting>
             <para>The output looks like the following:</para>
             <programlisting><?db-font-size 60%?>Binary           Host              Zone Status  State Updated_At
 nova-cert        cloud.example.com nova enabled  :-)  2013-02-25 19:32:38
@@ -359,7 +359,7 @@ nova-scheduler   cloud.example.com nova enabled  :-)  2013-02-25 19:32:33</progr
             <para>If you are using Cinder, run the following command
                 to see a similar listing:</para>
 
-            <programlisting><?db-font-size 60%?><prompt>$</prompt> cinder-manage host list | sort</programlisting>
+            <programlisting><?db-font-size 60%?><prompt>#</prompt> cinder-manage host list | sort</programlisting>
 
             <programlisting><?db-font-size 60%?>host              zone
 c01.example.com   nova
@@ -410,7 +410,7 @@ Service: identity
                 segregation.</para>
             <para>You can find the version of the Compute installation by using the
                     <command>nova-manage</command> command:
-                <screen><prompt>$</prompt> <userinput>nova-manage version list</userinput></screen></para>
+                <screen><prompt>#</prompt> <userinput>nova-manage version list</userinput></screen></para>
         </section>
         <section xml:id="diagnose-compute">
             <title>Diagnose your compute nodes</title>
@@ -476,7 +476,7 @@ Service: identity
 +--------------------------------------+--------+--------------+</computeroutput></screen></para>
         <para>The <command>nova-manage</command> tool can provide some additional details.</para>
 
-<screen><prompt>$</prompt> <userinput>nova-manage network list</userinput>
+<screen><prompt>#</prompt> <userinput>nova-manage network list</userinput>
 <computeroutput>id IPv4        IPv6 start address DNS1 DNS2 VlanID project   uuid 
 1  10.1.0.0/24 None 10.1.0.3      None None 300    2725bbd   beacb3f2
 2  10.1.1.0/24 None 10.1.1.3      None None 301    none      d0b1a796</computeroutput></screen>
@@ -490,7 +490,7 @@ Service: identity
         <para>To find out if any floating IPs are available in your
             cloud, run:</para>
 
-        <programlisting><?db-font-size 60%?><prompt>$</prompt> nova-manage floating list</programlisting>
+        <programlisting><?db-font-size 60%?><prompt>#</prompt> nova-manage floating list</programlisting>
 
         <programlisting><?db-font-size 55%?>2725bbd458e2459a8c1bd36be859f43f 1.2.3.4 None                                 nova vlan20
 None                             1.2.3.5 48a415e7-6f07-4d33-ad00-814e60b010ff nova vlan20</programlisting>

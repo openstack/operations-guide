@@ -493,14 +493,14 @@ format="SVG" scale="60"/>
             (http://docs.openstack.org/developer/swift/overview_architecture.html)
             - read this first. Once you have understood the
             architecture, you should know what a proxy server does and
-            how zones work. However, some there important points that
-            are often missed at first glance.</para>
+            how zones work. However, some important points are often missed at
+            first glance.</para>
         <para>When designing your cluster, you must consider
             durability and availability. Understand that the
             predominant source of these is the spread and placement of
             your data, rather than the reliability of the hardware.
             Consider the default value of the number of replicas,
-            which is 3. This means that when before an object is
+            which is 3. This means that before an object is
             marked as having being written at least two copies exists
             - in case a single server fails to write, the third copy
             may or may not yet exist when the write operation
