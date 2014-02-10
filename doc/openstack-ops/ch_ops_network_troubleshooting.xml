@@ -461,7 +461,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 <para>The packet then makes it to the l3-agent. This
                 is actually another TAP device within the router's
                 network namespace. Router namespaces are named in the
-                form <code>qrouter-&lt;network-uuid&gt;</code> running
+                form <code>qrouter-&lt;router-uuid&gt;</code> running
                 <command>ip a</command> within the namespace will show
                 the TAP device name, qr-e6256f7d-31 in this example:
                 </para>
@@ -917,9 +917,9 @@ gre-&lt;N&gt;
 qdhcp-a4d00c60-f005-400e-a24c-1bf8b8308f98
 qdhcp-fe178706-9942-4600-9224-b2ae7c61db71
 qdhcp-0a1d0a27-cffa-4de3-92c5-9d3fd3f2e74d
-qrouter-0a1d0a27-cffa-4de3-92c5-9d3fd3f2e74d
+qrouter-8a4ce760-ab55-4f2f-8ec5-a2e858ce0d39
       </computeroutput></screen>
-      <para>L3-agent router namespaces are named qrouter-&lt;net_uuid&gt;, and dhcp-agent name
+      <para>L3-agent router namespaces are named qrouter-&lt;router_uuid&gt;, and dhcp-agent name
             spaces are named qdhcp-&lt;net_uuid&gt;. This output shows a network node with four
             networks running dhcp-agents, one of which is also running an l3-agent router. It's
             important to know which network you need to be working in. A list of existing networks
