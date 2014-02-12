@@ -42,7 +42,18 @@
             infrastructure, such as when you run VMs to separate your control
             services and physical infrastructure.</para>
         <para>When you create a deployment plan, focus on a few vital areas
-            because they are very hard to modify post-deployment.</para>
+            because they are very hard to modify post-deployment. The next two
+            sections talk about configurations for:</para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>Disk partioning and disk array setup for scalability</para>
+                </listitem>
+                <listitem>
+                    <para>Networking configuration just for PXE booting</para>
+                </listitem>
+            </itemizedlist>
+        </para>
         <?hard-pagebreak?>
         <section xml:id="disk_partition_raid">
             <title>Disk Partitioning and RAID</title>
@@ -115,11 +126,13 @@
                         However, the LVM partition is much smaller.</para>
                 </listitem>
             </itemizedlist>
-            <para>You may find that you can automate the partitioning itself. For example, at MIT
-                they use Fully Automatic Installation (FAI) (<link
-                    xlink:href="http://fai-project.org/">fai-project.org/</link>) to do the initial
-                PXE-based partition and install using some min/max and percentage-based
-                partitioning.</para>
+                <tip><para>You may find that you can automate the partitioning
+                    itself. For example, at MIT they use Fully Automatic
+                    Installation (FAI) (<link
+                        xlink:href="http://fai-project.org/"
+                    >fai-project.org/</link>) to do the initial PXE-based
+                    partition, and install using a combination of min/max and
+                    percentage-based partitioning.</para></tip>
             <para>As with most architecture choices, the right answer depends on your environment.
                 If you are using existing hardware, you know the disk density of your servers and
                 can determine some decisions based on the options above. If you are going through a
@@ -225,7 +238,7 @@
             OpenStack Object Storage. All of these considerations and the input
             from users help you build your use case and your deployment
             plan.</para>
-        <para>For further research about OpenStack deployment, investigate the
+        <tip><para>For further research about OpenStack deployment, investigate the
             supported and documented pre-configured, pre-packaged installers for
             OpenStack from companies like <link
                 xlink:href="http://www.ubuntu.com/cloud/tools/openstack"
@@ -243,7 +256,7 @@
                 xlink:href="http://www.redhat.com/openstack/">Red Hat</link>,
                 <link xlink:href="http://www.suse.com/cloud">SUSE</link>, and
                 <link xlink:href="http://www.swiftstack.com/"
-            >SwiftStack</link>.</para>
+            >SwiftStack</link>.</para></tip>
     </section>
     <section xml:id="provision_conclusion">
         <title>Conclusion</title>
