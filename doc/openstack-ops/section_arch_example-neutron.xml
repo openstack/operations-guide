@@ -12,8 +12,7 @@
     xml:id="example_architecture-neutron">
     <?dbhtml stop-chunking?>
     <title>Example Architecture - OpenStack Networking</title>
-    <para>This chapter provides an example architecture using OpenStack Networking in a highly
-        available environment.</para>
+    <para>This chapter provides an example architecture using OpenStack Networking, also known as the Neutron project, in a highly available environment.</para>
     <section xml:id="overview-neutron">
         <title>Overview</title>
         <para>A highly-available environment can be put into place if you require an environment
