@@ -27,9 +27,14 @@
         infrastructure. Additionally, you must research and discuss
         cloud network connectivity through proxy servers and
         firewalls.</para>
+    <para>In this chapter we'll give some examples of network implementations to
+        consider, and provide some information about some of the network layouts
+        that OpenStack uses. Finally, we have some brief notes on the networking
+        services that are essential for stable operation.</para>
     <section xml:id="mgmt_network">
         <title>Management Network</title>
-        <para>A management network, typically consisting of a separate
+        <para>A management network (a separate network for use by your
+            cloud operators), typically consisting of a separate
             switch and separate NICs (Network Interface Cards), is a
             recommended option. This
             segregation prevents system administration and monitoring
@@ -163,64 +168,113 @@
     <?hard-pagebreak?>
     <section xml:id="network_topology">
         <title>Network Topology</title>
-        <para>OpenStack Compute provides several network managers,
-            each with their own strengths and weaknesses. The
-            selection of a network manager changes your network
-            topology, so the choice should be made carefully.</para>
-        <informaltable rules="all">
+        <para>OpenStack Compute with nova-network provides pre-defined network
+            deployment models, each with their own strengths and weaknesses. The
+            selection of a network manager changes your network topology, so the
+            choice should be made carefully. You also have a choice between the
+            tried-and-true legacy nova-network settings or the neutron project
+            for OpenStack Networking. Both offer networking for launched
+            instances with different implementations and requirements.</para>
+        <para>For OpenStack Networking with the neutron project, typical configurations are documented with the idea that any setup you can configure with real hardware you can re-create with a software-defined equivalent. Each tenant can contain typical network elements such as routers and services such as DHCP.</para>
+        <para>This table discusses the networking deployment options when using the legacy nova-network options for networking set up between virtual machine instances with a column about equivalent neutron configuration:</para>
+        <informaltable rules="all" width="729">
+            <col width="17%"/>
+            <col width="22%"/>
+            <col width="23%"/>
+            <col width="39%"/>
             <thead>
                 <tr valign="top">
-                    <th>Type</th>
+                    <th>Network Deployment Model</th>
                     <th>Strengths</th>
                     <th>Weaknesses</th>
+                    <th>Neutron Equivalent</th>
                 </tr>
             </thead>
-
             <tbody>
                 <tr valign="top">
-                    <td><para>Flat</para></td>
-                    <td><para>Extremely simple.</para><para>No DHCP
-                            broadcasts.</para></td>
-                    <td><para>Requires file injection into the
-                            instance.</para><para>Limited to certain
-                            distributions of Linux.</para><para>
-                            Difficult to configure and is not
-                            recommended.</para></td>
+                    <td>
+                        <para>Flat</para>
+                    </td>
+                    <td>
+                        <para>Extremely simple topology.</para>
+                        <para>No DHCP overhead.</para>
+                    </td>
+                    <td>
+                        <para>Requires file injection into the instance to
+                            configure network interfaces.</para>
+                    </td>
+                    <td>Configure a single bridge as the integration bridge
+                        (br-int) and connect it to a physical network
+                        interface with the Modular Layer 2 (ML2) plug-in,
+                        which uses Open vSwitch by default.</td>
                 </tr>
                 <tr valign="top">
-                    <td><para>FlatDHCP</para></td>
-                    <td><para>Relatively simple to setup.</para><para>
-                            Standard networking.</para><para>Works
-                            with all operating systems.</para></td>
-                    <td><para>Requires its own DHCP broadcast
-                            domain.</para></td>
+                    <td>
+                        <para>FlatDHCP</para>
+                    </td>
+                    <td>
+                        <para>Relatively simple to deploy.</para>
+                        <para>Standard networking.</para>
+                        <para>Works with all guest operating systems.</para>
+                    </td>
+                    <td>
+                        <para>Requires its own DHCP broadcast domain.</para>
+                    </td>
+                    <td>Configure DHCP agents and routing agents. Network
+                        Address Translation (NAT) performed outside of
+                        compute nodes, typically on one or more network nodes.</td>
                 </tr>
                 <tr valign="top">
-                    <td><para>VlanManager</para></td>
-                    <td><para>Each tenant is isolated to their own
-                            VLANs.</para></td>
-                    <td><para>More complex to set up.</para><para>
-                            Requires its own DHCP broadcast
-                            domain.</para><para>Requires many VLANs
-                            to be trunked onto a single
-                            port.</para><para>Standard VLAN number
-                            limitation.</para><para>Switches must
-                            support 802.1q VLAN tagging.</para></td>
+                    <td>
+                        <para>VlanManager</para>
+                    </td>
+                    <td>
+                        <para>Each tenant is isolated to their own VLANs.</para>
+                    </td>
+                    <td>
+                        <para>More complex to set up.</para>
+                        <para>Requires its own DHCP broadcast domain.</para>
+                        <para>Requires many VLANs to be trunked onto a single port.</para>
+                        <para>Standard VLAN number limitation.</para>
+                        <para>Switches must support 802.1q VLAN tagging.</para>
+                    </td>
+                    <td>
+                        <para>Isolated tenant networks implement some form of
+                            isolation of layer 2 traffic between distinct networks.
+                            VLAN tagging is key concept, where traffic is
+                            “tagged” with an ordinal identifier for the VLAN.
+                            Isolated network implementations may or may not
+                            include additional services like DHCP, NAT and
+                            routing.</para>
+                    </td>
                 </tr>
                 <tr valign="top">
-                    <td><para>FlatDHCP Multi-host HA</para></td>
-                    <td><para>Networking failure is isolated to the
-                            VMs running on the hypervisor
-                            affected.</para><para>DHCP traffic can be
-                            isolated within an individual
-                            host.</para><para>Network traffic is
-                            distributed to the compute
-                        nodes.</para></td>
-                    <td><para>More complex to set up.</para><para>By
-                            default, compute nodes need public IP
-                            addresses.</para><para>Options must be
-                            carefully configured for live migration to
-                            work with networking.</para></td>
+                    <td>
+                        <para>FlatDHCP Multi-host with high availability (HA)</para>
+                    </td>
+                    <td>
+                        <para>Networking failure is isolated to the VMs running
+                            on the affected hypervisor.</para>
+                        <para>DHCP traffic can be isolated within an individual
+                            host.</para>
+                        <para>Network traffic is distributed to the compute
+                            nodes.</para>
+                    </td>
+                    <td>
+                        <para>More complex to set up.</para>
+                        <para>Compute nodes typically need IP addresses
+                            accessible by external networks.</para>
+                        <para>Options must be carefully configured for live
+                            migration to work with networking services.</para>
+                    </td>
+                    <td>
+                        <para>Configure neutron with multiple DHCP and layer 3
+                            agents. Network nodes are not able to failover to
+                            each other so the Controller runs Networking
+                            services such as DHCP. Compute nodes run the
+                            ML2 plugin with support for agents like Open vSwitch
+                            or Linux Bridge.</para>
+                    </td>
                 </tr>
             </tbody>
         </informaltable>
@@ -283,9 +337,8 @@
     <section xml:id="services_for_networking">
         <title>Services for Networking</title>
         <para>OpenStack, like any network application, has a number of
-            the standard considerations to apply, such as DNS and
-            NTP.</para>
-
+            standard considerations to apply, such as NTP and
+            DNS.</para>
         <section xml:id="ntp">
             <title>NTP</title>
             <para>Time synchronisation is a critical element to ensure
@@ -297,7 +350,9 @@
             <para>All servers running OpenStack components should be
                 able to access an appropriate NTP server. You may
                 decide to set one up locally, or use the public pools
-                available from http://www.pool.ntp.org/</para>
+                available from the <link xlink:href="http://www.pool.ntp.org">
+                Network Time Protocol project</link>
+                (http://www.pool.ntp.org/)</para>
         </section>
         <section xml:id="dns">
             <title>DNS</title>
@@ -311,5 +366,14 @@
                 addresses, such as
                 vm-203-0-113-123.example.com.</para>
         </section>
+    </section>
+    <section xml:id="ops-network-conclusion">
+      <title>Conclusion</title>
+      <para>Armed with your IP address layout and numbers, knowledge
+      about topologies and services you can use, it's now time to prepare
+      the network for your installation. Be sure to also check out
+      the <citetitle>OpenStack Security Guide</citetitle> for tips on
+      securing your network. We wish you a good
+      relationship with your networking team!</para>
     </section>
 </chapter>
