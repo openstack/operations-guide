@@ -5,8 +5,6 @@
 <!ENTITY mdash  "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-
-
 ]>
 <preface xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -37,19 +35,28 @@
             implementation, massive scalability, a variety of rich features and tremendous
             extensibility, the project aims to deliver a practical and reliable cloud solution for
             all types of organisations.</para>
+        <section xml:id="preface_getting_started"><title>Getting Started with OpenStack</title>
         <para>As an open source project, one of the unique aspects about OpenStack is that there are
             many different levels you can begin to engage with it &mdash; you don't have to do everything
             yourself.</para>
-        <para>You could ask, "do I even need to build a cloud?". If you just want to start using a
-            service like Amazon Web Services Elastic Compute Cloud (EC2) or Simple Storage Solution
-            (S3), you can today swipe your credit card at eNovance, HP, Rackspace and other
-            organisations to start using their public OpenStack clouds.</para>
-        <para>However, the enticing part of OpenStack might be to build your own private
+            <section xml:id="preface_using_openstack">
+                <title>Using OpenStack</title>
+                <para>You could ask, "do I even need to build a cloud?". If you
+                    want to start using a Compute or Storage service by
+                    just swiping your credit card, you can go to eNovance, HP, Rackspace and other
+                    organisations to start using their public OpenStack clouds.
+                    Using their OpenStack cloud resources is similar to accessing
+                    the publically-available Amazon Web Services Elastic Compute
+                    Cloud (EC2) or Simple Storage Solution (S3).</para>
+            </section>
+                <section xml:id="preface_plug_and_play"><title>Plug and Play OpenStack</title>
+                <para>However, the enticing part of OpenStack might be to build your own private
             cloud, and there are several ways to accomplish this goal. Perhaps the simplest of all is an
             appliance-style solution. You purchase an appliance, un-box it, plug in the power and the
             network and watch it transform into an OpenStack cloud with minimal additional
-            configuration. Few, if any, other open source cloud products that have such 'turn key' options.</para>
-        <para>However, hardware choice is important for many applications, so if that applies to you,
+            configuration. Few, if any, other open source cloud products that have such turn-key options.
+            If a turn-key solution is interesting to you, take a look at Nebula One.</para>
+                <para>However, hardware choice is important for many applications, so if that applies to you,
             consider that there are several software distributions available that you can run on
             servers, storage and network products of your choosing. Canonical (where OpenStack replaced Eucalyptus as
             the default cloud option in 2011), Red Hat and SUSE offer enterprise OpenStack
@@ -59,30 +66,43 @@
             Foundation after its US $200 million purchase of Cloud.com. While not currently packaged
             in any distributions, like Eucalyptus it is an example of an alternative private
             cloud software developed in an open source-like manner.</para>
-        <para>Alternately, if you want someone to help guide you through the decisions from the
+                <para>Alternately, if you want someone to help guide you through the decisions from the
             underlying hardware up to your applications, perhaps adding in a few features or integrating
             components along the way, consider contacting one of the system integrators with
             OpenStack experience like Mirantis or Metacloud.</para>
-        <para>If your preference is to build your own OpenStack expertise internally, a good way to
+                <para>If your preference is to build your own OpenStack expertise internally, a good way to
             kick start that might be to attend or arrange a training session. The OpenStack
             Foundation recently launched a <link
-xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace
+                        xlink:href="http://www.openstack.org/marketplace/training"
+                        >Training Marketplace
             (http://www.openstack.org/marketplace/training)</link>, where you can look for nearby events.
-            Also the OpenStack community is <link xlink:href="https://wiki.openstack.org/wiki/Training-manuals">working to produce
+            Also the OpenStack community is <link
+                        xlink:href="https://wiki.openstack.org/wiki/Training-manuals"
+                        >working to produce
             (https://wiki.openstack.org/wiki/Training-manuals)</link>open source training materials.</para>
-        <para>However, this guide has a different audience &mdash; those seeking to derive the most
+                </section>
+                <section xml:id="preface_roll_your_own_openstack"><title>Roll your Own OpenStack</title>
+                    <para>However, this guide has a different audience &mdash; those seeking to derive the most
             flexibility from the OpenStack framework; conducting 'Do-It-Yourself' solutions, if you
             will.</para>
-        <para>OpenStack is designed for scalability, so you can easily add new
+                <para>OpenStack is designed for scalability, so you can easily add new
         compute, network and storage resources to grow your cloud over time. In addition to several
         massive OpenStack public clouds, a considerable number of other organisations (such as
         Paypal, Intel and Comcast) have built large-scale private clouds. OpenStack offers much
         more than a typical software package because it lets you integrate a number of different
         technologies to construct a cloud. This approach provides great flexibility, but the
         number of options might be bewildering at first.</para>
-    </section>
+                </section>
+        </section>
+            </section>
     <section xml:id="who-this-book-is-for">
         <title>Who This Book Is For</title>
+        <para>This book is for those of you starting to run OpenStack clouds as
+            well as those of you who were handed an operational one and want to keep
+            it running well. Perhaps you're on a devops team, perhaps you are a
+            system administrator starting to dabble in the cloud, or maybe you
+            want to get on that OpenStack cloud team at your company. This book
+            is for all of you.</para>
         <para>This guide assumes that you are familiar with a Linux
             distribution supporting OpenStack, SQL databases, and virtualization.
              You must be comfortable administering and configuring multiple Linux machines
@@ -93,12 +113,14 @@ xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace
             as DHCP, Linux bridges, VLANs, and iptables. You must also have
             access to a network hardware expert who can configure the switches
             and routers required in your OpenStack cloud.</para>
-        <para>This book is for those of you starting to run OpenStack clouds as
-            well as those of you who were handed a running one and want to keep
-            it running well. Perhaps you're on a devops team, perhaps you are a
-            system administrator starting to dabble in the cloud, or maybe you
-            want to get on that OpenStack cloud team at your company. This book
-            is for all of you.</para>
+        <tip><para>As cloud computing is a quite advanced topic, this book
+            requires a lot of background knowledge. However, if you are fairly
+            new to cloud computing, we recommend that you make use of the
+            <xref linkend="openstack_glossary"/> at the back of
+            the book, as well as refer to the online documentation for OpenStack,
+            and additional resources mentioned
+            in this book in the <xref linkend="recommended-reading"/> list.</para></tip>
+        <section xml:id="further_reading"><title>Further Reading</title>
         <para>There are other books on the OpenStack documentation web site at
                 <link xlink:href="http://docs.openstack.org"
                 >docs.openstack.org</link> that can help you get the job
@@ -213,11 +235,13 @@ xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace
                 </listitem>
             </varlistentry>
         </variablelist>
+        </section>
     </section>
     <section xml:id="how-this-book-is-organized">
         <title>How This Book Is Organized</title>
         <para>This book is organized in two parts, the architecture decisions for designing
             OpenStack clouds and the repeated operations for running OpenStack clouds.</para>
+        <para>Part I</para>
         <para><xref linkend="example_architecture"/>: Because of all the decisions the other
             chapters discuss, this chapter describes the decisions made for this particular book and
             much of the justification for the example architecture.</para>
@@ -228,11 +252,11 @@ xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace
             the sake of consolidating and describing which services run on which nodes. The chapter
             discusses hardware and network considerations as well as how to design the cloud
             controller for performance and separation of services.</para>
-        <para><xref linkend="scaling"/>: This chapter discusses the growth of your cloud resources
-            through scaling and segregation considerations.</para>
         <para><xref linkend="compute_nodes"/>: This chapter describes the compute nodes, which are
             dedicated to run virtual machines. Some hardware choices come into play here as well as
             logging and networking descriptions.</para>
+        <para><xref linkend="scaling"/>: This chapter discusses the growth of your cloud resources
+            through scaling and segregation considerations.</para>
         <para><xref linkend="storage_decision"/>: Along with other architecture decisions, storage
             concepts within OpenStack take a lot of consideration, and this chapter lays out the
             choices for you.</para>
@@ -240,6 +264,7 @@ xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace
             your existing networks while also enabling the best design for your users and
             administrators, and this chapter gives you in-depth information about networking
             decisions.</para>
+        <para>Part II</para>
         <para><xref linkend="lay_of_the_land"/>: This chapter is written to let you get your hands
             wrapped around your OpenStack cloud through command line tools and understanding what is
             already set up in your cloud.</para>
@@ -274,10 +299,12 @@ xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace
         <para><xref linkend="app_crypt"/>: These are shared legendary tales of image disappearances,
             VM massacres, and crazy troubleshooting techniques to share those hard-learned lessons
             and wisdom.</para>
+        <para><xref linkend="working-with-roadmaps"/>: Read about how to track the OpenStack
+        roadmap through the open and transparent development processes.</para>
         <para><xref linkend="recommended-reading"/>: So many OpenStack resources are available
             online due to the fast-moving nature of the project, but there are also listed resources
             the authors found helpful while learning themselves.</para>
-        <para>Glossary: A list of terms used in this book is included, which is a subset of the
+        <para><xref linkend="openstack_glossary"/>: A list of terms used in this book is included, which is a subset of the
             larger OpenStack Glossary available online.</para>
     </section>
     <section xml:id="why-and-how-we-wrote-this-book">
