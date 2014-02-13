@@ -1,6 +1,5 @@
 OpenStack Operations Guide
-+++++++++++++++++++
-
+++++++++++++++++++++++++++
 
 This repository contains the source files for the OpenStack Operations Guide.
 
@@ -13,6 +12,7 @@ Additionally, a tools directory contains tools for testing this guide.
 
 Prerequisites
 =============
+
 `Apache Maven <http://maven.apache.org/>`_ must be installed to build the
 documentation.
 
@@ -52,6 +52,7 @@ If you like to run individual tests, run:
  * ``tox -e checksyntax`` - to run syntax checks
  * ``tox -e checkdeletions`` - to check that no deleted files are referenced
  * ``tox -e checkbuild`` - to actually build the manual
+ * ``tox -e buildlang -- $LANG`` - to build the manual for language $LANG
 
 tox will use the openstack-doc-tools package for execution of these
 tests.
