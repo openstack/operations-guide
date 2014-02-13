@@ -45,17 +45,19 @@
           <para>Log in as an administrative user.</para>
         </listitem>
         <listitem>
-          <para>Select the "Projects" link in the left hand navigation
-            bar.</para>
+          <para>Select the <guilabel>Admin</guilabel> tab in the left hand navigation bar.</para>
         </listitem>
         <listitem>
-          <para>Click on the "Create Project" button at the top right.</para>
+          <para>Under Identity Panel, click <guilabel>Projects</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Click the <guibutton>Create Project</guibutton> button.</para>
         </listitem>
       </orderedlist>
       <para>You are prompted for a project name and an optional, but
         recommended, description. Select the check box at the bottom of the form
-        to enable this project. By default, this is enabled.</para>
-      <!--  <informalfigure>
+        to enable this project. By default, it is enabled.</para>
+      <informalfigure>
                 <mediaobject>
                     <imageobject>
                         <imagedata width="5in"
@@ -63,11 +65,10 @@
                         />
                     </imageobject>
                 </mediaobject>
-            </informalfigure> -->
+            </informalfigure>
       <para>It is also possible to add project members and adjust the project
         quotas. We'll discuss those later, but in practice it can be quite
         convenient to deal with all these operations at one time.</para>
-      <para>To create a project through the command-line interface (CLI):</para>
       <para>To add a project through the command line, you must use the keystone
         utility, which uses "tenant" in place of "project":</para>
       <programlisting><?db-font-size 75%?><prompt>#</prompt> keystone tenant-create --name=demo</programlisting>

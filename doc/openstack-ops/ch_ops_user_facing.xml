@@ -28,7 +28,8 @@
             <para>Several pre-made images exist and can easily be imported into the Image Service. A
                 common image to add is the CirrOS image, which is very small and used for testing
                 purposes. To add this image, simply do:</para>
-            <programlisting><?db-font-size 65%?># wget https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img # glance image-create --name='cirros image' --is-public=true --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.0-x86_64-disk.img</programlisting>
+            <programlisting><?db-font-size 65%?>$ wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img
+$ glance image-create --name='cirros image' --is-public=true --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.1-x86_64-disk.img</programlisting>
             <para>The <code>glance image-create</code> command
                 provides a large set of options to give your image.
                 For example, the <code>min-disk</code> option is
@@ -79,7 +80,8 @@
                     &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
                     <para>For example:</para>
                     <screen><prompt>$</prompt> <userinput>glance member-create \
-                        733d1c44-a2ea-414b-aca7-69decf20d810 771ed149ef7e4b2b88665cc1c98f77ca</userinput></screen>
+    733d1c44-a2ea-414b-aca7-69decf20d810 \
+    771ed149ef7e4b2b88665cc1c98f77ca</userinput></screen>
                     <para>Project 771ed149ef7e4b2b88665cc1c98f77ca
                         will now have access to image
                         733d1c44-a2ea-414b-aca7-69decf20d810.</para>
@@ -292,8 +294,7 @@
                 with 128 GB of memory might cause your cloud to reach full
                 capacity very quickly. To prevent this, you can restrict access
                 to the custom flavor using the <command>nova</command> command:</para>
-            <screen><prompt>$</prompt> <userinput>nova flavor-access-add \
-&lt;flavor-id&gt; &lt;project-id&gt;</userinput></screen>
+            <screen><prompt>$</prompt> <userinput>nova flavor-access-add &lt;flavor-id&gt; &lt;project-id&gt;</userinput></screen>
             <para>To view a flavor's access list, do the following:</para>
             <screen><prompt>$</prompt> <userinput>nova flavor-access-list &lt;flavor-id&gt;</userinput></screen>
             <note>
@@ -330,7 +331,7 @@
             specific and project members can edit the default rules
             for their group and add new rules sets. All projects have
             a "default" security group which is applied to instances
-            which have no other security group defined, unless changed
+            which have no other security group defined. Unless changed,
             this security group denies all incoming traffic.</para>
         <para>The <code>nova.conf</code> option
                 <code>allow_same_net_traffic</code> (which defaults to
@@ -348,11 +349,11 @@
             their default security group to allow all traffic from
             their subnet.</para>
         <para>Security groups for the current project can be found on
-            the Horizon dashboard under "Access &amp; Security" to see
+            the Horizon dashboard under "Access &amp; Security". To see
             details of an existing group select the "edit" action for
             that security group. Obviously modifying existing groups
             can be done from this "edit" interface. There is a "Create
-            Security Group" button on the main Access &amp; Security
+            Security Group" button on the main "Access &amp; Security"
             page for creating new groups. We discuss the terms used in
             these fields when we explain the command line
             equivalents.</para>
@@ -387,9 +388,9 @@
             range for all protocols allowed from all IPs.</para>
         <para>As noted in the previous chapter the number of rules per
             security group is controlled by the
-            quota_security_group_rules and the number of allowed
+            <code>quota_security_group_rules</code> and the number of allowed
             security groups per project is controlled by the
-            quota_security_groups quota. </para>
+            <code>quota_security_groups</code> quota. </para>
         <para>When adding a new security group you should pick a
             descriptive but brief name. This name shows up in brief
             descriptions of the instances that use it where the longer
@@ -452,8 +453,8 @@ $ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
             user specifies a SourceGroup (Security Group name), all the users' other Instances using
             the specified SourceGroup are selected dynamically. This alleviates the need for a
             individual rules to allow each new member of the cluster.</para>
-        <para>Example usage: nova secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt;
-            &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt; </para>
+        <para>Example usage: <code>nova secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt;
+            &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code></para>
         <programlisting><prompt>$</prompt> nova secgroup-add-group-rule cluster global-http tcp 22 22</programlisting>
         <para>The "cluster" rule allows ssh access from any other
             instance that uses the "global-http" group.</para>
@@ -464,8 +465,8 @@ $ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
         <title>Block Storage</title>
         <para>OpenStack volumes are persistent block storage devices
             which may be attached and detached from instances, but can
-            only be attached to one instance at a time, similar to an
-            external hard drive they do not proved shared storage in
+            only be attached to one instance at a time. Similar to an
+            external hard drive, they do not provide shared storage in
             the way a network file system or object store does. It is
             left to the operating system in the instance to put a file
             system on the block device and mount it, or not.</para>
@@ -658,17 +659,17 @@ Optional snapshot description. (Default=None)</programlisting>
             <para>You must have the matching private key to access
                 instances associated with this key.</para>
             <para>To associate a key with an instance on boot add
-                --key_name mykey to your command line for
-                example:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --key_name mykey</programlisting>
+                <code>--key_name mykey</code> to your command line.
+                For example:</para>
+            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 2 --key_name mykey myimage</programlisting>
             <para>When booting a server, you can also add metadata, so
                 that you can more easily identify it amongst other
-                running instances. Use the --meta option with a
+                running instances. Use the <code>--meta</code> option with a
                 key=value pair, where you can make up the string for
                 both the key and the value. For example, you could add
                 a description and also the creator of the
-                server.</para>
-            <programlisting><?db-font-size 65%?><prompt>$ </prompt>nova boot --image=test-image --flavor=1 smallimage --meta description='Small test image'</programlisting>
+                server:</para>
+            <programlisting><?db-font-size 65%?><prompt>$ </prompt>nova boot --image=test-image --flavor=1 --meta description='Small test image' smallimage</programlisting>
             <para>When viewing the server information, you can see the
                 metadata included on the metadata line:</para>
 
@@ -691,7 +692,7 @@ Optional snapshot description. (Default=None)</programlisting>
 |      image             |             natty-image                 |
 |     key_name           |                                         |
 |     metadata           | {u'description': u'Small test image'}   |
-|       name             |             smallimage2                 |
+|       name             |             smallimage                  |
 |    private network     |            172.16.101.11                |
 |     progress           |                 0                       |
 |     public network     |             10.4.113.11                 |
@@ -713,12 +714,12 @@ Optional snapshot description. (Default=None)</programlisting>
                 this user data.</para>
             <para>This user-data can be put in a file on your local
                 system and then passed in at instance creation with
-                the flag --user-data &lt;user-data-file&gt; for
-                example:</para>
+                the flag <code>--user-data &lt;user-data-file&gt;</code>.
+                For example:</para>
             <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</programlisting>
             <para>Arbitrary local files can also be placed into the
-                instance file system at creation time using the --file
-                &lt;dst-path=src-path&gt; option. You may store up to
+                instance file system at creation time using the <code>--file
+                &lt;dst-path=src-path&gt;</code> option. You may store up to
                 5 files. For example if you have a special
                 authorized_keys file named special_authorized_keysfile
                 that you want to put on the instance rather than using
@@ -738,8 +739,8 @@ Optional snapshot description. (Default=None)</programlisting>
             boot. When launching from the dashboard this is on the
             "Access &amp; Security" tab of the "Launch Instance"
             dialog. When launching from the command line append
-            --security-groups with a comma separated list of security
-            groups.</para>
+            <code>--security-groups</code> with a comma separated list of
+            security groups.</para>
         <para>It is also possible to add and remove security groups
             when an instance is running. Currently this is only
             available through the command line tools.</para>
@@ -757,7 +758,7 @@ Optional snapshot description. (Default=None)</programlisting>
             <guibutton>Allocate IP to Project</guibutton> button on the
             "Access &amp; Security" page of the dashboard. The command
             line can also be used:</para>
-        <programlisting><prompt>$</prompt>nova floating-ip-create</programlisting>
+        <programlisting><prompt>$</prompt> nova floating-ip-create</programlisting>
 
         <para>Once allocated, a Floating IP can be assigned to running
             instances from the Dashboard either by selecting the
@@ -784,9 +785,9 @@ Optional snapshot description. (Default=None)</programlisting>
             attach.</para>
         <para>To perform this action from command line, run the following
             command:</para>
-        <programlisting><prompt>$</prompt> nova volume-attach &lt;server&gt; &lt;volume&gt; </programlisting>
+        <programlisting><prompt>$</prompt> nova volume-attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;</programlisting>
         <para>You can also specify block device mapping at instance boot time
-            through the nova command-line client, as follows:</para>
+            through the nova command line client, as follows:</para>
         <programlisting>--block-device-mapping &lt;dev-name=mapping&gt; </programlisting>
         <para>The block device mapping format is
                 <code>&lt;dev-name=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:&lt;delete-on-terminate&gt;</code>,
@@ -858,11 +859,11 @@ Optional snapshot description. (Default=None)</programlisting>
         <?dbhtml stop-chunking?>
         <title>Taking Snapshots</title>
         <para>OpenStack's snapshot mechanism allows you to create new
-            images from running instances. This is a very convenient
+            images from running instances. This is very convenient
             for upgrading base images or taking a published image and
             customizing for local use. To snapshot a running instance
             to an image using the CLI:</para>
-        <programlisting><?db-font-size 65%?><prompt>#</prompt> nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</programlisting>
+        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</programlisting>
         <para>The Dashboard interface for snapshots can be confusing
             because the Images &amp; Snapshots page splits content up
             into:</para>
@@ -927,7 +928,7 @@ Optional snapshot description. (Default=None)</programlisting>
                     xlink:href="http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/"
                     >OpenStack: Perform Consistent Snapshots blog
                     entry</link>
-                (http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/)</para>
+                (http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/).</para>
             <para>A snapshot captures the state of the file system,
                 but not the state of the memory. Therefore, to ensure
                 your snapshot contains the data that you want, before
@@ -1031,7 +1032,7 @@ Optional snapshot description. (Default=None)</programlisting>
             database tables, the table operators are most likely to
             need to look at in relation to user instances is the
             "instances" table.</para>
-        <para>The instances table carries all most of the information
+        <para>The instances table carries most of the information
             related to both running and deleted instances. It has a
             bewildering array of fields, for an exhaustive list look
             at the database. These are the most useful fields for

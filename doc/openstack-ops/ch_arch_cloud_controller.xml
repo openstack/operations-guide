@@ -444,13 +444,12 @@
     </section>
     <section xml:id="images">
         <title>Images</title>
-        <para>The OpenStack Image Catalog and Delivery service
-            consists of two parts - <code>glance-api</code> and
-                <code>glance-registry</code>. The former is
-            responsible for the delivery of images and the compute
-            node uses it to download images from the back-end. The
-            latter maintains the metadata information associated with
-            virtual machine images and requires a database.</para>
+        <para>The OpenStack Image Service consists of two parts -
+            <code>glance-api</code> and <code>glance-registry</code>. The
+            former is responsible for the delivery of images and the compute
+            node uses it to download images from the back-end. The latter
+            maintains the metadata information associated with virtual machine
+            images and requires a database.</para>
         <para>The <code>glance-api</code> part is an abstraction layer
             that allows a choice of back-end. Currently, it
             supports:</para>

@@ -255,7 +255,7 @@
                 </listitem>
                 <listitem>
                     <para>If additional storage is required, this
-                        option does not to scale.</para>
+                        option does not scale.</para>
                 </listitem>
             </itemizedlist>
             <para>Running a shared file system on a storage system apart from
