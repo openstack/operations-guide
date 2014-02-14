@@ -30,7 +30,7 @@ Contributing
 This book is undergoing a custom edit with O'Reilly publishing and we welcome
 contributions to make it as accurate as possible. Our target is the Havana release.
 
-The style guide to follow is at `chimera.labs.oreilly.com <http://chimera.labs.oreilly.com/books/1230000000969/index.html`_.
+The style guide to follow is at `chimera.labs.oreilly.com <http://chimera.labs.oreilly.com/books/1230000000969/index.html>`_.
 
 Our community welcomes all people interested in open source cloud computing,
 and encourages you to join the `OpenStack Foundation <http://www.openstack.org/join>`_.
