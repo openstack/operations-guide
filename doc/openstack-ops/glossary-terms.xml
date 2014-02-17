@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glossary xmlns="http://docbook.org/ns/docbook"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="rs_glossary"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:id="openstack_glossary"
     version="5.0">
 
 <!-- Add role="auto" above if you want to only generate a glossary
