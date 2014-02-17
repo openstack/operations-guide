@@ -16,18 +16,18 @@
         allows all services to be distributed widely. However, to simplify this
         guide we have decided to discuss services of a more central nature using
         the concept of a <emphasis>cloud controller</emphasis>. A cloud
-        controller is just a conceptual simplification, and in the real world
-        you likely will design an architecture for your cloud controller that
-        enables high availability so the cloud controller tasks are spread out
+        controller is just a conceptual simplification. In the real world
+        you design an architecture for your cloud controller that enables
+        high availability. In reality, the cloud controller tasks are spread out
         across more than a single node. The cloud controller provides the
-        central management system for OpenStack deployments. Typically the cloud
-        controller manages authentication and sends messaging to all the systems
-        through a message queue.</para>
-    <para>For more details about an overall example architecture, see the <xref
-            linkend="example_architecture"/>.</para>
+        central management system for OpenStack deployments. Typically the
+        cloud controller manages authentication and sends messaging to all the
+        systems through a message queue.</para>
+    <tip><para>For a more detailed example architecture, see
+        <xref linkend="example_architecture"/>.</para></tip>
     <para>For many deployments, the cloud controller is a single node, but for
         high availability, you have considerations about the design to explore
-        further in this chapter. The concept of a cloud controller hosts these
+        further in this chapter. The cloud controller provides these
         necessary management services for the cloud:</para>
     <itemizedlist>
             <listitem>
