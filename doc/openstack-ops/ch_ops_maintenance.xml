@@ -56,13 +56,20 @@
             <title>After a Cloud Controller or Storage Proxy
                 Reboots</title>
             <para>After a cloud controller reboots, ensure that all
-                required services were successfully started:</para>
+                required services were successfully started. The
+                following commands use <code>ps</code> and
+                    <code>grep</code> to determine if nova, glance,
+                and keystone are currently running:</para>
             <programlisting><?db-font-size 65%?># ps aux | grep nova-
-# grep AMQP /var/log/nova/nova-*.log
 # ps aux | grep glance-
 # ps aux | grep keystone
 # ps aux | grep cinder</programlisting>
-            <para>Also check that all services are functioning:</para>
+            <para>Also check that all services are functioning. The
+                following set of commands sources the
+                    <code>openrc</code> file, then runs some basic
+                glance, nova, and keystone commands. If the commands
+                work as expected, you can be confident that those
+                services are in working condition:</para>
             <programlisting><?db-font-size 65%?># source openrc
 # glance index
 # nova list
@@ -76,10 +83,17 @@
         <section xml:id="cc_failure">
             <?dbhtml stop-chunking?>
             <title>Total Cloud Controller Failure</title>
-            <para>Unfortunately, this is a rough situation. The cloud
-                controller is an integral part of your cloud. If you
-                have only one controller, many services are
-                missing.</para>
+            <para>The cloud controller could completely fail if, for
+                example, its motherboard goes bad. Users will
+                immediately notice the loss of a cloud controller
+                since it provides core functionality to your cloud
+                environment. If your infrastructure monitoring does
+                not alert you that your cloud controller has failed,
+                your users definitely will. Unfortunately, this is a
+                rough situation. The cloud controller is an integral
+                part of your cloud. If you have only one controller,
+                you will have many missing services if it goes
+                down.</para>
             <para>To avoid this situation, create a highly available
                 cloud controller cluster. This is outside the scope of
                 this document, but you can read more in the draft
@@ -250,25 +264,26 @@
                 <listitem>
                     <para>Suspend the instance using the virsh command - taking
                         note of the internal ID:</para>
-                    <programlisting><?db-font-size 65%?>root@compute-node:~# virsh list
+                    <programlisting><?db-font-size 65%?># virsh list
 Id Name                 State
 ----------------------------------
 1 instance-00000981    running
 2 instance-000009f5    running
 30 instance-0000274a    running
 
-root@compute-node:~# virsh suspend 30
+# virsh suspend 30
 Domain 30 suspended</programlisting>
                 </listitem>
                 <listitem>
                     <para>Connect the qemu-nbd device to the disk:</para>
-                    <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# ls -lh
+                    <programlisting><?db-font-size 65%?># cd /var/lib/nova/instances/instance-0000274a
+# ls -lh
 total 33M
 -rw-rw---- 1 libvirt-qemu kvm  6.3K Oct 15 11:31 console.log
 -rw-r--r-- 1 libvirt-qemu kvm   33M Oct 15 22:06 disk
 -rw-r--r-- 1 libvirt-qemu kvm  384K Oct 15 22:06 disk.local
 -rw-rw-r-- 1 nova         nova 1.7K Oct 15 11:30 libvirt.xml
-root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -c /dev/nbd0 `pwd`/disk</programlisting>
+# qemu-nbd -c /dev/nbd0 `pwd`/disk</programlisting>
                 </listitem>
                 <listitem>
                     <para>Mount the qemu-nbd device.</para>
@@ -277,17 +292,17 @@ root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -c /dev/nb
                         example if vda as the disk and vda1 as the root
                         partition, qemu-nbd exports the device as /dev/nbd0 and
                         /dev/nbd0p1 respectively:</para>
-                    <programlisting><?db-font-size 65%?># mount the root partition of the device
-root@compute-node:/var/lib/nova/instances/instance-0000274a# mount /dev/nbd0p1 /mnt/
-# List the directories of mnt, and the vm's folder is display
-# You can inspect the folders and access the /var/log/ files</programlisting>
+                    <programlisting><?db-font-size 65%?># mount /dev/nbd0p1 /mnt/</programlisting>
+                    <para>You can now access the contents of
+                            <code>/mnt</code> which correspond to the
+                        first partition of the instance's disk.</para>
                     <para>To examine the secondary or ephemeral disk, use an
                         alternate mount point if you want both primary and
                         secondary drives mounted at the same time:</para>
                     <programlisting><?db-font-size 65%?># umount /mnt
 # qemu-nbd -c /dev/nbd1 `pwd`/disk.local
 # mount /dev/nbd1 /mnt/</programlisting>
-                    <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# ls -lh /mnt/
+                    <programlisting><?db-font-size 65%?># ls -lh /mnt/
 total 76K
 lrwxrwxrwx.  1 root root    7 Oct 15 00:44 bin -&gt; usr/bin
 dr-xr-xr-x.  4 root root 4.0K Oct 15 01:07 boot
@@ -311,22 +326,22 @@ drwxr-xr-x. 13 root root 4.0K Oct 15 00:44 usr
 drwxr-xr-x. 17 root root 4.0K Oct 15 00:44 var</programlisting>
                 </listitem>
                 <listitem>
-                    <para>Once you have completed the inspection, umount the
+                    <para>Once you have completed the inspection, unmount the
                         mount point and release the qemu-nbd device:</para>
-                    <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# umount /mnt
-root@compute-node:/var/lib/nova/instances/instance-0000274a# qemu-nbd -d /dev/nbd0
+                    <programlisting><?db-font-size 65%?># umount /mnt
+# qemu-nbd -d /dev/nbd0
 /dev/nbd0 disconnected</programlisting>
                 </listitem>
                 <listitem>
                     <para>Resume the instance using virsh:</para>
-                    <programlisting><?db-font-size 65%?>root@compute-node:/var/lib/nova/instances/instance-0000274a# virsh list
+                    <programlisting><?db-font-size 65%?># virsh list
 Id Name                 State
 ----------------------------------
 1 instance-00000981    running
 2 instance-000009f5    running
 30 instance-0000274a    paused
 
-root@compute-node:/var/lib/nova/instances/instance-0000274a# virsh resume 30
+# virsh resume 30
 Domain 30 resumed</programlisting>
                 </listitem>
             </orderedlist>
@@ -360,10 +375,20 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
         <section xml:id="totle_compute_node_failure">
             <?dbhtml stop-chunking?>
             <title>Total Compute Node Failure</title>
-            <para>If a compute node fails and won't be fixed for a few
-                hours or ever, you can relaunch all instances that are
-                hosted on the failed node if you use shared storage
-                for <code>/var/lib/nova/instances</code>.</para>
+            <para>Compute nodes can fail the same way a cloud
+                controller can fail. A motherboard failure or some
+                other type of hardware failure can cause an entire
+                compute node to go offline. When this happens, all
+                instances running on that compute node will not be
+                available. Just like with a cloud controller failure,
+                if your infrastructure monitoring does not detect a
+                failed compute node, your users will notify you due to
+                their lost instances.</para>
+            <para>If a compute node fails and won't be
+                fixed for a few hours (or ever at all), you can
+                relaunch all instances that are hosted on the failed
+                node if you use shared storage for
+                    <code>/var/lib/nova/instances</code>.</para>
             <para>To do this, generate a list of instance UUIDs that
                 are hosted on the failed node by running the following
                 query on the nova database:</para>
@@ -739,13 +764,16 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
             <para>Review the components configuration file to see how
                 each OpenStack component accesses its corresponding
                 database. Look for either <code>sql_connection</code>
-                or simply <code>connection</code>:</para>
+                or simply <code>connection</code>. The following
+                command uses <code>grep</code> to display the SQL
+                connection string for nova, glance, cinder, and
+                keystone:</para>
             <programlisting><?db-font-size 65%?># grep -hE "connection ?=" /etc/nova/nova.conf /etc/glance/glance-*.conf
 /etc/cinder/cinder.conf /etc/keystone/keystone.conf
         sql_connection = mysql://nova:nova@cloud.alberta.sandbox.cybera.ca/nova
         sql_connection = mysql://glance:password@cloud.example.com/glance
         sql_connection = mysql://glance:password@cloud.example.com/glance
-    sql_connection=mysql://cinder:password@cloud.example.com/cinder
+        sql_connection = mysql://cinder:password@cloud.example.com/cinder
         connection = mysql://keystone_admin:password@cloud.example.com/keystone</programlisting>
             <para>The connection strings take this format:</para>
             <programlisting><?db-font-size 65%?>mysql:// &lt;username&gt; : &lt;password&gt; @ &lt;hostname&gt; / &lt;database name&gt;</programlisting>
