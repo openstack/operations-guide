@@ -40,22 +40,25 @@
             those 12 cores are doubled to 24 cores. If you purchase a
             server that supports multiple CPUs, the number of cores is
             further multiplied.</para>
-        <para>Hyper-threading is Intel's proprietary simultaneous
-            multithreading implementation used to improve parallelization
-            on their CPUs. You might consider enabling hyper-threading to
-            improve the performance of multi-threaded applications.</para>
+        <sidebar><title>Multithread Considerations</title>
+            <para>Hyper-threading is Intel's proprietary simultaneous
+                multithreading implementation used to improve parallelization
+                on their CPUs. You might consider enabling hyper-threading to
+                improve the performance of multi-threaded applications.</para>
         <para>Whether you should enable hyper-threading on your CPUs
             depends upon your use case. For example, disabling
             hyper-threading can be beneficial in intense computing
             environments. We recommend you do performance testing with
             your local workload with both hyper-threading on and off
-            to determine what is more appropriate in your case.</para>
+            to determine what is more appropriate in your case.</para></sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="hypervisor_choice">
         <title>Hypervisor Choice</title>
-        <para>OpenStack Compute supports many hypervisors to various
-            degrees, including:
+        <para>A hypervisor provides software to manage virtual machine access to
+            the underlying hardware. The hypervisor creates, manages, and
+            monitors virtual machines. OpenStack Compute supports many
+            hypervisors to various degrees, including:
             <itemizedlist role="compact">
                 <listitem><para><link xlink:title="reference manual" xlink:href="http://www.linux-kvm.org/">KVM</link> (http://www.linux-kvm.org/)</para></listitem>
                 <listitem><para><link xlink:title="reference manual" xlink:href="http://lxc.sourceforge.net/">LXC</link> (http://lxc.sourceforge.net/)</para></listitem>
@@ -313,7 +316,6 @@
                 knowledge about it.</para>
         </section>
     </section>
-
     <section xml:id="overcommit">
         <title>Overcommitting</title>
         <para>OpenStack allows you to overcommit CPU and RAM on
@@ -331,10 +333,10 @@
         </itemizedlist>
         <para>The default CPU allocation ratio of 16:1 means that the
             scheduler allocates up to 16 virtual cores per physical
-            core. For example, if a physical node has 12 cores, then
-            192 virtual cores would be available and with typical
-            flavours, of 4 virtual cores per instance, this would
-            provide 48 instances on a physical node.</para>
+            core. For example, if a physical node has 12 cores, then the scheduler
+            sees 192 available virtual cores. With typical flavor definitions of
+            4 virtual cores per instance, this ratio would provide 48 instances
+            on a physical node.</para>
         <para>The formula for the number of virtual instances on a
             compute node is <emphasis>(OR*PC)/VC</emphasis>, where:
         </para>
