@@ -604,5 +604,17 @@ None                             1.2.3.5 48a415e7-6f07-4d33-ad00-814e60b010ff no
 | updated                             | 2013-02-13T20:08:59Z              |
 | user_id                             | ...                               |
 +-------------------------------------+-----------------------------------+</programlisting></para>
+        <para>The above output shows that an instance named
+            <userinput>devstack</userinput> was created from an Ubuntu 12.04 image using a flavor
+            of m1.small and is hosted on the compute node
+            c02.example.com.</para>
+    </section>
+    <section xml:id="ops-lay-of-land-summary">
+    <title>Summary</title>
+    <para>We hope you have enjoyed this quick tour of your working
+    environment, including how to interact with your cloud and extract
+    useful information. From here, you can use the <link xlink:href=" http://docs.openstack.org/user-guide-admin/content/"><citetitle>Admin User Guide</citetitle></link>
+    as your reference for all of the command line functionality in your
+    cloud.</para>
     </section>
 </chapter>

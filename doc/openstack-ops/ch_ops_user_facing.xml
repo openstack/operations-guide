@@ -76,11 +76,10 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
                 <step>
                     <para>Once you have both pieces of information, run the
                         glance command:</para>
-                    <screen><prompt>$</prompt> <userinput>glance member-create \
-                    &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
+<screen><prompt>$</prompt> <userinput>glance member-create \
+    &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
                     <para>For example:</para>
-                    <screen><prompt>$</prompt> <userinput>glance member-create \
-    733d1c44-a2ea-414b-aca7-69decf20d810 \
+<screen><prompt>$</prompt> <userinput>glance member-create 733d1c44-a2ea-414b-aca7-69decf20d810 \
     771ed149ef7e4b2b88665cc1c98f77ca</userinput></screen>
                     <para>Project 771ed149ef7e4b2b88665cc1c98f77ca
                         will now have access to image
@@ -646,7 +645,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 that is compatible with the Amazon EC2 metadata
                 service.</para>
             <para>Users can generate and register ssh keys using the
-                nova command</para>
+                nova command:</para>
             <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add mykey &gt; mykey.pem</programlisting>
             <para>This creates a key named mykey which you can
                 associate with instances. The file mykey.pem is the
