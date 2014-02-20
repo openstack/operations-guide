@@ -383,10 +383,12 @@ the Icehouse release and perhaps further afield.</para>
                                 straightforward use cases nova-network
                                 traditionally supported. Though significant
                                 effort has been made to address these concerns,
-                                nova-network is unlikely to be deprecated in the
-                                Icehouse release. The teams are also looking
-                                into the possibility of re-opening development
-                                on nova-network.</para>
+                                nova-network will not be deprecated in the
+                                Icehouse release. In addition, the Program
+                                Technical Lead of the Compute project has
+                                indicated that to a limited degree, patches to
+                                nova-network will now again begin to be
+                                accepted.</para>
                         <para>This leaves you with an important point of
                                 decision when designing your cloud. OpenStack
                                 Networking is robust enough to use with a small
@@ -427,6 +429,19 @@ the Icehouse release and perhaps further afield.</para>
                         monolithic plugins associated with those L2
                         agents.</para>
         </section>
+        <section xml:id="roadmap-nova-v3-api">
+                <title>Compute V3 API</title>
+                <para>The 3rd version of the Compute API will be released in
+                experimental status with Icehouse. Though the V2 API will
+                remain for two-to-three releases, this is the best time to
+                evaluate the new API and provide comments while it can be more
+                easily changed. Of particular note is the decision that the V3
+                API will not support XML messages - being JSON only. This was
+                based on the poor testing of existing XML responses in the V2
+                API, and lack of effort to continue to develop and maintain an
+                entire second response type. Feedback on this and any such
+                change is welcome by responding to the <link xlink:href="https://www.openstack.org/user-survey/">user survey</link>.</para>
+        </section>
         <section xml:id="roadmap-triple-o">
         <title>OpenStack on OpenStack (TripleO)</title>
         <para>Continues to improve and you may consider using it for greenfield
@@ -440,7 +455,12 @@ the Icehouse release and perhaps further afield.</para>
         </section>
         <section xml:id="roadmap-baremetal">
         <title>Bare-metal deployment (Ironic)</title>
-        <para>will it make it?</para>
+        <para>Though Bare-metal deployment has been widely lauded, and
+        development continues, the project to replace Compute's bare-metal
+        driver will likely not graduate in Icehouse. A particular blueprint to
+        follow is <link xlink:href="https://blueprints.launchpad.net/ironic/+spec/migration-from-nova">
+        Migration path from Nova's BM driver</link>, which tracks the ability
+        to move to the new project from an existing bare metal deployment.</para>
         </section>
         <section xml:id="roadmap-trove">
                 <title>Database as a Service (Trove)</title>
@@ -474,6 +494,19 @@ the Icehouse release and perhaps further afield.</para>
         <para>The team discussed many areas of work at the Icehouse summit
                 including volume migration support, Ceph integration, and access
                 control for volumes.</para>
+        </section>
+        <section xml:id="roadmap-python-sdk">
+        <title>Toward a 'proper' Python SDK</title>
+        <para>Though many successfully use the various python-*client code as
+        an effective SDK for interacting with OpenStack, consistency between
+        the projects and documentation availability waxes and wanes. To combat
+        this, an <link xlink:href="https://wiki.openstack.org/wiki/PythonOpenStackSDK">effort to
+        improve the experience</link> has started. Cross-project development
+        efforts in OpenStack have a checkered history, such as the
+        <link xlink:href="https://wiki.openstack.org/wiki/OpenStackClient">
+        unified client project</link> having several false starts. However,
+        the early signs for the SDK project are promising and we expect to see
+        results during the Juno cycle.</para>
         </section>
     </section>
 </appendix>
