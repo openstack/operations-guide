@@ -426,6 +426,18 @@ notification_driver=nova.openstack.common.notifier.rabbit_notifier</programlisti
             The latter involves monitoring resource usage over time in
             order to make informed decisions about potential
             bottlenecks and upgrades.</para>
+        <sidebar>
+            <title>Nagios</title>
+            <para>Nagios is an open source monitoring service. It's
+                capable of executing arbitrary commands to check the
+                status of server and network services, remotely
+                executing arbitrary commands directly on servers, and
+                allow servers to push notifications back in the form
+                of passive monitoring. Nagios has been around since
+                1999. Although newer monitoring services are
+                available, Nagios is a tried-and-true systems
+                administration staple.</para>
+        </sidebar>
         <section xml:id="process_monitoring">
             <title>Process Monitoring</title>
             <para>A basic type of alert monitoring is to simply check
@@ -557,12 +569,14 @@ root 24121 0.0 0.0 11688 912 pts/5 S+ 13:07 0:00 grep nova-api</programlisting>
 | 628df59f091142399e0689a2696f5baa | gigabytes    | 12     |
 | 628df59f091142399e0689a2696f5baa | images       | 1      |
 +----------------------------------+--------------+--------+</programlisting>
-            <para>By combining the resources used with the tenant's
-                quota, you can figure out a usage percentage. For
-                example, if this tenant is using 1 Floating IP out of
-                10, then they are using 10% of their Floating IP
-                quota. You can take this procedure and turn it into a
-                formatted report:</para>
+            <para>By comparing a tenant's hard limit with their
+                current resource usage, you can see their usage
+                percentage. For example, if this tenant is using 1
+                Floating IP out of 10, then they are using 10% of
+                their Floating IP quota. Rather than doing the
+                calculation manually, you can use SQL or the scripting
+                language of your choice and create a formatted
+                report:</para>
             <programlisting><?db-font-size 65%?>
 +----------------------------------+------------+-------------+---------------+
 | some_tenant                                                                 |
@@ -729,5 +743,15 @@ glance image-create --name='cirros image' --is-public=true --container-format=ba
                 documentation
                 (https://collectd.org/wiki/index.php/Data_source)</para>
         </section>
+    </section>
+    <section xml:id="ops-log-monitor-summary">
+        <title>Summary</title>
+        <para>For stable operations, you want to detect failure promptly and
+        determine causes efficiently. With a distributed system, it's even
+        more important to track the right items to meet a service level target.
+        Learning where these logs are located in the file system or API gives
+        you an advantage. Plus, we have discussed how to read, interpret, and
+        manipulate information from OpenStack services so you can monitor
+        effectively.</para>
     </section>
 </chapter>
