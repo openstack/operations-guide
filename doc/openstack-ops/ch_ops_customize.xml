@@ -11,7 +11,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
     xml:id="customize">
     <?dbhtml stop-chunking?>
-    <title>Customizing</title>
+    <title>Customization</title>
     <para>OpenStack might not do everything you need it to do out of
         the box. To add a new feature, you can follow different
         paths.</para>
@@ -740,7 +740,7 @@ LOG.debug("request_spec = %(request_spec)s" % locals())
 LOG.debug("filter_properties = %(filter_properties)s" % locals())</programlisting>
             </step>
             <step>
-                <para>To plug this scheduler into Nova 
+                <para>To plug this scheduler into Nova
                     edit one configuration file, <filename>/etc/nova/nova.conf</filename>.</para>
                 <screen><prompt>$</prompt> <userinput>vim /etc/nova/nova.conf</userinput></screen>
             </step>

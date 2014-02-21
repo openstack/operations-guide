@@ -697,7 +697,7 @@ Optional snapshot description. (Default=None)</programlisting>
             </section>
             <section xml:id="instance_user_data">
                 <title>Instance User Data</title>
-                <para>The <code>user-data</code> key is a special key in the 
+                <para>The <code>user-data</code> key is a special key in the
                     metadata service which holds a file that cloud-aware
                     applications within the guest instance can access.
                     For example <link
