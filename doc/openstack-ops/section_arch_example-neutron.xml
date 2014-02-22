@@ -514,6 +514,7 @@
                 <caption>OpenStack component configuration</caption>
                 <!--<col width="110px"/>-->
                 <col width="8%"/>
+                <col width="8%"/>
                 <col width="19%"/>
                 <col width="35%"/>
                 <col width="30%"/>
