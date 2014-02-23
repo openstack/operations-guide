@@ -21,7 +21,10 @@ format="SVG" scale="60"/>
     <para>Storage is found in many parts of the OpenStack stack, and
         the differing types can cause confusion to even experienced
         cloud engineers. This section focuses on persistent storage
-        options you can configure with your cloud.</para>
+        options you can configure with your cloud. It's important to
+        understand the distinction between <glossterm baseform="ephemeral volume">
+        ephemeral</glossterm> storage and <glossterm baseform="persistent volume">
+        persistent</glossterm> storage.</para>
     <section xml:id="ephemeral_storage">
         <title>Ephemeral Storage</title>
         <para>If you only deploy the OpenStack Compute Service (nova),
@@ -29,16 +32,16 @@ format="SVG" scale="60"/>
             storage by default. The disks associated with VMs are
             "ephemeral", meaning that (from the user's point of view)
             they effectively disappear when a virtual machine is
-            terminated. You must identify what type of persistent
-            storage you want to support for your users.</para>
-        <para>Today, OpenStack clouds explicitly support two types of
-            persistent storage: <emphasis>object storage</emphasis>
-            and <emphasis>block storage</emphasis>.</para></section>
+            terminated.</para>
+        </section>
     <section xml:id="persistent_storage">
         <title>Persistent Storage</title>
         <para>Persistent storage means that the storage resource outlives any
             other resource and is always available, regardless of the state of a
             running instance.</para>
+        <para>Today, OpenStack clouds explicitly support two types of
+            persistent storage: <emphasis>object storage</emphasis>
+            and <emphasis>block storage</emphasis>.</para>
         <section xml:id="object_storage">
             <title>Object Storage</title>
             <para>With object storage, users access binary objects
@@ -237,8 +240,7 @@ format="SVG" scale="60"/>
                 </tr>
             </tbody>
         </table>
-        <section xml:id="file_level_storage">
-            <!-- FIXME: change to an aside -->
+        <sidebar>
             <title>File-level Storage (for Live Migration)</title>
             <para>With file-level storage, users access stored data
                 using the operating system's file system interface.
@@ -254,7 +256,7 @@ format="SVG" scale="60"/>
                 designing your cloud, since you must have a shared
                 file system if you wish to support live
                 migration.</para>
-        </section>
+        </sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="storage_backends">
@@ -314,7 +316,7 @@ format="SVG" scale="60"/>
                     <th> </th>
                     <th>Object</th>
                     <th>Block</th>
-                    <th>File-level* (live migration support)</th>
+                    <th>File-level*</th>
                 </tr>
             </thead>
             <tbody>
@@ -361,7 +363,9 @@ format="SVG" scale="60"/>
             exist (MooseFS). Your organization may already have
             deployed a file-level shared storage solution which you
             can use.</para>
-        <para>In addition to the open-source technologies, there are a
+        <sidebar>
+            <title>Storage Driver Support</title>
+            <para>In addition to the open-source technologies, there are a
             number of proprietary solutions that are officially
             supported by OpenStack Block Storage. They are offered by
             the following vendors:</para>
@@ -385,6 +389,7 @@ format="SVG" scale="60"/>
                 xlink:href="https://wiki.openstack.org/wiki/CinderSupportMatrix"
                 >OpenStack wiki</link>
             (https://wiki.openstack.org/wiki/CinderSupportMatrix).</para>
+        </sidebar>
         <para>Also, you need to decide whether you want to support
             object storage in your cloud. The two common use cases for
             providing object storage in a compute cloud are:</para>
