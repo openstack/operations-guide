@@ -8,20 +8,21 @@
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0"
     xml:id="network_design">
     <?dbhtml stop-chunking?>
     <title>Network Design</title>
     <para>OpenStack provides a rich networking environment, and this
         chapter details the requirements and options to deliberate
         when designing your cloud.</para>
-    <para>If this is the first time you are deploying a cloud
+    <warning><para>If this is the first time you are deploying a cloud
         infrastructure in your organisation, after reading this
         section, your first conversations should be with your
         networking team. Network usage in a running cloud is vastly
         different from traditional network deployments, and has the
         potential to be disruptive at both a connectivity and a policy
-        level.</para>
+        level.</para></warning>
     <para>For example, you must plan the number of IP addresses that
         you need for both your guest instances as well as management
         infrastructure. Additionally, you must research and discuss
@@ -33,7 +34,7 @@
         services that are essential for stable operation.</para>
     <section xml:id="mgmt_network">
         <title>Management Network</title>
-        <para>A management network (a separate network for use by your
+        <para>A <glossterm>management network</glossterm> (a separate network for use by your
             cloud operators), typically consisting of a separate
             switch and separate NICs (Network Interface Cards), is a
             recommended option. This
@@ -175,8 +176,14 @@
             tried-and-true legacy nova-network settings or the neutron project
             for OpenStack Networking. Both offer networking for launched
             instances with different implementations and requirements.</para>
-        <para>For OpenStack Networking with the neutron project, typical configurations are documented with the idea that any setup you can configure with real hardware you can re-create with a software-defined equivalent. Each tenant can contain typical network elements such as routers and services such as DHCP.</para>
-        <para>This table discusses the networking deployment options when using the legacy nova-network options for networking set up between virtual machine instances with a column about equivalent neutron configuration:</para>
+        <para>For OpenStack Networking with the neutron project, typical
+            configurations are documented with the idea that any setup you can
+            configure with real hardware you can re-create with a
+            software-defined equivalent. Each tenant can contain typical network
+            elements such as routers and services such as DHCP.</para>
+        <para>This table discusses the networking deployment options for both
+            legacy nova-network options and an equivalent neutron configuration:
+        </para>
         <informaltable rules="all" width="729">
             <col width="17%"/>
             <col width="22%"/>
@@ -278,9 +285,12 @@
                 </tr>
             </tbody>
         </informaltable>
-
+        <para>Both nova-network and neutron services provide similar capabilities,
+            such as VLAN between VMs. You also can provide multiple NICs (Network
+            Interface Cards) on VMs with either service. Further discussion
+            follows.</para>
         <section xml:id="vlans">
-            <title>VLANs</title>
+            <title>VLAN Configuration within OpenStack VMs</title>
             <para>VLAN configuration can be as simple or as
                 complicated as desired. The use of VLANs has the
                 benefit of allowing each project its own subnet and
@@ -298,7 +308,7 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="multi_nic">
-            <title>Multi-NIC</title>
+            <title>Multi-NIC Provisioning</title>
             <para>OpenStack Compute has the ability to assign multiple
                 NICs to instances on a per-project basis. This is
                 generally an advanced feature and not an everyday
