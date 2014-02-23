@@ -76,11 +76,10 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
                 <step>
                     <para>Once you have both pieces of information, run the
                         glance command:</para>
-                    <screen><prompt>$</prompt> <userinput>glance member-create \
-                    &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
+<screen><prompt>$</prompt> <userinput>glance member-create \
+    &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
                     <para>For example:</para>
-                    <screen><prompt>$</prompt> <userinput>glance member-create \
-    733d1c44-a2ea-414b-aca7-69decf20d810 \
+<screen><prompt>$</prompt> <userinput>glance member-create 733d1c44-a2ea-414b-aca7-69decf20d810 \
     771ed149ef7e4b2b88665cc1c98f77ca</userinput></screen>
                     <para>Project 771ed149ef7e4b2b88665cc1c98f77ca
                         will now have access to image
@@ -626,56 +625,50 @@ Optional snapshot description. (Default=None)</programlisting>
                 scheduling this field is blank.</para>
         </section>
         <section xml:id="instance_specific_data">
-            <title>Instance-specific Data</title>
-            <para>There are a variety of ways to inject custom data
-                including authorized_keys key injection, user-data,
-                metadata service, and file injection.</para>
-            <para>To clarify user-data versus metadata, understand
-                that "user-data" is a chunk of data, set when an
-                instance is not running. This user-data is accessible
-                from within the instance when it is running. People
-                use this user-data to store configuration, a script,
-                or anything the tenant wants.</para>
-            <para>For Compute, instance metadata is a collection of
-                key/value pairs associated with an instance. Compute
-                reads and writes to these key/value pairs any time
-                during the instance lifetime, from inside and outside
-                the instance, when the end-user uses the Compute API
-                to do so. However, you cannot query the instance
-                associated key/value pairs via the metadata service
-                that is compatible with the Amazon EC2 metadata
-                service.</para>
-            <para>Users can generate and register ssh keys using the
-                nova command</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add mykey &gt; mykey.pem</programlisting>
-            <para>This creates a key named mykey which you can
-                associate with instances. The file mykey.pem is the
-                private key which should be saved to a secure location
-                as it allows root access to instances the mykey key is
-                associated with.</para>
-            <para>You can register an existing public key with
-                OpenStack using this command</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add --pub-key mykey.pub mykey</programlisting>
-            <para>You must have the matching private key to access
-                instances associated with this key.</para>
-            <para>To associate a key with an instance on boot add
-                <code>--key_name mykey</code> to your command line.
-                For example:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 2 --key_name mykey myimage</programlisting>
-            <para>When booting a server, you can also add metadata, so
-                that you can more easily identify it amongst other
-                running instances. Use the <code>--meta</code> option with a
-                key=value pair, where you can make up the string for
-                both the key and the value. For example, you could add
-                a description and also the creator of the
-                server:</para>
-            <programlisting><?db-font-size 65%?><prompt>$ </prompt>nova boot --image=test-image --flavor=1 --meta description='Small test image' smallimage</programlisting>
-            <para>When viewing the server information, you can see the
-                metadata included on the metadata line:</para>
-
-            <programlisting><prompt>$</prompt> nova show smallimage</programlisting>
-
-            <programlisting><?db-font-size 65%?>+------------------------+-----------------------------------------+
+            <title>Using Instance-specific Data</title>
+            <para>There are two main types of instance-specific data: metadata and user data.</para>
+            <section xml:id="instance_metadata">
+                <title>Instance Metadata</title>
+                <para>For Compute, instance metadata is a collection of
+                    key/value pairs associated with an instance. Compute
+                    reads and writes to these key/value pairs any time
+                    during the instance lifetime, from inside and outside
+                    the instance, when the end-user uses the Compute API
+                    to do so. However, you cannot query the instance
+                    associated key/value pairs with the metadata service
+                    that is compatible with the Amazon EC2 metadata
+                    service.</para>
+                <para>As an example of instance metadata, users can
+                    generate and register ssh keys using the nova
+                    command:</para>
+                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add mykey &gt; mykey.pem</programlisting>
+                <para>This creates a key named <userinput>mykey</userinput> which you can
+                    associate with instances. The file <filename>mykey.pem</filename> is the
+                    private key which should be saved to a secure location
+                    as it allows root access to instances the mykey key is
+                    associated with.</para>
+                <para>Use this command to register an existing key
+                    with OpenStack:</para>
+                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add --pub-key mykey.pub mykey</programlisting>
+                <note><para>You must have the matching private key to access
+                    instances associated with this key.</para></note>
+                <para>To associate a key with an instance on boot add
+                    <code>--key_name mykey</code> to your command line.
+                    For example:</para>
+                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 2 --key_name mykey myimage</programlisting>
+                <para>When booting a server, you can also add
+                    arbitrary metadata, so that you can more easily
+                    identify it amongst other running instances. Use
+                    the <code>--meta</code> option with a key=value
+                    pair, where you can make up the string for both
+                    the key and the value. For example, you could add
+                    a description and also the creator of the
+                    server:</para>
+                <programlisting><?db-font-size 65%?><prompt>$ </prompt>nova boot --image=test-image --flavor=1 --meta description='Small test image' smallimage</programlisting>
+                <para>When viewing the server information, you can see the
+                    metadata included on the metadata line:</para>
+                <programlisting><prompt>$</prompt> nova show smallimage</programlisting>
+                <programlisting><?db-font-size 65%?>+------------------------+-----------------------------------------+
 |     Property           |                   Value                 |
 +------------------------+-----------------------------------------+
 |   OS-DCF:diskConfig    |               MANUAL                    |
@@ -701,32 +694,43 @@ Optional snapshot description. (Default=None)</programlisting>
 |     updated            |            2012-05-16T20:48:35Z         |
 |     user_id            |          de3...0a9                      |
 +------------------------+-----------------------------------------+</programlisting>
-            <para>User Data is a special key in the metadata service
-                which holds a file that cloud aware applications
-                within the guest instance can access. For example
-                    <link xlink:title="OpenStack Image Service"
-                    xlink:href="https://help.ubuntu.com/community/CloudInit"
-                    >cloudinit</link>
-                (https://help.ubuntu.com/community/CloudInit) is an
-                open source package from Ubuntu, but available in
-                most distributions that handles early
-                initialization of a cloud instance that makes use of
-                this user data.</para>
-            <para>This user-data can be put in a file on your local
-                system and then passed in at instance creation with
-                the flag <code>--user-data &lt;user-data-file&gt;</code>.
-                For example:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</programlisting>
-            <para>Arbitrary local files can also be placed into the
-                instance file system at creation time using the <code>--file
-                &lt;dst-path=src-path&gt;</code> option. You may store up to
-                5 files. For example if you have a special
-                authorized_keys file named special_authorized_keysfile
-                that you want to put on the instance rather than using
-                the regular ssh key injection for some reason you can
-                use the following command:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --file /root/.ssh/authorized_keys=special_authorized_keysfile</programlisting>
-
+            </section>
+            <section xml:id="instance_user_data">
+                <title>Instance User Data</title>
+                <para>The <code>user-data</code> key is a special key in the
+                    metadata service which holds a file that cloud-aware
+                    applications within the guest instance can access.
+                    For example <link
+                        xlink:title="OpenStack Image Service"
+                        xlink:href="https://help.ubuntu.com/community/CloudInit"
+                    >cloudinit</link> (https://help.ubuntu.com/community/CloudInit)
+                    is an open source package from Ubuntu, but available in most
+                    distributions, that handles early initialization of a cloud
+                    instance that makes use of this user data.</para>
+                <para>This user data can be put in a file on your local
+                    system and then passed in at instance creation with
+                    the flag <code>--user-data &lt;user-data-file&gt;</code>.
+                    For example:</para>
+                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</programlisting>
+                <para>To understand the difference between user data and
+                    metadata, realize that user data is created before an
+                    instance is started. User data is accessible
+                    from within the instance when it is running. User data
+                    can be used to store configuration, a script,
+                    or anything the tenant wants.</para>
+            </section>
+            <section xml:id="file_injection">
+                <title>File Injection</title>
+                <para>Arbitrary local files can also be placed into the
+                    instance file system at creation time using the <code>--file
+                    &lt;dst-path=src-path&gt;</code> option. You may store up to
+                    5 files. For example if you have a special
+                    authorized_keys file named special_authorized_keysfile
+                    that you want to put on the instance rather than using
+                    the regular ssh key injection for some reason you can
+                    use the following command:</para>
+                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --file /root/.ssh/authorized_keys=special_authorized_keysfile</programlisting>
+            </section>
         </section>
     </section>
     <section xml:id="associate_security_groups">
@@ -759,7 +763,6 @@ Optional snapshot description. (Default=None)</programlisting>
             "Access &amp; Security" page of the dashboard. The command
             line can also be used:</para>
         <programlisting><prompt>$</prompt> nova floating-ip-create</programlisting>
-
         <para>Once allocated, a Floating IP can be assigned to running
             instances from the Dashboard either by selecting the
             <guibutton>Associate Floating IP</guibutton> from the actions drop down next to
@@ -790,7 +793,7 @@ Optional snapshot description. (Default=None)</programlisting>
             through the nova command line client, as follows:</para>
         <programlisting>--block-device-mapping &lt;dev-name=mapping&gt; </programlisting>
         <para>The block device mapping format is
-                <code>&lt;dev-name=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:&lt;delete-on-terminate&gt;</code>,
+                <code>&lt;dev-name&gt;=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:&lt;delete-on-terminate&gt;</code>,
             where:</para>
         <variablelist>
             <varlistentry>
@@ -799,10 +802,11 @@ Optional snapshot description. (Default=None)</programlisting>
                     <para>A device name where the volume is attached in the
                         system at <code>/dev/<replaceable>dev_name</replaceable>
                         </code>.</para>
-                    <para>
-                        <literal
-                            >id</literal>
-                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term>id</term>
+                <listitem>
                     <para>The ID of the volume to boot from, as shown in the
                         output of nova volume-list.</para>
                 </listitem>
@@ -819,7 +823,6 @@ Optional snapshot description. (Default=None)</programlisting>
                         below.</para>
                 </listitem>
             </varlistentry>
-
             <varlistentry>
                 <term>size (GB)</term>
                 <listitem>
@@ -839,12 +842,19 @@ Optional snapshot description. (Default=None)</programlisting>
                 </listitem>
             </varlistentry>
         </variablelist>
-        <para>If you have previously prepared the block storage with a bootable
-            file system image it is even possible to boot from persistent block
-            storage. The following example will attempt boot from volume with
-                ID=<literal>13</literal>, it does not delete on terminate.
-            Replace the <literal>--key-name</literal> with a valid keypair
-            name:</para>
+        <para>The following command will boot a new instance and
+            attach a volume at the same time. The volume of ID 13 will
+            be attached as <code>/dev/vdc</code>, is not a snapshot,
+            does not specify a size, and will not be deleted when the
+            instance is terminated:</para>
+        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image 4042220e-4f5e-4398-9054-39fbd75a5dd7 --flavor 2 --key-name mykey --block-device-mapping vdc=13:::0 boot-with-vol-test</programlisting>
+        <para>If you have previously prepared the block storage with a
+            bootable file system image it is even possible to boot
+            from persistent block storage. The following command
+            boots an image from the specified volume. It is
+            the similar to the previous command but the image is
+            omitted and the volume is now attached as
+                <code>/dev/vda</code>:</para>
         <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --flavor 2 --key-name mykey --block-device-mapping vda=13:::0 boot-from-vol-test</programlisting>
         <para>Read more detailed instructions for launching an instance from a
             bootable volume in the <link
@@ -920,10 +930,9 @@ Optional snapshot description. (Default=None)</programlisting>
                 machines without pausing them. These snapshots are simply disk-only snapshots.
                 Snapshotting an instance can now be performed with no downtime (assuming QEMU 1.3+
                 and libvirt 1.0+ are used).</para>
-        </section>
-        <section xml:id="consistent_snapshots">
+        <sidebar>
             <title>Ensuring snapshots are consistent</title>
-            <para>Content from Sébastien Han's <link
+            <para>The following section is from Sébastien Han's <link
                     xlink:title="OpenStack Image Service"
                     xlink:href="http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/"
                     >OpenStack: Perform Consistent Snapshots blog
@@ -1023,6 +1032,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 freeze the prompt. Instead, run the following
                 one-liner, as root, inside of the instance:</para>
             <programlisting><?db-font-size 65%?><prompt>#</prompt> fsfreeze -f / &amp;&amp; sleep 30 &amp;&amp; fsfreeze -u /</programlisting>
+        </sidebar>
         </section>
     </section>
     <section xml:id="database_instances">

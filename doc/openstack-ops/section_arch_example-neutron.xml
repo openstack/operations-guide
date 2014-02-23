@@ -22,16 +22,16 @@
         <section xml:id="overview_components_neutron">
             <title>Components</title>
         <informaltable rules="all">
-            <col width="27%"/>
-            <col width="73%"/>
+            <col width="40%"/>
+            <col width="60%"/>
             <tbody>
                 <tr>
                     <td><para>OpenStack release</para></td>
-                    <td><para><emphasis role="bold">Havana</emphasis></para></td>
+                    <td><para>Havana</para></td>
                 </tr>
                 <tr>
                     <td><para>Host operating system</para></td>
-                    <td><para><emphasis role="bold">Red Hat Enterprise Linux 6.5</emphasis></para></td>
+                    <td><para>Red Hat Enterprise Linux 6.5</para></td>
                 </tr>
                 <tr>
                     <td><para>OpenStack package repository</para></td>
@@ -42,39 +42,39 @@
                 </tr>
                 <tr>
                     <td><para>Hypervisor</para></td>
-                    <td><para><emphasis role="bold">KVM</emphasis></para></td>
+                    <td><para>KVM</para></td>
                 </tr>
                 <tr>
                     <td><para>Database</para></td>
-                    <td><para><emphasis role="bold">MySQL</emphasis></para></td>
+                    <td><para>MySQL</para></td>
                 </tr>
                 <tr>
                     <td><para>Message queue</para></td>
-                    <td><para><emphasis role="bold">Qpid</emphasis></para></td>
+                    <td><para>Qpid</para></td>
                 </tr>
                 <tr>
                     <td><para>Networking service</para></td>
-                    <td><para><emphasis role="bold">OpenStack Networking</emphasis></para></td>
+                    <td><para>OpenStack Networking</para></td>
                 </tr>
                 <tr>
                     <td><para>Tenant Network Separation</para></td>
-                    <td><para><emphasis role="bold">VLAN</emphasis></para>
+                    <td><para>VLAN</para>
                         </td>
                 </tr>
                 <tr>
                     <td><para>Image Service (glance)
                         back-end</para></td>
-                    <td><para><emphasis role="bold">GlusterFS</emphasis></para></td>
+                    <td><para>GlusterFS</para></td>
                 </tr>
                 <tr>
                     <td><para>Identity Service (keystone)
                             driver</para></td>
-                    <td><para><emphasis role="bold">SQL</emphasis></para></td>
+                    <td><para>SQL</para></td>
                 </tr>
                 <tr>
                     <td><para>Block Storage Service (cinder)
                             back-end</para></td>
-                    <td><para><emphasis role="bold">GlusterFS</emphasis></para></td>
+                    <td><para>GlusterFS</para></td>
                 </tr>
             </tbody>
         </informaltable>
@@ -512,7 +512,8 @@
             </table>
             <table rules="all">
                 <caption>OpenStack component configuration</caption>
-                <col width="110px"/>
+                <!--<col width="110px"/>-->
+                <col width="8%"/>
                 <col width="8%"/>
                 <col width="19%"/>
                 <col width="35%"/>

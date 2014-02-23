@@ -93,9 +93,11 @@
             </tbody>
         </informaltable>
         <?hard-pagebreak?>
-        <para>The following set-up supports (200 / 2) × 16
-            = 1600 VM instances and requires 80 TB of storage for
-                <code>/var/lib/nova/instances</code>:</para>
+        <para>Here is a worked example using the ratios for gathering
+            scalability information for the number of VMs expected as well as
+            the storage needed. The following numbers support (200 / 2) × 16 =
+            1600 VM instances and requires 80 TB of storage for
+            <code>/var/lib/nova/instances</code>:</para>
         <itemizedlist>
             <listitem>
                 <para>200 physical cores</para>
@@ -179,12 +181,14 @@
             use multiple processes by changing a flag in their
             configuration file — allowing them to share work between
             multiple cores on the one machine.</para>
-        <para>Several options are available for MySQL load balancing,
-            and RabbitMQ has in-built clustering support. Information
-            on how to configure these and many of the other services
-            can be found in the<emphasis role="bold"> Operations
-                Section.</emphasis>
-        </para>
+        <tip>
+            <para>Several options are available for MySQL load balancing, and
+                the supported AMQP brokers have in-built clustering support.
+                Information on how to configure these and many of the other
+                services can be found in the <emphasis role="bold">Operations
+                Part.</emphasis>
+            </para>
+        </tip>
     </section>
     <?hard-pagebreak?>
     <section xml:id="segregate_cloud">
@@ -255,13 +259,13 @@
                     <td><para>
                             <itemizedlist>
                                 <listitem>
-                                   <para>A new service,
-                                   <code>nova-cells</code></para>
+                                    <para>Considered experimental.</para>
                                 </listitem>
                                 <listitem>
-                                   <para>Each cell has a full nova
-                                   installation except
-                                   <code>nova-api</code></para>
+                                    <para>A new service, <code>nova-cells</code>.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Each cell has a full nova installation except <code>nova-api</code>.</para>
                                 </listitem>
                             </itemizedlist>
                         </para></td>
@@ -280,16 +284,14 @@
                     <td><para>
                             <itemizedlist>
                                 <listitem>
-                                   <para>Configuration changes to
-                                   nova.conf</para>
+                                   <para>Configuration changes to <filename>nova.conf</filename>.</para>
                                 </listitem>
                             </itemizedlist>
                         </para></td>
                     <td><para>
                             <itemizedlist>
                                 <listitem>
-                                   <para>Configuration changes to
-                                   nova.conf</para>
+                                   <para>Configuration changes to <filename>nova.conf</filename>.</para>
                                 </listitem>
                             </itemizedlist>
                         </para></td>
@@ -478,8 +480,8 @@
         <para>While several resources already exist to help with
             deploying and installing OpenStack, it's very important to
             make sure you have your deployment planned out ahead of
-            time. This guide expects at least a rack has been set
-            aside for the OpenStack cloud but also offers suggestions
+            time. This guide presumes that you have at least set aside a rack
+            for the OpenStack cloud but also offers suggestions
             for when and what to scale.</para>
         <section xml:id="hardware_procure">
             <title>Hardware Procurement</title>

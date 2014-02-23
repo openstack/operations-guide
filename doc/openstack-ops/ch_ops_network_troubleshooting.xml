@@ -739,10 +739,18 @@ nobody 2438 0.0 0.0 27540 1096 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order -
  --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
  --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
  --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro
-root 2439 0.0 0.0 27512 472 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
+  root 2439 0.0 0.0 27512 472 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
  --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
  --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
  --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</programlisting>
+        <para>The output shows three different dnsmasq processes. The
+            dnsmasq process that has the DHCP subnet range of
+            192.168.122.0 belongs to libvirt and can be ignored. The
+            other two dnsmasq processes belong to nova-network. The
+            two processes are actually related -- one is simply the
+            parent process of the other. The arguments of the dnsmasq
+            processes should correspond to the details you configured
+            nova-network with.</para>
         <para>If the problem does not seem to be related to dnsmasq
             itself, at this point, use tcpdump on the interfaces to
             determine where the packets are getting lost.</para>
@@ -952,5 +960,14 @@ qrouter-8a4ce760-ab55-4f2f-8ec5-a2e858ce0d39
       <command>bash</command>, and have an interactive session within
       the namespace. In the latter case exiting the shell will return
       you to the top level default namespace.</para>
+    </section>
+    <section xml:id="ops-network-troubleshooting-summary">
+        <title>Summary</title>
+        <para>The authors have spent too long a time looking at packet dumps
+        in order to distill this information for you. We trust that, following
+        the methods outlined in this chapter, you will have an easier time!
+        Aside from working with the tools and steps above, don't forget that
+        sometimes an extra pair of eyes goes a long way to assist.
+        </para>
     </section>
 </chapter>
