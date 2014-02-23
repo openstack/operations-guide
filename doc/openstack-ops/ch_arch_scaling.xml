@@ -184,7 +184,7 @@
         <tip>
             <para>Several options are available for MySQL load balancing, and
                 the supported AMQP brokers have in-built clustering support.
-                Information on how to configure these and many of the other 
+                Information on how to configure these and many of the other
                 services can be found in the <emphasis role="bold">Operations
                 Part.</emphasis>
             </para>
