@@ -26,7 +26,7 @@
           concepts so that you know where to go digging for more information.</para>
 
     <section xml:id="driver_differences">
-    <title>Differences between various drivers</title>
+    <title>Differences between Various Drivers</title>
     <para>Many OpenStack projects implement a driver layer, and each of these
           drivers will implement their own configuration options. For example
           in OpenStack Compute (Nova), there are various hypervisor drivers
@@ -47,7 +47,7 @@
     </section>
 
     <section xml:id="periodic_tasks">
-    <title>Periodic tasks</title>
+    <title>Implementing Periodic Tasks</title>
     <para>Another common concept across various OpenStack projects is that of
           periodic tasks. Periodic tasks are much like cron jobs on traditional
           Unix systems, but they are run inside of an OpenStack process. For
@@ -109,7 +109,7 @@
     </section>
 
     <section xml:id="specific-advanced-config-topics">
-    <title>Specific configuration topics</title>
+    <title>Specific Configuration Topics</title>
     <para>This section covers specific examples of configuration options you
           might consider tuning. It is by no means an exhaustive list.</para>
           <section xml:id="adv-config-security"><title>Security Configuration
