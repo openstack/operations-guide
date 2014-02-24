@@ -965,9 +965,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                         user's home directory, and this write may fail
                         if <literal>-H</literal> is left off.</para>
                 </note></para>
-        </section>
-        <section xml:id="complexity">
-            <?dbhtml stop-chunking?>
+        <sidebar>
             <title>Example of Complexity</title>
             <para>One morning, a compute node failed to run any
                 instances. The log files were a bit vague, claiming
@@ -988,6 +986,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
                 relies on d-bus and somehow d-bus crashed. Simply
                 starting d-bus set the entire chain back on track and
                 soon everything was back up and running.</para>
+        </sidebar>
         </section>
     </section>
         <section xml:id="uninstalling">
