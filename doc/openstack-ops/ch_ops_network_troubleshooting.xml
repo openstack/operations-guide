@@ -25,16 +25,17 @@
             following command to see information about interfaces,
             including information about IPs, VLANs, and whether your
             interfaces are up.</para>
-        <programlisting># ip a</programlisting>
+        <screen><prompt>#</prompt> <userinput>ip a</userinput></screen>
         <para>If you're encountering any sort of networking
             difficulty, one good initial sanity check is to make sure
             that your interfaces are up. For example:</para>
-        <programlisting>$ ip a | grep state
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN
+        <screen><prompt>$</prompt> <userinput>ip a | grep state</userinput></screen>
+<screen><computeroutput>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN
 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
 3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master br100 state UP qlen 1000
 4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
-6: br100: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP</programlisting>
+6: br100: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state
+UP</computeroutput></screen>
         <para>You can safely ignore the state of virbr0, which is a
             default bridge created by libvirt and not used by
             OpenStack.</para>
@@ -75,29 +76,26 @@
                     bridge exists for each VLAN.</para>
                 <para>To see which bridge the packet will use, run the
                     command:
-                    <programlisting><prompt>$</prompt> brctl show</programlisting>
+                    <screen><prompt>$</prompt> <userinput>brctl show</userinput></screen>
                 </para>
                 <para>Look for the vnet NIC. You can also reference
-                    nova.conf and look for the flat_interface_bridge
+                    <filename>nova.conf</filename> and look for the
+                    <programlisting language="ini">flat_interface_bridge</programlisting>
                     option.</para>
             </listitem>
             <listitem>
-
                 <para>The packet transfers to the main NIC of the compute node.
                     You can also see this NIC in the <command>brctl</command>
                     output, or you can find it by referencing the flat_interface
-                    option in nova.conf.</para>
-
+                    option in <filename>nova.conf</filename>.</para>
             </listitem>
             <listitem>
-
                 <para>After the packet is on this NIC, it transfers to
                     the compute node's default gateway. The packet is
                     now most likely out of your control at this point.
                     The diagram depicts an external gateway. However,
                     in the default configuration with multi-host, the
                     compute host is the gateway.</para>
-
             </listitem>
         </orderedlist>
         <para>Reverse the direction to see the path of a ping
@@ -128,6 +126,7 @@
         popularly deployed network driver according to the October
         2013 OpenStack User Survey with 50% more sites using it than
         the second place Linux Bridge driver.</para>
+        <para>We'll describe each step in turn with this diagram for reference:</para>
         <informalfigure>
             <mediaobject>
                 <imageobject>
@@ -209,40 +208,31 @@
                     <screen><prompt>#</prompt> <userinput>ip link set dev snooper0 up</userinput>
 <computeroutput></computeroutput></screen>
                   </step>
-
                   <step>
                     <para>Add device <code>snooper0</code> to bridge
                                 <code>br-int</code></para>
-
                     <screen><prompt>#</prompt> <userinput>ovs-vsctl add-port br-int snooper0</userinput>
 <computeroutput></computeroutput></screen>
                   </step>
-
                   <step>
                     <para>Create mirror of <code>patch-tun</code> to
                     <code>snooper0</code> (returns UUID of mirror port)</para>
-
                     <screen><prompt>#</prompt> <userinput>ovs-vsctl -- set Bridge br-int mirrors=@m  -- --id=@snooper0 get Port snooper0  -- --id=@patch-tun get Port patch-tun  -- --id=@m create Mirror name=mymirror select-dst-port=@patch-tun  select-src-port=@patch-tun output-port=@snooper0</userinput>
 <computeroutput>90eb8cb9-8441-4f6d-8f67-0ea037f40e6c</computeroutput></screen>
                   </step>
-
                   <step>
                     <para>Profit. You can now see traffic on <code>patch-tun</code> by running <command>tcpdump -i snooper0</command></para>
                   </step>
-
                   <step>
                     <para>Clean up by clearing all mirrors on
                     <code>br-int</code> and deleting the dummy
                     interface.</para>
-
                     <screen><prompt>#</prompt> <userinput>ovs-vsctl clear Bridge br-int mirrors</userinput>
 <computeroutput></computeroutput></screen>
                     <screen><prompt>#</prompt> <userinput>ip link delete dev snooper0</userinput>
 <computeroutput></computeroutput></screen>
                   </step>
-
                 </procedure>
-
                 <para>On the integration bridge networks are
                 distinguished using internal VLANs regardless of how
                 the networking service defines them. This allows
@@ -253,7 +243,6 @@
                 between nodes. These ids are in no way related to the
                 segmentation ids used in the network definition and on
                 the physical wire.</para>
-
                 <para>VLAN tags are translated between the external tag, defined in the network settings, and internal tags in several places. On the <code>br-int</code>, incoming packets from the <code>int-br-eth1</code> are translated from external tags to internal tags. Other translations also happen on the other bridges, and will be discussed in those sections.</para>
                 <procedure>
                     <title>Discover which internal VLAN tag is in use for a
@@ -335,7 +324,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                             Layer2 switch this interface is connected to must be
                             configured to accept traffic with the VLAN id used.
                             The next hop for this packet must also be on the
-                            same Layer2 network.</para>
+                            same Layer 2 network.</para>
                 </listitem>
                     <listitem>
                         <para>GRE based networks are passed via
@@ -545,27 +534,26 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
         </orderedlist>
         <para>In this example, these locations have the following IP
             addresses:</para>
-        <programlisting>
-                          Instance
+        <screen><computeroutput>Instance
                           10.0.2.24
                           203.0.113.30
                           Compute Node
                           10.0.0.42
                           203.0.113.34
                           External Server
-                          1.2.3.4
-                        </programlisting>
+                          1.2.3.4</computeroutput></screen>
         <para>Next, open a new shell to the instance and then ping the external
             host where <command>tcpdump</command> is running. If the network
             path to the external server and back is fully functional, you see
             something like the following:</para>
         <para>On the external server:</para>
-        <programlisting>12:51:42.020227 IP (tos 0x0, ttl 61, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
+        <screen><computeroutput>12:51:42.020227 IP (tos 0x0, ttl 61, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
     203.0.113.30 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
 12:51:42.020255 IP (tos 0x0, ttl 64, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
-    1.2.3.4 &gt; 203.0.113.30: ICMP echo reply, id 24895, seq 1, length 64</programlisting>
+    1.2.3.4 &gt; 203.0.113.30: ICMP echo reply, id 24895, seq 1, length
+    64</computeroutput></screen>
         <para>On the Compute Node:</para>
-        <programlisting>12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
+        <screen><computeroutput>12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
     10.0.2.24 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
 12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
     10.0.2.24 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
@@ -576,10 +564,10 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
 12:51:42.019801 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
     1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64
 12:51:42.019807 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
-    1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</programlisting>
+    1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</computeroutput></screen>
         <para>On the Instance:</para>
-        <programlisting>12:51:42.020974 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
- 1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</programlisting>
+        <screen><computeroutput>12:51:42.020974 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
+ 1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</computeroutput></screen>
         <para>Here, the external server received the ping request and sent a
             ping reply. On the compute node, you can see that both the ping and
             ping reply successfully passed through. You might also see duplicate
@@ -595,7 +583,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
             group rules.</para>
         <para>Run the following command to view the current iptables
             configuration:</para>
-        <programlisting># iptables-save</programlisting>
+        <screen><prompt>#</prompt> <userinput>iptables-save</userinput></screen>
         <note><para>If you modify the
             configuration, it reverts the next time you restart
             nova-network. You must use OpenStack to manage
@@ -637,18 +625,23 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 database.</para>
             <para>First, find the UUID of the instance in
                 question:</para>
-            <programlisting>mysql&gt; select uuid from instances where hostname = 'hostname';</programlisting>
+            <screen><prompt>mysql&gt;</prompt> <userinput>select uuid from instances where hostname =
+                'hostname';</userinput></screen>
             <para>Next, find the Fixed IP entry for that UUID:</para>
-            <programlisting>mysql&gt; select * from fixed_ips where instance_uuid = '&lt;uuid&gt;';</programlisting>
+            <screen><prompt>mysql&gt;</prompt> <userinput>select * from fixed_ips where instance_uuid =
+                '&lt;uuid&gt;';</userinput></screen>
             <para>You can now get the related Floating IP
                 entry:</para>
-            <programlisting>mysql&gt; select * from floating_ips where fixed_ip_id = '&lt;fixed_ip_id&gt;';</programlisting>
+            <screen><prompt>mysql&gt;</prompt> <userinput>select * from floating_ips where fixed_ip_id =
+                '&lt;fixed_ip_id&gt;';</userinput></screen>
             <para>And finally, you can de-associate the Floating
                 IP:</para>
-            <programlisting>mysql&gt; update floating_ips set fixed_ip_id = NULL, host = NULL where fixed_ip_id = '&lt;fixed_ip_id&gt;';</programlisting>
+            <screen><prompt>mysql&gt;</prompt> <userinput>update floating_ips set fixed_ip_id = NULL, host = NULL
+                where fixed_ip_id = '&lt;fixed_ip_id&gt;';</userinput></screen>
             <para>You can optionally also de-allocate the IP from the
                 user's pool:</para>
-            <programlisting>mysql&gt; update floating_ips set project_id = NULL where fixed_ip_id = '&lt;fixed_ip_id&gt;';</programlisting>
+            <screen><prompt>mysql&gt;</prompt> <userinput>update floating_ips set project_id = NULL where
+                fixed_ip_id = '&lt;fixed_ip_id&gt;';</userinput></screen>
         </section>
     </section>
     <section xml:id="debug_dhcp_issues">
@@ -662,19 +655,20 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
             your instance is to look at the console output of your
             instance. If DHCP failed, you can retrieve the console log
             by doing:</para>
-        <programlisting>$ nova console-log &lt;instance name or uuid&gt;</programlisting>
+        <screen><prompt>$</prompt> <userinput>nova console-log &lt;instance name or uuid&gt;</userinput></screen>
         <para>If your instance failed to obtain an IP through DHCP,
             some messages should appear in the console. For example,
             for the Cirros image, you see output that looks
             like:</para>
-        <programlisting>udhcpc (v1.17.2) started
+        <screen><computeroutput>udhcpc (v1.17.2) started
 Sending discover...
 Sending discover...
 Sending discover...
 No lease, forking to background
 starting DHCP forEthernet interface eth0 [ [1;32mOK[0;39m ]
 cloud-setup: checking http://169.254.169.254/2009-04-04/meta-data/instance-id
-wget: can't connect to remote host (169.254.169.254): Network is unreachable</programlisting>
+wget: can't connect to remote host (169.254.169.254): Network is
+unreachable</computeroutput></screen>
         <para>After you establish that the instance booted properly,
             the task is to figure out where the failure is.</para>
         <para>A DHCP problem might be caused by a misbehaving dnsmasq
@@ -686,20 +680,21 @@ wget: can't connect to remote host (169.254.169.254): Network is unreachable</pr
             to kill all of the dnsmasq processes on the machine, and
             restart nova-network. As a last resort, do this as
             root:</para>
-        <programlisting># killall dnsmasq
-# restart nova-network</programlisting>
+        <screen><prompt>#</prompt> <userinput>killall dnsmasq
+# restart nova-network</userinput></screen>
         <note><para>It's openstack-nova-network on RHEL/CentOS/Fedora but nova-network on Ubuntu/Debian.</para></note>
         <para>Several minutes after nova-network is restarted, you
             should see new dnsmasq processes running:</para>
-        <programlisting># ps aux | grep dnsmasq
-nobody 3735 0.0 0.0 27540 1044 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
+        <screen><prompt>#</prompt> <userinput>ps aux | grep dnsmasq</userinput></screen>
+<screen><computeroutput>nobody 3735 0.0 0.0 27540 1044 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
     --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
     --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
     --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro
 root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
      --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
      --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
-     --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</programlisting>
+     --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf
+     --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</computeroutput></screen>
         <para>If your instances are still not able to obtain IP
             addresses, the next thing to check is if dnsmasq is seeing
             the DHCP requests from the instance. On the machine that
@@ -708,10 +703,11 @@ root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bi
             see the dnsmasq output. If dnsmasq is seeing the request
             properly and handing out an IP, the output looks
             like:</para>
-        <programlisting>Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPDISCOVER(br100) fa:16:3e:56:0b:6f
+        <screen><computeroutput>Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPDISCOVER(br100) fa:16:3e:56:0b:6f
 Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPOFFER(br100) 192.168.100.3 fa:16:3e:56:0b:6f
 Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPREQUEST(br100) 192.168.100.3 fa:16:3e:56:0b:6f
-Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPACK(br100) 192.168.100.3 fa:16:3e:56:0b:6f test</programlisting>
+Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPACK(br100) 192.168.100.3
+fa:16:3e:56:0b:6f test</computeroutput></screen>
         <para>If you do not see the DHCPDISCOVER, a problem exists
             with the packet getting from the instance to the machine
             running dnsmasq. If you see all of above output and your
@@ -720,7 +716,8 @@ Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPACK(br100) 192.168.100.3 fa:16:3e
             running dnsmasq, but it is not able to make the return
             trip.</para>
         <para>If you see any other message, such as:</para>
-        <programlisting>Feb 27 22:01:36 mynode dnsmasq-dhcp[25435]: DHCPDISCOVER(br100) fa:16:3e:78:44:84 no address available</programlisting>
+        <screen><computeroutput>Feb 27 22:01:36 mynode dnsmasq-dhcp[25435]: DHCPDISCOVER(br100)
+            fa:16:3e:78:44:84 no address available</computeroutput></screen>
         <para>Then this may be a dnsmasq and/or nova-network related
             issue. (For the example above, the problem happened to be
             that dnsmasq did not have any more IP addresses to give
@@ -729,9 +726,9 @@ Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPACK(br100) 192.168.100.3 fa:16:3e
         <para>If there's a suspicious-looking dnsmasq log message,
             take a look at the command-line arguments to the dnsmasq
             processes to see if they look correct.</para>
-        <programlisting>$ ps aux | grep dnsmasq</programlisting>
+        <screen><prompt>$</prompt> <userinput>ps aux | grep dnsmasq</userinput></screen>
         <para>The output looks something like:</para>
-        <programlisting>108 1695 0.0 0.0 25972 1000 ? S Feb26 0:00 /usr/sbin/dnsmasq -u libvirt-dnsmasq --strict-order --bind-interfaces
+        <screen><computeroutput>108 1695 0.0 0.0 25972 1000 ? S Feb26 0:00 /usr/sbin/dnsmasq -u libvirt-dnsmasq --strict-order --bind-interfaces
  --pid-file=/var/run/libvirt/network/default.pid --conf-file= --except-interface lo --listen-address 192.168.122.1
  --dhcp-range 192.168.122.2,192.168.122.254 --dhcp-leasefile=/var/lib/libvirt/dnsmasq/default.leases
  --dhcp-lease-max=253 --dhcp-no-override
@@ -742,7 +739,8 @@ nobody 2438 0.0 0.0 27540 1096 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order -
   root 2439 0.0 0.0 27512 472 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order --bind-interfaces --conf-file=
  --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid --listen-address=192.168.100.1
  --except-interface=lo --dhcp-range=set:'novanetwork',192.168.100.2,static,120s --dhcp-lease-max=256
- --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</programlisting>
+ --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf
+ --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</computeroutput></screen>
         <para>The output shows three different dnsmasq processes. The
             dnsmasq process that has the DHCP subnet range of
             192.168.122.0 belongs to libvirt and can be ignored. The
@@ -759,7 +757,7 @@ nobody 2438 0.0 0.0 27540 1096 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order -
             systematically listen on the NICs until you identify the
             one that isn't seeing the traffic. To use tcpdump to
             listen to ports 67 and 68 on br100, you would do:</para>
-        <programlisting># tcpdump -i br100 -n port 67 or port 68</programlisting>
+        <screen><prompt>#</prompt> <userinput>tcpdump -i br100 -n port 67 or port 68</userinput></screen>
         <para>You should be doing sanity checks on the interfaces
             using command such as "<code>ip a</code>" and "<code>brctl
                 show</code>" to ensure that the interfaces are
@@ -785,21 +783,21 @@ nobody 2438 0.0 0.0 27540 1096 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order -
             resolve a hostname inside your instance using the
                 <code>host</code> command. If DNS is working, you
             should see:</para>
-        <programlisting>$ host openstack.org
-openstack.org has address 174.143.194.225
+        <screen><prompt>$</prompt> <userinput>host openstack.org</userinput></screen>
+<screen><userinput>openstack.org has address 174.143.194.225
 openstack.org mail is handled by 10 mx1.emailsrvr.com.
-openstack.org mail is handled by 20 mx2.emailsrvr.com.</programlisting>
+openstack.org mail is handled by 20 mx2.emailsrvr.com.</userinput></screen>
         <para>If you're running the Cirros image, it doesn't have the
             "host" program installed, in which case you can use ping
             to try to access a machine by hostname to see if it
             resolves. If DNS is working, the first line of ping would
             be:</para>
-        <programlisting>$ ping openstack.org
-PING openstack.org (174.143.194.225): 56 data bytes</programlisting>
+        <screen><prompt>$</prompt> <userinput>ping openstack.org</userinput></screen>
+<screen><computeroutput>PING openstack.org (174.143.194.225): 56 data bytes</computeroutput></screen>
         <para>If the instance fails to resolve the hostname, you have
             a DNS problem. For example:</para>
-        <programlisting>$ ping openstack.org
-ping: bad address 'openstack.org'</programlisting>
+        <screen><prompt>$</prompt> <userinput>ping openstack.org</userinput></screen>
+<screen><computeroutput>ping: bad address 'openstack.org'</computeroutput></screen>
         <para>In an OpenStack cloud, the dnsmasq process acts as the
             DNS server for the instances in addition to acting as the
             DHCP server. A misbehaving dnsmasq process may be the
@@ -811,8 +809,8 @@ ping: bad address 'openstack.org'</programlisting>
             everyone running instances on this node, including tenants
             that have not seen the issue. As a last resort, as
             root:</para>
-        <programlisting># killall dnsmasq
-# restart nova-network</programlisting>
+        <screen><prompt>#</prompt> <userinput>killall dnsmasq</userinput>
+<prompt>#</prompt> <userinput>restart nova-network</userinput></screen>
         <para>After the dnsmasq processes start again, check if DNS is
             working.</para>
         <para>If restarting the dnsmasq process doesn't fix the issue,
@@ -821,15 +819,17 @@ ping: bad address 'openstack.org'</programlisting>
             port 53. You should see the DNS request on the bridge
             (such as, br100) of your compute node. If you start
             listening with tcpdump on the compute node:</para>
-        <programlisting># tcpdump -i br100 -n -v udp port 53
-tcpdump: listening on br100, link-type EN10MB (Ethernet), capture size 65535 bytes</programlisting>
+        <screen><prompt>#</prompt> <userinput>tcpdump -i br100 -n -v udp port 53
+tcpdump: listening on br100, link-type EN10MB (Ethernet), capture size 65535
+bytes</userinput></screen>
         <para>Then, if you ssh into your instance and try to
                 <code>ping openstack.org</code>, you should see
             something like:</para>
-        <programlisting>16:36:18.807518 IP (tos 0x0, ttl 64, id 56057, offset 0, flags [DF], proto UDP (17), length 59)
+        <screen><computeroutput>16:36:18.807518 IP (tos 0x0, ttl 64, id 56057, offset 0, flags [DF], proto UDP (17), length 59)
  192.168.100.4.54244 &gt; 192.168.100.1.53: 2+ A? openstack.org. (31)
 16:36:18.808285 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto UDP (17), length 75)
- 192.168.100.1.53 &gt; 192.168.100.4.54244: 2 1/0/0 openstack.org. A 174.143.194.225 (47)</programlisting>
+ 192.168.100.1.53 &gt; 192.168.100.4.54244: 2 1/0/0 openstack.org. A
+ 174.143.194.225 (47)</computeroutput></screen>
     </section>
     <section xml:id="trouble_shooting_ovs">
       <title>Trouble shooting Open vSwitch</title>
