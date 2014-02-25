@@ -198,7 +198,7 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
         </example>
     </section>
     <section xml:id="swift_middleware_example">
-        <title>Customizing Object Storage (Swift) Middleware </title>
+        <title>Customizing Object Storage (Swift) Middleware</title>
         <para>OpenStack Object Storage, known as swift when reading the code,
             is based on the Python <link
                 xlink:href="http://pythonpaste.org/"
