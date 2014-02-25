@@ -15,7 +15,8 @@
     <para>OpenStack might not do everything you need it to do out of
         the box. To add a new feature, you can follow different
         paths.</para>
-    <para>First, you can modify the OpenStack code directly. Learn <link
+    <para>To take the first path, you can modify the OpenStack code directly.
+        Learn <link
             xlink:href="https://wiki.openstack.org/wiki/How_To_Contribute"
             >How To Contribute</link>
         (https://wiki.openstack.org/wiki/How_To_Contribute), follow
@@ -28,14 +29,22 @@
         requires deep integration with an existing project. The
         community is always open to contributions and welcomes new
         functionality that follows the feature development
-        guidelines.</para>
-    <para>Alternatively, you can write new features and plug them in using
+        guidelines. This path still requires you to use DevStack for testing
+        your feature additions so this section walks you through the DevStack
+        environment.</para>
+    <para>For the second path, you can write new features and plug them in using
         changes to a configuration file. If the project where your feature would
         need to reside uses the Python Paste framework, you can create
         middleware for it and plug it in through configuration. There may also
         be specific ways of customizing a project such as creating a new
         scheduler driver for Compute or a custom tab for the Dashboard.</para>
-    <para>This chapter focuses on the second method of customizing OpenStack by providing two examples for writing new features. The  first example shows how to modify Object Storage (swift) middleware to add a new feature, and the second example provides a new scheduler feature for OpenStack Compute (nova). To customize OpenStack this way you'll need a development environment. The best way to get an environment up and running quickly is to run DevStack within your cloud.</para>
+    <para>This chapter focuses on the second path for customizing OpenStack by
+        providing two examples for writing new features. The first example shows
+        how to modify Object Storage (swift) middleware to add a new feature,
+        and the second example provides a new scheduler feature for OpenStack
+        Compute (nova). To customize OpenStack this way you'll need a
+        development environment. The best way to get an environment up and
+        running quickly is to run DevStack within your cloud.</para>
     <section xml:id="devstack">
         <title>Create an OpenStack Development Environment</title>
         <para>To create a development environment you can use DevStack. DevStack
@@ -189,7 +198,7 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
         </example>
     </section>
     <section xml:id="swift_middleware_example">
-        <title>Swift Middleware Example</title>
+        <title>Customizing Object Storage (Swift) Middleware</title>
         <para>OpenStack Object Storage, known as swift when reading the code,
             is based on the Python <link
                 xlink:href="http://pythonpaste.org/"
@@ -233,8 +242,8 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"><code>key</code></emphasis>
-                    The Keystone service.</para>
+                    <emphasis role="bold"
+                    ><code>key*</code></emphasis> The Keystone service.</para>
             </listitem>
             <listitem>
                 <para>
@@ -243,8 +252,8 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"><code>s-*</code></emphasis>
-                    The Swift services.</para>
+                    <emphasis role="bold"
+                    ><code>s-{name}</code></emphasis> The Swift services.</para>
             </listitem>
         </itemizedlist>
         <procedure>
@@ -498,7 +507,7 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... Container=
             (https://github.com/openstack/swift/tree/master/swift/common/middleware).</para>
     </section>
     <section xml:id="nova_scheduler_example">
-        <title>OpenStack Compute (nova) Scheduler Example</title>
+        <title>Customizing the OpenStack Compute (nova) Scheduler</title>
         <para>Many OpenStack projects allow for customization of
             specific features using a driver architecture. You can
             write a driver that conforms to a particular interface and
@@ -807,7 +816,7 @@ LOG.debug("filter_properties = %(filter_properties)s" % locals())</programlistin
                 >schedulers</link> (https://github.com/openstack/nova/tree/master/nova/scheduler).</para>
     </section>
     <section xml:id="ops_dashboard">
-        <title>Horizon Dashboard Example</title>
+        <title>Customizing the Dashboard (Horizon)</title>
         <para>The Dashboard is based on the Python
             <link xlink:href="https://www.djangoproject.com/">Django</link>
             (https://www.djangoproject.com/) web application framework. The

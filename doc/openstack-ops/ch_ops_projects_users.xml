@@ -15,7 +15,11 @@
   <para>An OpenStack cloud does not have much value without users. This chapter
     covers topics that relate to managing users, projects, and quotas. This
     chapter describes users and projects as described by version 2 of the
-    OpenStack Identity API.</para>
+    OpenStack Identity API.
+    </para>
+  <warning><para>While version 3 of the Identity API is available,
+  the client tools do not yet implement those calls and most OpenStack clouds
+  are still implementing Identity API v2.0.</para></warning>
   <section xml:id="projects_or_tenants">
     <title>Projects or Tenants?</title>
     <para>In OpenStack user interfaces and documentation, a group of users is
@@ -28,9 +32,9 @@
         <literal>tenant</literal> to refer to a group of users. Because of this
       legacy, some of the OpenStack tools refer to projects and some refer to
       tenants.</para>
-    <para>This guide uses the term <literal>project</literal>, unless an example
+    <tip><para>This guide uses the term <literal>project</literal>, unless an example
       shows interaction with a tool that uses the term
-      <literal>tenant</literal>.</para>
+      <literal>tenant</literal>.</para></tip>
   </section>
   <section xml:id="managing_projects">
     <title>Managing Projects</title>
@@ -39,7 +43,7 @@
       adding users.</para>
     <section xml:id="add_projects">
       <title>Adding Projects</title>
-      <para>To create a project through the dashboard:</para>
+      <para>To create a project through the OpenStack Dashboard:</para>
       <orderedlist>
         <listitem>
           <para>Log in as an administrative user.</para>
@@ -84,11 +88,16 @@
   <section xml:id="quotas">
     <title>Quotas</title>
     <para>To prevent system capacities from being exhausted without
-      notification, you can set up quotas. Quotas are operational limits. For
+      notification, you can set up <glossterm baseform="quota">quotas</glossterm>.
+      Quotas are operational limits. For
       example, the number of gigabytes allowed per tenant can be controlled to
       ensure that a single tenant cannot consume all of the disk space. Quotas
       are currently enforced at the tenant (or project) level, rather than by
       user.</para>
+    <warning><para>Because without sensible quotas a single tenant could use up
+      all the available resources, default quotas are shipped with OpenStack.
+      You should pay attention to what quota settings make sense for your
+      hardware capabilities.</para></warning>
     <para>Using the command-line interface, you can manage quotas for the
       OpenStack Compute Service and the Block Storage Service.</para>
     <para>Typically, default values are changed because a tenant requires more

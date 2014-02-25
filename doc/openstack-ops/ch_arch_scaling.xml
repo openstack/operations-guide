@@ -16,6 +16,8 @@
         ("vertical scaling"), cloud based applications typically request more,
         discrete hardware ("horizontal scaling"). If your cloud is successful,
         eventually you must add resources to meet the increasing demand.
+    </para>
+    <para>
         To suit the cloud paradigm, OpenStack itself is designed
         to be horizontally scalable. Rather than switching to larger
         servers, you procure more servers and simply install identically
@@ -24,25 +26,14 @@
         nodes", "nova-api nodes"), which communicate on a message bus.</para>
     <section xml:id="starting">
         <title>The Starting Point</title>
-        <para>Determining the scalability of your cloud and how to
-            improve it is an exercise with many variables to balance.
-            No one solution meets everyone's scalability aims.
-            However, it is helpful to track a number of
-            metrics.</para>
-        <para>The starting point for most is the core count of your
-            cloud. By applying some ratios, you can gather information
-            about:
-           <itemizedlist>
-                <listitem><para>the number of virtual machines (VMs) you
-                  expect to run
-                <code>((overcommit fraction × cores) / virtual cores per instance)</code>,
-                </para></listitem>
-                <listitem><para>how much storage is required
-                <code>(flavor disk size × number of instances)</code>.
-                </para></listitem>
-            </itemizedlist>
-            You can use these ratios to determine how much additional
-            infrastructure you need to support your cloud.</para>
+        <para>Determining the scalability of your cloud and how to improve it is
+            an exercise with many variables to balance. No one solution meets
+            everyone's scalability goals. However, it is helpful to track a
+            number of metrics. Since you can define virtual hardware templates
+            called "flavors" in OpenStack, you can start to make scaling
+            decisions based on the flavors you'll provide. These templates
+            define sizes for memory in RAM, root disk size, amount of ephemeral
+            data disk space available, and number of cores for starters.</para>
         <para>The default OpenStack flavors are:</para>
         <informaltable rules="all">
             <thead>
@@ -92,7 +83,20 @@
                 </tr>
             </tbody>
         </informaltable>
-        <?hard-pagebreak?>
+        <para>The starting point for most is the core count of your
+            cloud. By applying some ratios, you can gather information
+            about:
+           <itemizedlist>
+                <listitem><para>the number of virtual machines (VMs) you
+                  expect to run
+                <code>((overcommit fraction × cores) / virtual cores per instance)</code>,
+                </para></listitem>
+                <listitem><para>how much storage is required
+                <code>(flavor disk size × number of instances)</code>.
+                </para></listitem>
+            </itemizedlist>
+            You can use these ratios to determine how much additional
+            infrastructure you need to support your cloud.</para>
         <para>Here is a worked example using the ratios for gathering
             scalability information for the number of VMs expected as well as
             the storage needed. The following numbers support (200 / 2) × 16 =
@@ -144,7 +148,7 @@
             performance (spindles/core), memory availability
             (RAM/core), network bandwidth (Gbps/core), and overall CPU
             performance (CPU/core).</para>
-        <tip><para>For further discussion of metric tracking, including
+        <tip><para>For a discussion of metric tracking, including
         how to extract metrics from your cloud, see
         <xref linkend="logging_monitoring"/>.
         </para></tip>
@@ -210,6 +214,8 @@
                     aggregates which merely divide a single Compute deployment.</para>
             </listitem>
         </itemizedlist>
+        <para>This table provides a comparison view of each segregation method
+        currently provided by OpenStack Compute.</para>
         <informaltable rules="all">
             <thead>
                 <tr>
@@ -355,8 +361,7 @@
                 both to partition a nova deployment.</para>
             <para>Availability zones are implemented through and
                 configured in a similar way to host aggregates.</para>
-            <para>However, you use an availability zone and a host
-                aggregate for different reasons:</para>
+            <para>However, you use them for different reasons:</para>
             <itemizedlist>
                 <listitem>
                     <para><emphasis role="bold">Availability zone</emphasis>.
@@ -452,7 +457,8 @@
                     only the nova-compute service has its own
                     availability zone. Services such as
                     nova-scheduler, nova-network, nova-conductor have
-                    always spanned all availability zones.</para><para>When you run any of the following operations, the services
+                    always spanned all availability zones.</para>
+                <para>When you run any of the following operations, the services
                     appear in their own internal availability zone
                     (CONF.internal_service_availability_zone): <itemizedlist>
                         <listitem>
@@ -513,10 +519,9 @@
         </section>
         <section xml:id="capacity_planning">
             <title>Capacity Planning</title>
-            <para>OpenStack is designed to increase in size in a
-                straightforward manner. Taking into account the
-                considerations in the <emphasis role="bold"
-                    >Scalability</emphasis> chapter — particularly on
+            <para>OpenStack is designed to increase in size in a straightforward
+                manner. Taking into account the considerations that we've
+                mentioned in this chapter — particularly on
                 the sizing of the cloud controller — it should be
                 possible to procure additional compute or object
                 storage nodes as needed. New nodes do not need to be
