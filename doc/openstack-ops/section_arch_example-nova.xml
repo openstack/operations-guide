@@ -8,15 +8,29 @@
 
 ]>
 <section xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     version="5.0"
     xml:id="example_architecture-nova">
     <?dbhtml stop-chunking?>
     <title>Example Architecture - Legacy Networking (nova)</title>
-    <para>This particular example architecture has been upgraded from Grizzly to Havana and tested in production environments where many public IP addresses are available for assignment to multiple instances. You can find a second example architecture that uses OpenStack Networking (neutron) after this section.</para>
+    <para>This particular example architecture has been upgraded from Grizzly to
+    Havana and tested in production environments where many public IP addresses
+    are available for assignment to multiple instances. You can find a second
+    example architecture that uses OpenStack Networking (neutron) after this
+    section. Each example offers high availability, meaning that if a particular
+    node goes down, another node with the same configuration can take over the
+    tasks so that service continues to be available.</para>
     <section xml:id="overview">
         <title>Overview</title>
-        <para>The simplest architecture you can build upon for Compute has a single cloud controller and multiple compute nodes. The simplest architecture for Object Storage has five nodes: one for identifying users and proxying requests to the API, then four for storage itself to provide enough replication for eventual consistency. This example architecture does not dictate a particular number of nodes, but shows the thinking and considerations that went into choosing this architecture including the features offered.</para>
+        <para>The simplest architecture you can build upon for Compute has a
+        single cloud controller and multiple compute nodes. The simplest
+        architecture for Object Storage has five nodes: one for identifying
+        users and proxying requests to the API, then four for storage itself
+        to provide enough replication for eventual consistency. This example
+        architecture does not dictate a particular number of nodes, but shows
+        the thinking and considerations that went into choosing this
+        architecture including the features offered.</para>
     <section xml:id="overview_components-nova">
         <title>Components</title>
         <informaltable rules="all">
@@ -111,7 +125,7 @@
                     </listitem>
                     <listitem>
                         <para><glossterm>floating IP
-                                address</glossterm>es: Not every organization can offer public floating IP addresses for thousands of instances, so this feature is considered optional.</para>
+                                address</glossterm>es: Floating IP addresses are public IP addresses that you allocate from a pre-defined pool to assign to virtual machines at launch. Floating IP address ensure that the public IP address is available whenever an instance is booted. Not every organization can offer thousands of public floating IP addresses for thousands of instances, so this feature is considered optional.</para>
                     </listitem>
                     <listitem>
                         <para><glossterm>live
@@ -119,7 +133,11 @@
                     </listitem>
                     <listitem>
                         <para><glossterm>object
-                            storage</glossterm>: You may chose to store machine images on a file system rather than in object storage if you do not have the extra hardware for the required replication and redundancy that OpenStack Object Storage offers.</para>
+                            storage</glossterm>: You may chose to store machine
+                            images on a file system rather than in object
+                            storage if you do not have the extra hardware for
+                            the required replication and redundancy that
+                            OpenStack Object Storage offers.</para>
                     </listitem>
                 </itemizedlist></para>
         </note>
