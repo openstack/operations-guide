@@ -157,7 +157,7 @@
         <tbody>
           <tr>
             <td>
-              <para>Fixed Ips</para>
+              <para>Fixed IPs</para>
             </td>
             <td>
               <para>Number of fixed IP addresses allowed per tenant. This number

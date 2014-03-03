@@ -328,7 +328,7 @@ the Icehouse release and perhaps further afield.</para>
         committee and technical leads of the projects.</para>
     </section>
         <section xml:id="aspects-to-watch">
-                <title>Aspects to watch</title>
+                <title>Aspects to Watch</title>
                 <para>You want to keep an eye on these areas improving within
                         OpenStack. The best ways to "watch" roadmaps for each
                         project is to look at the blueprints that are being
@@ -336,7 +336,7 @@ the Icehouse release and perhaps further afield.</para>
                         learn from PTL webinars that follow the OpenStack
                         Summits twice a year.</para>
                 <section xml:id="roadmap-driver-improvements">
-                        <title>Driver quality improvements</title>
+                        <title>Driver Quality Improvements</title>
                         <para>A major quality push has occurred across drivers
                                 and plugins in Block Storage, Compute and
                                 Networking. Particularly, developers of Compute
@@ -431,11 +431,12 @@ the Icehouse release and perhaps further afield.</para>
         </section>
         <section xml:id="roadmap-nova-v3-api">
                 <title>Compute V3 API</title>
-                <para>The 3rd version of the Compute API will be released in
-                experimental status with Icehouse. Though the V2 API will
-                remain for two-to-three releases, this is the best time to
-                evaluate the new API and provide comments while it can be more
-                easily changed. Of particular note is the decision that the V3
+                <para>The 3rd version of the Compute API was broadly
+                discussed and worked on during the Havana and Icehouse
+                release cycles. Current discussions indicate that the V2 API will
+                remain for many releases, but this is a great time to
+                evaluate the Compute API and provide comments while it
+                is being defined. Of particular note is the decision that the V3
                 API will not support XML messages - being JSON only. This was
                 based on the poor testing of existing XML responses in the V2
                 API, and lack of effort to continue to develop and maintain an
@@ -447,17 +448,17 @@ the Icehouse release and perhaps further afield.</para>
         <para>Continues to improve and you may consider using it for greenfield
                 deployments.</para>
         </section>
-        <section xml:id="roadmap-savana">
-        <title>Hadoop-as-a-Service (Savana)</title>
+        <section xml:id="roadmap-savanna">
+        <title>Hadoop-as-a-Service (Savanna for now with a rename coming)</title>
                 <para>A much-requested answer to Big Data problems, a dedicated
                         team has been making solid progress on a
                         Hadoop-as-a-Service project.</para>
         </section>
         <section xml:id="roadmap-baremetal">
-        <title>Bare-metal deployment (Ironic)</title>
+        <title>Bare-metal Deployment (Ironic)</title>
         <para>Though Bare-metal deployment has been widely lauded, and
-        development continues, the project to replace Compute's bare-metal
-        driver will likely not graduate in Icehouse. A particular blueprint to
+        development continues, the project to replace the Compute bare-metal
+        driver will not graduate in Icehouse. A particular blueprint to
         follow is <link xlink:href="https://blueprints.launchpad.net/ironic/+spec/migration-from-nova">
         Migration path from Nova's BM driver</link>, which tracks the ability
         to move to the new project from an existing bare metal deployment.</para>
@@ -475,7 +476,7 @@ the Icehouse release and perhaps further afield.</para>
         <section xml:id="roadmap-marconi">
         <title>Messaging as a Service (Marconi)</title>
                 <para>A service to provide queues of messages and notifications
-                        has entered 'incubation', meaning if the next two
+                        has entered 'incubation', meaning if the upcoming
                         development cycles are successful, it will be released
                         in Juno.</para>
         </section>
@@ -496,7 +497,7 @@ the Icehouse release and perhaps further afield.</para>
                 control for volumes.</para>
         </section>
         <section xml:id="roadmap-python-sdk">
-        <title>Toward a 'proper' Python SDK</title>
+        <title>Toward a 'Proper' Python SDK</title>
         <para>Though many successfully use the various python-*client code as
         an effective SDK for interacting with OpenStack, consistency between
         the projects and documentation availability waxes and wanes. To combat

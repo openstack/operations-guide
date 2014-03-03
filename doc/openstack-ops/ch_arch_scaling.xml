@@ -197,7 +197,10 @@
     <?hard-pagebreak?>
     <section xml:id="segregate_cloud">
         <title>Segregating Your Cloud</title>
-        <para>Use one of the following OpenStack methods to segregate
+        <para>When you want to offer users different regions to provide legal
+            considerations for data storage, redundancy across earthquake fault
+            lines, or for low-latency API calls, you segregate your cloud.
+            Use one of the following OpenStack methods to segregate
             your cloud: <emphasis>cells</emphasis>,
                 <emphasis>regions</emphasis>,
                 <emphasis>zones</emphasis> and <emphasis>host
@@ -431,26 +434,26 @@
                         each resources. It is left up to you to avoid
                         putting a host in multiple aggregates that define
                         different values for the same resource.</para>
-                    <para>This is the first half of the equation. To get
-                        instance types that are guaranteed a particular ratio
-                        you must set the <parameter>extra_specs</parameter> in
-                        the instance type to the key value pair you want to
-                        match in the aggregate. For example if you define extra
-                        specs <parameter>cpu_allocation_ratio</parameter> to
-                        '1.0' then instances of that type will only run in
-                        aggregates where the metadata key
-                            <parameter>cpu_allocation_ratio</parameter> is also
-                        defined as '1.0'. In practice it is better to define an
-                        additional key value pair in the aggregate metadata to
-                        match on rather than match directly on
-                            <parameter>cpu_allocation_ratio</parameter> or
-                            <parameter>core_allocation_ratio</parameter>. This
-                        allows better abstraction. For example, defining a key
-                            <parameter>overcommit</parameter> and setting value
-                        of 'high', 'medium', and 'low' you could then tune the
-                        numeric allocation ratios in the aggregates without also
-                        needing to change all instance types relating to
-                        them.</para>
+                    <para>This is the first half of the equation. To
+                        get instance types that are guaranteed a
+                        particular ratio you must set the <parameter>extra_specs</parameter>
+                        in the instance type to the key value pair you want to match in the aggregate.
+                        For example if you define extra specs
+                        <parameter>cpu_allocation_ratio</parameter> to
+                        '1.0' then instances of that type will only
+                        run in aggregates where the metadata key
+                        <parameter>cpu_allocation_ratio</parameter>
+                        is also defined as '1.0'. In practice it is
+                        better to define an additional key value pair
+                        in the aggregate metadata to match on rather
+                        than match directly on <parameter>cpu_allocation_ratio</parameter>
+                        or <parameter>core_allocation_ratio</parameter>.
+                        This allows better abstraction. For example by
+                        defining a key <parameter>overcommit</parameter>
+                        and setting value of 'high', 'medium', or 'low'
+                        you could then tune the numeric allocation
+                        ratios in the aggregates without also needing
+                        to change all instance types relating to them.</para>
                 </listitem>
             </itemizedlist>
             <note><para>Previously, all services had an availability zone. Currently,

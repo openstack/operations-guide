@@ -295,7 +295,7 @@
     <section xml:id="message_queue">
         <title>Message Queue</title>
         <para>Most OpenStack services communicate with each other using the
-            Message Queue. As an example, Compute communicates to block storage
+            Message Queue. For example, Compute communicates to block storage
             services and networking services through the message queue. Also,
             you can optionally enable notifications for any service. RabbitMQ,
             Qpid, and 0mq are all popular choices for a message queue service.
@@ -434,18 +434,18 @@
             supports:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para>OpenStack Object Storage. Allows you to store
+                <para>OpenStack Object Storage: Allows you to store
                     images as objects.</para>
             </listitem>
             <listitem>
-                <para>File system. Uses any traditional file system to
+                <para>File system: Uses any traditional file system to
                     store the images as files.</para>
             </listitem>
             <listitem>
-                <para>S3. Allows you to fetch images from Amazon S3.</para>
+                <para>S3: Allows you to fetch images from Amazon S3.</para>
             </listitem>
             <listitem>
-                <para>HTTP. Allows you to fetch images from a web
+                <para>HTTP: Allows you to fetch images from a web
                     server. You cannot write images by using this
                     mode.</para>
             </listitem>

@@ -601,7 +601,7 @@ Optional snapshot description. (Default=None)</computeroutput></screen>
 | tenant_id              | 98333a1a28e746fa8c629c83a818ad57                    /
 | updated                | 2013-03-01T19:28:26Z                                \
 | user_id                | a1ef823458d24a68955fec6f3d390019                    /
-+------------------------+-----------------------------------------------------\</computeroutput>
++------------------------+----------------------------------------------------\</computeroutput>
             </screen>
             <para>In this case looking at the "fault" message shows
                 NoValidHost indicating the scheduler was unable to

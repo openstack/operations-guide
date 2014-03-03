@@ -18,7 +18,7 @@
     <section xml:id="introduction-to-openstack">
         <title>Introduction to OpenStack</title>
         <para>OpenStack believes in open source, open design, open development, all in an open
-            community encouraging participation by anyone. The long-term vision for OpenStack
+            community which encourages participation by anyone. The long-term vision for OpenStack
             is to produce a ubiquitous open source cloud computing platform that meets the needs of public and
             private cloud providers regardless of size. OpenStack services control large pools of
             compute, storage, and networking resources throughout a data center.</para>
@@ -34,7 +34,7 @@
             computing platform for both public and private clouds. By focusing on ease of
             implementation, massive scalability, a variety of rich features and tremendous
             extensibility, the project aims to deliver a practical and reliable cloud solution for
-            all types of organisations.</para>
+            all types of organisations.</para></section>
         <section xml:id="preface_getting_started"><title>Getting Started with OpenStack</title>
         <para>As an open source project, one of the unique aspects about OpenStack is that there are
             many different levels you can begin to engage with it &mdash; you don't have to do everything
@@ -94,7 +94,6 @@
         number of options might be bewildering at first.</para>
                 </section>
         </section>
-            </section>
     <section xml:id="who-this-book-is-for">
         <title>Who This Book Is For</title>
         <para>This book is for those of you starting to run OpenStack clouds as
@@ -429,7 +428,6 @@
             </listitem>
         </itemizedlist>
     </section>
-
     <section xml:id="how-to-contribute-to-ops-guide">
         <title>How to Contribute to This Book</title>
         <para>The genesis of this book was an in-person event, but now that the
@@ -457,5 +455,4 @@
             if you know how to fix it. Also, a member of the OpenStack
             doc-core team can triage the doc bug.</para>
     </section>
-
 </preface>

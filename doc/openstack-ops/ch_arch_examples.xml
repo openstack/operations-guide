@@ -26,8 +26,8 @@
     documenting, as well as to provide the scope for this guide. Both of the
     offered architecture examples are currently running in production and
     serving users.</para>
-    <para>As always, refer to the Glossary if you are unclear about any of the
-    terminology mentioned in these architectures.</para>
+    <tip><para>As always, refer to the Glossary if you are unclear about any of the
+    terminology mentioned in these architectures.</para></tip>
     <xi:include href="section_arch_example-nova.xml"/>
     <xi:include href="section_arch_example-neutron.xml"/>
     <section xml:id="example_archs_conclusion">
