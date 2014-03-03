@@ -28,15 +28,16 @@
             <para>Several pre-made images exist and can easily be imported into the Image Service. A
                 common image to add is the CirrOS image, which is very small and used for testing
                 purposes. To add this image, simply do:</para>
-            <programlisting><?db-font-size 65%?>$ wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img
-$ glance image-create --name='cirros image' --is-public=true --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.1-x86_64-disk.img</programlisting>
+            <screen><prompt>$</prompt> <userinput>wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img</userinput>
+<prompt>$</prompt> <userinput>glance image-create --name='cirros image' --is-public=true \
+    --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.1-x86_64-disk.img</userinput></screen>
             <para>The <code>glance image-create</code> command
                 provides a large set of options to give your image.
                 For example, the <code>min-disk</code> option is
                 useful for images that require root disks of a certain
                 size (for example, large Windows images). To view
                 these options, do:</para>
-            <programlisting><?db-font-size 65%?>$ glance help image-create</programlisting>
+            <screen><prompt>$</prompt> <userinput>glance help image-create</userinput></screen>
             <para>The <code>location</code> option is important to
                 note. It does not copy the entire image into Glance,
                 but reference an original location to where the image
@@ -50,7 +51,7 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
                 such as shown in the example.</para>
             <para>Run the following command to view the properties of
                 existing images:</para>
-            <programlisting><?db-font-size 65%?>$ glance details</programlisting>
+            <screen><prompt>$</prompt> <userinput>glance details</userinput></screen>
         </section>
         <section xml:id="sharing_images">
             <title>Sharing Images Between Projects</title>
@@ -76,8 +77,7 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
                 <step>
                     <para>Once you have both pieces of information, run the
                         glance command:</para>
-<screen><prompt>$</prompt> <userinput>glance member-create \
-    &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
+<screen><prompt>$</prompt> <userinput>glance member-create &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
                     <para>For example:</para>
 <screen><prompt>$</prompt> <userinput>glance member-create 733d1c44-a2ea-414b-aca7-69decf20d810 \
     771ed149ef7e4b2b88665cc1c98f77ca</userinput></screen>
@@ -90,7 +90,8 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
         <section xml:id="delete_images">
             <title>Deleting Images</title>
             <para>To delete an image, just execute:</para>
-            <programlisting><?db-font-size 65%?>$ glance image-delete &lt;image uuid&gt;</programlisting>
+            <screen><prompt>$</prompt> <userinput>glance
+                image-delete &lt;image uuid&gt;</userinput></screen>
             <note>
                 <para>Deleting an image does not affect instances or
                     snapshots that were based off the image.</para>
@@ -99,7 +100,7 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
         <section xml:id="other_cli">
             <title>Other CLI Options</title>
             <para>A full set of options can be found using:</para>
-            <programlisting><?db-font-size 65%?>$ glance help</programlisting>
+            <screen><prompt>$</prompt> <userinput>glance help</userinput></screen>
             <para>or the <link
                     xlink:href="http://docs.openstack.org/cli/quick-start/content/glance-cli-reference.html"
                     >OpenStack Image Service</link> CLI Guide.
@@ -131,25 +132,26 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
                 done if you simply display the unique ID of the owner,
                 this example goes one step further and displays the
                 readable name of the owner:</para>
-            <programlisting><?db-font-size 65%?>$ mysql&gt; select glance.images.id, glance.images.name, keystone.tenant.name, is_public from glance.images inner join keystone.tenant on glance.images.owner=keystone.tenant.id;</programlisting>
+            <screen><prompt>$</prompt> <userinput>mysql&gt; select glance.images.id,
+                glance.images.name, keystone.tenant.name, is_public from
+                glance.images inner join keystone.tenant on
+                glance.images.owner=keystone.tenant.id;</userinput></screen>
             <para>Another example is displaying all properties for a
                 certain image:</para>
-            <programlisting><?db-font-size 65%?>$ mysql&gt; select name, value from image_properties where id = &lt;image_id&gt;</programlisting>
+            <screen><prompt>$</prompt> <userinput>mysql&gt; select name, value from
+                image_properties where id = &lt;image_id&gt;</userinput></screen>
         </section>
     </section>
-
     <section xml:id="flavors">
         <title>Flavors</title>
-
         <para>Virtual hardware templates are called "flavors" in OpenStack, defining sizes for RAM,
             disk, number of cores, and so on. The default install provides five flavors. These are
             configurable by admin users (the rights may also be delegated to other users by
             redefining the access controls for <code>compute_extension:flavormanage</code> in
                 <code>/etc/nova/policy.json</code> on the <code>nova-api</code> server). To get the
             list of available flavors on your system, run:</para>
-            <programlisting><?db-font-size 65%?>$ nova flavor-list</programlisting>
-
-        <programlisting><?db-font-size 65%?>+----+-----------+-----------+------+-----------+\+-------+-\+-------------+
+            <screen><prompt>$</prompt> <userinput>nova flavor-list</userinput></screen>
+        <screen><computeroutput>+----+-----------+-----------+------+-----------+\+-------+-\+-------------+
 | ID | Name      | Memory_MB | Disk | Ephemeral |/| VCPUs | /| extra_specs |
 +----+-----------+-----------+------+-----------+\+-------+-\+-------------+
 | 1  | m1.tiny   | 512       | 1    | 0         |/| 1     | /| {}          |
@@ -157,12 +159,9 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
 | 3  | m1.medium | 4096      | 10   | 40        |/| 2     | /| {}          |
 | 4  | m1.large  | 8192      | 10   | 80        |\| 4     | \| {}          |
 | 5  | m1.xlarge | 16384     | 10   | 160       |/| 8     | /| {}          |
-+----+-----------+-----------+------+-----------+\+-------+-\+-------------+</programlisting>
-        <para>The <code>nova flavor-create</code> command allows authorized users to create new
-            flavors. Additional flavor manipulation commands can be shown with the command:
-            <programlisting language="bash"><?db-font-size 75%?><prompt>$</prompt> nova help | grep flavor</programlisting>
++----+-----------+-----------+------+-----------+\+-------+-\+-------------+</computeroutput></screen>
+        <para>The <code>nova flavor-create</code> command allows authorized users to create new flavors. Additional flavor manipulation commands can be shown with the command: <screen><prompt>$</prompt> <userinput>nova help | grep flavor</userinput></screen>
         </para>
-        <?hard-pagebreak?>
         <para>Flavors define a number of parameters, resulting in the
         user having a choice of what type of virtual machine to run - just
         like they would have if they were purchasing a physical server.
@@ -313,7 +312,7 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
         </section>
         <simplesect>
             <title>How do I modify an existing flavor?</title>
-            <para>The OpenStack Dashboard simulates the ability to modify a
+            <para>The OpenStack dashboard simulates the ability to modify a
                 flavor by deleting an existing flavor and creating a new one
                 with the same name.</para>
         </simplesect>
@@ -332,6 +331,8 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
             a "default" security group which is applied to instances
             which have no other security group defined. Unless changed,
             this security group denies all incoming traffic.</para>
+        <section xml:id="general-security-group-config">
+            <title>General Security Groups Configuration</title>
         <para>The <code>nova.conf</code> option
                 <code>allow_same_net_traffic</code> (which defaults to
             true) globally controls whether the rules applies to hosts
@@ -347,8 +348,16 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
                 <code>allow_same_net_traffic</code> by configuring
             their default security group to allow all traffic from
             their subnet.</para>
+            <tip><para>As noted in the previous chapter the number of rules per
+                security group is controlled by the
+                <code>quota_security_group_rules</code> and the number of allowed
+                security groups per project is controlled by the
+                <code>quota_security_groups</code> quota.</para></tip>
+        </section>
+        <section xml:id="end-user-config-sec-group">
+            <title>End User Configuration of Security Groups</title>
         <para>Security groups for the current project can be found on
-            the Horizon dashboard under "Access &amp; Security". To see
+            the OpenStack dashboard under "Access &amp; Security". To see
             details of an existing group select the "edit" action for
             that security group. Obviously modifying existing groups
             can be done from this "edit" interface. There is a "Create
@@ -359,37 +368,26 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
         <para>From the command line you can get a list of security
             groups for the project you're acting in using the nova
             command:</para>
-
-        <programlisting><prompt>$</prompt> nova secgroup-list</programlisting>
-
-        <programlisting><?db-font-size 65%?>+---------+-------------+
+        <screen><prompt>$</prompt> <userinput>nova secgroup-list</userinput><computeroutput>+---------+-------------+
 | Name    | Description |
 +---------+-------------+
 | default | default     |
 | open    | all ports   |
-+---------+-------------+</programlisting>
++---------+-------------+</computeroutput></screen>
         <para>To view the details of the "open" security group:</para>
-
-        <programlisting><prompt>$</prompt> nova secgroup-list-rules open</programlisting>
-
-        <programlisting><?db-font-size 65%?>+-------------+-----------+---------+-----------+--------------+
+        <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules open</userinput><computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | icmp        | -1        | 255     | 0.0.0.0/0 |              |
 | tcp         | 1         | 65535   | 0.0.0.0/0 |              |
 | udp         | 1         | 65535   | 0.0.0.0/0 |              |
-+-------------+-----------+---------+-----------+--------------+ </programlisting>
++-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
         <para>These rules are all "allow" type rules as the default is
             deny. The first column is the IP protocol (one of icmp,
             tcp, or udp) the second and third columns specify the
             affected port range. The fourth column specifies the IP
             range in CIDR format. This example shows the full port
             range for all protocols allowed from all IPs.</para>
-        <para>As noted in the previous chapter the number of rules per
-            security group is controlled by the
-            <code>quota_security_group_rules</code> and the number of allowed
-            security groups per project is controlled by the
-            <code>quota_security_groups</code> quota. </para>
         <para>When adding a new security group you should pick a
             descriptive but brief name. This name shows up in brief
             descriptions of the instances that use it where the longer
@@ -401,24 +399,21 @@ $ glance image-create --name='cirros image' --is-public=true --container-format=
             "global_http" which is clear and reasonably concise,
             encapsulating what is allowed and from where. From the
             command line:</para>
-
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova secgroup-create global_http "allow web traffic from the internet"</programlisting>
-
-        <programlisting><?db-font-size 65%?>+-------------+-------------------------------------+
+        <screen><prompt>$</prompt> <userinput>nova secgroup-create
+            global_http "allow web traffic from the internet"</userinput><computeroutput>+-------------+-------------------------------------+
 | Name        | Description                         |
 +-------------+-------------------------------------+
 | global_http | allow web traffic from the internet |
-+-------------+-------------------------------------+</programlisting>
++-------------+-------------------------------------+</computeroutput></screen>
         <para>This creates the empty security group to make it do what
             we want we need to add some rules.</para>
-        <programlisting><?db-font-size 65%?>$ nova secgroup-add-rule &lt;secgroup&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;
-                              &lt;cidr&gt;
-$ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
-+-------------+-----------+---------+-----------+--------------+
+        <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule &lt;secgroup&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt; &lt;cidr&gt;</userinput>
+<prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0</userinput>
+            <computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | tcp         | 80        | 80      | 0.0.0.0/0 |              |
-+-------------+-----------+---------+-----------+--------------+</programlisting>
++-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
         <para>Note that the arguments are positional and the
             "from-port" and "to-port" arguments specify the local port
             range connections are allowed to not source and
@@ -426,37 +421,34 @@ $ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
             sets can be built up through multiple invocations of nova
             secgroup-add-rule. For example if you want to pass both
             http and https traffic:</para>
-
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova secgroup-add-rule global_http tcp 443 443 0.0.0.0/0</programlisting>
-
-        <programlisting><?db-font-size 65%?>+-------------+-----------+---------+-----------+--------------+
+        <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 443 443 0.0.0.0/0</userinput><computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | tcp         | 443       | 443     | 0.0.0.0/0 |              |
-+-------------+-----------+---------+-----------+--------------+</programlisting>
++-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
         <para>Despite only outputting the newly added rule this
             operation is additive:</para>
-        <programlisting><?db-font-size 65%?>$ nova secgroup-list-rules global_http</programlisting>
-        <programlisting><?db-font-size 65%?>+-------------+-----------+---------+-----------+--------------+
+        <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules global_http</userinput><computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | tcp         | 80        | 80      | 0.0.0.0/0 |              |
 | tcp         | 443       | 443     | 0.0.0.0/0 |              |
-+-------------+-----------+---------+-----------+--------------+</programlisting>
++-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
         <para>The inverse operation is called secgroup-delete-rule,
             using the same format. Whole security groups can be
             removed with secgroup-delete.</para>
         <para>To create security group rules for a cluster of
-            instances:</para>
+            instances, you want to use SourceGroups.</para>
         <para>SourceGroups are a special dynamic way of defining the CIDR of allowed sources. The
-            user specifies a SourceGroup (Security Group name), all the users' other Instances using
-            the specified SourceGroup are selected dynamically. This alleviates the need for a
+            user specifies a SourceGroup (Security Group name) and then all the users' other Instances using
+            the specified SourceGroup are selected dynamically. This dynamic
+            selection alleviates the need for
             individual rules to allow each new member of the cluster.</para>
-        <para>Example usage: <code>nova secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt;
-            &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code></para>
-        <programlisting><prompt>$</prompt> nova secgroup-add-group-rule cluster global-http tcp 22 22</programlisting>
+        <para>Example usage: <code>nova secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code></para>
+        <screen><prompt>$</prompt> <userinput>nova secgroup-add-group-rule cluster global-http tcp 22 22</userinput></screen>
         <para>The "cluster" rule allows ssh access from any other
             instance that uses the "global-http" group.</para>
+    </section>
     </section>
     <?hard-pagebreak?>
     <section xml:id="user_facing_block_storage">
@@ -486,21 +478,22 @@ $ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
             them for first use and being cautious when removing
             devices. What is specific is how to create new volumes and
             attach and detach them from instances. These operations
-            can all be done from the "Volumes" page of the Dashboard
+            can all be done from the "Volumes" page of the dashboard
             or using the cinder command line client.</para>
         <para>To add new volumes you only need a name and a volume
             size in gigabytes, ether put these into the "create
             volume" web form or using the command line:</para>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> cinder create --display-name test-volume 10</programlisting>
+        <screen><prompt>$</prompt> <userinput>cinder create --display-name
+            test-volume 10</userinput></screen>
         <para>This creates a 10 GB volume named "test-volume." To list
             existing volumes and the instances they are connected to
             if any:</para>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> cinder list</programlisting>
-        <programlisting><?db-font-size 65%?>+------------+---------+--------------------+------+-------------+-------------+
+        <screen><prompt>$</prompt> <userinput>cinder list</userinput></screen>
+        <screen><computeroutput>+------------+---------+--------------------+------+-------------+-------------+
 |     ID     | Status  |    Display Name    | Size | Volume Type | Attached to |
 +------------+---------+--------------------+------+-------------+-------------+
 | 0821...19f |  active |    test-volume     |  10  |     None    |             |
-+------------+---------+--------------------+------+-------------+-------------+</programlisting>
++------------+---------+--------------------+------+-------------+-------------+</computeroutput></screen>
         <para>The Block Storage service also allows for creating
             snapshots of volumes. Remember this is a block level
             snapshot which is crash consistent so it is best if the
@@ -514,7 +507,7 @@ $ nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0
             select "Create Snapshot" from the actions column next to
             the volume name in the dashboard volume page, or from the
             command line:</para>
-        <programlisting><?db-font-size 65%?>usage: cinder snapshot-create [--force &lt;True|False&gt;]
+        <screen><computeroutput>usage: cinder snapshot-create [--force &lt;True|False&gt;]
 [--display-name &lt;display-name&gt;]
 [--display-description &lt;display-description&gt;]
 &lt;volume-id&gt;
@@ -522,7 +515,7 @@ Add a new snapshot.
 Positional arguments:  &lt;volume-id&gt;           ID of the volume to snapshot
 Optional arguments:  --force &lt;True|False&gt;  Optional flag to indicate whether to snapshot a volume                        even if its attached to an instance. (Default=False)  --display-name &lt;display-name&gt;                        Optional snapshot name. (Default=None)
 --display-description &lt;display-description&gt;
-Optional snapshot description. (Default=None)</programlisting>
+Optional snapshot description. (Default=None)</computeroutput></screen>
         <section xml:id="block_storage_creation_failures">
             <title>Block Storage Creation Failures</title>
             <para>If a user tries to create a volume and it
@@ -531,7 +524,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 volume's UUID. First try the log files on the cloud
                 controller and then try the storage node where they
                 volume was attempted to be created:</para>
-            <programlisting><?db-font-size 65%?><prompt>#</prompt> grep 903b85d0-bacc-4855-a261-10843fc2d65b /var/log/cinder/*.log</programlisting>
+            <screen><prompt>#</prompt> <userinput>grep                 903b85d0-bacc-4855-a261-10843fc2d65b /var/log/cinder/*.log</userinput></screen>
         </section>
     </section>
     <section xml:id="instances">
@@ -553,7 +546,8 @@ Optional snapshot description. (Default=None)</programlisting>
                 image or snapshot on the "Images &amp; Snapshots"
                 page.</para>
             <para>On the command line:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --flavor &lt;flavor&gt; --image &lt;image&gt; &lt;name&gt;</programlisting>
+            <screen><prompt>$</prompt> <userinput>nova boot --flavor
+                &lt;flavor&gt; --image &lt;image&gt; &lt;name&gt;</userinput></screen>
             <para>There are a number of optional items that can be
                 specified. You should read the rest of this instances
                 section before trying to start one, but this is the
@@ -562,7 +556,8 @@ Optional snapshot description. (Default=None)</programlisting>
             <para>To delete instances from the dashboard select the
                 "Terminate instance" action next to the instance on
                 the "Instances" page, from the command line:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova delete &lt;instance-uuid&gt;</programlisting>
+            <screen><prompt>$</prompt> <userinput>nova delete
+                &lt;instance-uuid&gt;</userinput></screen>
             <para>It is important to note that powering off an
                 instance does not terminate it in the OpenStack
                 sense.</para>
@@ -580,11 +575,9 @@ Optional snapshot description. (Default=None)</programlisting>
                 In these cases the error is apparent doing a
                     <code>nova show</code> on the faulted
                 instance.</para>
-
-            <programlisting><prompt>$</prompt> nova show test-instance</programlisting>
-
-            <programlisting><?db-font-size 55%?>
-+------------------------+-----------------------------------------------------\
+            <screen><prompt>$</prompt> <userinput>nova show test-instance</userinput></screen>
+            <screen><?db-font-size 55%?>
+<computeroutput>+------------------------+-----------------------------------------------------\
 | Property               | Value                                               /
 +------------------------+-----------------------------------------------------\
 | OS-DCF:diskConfig      | MANUAL                                              /
@@ -608,7 +601,8 @@ Optional snapshot description. (Default=None)</programlisting>
 | tenant_id              | 98333a1a28e746fa8c629c83a818ad57                    /
 | updated                | 2013-03-01T19:28:26Z                                \
 | user_id                | a1ef823458d24a68955fec6f3d390019                    /
-+------------------------+-----------------------------------------------------\   </programlisting>
++------------------------+-----------------------------------------------------\</computeroutput>
+            </screen>
             <para>In this case looking at the "fault" message shows
                 NoValidHost indicating the scheduler was unable to
                 match the instance requirements.</para>
@@ -641,7 +635,8 @@ Optional snapshot description. (Default=None)</programlisting>
                 <para>As an example of instance metadata, users can
                     generate and register ssh keys using the nova
                     command:</para>
-                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add mykey &gt; mykey.pem</programlisting>
+                <screen><prompt>$</prompt> <userinput>nova keypair-add mykey
+                    &gt; mykey.pem</userinput></screen>
                 <para>This creates a key named <userinput>mykey</userinput> which you can
                     associate with instances. The file <filename>mykey.pem</filename> is the
                     private key which should be saved to a secure location
@@ -649,13 +644,15 @@ Optional snapshot description. (Default=None)</programlisting>
                     associated with.</para>
                 <para>Use this command to register an existing key
                     with OpenStack:</para>
-                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova keypair-add --pub-key mykey.pub mykey</programlisting>
+                <screen><prompt>$</prompt> <userinput>nova keypair-add
+                    --pub-key mykey.pub mykey</userinput></screen>
                 <note><para>You must have the matching private key to access
                     instances associated with this key.</para></note>
                 <para>To associate a key with an instance on boot add
                     <code>--key_name mykey</code> to your command line.
                     For example:</para>
-                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 2 --key_name mykey myimage</programlisting>
+                <screen><prompt>$</prompt> <userinput>nova
+                    boot --image ubuntu-cloudimage --flavor 2 --key_name mykey myimage</userinput></screen>
                 <para>When booting a server, you can also add
                     arbitrary metadata, so that you can more easily
                     identify it amongst other running instances. Use
@@ -664,11 +661,13 @@ Optional snapshot description. (Default=None)</programlisting>
                     the key and the value. For example, you could add
                     a description and also the creator of the
                     server:</para>
-                <programlisting><?db-font-size 65%?><prompt>$ </prompt>nova boot --image=test-image --flavor=1 --meta description='Small test image' smallimage</programlisting>
+                <screen><prompt>$</prompt> <userinput>nova boot
+                    --image=test-image --flavor=1 --meta description='Small test
+                    image' smallimage</userinput></screen>
                 <para>When viewing the server information, you can see the
                     metadata included on the metadata line:</para>
-                <programlisting><prompt>$</prompt> nova show smallimage</programlisting>
-                <programlisting><?db-font-size 65%?>+------------------------+-----------------------------------------+
+                <screen><prompt>$</prompt> <userinput>nova show smallimage</userinput></screen>
+                <screen><computeroutput>+------------------------+-----------------------------------------+
 |     Property           |                   Value                 |
 +------------------------+-----------------------------------------+
 |   OS-DCF:diskConfig    |               MANUAL                    |
@@ -693,7 +692,7 @@ Optional snapshot description. (Default=None)</programlisting>
 |    tenant_id           |             e83...482                   |
 |     updated            |            2012-05-16T20:48:35Z         |
 |     user_id            |          de3...0a9                      |
-+------------------------+-----------------------------------------+</programlisting>
++------------------------+-----------------------------------------+</computeroutput></screen>
             </section>
             <section xml:id="instance_user_data">
                 <title>Instance User Data</title>
@@ -711,7 +710,8 @@ Optional snapshot description. (Default=None)</programlisting>
                     system and then passed in at instance creation with
                     the flag <code>--user-data &lt;user-data-file&gt;</code>.
                     For example:</para>
-                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</programlisting>
+                <screen><prompt>$</prompt> <userinput>nova boot --image
+                    ubuntu-cloudimage --flavor 1 --user-data mydata.file</userinput></screen>
                 <para>To understand the difference between user data and
                     metadata, realize that user data is created before an
                     instance is started. User data is accessible
@@ -729,7 +729,9 @@ Optional snapshot description. (Default=None)</programlisting>
                     that you want to put on the instance rather than using
                     the regular ssh key injection for some reason you can
                     use the following command:</para>
-                <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image ubuntu-cloudimage --flavor 1 --file /root/.ssh/authorized_keys=special_authorized_keysfile</programlisting>
+                <screen><prompt>$</prompt> <userinput>nova boot --image
+                    ubuntu-cloudimage --flavor 1 --file
+                    /root/.ssh/authorized_keys=special_authorized_keysfile</userinput></screen>
             </section>
         </section>
     </section>
@@ -748,8 +750,10 @@ Optional snapshot description. (Default=None)</programlisting>
         <para>It is also possible to add and remove security groups
             when an instance is running. Currently this is only
             available through the command line tools.</para>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova add-secgroup &lt;server&gt; &lt;securitygroup&gt;</programlisting>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova remove-secgroup &lt;server&gt; &lt;securitygroup&gt;</programlisting>
+        <screen><prompt>$</prompt> <userinput>nova add-secgroup
+            &lt;server&gt; &lt;securitygroup&gt;</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>nova remove-secgroup
+            &lt;server&gt; &lt;securitygroup&gt;</userinput></screen>
     </section>
     <section xml:id="floating_ips">
         <title>Floating IPs</title>
@@ -762,9 +766,9 @@ Optional snapshot description. (Default=None)</programlisting>
             <guibutton>Allocate IP to Project</guibutton> button on the
             "Access &amp; Security" page of the dashboard. The command
             line can also be used:</para>
-        <programlisting><prompt>$</prompt> nova floating-ip-create</programlisting>
+        <screen><prompt>$</prompt> <userinput>nova floating-ip-create</userinput></screen>
         <para>Once allocated, a Floating IP can be assigned to running
-            instances from the Dashboard either by selecting the
+            instances from the dashboard either by selecting the
             <guibutton>Associate Floating IP</guibutton> from the actions drop down next to
             the IP on the <guilabel>Access &amp; Security</guilabel> page or the same
             action next to the instance you wish to associate it with
@@ -776,9 +780,8 @@ Optional snapshot description. (Default=None)</programlisting>
         <para>To associate or disassociate a Floating IP to a server
             from the command line, use the following commands:
         </para>
-        <programlisting><prompt>$</prompt> nova add-floating-ip &lt;server&gt; &lt;address&gt;</programlisting>
-        <programlisting><prompt>$</prompt> nova remove-floating-ip &lt;server&gt; &lt;address&gt;</programlisting>
-
+        <screen><prompt>$</prompt> <userinput>nova add-floating-ip &lt;server&gt; &lt;address&gt;</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>nova remove-floating-ip &lt;server&gt; &lt;address&gt;</userinput></screen>
     </section>
     <section xml:id="attach_block_storage">
         <title>Attaching Block Storage</title>
@@ -788,10 +791,10 @@ Optional snapshot description. (Default=None)</programlisting>
             attach.</para>
         <para>To perform this action from command line, run the following
             command:</para>
-        <programlisting><prompt>$</prompt> nova volume-attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;</programlisting>
+        <screen><prompt>$</prompt> <userinput>nova volume-attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;</userinput></screen>
         <para>You can also specify block device mapping at instance boot time
             through the nova command line client, as follows:</para>
-        <programlisting>--block-device-mapping &lt;dev-name=mapping&gt; </programlisting>
+        <screen><userinput>--block-device-mapping &lt;dev-name=mapping&gt;</userinput></screen>
         <para>The block device mapping format is
                 <code>&lt;dev-name&gt;=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:&lt;delete-on-terminate&gt;</code>,
             where:</para>
@@ -847,7 +850,8 @@ Optional snapshot description. (Default=None)</programlisting>
             be attached as <code>/dev/vdc</code>, is not a snapshot,
             does not specify a size, and will not be deleted when the
             instance is terminated:</para>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --image 4042220e-4f5e-4398-9054-39fbd75a5dd7 --flavor 2 --key-name mykey --block-device-mapping vdc=13:::0 boot-with-vol-test</programlisting>
+        <screen><prompt>$</prompt> <userinput>nova boot --image 4042220e-4f5e-4398-9054-39fbd75a5dd7
+            --flavor 2 --key-name mykey --block-device-mapping vdc=13:::0 boot-with-vol-test</userinput></screen>
         <para>If you have previously prepared the block storage with a
             bootable file system image it is even possible to boot
             from persistent block storage. The following command
@@ -855,7 +859,8 @@ Optional snapshot description. (Default=None)</programlisting>
             the similar to the previous command but the image is
             omitted and the volume is now attached as
                 <code>/dev/vda</code>:</para>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova boot --flavor 2 --key-name mykey --block-device-mapping vda=13:::0 boot-from-vol-test</programlisting>
+        <screen><prompt>$</prompt> <userinput>nova boot --flavor 2 --key-name mykey
+            --block-device-mapping vda=13:::0 boot-from-vol-test</userinput></screen>
         <para>Read more detailed instructions for launching an instance from a
             bootable volume in the <link
                 xlink:href="http://docs.openstack.org/user-guide/content/boot_from_volume.html"
@@ -868,13 +873,14 @@ Optional snapshot description. (Default=None)</programlisting>
     <section xml:id="snapshots">
         <?dbhtml stop-chunking?>
         <title>Taking Snapshots</title>
-        <para>OpenStack's snapshot mechanism allows you to create new
+        <para>The OpenStack snapshot mechanism allows you to create new
             images from running instances. This is very convenient
             for upgrading base images or taking a published image and
             customizing for local use. To snapshot a running instance
             to an image using the CLI:</para>
-        <programlisting><?db-font-size 65%?><prompt>$</prompt> nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</programlisting>
-        <para>The Dashboard interface for snapshots can be confusing
+        <screen><prompt>$</prompt> <userinput>nova image-create &lt;instance
+            name or uuid&gt; &lt;name of new image&gt;</userinput></screen>
+        <para>The dashboard interface for snapshots can be confusing
             because the Images &amp; Snapshots page splits content up
             into:</para>
         <itemizedlist role="compact">
@@ -963,7 +969,7 @@ Optional snapshot description. (Default=None)</programlisting>
                 running services normally.</para>
             <para>To deal with the "dirty" buffer issue, we recommend
                 using the sync command before snapshotting:</para>
-            <programlisting><?db-font-size 65%?><prompt>#</prompt> sync</programlisting>
+            <screen><prompt>#</prompt> <userinput>sync</userinput></screen>
             <para>Running <code>sync</code> writes dirty buffer
                 (buffered block that have been modified but not
                 written yet to the disk block) to disk.</para>
@@ -976,7 +982,8 @@ Optional snapshot description. (Default=None)</programlisting>
                 and XFS. If your virtual machine instance is running
                 on Ubuntu, install the util-linux package to get
                 fsfreeze:</para>
-            <programlisting><?db-font-size 65%?><prompt>#</prompt> apt-get install util-linux</programlisting>
+            <screen><prompt>#</prompt> <userinput>apt-get install
+                util-linux</userinput></screen>
             <para>If your operating system doesn't have a version of
                 fsfreeze available, you can use xfs_freeze instead,
                 which is available on Ubuntu in the xfsprogs package.
@@ -1002,7 +1009,8 @@ Optional snapshot description. (Default=None)</programlisting>
             <para>To freeze the volume in preparation for
                 snapshotting, you would do, as root, inside of the
                 instance:</para>
-            <programlisting><?db-font-size 65%?><prompt>#</prompt> fsfreeze -f /mnt</programlisting>
+            <screen><prompt>#</prompt> <userinput>fsfreeze -f
+                /mnt</userinput></screen>
             <para>You <emphasis role="bold">must mount the file
                     system</emphasis> before you run the
                     <command>fsfreeze</command> command.</para>
@@ -1022,16 +1030,19 @@ Optional snapshot description. (Default=None)</programlisting>
                 instance was named mon-instance, and you wanted to
                 snapshot it to an image, named mon-snapshot, you could
                 now run the following:</para>
-            <programlisting><?db-font-size 65%?><prompt>$</prompt> nova image-create mon-instance mon-snapshot</programlisting>
+            <screen><prompt>$</prompt> <userinput>nova image-create
+                mon-instance mon-snapshot</userinput></screen>
             <para>When the snapshot is done, you can thaw the file
                 system with the following command, as root, inside of
                 the instance:</para>
-            <programlisting><?db-font-size 65%?><prompt>#</prompt> fsfreeze -u /mnt</programlisting>
+            <screen><prompt>#</prompt> <userinput>fsfreeze -u
+                /mnt</userinput></screen>
             <para>If you want to backup the root file system, you
                 can't simply do the command above because it will
                 freeze the prompt. Instead, run the following
                 one-liner, as root, inside of the instance:</para>
-            <programlisting><?db-font-size 65%?><prompt>#</prompt> fsfreeze -f / &amp;&amp; sleep 30 &amp;&amp; fsfreeze -u /</programlisting>
+            <screen><prompt>#</prompt> <userinput>fsfreeze -f / &amp;&amp;
+                sleep 30 &amp;&amp; fsfreeze -u /</userinput></screen>
         </sidebar>
         </section>
     </section>
@@ -1095,14 +1106,13 @@ Optional snapshot description. (Default=None)</programlisting>
     <section xml:id="user-facing-outro">
         <title>Good Luck!</title>
         <para>This section was intended as a brief introduction to
-        some of the more useful of OpenStack's thousand commands. For
+        some of the most useful of many OpenStack commands. For
         an exhaustive list please refer to the <link
         xlink:href="http://docs.openstack.org/user-guide-admin/content/">Admin User
         Guide</link>, and for additional hints and tips please see
         the <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">Cloud Admin Guide</link>.
-        We hope your users
-        remain happy and recognise your hard work! (For hard work, turn
-        the page to the next chapter where we discuss the system-facing
-        operations: Maintenance, Failures and Debugging.)</para>
+        We hope your users remain happy and recognise your hard work!
+        (For more hard work, turn the page to the next chapter where we discuss
+        the system-facing operations: Maintenance, Failures and Debugging.)</para>
     </section>
 </chapter>
