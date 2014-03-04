@@ -832,7 +832,7 @@ bytes</userinput></screen>
  174.143.194.225 (47)</computeroutput></screen>
     </section>
     <section xml:id="trouble_shooting_ovs">
-      <title>Trouble shooting Open vSwitch</title>
+      <title>Troubleshooting Open vSwitch</title>
       <para>Open vSwitch as used in the OpenStack Networking Service examples
             above is full-featured multilayer virtual switch licensed under the
             open source Apache 2.0 license. Full documentation can be found at

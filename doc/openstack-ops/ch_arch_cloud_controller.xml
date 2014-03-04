@@ -8,7 +8,8 @@
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0"
     xml:id="cloud_controller_design">
     <?dbhtml stop-chunking?>
     <title>Designing for Cloud Controllers and Cloud Management</title>
@@ -18,17 +19,20 @@
         the concept of a <emphasis>cloud controller</emphasis>. A cloud
         controller is just a conceptual simplification. In the real world
         you design an architecture for your cloud controller that enables
-        high availability. In reality, the cloud controller tasks are spread out
-        across more than a single node. The cloud controller provides the
+        high availability so that if any node fails, another can take over the
+        required tasks. In reality, the cloud controller tasks are spread out
+        across more than a single node.
+    </para>
+    <para>The cloud controller provides the
         central management system for OpenStack deployments. Typically the
         cloud controller manages authentication and sends messaging to all the
         systems through a message queue.</para>
-    <tip><para>For a more detailed example architecture, see
-        <xref linkend="example_architecture"/>.</para></tip>
-    <para>For many deployments, the cloud controller is a single node, but for
-        high availability, you have considerations about the design to explore
-        further in this chapter. The cloud controller provides these
-        necessary management services for the cloud:</para>
+    <para>For many deployments, the cloud controller is a single node. However,
+        in order to have high availability, you'll have to take a few considerations
+        into account, which we'll cover in this chapter.
+    </para>
+    <para>The cloud controller manages the following services for the cloud:
+    </para>
     <itemizedlist>
             <listitem>
                 <para>Databases (tracks current information about users and
@@ -106,34 +110,6 @@
             such as the message queuing. In this guide, we assume that
             all services are running directly on the cloud
             controller.</para>
-        <para>To size the server correctly, and determine whether to
-            virtualize any part of it, you should estimate:</para>
-        <itemizedlist role="compact">
-            <listitem>
-                <para>The number of instances that you expect to
-                    run</para>
-            </listitem>
-            <listitem>
-                <para>The number of compute nodes that you have</para>
-            </listitem>
-            <listitem>
-                <para>The number of users who will access the compute
-                    or storage services</para>
-            </listitem>
-            <listitem>
-                <para>Whether users interact with your cloud through
-                    the REST API or the dashboard</para>
-            </listitem>
-            <listitem>
-                <para>Whether users authenticate against an external
-                    system (such as, LDAP or <glossterm>Active
-                        Directory</glossterm>)</para>
-            </listitem>
-            <listitem>
-                <para>How long you expect single instances to
-                    run</para>
-            </listitem>
-        </itemizedlist>
         <para>The following table contains common considerations to review when
             sizing hardware for the cloud controller design:</para>
         <informaltable rules="all">
@@ -179,7 +155,8 @@
                 <tr>
                     <td xmlns:db="http://docbook.org/ns/docbook"
                             ><para>How many users will access the
-                                <glossterm>dashboard</glossterm>?</para></td>
+                                <glossterm>dashboard</glossterm>
+                                versus the REST API directly?</para></td>
                     <td xmlns:db="http://docbook.org/ns/docbook"
                             ><para>The dashboard makes many requests,
                             even more than the API access, so add even
@@ -211,9 +188,11 @@
                             ><para>Does your authentication system
                             also verify externally?</para></td>
                     <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>Ensure network connectivity between
+                                ><para>External systems such as, LDAP or
+                            <glossterm>Active Directory</glossterm> require
+                            network connectivity between
                             the cloud controller and external
-                            authentication system are good and that
+                            authentication system. Also ensure that
                             the cloud controller has the CPU power to
                             keep up with requests.</para></td>
                 </tr>
@@ -316,7 +295,7 @@
     <section xml:id="message_queue">
         <title>Message Queue</title>
         <para>Most OpenStack services communicate with each other using the
-            Message Queue. As an example, Compute communicates to block storage
+            Message Queue. For example, Compute communicates to block storage
             services and networking services through the message queue. Also,
             you can optionally enable notifications for any service. RabbitMQ,
             Qpid, and 0mq are all popular choices for a message queue service.
@@ -455,18 +434,18 @@
             supports:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para>OpenStack Object Storage. Allows you to store
+                <para>OpenStack Object Storage: Allows you to store
                     images as objects.</para>
             </listitem>
             <listitem>
-                <para>File system. Uses any traditional file system to
+                <para>File system: Uses any traditional file system to
                     store the images as files.</para>
             </listitem>
             <listitem>
-                <para>S3. Allows you to fetch images from Amazon S3.</para>
+                <para>S3: Allows you to fetch images from Amazon S3.</para>
             </listitem>
             <listitem>
-                <para>HTTP. Allows you to fetch images from a web
+                <para>HTTP: Allows you to fetch images from a web
                     server. You cannot write images by using this
                     mode.</para>
             </listitem>

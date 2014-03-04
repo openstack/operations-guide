@@ -18,7 +18,7 @@
         Compute cloud, providing the processing, memory, network and
         storage resources to run instances.</para>
     <section xml:id="cpu_choice">
-        <title>CPU Choice</title>
+        <title>Choosing a CPU</title>
         <para>The type of CPU in your compute node is a very important
             choice. First, ensure the CPU supports virtualization by
             way of <emphasis>VT-x</emphasis> for Intel chips and
@@ -54,7 +54,7 @@
     </section>
     <?hard-pagebreak?>
     <section xml:id="hypervisor_choice">
-        <title>Hypervisor Choice</title>
+        <title>Choosing a Hypervisor</title>
         <para>A hypervisor provides software to manage virtual machine access to
             the underlying hardware. The hypervisor creates, manages, and
             monitors virtual machines. OpenStack Compute supports many
@@ -96,7 +96,6 @@
                 single hypervisor at a time.</para>
         </note>
     </section>
-
     <section xml:id="instance_storage">
         <title>Instance Storage Solutions</title>
         <para>As part of the procurement for a compute cluster, you
@@ -223,7 +222,6 @@
                 </listitem>
             </itemizedlist>
         </section>
-
         <section xml:id="on_compute_node_storage_nonshared">
             <title>On Compute Node Storage – Non-shared File System</title>
             <para>In this option, each compute node is specified with enough

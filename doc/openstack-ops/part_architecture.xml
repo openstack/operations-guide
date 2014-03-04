@@ -20,6 +20,32 @@
         needs, and this part of the book aims to shine light on many of the
         decisions you will need to make during the process.
       </para>
+      <para>To design, deploy, and configure OpenStack, administrators
+        must understand the logical architecture. A diagram can help
+        you envision all the integrated services within
+        OpenStack and how they interact with each other.</para>
+      <para>OpenStack modules are one of the following types:</para>
+      <itemizedlist role="compact">
+        <listitem>
+          <para>Daemon. Runs as a background process. On Linux platforms, a daemon is
+            usually installed as a service.</para>
+        </listitem>
+        <listitem>
+          <para>Script. Installs a virtual environment and runs tests.</para>
+        </listitem>
+        <listitem>
+          <para>Command-line interface (CLI). Enables users to submit API
+            calls to OpenStack services through commands.</para>
+        </listitem>
+      </itemizedlist>
+      <para>As shown, end users can interact through the dashboard,
+        CLIs, and APIs. All services authenticate through a common
+        Identity Service and individual services interact with each
+        other through public APIs, except where privileged
+        administrator commands are necessary. The diagram shows the
+        most common, but not the only, logical architecture for an
+        OpenStack cloud.</para>
+      <!-- O'Reilly production to insert image here -->
     </partintro>
     <xi:include href="ch_arch_examples.xml"/>
     <xi:include href="ch_arch_provision.xml"/>
