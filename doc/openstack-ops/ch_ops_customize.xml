@@ -87,9 +87,9 @@
 <screen><prompt>$</prompt> <userinput>ssh <replaceable>username</replaceable>@<replaceable>my.instance.ip.address</replaceable></userinput></screen>
                 </step>
 <step><para>Update the virtual machine's operating system.</para>
-                <screen><prompt>$</prompt> <userinput>sudo apt-get -y update</userinput></screen></step>
+                <screen><prompt>#</prompt> <userinput>apt-get -y update</userinput></screen></step>
 <step><para>Install git.</para>
-            <screen><prompt>$</prompt> <userinput>sudo apt-get -y install git</userinput></screen></step>
+            <screen><prompt>#</prompt> <userinput>apt-get -y install git</userinput></screen></step>
 <step><para>Clone the stable/havana branch of the devstack repository.</para>
                     <screen><prompt>$</prompt> <userinput>git clone https://github.com/openstack-dev/devstack.git -b stable/havana devstack/</userinput></screen></step>
 <step><para>Change to the devstack repository.</para>
@@ -103,13 +103,14 @@
                     can skip these steps.</para>
                 <substeps>
                     <step><para>Run the DevStack script to create the stack user.</para>
-                        <screen><prompt>$</prompt> <userinput>tools/create-stack-user.sh</userinput></screen></step>
+                        <screen><prompt>#</prompt> <userinput>tools/create-stack-user.sh</userinput></screen></step>
 <step><para>Give ownership of the devstack directory to the stack user.</para>
-                    <screen><prompt>$</prompt> <userinput>chown -R stack:stack /root/devstack</userinput></screen></step>
+                    <screen><prompt>#</prompt> <userinput>chown -R stack:stack /root/devstack</userinput></screen></step>
+<step><para>Set some permissions so you can view the DevStack screen later.</para>
+<screen><prompt>#</prompt> <userinput>chmod o+rwx /dev/pts/0</userinput></screen></step>
 <step><para>Switch to the stack user.</para>
 <screen><prompt>$</prompt> <userinput>su stack</userinput></screen></step>
-<step><para>Set some permissions to you can view the DevStack screen later.</para>
-<screen><prompt>$</prompt> <userinput>sudo chmod o+rwx /dev/pts/0</userinput></screen></step></substeps>
+                </substeps>
             </step>
             <step>
                 <para>Edit the <filename>localrc</filename> configuration file that controls what
@@ -447,7 +448,7 @@ proxy-server Allow IPs: set(['my.instance.ip.address']) (txn: ...)</computeroutp
                 <substeps>
                     <step>
                <para>Install the Keystone and Swift clients on your local machine.</para>
-                        <screen><prompt>$</prompt> <userinput>sudo pip install python-keystoneclient python-swiftclient</userinput></screen></step>
+                        <screen><prompt>#</prompt> <userinput>pip install python-keystoneclient python-swiftclient</userinput></screen></step>
 <step><para>Attempt to list the objects in the middleware-test container.</para>
     <screen><prompt>$</prompt> <userinput>swift --os-auth-url=http://my.instance.ip.address:5000/v2.0/ --os-region-name=RegionOne --os-username=demo:demo --os-password=devstack list middleware-test</userinput>
 <computeroutput>
