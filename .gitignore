@@ -15,6 +15,9 @@ publish-docs/
 generated/
 /build-*.log.gz
 
+# Transifex Client Setting
+.tx
+
 # Editors
 *~
 .*.swp
