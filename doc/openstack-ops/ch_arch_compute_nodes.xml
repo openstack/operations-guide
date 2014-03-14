@@ -12,7 +12,7 @@
     xml:id="compute_nodes">
     <?dbhtml stop-chunking?>
     <title>Compute Nodes</title>
-    <para>In this chapter, we will discuss some of the choices you'll
+    <para>In this chapter, we discuss some of the choices you
         need to consider when building out your compute nodes.
         Compute nodes form the resource core of the OpenStack
         Compute cloud, providing the processing, memory, network and
@@ -20,13 +20,13 @@
     <section xml:id="cpu_choice">
         <title>Choosing a CPU</title>
         <para>The type of CPU in your compute node is a very important
-            choice. First, ensure the CPU supports virtualization by
+            choice. First, ensure that the CPU supports virtualization by
             way of <emphasis>VT-x</emphasis> for Intel chips and
             <emphasis>AMD-v</emphasis> for AMD chips.</para>
         <tip><para>Consult the vendor documentation to check for virtualization
-            support. For Intel read <link xlink:title="Intel VT-x" xlink:href="http://www.intel.com/support/processors/sb/cs-030729.htm">
+            support. For Intel, read <link xlink:title="Intel VT-x" xlink:href="http://www.intel.com/support/processors/sb/cs-030729.htm">
             Does my processor support Intel® Virtualization Technology?</link>
-            (http://www.intel.com/support/processors/sb/cs-030729.htm). For AMD
+            (http://www.intel.com/support/processors/sb/cs-030729.htm). For AMD,
             read <link xlink:title="AMD-v" xlink:href="http://sites.amd.com/us/business/it-solutions/virtualization/Pages/client-side-virtualization.aspx">
             AMD Virtualization</link>
             (http://sites.amd.com/us/business/it-solutions/virtualization/Pages/client-side-virtualization.aspx).
@@ -36,7 +36,7 @@
         </tip>
         <para>The number of cores that the CPU has also affects the
             decision. It's common for current CPUs to have up to 12
-            cores. Additionally, if an Intel CPU supports Hyper-threading,
+            cores. Additionally, if an Intel CPU supports hyper-threading,
             those 12 cores are doubled to 24 cores. If you purchase a
             server that supports multiple CPUs, the number of cores is
             further multiplied.</para>
@@ -48,7 +48,7 @@
         <para>Whether you should enable hyper-threading on your CPUs
             depends upon your use case. For example, disabling
             hyper-threading can be beneficial in intense computing
-            environments. We recommend you do performance testing with
+            environments. We recommend that you do performance testing with
             your local workload with both hyper-threading on and off
             to determine what is more appropriate in your case.</para></sidebar>
     </section>
@@ -76,7 +76,7 @@
             experience.</para>
         <para>For example, KVM is the most widely adopted hypervisor
             in the OpenStack community. Besides KVM, more deployments
-            exist running Xen, LXC, VMWare, and Hyper-V than the others
+            run Xen, LXC, VMWare, and Hyper-V than the others
             listed. However, each of these are lacking some feature
             support or the documentation on how to use them with
             OpenStack is out of date.</para>
@@ -84,15 +84,15 @@
             found on the <link xlink:title="reference manual"
                 xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix"
                 >Hypervisor Support Matrix</link>
-            (https://wiki.openstack.org/wiki/HypervisorSupportMatrix),
+            (https://wiki.openstack.org/wiki/HypervisorSupportMatrix)
             and in the <link xlink:title="configuration reference"
                 xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html"
                 >configuration reference</link>
             (http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html).</para>
         <note>
             <para>It is also possible to run multiple hypervisors in a
-                single deployment using Host Aggregates or Cells.
-                However, an individual compute node can only run a
+                single deployment using host aggregates or cells.
+                However, an individual compute node can run only a
                 single hypervisor at a time.</para>
         </note>
     </section>
@@ -107,17 +107,17 @@
         <para>They are:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para>Off compute node storage – shared file system</para>
+                <para>Off compute node storage—shared file system</para>
             </listitem>
             <listitem>
-                <para>On compute node storage – shared file system</para>
+                <para>On compute node storage—shared file system</para>
             </listitem>
             <listitem>
-                <para>On compute node storage – non-shared file system</para>
+                <para>On compute node storage—non shared file system</para>
             </listitem>
         </itemizedlist>
-        <para>In general, the questions you should be asking when
-            selecting the storage are as follows:</para>
+        <para>In general, the questions you should ask when
+            selecting storage are as follows:</para>
         <itemizedlist role="compact">
             <listitem>
                 <para>What is the platter count you can achieve?</para>
@@ -136,7 +136,7 @@
         </itemizedlist>
         <para>Many operators use separate compute and storage
             hosts. Compute services and storage services have
-            different requirements, compute hosts typically
+            different requirements, and compute hosts typically
             require more CPU and RAM than storage hosts.
             Therefore, for a fixed budget, it makes sense to have
             different configurations for your compute nodes and
@@ -152,12 +152,12 @@
         <para>We'll discuss the three main approaches to instance
             storage in the next few sections.</para>
         <section xml:id="off_compute_node_storage">
-            <title>Off Compute Node Storage – Shared File System</title>
+            <title>Off Compute Node Storage—Shared File System</title>
             <para>In this option, the disks storing the running
                 instances are hosted in servers outside of the compute
                 nodes.</para>
-            <para>If you use separate compute and storage hosts
-                then you can treat your compute hosts as "stateless".
+            <para>If you use separate compute and storage hosts,
+                you can treat your compute hosts as "stateless."
                 As long as you don't have any instances currently running
                 on a compute host, you can take it offline or wipe it
                 completely without having any effect on the rest of your
@@ -173,7 +173,7 @@
                         operationally simpler.</para>
                 </listitem>
                 <listitem>
-                    <para>Being able to scale to any number of spindles.</para>
+                    <para>You can scale to any number of spindles.</para>
                 </listitem>
                 <listitem>
                     <para>It may be possible to share the external
@@ -194,9 +194,9 @@
             </itemizedlist>
         </section>
         <section xml:id="on_compute_node_storage">
-            <title>On Compute Node Storage – Shared File System</title>
+            <title>On Compute Node Storage–Shared File System</title>
             <para>In this option, each compute node
-                is specified with a significant amount of disks, but a
+                is specified with a significant amount of disk space, but a
                 distributed file system ties the disks from each
                 compute node into a single mount.</para>
             <para>The main advantage of this option is that it scales to
@@ -223,7 +223,7 @@
             </itemizedlist>
         </section>
         <section xml:id="on_compute_node_storage_nonshared">
-            <title>On Compute Node Storage – Non-shared File System</title>
+            <title>On Compute Node Storage–Non shared File System</title>
             <para>In this option, each compute node is specified with enough
                 disks to store the instances it hosts.</para>
             <para>There are two main reasons why this is a good idea:</para>
@@ -251,7 +251,7 @@
                 <listitem>
                     <para>Migrations of instances from one node to
                         another are more complicated, and rely on
-                        features which may not continue to be
+                        features that may not continue to be
                         developed.</para>
                 </listitem>
                 <listitem>
@@ -265,7 +265,7 @@
                 file system on the compute nodes themselves may be best in a
                 scenario where you have to deploy to pre-existing servers for
                 which you have little to no control over their specifications.
-                Running a non-shared file system on the compute nodes
+                Running a non shared file system on the compute nodes
                 themselves is a good option for clouds with high I/O
                 requirements and low concern for reliability.</para>
         </section>
@@ -277,7 +277,7 @@
                 host to another, a necessity for performing upgrades
                 that require reboots of the compute hosts, but only
                 works well with shared storage.</para>
-            <para>Live migration can be also done with non-shared storage,
+            <para>Live migration can also be done with non shared storage,
                 using a feature known as <emphasis>KVM live block
                 migration</emphasis>. While an earlier implementation
                 of block-based migration in KVM and QEMU was considered
@@ -289,8 +289,8 @@
         </section>
         <section xml:id="file_systems">
             <title>Choice of File System</title>
-            <para>If you want to support shared storage live
-                migration, you'll need to configure a distributed file
+            <para>If you want to support shared-storage live
+                migration, you need to configure a distributed file
                 system.</para>
             <para>Possible options include:</para>
             <itemizedlist role="compact">
@@ -307,10 +307,10 @@
                     <para>Lustre</para>
                 </listitem>
             </itemizedlist>
-            <para>We've seen deployments with all, and recommend you
+            <para>We've seen deployments with all, and recommend that you
                 choose the one you are most familiar with operating. If you
-                are unfamiliar with any of these, choose NFS as it is the
-                easiest to setup and there is extensive community
+                are not familiar with any of these, choose NFS as it is the
+                easiest to set up and there is extensive community
                 knowledge about it.</para>
         </section>
     </section>
@@ -331,7 +331,7 @@
         </itemizedlist>
         <para>The default CPU allocation ratio of 16:1 means that the
             scheduler allocates up to 16 virtual cores per physical
-            core. For example, if a physical node has 12 cores, then the scheduler
+            core. For example, if a physical node has 12 cores, the scheduler
             sees 192 available virtual cores. With typical flavor definitions of
             4 virtual cores per instance, this ratio would provide 48 instances
             on a physical node.</para>
@@ -375,12 +375,12 @@
     <section xml:id="logging">
         <title>Logging</title>
         <para>Logging is detailed more fully in <xref
-                linkend="logging"/>. However it is an important design
+                linkend="logging_monitoring"/>. However, it is an important design
             consideration to take into account before commencing
             operations of your cloud.</para>
         <para>OpenStack produces a great deal of useful logging
-            information, however, in order for it to be useful for
-            operations purposes you should consider having a central
+            information, however, but for the information to be useful for
+            operations purposes, you should consider having a central
             logging server to send logs to, and a log parsing/analysis
             system (such as logstash).</para>
     </section>
@@ -392,7 +392,7 @@
     <section xml:id="conclusion">
         <title>Conclusion</title>
         <para>Compute nodes are the workhorse of your cloud and the place
-            where your user's applications will run. They are likely to be
+            where your users' applications will run. They are likely to be
             affected by your decisions on what to deploy and how you deploy it.
             Their requirements should be reflected in the choices you make.</para>
     </section>
