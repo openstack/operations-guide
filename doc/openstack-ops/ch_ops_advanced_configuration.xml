@@ -13,36 +13,36 @@
     <?dbhtml stop-chunking?>
     <title>Advanced Configuration</title>
     <para>OpenStack is intended to work well across a variety of installation
-          flavors, from very small private clouds to large public clouds. In
-          order to achieve this the developers add configuration options to
-          their code which allow the behaviour of the various components to be
-          tweaked depending on your needs. Unfortunately it is not possible to
+          flavors, from very small private clouds to large public clouds.
+          To achieve this, the developers add configuration options to
+          their code that allow the behaviour of the various components to be
+          tweaked depending on your needs. Unfortunately, it is not possible to
           cover all possible deployments with the default configuration values.</para>
 
-    <para>At the time of writing, OpenStack has over 1,500 configuration options.
+    <para>At the time of writing, OpenStack has more than 1,500 configuration options.
           You can see them documented at
           <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/config_overview.html">the OpenStack configuration reference guide</link>. This chapter cannot hope to
-          document all of these, but however we do try to introduce the important
+          document all of these, but we do try to introduce the important
           concepts so that you know where to go digging for more information.</para>
 
     <section xml:id="driver_differences">
-    <title>Differences between Various Drivers</title>
+    <title>Differences Between Various Drivers</title>
     <para>Many OpenStack projects implement a driver layer, and each of these
           drivers will implement their own configuration options. For example
-          in OpenStack Compute (Nova), there are various hypervisor drivers
-          implemented -- libvirt, xenserver, hyper-v and vmware for example.
+          in OpenStack Compute (nova), there are various hypervisor drivers
+          implemented&mdash;libvirt, xenserver, hyper-v, and vmware, for example.
           Not all of these hypervisor drivers have the same features, and each
           has different tuning requirements.</para>
 
     <note><para>The currently implemented hypervisors are listed on
           <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html">the OpenStack documentation website</link>. You can see a matrix of the
           various features in OpenStack Compute
-          (Nova) hypervisor drivers on the OpenStack wiki at
+          (nova) hypervisor drivers on the OpenStack wiki at
           <link xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix">the Hypervisor support matrix page</link>.</para></note>
 
     <para>The point we are trying to make here is that just because an option
           exists doesn't mean that option is relevant to your driver choices.
-          Normally the documentation notes which drivers the configuration
+          Normally, the documentation notes which drivers the configuration
           applies to.</para>
     </section>
 
@@ -50,8 +50,8 @@
     <title>Implementing Periodic Tasks</title>
     <para>Another common concept across various OpenStack projects is that of
           periodic tasks. Periodic tasks are much like cron jobs on traditional
-          Unix systems, but they are run inside of an OpenStack process. For
-          example, when OpenStack Compute (Nova) needs to work out what images
+          Unix systems, but they are run inside an OpenStack process. For
+          example, when OpenStack Compute (nova) needs to work out what images
           it can remove from its local cache, it runs a periodic task to do this.</para>
 
     <para>Periodic tasks are important to understand because of limitations in
@@ -63,26 +63,26 @@
 
     <para>A tangible example of this is the nova-compute process. In order to
           manage the image cache with libvirt, nova-compute has a periodic
-          process which scans the contents of the image cache. Part of this
+          process that scans the contents of the image cache. Part of this
           scan is calculating a checksum for each of the images and making sure
           that checksum matches what nova-compute expects it to be. However,
-          images can be very large and these checksums can take a long time to
+          images can be very large, and these checksums can take a long time to
           generate. At one point, before it was reported as a bug and fixed,
           nova-compute would block on this task and stop responding to RPC
           requests. This was visible to users as failure of operations such
           as spawning or deleting instances.</para>
 
-    <para>The take away from this is if you observe an OpenStack process which
+    <para>The take away from this is if you observe an OpenStack process that
           appears to "stop" for a while and then continue to process normally,
           you should check that periodic tasks aren't the problem. One way to
           do this is to disable the periodic tasks by setting their interval to
           zero. Additionally, you can configure how often these periodic tasks
-          run -- in some cases it might make sense to run them at a different
+          run&mdash;in some cases it might make sense to run them at a different
           frequency from the default.</para>
 
     <para>The frequency is defined separately for each periodic task.
           Therefore, to disable every periodic task in OpenStack Compute
-          (Nova), you would need to set a number of configuration
+          (nova), you would need to set a number of configuration
           options to zero. The current list of configuration options
           you would need to set to zero are:</para>
 
@@ -100,7 +100,7 @@
                 </itemizedlist>
 
     <para>To set a configuration option to zero, include a line such as
-          <literal>image_cache_manager_interval=0</literal> to your
+          <literal>image_cache_manager_interval=0</literal> in your
           <filename>nova.conf</filename> file.</para>
 
     <para>This list will change between releases, so please refer to
@@ -117,7 +117,7 @@
           <para>The <citetitle><link
                 xlink:href="http://docs.openstack.org/sec/">OpenStack Security
                 Guide</link></citetitle> provides a deep dive into securing an
-                OpenStack cloud including SSL/TLS, key management, PKI and certificate
+                OpenStack cloud, including SSL/TLS, key management, PKI and certificate
                 management, data transport and privacy concerns, and
                 compliance.</para></section>
           <section xml:id="adv-config-ha"><title>High Availability</title>
@@ -132,16 +132,16 @@
             <section xml:id="adv-config-ipv6">
                   <title>Enabling IPv6 Support</title>
                   <para>The Havana release with OpenStack Networking
-                        (Neutron) does not offer complete support of
+                        (neutron) does not offer complete support of
                         IPv6. Better support is planned for the
                         Icehouse release. You can follow along the
-                        progress being made by watching the Neutron
+                        progress being made by watching the neutron
                         IPv6 Subteam at work (<link
                               xlink:href="https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam"
                               >https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam</link>).
                   </para>
-                  <para>By modifying your configuration setup you can set up
-                        IPv6 when using nova-network for networking and a tested
+                  <para>By modifying your configuration setup, you can set up
+                        IPv6 when using nova-network for networking, and a tested
                         setup is documented for FlatDHCP and a multi-host
                         configuration. The key is to make nova-network think a
                         radvd command ran successfully. The entire
@@ -166,10 +166,10 @@
             <title>Geographical Considerations for Object Storage</title>
                   <para>Enhanced support for global clustering of object storage
                         servers continues to be added since the Grizzly (1.8.0)
-                        release when regions were introduced. You would
+                        release, when regions were introduced. You would
                         implement these global clusters to ensure replication
                         across geographic areas in case of a natural disaster
-                        and also to ensure users can write or access their
+                        and also to ensure that users can write or access their
                         objects more quickly based on the closest data center.
                         You configure a default region with one zone for each
                         cluster, but be sure your network (WAN) can handle the
