@@ -15,20 +15,20 @@
     <title>Designing for Cloud Controllers and Cloud Management</title>
     <para>OpenStack is designed to be massively horizontally scalable, which
         allows all services to be distributed widely. However, to simplify this
-        guide we have decided to discuss services of a more central nature using
+        guide we have decided to discuss services of a more central nature, using
         the concept of a <emphasis>cloud controller</emphasis>. A cloud
         controller is just a conceptual simplification. In the real world
         you design an architecture for your cloud controller that enables
         high availability so that if any node fails, another can take over the
-        required tasks. In reality, the cloud controller tasks are spread out
+        required tasks. In reality, cloud controller tasks are spread out
         across more than a single node.
     </para>
     <para>The cloud controller provides the
-        central management system for OpenStack deployments. Typically the
+        central management system for OpenStack deployments. Typically, the
         cloud controller manages authentication and sends messaging to all the
         systems through a message queue.</para>
     <para>For many deployments, the cloud controller is a single node. However,
-        in order to have high availability, you'll have to take a few considerations
+        to have high availability, you have to take a few considerations
         into account, which we'll cover in this chapter.
     </para>
     <para>The cloud controller manages the following services for the cloud:
@@ -36,31 +36,31 @@
     <itemizedlist>
             <listitem>
                 <para>Databases (tracks current information about users and
-                    instances for example in a database, typically one database
+                    instances, for example, in a database, typically one database
                     instance managed per service)</para>
             </listitem>
             <listitem>
-                <para>Message queue services (all AMQP - Advanced Message Queue
-                    Protocol - messages for services are received and sent
+                <para>Message queue services (all AMQP&mdash;Advanced Message Queue
+                    Protocol&mdash;messages for services are received and sent
                     according to the queue broker)</para>
             </listitem>
             <listitem>
-            <para>Conductor services (proxies requests to a
+            <para>Conductor services (proxy requests to a
                 database)</para>
             </listitem>
             <listitem>
                 <para>Authentication and authorization for identity management
                     (indicates which users can do what actions on certain cloud
-                    resources, quota management is spread out among services
+                    resources; quota management is spread out among services,
                     however)</para>
             </listitem>
             <listitem>
-                <para>Image management services (stores and serves images with
+                <para>Image-management services (stores and serves images with
                     metadata on each, for launching in the cloud)</para>
             </listitem>
             <listitem>
                 <para>Scheduling services (indicates which resources to use
-                    first, for example, spreading out where instances are
+                    first; for example, spreading out where instances are
                     launched based on an algorithm)</para>
             </listitem>
             <listitem>
@@ -82,11 +82,11 @@
         controller may be broken out into separate nodes for scalability or
         availability.</para>
     <para>As another example, you could use pairs of servers for a collective
-        cloud controller - one active, one standby, for redundant nodes
-        providing a given set of related services such as:</para>
+        cloud controller&mdash;one active, one standby&mdash;for redundant nodes
+        providing a given set of related services, such as:</para>
     <itemizedlist>
             <listitem>
-                <para>Front-end web for API requests, the scheduler for choosing
+                <para>Frontend web for API requests, the scheduler for choosing
                     which compute node to boot an instance on, identity
                     services, and the dashboard</para>
             </listitem>
@@ -110,9 +110,11 @@
             such as the message queuing. In this guide, we assume that
             all services are running directly on the cloud
             controller.</para>
-        <para>The following table contains common considerations to review when
-            sizing hardware for the cloud controller design:</para>
-        <informaltable rules="all">
+        <para><xref linkend="controller-hardware-sizing"/> contains
+           common considerations to review when sizing hardware for the
+           cloud controller design:</para>
+        <table rules="all" xml:id="controller-hardware-sizing">
+          <caption>Cloud Controller Hardware Sizing Considerations</caption>
             <col width="25%"/>
             <col width="75%"/>
             <thead>
@@ -191,13 +193,13 @@
                                 ><para>External systems such as, LDAP or
                             <glossterm>Active Directory</glossterm> require
                             network connectivity between
-                            the cloud controller and external
+                            the cloud controller and an external
                             authentication system. Also ensure that
                             the cloud controller has the CPU power to
                             keep up with requests.</para></td>
                 </tr>
             </tbody>
-        </informaltable>
+        </table>
     </section>
     <?hard-pagebreak?>
     <section xml:id="separate_services">
@@ -217,12 +219,12 @@
                             on the <code>swift-proxy</code>
                             server</para></td>
                     <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>This deployment felt the spare I/O
+                            ><para>This deployment felt that the spare I/O
                             on the Object Storage proxy server was
-                            sufficient, and the Image Delivery portion
-                            of Glance benefited from being on physical
+                            sufficient, and that the Image Delivery portion
+                            of glance benefited from being on physical
                             hardware and having good connectivity to
-                            the Object Storage back-end it was
+                            the Object Storage backend it was
                             using.</para></td>
                 </tr>
 
@@ -232,11 +234,11 @@
                             ><para>Run a central dedicated database
                             server</para></td>
                     <td xmlns:db="http://docbook.org/ns/docbook"
-                            ><para>This deployment made a central
+                            ><para>This deployment used a central
                             dedicated server to provide the databases
-                            for all services. This simplified
+                            for all services. This approach simplified
                             operations by isolating database server
-                            updates, and allowed for the simple
+                            updates and allowed for the simple
                             creation of slave database servers for
                             failover.</para></td>
                 </tr>
@@ -248,10 +250,10 @@
                             services on a set of servers running KVM.
                             A dedicated VM was created for each
                             service (nova-scheduler, rabbitmq,
-                            database etc). This assisted the
-                            deployment with scaling as they could tune
+                            database, etc). This assisted the
+                            deployment with scaling because administrators could tune
                             the resources given to each virtual
-                            machine based on the load they received
+                            machine based on the load it received
                             (something that was not well understood
                             during installation).</para></td>
                 </tr>
@@ -261,8 +263,8 @@
                             balancer</para></td>
                     <td xmlns:db="http://docbook.org/ns/docbook"
                             ><para>This deployment had an expensive
-                            hardware load balancer in their
-                            organisation. They ran multiple
+                            hardware load balancer in its
+                            organization. It ran multiple
                                 <code>nova-api</code> and
                                 <code>swift-proxy</code> servers on
                             different physical servers and used the
@@ -272,11 +274,11 @@
 
             </tbody>
         </informaltable>
-        <para>One choice that always comes up is whether to virtualize
-            or not. Some services, such as nova-compute, swift-proxy
-            and swift-object servers, should not be virtualized.
-            However, control servers can often be happily virtualized
-            - the performance penalty can usually be offset by simply
+        <para>One choice that always comes up is whether to virtualize.
+            Some services, such as <code>nova-compute</code>, <code>swift-proxy</code>
+            and <code>swift-object</code> servers, should not be virtualized.
+            However, control servers can often be happily virtualized&mdash;the
+            performance penalty can usually be offset by simply
             running more of the service.</para>
     </section>
     <section xml:id="database">
@@ -287,7 +289,7 @@
         <para>Loss of the database leads to errors. As a result, we
             recommend that you cluster your database to make it
             failure tolerant. Configuring and maintaining a database
-            cluster is done outside of OpenStack and is determined by
+            cluster is done outside OpenStack and is determined by
             the database software you choose to use in your cloud
             environment. MySQL/Galera is a popular option for
             MySQL-based databases.</para>
@@ -298,7 +300,7 @@
             Message Queue. For example, Compute communicates to block storage
             services and networking services through the message queue. Also,
             you can optionally enable notifications for any service. RabbitMQ,
-            Qpid, and 0mq are all popular choices for a message queue service.
+            Qpid, and 0mq are all popular choices for a message-queue service.
             In general, if the message queue fails or becomes inaccessible, the
             cluster grinds to a halt and ends up in a "read only" state, with
             information stuck at the point where the last message was sent.
@@ -306,36 +308,36 @@
             aware that clustered message queues can be a pain point for many
             OpenStack deployments. While RabbitMQ has native clustering support,
             there have been reports of issues when running it at a large scale.
-            While there are other queuing solutions
-            available such as 0mq and Qpid, 0mq does not offer stateful queues.
-            Qpid is the messaging system of choice for RedHat and its
+            While other queuing solutions are
+            available, such as 0mq and Qpid, 0mq does not offer stateful queues.
+            Qpid is the messaging system of choice for Red Hat and its
             derivatives. Qpid does not have native clustering capabilities and
-            requires a supplemental service like Pacemaker or Corsync. For your
-            message queue, you need to determine a) what level of data loss you
-            are comfortable with, and b) whether to use an OpenStack project's
+            requires a supplemental service such as Pacemaker or Corsync. For your
+            message queue, you need to determine what level of data loss you
+            are comfortable with and whether to use an OpenStack project's
             ability to retry multiple MQ hosts in the event of a failure, such
             as using Compute's ability to do so.</para>
     </section>
     <section xml:id="conductor">
         <title>Conductor Services</title>
-        <para>In previous version of OpenStack, all nova-compute
+        <para>In the previous version of OpenStack, all nova-compute
             services required direct access to the database hosted on
             the cloud controller. This was problematic for two
             reasons: security and performance. With regard to
-            security, if a compute node is compromised, then the
+            security, if a compute node is compromised, the
             attacker inherently has access to the database. With
             regard to performance, nova-compute calls to the database
             are single-threaded and blocking. This creates a
-            performance bottleneck as database requests are fulfilled
-            serially rather than parallel.</para>
+            performance bottleneck because database requests are fulfilled
+            serially rather than in parallel.</para>
         <para>The conductor service resolves both of these issues by
-            acting as a proxy for the nova-compute service. Now
+            acting as a proxy for the nova-compute service. Now,
             instead of nova-compute directly accessing the database,
-            it will contact the nova-conductor service and
-            nova-conductor will access the database on nova-compute's
+            it contacts the nova-conductor service and
+            nova-conductor accesses the database on nova-compute's
             behalf. Since nova-compute no longer has direct access to
             the database, the security issue is resolved.
-            Additionally, nova-conductor is a non-blocking service so
+            Additionally, nova-conductor is a nonblocking service, so
             requests from all compute nodes are fulfilled in
             parallel.</para>
         <note>
@@ -351,8 +353,8 @@
     </section>
     <section xml:id="api">
         <title>Application Programming Interface (API)</title>
-        <para>All public access, whether direct, through a command
-            line client, or through the web-based dashboard, uses the
+        <para>All public access, whether direct, through a command-line
+            client, or through the web-based dashboard, uses the
             API service. Find the API reference at <link
                 xlink:href="http://api.openstack.org/"
                 >http://api.openstack.org/</link>.</para>
@@ -362,18 +364,18 @@
             inconsistent experience when referring to images and
             instances.</para>
         <para>For example, the EC2 API refers to instances using IDs
-            that contain hexadecimal whereas the OpenStack API uses
+            that contain hexadecimal, whereas the OpenStack API uses
             names and digits. Similarly, the EC2 API tends to rely on
             DNS aliases for contacting virtual machines, as opposed to
-            OpenStack which typically lists IP addresses.</para>
+            OpenStack, which typically lists IP addresses.</para>
         <para>If OpenStack is not set up in the right way, it is
-            simple to have scenarios where users are unable to contact
-            their instances due to only having an incorrect DNS alias.
+            simple to have scenarios in which users are unable to contact
+            their instances due to having only an incorrect DNS alias.
             Despite this, EC2 compatibility can assist users migrating
             to your cloud.</para>
-        <para>Like databases and message queues, having more than one
+        <para>As with databases and message queues, having more than one
                 <glossterm>API server</glossterm> is a good thing.
-            Traditional HTTP load balancing techniques can be used to
+            Traditional HTTP load-balancing techniques can be used to
             achieve a highly available <code>nova-api</code>
             service.</para>
     </section>
@@ -383,7 +385,7 @@
                 xlink:href="http://docs.openstack.org/api/api-specs.html"
                 >API Specifications</link>
             (http://docs.openstack.org/api/api-specs.html) define the
-            core actions, capabilities, and media-types of the
+            core actions, capabilities, and mediatypes of the
             OpenStack API. A client can always depend on the
             availability of this core API and implementers are always
             required to support it in its entirety. Requiring strict
@@ -409,23 +411,23 @@
             services receive creation requests for these resources
             from the message queue and then begin the process of
             determining the appropriate node where the resource should
-            reside. This process is done by applying a series
+            reside. This process is done by applying a series of
             user-configurable filters against the available collection
             of nodes.</para>
         <para>There are currently two schedulers: nova-scheduler for
             virtual machines and cinder-scheduler for block storage
             volumes. Both schedulers are able to scale horizontally,
-            so for high availability purposes, or for very large or
-            high-schedule frequency installations, you should consider
+            so for high-availability purposes, or for very large or
+            high-schedule-frequency installations, you should consider
             running multiple instances of each scheduler. The
             schedulers all listen to the shared message queue, so no
             special load balancing is required.</para>
     </section>
     <section xml:id="images">
         <title>Images</title>
-        <para>The OpenStack Image Service consists of two parts -
-            <code>glance-api</code> and <code>glance-registry</code>. The
-            former is responsible for the delivery of images and the compute
+        <para>The OpenStack Image Service consists of two
+            parts&mdash;<code>glance-api</code> and <code>glance-registry</code>. The
+            former is responsible for the delivery of images; the compute
             node uses it to download images from the back-end. The latter
             maintains the metadata information associated with virtual machine
             images and requires a database.</para>
@@ -452,15 +454,15 @@
         </itemizedlist>
         <para>If you have an OpenStack Object Storage service, we recommend using this as a scalable
             place to store your images. You can also use a file system with sufficient performance
-            or Amazon S3 - unless you do not need the ability to upload new images through
+            or Amazon S3&mdash;unless you do not need the ability to upload new images through
             OpenStack.</para>
     </section>
     <section xml:id="dashboard">
         <title>Dashboard</title>
-        <para>The OpenStack Dashboard (Horizon) provides a web-based
+        <para>The OpenStack dashboard (horizon) provides a web-based
             user interface to the various OpenStack components. The
             dashboard includes an end-user area for users to manage
-            their virtual infrastructure as well as an admin area for
+            their virtual infrastructure and an admin area for
             cloud operators to manage the OpenStack environment as a
             whole.</para>
         <para>The dashboard is implemented as a Python web
@@ -473,29 +475,29 @@
     <section xml:id="authentication">
         <title>Authentication and Authorization</title>
         <para>The concepts supporting OpenStack's authentication and
-            authorization are derived from well understood and widely
+            authorization are derived from well-understood and widely
             used systems of a similar nature. Users have credentials
             they can use to authenticate, and they can be a member of
             one or more groups (known as projects or tenants
             interchangeably).</para>
         <para>For example, a cloud administrator might be able to list
-            all instances in the cloud, whereas a user can only see
-            those in their current group. Resources quotas, such as
+            all instances in the cloud, whereas a user can see only
+            those in his current group. Resources quotas, such as
             the number of cores that can be used, disk space, and so
             on, are associated with a project.</para>
-        <para>The OpenStack Identity Service (Keystone) is the point
+        <para>The OpenStack Identity Service (keystone) is the point
             that provides the authentication decisions and user
             attribute information, which is then used by the other
             OpenStack services to perform authorization. Policy is set
             in the <filename>policy.json</filename> file. For
             information on how to configure these, see <xref
                 linkend="projects_users"/>.</para>
-        <para>The Identity Service supports different plugins for
+        <para>The Identity Service supports different plug-ins for
             authentication decisions and identity storage. Examples of
-            these plugins include:</para>
+            these plug-ins include:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para>In-memory Key-Value Store (a simplified internal
+                <para>In-memory key-value Store (a simplified internal
                     storage structure)</para>
             </listitem>
             <listitem>
@@ -526,14 +528,14 @@
             transferring of the images at an acceptable speed.</para>
         <para>As another example, if you choose to use single-host
             networking where the cloud controller is the network
-            gateway for all instances, then the Cloud Controller must
+            gateway for all instances, then the cloud controller must
             support the total amount of traffic that travels between
             your cloud and the public Internet.</para>
         <para>We recommend that you use a fast NIC, such as 10 GB. You
             can also choose to use two 10 GB NICs and bond them
             together. While you might not be able to get a full bonded
             20 GB speed, different transmission streams use different
-            NICs. For example, if the Cloud Controller transfers two
+            NICs. For example, if the cloud controller transfers two
             images, each image uses a different NIC and gets a full 10
             GB of bandwidth.</para>
     </section>
