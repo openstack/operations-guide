@@ -194,7 +194,7 @@ export OS_PASSWORD=$OS_PASSWORD_INPUT</programlisting>
                     the environment variable <code>OS_PASSWORD</code>. It is
                     important to note that this does require interactivity. It
                     is possible to store a value directly in the script if you
-                    require a non interactive operation, but you then need to be
+                    require a noninteractive operation, but you then need to be
                     extremely cautious with the security and permissions of this
                     file.</para>
             </warning>
