@@ -25,22 +25,23 @@
     <para>
         <link
             xlink:href="http://docs.openstack.org/havana/install-guide/install/apt-debian/content/"
-            >OpenStack Install Guide - Debian</link>
+            >OpenStack Install Guide for Debian 7.0</link>
         (http://docs.openstack.org/havana/install-guide/install/apt-debian/content/)</para>
     <para>
         <link
             xlink:href="http://docs.openstack.org/havana/install-guide/install/yum/content/"
-            >OpenStack Install Guide - Fedora, CentOS, Red Hat Enterprise Linux</link>
+            >OpenStack Install Guide for Red Hat Enterprise Linux,
+            CentOS, and Fedora</link>
         (http://docs.openstack.org/havana/install-guide/install/yum/content/)</para>
     <para>
         <link
             xlink:href="http://docs.openstack.org/havana/install-guide/install/zypper/content/"
-            >OpenStack Install Guide - openSUSE, SUSE Linux Enterprise Server</link>
+            >OpenStack Install Guide for openSUSE, SUSE Linux Enterprise Server</link>
         (http://docs.openstack.org/havana/install-guide/install/zypper/content/)</para>
     <para>
         <link
             xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/"
-            >OpenStack Install Guide - Ubuntu</link>
+            >OpenStack Install Guide for Ubuntu 12.04 (LTS) Server</link>
         (http://docs.openstack.org/havana/install-guide/install/apt/content/)</para>
     <para>
         <link
@@ -58,7 +59,7 @@
             >OpenStack Cloud Computing Cookbook</link>
         (http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book)</para>
     <para>
-        <emphasis role="bold">Cloud (general)</emphasis>
+        <emphasis role="bold">Cloud (General)</emphasis>
     </para>
     <para>
         <link
@@ -66,13 +67,13 @@
             >NIST Cloud Computing Definition</link>
         (http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf)</para>
     <para>
-        <emphasis role="bold"> Python </emphasis>
+        <emphasis role="bold">Python</emphasis>
     </para>
     <para>
         <link xlink:href="http://www.diveintopython.net">Dive Into
             Python</link> (http://www.diveintopython.net)</para>
     <para>
-        <emphasis role="bold"> Networking </emphasis>
+        <emphasis role="bold">Networking</emphasis>
     </para>
     <para>
         <link
@@ -87,20 +88,20 @@
             tcpdump Tutorial and Primer</link>
         (http://danielmiessler.com/study/tcpdump/)</para>
     <para>
-        <emphasis role="bold"> Systems administration </emphasis>
+        <emphasis role="bold">Systems Administration</emphasis>
     </para>
     <para>
         <link xlink:href="http://www.admin.com/">UNIX and Linux
             Systems Administration Handbook</link>
         (http://www.admin.com/)</para>
     <para>
-        <emphasis role="bold"> Virtualization </emphasis>
+        <emphasis role="bold">Virtualization </emphasis>
     </para>
     <para>
         <link xlink:href="http://nostarch.com/xen.htm">The Book of
             Xen</link> (http://nostarch.com/xen.htm)</para>
     <para>
-        <emphasis role="bold"> Configuration management </emphasis>
+        <emphasis role="bold"> Configuration Management</emphasis>
     </para>
     <para>
         <link xlink:href="http://docs.puppetlabs.com/">Puppet Labs
