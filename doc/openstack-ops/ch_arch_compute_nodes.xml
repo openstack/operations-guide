@@ -113,7 +113,7 @@
                 <para>On compute node storage—shared file system</para>
             </listitem>
             <listitem>
-                <para>On compute node storage—non shared file system</para>
+                <para>On compute node storage—nonshared file system</para>
             </listitem>
         </itemizedlist>
         <para>In general, the questions you should ask when
@@ -223,7 +223,7 @@
             </itemizedlist>
         </section>
         <section xml:id="on_compute_node_storage_nonshared">
-            <title>On Compute Node Storage–Non shared File System</title>
+            <title>On Compute Node Storage–Nonshared File System</title>
             <para>In this option, each compute node is specified with enough
                 disks to store the instances it hosts.</para>
             <para>There are two main reasons why this is a good idea:</para>
@@ -265,7 +265,7 @@
                 file system on the compute nodes themselves may be best in a
                 scenario where you have to deploy to pre-existing servers for
                 which you have little to no control over their specifications.
-                Running a non shared file system on the compute nodes
+                Running a nonshared file system on the compute nodes
                 themselves is a good option for clouds with high I/O
                 requirements and low concern for reliability.</para>
         </section>
@@ -277,7 +277,7 @@
                 host to another, a necessity for performing upgrades
                 that require reboots of the compute hosts, but only
                 works well with shared storage.</para>
-            <para>Live migration can also be done with non shared storage,
+            <para>Live migration can also be done with nonshared storage,
                 using a feature known as <emphasis>KVM live block
                 migration</emphasis>. While an earlier implementation
                 of block-based migration in KVM and QEMU was considered
