@@ -14,23 +14,24 @@
     <title>Working with Roadmaps</title>
     <para>The good news: OpenStack has unprecedented transparency when it comes
 to providing information about what's coming up. The bad news: each release
-moves very quickly. The purpose of this chapter/section is to highlight some of
+moves very quickly. The purpose of this appendix is to highlight some of
 the useful pages to track, and take an educated guess at what is coming up in
 the Icehouse release and perhaps further afield.</para>
         <para>OpenStack follows a six month release cycle, typically
             releasing in April/May and October/November each year. At the start of
             each cycle, the community gathers in a single location for
-            a Design Summit. At the summit, the features for the
-            coming releases are discussed, prioritized and planned.
-            Here's an example release cycle with dates showing
+            a design summit. At the summit, the features for the
+            coming releases are discussed, prioritized, and planned. The
+            <link linkend="release-cycle-diagram">figure</link> shows an example release cycle with dates showing
             milestone releases, code freeze, and string freeze dates
-            along with an example of when the Summit occurs.
+            along with an example of when the summit occurs.
             Milestones are interim releases within the cycle that are
             available as packages for download and testing. Code
             freeze is putting a stop to adding new features to the
             release. String freeze is putting a stop to changing any
             strings within the source code.</para>
-        <informalfigure>
+        <figure xml:id="release-cycle-diagram">
+            <title>Release Cycle Diagram</title>
             <mediaobject>
                 <imageobject>
                     <imagedata width="5in"
@@ -38,7 +39,7 @@ the Icehouse release and perhaps further afield.</para>
                     />
                 </imageobject>
             </mediaobject>
-        </informalfigure>
+        </figure>
     <?hard-pagebreak?>
     <section xml:id="roadmap-information-available">
         <title>Information Available to You</title>
@@ -64,8 +65,10 @@ the Icehouse release and perhaps further afield.</para>
                                 >Under development, Release
                                 schedule</link>
                         </para></td>
-                    <td><para>Due</para></td>
-                    <td><para>Apr 17, 2013</para></td>
+                    <td><para><link
+                                xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse"
+                                >2014.1</link></para></td>
+                    <td><para>Apr 17, 2014</para></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><para>Havana</para></td>
@@ -300,8 +303,7 @@ the Icehouse release and perhaps further afield.</para>
                 xlink:href="http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/"
                 >blog post about how to work with
             blueprints</link> (http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/)
-            for a developer intern's perspective, Victoria
-            Martínez.</para>
+            the perspective of Victoria Martínez, a developer intern.</para>
         <para>The roadmap for the next release as it is developed can
             be seen at <link
                 xlink:href="http://status.openstack.org/release/"
@@ -315,10 +317,10 @@ the Icehouse release and perhaps further afield.</para>
             (https://blueprints.launchpad.net/nova), <link
                 xlink:href="https://blueprints.launchpad.net/keystone"
                 >OpenStack Identity (keystone) Blueprints</link>
-            (https://blueprints.launchpad.net/keystone) and release
+            (https://blueprints.launchpad.net/keystone), and release
             notes.
         </para>
-        <para>Aside from direct-to-blueprint pathway, there is another very
+        <para>Aside from the direct-to-blueprint pathway, there is another very
         well-regarded mechanism to influence the development roadmap: the
         user survey. Found at <link xlink:href="http://openstack.org/user-survey">
         http://openstack.org/user-survey</link>, it allows you to provide
@@ -329,16 +331,16 @@ the Icehouse release and perhaps further afield.</para>
     </section>
         <section xml:id="aspects-to-watch">
                 <title>Aspects to Watch</title>
-                <para>You want to keep an eye on these areas improving within
-                        OpenStack. The best ways to "watch" roadmaps for each
+                <para>You want to keep an eye on the areas improving within
+                        OpenStack. The best way to "watch" roadmaps for each
                         project is to look at the blueprints that are being
                         approved for work on milestone releases. You can also
                         learn from PTL webinars that follow the OpenStack
-                        Summits twice a year.</para>
+                        summits twice a year.</para>
                 <section xml:id="roadmap-driver-improvements">
                         <title>Driver Quality Improvements</title>
                         <para>A major quality push has occurred across drivers
-                                and plugins in Block Storage, Compute and
+                                and plug-ins in Block Storage, Compute, and
                                 Networking. Particularly, developers of Compute
                                 and Networking drivers that require proprietary
                                 or hardware products are now required to provide
@@ -349,12 +351,12 @@ the Icehouse release and perhaps further afield.</para>
             <title>Easier Upgrades</title>
             <para>One of the most requested features since OpenStack began (for components other
                 than Object Storage, which tends to "just work"): easier upgrades. From Grizzly
-                onward (and significantly improved in Havana) internal messaging communication is
+                onward (and significantly improved in Havana), internal messaging communication is
                 versioned, meaning services can theoretically drop back to backward-compatible
-                behaviour. This allows you to run later versions of some components, while keeping
+                behavior. This allows you to run later versions of some components, while keeping
                 older versions of others.</para>
             <para>In addition, a lot of focus has been placed on database migrations. These are now
-                better managed, including the use of the Turbo Hipster tool during development -
+                better managed, including the use of the Turbo Hipster tool,
                 which tests database migration performance on copies of real-world user
                 databases.</para>
             <para>These changes have facilitated the first proper OpenStack upgrade guide, found in
@@ -363,22 +365,22 @@ the Icehouse release and perhaps further afield.</para>
         </section>
                 <section xml:id="nova-network-deprecation">
                         <title>Deprecation of Nova Network</title>
-                        <para>With the introduction of the full software defined
+                        <para>With the introduction of the full software-defined
                                 networking stack provided by OpenStack
-                                Networking (Neutron) in the Folsom release,
+                                Networking (neutron) in the Folsom release,
                                 development effort on the initial networking
-                                code that remains part of the compute component
-                                has gradually reduced. While many still use
+                                code that remains part of the Compute component
+                                has gradually lessened. While many still use
                                 nova-network in production, there has been a
-                                long term plan to remove the code in favour of
+                                long-term plan to remove the code in favour of
                                 the more flexible and full-featured OpenStack
                                 Networking.</para>
                         <para>An attempt was made to deprecate nova-network
                                 during the Havana release, which was aborted due
                                 to the lack of equivalent functionality (such as
-                                the FlatDHCP multi_host High Availability mode
+                                the FlatDHCP multi-host high availability mode
                                 mentioned in this guide), lack of a migration
-                                path between versions, insufficient testing and
+                                path between versions, insufficient testing, and
                                 simplicity when used for the more
                                 straightforward use cases nova-network
                                 traditionally supported. Though significant
@@ -386,18 +388,18 @@ the Icehouse release and perhaps further afield.</para>
                                 nova-network will not be deprecated in the
                                 Icehouse release. In addition, the Program
                                 Technical Lead of the Compute project has
-                                indicated that to a limited degree, patches to
+                                indicated that, to a limited degree, patches to
                                 nova-network will now again begin to be
                                 accepted.</para>
                         <para>This leaves you with an important point of
                                 decision when designing your cloud. OpenStack
                                 Networking is robust enough to use with a small
                                 number of limitations (IPv6 support, performance
-                                issues in some scenarios),
+                                issues in some scenarios)
                                 and provides many more features than
                                 nova-network. However, if you do not have the
                                 more complex use cases that can benefit from
-                                fuller software defined networking capabilities,
+                                fuller software-defined networking capabilities,
                                 or are uncomfortable with the new concepts
                                 introduced, nova-network may continue to be a
                                 viable option for the next 12 to 18 months.</para>
@@ -407,61 +409,61 @@ the Icehouse release and perhaps further afield.</para>
                                 to delay the upgrade for this period of time.
                                 However, each release of OpenStack brings
                                 significant new innovation, and regardless of
-                                your usage of networking methodology it is
+                                your use of networking methodology, it is
                                 likely best to begin planning for an upgrade
-                                within a reasonable time frame of each release.</para>
+                                within a reasonable timeframe of each release.</para>
                        <para>As mentioned, there's currently no way to cleanly migrate from
-                              nova-network to Neutron. We recommend that you keep a migration
+                              nova-network to neutron. We recommend that you keep a migration
                               in mind and what that process might involve for when a proper
                               migration path is released. If you must upgrade, please be aware
-                              both service and instance downtime is likely unavoidable.</para>
+                              that both service and instance downtime is likely unavoidable.</para>
                 </section>
         </section>
         <section xml:id="roadmap-ML2">
-                <title>Replacement of Open vSwitch plugin with Modular Layer
+                <title>Replacement of Open vSwitch Plug-in with Modular Layer
                         2</title>
-                <para>The Modular Layer 2 plugin is a framework allowing
+                <para>The Modular Layer 2 plug-in is a framework allowing
                         OpenStack Networking to simultaneously utilize the
-                        variety of layer 2 networking technologies found in
+                        variety of layer-2 networking technologies found in
                         complex real-world data centers. It currently works with
                         the existing Open vSwitch, Linux Bridge, and Hyper-V L2
-                        agents, and is intended to replace and deprecate the
-                        monolithic plugins associated with those L2
+                        agents and is intended to replace and deprecate the
+                        monolithic plug-ins associated with those L2
                         agents.</para>
         </section>
         <section xml:id="roadmap-nova-v3-api">
                 <title>Compute V3 API</title>
-                <para>The 3rd version of the Compute API was broadly
+                <para>The third version of the Compute API was broadly
                 discussed and worked on during the Havana and Icehouse
                 release cycles. Current discussions indicate that the V2 API will
                 remain for many releases, but this is a great time to
                 evaluate the Compute API and provide comments while it
                 is being defined. Of particular note is the decision that the V3
-                API will not support XML messages - being JSON only. This was
+                API will not support XML messages&mdash;being JSON only. This was
                 based on the poor testing of existing XML responses in the V2
-                API, and lack of effort to continue to develop and maintain an
+                API and the lack of effort to continue to develop and maintain an
                 entire second response type. Feedback on this and any such
                 change is welcome by responding to the <link xlink:href="https://www.openstack.org/user-survey/">user survey</link>.</para>
         </section>
         <section xml:id="roadmap-triple-o">
         <title>OpenStack on OpenStack (TripleO)</title>
-        <para>Continues to improve and you may consider using it for greenfield
+        <para>This project continues to improve and you may consider using it for greenfield
                 deployments.</para>
         </section>
         <section xml:id="roadmap-savanna">
-        <title>Hadoop-as-a-Service (Savanna for now with a rename coming)</title>
-                <para>A much-requested answer to Big Data problems, a dedicated
+        <title>Hadoop-as-a-Service (Sahara)</title>
+                <para>A much-requested answer to big data problems, a dedicated
                         team has been making solid progress on a
                         Hadoop-as-a-Service project.</para>
         </section>
         <section xml:id="roadmap-baremetal">
-        <title>Bare-metal Deployment (Ironic)</title>
-        <para>Though Bare-metal deployment has been widely lauded, and
+        <title>Bare-Metal Deployment (Ironic)</title>
+        <para>Though bare-metal deployment has been widely lauded, and
         development continues, the project to replace the Compute bare-metal
         driver will not graduate in Icehouse. A particular blueprint to
         follow is <link xlink:href="https://blueprints.launchpad.net/ironic/+spec/migration-from-nova">
-        Migration path from Nova's BM driver</link>, which tracks the ability
-        to move to the new project from an existing bare metal deployment.</para>
+        Migration Path from Nova's BM Driver</link>, which tracks the ability
+        to move to the new project from an existing bare-metal deployment.</para>
         </section>
         <section xml:id="roadmap-trove">
                 <title>Database as a Service (Trove)</title>
@@ -469,14 +471,14 @@ the Icehouse release and perhaps further afield.</para>
                         tool in development for some time, and we will finally
                         see the first integrated release of it in Icehouse.
                         Initially, it will only support MySQL, with further
-                        options available in Juno onwards, but it should be able
-                        to deploy database servers out-of-the-box in a highly
+                        options available in Juno onward, but it should be able
+                        to deploy database servers out of the box in a highly
                         available way from this release.</para>
         </section>
         <section xml:id="roadmap-marconi">
         <title>Messaging as a Service (Marconi)</title>
                 <para>A service to provide queues of messages and notifications
-                        has entered 'incubation', meaning if the upcoming
+                        has entered 'incubation,' meaning if the upcoming
                         development cycles are successful, it will be released
                         in Juno.</para>
         </section>
@@ -484,20 +486,20 @@ the Icehouse release and perhaps further afield.</para>
         <title>Scheduler Improvements</title>
                 <para>Both Compute and Block Storage rely on schedulers to
                         determine where to place virtual machines or volumes.
-                        While in Havana the Compute scheduler underwent
-                        significant improvement, in Icehouse the scheduler in
+                        In Havana, the Compute scheduler underwent
+                        significant improvement, while in Icehouse the scheduler in
                         Block Storage is slated for a boost. Further down the
-                        track, an effort started this cycle which aims to create
-                        a holistic scheduler covering both, will come to
+                        track, an effort started this cycle that aims to create
+                        a holistic scheduler covering both will come to
                         fruition.</para>
         <section xml:id="roadmap-volumes">
         <title>Block Storage Improvements</title>
-        <para>The team discussed many areas of work at the Icehouse summit
+        <para>The team discussed many areas of work at the Icehouse summit,
                 including volume migration support, Ceph integration, and access
                 control for volumes.</para>
         </section>
         <section xml:id="roadmap-python-sdk">
-        <title>Toward a 'Proper' Python SDK</title>
+        <title>Toward a Python SDK</title>
         <para>Though many successfully use the various python-*client code as
         an effective SDK for interacting with OpenStack, consistency between
         the projects and documentation availability waxes and wanes. To combat
@@ -506,7 +508,7 @@ the Icehouse release and perhaps further afield.</para>
         efforts in OpenStack have a checkered history, such as the
         <link xlink:href="https://wiki.openstack.org/wiki/OpenStackClient">
         unified client project</link> having several false starts. However,
-        the early signs for the SDK project are promising and we expect to see
+        the early signs for the SDK project are promising, and we expect to see
         results during the Juno cycle.</para>
         </section>
     </section>
