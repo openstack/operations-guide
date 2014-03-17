@@ -18,7 +18,7 @@
     <section xml:id="introduction-to-openstack">
         <title>Introduction to OpenStack</title>
         <para>OpenStack believes in open source, open design, open development, all in an open
-            community which encourages participation by anyone. The long-term vision for OpenStack
+            community that encourages participation by anyone. The long-term vision for OpenStack
             is to produce a ubiquitous open source cloud computing platform that meets the needs of public and
             private cloud providers regardless of size. OpenStack services control large pools of
             compute, storage, and networking resources throughout a data center.</para>
@@ -30,65 +30,65 @@
             development kits that support the API. Many OpenStack APIs are extensible, meaning you
             can keep compatibility with a core set of calls while providing access to more resources
             and innovating through API extensions. The OpenStack project is a global collaboration
-            of developers and cloud computing technologists producing the open standard cloud
+            of developers and cloud computing technologists. The project produces an open standard cloud
             computing platform for both public and private clouds. By focusing on ease of
-            implementation, massive scalability, a variety of rich features and tremendous
+            implementation, massive scalability, a variety of rich features, and tremendous
             extensibility, the project aims to deliver a practical and reliable cloud solution for
-            all types of organisations.</para></section>
+            all types of organizations.</para></section>
         <section xml:id="preface_getting_started"><title>Getting Started with OpenStack</title>
-        <para>As an open source project, one of the unique aspects about OpenStack is that there are
-            many different levels you can begin to engage with it &mdash; you don't have to do everything
+        <para>As an open source project, one of the unique aspects of OpenStack is that it has
+            many different levels at which you can begin to engage with it&mdash;you don't have to do everything
             yourself.</para>
             <section xml:id="preface_using_openstack">
                 <title>Using OpenStack</title>
-                <para>You could ask, "do I even need to build a cloud?". If you
-                    want to start using a Compute or Storage service by
-                    just swiping your credit card, you can go to eNovance, HP, Rackspace and other
-                    organisations to start using their public OpenStack clouds.
+                <para>You could ask, "Do I even need to build a cloud?" If you
+                    want to start using a compute or storage service by
+                    just swiping your credit card, you can go to eNovance, HP, Rackspace, or other
+                    organizations to start using their public OpenStack clouds.
                     Using their OpenStack cloud resources is similar to accessing
-                    the publically-available Amazon Web Services Elastic Compute
+                    the publically available Amazon Web Services Elastic Compute
                     Cloud (EC2) or Simple Storage Solution (S3).</para>
             </section>
                 <section xml:id="preface_plug_and_play"><title>Plug and Play OpenStack</title>
                 <para>However, the enticing part of OpenStack might be to build your own private
             cloud, and there are several ways to accomplish this goal. Perhaps the simplest of all is an
-            appliance-style solution. You purchase an appliance, un-box it, plug in the power and the
-            network and watch it transform into an OpenStack cloud with minimal additional
-            configuration. Few, if any, other open source cloud products that have such turn-key options.
-            If a turn-key solution is interesting to you, take a look at Nebula One.</para>
+            appliance-style solution. You purchase an appliance, unpack it, plug in the power and the
+            network, and watch it transform into an OpenStack cloud with minimal additional
+            configuration. Few, if any, other open source cloud products have such turnkey options.
+            If a turnkey solution is interesting to you, take a look at Nebula One.</para>
                 <para>However, hardware choice is important for many applications, so if that applies to you,
             consider that there are several software distributions available that you can run on
-            servers, storage and network products of your choosing. Canonical (where OpenStack replaced Eucalyptus as
-            the default cloud option in 2011), Red Hat and SUSE offer enterprise OpenStack
-            solutions and support. You may also want to take a look also at some of the
-            specialized distributions, such as those from Rackspace, Piston, SwiftStack or
+            servers, storage, and network products of your choosing. Canonical (where OpenStack replaced Eucalyptus as
+            the default cloud option in 2011), Red Hat, and SUSE offer enterprise OpenStack
+            solutions and support. You may also want to take a look at some of the
+            specialized distributions, such as those from Rackspace, Piston, SwiftStack, or
             Cloudscaling. Also, a hat tip to Apache CloudStack, which Citrix donated to the Apache
             Foundation after its US $200 million purchase of Cloud.com. While not currently packaged
             in any distributions, like Eucalyptus it is an example of an alternative private
-            cloud software developed in an open source-like manner.</para>
-                <para>Alternately, if you want someone to help guide you through the decisions from the
-            underlying hardware up to your applications, perhaps adding in a few features or integrating
-            components along the way, consider contacting one of the system integrators with
-            OpenStack experience like Mirantis or Metacloud.</para>
+            cloud software developed in an open source&ndash;like manner.</para>
+            <para>Alternatively, if you want someone to help guide you through the decisions about
+                the underlying hardware or your applications, perhaps adding in a few features or
+                integrating components along the way, consider contacting one of the system
+                integrators with OpenStack experience, such as Mirantis or Metacloud.</para>
                 <para>If your preference is to build your own OpenStack expertise internally, a good way to
-            kick start that might be to attend or arrange a training session. The OpenStack
+            kick-start that might be to attend or arrange a training session. The OpenStack
             Foundation recently launched a <link
                         xlink:href="http://www.openstack.org/marketplace/training"
                         >Training Marketplace
-            (http://www.openstack.org/marketplace/training)</link>, where you can look for nearby events.
-            Also the OpenStack community is <link
+            (http://www.openstack.org/marketplace/training)</link> where you can look for nearby events.
+            Also, the OpenStack community is <link
                         xlink:href="https://wiki.openstack.org/wiki/Training-manuals"
                         >working to produce
-            (https://wiki.openstack.org/wiki/Training-manuals)</link>open source training materials.</para>
+            (https://wiki.openstack.org/wiki/Training-manuals)</link> open source training materials.</para>
                 </section>
-                <section xml:id="preface_roll_your_own_openstack"><title>Roll your Own OpenStack</title>
-                    <para>However, this guide has a different audience &mdash; those seeking to derive the most
-            flexibility from the OpenStack framework; conducting 'Do-It-Yourself' solutions, if you
+                <section xml:id="preface_roll_your_own_openstack"><title>Roll Your Own OpenStack</title>
+                    <para>However, this guide has a different audience&mdash;those seeking to derive the most
+            flexibility from the OpenStack framework; conducting do-it-yourself solutions, if you
             will.</para>
                 <para>OpenStack is designed for scalability, so you can easily add new
-        compute, network and storage resources to grow your cloud over time. In addition to several
-        massive OpenStack public clouds, a considerable number of other organisations (such as
-        Paypal, Intel and Comcast) have built large-scale private clouds. OpenStack offers much
+        compute, network, and storage resources to grow your cloud over time. In addition to several
+        massive OpenStack public clouds, a considerable number of organizations (such as
+        Paypal, Intel, and Comcast) have built large-scale private clouds. OpenStack offers much
         more than a typical software package because it lets you integrate a number of different
         technologies to construct a cloud. This approach provides great flexibility, but the
         number of options might be bewildering at first.</para>
@@ -100,37 +100,37 @@
             well as those of you who were handed an operational one and want to keep
             it running well. Perhaps you're on a devops team, perhaps you are a
             system administrator starting to dabble in the cloud, or maybe you
-            want to get on that OpenStack cloud team at your company. This book
+            want to get on the OpenStack cloud team at your company. This book
             is for all of you.</para>
         <para>This guide assumes that you are familiar with a Linux
-            distribution supporting OpenStack, SQL databases, and virtualization.
+            distribution that supports OpenStack, SQL databases, and virtualization.
              You must be comfortable administering and configuring multiple Linux machines
-            for networking. You must install and maintain a MySQL database, and
+            for networking. You must install and maintain a MySQL database and
             occasionally run SQL queries against it.</para>
         <para>One of the most complex aspects of an OpenStack cloud is the
             networking configuration. You should be familiar with concepts such
             as DHCP, Linux bridges, VLANs, and iptables. You must also have
             access to a network hardware expert who can configure the switches
             and routers required in your OpenStack cloud.</para>
-        <tip><para>As cloud computing is a quite advanced topic, this book
+        <tip><para>Cloud computing is a quite advanced topic, and this book
             requires a lot of background knowledge. However, if you are fairly
             new to cloud computing, we recommend that you make use of the
             <xref linkend="openstack_glossary"/> at the back of
-            the book, as well as refer to the online documentation for OpenStack,
+            the book, as well as the online documentation for OpenStack
             and additional resources mentioned
-            in this book in the <xref linkend="recommended-reading"/> list.</para></tip>
+            in this book in <xref linkend="recommended-reading"/>.</para></tip>
         <section xml:id="further_reading"><title>Further Reading</title>
-        <para>There are other books on the OpenStack documentation web site at
+        <para>There are other books on the OpenStack documentation website, at
                 <link xlink:href="http://docs.openstack.org"
-                >docs.openstack.org</link> that can help you get the job
+                >docs.openstack.org</link>, that can help you get the job
             done.</para>
         <variablelist>
             <title>OpenStack Guides</title>
             <varlistentry>
                 <term>OpenStack Installation Guides</term>
                 <listitem>
-                    <para>Describe a manual install process, as in, by hand, no
-                        automation, for multiple distributions based on packaging
+                    <para>Describes a manual installation process, as in, by hand, no
+                        automation, for multiple distributions based on a packaging
                         system:</para>
                     <itemizedlist>
                         <listitem>
@@ -197,7 +197,7 @@
                 <term><link xlink:href="http://docs.openstack.org/sec/"
                         >OpenStack Security Guide</link></term>
                 <listitem>
-                    <para>Provide best practices and conceptual information
+                    <para>Provides best practices and conceptual information
                         about securing an OpenStack cloud.</para>
                 </listitem>
             </varlistentry>
@@ -238,7 +238,7 @@
     </section>
     <section xml:id="how-this-book-is-organized">
         <title>How This Book Is Organized</title>
-        <para>This book is organized in two parts, the architecture decisions for designing
+        <para>This book is organized in two parts: the architecture decisions for designing
             OpenStack clouds and the repeated operations for running OpenStack clouds.</para>
         <para>Part I</para>
         <para><xref linkend="example_architecture"/>: Because of all the decisions the other
@@ -248,15 +248,15 @@
             installation, we do recommend automation for deployment and configuration, discussed in
             this chapter.</para>
         <para><xref linkend="cloud_controller_design"/>: The cloud controller is an invention for
-            the sake of consolidating and describing which services run on which nodes. The chapter
+            the sake of consolidating and describing which services run on which nodes. This chapter
             discusses hardware and network considerations as well as how to design the cloud
             controller for performance and separation of services.</para>
         <para><xref linkend="compute_nodes"/>: This chapter describes the compute nodes, which are
-            dedicated to run virtual machines. Some hardware choices come into play here as well as
+            dedicated to running virtual machines. Some hardware choices come into play here, as well as
             logging and networking descriptions.</para>
         <para><xref linkend="scaling"/>: This chapter discusses the growth of your cloud resources
             through scaling and segregation considerations.</para>
-        <para><xref linkend="storage_decision"/>: Along with other architecture decisions, storage
+        <para><xref linkend="storage_decision"/>: As with other architecture decisions, storage
             concepts within OpenStack take a lot of consideration, and this chapter lays out the
             choices for you.</para>
         <para><xref linkend="network_design"/>: Your OpenStack cloud networking needs to fit into
@@ -265,46 +265,46 @@
             decisions.</para>
         <para>Part II</para>
         <para><xref linkend="lay_of_the_land"/>: This chapter is written to let you get your hands
-            wrapped around your OpenStack cloud through command line tools and understanding what is
+            wrapped around your OpenStack cloud through command-line tools and understanding what is
             already set up in your cloud.</para>
-        <para><xref linkend="projects_users"/>: This chapter walks through those user-enabling
+        <para><xref linkend="projects_users"/>: This chapter walks through user-enabling
             processes that all admins must face to manage users, give them quotas to parcel out
             resources, and so on.</para>
-        <para><xref linkend="user_facing_operations"/>: This chapter moves along to show you how to
+        <para><xref linkend="user_facing_operations"/>: This chapter shows you how to
             use OpenStack cloud resources and train your users as well.</para>
-        <para><xref linkend="maintenance"/>: This chapter goes into the common failures the authors
+        <para><xref linkend="maintenance"/>: This chapter goes into the common failures that the authors
             have seen while running clouds in production, including troubleshooting.</para>
         <para><xref linkend="network_troubleshooting"/>: Because network troubleshooting is
             especially difficult with virtual resources, this chapter is chock-full of helpful tips
-            and tricks to tracing network traffic, finding the root cause of networking failures,
-            and debugging related services like DHCP and DNS.</para>
+            and tricks for tracing network traffic, finding the root cause of networking failures,
+            and debugging related services such as DHCP and DNS.</para>
         <para><xref linkend="logging_monitoring"/>: This chapter shows you where OpenStack places
-            logs and how to best to read and manage logs for monitoring purposes.</para>
+            logs and how to best read and manage logs for monitoring purposes.</para>
         <para><xref linkend="backup_and_recovery"/>: This chapter describes what you need to back up
             within OpenStack as well as best practices for recovering backups.</para>
-        <para><xref linkend="customize"/>: When you need to get a specialized feature into
+        <para><xref linkend="customize"/>: For readers who need to get a specialized feature into
             OpenStack, this chapter describes how to use DevStack to write custom middleware or a
             custom scheduler to rebalance your resources.</para>
         <para><xref linkend="upstream_openstack"/>: Because OpenStack is so, well, open, this
             chapter is dedicated to helping you navigate the community and find out where you can
             help and where you can get help.</para>
-        <para><xref linkend="advanced_configuration"/>: Much of OpenStack is driver-oriented, where
+        <para><xref linkend="advanced_configuration"/>: Much of OpenStack is driver-oriented, so
             you can plug in different solutions to the base set of services. This chapter describes
             some advanced configuration topics.</para>
         <para><xref linkend="ch_ops_upgrades"/>: This chapter provides upgrade information based on
-            the architectures in this book.</para>
+            the architectures used in this book.</para>
         <para><xref linkend="use-cases"/>: You can read a small selection of use cases from the
-            OpenStack community with some technical detail and further resources.</para>
+            OpenStack community with some technical details and further resources.</para>
         <para><xref linkend="app_crypt"/>: These are shared legendary tales of image disappearances,
             VM massacres, and crazy troubleshooting techniques to share those hard-learned lessons
             and wisdom.</para>
         <para><xref linkend="working-with-roadmaps"/>: Read about how to track the OpenStack
         roadmap through the open and transparent development processes.</para>
         <para><xref linkend="recommended-reading"/>: So many OpenStack resources are available
-            online due to the fast-moving nature of the project, but there are also listed resources
+            online because of the fast-moving nature of the project, but there are also listed here resources
             the authors found helpful while learning themselves.</para>
         <para><xref linkend="openstack_glossary"/>: A list of terms used in this book is included, which is a subset of the
-            larger OpenStack Glossary available online.</para>
+            larger OpenStack glossary available online.</para>
     </section>
     <section xml:id="why-and-how-we-wrote-this-book">
         <title>Why and How We Wrote This Book</title>
@@ -312,17 +312,17 @@
             OpenStack clouds for at least a year, and wanted to be able to
             distribute this knowledge to others. After months of being the point
             people for an OpenStack cloud, we also wanted to have a document to
-            hand to our system administrators so they'd know how to operate the
-            cloud on a daily basis — both reactively and proactively. We wanted
+            hand to our system administrators so that they'd know how to operate the
+            cloud on a daily basis&mdash;both reactively and proactively. We wanted
             to provide more detailed technical information about the decisions
             that deployers make along the way.</para>
         <?hard-pagebreak?>
         <para>We wrote this book to help you:<itemizedlist role="compact">
                 <listitem>
                     <para>Design and create an architecture for your first
-                        non-trivial OpenStack cloud. After you read this guide,
+                        nontrivial OpenStack cloud. After you read this guide,
                         you'll know which questions to ask and how to organize
-                        your compute, networking, storage resources, and the
+                        your compute, networking, and storage resources and the
                         associated software packages.</para>
                 </listitem>
                 <listitem>
@@ -330,15 +330,15 @@
                         cloud.</para>
                 </listitem>
             </itemizedlist></para>
-        <para>We wrote this book in a Book Sprint, which is a facilitated rapid
+        <para>We wrote this book in a book sprint, which is a facilitated rapid
             development production method for books. For more information see
-            the <link xlink:href="http://www.booksprints.net">Book Sprint
+            the <link xlink:href="http://www.booksprints.net">BookSprints
                 site</link>. Your authors cobbled this book together in five
             days during February 2013, fueled by caffeine and the best take-out
-            food that Austin, Texas could offer.</para>
+            food that Austin, Texas, could offer.</para>
         <para>On the first day we filled white boards with colorful sticky notes
             to start to shape this nebulous book about how to architect and
-            operate clouds. <informalfigure>
+            operate clouds.<informalfigure>
                 <mediaobject>
                     <imageobject>
                         <imagedata width="5in" fileref="figures/1-IMG_4895.JPG"
@@ -356,7 +356,7 @@
             <listitem>
                 <para><emphasis role="bold">Tom Fifield</emphasis>. After
                     learning about scalability in computing from particle
-                    physics experiments like ATLAS at the LHC, Tom worked on
+                    physics experiments such as ATLAS at the Large Hadron Collider (LHC) at CERN, Tom worked on
                     OpenStack clouds in production to support the Australian
                     public research sector. Tom currently serves as an OpenStack
                     community manager and works on OpenStack documentation in
@@ -370,16 +370,16 @@
             <listitem>
                 <para><emphasis role="bold">Anne Gentle</emphasis>. Anne is the
                     documentation coordinator for OpenStack and also served as
-                    an individual contributor to the Google Doc Summit in 2011,
+                    an individual contributor to the Google Documentation Summit in 2011,
                     working with the Open Street Maps team. Anne has worked on
-                    doc sprints in the past with FLOSS Manuals’ Adam Hyde
+                    book sprints in the past with FLOSS Manuals’ Adam Hyde
                     facilitating. Anne lives in Austin, Texas.</para>
             </listitem>
             <listitem>
                 <para><emphasis role="bold">Lorin Hochstein</emphasis>. An
-                    academic turned software developer-slash-operator, Lorin
-                    currently works as the Lead Architect for Cloud Services at
-                    Nimbis Services where he deploys OpenStack for technical
+                    academic turned software-developer-slash-operator, Lorin
+                    worked as the lead architect for Cloud Services at
+                    Nimbis Services, where he deploys OpenStack for technical
                     computing applications. He has been working with OpenStack
                     since the Cactus release. Previously, he worked on
                     high-performance computing extensions for OpenStack at
@@ -388,8 +388,8 @@
             </listitem>
             <listitem>
                 <para><emphasis role="bold">Adam Hyde</emphasis>. Adam
-                    facilitated this Book Sprint. He also founded the Book
-                    Sprint methodology and is the most experienced Book Sprint
+                    facilitated this book sprint. He also founded the books
+                    sprint methodology and is the most experienced book-sprint
                     facilitator around. See
                         <uri>http://www.booksprints.net/</uri> for more
                     information. Adam founded FLOSS Manuals—a community of some
@@ -409,17 +409,17 @@
             </listitem>
             <listitem>
                 <para><emphasis role="bold">Everett Toews</emphasis>. Everett is
-                    a Developer Advocate at Rackspace making OpenStack and the
+                    a developer advocate at Rackspace making OpenStack and the
                     Rackspace Cloud easy to use. Sometimes developer, sometimes
-                    advocate, and sometimes operator. He's built web
+                    advocate, and sometimes operator, he's built web
                     applications, taught workshops, given presentations around
                     the world, and deployed OpenStack for production use by
                     academia and business.</para>
             </listitem>
             <listitem>
                 <para><emphasis role="bold">Joe Topjian</emphasis>. Joe has
-                    designed and deployed several clouds at Cybera, where, as a
-                    non-profit, they are building e-infrastructure to support
+                    designed and deployed several clouds at Cybera, a
+                    non-profit where they are building e-infrastructure to support
                     entrepreneurs and local researchers in Alberta, Canada. He
                     also actively maintains and operates these clouds as a
                     systems architect, and his experiences have generated a
@@ -427,6 +427,9 @@
                     environments.</para>
             </listitem>
         </itemizedlist>
+        <para>After the first sprint, a second mini-sprint and community effort
+        began a year later. Since then more than 30 contributors have maintained
+        this book, entering edits and fixing doc bugs.</para>
     </section>
     <section xml:id="how-to-contribute-to-ops-guide">
         <title>How to Contribute to This Book</title>
@@ -436,7 +439,7 @@
             bug logging, investigating, and fixing. We also store the source
             content on Github and invite collaborators through the OpenStack
             Gerrit installation, which offers reviews. For the O'Reilly edition
-            of this book, we are using their Atlas system which also stores
+            of this book, we are using the company's Atlas system which also stores
             source content on Github and enables collaboration among
             contributors.</para>
         <para>Learn more about how to contribute to the OpenStack docs
@@ -449,7 +452,7 @@
                 xlink:href="http://bugs.launchpad.net/openstack-manuals"
                 >OpenStack Manuals</link>
             (http://bugs.launchpad.net/openstack-manuals). Tag the bug
-            under <guilabel>Extra</guilabel> options with
+            under <guilabel>Extra</guilabel> options with the
                 <literal>ops-guide</literal> tag to indicate that the
             bug is in this guide. You can assign the bug to yourself
             if you know how to fix it. Also, a member of the OpenStack
