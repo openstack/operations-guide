@@ -458,4 +458,5 @@
             if you know how to fix it. Also, a member of the OpenStack
             doc-core team can triage the doc bug.</para>
     </section>
+    <xi:include href="section_conventions.xml"/>
 </preface>
