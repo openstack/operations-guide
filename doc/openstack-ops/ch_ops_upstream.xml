@@ -12,20 +12,18 @@
     xml:id="upstream_openstack">
     <?dbhtml stop-chunking?>
     <title>Upstream OpenStack</title>
-    <para>OpenStack is founded on a thriving community which is a
-        source of help, and welcomes your contributions. This section
+    <para>OpenStack is founded on a thriving community that is a
+        source of help and welcomes your contributions. This chapter
         details some of the ways you can interact with the others
         involved.</para>
-
     <section xml:id="get_help">
         <title>Getting Help</title>
         <para>There are several avenues available for seeking
-            assistance. The quickest way to is to help the community
+            assistance. The quickest way is to help the community
             help you. Search the Q&amp;A sites, mailing list archives,
             and bug lists for issues similar to yours. If you can't
-            find anything, follow the directions for Reporting Bugs in
-            the section below or use one of the channels for support
-            below.</para>
+            find anything, follow the directions for reporting bugs
+            or use one of the channels for support, which are listed below.</para>
         <para>Your first port of call should be the official OpenStack
             documentation, found on http://docs.openstack.org.</para>
         <para>You can get questions answered on the ask.openstack.org site.</para>
@@ -44,9 +42,9 @@
                         xlink:href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack"
                         >General
                         list</link>: <code>openstack@lists.openstack.org</code>.
-                    The scope of this list is the current state of
-                    OpenStack. This is a very high traffic mailing
-                    list, with many, many emails per day.</para>
+                    The scope of this list is the current state of OpenStack.
+                    This is a very high-traffic mailing list, with many, many
+                    emails per day.</para>
             </listitem>
             <listitem>
                 <para>
@@ -65,17 +63,16 @@
                         xlink:href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev"
                         >Development
                         list</link>: <code>openstack-dev@lists.openstack.org</code>.
-                    The scope of this list is the future state of
-                    OpenStack. This is a high traffic mailing list,
-                    with multiple emails per day.</para>
+                    The scope of this list is the future state of OpenStack.
+                    This is a high-traffic mailing list, with multiple emails
+                    per day.</para>
             </listitem>
         </itemizedlist>
-        <para>We recommend you subscribe to the general list and the
-            operator list, although you must set up filters to
-            manage the volume for the general list. You'll also find
-            links to the mailing list archives on the mailing list
-            wiki page where you can search through the
-            discussions.</para>
+        <para>We recommend that you subscribe to the general list and the
+            operator list, although you must set up filters to manage the volume
+            for the general list. You'll also find links to the mailing list
+            archives on the mailing list wiki page where you can search through
+            the discussions.</para>
         <para>
             <link
                 xlink:href="https://wiki.openstack.org/wiki/IRC"
@@ -87,28 +84,26 @@
     </section>
     <section xml:id="report_bugs">
         <title>Reporting Bugs</title>
-        <para>As an operator, you are in a very good position to
-            report unexpected behavior with your cloud. As OpenStack
-            is flexible, you may be the only individual to report a
-            particular issue. Every issue is important to fix so it is
-            essential to learn how to easily submit a bug
-            report.</para>
+        <para>As an operator, you are in a very good position to report
+            unexpected behavior with your cloud. Since OpenStack is flexible,
+            you may be the only individual to report a particular issue. Every
+            issue is important to fix, so it is essential to learn how to easily
+            submit a bug report.</para>
         <para>All OpenStack projects use <link
                 xlink:href="http://launchpad.net/"
             >Launchpad</link> for bug tracking. You'll need to create
             an account on Launchpad before you can submit a bug
             report.</para>
-        <para>Once you have a Launchpad account, reporting a bug is as
-            simple as identifying the project, or projects that are
-            causing the issue. Sometimes this is more difficult than
-            expected, but those working on the bug triage are happy to
-            help relocate issues if their not in the right place
-            initially.</para>
+        <para>Once you have a Launchpad account, reporting a bug is as simple as
+            identifying the project or projects that are causing the issue.
+            Sometimes this is more difficult than expected, but those working on
+            the bug triage are happy to help relocate issues if they are not in
+            the right place initially.</para>
         <itemizedlist>
             <listitem>
                 <para>Report a bug in <link
                         xlink:href="https://bugs.launchpad.net/nova/+filebug"
-                        >Nova</link> (https://bugs.launchpad.net/nova/+filebug)</para>
+                        >nova</link> (https://bugs.launchpad.net/nova/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
@@ -118,7 +113,7 @@
             <listitem>
                 <para>Report a bug in <link
                         xlink:href="https://bugs.launchpad.net/swift/+filebug"
-                        >Swift</link> (https://bugs.launchpad.net/swift/+filebug)</para>
+                        >swift</link> (https://bugs.launchpad.net/swift/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
@@ -129,7 +124,7 @@
             <listitem>
                 <para>Report a bug in <link
                         xlink:href="https://bugs.launchpad.net/glance/+filebug"
-                        >Glance</link> (https://bugs.launchpad.net/glance/+filebug)</para>
+                        >glance</link> (https://bugs.launchpad.net/glance/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
@@ -140,7 +135,7 @@
             <listitem>
                 <para>Report a bug in <link
                         xlink:href="https://bugs.launchpad.net/keystone/+filebug"
-                        >Keystone</link> (https://bugs.launchpad.net/keystone/+filebug)</para>
+                        >keystone</link> (https://bugs.launchpad.net/keystone/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
@@ -151,7 +146,7 @@
             <listitem>
                 <para>Report a bug in <link
                         xlink:href="https://bugs.launchpad.net/neutron/+filebug"
-                        >Neutron</link> (https://bugs.launchpad.net/neutron/+filebug)</para>
+                        >neutron</link> (https://bugs.launchpad.net/neutron/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
@@ -162,7 +157,7 @@
             <listitem>
                 <para>Report a bug in <link
                         xlink:href="https://bugs.launchpad.net/cinder/+filebug"
-                        >Cinder</link> (https://bugs.launchpad.net/cinder/+filebug)</para>
+                        >cinder</link> (https://bugs.launchpad.net/cinder/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug in <link
@@ -173,7 +168,7 @@
             <listitem>
                 <para>Report a bug in <link
                         xlink:href="https://bugs.launchpad.net/horizon/+filebug"
-                        >Horizon</link> (https://bugs.launchpad.net/horizon/+filebug)</para>
+                        >horizon</link> (https://bugs.launchpad.net/horizon/+filebug)</para>
             </listitem>
             <listitem>
                 <para>Report a bug with the <link
@@ -187,12 +182,11 @@
                     documentation</link> (http://bugs.launchpad.net/openstack-api-site/+filebug)</para>
             </listitem>
         </itemizedlist>
-        <para>To write a good bug report, the following process is
-            essential. First, search for the bug to make sure there is
-            no bug already filed for the same issue. If you find one,
-            be sure to click on "This bug affects X people. Does this
-            bug affect you?" If you can't find the issue then enter
-            the details of your report. It should at least
+        <para>To write a good bug report, the following process is essential.
+            First, search for the bug to make sure there is no bug already filed
+            for the same issue. If you find one, be sure to click on "This bug
+            affects X people. Does this bug affect you?" If you can't find the
+            issue, then enter the details of your report. It should at least
             include:</para>
         <itemizedlist>
             <listitem>
@@ -213,8 +207,8 @@
                     what you saw.</para>
             </listitem>
             <listitem>
-                <para>Read and understood your log files so you only
-                    include relevant excerpts.</para>
+                <para>Portions of your log files so that you include only
+                    relevant excerpts.</para>
             </listitem>
         </itemizedlist>
         <para>When you do this, the bug is created with:</para>
@@ -224,16 +218,14 @@
                 </para>
             </listitem>
         </itemizedlist>
-        <para>In the bug comments, you can contribute instructions on
-            how to fix a given bug, and set it to
-                <emphasis>Triaged</emphasis>. Or you can directly fix
-            it: assign the bug to yourself, set it to <emphasis>In
-                progress</emphasis>, branch the code, implement the
-            fix, and propose your change for merging into trunk. But
-            let's not get ahead of ourselves, there are bug triaging
-            tasks as well.</para>
+        <para>In the bug comments, you can contribute instructions on how to fix
+            a given bug, and set it to <emphasis>Triaged</emphasis>. Or you can
+            directly fix it: assign the bug to yourself, set it to <emphasis>In
+                progress</emphasis>, branch the code, implement the fix, and
+            propose your change for merging. But let's not get ahead of
+            ourselves, there are bug triaging tasks as well.</para>
         <section xml:id="confirm_priority">
-            <title>Confirming &amp; Prioritizing</title>
+            <title>Confirming and Prioritizing</title>
             <para>This stage is about checking that a bug is real and
                 assessing its impact. Some of these steps require bug
                 supervisor rights (usually limited to core teams). If
@@ -246,9 +238,9 @@
                     </para>
                 </listitem>
             </itemizedlist>
-            <para>Once you have reproduced the issue (or are 100%
-                confident that this is indeed a valid bug) and have
-                permissions to do so, set:</para>
+            <para>Once you have reproduced the issue (or are 100 percent
+                confident that this is indeed a valid bug) and have permissions
+                to do so, set:</para>
             <itemizedlist>
                 <listitem>
                     <para>Status: <emphasis>Confirmed</emphasis>
@@ -266,45 +258,40 @@
             <orderedlist>
                 <listitem>
                     <para>
-                        <emphasis>Critical</emphasis> if the bug
-                        prevents a key feature from working properly
-                        (regression) for all users (or without a
-                        simple workaround) or result in data
-                        loss</para>
+                        <emphasis>Critical</emphasis> if the bug prevents a key
+                        feature from working properly (regression) for all users
+                        (or without a simple workaround) or results in data
+                        loss.</para>
                 </listitem>
                 <listitem>
                     <para>
-                        <emphasis>High</emphasis> if the bug prevents
-                        a key feature from working properly for some
-                        users (or with a workaround)</para>
+                        <emphasis>High</emphasis> if the bug prevents a key
+                        feature from working properly for some users (or with a
+                        workaround).</para>
                 </listitem>
                 <listitem>
                     <para>
-                        <emphasis>Medium</emphasis> if the bug
-                        prevents a secondary feature from working
-                        properly</para>
+                        <emphasis>Medium</emphasis> if the bug prevents a
+                        secondary feature from working properly.</para>
                 </listitem>
                 <listitem>
                     <para>
                         <emphasis>Low</emphasis> if the bug is mostly
-                        cosmetic</para>
+                        cosmetic.</para>
                 </listitem>
                 <listitem>
                     <para>
-                        <emphasis>Wishlist</emphasis> if the bug is
-                        not really a bug, but rather a welcome change
-                        in behavior</para>
+                        <emphasis>Wishlist</emphasis> if the bug is not really a
+                        bug but rather a welcome change in behavior.</para>
                 </listitem>
             </orderedlist>
-            <para>If the bug contains the solution, or a patch, set
-                the bug status to <emphasis>Triaged</emphasis>
-            </para>
+            <para>If the bug contains the solution, or a patch, set the bug
+                status to <emphasis>Triaged</emphasis>.</para>
         </section>
         <section xml:id="bug_fixing">
             <title>Bug Fixing</title>
-            <para>At this stage, a developer works on a fix.
-                During that time, to avoid duplicating the
-                work, they should set:</para>
+            <para>At this stage, a developer works on a fix. During that time,
+                to avoid duplicating the work, the developer should set:</para>
             <itemizedlist>
                 <listitem>
                     <para>Status: <emphasis>In progress</emphasis>
@@ -314,10 +301,11 @@
                     <para>Assignee: &lt;yourself&gt;</para>
                 </listitem>
             </itemizedlist>
-            <para>When the fix is ready, they propose and get the change reviewed.</para>
+            <para>When the fix is ready, the developer proposes a change and
+                gets the change reviewed.</para>
         </section>
         <section xml:id="after_change_is_accepted">
-            <title>After the Change is Accepted</title>
+            <title>After the Change Is Accepted</title>
             <para>After the change is reviewed, accepted, and lands in master, it automatically moves
                 to:</para>
             <itemizedlist>
@@ -342,22 +330,18 @@
     </section>
     <section xml:id="openstack_community">
         <title>Join the OpenStack Community</title>
-        <para>Since you've made it this far in the book, you should
-            consider becoming an official individual member of the
-            community and <link
-                xlink:href="https://www.openstack.org/join/">Join The
-                OpenStack Foundation</link>
-            (https://www.openstack.org/join/). The OpenStack
-            Foundation is an independent body providing shared
-            resources to help achieve the OpenStack mission by
-            protecting, empowering, and promoting OpenStack software
-            and the community around it, including users, developers
-            and the entire ecosystem. We all share the responsibility
-            to make this community the best it can possibly be and
-            signing up to be a member is the first step to
-            participating. Like the software, individual membership
-            within the OpenStack Foundation is free and accessible to
-            anyone.</para>
+        <para>Since you've made it this far in the book, you should consider
+            becoming an official individual member of the community and <link
+                xlink:href="https://www.openstack.org/join/">join the OpenStack
+                Foundation</link> (https://www.openstack.org/join/). The
+            OpenStack Foundation is an independent body providing shared
+            resources to help achieve the OpenStack mission by protecting,
+            empowering, and promoting OpenStack software and the community
+            around it, including users, developers, and the entire ecosystem. We
+            all share the responsibility to make this community the best it can
+            possibly be, and signing up to be a member is the first step to
+            participating. Like the software, individual membership within the
+            OpenStack Foundation is free and accessible to anyone.</para>
     </section>
     <section xml:id="contribute_to_docs">
         <title>How to Contribute to the Documentation</title>
@@ -401,97 +385,84 @@
     </section>
     <section xml:id="security_info">
         <title>Security Information</title>
-        <para>As a community, we take security very seriously and
-            follow a specific process for reporting potential issues.
-            We vigilantly pursue fixes and regularly eliminate
-            exposures. You can report security issues you discover
-            through this specific process. The OpenStack Vulnerability
-            Management Team is a very small group of experts in
-            vulnerability management drawn from the OpenStack
-            community. Their job is facilitating the reporting of
+        <para>As a community, we take security very seriously and follow a
+            specific process for reporting potential issues. We vigilantly
+            pursue fixes and regularly eliminate exposures. You can report
+            security issues you discover through this specific process. The
+            OpenStack Vulnerability Management Team is a very small group of
+            experts in vulnerability management drawn from the OpenStack
+            community. The team's job is facilitating the reporting of
             vulnerabilities, coordinating security fixes and handling
             progressive disclosure of the vulnerability information.
-            Specifically, the Team is responsible for the following
+            Specifically, the team is responsible for the following
             functions:</para>
         <itemizedlist>
             <listitem>
-                <para>Vulnerability Management: All vulnerabilities
-                    discovered by community members (or users) can be
-                    reported to the Team.</para>
-            </listitem>
-            <listitem>
-                <para>Vulnerability Tracking: The Team will
-                    curate a set of vulnerability related issues in
-                    the issue tracker. Some of these issues are
-                    private to the Team and the affected product
-                    leads, but once remediation is in place, all
-                    vulnerabilities are public.</para>
-            </listitem>
-            <listitem>
-                <para>Responsible Disclosure: As part of our
-                    commitment to work with the security community,
-                    the team ensures that proper credit is given
-                    to security researchers who responsibly report
-                    issues in OpenStack.</para>
-            </listitem>
-        </itemizedlist>
-        <para>We provide two ways to report issues to the OpenStack
-            Vulnerability Management Team depending on how sensitive
-            the issue is:</para>
-        <itemizedlist>
-            <listitem>
-                <para>Open a bug in Launchpad and mark it as a
-                    'security bug'. This makes the bug private and
-                    accessible to only the Vulnerability Management
+                <para>Vulnerability management: All vulnerabilities discovered
+                    by community members (or users) can be reported to the
                     Team.</para>
             </listitem>
             <listitem>
-                <para>If the issue is extremely sensitive, send
-                    an encrypted email to one of the Team's
-                    members. Find their GPG keys at <link
-
+                <para>Vulnerability tracking: The Team will curate a set of
+                    vulnerability related issues in the issue tracker. Some of
+                    these issues are private to the Team and the affected
+                    product leads, but once remediation is in place, all
+                    vulnerabilities are public.</para>
+            </listitem>
+            <listitem>
+                <para>Responsible disclosure: As part of our commitment to work
+                    with the security community, the team ensures that proper
+                    credit is given to security researchers who responsibly
+                    report issues in OpenStack.</para>
+            </listitem>
+        </itemizedlist>
+        <para>We provide two ways to report issues to the OpenStack
+            Vulnerability Management Team, depending on how sensitive the issue
+            is:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Open a bug in Launchpad and mark it as a "security bug."
+                    This makes the bug private and accessible to only the
+                    Vulnerability Management Team.</para>
+            </listitem>
+            <listitem>
+                <para>If the issue is extremely sensitive, send an encrypted
+                    email to one of the team's members. Find their GPG keys at
+                        <link
                         xlink:href="http://www.openstack.org/projects/openstack-security/"
                         >OpenStack Security</link>
                     (http://www.openstack.org/projects/openstack-security/).</para>
             </listitem>
         </itemizedlist>
-        <para>You can find the full list of security-oriented teams
-            you can join at <link
-                xlink:href="https://wiki.openstack.org/wiki/SecurityTeams"
+        <para>You can find the full list of security-oriented teams you can join
+            at <link xlink:href="https://wiki.openstack.org/wiki/SecurityTeams"
                 >Security
-            Teams</link> (http://wiki.openstack.org/SecurityTeams).
-            The Vulnerability Management process is fully documented
-            at <link
+            Teams</link> (http://wiki.openstack.org/SecurityTeams). The
+            vulnerability management process is fully documented at <link
                 xlink:href="https://wiki.openstack.org/wiki/VulnerabilityManagement"
                 >Vulnerability
             Management</link> (https://wiki.openstack.org/wiki/VulnerabilityManagement).</para>
     </section>
     <section xml:id="additional_info">
         <title>Finding Additional Information</title>
-        <para>In addition to this book, there are many other sources
-            of information about OpenStack. The <link
-
+        <para>In addition to this book, there are many other sources of
+            information about OpenStack. The <link
                 xlink:href="http://www.openstack.org">OpenStack
-                website</link> (http://www.openstack.org) is a good
-            starting point, with <link
-                xlink:href="http://docs.openstack.org">OpenStack
+            website</link> (http://www.openstack.org) is a good starting point,
+                with <link xlink:href="http://docs.openstack.org">OpenStack
                 Docs</link> (http://docs.openstack.org) and <link
-
                 xlink:href="http://api.openstack.org">OpenStack API
-                Docs</link> (http://api.openstack.org) providing
-            technical documentation about OpenStack. The <link
-
-                xlink:href="https://wiki.openstack.org">OpenStack
-                wiki</link> contains a lot of general information that
-            cuts across the OpenStack projects including a list of
-                <link
+            Docs</link> (http://api.openstack.org) providing technical
+            documentation about OpenStack. The <link
+                xlink:href="https://wiki.openstack.org">OpenStack wiki</link>
+            contains a lot of general information that cuts across the OpenStack
+            projects, including a list of <link
                 xlink:href="https://wiki.openstack.org/wiki/OperationsTools"
                 >recommended tools</link>
-            (https://wiki.openstack.org/wiki/OperationsTools ).
-            Finally, there are a number of blogs aggregated at <link
-
+            (https://wiki.openstack.org/wiki/OperationsTools ). Finally, there
+            are a number of blogs aggregated at <link
                 xlink:href="http://planet.openstack.org">Planet
-                OpenStack</link> (http://planet.openstack.org).</para>
+            OpenStack</link> (http://planet.openstack.org).</para>
     </section>
 
 </chapter>
