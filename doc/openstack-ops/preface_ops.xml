@@ -308,128 +308,122 @@
     </section>
     <section xml:id="why-and-how-we-wrote-this-book">
         <title>Why and How We Wrote This Book</title>
-        <para>We wrote this book because we have deployed and maintained
-            OpenStack clouds for at least a year, and wanted to be able to
-            distribute this knowledge to others. After months of being the point
-            people for an OpenStack cloud, we also wanted to have a document to
-            hand to our system administrators so that they'd know how to operate the
-            cloud on a daily basis&mdash;both reactively and proactively. We wanted
-            to provide more detailed technical information about the decisions
-            that deployers make along the way.</para>
+        <para>We wrote this book because we have deployed and maintained OpenStack clouds for at
+            least a year, and wanted to be able to distribute this knowledge to others. After months
+            of being the point people for an OpenStack cloud, we also wanted to have a document to
+            hand to our system administrators so that they'd know how to operate the cloud on a
+            daily basis&mdash;both reactively and proactively. We wanted to provide more detailed
+            technical information about the decisions that deployers make along the way.</para>
         <?hard-pagebreak?>
         <para>We wrote this book to help you:<itemizedlist role="compact">
                 <listitem>
-                    <para>Design and create an architecture for your first
-                        nontrivial OpenStack cloud. After you read this guide,
-                        you'll know which questions to ask and how to organize
-                        your compute, networking, and storage resources and the
+                    <para>Design and create an architecture for your first nontrivial OpenStack
+                        cloud. After you read this guide, you'll know which questions to ask and how
+                        to organize your compute, networking, and storage resources and the
                         associated software packages.</para>
                 </listitem>
                 <listitem>
-                    <para>Perform the day-to-day tasks required to administer a
-                        cloud.</para>
+                    <para>Perform the day-to-day tasks required to administer a cloud.</para>
                 </listitem>
             </itemizedlist></para>
-        <para>We wrote this book in a book sprint, which is a facilitated rapid
-            development production method for books. For more information see
-            the <link xlink:href="http://www.booksprints.net">BookSprints
-                site</link>. Your authors cobbled this book together in five
-            days during February 2013, fueled by caffeine and the best take-out
-            food that Austin, Texas, could offer.</para>
-        <para>On the first day we filled white boards with colorful sticky notes
-            to start to shape this nebulous book about how to architect and
-            operate clouds.<informalfigure>
+        <para>We wrote this book in a book sprint, which is a facilitated rapid development
+            production method for books. For more information see the <link
+                xlink:href="http://www.booksprints.net">BookSprints site</link>. Your authors
+            cobbled this book together in five days during February 2013, fueled by caffeine and the
+            best take-out food that Austin, Texas, could offer.</para>
+        <para>On the first day we filled white boards with colorful sticky notes to start to shape
+            this nebulous book about how to architect and operate clouds.<informalfigure>
                 <mediaobject>
                     <imageobject>
-                        <imagedata width="5in" fileref="figures/1-IMG_4895.JPG"
-                        />
+                        <imagedata width="5in" fileref="figures/1-IMG_4895.JPG"/>
                     </imageobject>
                 </mediaobject>
             </informalfigure></para>
-        <para>We wrote furiously from our own experiences and bounced ideas
-            between each other. At regular intervals we reviewed the shape and
-            organization of the book and further molded it, leading to what you
-            see today.</para>
+        <para>We wrote furiously from our own experiences and bounced ideas between each other. At
+            regular intervals we reviewed the shape and organization of the book and further molded
+            it, leading to what you see today.</para>
         <?hard-pagebreak?>
         <para>The team includes:</para>
         <itemizedlist role="compact">
             <listitem>
-                <para><emphasis role="bold">Tom Fifield</emphasis>. After
-                    learning about scalability in computing from particle
-                    physics experiments such as ATLAS at the Large Hadron Collider (LHC) at CERN, Tom worked on
-                    OpenStack clouds in production to support the Australian
-                    public research sector. Tom currently serves as an OpenStack
-                    community manager and works on OpenStack documentation in
-                    his spare time.</para>
+                <para><emphasis role="bold">Tom Fifield</emphasis>. After learning about scalability
+                    in computing from particle physics experiments such as ATLAS at the Large Hadron
+                    Collider (LHC) at CERN, Tom worked on OpenStack clouds in production to support
+                    the Australian public research sector. Tom currently serves as an OpenStack
+                    community manager and works on OpenStack documentation in his spare time.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Diane Fleming</emphasis>. Diane
-                    works on the OpenStack API documentation tirelessly. She
-                    helped out wherever she could on this project.</para>
+                <para><emphasis role="bold">Diane Fleming</emphasis>. Diane works on the OpenStack
+                    API documentation tirelessly. She helped out wherever she could on this
+                    project.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Anne Gentle</emphasis>. Anne is the
-                    documentation coordinator for OpenStack and also served as
-                    an individual contributor to the Google Documentation Summit in 2011,
-                    working with the Open Street Maps team. Anne has worked on
-                    book sprints in the past with FLOSS Manuals’ Adam Hyde
+                <para><emphasis role="bold">Anne Gentle</emphasis>. Anne is the documentation
+                    coordinator for OpenStack and also served as an individual contributor to the
+                    Google Documentation Summit in 2011, working with the Open Street Maps team.
+                    Anne has worked on book sprints in the past with FLOSS Manuals’ Adam Hyde
                     facilitating. Anne lives in Austin, Texas.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Lorin Hochstein</emphasis>. An
-                    academic turned software-developer-slash-operator, Lorin
-                    worked as the lead architect for Cloud Services at
-                    Nimbis Services, where he deploys OpenStack for technical
-                    computing applications. He has been working with OpenStack
-                    since the Cactus release. Previously, he worked on
-                    high-performance computing extensions for OpenStack at
-                    University of Southern California's Information Sciences
-                    Institute (USC-ISI).</para>
+                <para><emphasis role="bold">Lorin Hochstein</emphasis>. An academic turned
+                    software-developer-slash-operator, Lorin worked as the lead architect for Cloud
+                    Services at Nimbis Services, where he deploys OpenStack for technical computing
+                    applications. He has been working with OpenStack since the Cactus release.
+                    Previously, he worked on high-performance computing extensions for OpenStack at
+                    University of Southern California's Information Sciences Institute
+                    (USC-ISI).</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Adam Hyde</emphasis>. Adam
-                    facilitated this book sprint. He also founded the books
-                    sprint methodology and is the most experienced book-sprint
-                    facilitator around. See
-                        <uri>http://www.booksprints.net/</uri> for more
-                    information. Adam founded FLOSS Manuals—a community of some
-                    3,000 individuals developing Free Manuals about Free
-                    Software. He is also the founder and project manager for
-                    Booktype, an open source project for writing, editing, and
-                    publishing books online and in print.</para>
+                <para><emphasis role="bold">Adam Hyde</emphasis>. Adam facilitated this book sprint.
+                    He also founded the books sprint methodology and is the most experienced
+                    book-sprint facilitator around. See <uri>http://www.booksprints.net/</uri> for
+                    more information. Adam founded FLOSS Manuals—a community of some 3,000
+                    individuals developing Free Manuals about Free Software. He is also the founder
+                    and project manager for Booktype, an open source project for writing, editing,
+                    and publishing books online and in print.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Jonathan Proulx</emphasis>. Jon has
-                    been piloting an OpenStack cloud as a senior technical
-                    architect at the MIT Computer Science and Artificial
-                    Intelligence Lab for his researchers to have as much
-                    computing power as they need. He started contributing to
-                    OpenStack documentation and reviewing the documentation so
-                    that he could accelerate his learning.</para>
+                <para><emphasis role="bold">Jonathan Proulx</emphasis>. Jon has been piloting an
+                    OpenStack cloud as a senior technical architect at the MIT Computer Science and
+                    Artificial Intelligence Lab for his researchers to have as much computing power
+                    as they need. He started contributing to OpenStack documentation and reviewing
+                    the documentation so that he could accelerate his learning.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Everett Toews</emphasis>. Everett is
-                    a developer advocate at Rackspace making OpenStack and the
-                    Rackspace Cloud easy to use. Sometimes developer, sometimes
-                    advocate, and sometimes operator, he's built web
-                    applications, taught workshops, given presentations around
-                    the world, and deployed OpenStack for production use by
-                    academia and business.</para>
+                <para><emphasis role="bold">Everett Toews</emphasis>. Everett is a developer
+                    advocate at Rackspace making OpenStack and the Rackspace Cloud easy to use.
+                    Sometimes developer, sometimes advocate, and sometimes operator, he's built web
+                    applications, taught workshops, given presentations around the world, and
+                    deployed OpenStack for production use by academia and business.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Joe Topjian</emphasis>. Joe has
-                    designed and deployed several clouds at Cybera, a
-                    non-profit where they are building e-infrastructure to support
-                    entrepreneurs and local researchers in Alberta, Canada. He
-                    also actively maintains and operates these clouds as a
-                    systems architect, and his experiences have generated a
-                    wealth of troubleshooting skills for cloud
+                <para><emphasis role="bold">Joe Topjian</emphasis>. Joe has designed and deployed
+                    several clouds at Cybera, a non-profit where they are building e-infrastructure
+                    to support entrepreneurs and local researchers in Alberta, Canada. He also
+                    actively maintains and operates these clouds as a systems architect, and his
+                    experiences have generated a wealth of troubleshooting skills for cloud
                     environments.</para>
             </listitem>
+            <listitem>
+                <para><emphasis role="bold">OpenStack community members</emphasis>. Many individual efforts
+                    keep a community book alive. Our community members updated content for this book
+                    year-round. Also, a year after the first sprint, Jon Proulx hosted a second two-day
+                    mini-sprint at MIT with the goal of updating the book for the latest release. Since the
+                    book's inception, more than 30 contributors have supported this book. We have a tool chain
+                    for reviews, continuous builds, and translations. Writers and developers continuously
+                    review patches, enter doc bugs, edit content, and fix doc bugs. We want to recognize their
+                    efforts!</para>
+                <para>The following people have contributed to this book: Akihiro Motoki, Alejandro Avella,
+                    Alexandra Settle, Andreas Jaeger, Andy McCallum, Benjamin Stassart, Chandan Kumar, Chris
+                    Ricker, David Cramer, David Wittman, Denny Zhang, Emilien Macchi, Gauvain Pocentek,
+                    Ignacio Barrio, James E. Blair, Jay Clark, Jeff White, Jeremy Stanley, K Jonathan Harker,
+                    KATO Tomoyuki, Lana Brindley, Laura Alves, Lee Li, Lukasz Jernas, Mario B. Codeniera,
+                    Matthew Kassawara, Michael Still, Monty Taylor, Nermina Miller, Nigel Williams, Phil
+                    Hopkins, Russell Bryant, Sahid Orentino Ferdjaoui, Sandy Walsh, Sascha Peilicke, Sean M.
+                    Collins, Sergey Lukjanov, Shilla Saebi, Stephen Gordon, Summer Long, Uwe Stuehler, Vaibhav
+                    Bhatkar, Veronica Musso, Ying Chun "Daisy" Guo, Zhengguang Ou, and ZhiQiang Fan.</para>
+            </listitem>
         </itemizedlist>
-        <para>After the first sprint, a second mini-sprint and community effort
-        began a year later. Since then more than 30 contributors have maintained
-        this book, entering edits and fixing doc bugs.</para>
     </section>
     <section xml:id="how-to-contribute-to-ops-guide">
         <title>How to Contribute to This Book</title>
