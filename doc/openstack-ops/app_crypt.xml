@@ -13,12 +13,12 @@
     xml:id="app_crypt" label="B">
     <title>Tales From the Cryp^H^H^H^H Cloud</title>
 
-    <para>Herein lies a selection of tales from OpenStack cloud operators. Read,
-        and learn from their wisdom.</para>
+    <para>Herein lies a selection of tales from OpenStack cloud operators.
+        Read and learn from their wisdom.</para>
 
     <section xml:id="double_vlan">
         <title>Double VLAN</title>
-        <para>I was on-site in Kelowna, British Columbia, Canada
+        <para>I was on-site in Kelowna, British Columbia, Canada,
             setting up a new OpenStack cloud. The deployment was fully
             automated: Cobbler deployed the OS on the bare metal,
             bootstrapped it, and Puppet took over from there. I had
@@ -28,55 +28,56 @@
             from my hotel. In the background, I was fooling around on
             the new cloud. I launched an instance and logged in.
             Everything looked fine. Out of boredom, I ran
-            <command>ps aux</command> and
+            <command>ps aux</command>, and
             all of the sudden the instance locked up.</para>
         <para>Thinking it was just a one-off issue, I terminated the
             instance and launched a new one. By then, the conference
-            call ended and I was off to the data center.</para>
+            call ended, and I was off to the data center.</para>
         <para>At the data center, I was finishing up some tasks and
-            remembered the lock-up. I logged into the new instance and
+            remembered the lock-up. I logged in to the new instance and
             ran <command>ps aux</command> again. It worked. Phew. I decided
             to run it one
             more time. It locked up. WTF.</para>
         <para>After reproducing the problem several times, I came to
             the unfortunate conclusion that this cloud did indeed have
-            a problem. Even worse, my time was up in Kelowna and I had
-            to return back to Calgary.</para>
+            a problem. Even worse, my time was up in Kelowna, and I had
+            to return to Calgary.</para>
         <para>Where do you even begin troubleshooting something like
             this? An instance just randomly locks when a command is
-            issued. Is it the image? Nope — it happens on all images.
-            Is it the compute node? Nope — all nodes. Is the instance
+            issued. Is it the image? Nope&mdash;it happens on all images.
+            Is it the compute node? Nope&mdash;all nodes. Is the instance
             locked up? No! New SSH connections work just fine!</para>
         <para>We reached out for help. A networking engineer suggested
             it was an MTU issue. Great! MTU! Something to go on!
-            What's MTU and why would it cause a problem?</para>
-        <para>MTU is maximum transmission unit. It specifies the
+            What's MTU, and why would it cause a problem?</para>
+        <para>MTU is <emphasis role="italic">maximum transmission
+            unit</emphasis>. It specifies the
             maximum number of bytes that the interface accepts for
             each packet. If two interfaces have two different MTUs,
-            bytes might get chopped off and weird things happen --
-            such as random session lockups.</para>
+            bytes might get chopped off and weird things happen&mdash;such
+            as random session lockups.</para>
         <note>
-            <para>Not all packets have a size of 1500. Running the <command>ls</command>
-                command over SSH might only create a single packets
-                less than 1500 bytes. However, running a command with
-                heavy output, such as <command>ps aux</command>
-                requires several packets of 1500 bytes.</para>
+            <para>Not all packets have a size of 1,500. Running the <command>ls</command>
+                command over SSH might create only a single packet,
+                less than 1,500 bytes. However, running a command with
+                heavy output, such as <command>ps aux</command>,
+                requires several packets of 1,500 bytes.</para>
         </note>
         <para>OK, so where is the MTU issue coming from? Why haven't
             we seen this in any other deployment? What's new in this
             situation? Well, new data center, new uplink, new
             switches, new model of switches, new servers, first time
-            using this model of servers… so, basically everything was
+            using this model of servers… so, basically, everything was
             new. Wonderful. We toyed around with raising the MTU at
             various areas: the switches, the NICs on the compute
-            nodes, the virtual NICs in the instances, we even had the
+            nodes, the virtual NICs in the instances; we even had the
             data center raise the MTU for our uplink interface. Some
             changes worked, some didn't. This line of troubleshooting
             didn't feel right, though. We shouldn't have to be
             changing the MTU in these areas.</para>
-        <para>As a last resort, our network admin (Alvaro) and myself
+        <para>As a last resort, our network admin (Alvaro) and I
             sat down with four terminal windows, a pencil, and a piece
-            of paper. In one window, we ran ping. In the second
+            of paper. In one window, we ran <command>ping</command>. In the second
             window, we ran <command>tcpdump</command> on the cloud
             controller. In the third, <command>tcpdump</command> on
             the compute node. And the forth had <command>tcpdump</command>
@@ -98,11 +99,11 @@
             the outside hits the cloud controller, it should not be
             configured with a VLAN. We verified this as true. When the
             packet went from the cloud controller to the compute node,
-            it should only have a VLAN if it was destined for an
+            it should have a VLAN only if it was destined for an
             instance. This was still true. When the ping reply was
             sent from the instance, it should be in a VLAN. True. When
             it came back to the cloud controller and on its way out to
-            the public internet, it should no longer have a VLAN.
+            the public Internet, it should no longer have a VLAN.
             False. Uh oh. It looked as though the VLAN part of the
             packet was not being removed.</para>
         <para>That made no sense.</para>
@@ -116,7 +117,7 @@
         <para>"Hey Alvaro, can you run a VLAN on top of a
             VLAN?"</para>
         <para>"If you did, you'd add an extra 4 bytes to the
-            packet&hellip;"</para>
+            packet."</para>
         <para>Then it all made sense…
         <screen><userinput><prompt>$</prompt> grep vlan_interface /etc/nova/nova.conf</userinput>
 <computeroutput>vlan_interface=vlan20</computeroutput></screen>
@@ -124,26 +125,26 @@
         <para>In <filename>nova.conf</filename>, <code>vlan_interface</code>
             specifies what interface OpenStack should attach all VLANs
             to. The correct setting should have been:
-                <programlisting>vlan_interface=bond0</programlisting>.</para>
-        <para>As this would be the server's bonded NIC.</para>
-        <para>vlan20 is the VLAN that the data center gave us for
-            outgoing public internet access. It's a correct VLAN and
+                <code>vlan_interface=bond0</code>.</para>
+        <para>This would be the server's bonded NIC.</para>
+        <para>The vlan20 setting is the VLAN that the data center gave us for
+            outgoing public Internet access. It's a correct VLAN and
             is also attached to bond0.</para>
         <para>By mistake, I configured OpenStack to attach all tenant
-            VLANs to vlan20 instead of bond0 thereby stacking one VLAN
-            on top of another which then added an extra 4 bytes to
-            each packet which cause a packet of 1504 bytes to be sent
-            out which would cause problems when it arrived at an
-            interface that only accepted 1500!</para>
+            VLANs to vlan20 instead of bond0, thereby stacking one VLAN
+            on top of another. This then added an extra 4 bytes to
+            each packet, which caused a packet of 1,504 bytes to be sent
+            out, which would cause problems when it arrived at an
+            interface that accepted 1,500!</para>
         <para>As soon as this setting was fixed, everything
             worked.</para>
     </section>
     <section xml:id="issue">
-        <title>"The Issue"</title>
+        <title>The Issue</title>
         <para>At the end of August 2012, a post-secondary school in
-            Alberta, Canada migrated its infrastructure to an
+            Alberta, Canada, migrated its infrastructure to an
             OpenStack cloud. As luck would have it, within the first
-            day or two of it running, one of their servers just
+            day or two of it running, one of its servers just
             disappeared from the network. Blip. Gone.</para>
         <para>After restarting the instance, everything was back up
             and running. We reviewed the logs and saw that at some
@@ -169,7 +170,7 @@
                     and sends a response.</para>
             </listitem>
             <listitem>
-                <para>Instance "ignores" the response and re-sends the
+                <para>Instance "ignores" the response and resends the
                     renewal request.</para>
             </listitem>
             <listitem>
@@ -191,44 +192,44 @@
             </listitem>
         </orderedlist>
         <para>With this information in hand, we were sure that the
-            problem had to do with DHCP. We thought that for some
-            reason, the instance wasn't getting a new IP address and
+            problem had to do with DHCP. We thought that, for some
+            reason, the instance wasn't getting a new IP address, and
             with no IP, it shut itself off from the network.</para>
         <para>A quick Google search turned up this: <link
                 xlink:href="https://lists.launchpad.net/openstack/msg11696.html"
                 >DHCP lease errors in VLAN mode</link>
-            (https://lists.launchpad.net/openstack/msg11696.html)
+            (https://lists.launchpad.net/openstack/msg11696.html),
             which further supported our DHCP theory.</para>
         <para>An initial idea was to just increase the lease time. If
-            the instance only renewed once every week, the chances of
+            the instance renewed only once every week, the chances of
             this problem happening would be tremendously smaller than
             every minute. This didn't solve the problem, though. It
             was just covering the problem up.</para>
         <para>We decided to have <command>tcpdump</command> run on this
-            instance and see if we could catch it in action again.
+            instance and see whether we could catch it in action again.
             Sure enough, we did.</para>
         <para>The <command>tcpdump</command> looked very, very weird. In
             short, it looked as though network communication stopped
             before the instance tried to renew its IP. Since there is
-            so much DHCP chatter from a one minute lease, it's very
+            so much DHCP chatter from a one-minute lease, it's very
             hard to confirm it, but even with only milliseconds
             difference between packets, if one packet arrives first,
-            it arrived first, and if that packet reported network
+            it arrives first, and if that packet reported network
             issues, then it had to have happened before DHCP.</para>
-        <para>Additionally, this instance in question was responsible
-            for a very, very large backup job each night. While "The
+        <para>Additionally, the instance in question was responsible
+            for a very, very large backup job each night. While "the
             Issue" (as we were now calling it) didn't happen exactly
             when the backup happened, it was close enough (a few
             hours) that we couldn't ignore it.</para>
-        <para>Further days go by and we catch The Issue in action more
-            and more. We find that dhclient is not running after The
+        <para>More days go by and we catch the Issue in action more
+            and more. We find that dhclient is not running after the
             Issue happens. Now we're back to thinking it's a DHCP
-            issue. Running <filename>/etc/init.d/networking</filename> restart
+            issue. Running <command>/etc/init.d/networking restart</command>
             brings everything back up and running.</para>
         <para>Ever have one of those days where all of the sudden you
             get the Google results you were looking for? Well, that's
             what happened here. I was looking for information on
-            dhclient and why it dies when it can't renew its lease and
+            dhclient and why it dies when it can't renew its lease, and
             all of the sudden I found a bunch of OpenStack and dnsmasq
             discussions that were identical to the problem we were
             seeing!</para>
@@ -254,15 +255,15 @@
         <para>It was funny to read the report. It was full of people
             who had some strange network problem but didn't quite
             explain it in the same way.</para>
-        <para>So it was a qemu/kvm bug.</para>
-        <para>At the same time of finding the bug report, a co-worker
-            was able to successfully reproduce The Issue! How? He used
+        <para>So it was a QEMU/KVM bug.</para>
+        <para>At the same time I found the bug report, a co-worker
+            was able to successfully reproduce the Issue! How? He used
             <command>iperf</command> to spew a ton of bandwidth at an instance. Within 30
             minutes, the instance just disappeared from the
             network.</para>
-        <para>Armed with a patched qemu and a way to reproduce, we set
-            out to see if we've finally solved The Issue. After 48
-            hours straight of hammering the instance with bandwidth,
+        <para>Armed with a patched QEMU and a way to reproduce, we set
+            out to see if we had finally solved the Issue. After 48
+            straight hours of hammering the instance with bandwidth,
             we were confident. The rest is history. You can search the
             bug report for "joe" to find my comments and actual
             tests.</para>
@@ -276,30 +277,31 @@
                 xlink:href="http://www.canarie.ca/en/dair-program/about"
                 >DAIR project</link>
             (http://www.canarie.ca/en/dair-program/about). A few days
-            into production, a compute node locks up. Upon rebooting
+            into production, a compute node locked up. Upon rebooting
             the node, I checked to see what instances were hosted on
             that node so I could boot them on behalf of the customer.
             Luckily, only one instance.</para>
         <para>The <command>nova reboot</command> command wasn't working, so
             I used <command>virsh</command>, but it immediately came back
             with an error saying it was unable to find the backing
-            disk. In this case, the backing disk is the Glance image
+            disk. In this case, the backing disk is the glance image
             that is copied to
                 <filename>/var/lib/nova/instances/_base</filename> when the
             image is used for the first time. Why couldn't it find it?
-            I checked the directory and sure enough it was
+            I checked the directory, and sure enough it was
             gone.</para>
         <para>I reviewed the <code>nova</code> database and saw the
             instance's entry in the <code>nova.instances</code> table.
-            The image that the instance was using matched what virsh
+            The image that the instance was using matched what
+            <command>virsh</command>
             was reporting, so no inconsistency there.</para>
-        <para>I checked Glance and noticed that this image was a
+        <para>I checked glance and noticed that this image was a
             snapshot that the user created. At least that was good
-            news — this user would have been the only user
+            news&mdash;this user would have been the only user
             affected.</para>
         <para>Finally, I checked StackTach and reviewed the user's
-            events. They had created and deleted several snapshots
-            — most likely experimenting. Although the timestamps
+            events. They had created and deleted several snapshots&mdash;most
+            likely experimenting. Although the timestamps
             didn't match up, my conclusion was that they launched
             their instance and then deleted the snapshot and it was
             somehow removed from
@@ -313,7 +315,7 @@
             different compute node was bumped and rebooted.
             Great.</para>
         <para>When this node fully booted, I ran through the same
-            scenario of seeing what instances were running so I could
+            scenario of seeing what instances were running so that I could
             turn them back on. There were a total of four. Three
             booted and one gave an error. It was the same error as
             before: unable to find the backing disk. Seriously,
@@ -339,18 +341,18 @@
         </para>
         <para>Ah-hah! So OpenStack was deleting it. But why?</para>
         <para>A feature was introduced in Essex to periodically check
-            and see if there were any <code>_base</code> files not in use.
+            and see whether there were any <code>_base</code> files not in use.
             If there
-            were, Nova would delete them. This idea sounds innocent
+            were, nova would delete them. This idea sounds innocent
             enough and has some good qualities to it. But how did this
             feature end up turned on? It was disabled by default in
             Essex. As it should be. It was <link
                 xlink:href="https://bugs.launchpad.net/nova/+bug/1029674"
-                >decided to be turned on in Folsom</link>
+                >decided to enable it in Folsom</link>
             (https://bugs.launchpad.net/nova/+bug/1029674). I cannot
             emphasize enough that:</para>
         <para>
-            <emphasis>Actions which delete things should not be
+            <emphasis>Actions that delete things should not be
                 enabled by default.</emphasis>
         </para>
         <para>Disk space is cheap these days. Data recovery is
@@ -374,14 +376,14 @@
             have the opportunity to use "Valentine's Day Massacre"
             again in a title.</para>
         <para>This past Valentine's Day, I received an alert that a
-            compute node was no longer available in the cloud
-            — meaning,
+            compute node was no longer available in the
+            cloud&mdash;meaning,</para>
         <screen><prompt>$</prompt><userinput>nova-manage service list</userinput></screen>
-            showed this particular node with a status of
+            <para>showed this particular node with a status of
                 <code>XXX</code>.</para>
-        <para>I logged into the cloud controller and was able to both
-            <command>ping</command> and SSH into the problematic compute node which
-            seemed very odd. Usually if I receive this type of alert,
+        <para>I logged in to the cloud controller and was able to both
+            <command>ping</command> and SSH into the problematic compute node, which
+            seemed very odd. Usually when I receive this type of alert,
             the compute node has totally locked up and would be
             inaccessible.</para>
         <para>After a few minutes of troubleshooting, I saw the
@@ -413,14 +415,14 @@
             connected to a separate switch, I thought that the chance
             of a switch port dying on each switch at the same time was
             quite improbable. I concluded that the 10gb dual port NIC
-            had died and needed replaced. I created a ticket for the
+            had died and needed to be replaced. I created a ticket for the
             hardware support department at the data center where the
             node was hosted. I felt lucky that this was a new node and
             no one else was hosted on it yet.</para>
         <para>An hour later I received the same alert, but for another
             compute node. Crap. OK, now there's definitely a problem
-            going on. Just like the original node, I was able to log
-            in by SSH. The bond0 NIC was DOWN but the 1gb NIC was
+            going on. Just as with the original node, I was able to log
+            in by SSH. The bond0 NIC was DOWN, but the 1gb NIC was
             active.</para>
         <para>And the best part: the same user had just tried creating
             a CentOS instance. What?</para>
@@ -437,12 +439,12 @@ Feb 15 01:40:18 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Port-
 Feb 15 01:40:19 SW-1 Stp: %SPANTREE-6-INTERFACE_DEL: Interface Port-Channel35 has been removed from instance MST0
 Feb 15 01:40:19 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet35 (Server35), changed state to down</computeroutput></screen>
         </para>
-        <para>He re-enabled the switch ports and the two compute nodes
+        <para>He reenabled the switch ports, and the two compute nodes
             immediately came back to life.</para>
         <para>Unfortunately, this story has an open ending... we're
             still looking into why the CentOS image was sending out
             spanning tree packets. Further, we're researching a proper
-            way on how to mitigate this from happening. It's a bigger
+            way for how to mitigate this from happening. It's a bigger
             issue than one might think. While it's extremely important
             for switches to prevent spanning tree loops, it's very
             problematic to have an entire compute node be cut from the
@@ -450,45 +452,45 @@ Feb 15 01:40:19 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ether
             100 instances and one of them sends a spanning tree
             packet, that instance has effectively DDOS'd the other 99
             instances.</para>
-        <para>This is an ongoing and hot topic in networking circles
-            — especially with the raise of virtualization and virtual
-            switches.</para>
+        <para>This is an ongoing and hot topic in networking
+            circles&mdash;especially with the rise of virtualization and
+            virtual switches.</para>
     </section>
     <section xml:id="rabbithole">
         <title>Down the Rabbit Hole</title>
         <para>Users being able to retrieve console logs from running
-            instances is a boon for support — many times they can
+            instances is a boon for support&mdash;many times they can
             figure out what's going on inside their instance and fix
             what's going on without bothering you. Unfortunately,
             sometimes overzealous logging of failures can cause
             problems of its own.</para>
         <para>A report came in: VMs were launching slowly, or not at
-            all. Cue the standard checks — nothing on the nagios, but
-            there was a spike in network towards the current master of
+            all. Cue the standard checks&mdash;nothing on the Nagios, but
+            there was a spike in network toward the current master of
             our RabbitMQ cluster. Investigation started, but soon the
             other parts of the queue cluster were leaking memory like
-            a sieve. Then the alert came in — the master rabbit server
+            a sieve. Then the alert came in: the master rabbit server
             went down. Connections failed over to the slave.</para>
         <para>At that time, our control services were hosted by
-            another team and we didn't have much debugging information
+            another team. We didn't have much debugging information
             to determine what was going on with the master, and
-            couldn't reboot it. That team noted that it failed without
-            alert, but managed to reboot it. After an hour, the
-            cluster had returned to its normal state and we went home
+            couldn't reboot it. That team noted that the master failed without
+            alert, but they managed to reboot it. After an hour, the
+            cluster had returned to its normal state, and we went home
             for the day.</para>
-        <para>Continuing the diagnosis the next morning was kick
-            started by another identical failure. We quickly got the
-            message queue running again, and tried to work out why
+        <para>Continuing the diagnosis the next morning was kick-started
+            by another identical failure. We quickly got the
+            message queue running again and tried to work out why
             Rabbit was suffering from so much network traffic.
             Enabling debug logging on
             <systemitem class="service">nova-api</systemitem> quickly brought
             understanding. A <command>tail -f
                 /var/log/nova/nova-api.log</command> was scrolling by
-            faster than we'd ever seen before. CTRL+C on that and we
+            faster than we'd ever seen before. CTRL+C on that, and we
             could plainly see the contents of a system log spewing
-            failures over and over again - a system log from one of
+            failures over and over again&mdash;a system log from one of
             our users' instances.</para>
-        <para>After finding the instance ID we headed over to
+        <para>After finding the instance ID, we headed over to
                 <filename>/var/lib/nova/instances</filename> to find the
                 <filename>console.log</filename>:
 <screen><computeroutput>
@@ -497,11 +499,11 @@ adm@cc12:/var/lib/nova/instances/instance-00000e05# wc -l console.log
 adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
 5.5G console.log</computeroutput></screen></para>
         <para>Sure enough, the user had been periodically refreshing
-            the console log page on the dashboard and the 5G file was
+            the console log page on the dashboard and the 5 GB file was
             traversing the rabbit cluster to get to the
             dashboard.</para>
-        <para>We called them and asked them to stop for a while, and
-            they were happy to abandon the horribly broken VM. After
+        <para>We called the user and asked her to stop for a while, and
+            she was happy to abandon the horribly broken VM. After
             that, we started monitoring the size of console
             logs.</para>
         <para>To this day, <link
@@ -516,10 +518,10 @@ adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
         <para>Felix Lee of Academia Sinica Grid Computing Centre in Taiwan
             contributed this story.</para>
         <para>I just upgraded OpenStack from Grizzly to Havana 2013.2-2 using
-            the RDO repository and everything was running pretty well
-            -- except the EC2 API.</para>
+            the RDO repository and everything was running pretty
+            well—except the EC2 API.</para>
         <para>I noticed that the API would suffer from a heavy load and
-            respond slowly to particular EC2 requests such as
+            respond slowly to particular EC2 requests, such as
             <literal>RunInstances</literal>.</para>
         <para>Output from <filename>/var/log/nova/nova-api.log</filename> on
             Havana:</para>
@@ -530,7 +532,7 @@ adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
 /services/Cloud?AWSAccessKeyId=[something]&amp;Action=RunInstances&amp;ClientToken=[something]&amp;ImageId=ami-00000001&amp;InstanceInitiatedShutdownBehavior=terminate...
 HTTP/1.1" status: 200 len: 1109 time: 138.5970151
 </computeroutput></screen>
-        <para>This request took over two minutes to process, but executed
+        <para>This request took more than two minutes to process, but it executed
             quickly on another co-existing Grizzly deployment using the same
             hardware and system configuration.</para>
         <para>Output from <filename>/var/log/nova/nova-api.log</filename> on
@@ -545,17 +547,17 @@ HTTP/1.1" status: 200 len: 931 time: 3.9426181
         <para>While monitoring system resources, I noticed
             a significant increase in memory consumption while the EC2 API
             processed this request. I thought it wasn't handling memory
-            properly -- possibly not releasing memory. If the API received
+            properly—possibly not releasing memory. If the API received
             several of these requests, memory consumption quickly grew until
             the system ran out of RAM and began using swap. Each node has
-            48 GB of RAM and the "nova-api" process would consume all of it
+            48 GB of RAM, and the "nova-api" process would consume all of it
             within minutes. Once this happened, the entire system would become
             unusably slow until I restarted the
             <systemitem class="service">nova-api</systemitem> service.</para>
         <para>So, I found myself wondering what changed in the EC2 API on
-            Havana that might cause this to happen. Was it a bug or a normal
+            Havana that might cause this to happen. Was it a bug or normal
             behavior that I now need to work around?</para>
-        <para>After digging into the Nova code, I noticed two areas in
+        <para>After digging into the nova code, I noticed two areas in
             <filename>api/ec2/cloud.py</filename> potentially impacting my
             system:</para>
         <programlisting language="python">
@@ -567,13 +569,13 @@ HTTP/1.1" status: 200 len: 931 time: 3.9426181
             context, search_filts=[{'key': ['EC2_client_token']},
                                    {'value': [client_token]}])
 </programlisting>
-        <para>Since my database contained many records -- over 1 million
+        <para>Since my database contained many records&mdash;over 1 million
             metadata records and over 300,000 instance records in "deleted"
-            or "errored" states -- each search took ages. I decided to clean
+            or "errored" states&mdash;each search took ages. I decided to clean
             up the database by first archiving a copy for backup and then
             performing some deletions using the MySQL client. For example, I
             ran the following SQL command to remove rows of instances deleted
-            for over a year:</para>
+            for more than a year:</para>
             <screen><prompt>mysql></prompt> <userinput>delete from nova.instances where deleted=1 and terminated_at &lt; (NOW() - INTERVAL 1 YEAR);</userinput></screen>
         <para>Performance increased greatly after deleting the old records and
             my new deployment continues to behave well.</para>
