@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-19 06:02+0000\n"
+"POT-Creation-Date: 2014-03-20 06:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3081,7 +3081,7 @@ msgstr ""
 msgid "Other services follow the same process, with their respective directories and databases."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_backup_recovery.xml:202(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:762(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:629(title) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:965(title) ./doc/openstack-ops/ch_ops_projects_users.xml:833(title)
+#: ./doc/openstack-ops/ch_ops_backup_recovery.xml:202(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:762(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:629(title) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:966(title) ./doc/openstack-ops/ch_ops_projects_users.xml:833(title)
 msgid "Summary"
 msgstr ""
 
@@ -3094,7 +3094,7 @@ msgid "Maintenance, Failures, and Debugging"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:15(para)
-msgid "Downtime, whether planned or unscheduled, is a certainty when running a cloud. This chapter aims to provide useful information for dealing proactively, or reactively with these occurrences."
+msgid "Downtime, whether planned or unscheduled, is a certainty when running a cloud. This chapter aims to provide useful information for dealing proactively, or reactively, with these occurrences."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:21(title)
@@ -3106,7 +3106,7 @@ msgid "The cloud controller and storage proxy are very similar to each other whe
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:28(para)
-msgid "For the cloud controller, the good news is if your cloud is using the FlatDHCP multi-host HA network mode, existing instances and volumes continue to operate while the cloud controller is offline. However for the storage proxy, no storage traffic is possible until it is back up and running."
+msgid "For the cloud controller, the good news is if your cloud is using the FlatDHCP multi-host HA network mode, existing instances and volumes continue to operate while the cloud controller is offline. For the storage proxy, however, no storage traffic is possible until it is back up and running."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:36(title) ./doc/openstack-ops/ch_ops_maintenance.xml:126(title)
@@ -3114,15 +3114,15 @@ msgid "Planned Maintenance"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:37(para)
-msgid "One way to plan for cloud controller or storage proxy maintenance is to simply do it off-hours, such as at 1 or 2 A.M.. This strategy impacts fewer users. If your cloud controller or storage proxy is too important to have unavailable at any point in time, you must look into High Availability options."
+msgid "One way to plan for cloud controller or storage proxy maintenance is to simply do it off-hours, such as at 1 or 2 A.M. This strategy affects fewer users. If your cloud controller or storage proxy is too important to have unavailable at any point in time, you must look into high-availability options."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:46(title)
-msgid "Rebooting a cloud controller or Storage Proxy"
+msgid "Rebooting a Cloud Controller or Storage Proxy"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:48(para)
-msgid "All in all, just issue the \"reboot\" command. The operating system cleanly shuts services down and then automatically reboots. If you want to be very thorough, run your backup jobs just before you reboot."
+msgid "All in all, just issue the \"reboot\" command. The operating system cleanly shuts down services and then automatically reboots. If you want to be very thorough, run your backup jobs just before you reboot."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:56(title)
@@ -3158,11 +3158,11 @@ msgid "To avoid this situation, create a highly available cloud controller clust
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:105(para)
-msgid "The next best way is to use a configuration management tool such as Puppet to automatically build a cloud controller. This should not take more than 15 minutes if you have a spare server available. After the controller rebuilds, restore any backups taken (see the <emphasis role=\"bold\">Backup and Recovery</emphasis> chapter)."
+msgid "The next best approach is to use a configuration- management tool such as Puppet to automatically build a cloud controller. This should not take more than 15 minutes if you have a spare server available. After the controller rebuilds, restore any backups taken (see the <link linkend=\"backup_and_recovery\">Backup and Recovery</link> chapter)."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:112(para)
-msgid "Also, in practice, sometimes the nova-compute services on the compute nodes do not reconnect cleanly to rabbitmq hosted on the controller when it comes back up after a long reboot and a restart on the nova services on the compute nodes is required."
+msgid "Also, in practice, the nova-compute services on the compute nodes sometimes do not reconnect cleanly to rabbitmq hosted on the controller when it comes back up after a long reboot and a restart on the nova services on the compute nodes is required."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:121(title)
@@ -3174,7 +3174,7 @@ msgid "Sometimes a compute node either crashes unexpectedly or requires a reboot
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:127(para)
-msgid "If you need to reboot a compute node due to planned maintenance (such as a software or hardware upgrade), first ensure that all hosted instances have been moved off of the node. If your cloud is utilizing shared storage, use the <code>nova live-migration</code> command. First, get a list of instances that need to be moved:"
+msgid "If you need to reboot a compute node due to planned maintenance (such as a software or hardware upgrade), first ensure that all hosted instances have been moved off the node. If your cloud is utilizing shared storage, use the <code>nova live-migration</code> command. First, get a list of instances that need to be moved:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:135(para)
@@ -3186,15 +3186,15 @@ msgid "If you are not using shared storage, you can use the <code>--block-migrat
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:140(para)
-msgid "After you have migrated all instances, ensure the <code>nova-compute</code> service has stopped:"
+msgid "After you have migrated all instances, ensure that the <code>nova-compute</code> service has stopped:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:144(para)
-msgid "If you use a configuration management system, such as Puppet, that ensures the <code>nova-compute</code> service is always running, you can temporarily move the init files:"
+msgid "If you use a configuration-management system, such as Puppet, that ensures the <code>nova-compute</code> service is always running, you can temporarily move the init files:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:151(para)
-msgid "Next, shut your compute node down, perform your maintenance, and turn the node back on. You can re-enable the <code>nova-compute</code> service by undoing the previous commands:"
+msgid "Next, shut down your compute node, perform your maintenance, and turn the node back on. You can reenable the <code>nova-compute</code> service by undoing the previous commands:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:157(para)
@@ -3210,7 +3210,7 @@ msgid "After a Compute Node Reboots"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:166(para)
-msgid "When you reboot a compute node, first verify that it booted successfully. This includes ensuring the <code>nova-compute</code> service is running:"
+msgid "When you reboot a compute node, first verify that it booted successfully. This includes ensuring that the <code>nova-compute</code> service is running:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:172(para)
@@ -3218,7 +3218,7 @@ msgid "Also ensure that it has successfully connected to the AMQP server:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:176(para)
-msgid "After the compute node is successfully running, you must deal with the instances that are hosted on that compute node as none of them is running. Depending on your SLA with your users or customers, you might have to start each instance and ensure they start correctly."
+msgid "After the compute node is successfully running, you must deal with the instances that are hosted on that compute node because none of them are running. Depending on your SLA with your users or customers, you might have to start each instance and ensure that they start correctly."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:186(para)
@@ -3230,7 +3230,7 @@ msgid "After you have the list, you can use the nova command to start each insta
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:194(para)
-msgid "Any time an instance shuts down unexpectedly, it might have problems on boot. For example, the instance might require an <code>fsck</code> on the root partition. If this happens, the user can use the Dashboard VNC console to fix this."
+msgid "Any time an instance shuts down unexpectedly, it might have problems on boot. For example, the instance might require an <code>fsck</code> on the root partition. If this happens, the user can use the dashboard VNC console to fix this."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:200(para)
@@ -3242,7 +3242,7 @@ msgid "Try executing the <code>nova reboot</code> command again. You should see 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:208(para)
-msgid "In most cases, the error is due to something in libvirt's XML file (<code>/etc/libvirt/qemu/instance-xxxxxxxx.xml</code>) that no longer exists. You can enforce recreation of the XML file as well as rebooting the instance by running:"
+msgid "In most cases, the error is the result of something in libvirt's XML file (<code>/etc/libvirt/qemu/instance-xxxxxxxx.xml</code>) that no longer exists. You can enforce re-creation of the XML file as well as rebooting the instance by running the following command:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:218(title)
@@ -3250,7 +3250,7 @@ msgid "Inspecting and Recovering Data from Failed Instances"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:219(para)
-msgid "In some scenarios, instances are running but are inaccessible through SSH and do not respond to any command. VNC console could be displaying a boot failure or kernel panic error messages. This could be an indication of a file system corruption on the VM itself. If you need to recover files or inspect the content of the instance, qemu-nbd can be used to mount the disk."
+msgid "In some scenarios, instances are running but are inaccessible through SSH and do not respond to any command. The VNC console could be displaying a boot failure or kernel panic error messages. This could be an indication of file system corruption on the VM itself. If you need to recover files or inspect the content of the instance, qemu-nbd can be used to mount the disk."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:226(para)
@@ -3258,59 +3258,55 @@ msgid "If you access or view the user's content and data, get their approval fir
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:229(para)
-msgid "To access the instance's disk (/var/lib/nova/instances/instance-xxxxxx/disk), the following steps must be followed:"
+msgid "To access the instance's disk (/var/lib/nova/instances/instance-xxxxxx/disk), use the following steps:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:234(para)
-msgid "Suspend the instance using the virsh command"
+msgid "Suspend the instance using the virsh command."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:237(para)
-msgid "Connect the qemu-nbd device to the disk"
+msgid "Connect the qemu-nbd device to the disk."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_maintenance.xml:240(para)
-msgid "Mount the qemu-nbd device"
+#: ./doc/openstack-ops/ch_ops_maintenance.xml:240(para) ./doc/openstack-ops/ch_ops_maintenance.xml:289(para)
+msgid "Mount the qemu-nbd device."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:243(para)
-msgid "Unmount the device after inspecting"
+msgid "Unmount the device after inspecting."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:246(para)
-msgid "Disconnect the qemu-nbd device"
+msgid "Disconnect the qemu-nbd device."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:249(para)
-msgid "Resume the instance"
+msgid "Resume the instance."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:252(para)
-msgid "If you do not follow the steps from 4-6, OpenStack Compute cannot manage the instance any longer. It fails to respond to any command issued by OpenStack Compute and it is marked as shutdown."
+msgid "If you do not follow the steps 4 through 6, OpenStack Compute cannot manage the instance any longer. It fails to respond to any command issued by OpenStack Compute and it is marked as shutdown."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:256(para)
-msgid "Once you mount the disk file, you should be able access it and treat it as normal directories with files and a directory structure. However, we do not recommend that you edit or touch any files because this could change the Access Control Lists (ACLs) which are used to determine which accounts can perform what operations on files and directories. Changing ACLs can make the instance unbootable if it is not already."
+msgid "Once you mount the disk file, you should be to able access it and treat it as normal directories with files and a directory structure. However, we do not recommend that you edit or touch any files because this could change the access control lists (ACLs) that are used to determine which accounts can perform what operations on files and directories. Changing ACLs can make the instance unbootable if it is not already."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:265(para)
-msgid "Suspend the instance using the virsh command - taking note of the internal ID:"
+msgid "Suspend the instance using the virsh command, taking note of the internal ID:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:278(para)
 msgid "Connect the qemu-nbd device to the disk:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_maintenance.xml:289(para)
-msgid "Mount the qemu-nbd device."
-msgstr ""
-
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:290(para)
-msgid "The qemu-nbd device tries to export the instance disk's different partitions as separate devices. For example if vda as the disk and vda1 as the root partition, qemu-nbd exports the device as /dev/nbd0 and /dev/nbd0p1 respectively:"
+msgid "The qemu-nbd device tries to export the instance disk's different partitions as separate devices. For example, if vda is the disk and vda1 is the root partition, qemu-nbd exports the device as /dev/nbd0 and /dev/nbd0p1 respectively:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:296(para)
-msgid "You can now access the contents of <code>/mnt</code> which correspond to the first partition of the instance's disk."
+msgid "You can now access the contents of <code>/mnt</code>, which correspond to the first partition of the instance's disk."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:299(para)
@@ -3334,15 +3330,15 @@ msgid "If the affected instances also had attached volumes, first generate a lis
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:359(para)
-msgid "You should see a result like the following:"
+msgid "You should see a result similar to the following:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:367(para)
-msgid "Next, manually detach and reattach the volumes:"
+msgid "Next, manually detach and reattach the volumes, where X is the proper mount point:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:371(para)
-msgid "Where X is the proper mount point. Make sure that the instance has successfully booted and is at a login screen before doing the above."
+msgid "Be sure that the instance has successfully booted and is at a login screen before doing the above."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:377(title)
@@ -3350,7 +3346,7 @@ msgid "Total Compute Node Failure"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:378(para)
-msgid "Compute nodes can fail the same way a cloud controller can fail. A motherboard failure or some other type of hardware failure can cause an entire compute node to go offline. When this happens, all instances running on that compute node will not be available. Just like with a cloud controller failure, if your infrastructure monitoring does not detect a failed compute node, your users will notify you due to their lost instances."
+msgid "Compute nodes can fail the same way a cloud controller can fail. A motherboard failure or some other type of hardware failure can cause an entire compute node to go offline. When this happens, all instances running on that compute node will not be available. Just like with a cloud controller failure, if your infrastructure monitoring does not detect a failed compute node, your users will notify you because of their lost instances."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:387(para)
@@ -3362,7 +3358,7 @@ msgid "To do this, generate a list of instance UUIDs that are hosted on the fail
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:396(para)
-msgid "Next, tell Nova that all instances that used to be hosted on c01.example.com are now hosted on c02.example.com:"
+msgid "Next, update the nova database to indicate that all instances that used to be hosted on c01.example.com are now hosted on c02.example.com:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:400(para)
@@ -3370,7 +3366,7 @@ msgid "After that, use the nova command to reboot all instances that were on c01
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:404(para)
-msgid "Finally, re-attach volumes using the same method described in <emphasis role=\"bold\">Volumes</emphasis>."
+msgid "Finally, reattach volumes using the same method described in the section <link linkend=\"volumes\">Volumes</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:409(title)
@@ -3386,7 +3382,7 @@ msgid "<code>/var/lib/nova/instances</code> contains two types of directories."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:420(para)
-msgid "The first is the <code>_base</code> directory. This contains all of the cached base images from glance for each unique image that has been launched on that compute node. Files ending in <code>_20</code> (or a different number) are the ephemeral base images."
+msgid "The first is the <code>_base</code> directory. This contains all the cached base images from glance for each unique image that has been launched on that compute node. Files ending in <code>_20</code> (or a different number) are the ephemeral base images."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:426(para)
@@ -3394,7 +3390,7 @@ msgid "The other directories are titled <code>instance-xxxxxxxx</code>. These di
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:434(para)
-msgid "All files and directories in <code>/var/lib/nova/instances</code> are uniquely named. The files in _base are uniquely titled for the glance image that they are based on and the directory names <code>instance-xxxxxxxx</code> are uniquely titled for that particular instance. For example, if you copy all data from <code>/var/lib/nova/instances</code> on one compute node to another, you do not overwrite any files or cause any damage to images that have the same unique name, because they are essentially the same file."
+msgid "All files and directories in <code>/var/lib/nova/instances</code> are uniquely named. The files in _base are uniquely titled for the glance image that they are based on, and the directory names <code>instance-xxxxxxxx</code> are uniquely titled for that particular instance. For example, if you copy all data from <code>/var/lib/nova/instances</code> on one compute node to another, you do not overwrite any files or cause any damage to images that have the same unique name, because they are essentially the same file."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:446(para)
@@ -3406,7 +3402,7 @@ msgid "Storage Node Failures and Maintenance"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:455(para)
-msgid "Due to the Object Storage's high redundancy, dealing with object storage node issues is a lot easier than dealing with compute node issues."
+msgid "Because of the high redundancy of Object Storage, dealing with object storage node issues is a lot easier than dealing with compute node issues."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:460(title)
@@ -3422,7 +3418,7 @@ msgid "Shutting Down a Storage Node"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:469(para)
-msgid "If you need to shut down a storage node for an extended period of time (1+ days), consider removing the node from the storage ring. For example:"
+msgid "If you need to shut down a storage node for an extended period of time (one or more days), consider removing the node from the storage ring. For example:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:478(para)
@@ -3434,7 +3430,7 @@ msgid "These actions effectively take the storage node out of the storage cluste
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:486(para)
-msgid "When the node is able to rejoin the cluster, just add it back to the ring. The exact syntax to add a node to your Swift cluster using <code>swift-ring-builder</code> heavily depends on the original options used when you originally created your cluster. Please refer back to those commands."
+msgid "When the node is able to rejoin the cluster, just add it back to the ring. The exact syntax you use to add a node to your swift cluster with <code>swift-ring-builder</code> heavily depends on the original options used when you originally created your cluster. Please refer back to those commands."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:496(title)
@@ -3442,7 +3438,7 @@ msgid "Replacing a Swift Disk"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:497(para)
-msgid "If a hard drive fails in a Object Storage node, replacing it is relatively easy. This assumes that your Object Storage environment is configured correctly where the data that is stored on the failed drive is also replicated to other drives in the Object Storage environment."
+msgid "If a hard drive fails in an Object Storage node, replacing it is relatively easy. This assumes that your Object Storage environment is configured correctly, where the data that is stored on the failed drive is also replicated to other drives in the Object Storage environment."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:503(para)
@@ -3462,7 +3458,7 @@ msgid "Ensure that the operating system has recognized the new disk:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:512(para)
-msgid "You should see a message about /dev/sdb."
+msgid "You should see a message about <code>/dev/sdb</code>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:513(para)
@@ -3482,7 +3478,7 @@ msgid "Handling a Complete Failure"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:526(para)
-msgid "A common way of dealing with the recovery from a full system failure, such as a power outage of a data center is to assign each service a priority, and restore in order."
+msgid "A common way of dealing with the recovery from a full system failure, such as a power outage of a data center, is to assign each service a priority, and restore in order. Here is an example:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:531(caption)
@@ -3510,7 +3506,7 @@ msgid "3"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:552(para)
-msgid "Public network connectivity for user Virtual Machines"
+msgid "Public network connectivity for user virtual machines"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:557(para) ./doc/openstack-ops/ch_arch_scaling.xml:72(para)
@@ -3534,7 +3530,7 @@ msgid "10"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:572(para)
-msgid "Message Queue and Database services"
+msgid "Message queue and database services"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:577(para)
@@ -3550,7 +3546,7 @@ msgid "20"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:585(para)
-msgid "cinder-scheduler"
+msgid "Cinder-scheduler"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:589(para)
@@ -3558,7 +3554,7 @@ msgid "21"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:591(para)
-msgid "Image Catalogue and Delivery services"
+msgid "Image Catalog and Delivery services"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:596(para)
@@ -3594,7 +3590,7 @@ msgid "Dashboard node"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:620(para)
-msgid "Use this example priority list to ensure that user affected services are restored as soon as possible, but not before a stable environment is in place. Of course, despite being listed as a single line item, each step requires significant work. For example, just after starting the database, you should check its integrity or, after starting the Nova services, you should verify that the hypervisor matches the database and fix any mismatches."
+msgid "Use this example priority list to ensure that user- affected services are restored as soon as possible, but not before a stable environment is in place. Of course, despite being listed as a single line item, each step requires significant work. For example, just after starting the database, you should check its integrity, or, after starting the nova services, you should verify that the hypervisor matches the database and fix any mismatches."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:632(title) ./doc/openstack-ops/ch_ops_resources.xml:104(emphasis)
@@ -3602,11 +3598,11 @@ msgid "Configuration Management"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:633(para)
-msgid "Maintaining an OpenStack cloud requires that you manage multiple physical servers, and this number might grow over time. Because managing nodes manually is error-prone, we strongly recommend that you use a configuration management tool. These tools automate the process of ensuring that all of your nodes are configured properly and encourage you to maintain your configuration information (such as packages and configuration options) in a version controlled repository."
+msgid "Maintaining an OpenStack cloud requires that you manage multiple physical servers, and this number might grow over time. Because managing nodes manually is error prone, we strongly recommend that you use a configuration-management tool. These tools automate the process of ensuring that all your nodes are configured properly and encourage you to maintain your configuration information (such as packages and configuration options) in a version- controlled repository."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:642(para)
-msgid "Several configuration management tools are available, and this guide does not recommend a specific one. The two most popular ones in the OpenStack community are <link href=\"https://puppetlabs.com/\">Puppet</link> (https://puppetlabs.com/) with available <link title=\"Optimization Overview\" href=\"http://github.com/puppetlabs/puppetlabs-openstack\">OpenStack Puppet modules</link> (http://github.com/puppetlabs/puppetlabs-openstack) and <link href=\"http://www.opscode.com/chef/\">Chef</link> (http://opscode.com/chef) with available <link href=\"https://github.com/opscode/openstack-chef-repo\">OpenStack Chef recipes</link> (https://github.com/opscode/openstack-chef-repo). Other newer configuration tools include <link href=\"https://juju.ubuntu.com/\">Juju</link> (https://juju.ubuntu.com/) <link href=\"http://ansible.cc\">Ansible</link> (http://ansible.cc) and <link href=\"http://saltstack.com/\">Salt</link> (http://saltstack.com), and more mature configuration management tools include <link href=\"http://cfengine.com/\">CFEngine</link> (http://cfengine.com) and <link href=\"http://bcfg2.org/\">Bcfg2</link> (http://bcfg2.org)."
+msgid "Several configuration-management tools are available, and this guide does not recommend a specific one. The two most popular ones in the OpenStack community are <link href=\"https://puppetlabs.com/\">Puppet</link> (https://puppetlabs.com/), with available <link title=\"Optimization Overview\" href=\"http://github.com/puppetlabs/puppetlabs-openstack\">OpenStack Puppet modules</link> (http://github.com/puppetlabs/puppetlabs-openstack), and <link href=\"http://www.opscode.com/chef/\">Chef</link> (http://opscode.com/chef), with available <link href=\"https://github.com/opscode/openstack-chef-repo\">OpenStack Chef recipes</link> (https://github.com/opscode/openstack-chef-repo). Other newer configuration tools include <link href=\"https://juju.ubuntu.com/\">Juju</link> (https://juju.ubuntu.com/), <link href=\"http://ansible.cc\">Ansible</link> (http://ansible.cc), and <link href=\"http://saltstack.com/\">Salt</link> (http://saltstack.com), and more mature configuration management tools include <link href=\"http://cfengine.com/\">CFEngine</link> (http://cfengine.com), and <link href=\"http://bcfg2.org/\">Bcfg2</link> (http://bcfg2.org)."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:672(title)
@@ -3614,7 +3610,7 @@ msgid "Working with Hardware"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:673(para)
-msgid "Similar to your initial deployment, you should ensure all hardware is appropriately burned in before adding it to production. Run software that uses the hardware to its limits - maxing out RAM, CPU, disk and network. Many options are available, and normally double as benchmark software so you also get a good idea of the performance of your system."
+msgid "As for your initial deployment, you should ensure that all hardware is appropriately burned in before adding it to production. Run software that uses the hardware to its limits—maxing out RAM, CPU, disk, and network. Many options are available, and normally double as benchmark software, so you also get a good idea of the performance of your system."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:682(title)
@@ -3622,11 +3618,11 @@ msgid "Adding a Compute Node"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:683(para)
-msgid "If you find that you have reached or are reaching the capacity limit of your computing resources, you should plan to add additional compute nodes. Adding more nodes is quite easy. The process for adding compute nodes is the same as when the initial compute nodes were deployed to your cloud: use an automated deployment system to bootstrap the bare-metal server with the operating system and then have a configuration management system install and configure the OpenStack Compute service. Once the Compute service has been installed and configured in the same way as the other compute nodes, it automatically attaches itself to the cloud. The cloud controller notices the new node(s) and begin scheduling instances to launch there."
+msgid "If you find that you have reached or are reaching the capacity limit of your computing resources, you should plan to add additional compute nodes. Adding more nodes is quite easy. The process for adding compute nodes is the same as when the initial compute nodes were deployed to your cloud: use an automated deployment system to bootstrap the bare-metal server with the operating system and then have a configuration- management system install and configure OpenStack Compute. Once the Compute service has been installed and configured in the same way as the other compute nodes, it automatically attaches itself to the cloud. The cloud controller notices the new node(s) and begins scheduling instances to launch there."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:697(para)
-msgid "If your OpenStack Block Storage nodes are separate from your compute nodes, the same procedure still applies as the same queuing and polling system is used in both services."
+msgid "If your OpenStack Block Storage nodes are separate from your compute nodes, the same procedure still applies because the same queuing and polling system is used in both services."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:701(para)
@@ -3638,11 +3634,11 @@ msgid "Adding an Object Storage Node"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:709(para)
-msgid "Adding a new object storage node is different than adding compute or block storage nodes. You still want to initially configure the server by using your automated deployment and configuration management systems. After that is done, you need to add the local disks of the object storage node into the object storage ring. The exact command to do this is the same command that was used to add the initial disks to the ring. Simply re-run this command on the object storage proxy server for all disks on the new object storage node. Once this has been done, rebalance the ring and copy the resulting ring files to the other storage nodes."
+msgid "Adding a new object storage node is different from adding compute or block storage nodes. You still want to initially configure the server by using your automated deployment and configuration-management systems. After that is done, you need to add the local disks of the object storage node into the object storage ring. The exact command to do this is the same command that was used to add the initial disks to the ring. Simply rerun this command on the object storage proxy server for all disks on the new object storage node. Once this has been done, rebalance the ring and copy the resulting ring files to the other storage nodes."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:723(para)
-msgid "If your new object storage node has a different number of disks than the original nodes have, the command to add the new node is different than the original commands. These parameters vary from environment to environment."
+msgid "If your new object storage node has a different number of disks than the original nodes have, the command to add the new node is different from the original commands. These parameters vary from environment to environment."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:732(title)
@@ -3650,7 +3646,7 @@ msgid "Replacing Components"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:733(para)
-msgid "Failures of hardware are common in large scale deployments such as an infrastructure cloud. Consider your processes and balance time saving against availability. For example, an Object Storage cluster can easily live with dead disks in it for some period of time if it has sufficient capacity. Or, if your compute installation is not full you could consider live migrating instances off a host with a RAM failure until you have time to deal with the problem."
+msgid "Failures of hardware are common in large-scale deployments such as an infrastructure cloud. Consider your processes and balance time saving against availability. For example, an Object Storage cluster can easily live with dead disks in it for some period of time if it has sufficient capacity. Or, if your compute installation is not full, you could consider live migrating instances off a host with a RAM failure until you have time to deal with the problem."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:746(title)
@@ -3662,7 +3658,7 @@ msgid "Almost all OpenStack components have an underlying database to store pers
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:756(para)
-msgid "You can perform a couple tricks with the database to either more quickly retrieve information or fix a data inconsistency error. For example, an instance was terminated but the status was not updated in the database. These tricks are discussed throughout this book."
+msgid "You can perform a couple of tricks with the database to either more quickly retrieve information or fix a data inconsistency error—for example, an instance was terminated, but the status was not updated in the database. These tricks are discussed throughout this book."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:763(title)
@@ -3670,7 +3666,7 @@ msgid "Database Connectivity"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:764(para)
-msgid "Review the components configuration file to see how each OpenStack component accesses its corresponding database. Look for either <code>sql_connection</code> or simply <code>connection</code>. The following command uses <code>grep</code> to display the SQL connection string for nova, glance, cinder, and keystone:"
+msgid "Review the component's configuration file to see how each OpenStack component accesses its corresponding database. Look for either <code>sql_connection</code> or simply <code>connection</code>. The following command uses <code>grep</code> to display the SQL connection string for nova, glance, cinder, and keystone:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:778(para)
@@ -3682,7 +3678,7 @@ msgid "Performance and Optimizing"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:784(para)
-msgid "As your cloud grows, MySQL is utilized more and more. If you suspect that MySQL might be becoming a bottleneck, you should start researching MySQL optimization. The MySQL manual has an entire section dedicated to this topic <link href=\"http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html\">Optimization Overview</link> (http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html)."
+msgid "As your cloud grows, MySQL is utilized more and more. If you suspect that MySQL might be becoming a bottleneck, you should start researching MySQL optimization. The MySQL manual has an entire section dedicated to this topic: <link href=\"http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html\">Optimization Overview</link> (http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html)."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:796(title)
@@ -3690,7 +3686,7 @@ msgid "HDWMY"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:797(para)
-msgid "Here's a quick list of various to-do items each hour, day, week, month, and year. Please note these tasks are neither required nor definitive, but helpful ideas:"
+msgid "Here's a quick list of various to-do items for each hour, day, week, month, and year. Please note that these tasks are neither required nor definitive but helpful ideas:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:802(title)
@@ -3786,7 +3782,7 @@ msgid "Review and plan any major OpenStack upgrades."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:900(title)
-msgid "Semi-Annually"
+msgid "Semiannually"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:903(para)
@@ -3794,15 +3790,15 @@ msgid "Upgrade OpenStack."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:906(para)
-msgid "Clean up after OpenStack upgrade (any unused or new services to be aware of?)"
+msgid "Clean up after an OpenStack upgrade (any unused or new services to be aware of?)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:914(title)
-msgid "Determining which Component Is Broken"
+msgid "Determining Which Component Is Broken"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:915(para)
-msgid "OpenStack's collection of different components interact with each other strongly. For example, uploading an image requires interaction from <code>nova-api</code>, <code>glance-api</code>, <code>glance-registry</code>, Keystone, and potentially <code>swift-proxy</code>. As a result, it is sometimes difficult to determine exactly where problems lie. Assisting in this is the purpose of this section."
+msgid "OpenStack's collection of different components interact with each other strongly. For example, uploading an image requires interaction from <code>nova-api</code>, <code>glance-api</code>, <code>glance-registry</code>, keystone, and potentially <code>swift-proxy</code>. As a result, it is sometimes difficult to determine exactly where problems lie. Assisting in this is the purpose of this section."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:925(title)
@@ -3810,7 +3806,7 @@ msgid "Tailing Logs"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:926(para)
-msgid "The first place to look is the log file related to the command you are trying to run. For example, if <code>nova list</code> is failing, try tailing a Nova log file and running the command again:"
+msgid "The first place to look is the log file related to the command you are trying to run. For example, if <code>nova list</code> is failing, try tailing a nova log file and running the command again:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:930(para) ./doc/openstack-ops/ch_ops_maintenance.xml:942(para)
@@ -3822,7 +3818,7 @@ msgid "Terminal 2:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:934(para)
-msgid "Look for any errors or traces in the log file. For more information, see the chapter on <emphasis role=\"bold\">Logging and Monitoring</emphasis>."
+msgid "Look for any errors or traces in the log file. For more information, see the chapter on <link linkend=\"logging_monitoring\">Logging and Monitoring</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:938(para)
@@ -3830,7 +3826,7 @@ msgid "If the error indicates that the problem is with another component, switch
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:946(para)
-msgid "Wash, rinse, repeat until you find the core cause of the problem."
+msgid "Wash, rinse, and repeat until you find the core cause of the problem."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:952(title)
@@ -3870,7 +3866,7 @@ msgid "Uninstalling"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:995(para)
-msgid "While we'd always recommend using your automated deployment system to re-install systems from scratch, sometimes you do need to remove OpenStack from a system the hard way. Here's how:"
+msgid "While we'd always recommend using your automated deployment system to reinstall systems from scratch, sometimes you do need to remove OpenStack from a system the hard way. Here's how:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:1000(para)
@@ -3886,7 +3882,7 @@ msgid "Remove databases"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:1004(para)
-msgid "These steps depend on your underlying distribution, but in general you should be looking for 'purge' commands in your package manager, like <literal>aptitude purge ~c $package</literal>. Following this, you can look for orphaned files in the directories referenced throughout this guide. For uninstalling the database properly, refer to the manual appropriate for the product in use."
+msgid "These steps depend on your underlying distribution, but in general you should be looking for \"purge\" commands in your package manager, like <literal>aptitude purge ~c $package</literal>. Following this, you can look for orphaned files in the directories referenced throughout this guide. For uninstalling the database properly, refer to the manual appropriate for the product in use."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_resources.xml:16(title) ./doc/openstack-ops/app_usecases.xml:56(title) ./doc/openstack-ops/app_usecases.xml:147(title) ./doc/openstack-ops/app_usecases.xml:197(title) ./doc/openstack-ops/app_usecases.xml:235(title)
@@ -7174,7 +7170,7 @@ msgid "Tales From the Cryp^H^H^H^H Cloud"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:16(para)
-msgid "Herein lies a selection of tales from OpenStack cloud operators. Read, and learn from their wisdom."
+msgid "Herein lies a selection of tales from OpenStack cloud operators. Read and learn from their wisdom."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:20(title)
@@ -7182,418 +7178,422 @@ msgid "Double VLAN"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:21(para)
-msgid "I was on-site in Kelowna, British Columbia, Canada setting up a new OpenStack cloud. The deployment was fully automated: Cobbler deployed the OS on the bare metal, bootstrapped it, and Puppet took over from there. I had run the deployment scenario so many times in practice and took for granted that everything was working."
+msgid "I was on-site in Kelowna, British Columbia, Canada, setting up a new OpenStack cloud. The deployment was fully automated: Cobbler deployed the OS on the bare metal, bootstrapped it, and Puppet took over from there. I had run the deployment scenario so many times in practice and took for granted that everything was working."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:27(para)
-msgid "On my last day in Kelowna, I was in a conference call from my hotel. In the background, I was fooling around on the new cloud. I launched an instance and logged in. Everything looked fine. Out of boredom, I ran <placeholder-1/> and all of the sudden the instance locked up."
+msgid "On my last day in Kelowna, I was in a conference call from my hotel. In the background, I was fooling around on the new cloud. I launched an instance and logged in. Everything looked fine. Out of boredom, I ran <placeholder-1/>, and all of the sudden the instance locked up."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:33(para)
-msgid "Thinking it was just a one-off issue, I terminated the instance and launched a new one. By then, the conference call ended and I was off to the data center."
+msgid "Thinking it was just a one-off issue, I terminated the instance and launched a new one. By then, the conference call ended, and I was off to the data center."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:36(para)
-msgid "At the data center, I was finishing up some tasks and remembered the lock-up. I logged into the new instance and ran <placeholder-1/> again. It worked. Phew. I decided to run it one more time. It locked up. WTF."
+msgid "At the data center, I was finishing up some tasks and remembered the lock-up. I logged in to the new instance and ran <placeholder-1/> again. It worked. Phew. I decided to run it one more time. It locked up. WTF."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:41(para)
-msgid "After reproducing the problem several times, I came to the unfortunate conclusion that this cloud did indeed have a problem. Even worse, my time was up in Kelowna and I had to return back to Calgary."
+msgid "After reproducing the problem several times, I came to the unfortunate conclusion that this cloud did indeed have a problem. Even worse, my time was up in Kelowna, and I had to return to Calgary."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:45(para)
-msgid "Where do you even begin troubleshooting something like this? An instance just randomly locks when a command is issued. Is it the image? Nope — it happens on all images. Is it the compute node? Nope — all nodes. Is the instance locked up? No! New SSH connections work just fine!"
+msgid "Where do you even begin troubleshooting something like this? An instance just randomly locks when a command is issued. Is it the image? Nope—it happens on all images. Is it the compute node? Nope—all nodes. Is the instance locked up? No! New SSH connections work just fine!"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:50(para)
-msgid "We reached out for help. A networking engineer suggested it was an MTU issue. Great! MTU! Something to go on! What's MTU and why would it cause a problem?"
+msgid "We reached out for help. A networking engineer suggested it was an MTU issue. Great! MTU! Something to go on! What's MTU, and why would it cause a problem?"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:53(para)
-msgid "MTU is maximum transmission unit. It specifies the maximum number of bytes that the interface accepts for each packet. If two interfaces have two different MTUs, bytes might get chopped off and weird things happen -- such as random session lockups."
+msgid "MTU is <emphasis role=\"italic\">maximum transmission unit</emphasis>. It specifies the maximum number of bytes that the interface accepts for each packet. If two interfaces have two different MTUs, bytes might get chopped off and weird things happen—such as random session lockups."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:59(para)
-msgid "Not all packets have a size of 1500. Running the <placeholder-1/> command over SSH might only create a single packets less than 1500 bytes. However, running a command with heavy output, such as <placeholder-2/> requires several packets of 1500 bytes."
+#: ./doc/openstack-ops/app_crypt.xml:60(para)
+msgid "Not all packets have a size of 1,500. Running the <placeholder-1/> command over SSH might create only a single packet, less than 1,500 bytes. However, running a command with heavy output, such as <placeholder-2/>, requires several packets of 1,500 bytes."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:65(para)
-msgid "OK, so where is the MTU issue coming from? Why haven't we seen this in any other deployment? What's new in this situation? Well, new data center, new uplink, new switches, new model of switches, new servers, first time using this model of servers… so, basically everything was new. Wonderful. We toyed around with raising the MTU at various areas: the switches, the NICs on the compute nodes, the virtual NICs in the instances, we even had the data center raise the MTU for our uplink interface. Some changes worked, some didn't. This line of troubleshooting didn't feel right, though. We shouldn't have to be changing the MTU in these areas."
+#: ./doc/openstack-ops/app_crypt.xml:66(para)
+msgid "OK, so where is the MTU issue coming from? Why haven't we seen this in any other deployment? What's new in this situation? Well, new data center, new uplink, new switches, new model of switches, new servers, first time using this model of servers… so, basically, everything was new. Wonderful. We toyed around with raising the MTU at various areas: the switches, the NICs on the compute nodes, the virtual NICs in the instances; we even had the data center raise the MTU for our uplink interface. Some changes worked, some didn't. This line of troubleshooting didn't feel right, though. We shouldn't have to be changing the MTU in these areas."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:77(para)
-msgid "As a last resort, our network admin (Alvaro) and myself sat down with four terminal windows, a pencil, and a piece of paper. In one window, we ran ping. In the second window, we ran <placeholder-1/> on the cloud controller. In the third, <placeholder-2/> on the compute node. And the forth had <placeholder-3/> on the instance. For background, this cloud was a multi-node, non-multi-host setup."
+#: ./doc/openstack-ops/app_crypt.xml:78(para)
+msgid "As a last resort, our network admin (Alvaro) and I sat down with four terminal windows, a pencil, and a piece of paper. In one window, we ran <placeholder-1/>. In the second window, we ran <placeholder-2/> on the cloud controller. In the third, <placeholder-3/> on the compute node. And the forth had <placeholder-4/> on the instance. For background, this cloud was a multi-node, non-multi-host setup."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:85(para)
+#: ./doc/openstack-ops/app_crypt.xml:86(para)
 msgid "One cloud controller acted as a gateway to all compute nodes. VlanManager was used for the network config. This means that the cloud controller and all compute nodes had a different VLAN for each OpenStack project. We used the -s option of <placeholder-1/> to change the packet size. We watched as sometimes packets would fully return, sometimes they'd only make it out and never back in, and sometimes the packets would stop at a random point. We changed <placeholder-2/> to start displaying the hex dump of the packet. We pinged between every combination of outside, controller, compute, and instance."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:97(para)
-msgid "Finally, Alvaro noticed something. When a packet from the outside hits the cloud controller, it should not be configured with a VLAN. We verified this as true. When the packet went from the cloud controller to the compute node, it should only have a VLAN if it was destined for an instance. This was still true. When the ping reply was sent from the instance, it should be in a VLAN. True. When it came back to the cloud controller and on its way out to the public internet, it should no longer have a VLAN. False. Uh oh. It looked as though the VLAN part of the packet was not being removed."
-msgstr ""
-
-#: ./doc/openstack-ops/app_crypt.xml:108(para)
-msgid "That made no sense."
+#: ./doc/openstack-ops/app_crypt.xml:98(para)
+msgid "Finally, Alvaro noticed something. When a packet from the outside hits the cloud controller, it should not be configured with a VLAN. We verified this as true. When the packet went from the cloud controller to the compute node, it should have a VLAN only if it was destined for an instance. This was still true. When the ping reply was sent from the instance, it should be in a VLAN. True. When it came back to the cloud controller and on its way out to the public Internet, it should no longer have a VLAN. False. Uh oh. It looked as though the VLAN part of the packet was not being removed."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:109(para)
+msgid "That made no sense."
+msgstr ""
+
+#: ./doc/openstack-ops/app_crypt.xml:110(para)
 msgid "While bouncing this idea around in our heads, I was randomly typing commands on the compute node: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:116(para)
+#: ./doc/openstack-ops/app_crypt.xml:117(para)
 msgid "\"Hey Alvaro, can you run a VLAN on top of a VLAN?\""
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:118(para)
-msgid "\"If you did, you'd add an extra 4 bytes to the packet…\""
+#: ./doc/openstack-ops/app_crypt.xml:119(para)
+msgid "\"If you did, you'd add an extra 4 bytes to the packet.\""
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:120(para)
+#: ./doc/openstack-ops/app_crypt.xml:121(para)
 msgid "Then it all made sense… <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:124(para)
-msgid "In <filename>nova.conf</filename>, <code>vlan_interface</code> specifies what interface OpenStack should attach all VLANs to. The correct setting should have been: <placeholder-1/>."
-msgstr ""
-
-#: ./doc/openstack-ops/app_crypt.xml:128(para)
-msgid "As this would be the server's bonded NIC."
+#: ./doc/openstack-ops/app_crypt.xml:125(para)
+msgid "In <filename>nova.conf</filename>, <code>vlan_interface</code> specifies what interface OpenStack should attach all VLANs to. The correct setting should have been: <code>vlan_interface=bond0</code>."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:129(para)
-msgid "vlan20 is the VLAN that the data center gave us for outgoing public internet access. It's a correct VLAN and is also attached to bond0."
+msgid "This would be the server's bonded NIC."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:132(para)
-msgid "By mistake, I configured OpenStack to attach all tenant VLANs to vlan20 instead of bond0 thereby stacking one VLAN on top of another which then added an extra 4 bytes to each packet which cause a packet of 1504 bytes to be sent out which would cause problems when it arrived at an interface that only accepted 1500!"
+#: ./doc/openstack-ops/app_crypt.xml:130(para)
+msgid "The vlan20 setting is the VLAN that the data center gave us for outgoing public Internet access. It's a correct VLAN and is also attached to bond0."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:138(para)
+#: ./doc/openstack-ops/app_crypt.xml:133(para)
+msgid "By mistake, I configured OpenStack to attach all tenant VLANs to vlan20 instead of bond0, thereby stacking one VLAN on top of another. This then added an extra 4 bytes to each packet, which caused a packet of 1,504 bytes to be sent out, which would cause problems when it arrived at an interface that accepted 1,500!"
+msgstr ""
+
+#: ./doc/openstack-ops/app_crypt.xml:139(para)
 msgid "As soon as this setting was fixed, everything worked."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:142(title)
-msgid "\"The Issue\""
+#: ./doc/openstack-ops/app_crypt.xml:143(title)
+msgid "The Issue"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:143(para)
-msgid "At the end of August 2012, a post-secondary school in Alberta, Canada migrated its infrastructure to an OpenStack cloud. As luck would have it, within the first day or two of it running, one of their servers just disappeared from the network. Blip. Gone."
+#: ./doc/openstack-ops/app_crypt.xml:144(para)
+msgid "At the end of August 2012, a post-secondary school in Alberta, Canada, migrated its infrastructure to an OpenStack cloud. As luck would have it, within the first day or two of it running, one of its servers just disappeared from the network. Blip. Gone."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:148(para)
+#: ./doc/openstack-ops/app_crypt.xml:149(para)
 msgid "After restarting the instance, everything was back up and running. We reviewed the logs and saw that at some point, network communication stopped and then everything went idle. We chalked this up to a random occurrence."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:153(para)
+#: ./doc/openstack-ops/app_crypt.xml:154(para)
 msgid "A few nights later, it happened again."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:154(para)
+#: ./doc/openstack-ops/app_crypt.xml:155(para)
 msgid "We reviewed both sets of logs. The one thing that stood out the most was DHCP. At the time, OpenStack, by default, set DHCP leases for one minute (it's now two minutes). This means that every instance contacts the cloud controller (DHCP server) to renew its fixed IP. For some reason, this instance could not renew its IP. We correlated the instance's logs with the logs on the cloud controller and put together a conversation:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:165(para)
+#: ./doc/openstack-ops/app_crypt.xml:166(para)
 msgid "Instance tries to renew IP."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:168(para)
+#: ./doc/openstack-ops/app_crypt.xml:169(para)
 msgid "Cloud controller receives the renewal request and sends a response."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:172(para)
-msgid "Instance \"ignores\" the response and re-sends the renewal request."
+#: ./doc/openstack-ops/app_crypt.xml:173(para)
+msgid "Instance \"ignores\" the response and resends the renewal request."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:176(para)
+#: ./doc/openstack-ops/app_crypt.xml:177(para)
 msgid "Cloud controller receives the second request and sends a new response."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:180(para)
+#: ./doc/openstack-ops/app_crypt.xml:181(para)
 msgid "Instance begins sending a renewal request to <code>255.255.255.255</code> since it hasn't heard back from the cloud controller."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:185(para)
+#: ./doc/openstack-ops/app_crypt.xml:186(para)
 msgid "The cloud controller receives the <code>255.255.255.255</code> request and sends a third response."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:190(para)
+#: ./doc/openstack-ops/app_crypt.xml:191(para)
 msgid "The instance finally gives up."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:193(para)
-msgid "With this information in hand, we were sure that the problem had to do with DHCP. We thought that for some reason, the instance wasn't getting a new IP address and with no IP, it shut itself off from the network."
+#: ./doc/openstack-ops/app_crypt.xml:194(para)
+msgid "With this information in hand, we were sure that the problem had to do with DHCP. We thought that, for some reason, the instance wasn't getting a new IP address, and with no IP, it shut itself off from the network."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:197(para)
-msgid "A quick Google search turned up this: <link href=\"https://lists.launchpad.net/openstack/msg11696.html\">DHCP lease errors in VLAN mode</link> (https://lists.launchpad.net/openstack/msg11696.html) which further supported our DHCP theory."
+#: ./doc/openstack-ops/app_crypt.xml:198(para)
+msgid "A quick Google search turned up this: <link href=\"https://lists.launchpad.net/openstack/msg11696.html\">DHCP lease errors in VLAN mode</link> (https://lists.launchpad.net/openstack/msg11696.html), which further supported our DHCP theory."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:202(para)
-msgid "An initial idea was to just increase the lease time. If the instance only renewed once every week, the chances of this problem happening would be tremendously smaller than every minute. This didn't solve the problem, though. It was just covering the problem up."
+#: ./doc/openstack-ops/app_crypt.xml:203(para)
+msgid "An initial idea was to just increase the lease time. If the instance renewed only once every week, the chances of this problem happening would be tremendously smaller than every minute. This didn't solve the problem, though. It was just covering the problem up."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:207(para)
-msgid "We decided to have <placeholder-1/> run on this instance and see if we could catch it in action again. Sure enough, we did."
+#: ./doc/openstack-ops/app_crypt.xml:208(para)
+msgid "We decided to have <placeholder-1/> run on this instance and see whether we could catch it in action again. Sure enough, we did."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:210(para)
-msgid "The <placeholder-1/> looked very, very weird. In short, it looked as though network communication stopped before the instance tried to renew its IP. Since there is so much DHCP chatter from a one minute lease, it's very hard to confirm it, but even with only milliseconds difference between packets, if one packet arrives first, it arrived first, and if that packet reported network issues, then it had to have happened before DHCP."
+#: ./doc/openstack-ops/app_crypt.xml:211(para)
+msgid "The <placeholder-1/> looked very, very weird. In short, it looked as though network communication stopped before the instance tried to renew its IP. Since there is so much DHCP chatter from a one-minute lease, it's very hard to confirm it, but even with only milliseconds difference between packets, if one packet arrives first, it arrives first, and if that packet reported network issues, then it had to have happened before DHCP."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:218(para)
-msgid "Additionally, this instance in question was responsible for a very, very large backup job each night. While \"The Issue\" (as we were now calling it) didn't happen exactly when the backup happened, it was close enough (a few hours) that we couldn't ignore it."
+#: ./doc/openstack-ops/app_crypt.xml:219(para)
+msgid "Additionally, the instance in question was responsible for a very, very large backup job each night. While \"the Issue\" (as we were now calling it) didn't happen exactly when the backup happened, it was close enough (a few hours) that we couldn't ignore it."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:223(para)
-msgid "Further days go by and we catch The Issue in action more and more. We find that dhclient is not running after The Issue happens. Now we're back to thinking it's a DHCP issue. Running <filename>/etc/init.d/networking</filename> restart brings everything back up and running."
+#: ./doc/openstack-ops/app_crypt.xml:224(para)
+msgid "More days go by and we catch the Issue in action more and more. We find that dhclient is not running after the Issue happens. Now we're back to thinking it's a DHCP issue. Running <placeholder-1/> brings everything back up and running."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:228(para)
-msgid "Ever have one of those days where all of the sudden you get the Google results you were looking for? Well, that's what happened here. I was looking for information on dhclient and why it dies when it can't renew its lease and all of the sudden I found a bunch of OpenStack and dnsmasq discussions that were identical to the problem we were seeing!"
+#: ./doc/openstack-ops/app_crypt.xml:229(para)
+msgid "Ever have one of those days where all of the sudden you get the Google results you were looking for? Well, that's what happened here. I was looking for information on dhclient and why it dies when it can't renew its lease, and all of the sudden I found a bunch of OpenStack and dnsmasq discussions that were identical to the problem we were seeing!"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:235(para)
+#: ./doc/openstack-ops/app_crypt.xml:236(para)
 msgid "<link href=\"http://www.gossamer-threads.com/lists/openstack/operators/18197\">Problem with Heavy Network IO and Dnsmasq</link> (http://www.gossamer-threads.com/lists/openstack/operators/18197)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:241(para)
+#: ./doc/openstack-ops/app_crypt.xml:242(para)
 msgid "<link href=\"http://www.gossamer-threads.com/lists/openstack/dev/14696\">instances losing IP address while running, due to No DHCPOFFER</link> (http://www.gossamer-threads.com/lists/openstack/dev/14696)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:247(para)
+#: ./doc/openstack-ops/app_crypt.xml:248(para)
 msgid "Seriously, Google."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:248(para)
+#: ./doc/openstack-ops/app_crypt.xml:249(para)
 msgid "This bug report was the key to everything: <link href=\"https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978\"> KVM images lose connectivity with bridged network</link> (https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:254(para)
+#: ./doc/openstack-ops/app_crypt.xml:255(para)
 msgid "It was funny to read the report. It was full of people who had some strange network problem but didn't quite explain it in the same way."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:257(para)
-msgid "So it was a qemu/kvm bug."
-msgstr ""
-
 #: ./doc/openstack-ops/app_crypt.xml:258(para)
-msgid "At the same time of finding the bug report, a co-worker was able to successfully reproduce The Issue! How? He used <placeholder-1/> to spew a ton of bandwidth at an instance. Within 30 minutes, the instance just disappeared from the network."
+msgid "So it was a QEMU/KVM bug."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:263(para)
-msgid "Armed with a patched qemu and a way to reproduce, we set out to see if we've finally solved The Issue. After 48 hours straight of hammering the instance with bandwidth, we were confident. The rest is history. You can search the bug report for \"joe\" to find my comments and actual tests."
+#: ./doc/openstack-ops/app_crypt.xml:259(para)
+msgid "At the same time I found the bug report, a co-worker was able to successfully reproduce the Issue! How? He used <placeholder-1/> to spew a ton of bandwidth at an instance. Within 30 minutes, the instance just disappeared from the network."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:271(title)
+#: ./doc/openstack-ops/app_crypt.xml:264(para)
+msgid "Armed with a patched QEMU and a way to reproduce, we set out to see if we had finally solved the Issue. After 48 straight hours of hammering the instance with bandwidth, we were confident. The rest is history. You can search the bug report for \"joe\" to find my comments and actual tests."
+msgstr ""
+
+#: ./doc/openstack-ops/app_crypt.xml:272(title)
 msgid "Disappearing Images"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:272(para)
-msgid "At the end of 2012, Cybera (a nonprofit with a mandate to oversee the development of cyberinfrastructure in Alberta, Canada) deployed an updated OpenStack cloud for their <link title=\"DAIR project\" href=\"http://www.canarie.ca/en/dair-program/about\">DAIR project</link> (http://www.canarie.ca/en/dair-program/about). A few days into production, a compute node locks up. Upon rebooting the node, I checked to see what instances were hosted on that node so I could boot them on behalf of the customer. Luckily, only one instance."
+#: ./doc/openstack-ops/app_crypt.xml:273(para)
+msgid "At the end of 2012, Cybera (a nonprofit with a mandate to oversee the development of cyberinfrastructure in Alberta, Canada) deployed an updated OpenStack cloud for their <link title=\"DAIR project\" href=\"http://www.canarie.ca/en/dair-program/about\">DAIR project</link> (http://www.canarie.ca/en/dair-program/about). A few days into production, a compute node locked up. Upon rebooting the node, I checked to see what instances were hosted on that node so I could boot them on behalf of the customer. Luckily, only one instance."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:283(para)
-msgid "The <placeholder-1/> command wasn't working, so I used <placeholder-2/>, but it immediately came back with an error saying it was unable to find the backing disk. In this case, the backing disk is the Glance image that is copied to <filename>/var/lib/nova/instances/_base</filename> when the image is used for the first time. Why couldn't it find it? I checked the directory and sure enough it was gone."
+#: ./doc/openstack-ops/app_crypt.xml:284(para)
+msgid "The <placeholder-1/> command wasn't working, so I used <placeholder-2/>, but it immediately came back with an error saying it was unable to find the backing disk. In this case, the backing disk is the glance image that is copied to <filename>/var/lib/nova/instances/_base</filename> when the image is used for the first time. Why couldn't it find it? I checked the directory, and sure enough it was gone."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:292(para)
-msgid "I reviewed the <code>nova</code> database and saw the instance's entry in the <code>nova.instances</code> table. The image that the instance was using matched what virsh was reporting, so no inconsistency there."
+#: ./doc/openstack-ops/app_crypt.xml:293(para)
+msgid "I reviewed the <code>nova</code> database and saw the instance's entry in the <code>nova.instances</code> table. The image that the instance was using matched what <placeholder-1/> was reporting, so no inconsistency there."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:296(para)
-msgid "I checked Glance and noticed that this image was a snapshot that the user created. At least that was good news — this user would have been the only user affected."
+#: ./doc/openstack-ops/app_crypt.xml:298(para)
+msgid "I checked glance and noticed that this image was a snapshot that the user created. At least that was good news—this user would have been the only user affected."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:300(para)
-msgid "Finally, I checked StackTach and reviewed the user's events. They had created and deleted several snapshots — most likely experimenting. Although the timestamps didn't match up, my conclusion was that they launched their instance and then deleted the snapshot and it was somehow removed from <filename>/var/lib/nova/instances/_base</filename>. None of that made sense, but it was the best I could come up with."
+#: ./doc/openstack-ops/app_crypt.xml:302(para)
+msgid "Finally, I checked StackTach and reviewed the user's events. They had created and deleted several snapshots—most likely experimenting. Although the timestamps didn't match up, my conclusion was that they launched their instance and then deleted the snapshot and it was somehow removed from <filename>/var/lib/nova/instances/_base</filename>. None of that made sense, but it was the best I could come up with."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:309(para)
+#: ./doc/openstack-ops/app_crypt.xml:311(para)
 msgid "It turns out the reason that this compute node locked up was a hardware issue. We removed it from the DAIR cloud and called Dell to have it serviced. Dell arrived and began working. Somehow or another (or a fat finger), a different compute node was bumped and rebooted. Great."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:315(para)
-msgid "When this node fully booted, I ran through the same scenario of seeing what instances were running so I could turn them back on. There were a total of four. Three booted and one gave an error. It was the same error as before: unable to find the backing disk. Seriously, what?"
+#: ./doc/openstack-ops/app_crypt.xml:317(para)
+msgid "When this node fully booted, I ran through the same scenario of seeing what instances were running so that I could turn them back on. There were a total of four. Three booted and one gave an error. It was the same error as before: unable to find the backing disk. Seriously, what?"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:321(para)
+#: ./doc/openstack-ops/app_crypt.xml:323(para)
 msgid "Again, it turns out that the image was a snapshot. The three other instances that successfully started were standard cloud images. Was it a problem with snapshots? That didn't make sense."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:325(para)
+#: ./doc/openstack-ops/app_crypt.xml:327(para)
 msgid "A note about DAIR's architecture: <filename>/var/lib/nova/instances</filename> is a shared NFS mount. This means that all compute nodes have access to it, which includes the <code>_base</code> directory. Another centralized area is <filename>/var/log/rsyslog</filename> on the cloud controller. This directory collects all OpenStack logs from all compute nodes. I wondered if there were any entries for the file that <placeholder-1/> is reporting: <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:340(para)
+#: ./doc/openstack-ops/app_crypt.xml:342(para)
 msgid "Ah-hah! So OpenStack was deleting it. But why?"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:341(para)
-msgid "A feature was introduced in Essex to periodically check and see if there were any <code>_base</code> files not in use. If there were, Nova would delete them. This idea sounds innocent enough and has some good qualities to it. But how did this feature end up turned on? It was disabled by default in Essex. As it should be. It was <link href=\"https://bugs.launchpad.net/nova/+bug/1029674\">decided to be turned on in Folsom</link> (https://bugs.launchpad.net/nova/+bug/1029674). I cannot emphasize enough that:"
+#: ./doc/openstack-ops/app_crypt.xml:343(para)
+msgid "A feature was introduced in Essex to periodically check and see whether there were any <code>_base</code> files not in use. If there were, nova would delete them. This idea sounds innocent enough and has some good qualities to it. But how did this feature end up turned on? It was disabled by default in Essex. As it should be. It was <link href=\"https://bugs.launchpad.net/nova/+bug/1029674\">decided to enable it in Folsom</link> (https://bugs.launchpad.net/nova/+bug/1029674). I cannot emphasize enough that:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:353(emphasis)
-msgid "Actions which delete things should not be enabled by default."
-msgstr ""
-
-#: ./doc/openstack-ops/app_crypt.xml:356(para)
-msgid "Disk space is cheap these days. Data recovery is not."
+#: ./doc/openstack-ops/app_crypt.xml:355(emphasis)
+msgid "Actions that delete things should not be enabled by default."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:358(para)
+msgid "Disk space is cheap these days. Data recovery is not."
+msgstr ""
+
+#: ./doc/openstack-ops/app_crypt.xml:360(para)
 msgid "Secondly, DAIR's shared <filename>/var/lib/nova/instances</filename> directory contributed to the problem. Since all compute nodes have access to this directory, all compute nodes periodically review the _base directory. If there is only one instance using an image, and the node that the instance is on is down for a few minutes, it won't be able to mark the image as still in use. Therefore, the image seems like it's not in use and is deleted. When the compute node comes back online, the instance hosted on that node is unable to start."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:371(title)
+#: ./doc/openstack-ops/app_crypt.xml:373(title)
 msgid "The Valentine's Day Compute Node Massacre"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:372(para)
+#: ./doc/openstack-ops/app_crypt.xml:374(para)
 msgid "Although the title of this story is much more dramatic than the actual event, I don't think, or hope, that I'll have the opportunity to use \"Valentine's Day Massacre\" again in a title."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:376(para)
-msgid "This past Valentine's Day, I received an alert that a compute node was no longer available in the cloud — meaning, <placeholder-1/> showed this particular node with a status of <code>XXX</code>."
+#: ./doc/openstack-ops/app_crypt.xml:378(para)
+msgid "This past Valentine's Day, I received an alert that a compute node was no longer available in the cloud—meaning,"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:382(para)
-msgid "I logged into the cloud controller and was able to both <placeholder-1/> and SSH into the problematic compute node which seemed very odd. Usually if I receive this type of alert, the compute node has totally locked up and would be inaccessible."
+msgid "showed this particular node with a status of <code>XXX</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:387(para)
+#: ./doc/openstack-ops/app_crypt.xml:384(para)
+msgid "I logged in to the cloud controller and was able to both <placeholder-1/> and SSH into the problematic compute node, which seemed very odd. Usually when I receive this type of alert, the compute node has totally locked up and would be inaccessible."
+msgstr ""
+
+#: ./doc/openstack-ops/app_crypt.xml:389(para)
 msgid "After a few minutes of troubleshooting, I saw the following details:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:391(para)
+#: ./doc/openstack-ops/app_crypt.xml:393(para)
 msgid "A user recently tried launching a CentOS instance on that node"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:395(para)
+#: ./doc/openstack-ops/app_crypt.xml:397(para)
 msgid "This user was the only user on the node (new node)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:399(para)
+#: ./doc/openstack-ops/app_crypt.xml:401(para)
 msgid "The load shot up to 8 right before I received the alert"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:403(para)
+#: ./doc/openstack-ops/app_crypt.xml:405(para)
 msgid "The bonded 10gb network device (bond0) was in a DOWN state"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:407(para)
+#: ./doc/openstack-ops/app_crypt.xml:409(para)
 msgid "The 1gb NIC was still alive and active"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:410(para)
-msgid "I looked at the status of both NICs in the bonded pair and saw that neither was able to communicate with the switch port. Seeing as how each NIC in the bond is connected to a separate switch, I thought that the chance of a switch port dying on each switch at the same time was quite improbable. I concluded that the 10gb dual port NIC had died and needed replaced. I created a ticket for the hardware support department at the data center where the node was hosted. I felt lucky that this was a new node and no one else was hosted on it yet."
+#: ./doc/openstack-ops/app_crypt.xml:412(para)
+msgid "I looked at the status of both NICs in the bonded pair and saw that neither was able to communicate with the switch port. Seeing as how each NIC in the bond is connected to a separate switch, I thought that the chance of a switch port dying on each switch at the same time was quite improbable. I concluded that the 10gb dual port NIC had died and needed to be replaced. I created a ticket for the hardware support department at the data center where the node was hosted. I felt lucky that this was a new node and no one else was hosted on it yet."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:420(para)
-msgid "An hour later I received the same alert, but for another compute node. Crap. OK, now there's definitely a problem going on. Just like the original node, I was able to log in by SSH. The bond0 NIC was DOWN but the 1gb NIC was active."
-msgstr ""
-
-#: ./doc/openstack-ops/app_crypt.xml:425(para)
-msgid "And the best part: the same user had just tried creating a CentOS instance. What?"
+#: ./doc/openstack-ops/app_crypt.xml:422(para)
+msgid "An hour later I received the same alert, but for another compute node. Crap. OK, now there's definitely a problem going on. Just as with the original node, I was able to log in by SSH. The bond0 NIC was DOWN, but the 1gb NIC was active."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:427(para)
+msgid "And the best part: the same user had just tried creating a CentOS instance. What?"
+msgstr ""
+
+#: ./doc/openstack-ops/app_crypt.xml:429(para)
 msgid "I was totally confused at this point, so I texted our network admin to see if he was available to help. He logged in to both switches and immediately saw the problem: the switches detected spanning tree packets coming from the two compute nodes and immediately shut the ports down to prevent spanning tree loops: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:440(para)
-msgid "He re-enabled the switch ports and the two compute nodes immediately came back to life."
-msgstr ""
-
 #: ./doc/openstack-ops/app_crypt.xml:442(para)
-msgid "Unfortunately, this story has an open ending... we're still looking into why the CentOS image was sending out spanning tree packets. Further, we're researching a proper way on how to mitigate this from happening. It's a bigger issue than one might think. While it's extremely important for switches to prevent spanning tree loops, it's very problematic to have an entire compute node be cut from the network when this happens. If a compute node is hosting 100 instances and one of them sends a spanning tree packet, that instance has effectively DDOS'd the other 99 instances."
+msgid "He reenabled the switch ports, and the two compute nodes immediately came back to life."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:453(para)
-msgid "This is an ongoing and hot topic in networking circles — especially with the raise of virtualization and virtual switches."
+#: ./doc/openstack-ops/app_crypt.xml:444(para)
+msgid "Unfortunately, this story has an open ending... we're still looking into why the CentOS image was sending out spanning tree packets. Further, we're researching a proper way for how to mitigate this from happening. It's a bigger issue than one might think. While it's extremely important for switches to prevent spanning tree loops, it's very problematic to have an entire compute node be cut from the network when this happens. If a compute node is hosting 100 instances and one of them sends a spanning tree packet, that instance has effectively DDOS'd the other 99 instances."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:458(title)
+#: ./doc/openstack-ops/app_crypt.xml:455(para)
+msgid "This is an ongoing and hot topic in networking circles—especially with the rise of virtualization and virtual switches."
+msgstr ""
+
+#: ./doc/openstack-ops/app_crypt.xml:460(title)
 msgid "Down the Rabbit Hole"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:459(para)
-msgid "Users being able to retrieve console logs from running instances is a boon for support — many times they can figure out what's going on inside their instance and fix what's going on without bothering you. Unfortunately, sometimes overzealous logging of failures can cause problems of its own."
+#: ./doc/openstack-ops/app_crypt.xml:461(para)
+msgid "Users being able to retrieve console logs from running instances is a boon for support—many times they can figure out what's going on inside their instance and fix what's going on without bothering you. Unfortunately, sometimes overzealous logging of failures can cause problems of its own."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:465(para)
-msgid "A report came in: VMs were launching slowly, or not at all. Cue the standard checks — nothing on the nagios, but there was a spike in network towards the current master of our RabbitMQ cluster. Investigation started, but soon the other parts of the queue cluster were leaking memory like a sieve. Then the alert came in — the master rabbit server went down. Connections failed over to the slave."
+#: ./doc/openstack-ops/app_crypt.xml:467(para)
+msgid "A report came in: VMs were launching slowly, or not at all. Cue the standard checks—nothing on the Nagios, but there was a spike in network toward the current master of our RabbitMQ cluster. Investigation started, but soon the other parts of the queue cluster were leaking memory like a sieve. Then the alert came in: the master rabbit server went down. Connections failed over to the slave."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:472(para)
-msgid "At that time, our control services were hosted by another team and we didn't have much debugging information to determine what was going on with the master, and couldn't reboot it. That team noted that it failed without alert, but managed to reboot it. After an hour, the cluster had returned to its normal state and we went home for the day."
+#: ./doc/openstack-ops/app_crypt.xml:474(para)
+msgid "At that time, our control services were hosted by another team. We didn't have much debugging information to determine what was going on with the master, and couldn't reboot it. That team noted that the master failed without alert, but they managed to reboot it. After an hour, the cluster had returned to its normal state, and we went home for the day."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:479(para)
-msgid "Continuing the diagnosis the next morning was kick started by another identical failure. We quickly got the message queue running again, and tried to work out why Rabbit was suffering from so much network traffic. Enabling debug logging on <systemitem class=\"service\">nova-api</systemitem> quickly brought understanding. A <placeholder-1/> was scrolling by faster than we'd ever seen before. CTRL+C on that and we could plainly see the contents of a system log spewing failures over and over again - a system log from one of our users' instances."
+#: ./doc/openstack-ops/app_crypt.xml:481(para)
+msgid "Continuing the diagnosis the next morning was kick-started by another identical failure. We quickly got the message queue running again and tried to work out why Rabbit was suffering from so much network traffic. Enabling debug logging on <systemitem class=\"service\">nova-api</systemitem> quickly brought understanding. A <placeholder-1/> was scrolling by faster than we'd ever seen before. CTRL+C on that, and we could plainly see the contents of a system log spewing failures over and over again—a system log from one of our users' instances."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:491(para)
-msgid "After finding the instance ID we headed over to <filename>/var/lib/nova/instances</filename> to find the <filename>console.log</filename>: <placeholder-1/>"
+#: ./doc/openstack-ops/app_crypt.xml:493(para)
+msgid "After finding the instance ID, we headed over to <filename>/var/lib/nova/instances</filename> to find the <filename>console.log</filename>: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:499(para)
-msgid "Sure enough, the user had been periodically refreshing the console log page on the dashboard and the 5G file was traversing the rabbit cluster to get to the dashboard."
+#: ./doc/openstack-ops/app_crypt.xml:501(para)
+msgid "Sure enough, the user had been periodically refreshing the console log page on the dashboard and the 5 GB file was traversing the rabbit cluster to get to the dashboard."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:503(para)
-msgid "We called them and asked them to stop for a while, and they were happy to abandon the horribly broken VM. After that, we started monitoring the size of console logs."
+#: ./doc/openstack-ops/app_crypt.xml:505(para)
+msgid "We called the user and asked her to stop for a while, and she was happy to abandon the horribly broken VM. After that, we started monitoring the size of console logs."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:507(para)
+#: ./doc/openstack-ops/app_crypt.xml:509(para)
 msgid "To this day, <link href=\"https://bugs.launchpad.net/nova/+bug/832507\">the issue</link> (https://bugs.launchpad.net/nova/+bug/832507) doesn't have a permanent resolution, but we look forward to the discussion at the next summit."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:515(title)
+#: ./doc/openstack-ops/app_crypt.xml:517(title)
 msgid "Havana Haunted by the Dead"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:516(para)
+#: ./doc/openstack-ops/app_crypt.xml:518(para)
 msgid "Felix Lee of Academia Sinica Grid Computing Centre in Taiwan contributed this story."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:518(para)
-msgid "I just upgraded OpenStack from Grizzly to Havana 2013.2-2 using the RDO repository and everything was running pretty well -- except the EC2 API."
+#: ./doc/openstack-ops/app_crypt.xml:520(para)
+msgid "I just upgraded OpenStack from Grizzly to Havana 2013.2-2 using the RDO repository and everything was running pretty well—except the EC2 API."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:521(para)
-msgid "I noticed that the API would suffer from a heavy load and respond slowly to particular EC2 requests such as <literal>RunInstances</literal>."
+#: ./doc/openstack-ops/app_crypt.xml:523(para)
+msgid "I noticed that the API would suffer from a heavy load and respond slowly to particular EC2 requests, such as <literal>RunInstances</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:524(para)
+#: ./doc/openstack-ops/app_crypt.xml:526(para)
 msgid "Output from <filename>/var/log/nova/nova-api.log</filename> on Havana:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:533(para)
-msgid "This request took over two minutes to process, but executed quickly on another co-existing Grizzly deployment using the same hardware and system configuration."
+#: ./doc/openstack-ops/app_crypt.xml:535(para)
+msgid "This request took more than two minutes to process, but it executed quickly on another co-existing Grizzly deployment using the same hardware and system configuration."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:536(para)
+#: ./doc/openstack-ops/app_crypt.xml:538(para)
 msgid "Output from <filename>/var/log/nova/nova-api.log</filename> on Grizzly:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:545(para)
-msgid "While monitoring system resources, I noticed a significant increase in memory consumption while the EC2 API processed this request. I thought it wasn't handling memory properly -- possibly not releasing memory. If the API received several of these requests, memory consumption quickly grew until the system ran out of RAM and began using swap. Each node has 48 GB of RAM and the \"nova-api\" process would consume all of it within minutes. Once this happened, the entire system would become unusably slow until I restarted the <systemitem class=\"service\">nova-api</systemitem> service."
+#: ./doc/openstack-ops/app_crypt.xml:547(para)
+msgid "While monitoring system resources, I noticed a significant increase in memory consumption while the EC2 API processed this request. I thought it wasn't handling memory properly—possibly not releasing memory. If the API received several of these requests, memory consumption quickly grew until the system ran out of RAM and began using swap. Each node has 48 GB of RAM, and the \"nova-api\" process would consume all of it within minutes. Once this happened, the entire system would become unusably slow until I restarted the <systemitem class=\"service\">nova-api</systemitem> service."
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:555(para)
-msgid "So, I found myself wondering what changed in the EC2 API on Havana that might cause this to happen. Was it a bug or a normal behavior that I now need to work around?"
+#: ./doc/openstack-ops/app_crypt.xml:557(para)
+msgid "So, I found myself wondering what changed in the EC2 API on Havana that might cause this to happen. Was it a bug or normal behavior that I now need to work around?"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:558(para)
-msgid "After digging into the Nova code, I noticed two areas in <filename>api/ec2/cloud.py</filename> potentially impacting my system:"
+#: ./doc/openstack-ops/app_crypt.xml:560(para)
+msgid "After digging into the nova code, I noticed two areas in <filename>api/ec2/cloud.py</filename> potentially impacting my system:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:570(para)
-msgid "Since my database contained many records -- over 1 million metadata records and over 300,000 instance records in \"deleted\" or \"errored\" states -- each search took ages. I decided to clean up the database by first archiving a copy for backup and then performing some deletions using the MySQL client. For example, I ran the following SQL command to remove rows of instances deleted for over a year:"
+#: ./doc/openstack-ops/app_crypt.xml:572(para)
+msgid "Since my database contained many records—over 1 million metadata records and over 300,000 instance records in \"deleted\" or \"errored\" states—each search took ages. I decided to clean up the database by first archiving a copy for backup and then performing some deletions using the MySQL client. For example, I ran the following SQL command to remove rows of instances deleted for more than a year:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_crypt.xml:578(para)
+#: ./doc/openstack-ops/app_crypt.xml:580(para)
 msgid "Performance increased greatly after deleting the old records and my new deployment continues to behave well."
 msgstr ""
 
@@ -10471,7 +10471,7 @@ msgstr ""
 msgid "Tool used to set up, maintain, and inspect the tables of IPv6 packet filter rules in the Linux kernel. In OpenStack Compute, ip6tables is used along with arptables, ebtables, and iptables to create firewalls for both nodes and VMs."
 msgstr ""
 
-#: ./doc/openstack-ops/glossary-terms.xml:2591(glossterm) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:579(title)
+#: ./doc/openstack-ops/glossary-terms.xml:2591(glossterm) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:580(title)
 msgid "iptables"
 msgstr ""
 
@@ -12833,7 +12833,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/preface_ops.xml:345(None)
+#: ./doc/openstack-ops/preface_ops.xml:338(None)
 msgid "@@image: 'figures/1-IMG_4895.JPG'; md5=fa6e602f909a462f29afd9596a8aa998"
 msgstr ""
 
@@ -13141,83 +13141,87 @@ msgstr ""
 msgid "We wrote this book because we have deployed and maintained OpenStack clouds for at least a year, and wanted to be able to distribute this knowledge to others. After months of being the point people for an OpenStack cloud, we also wanted to have a document to hand to our system administrators so that they'd know how to operate the cloud on a daily basis—both reactively and proactively. We wanted to provide more detailed technical information about the decisions that deployers make along the way."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:322(para)
+#: ./doc/openstack-ops/preface_ops.xml:320(para)
 msgid "Design and create an architecture for your first nontrivial OpenStack cloud. After you read this guide, you'll know which questions to ask and how to organize your compute, networking, and storage resources and the associated software packages."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:329(para)
+#: ./doc/openstack-ops/preface_ops.xml:326(para)
 msgid "Perform the day-to-day tasks required to administer a cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:320(para)
+#: ./doc/openstack-ops/preface_ops.xml:318(para)
 msgid "We wrote this book to help you:<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:333(para)
+#: ./doc/openstack-ops/preface_ops.xml:329(para)
 msgid "We wrote this book in a book sprint, which is a facilitated rapid development production method for books. For more information see the <link href=\"http://www.booksprints.net\">BookSprints site</link>. Your authors cobbled this book together in five days during February 2013, fueled by caffeine and the best take-out food that Austin, Texas, could offer."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:339(para)
+#: ./doc/openstack-ops/preface_ops.xml:334(para)
 msgid "On the first day we filled white boards with colorful sticky notes to start to shape this nebulous book about how to architect and operate clouds.<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:349(para)
+#: ./doc/openstack-ops/preface_ops.xml:342(para)
 msgid "We wrote furiously from our own experiences and bounced ideas between each other. At regular intervals we reviewed the shape and organization of the book and further molded it, leading to what you see today."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:354(para)
+#: ./doc/openstack-ops/preface_ops.xml:346(para)
 msgid "The team includes:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:357(para)
+#: ./doc/openstack-ops/preface_ops.xml:349(para)
 msgid "<emphasis role=\"bold\">Tom Fifield</emphasis>. After learning about scalability in computing from particle physics experiments such as ATLAS at the Large Hadron Collider (LHC) at CERN, Tom worked on OpenStack clouds in production to support the Australian public research sector. Tom currently serves as an OpenStack community manager and works on OpenStack documentation in his spare time."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:366(para)
+#: ./doc/openstack-ops/preface_ops.xml:356(para)
 msgid "<emphasis role=\"bold\">Diane Fleming</emphasis>. Diane works on the OpenStack API documentation tirelessly. She helped out wherever she could on this project."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:371(para)
+#: ./doc/openstack-ops/preface_ops.xml:361(para)
 msgid "<emphasis role=\"bold\">Anne Gentle</emphasis>. Anne is the documentation coordinator for OpenStack and also served as an individual contributor to the Google Documentation Summit in 2011, working with the Open Street Maps team. Anne has worked on book sprints in the past with FLOSS Manuals’ Adam Hyde facilitating. Anne lives in Austin, Texas."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:379(para)
+#: ./doc/openstack-ops/preface_ops.xml:368(para)
 msgid "<emphasis role=\"bold\">Lorin Hochstein</emphasis>. An academic turned software-developer-slash-operator, Lorin worked as the lead architect for Cloud Services at Nimbis Services, where he deploys OpenStack for technical computing applications. He has been working with OpenStack since the Cactus release. Previously, he worked on high-performance computing extensions for OpenStack at University of Southern California's Information Sciences Institute (USC-ISI)."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:390(para)
+#: ./doc/openstack-ops/preface_ops.xml:377(para)
 msgid "<emphasis role=\"bold\">Adam Hyde</emphasis>. Adam facilitated this book sprint. He also founded the books sprint methodology and is the most experienced book-sprint facilitator around. See <uri>http://www.booksprints.net/</uri> for more information. Adam founded FLOSS Manuals—a community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:402(para)
+#: ./doc/openstack-ops/preface_ops.xml:386(para)
 msgid "<emphasis role=\"bold\">Jonathan Proulx</emphasis>. Jon has been piloting an OpenStack cloud as a senior technical architect at the MIT Computer Science and Artificial Intelligence Lab for his researchers to have as much computing power as they need. He started contributing to OpenStack documentation and reviewing the documentation so that he could accelerate his learning."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:411(para)
+#: ./doc/openstack-ops/preface_ops.xml:393(para)
 msgid "<emphasis role=\"bold\">Everett Toews</emphasis>. Everett is a developer advocate at Rackspace making OpenStack and the Rackspace Cloud easy to use. Sometimes developer, sometimes advocate, and sometimes operator, he's built web applications, taught workshops, given presentations around the world, and deployed OpenStack for production use by academia and business."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:420(para)
+#: ./doc/openstack-ops/preface_ops.xml:400(para)
 msgid "<emphasis role=\"bold\">Joe Topjian</emphasis>. Joe has designed and deployed several clouds at Cybera, a non-profit where they are building e-infrastructure to support entrepreneurs and local researchers in Alberta, Canada. He also actively maintains and operates these clouds as a systems architect, and his experiences have generated a wealth of troubleshooting skills for cloud environments."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:430(para)
-msgid "After the first sprint, a second mini-sprint and community effort began a year later. Since then more than 30 contributors have maintained this book, entering edits and fixing doc bugs."
+#: ./doc/openstack-ops/preface_ops.xml:408(para)
+msgid "<emphasis role=\"bold\">OpenStack community members</emphasis>. Many individual efforts keep a community book alive. Our community members updated content for this book year-round. Also, a year after the first sprint, Jon Proulx hosted a second two-day mini-sprint at MIT with the goal of updating the book for the latest release. Since the book's inception, more than 30 contributors have supported this book. We have a tool chain for reviews, continuous builds, and translations. Writers and developers continuously review patches, enter doc bugs, edit content, and fix doc bugs. We want to recognize their efforts!"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:435(title)
+#: ./doc/openstack-ops/preface_ops.xml:416(para)
+msgid "The following people have contributed to this book: Akihiro Motoki, Alejandro Avella, Alexandra Settle, Andreas Jaeger, Andy McCallum, Benjamin Stassart, Chandan Kumar, Chris Ricker, David Cramer, David Wittman, Denny Zhang, Emilien Macchi, Gauvain Pocentek, Ignacio Barrio, James E. Blair, Jay Clark, Jeff White, Jeremy Stanley, K Jonathan Harker, KATO Tomoyuki, Lana Brindley, Laura Alves, Lee Li, Lukasz Jernas, Mario B. Codeniera, Matthew Kassawara, Michael Still, Monty Taylor, Nermina Miller, Nigel Williams, Phil Hopkins, Russell Bryant, Sahid Orentino Ferdjaoui, Sandy Walsh, Sascha Peilicke, Sean M. Collins, Sergey Lukjanov, Shilla Saebi, Stephen Gordon, Summer Long, Uwe Stuehler, Vaibhav Bhatkar, Veronica Musso, Ying Chun \"Daisy\" Guo, Zhengguang Ou, and ZhiQiang Fan."
+msgstr ""
+
+#: ./doc/openstack-ops/preface_ops.xml:429(title)
 msgid "How to Contribute to This Book"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:436(para)
+#: ./doc/openstack-ops/preface_ops.xml:430(para)
 msgid "The genesis of this book was an in-person event, but now that the book is in your hands we want you to contribute to it. OpenStack documentation follows the coding principles of iterative work, with bug logging, investigating, and fixing. We also store the source content on Github and invite collaborators through the OpenStack Gerrit installation, which offers reviews. For the O'Reilly edition of this book, we are using the company's Atlas system which also stores source content on Github and enables collaboration among contributors."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:445(para)
+#: ./doc/openstack-ops/preface_ops.xml:439(para)
 msgid "Learn more about how to contribute to the OpenStack docs at <link href=\"http://wiki.openstack.org/Documentation/HowTo\">Documentation How To</link> (http://wiki.openstack.org/Documentation/HowTo)."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:450(para)
+#: ./doc/openstack-ops/preface_ops.xml:444(para)
 msgid "If you find a bug and can't fix it or aren't sure it's really a doc bug, log a bug at <link href=\"http://bugs.launchpad.net/openstack-manuals\">OpenStack Manuals</link> (http://bugs.launchpad.net/openstack-manuals). Tag the bug under <guilabel>Extra</guilabel> options with the <literal>ops-guide</literal> tag to indicate that the bug is in this guide. You can assign the bug to yourself if you know how to fix it. Also, a member of the OpenStack doc-core team can triage the doc bug."
 msgstr ""
 
@@ -13243,13 +13247,13 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:52(None)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:53(None)
 msgid "@@image: 'figures/network_packet_ping.png'; md5=3b1f2132f9133d2ce1960743a2d6c6a4"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:134(None)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:135(None)
 msgid "@@image: 'figures/neutron_packet_ping.png'; md5=c22e7f04efcc1d5cb7c839ddcadccfcc"
 msgstr ""
 
@@ -13282,19 +13286,23 @@ msgid "Nova-Network Traffic in the Cloud"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:45(para)
-msgid "If you are logged in to an instance and ping an external host, for example google.com, the ping packet takes the following route:"
+msgid "If you are logged in to an instance and ping an external host, for example google.com, the ping packet takes the route:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:58(para)
-msgid "The instance generates a packet and places it on the virtual Network Interface Card (NIC) inside the instance, such as, eth0."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:49(title)
+msgid "Traffic Route for Ping Packet"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:63(para)
-msgid "The packet transfers to the virtual NIC of the compute host, such as, vnet1. You can find out what vent NIC is being used by looking at the /etc/libvirt/qemu/instance-xxxxxxxx.xml file."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:59(para)
+msgid "The instance generates a packet and places it on the virtual Network Interface Card (NIC) inside the instance, such as eth0."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:70(para)
-msgid "From the vnet NIC, the packet transfers to a bridge on the compute node, such as, <code>br100.</code>"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:64(para)
+msgid "The packet transfers to the virtual NIC of the compute host, such as, vnet1. You can find out what vnet NIC is being used by looking at the <filename>/etc/libvirt/qemu/instance-xxxxxxxx.xml</filename> file."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:71(para)
+msgid "From the vnet NIC, the packet transfers to a bridge on the compute node, such as <code>br100</code>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:74(para)
@@ -13306,7 +13314,7 @@ msgid "To see which bridge the packet will use, run the command: <placeholder-1/
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:81(para)
-msgid "Look for the vnet NIC. You can also reference <filename>nova.conf</filename> and look for the <placeholder-1/> option."
+msgid "Look for the vnet NIC. You can also reference <filename>nova.conf</filename> and look for the <code>flat_interface_bridge</code> option."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:87(para)
@@ -13330,7 +13338,7 @@ msgid "OpenStack Networking Service Traffic in the Cloud"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:109(para)
-msgid "The OpenStack Networking Service, Neutron, has many more degrees of freedom than nova-network does due to its pluggable back-end. It can be configured with open source or vendor proprietary plugins that control software defined networking (SDN) hardware or plugins that use Linux native facilities on your hosts such as Open vSwitch or Linux Bridge."
+msgid "The OpenStack Networking Service, neutron, has many more degrees of freedom than nova-network does because of its pluggable back end. It can be configured with open source or vendor proprietary plug-ins that control software defined networking (SDN) hardware or plug-ins that use Linux native facilities on your hosts such as Open vSwitch or Linux Bridge."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:115(para)
@@ -13338,39 +13346,43 @@ msgid "The networking chapter of the OpenStack <link title=\"Cloud Administrator
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:124(para)
-msgid "For this example we will use the Open vSwitch (ovs) backend. Other back-end plugins will have very different flow paths. OVS is the most popularly deployed network driver according to the October 2013 OpenStack User Survey with 50% more sites using it than the second place Linux Bridge driver."
+msgid "For this example we will use the Open vSwitch (OVS) back end. Other back-end plug-ins will have very different flow paths. OVS is the most popularly deployed network driver according to the October 2013 OpenStack User Survey, with 50 percent more sites using it than the second place Linux Bridge driver."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:129(para)
 msgid "We'll describe each step in turn with this diagram for reference:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:140(para)
-msgid "The instance generates a packet and places it on the virtual NIC inside the instance, such as, eth0."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:131(title)
+msgid "Neutron Network Paths"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:141(para)
+msgid "The instance generates a packet and places it on the virtual NIC inside the instance, such as eth0."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:145(para)
-msgid "The packet transfers to a Test Access Point (TAP) device on the compute host, such as, tap690466bc-92. You can find out what TAP is being used by looking at the /etc/libvirt/qemu/instance-xxxxxxxx.xml file."
+msgid "The packet transfers to a Test Access Point (TAP) device on the compute host, such as tap690466bc-92. You can find out what TAP is being used by looking at the <filename>/etc/libvirt/qemu/instance-xxxxxxxx.xml</filename> file."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:149(para)
-msgid "The TAP device name is constructed using the first 11 characters of the port id (10 hex digits plus an included '-'), so another means of finding the device name is to use the <placeholder-1/> command. This returns a pipe delimited list, the first item of which is the port id. For example to get the port id associated with IP address 10.0.0.10:"
+msgid "The TAP device name is constructed using the first 11 characters of the port ID (10 hex digits plus an included '-'), so another means of finding the device name is to use the <placeholder-1/> command. This returns a pipe- delimited list, the first item of which is the port ID. For example, to get the port ID associated with IP address 10.0.0.10, do this:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:159(para)
-msgid "Taking the first 11 characters we can construct a device name of tapff387e54-9e from this output."
+msgid "Taking the first 11 characters, we can construct a device name of tapff387e54-9e from this output."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:163(para)
-msgid "The TAP device is connected to the integration bridge, <code>br-int</code>. This bridge connects all the instance TAP devices and any other bridges on the system. In this example we have <code>int-br-eth1</code> and <code>patch-tun</code>. <code>int-br-eth1</code> is one half of a veth pair connecting to the bridge <code>br-eth1</code> which handles VLAN networks trunked over the physical Ethernet device <code>eth1</code>. <code>patch-tun</code> is an Open vSwitch internal port which connects to the <code>br-tun</code> bridge for GRE networks."
+msgid "The TAP device is connected to the integration bridge, <code>br-int</code>. This bridge connects all the instance TAP devices and any other bridges on the system. In this example, we have <code>int-br-eth1</code> and <code>patch-tun</code>. <code>int-br-eth1</code> is one half of a veth pair connecting to the bridge <code>br-eth1</code>, which handles VLAN networks trunked over the physical Ethernet device <code>eth1</code>. <code>patch-tun</code> is an Open vSwitch internal port that connects to the <code>br-tun</code> bridge for GRE networks."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:176(para)
-msgid "The TAP devices and veth devices are normal Linux network devices and may be inspected with the usual tools such as <placeholder-1/> and <placeholder-2/>. Open vSwitch internal devices, such as <code>patch-tun</code> are only visible within the Open vSwitch environment, if you try to run <placeholder-3/> it will error saying the device does not exist."
+msgid "The TAP devices and veth devices are normal Linux network devices and may be inspected with the usual tools such as <placeholder-1/> and <placeholder-2/>. Open vSwitch internal devices, such as <code>patch-tun</code>, are only visible within the Open vSwitch environment. If you try to run <placeholder-3/>, it will raise an error saying that the device does not exist."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:185(para)
-msgid "It is possible to watch packets on internal interfaces, but it does take a little bit of networking gymnastics. First we need to create a dummy network device that normal Linux tools can see. Then we need to add it to the bridge containing the internal interface we want to snoop on. Finally we need to tell Open vSwitch to mirror all traffic to or from the internal port onto this dummy port. After all this we can then run <placeholder-1/> on our dummy interface and see the traffic on the internal port."
+msgid "It is possible to watch packets on internal interfaces, but it does take a little bit of networking gymnastics. First you need to create a dummy network device that normal Linux tools can see. Then you need to add it to the bridge containing the internal interface you want to snoop on. Finally, you need to tell Open vSwitch to mirror all traffic to or from the internal port onto this dummy port. After all this, you can then run <placeholder-1/> on the dummy interface and see the traffic on the internal port."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:198(title)
@@ -13378,446 +13390,446 @@ msgid "To capture packets from the <code>patch-tun</code> internal interface on 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:203(para)
-msgid "Create and bring up a dummy interface, <code>snooper0</code>"
+msgid "Create and bring up a dummy interface, <code>snooper0</code>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:212(para)
-msgid "Add device <code>snooper0</code> to bridge <code>br-int</code>"
+msgid "Add device <code>snooper0</code> to bridge <code>br-int</code>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:218(para)
-msgid "Create mirror of <code>patch-tun</code> to <code>snooper0</code> (returns UUID of mirror port)"
+msgid "Create mirror of <code>patch-tun</code> to <code>snooper0</code> (returns UUID of mirror port)."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:224(para)
-msgid "Profit. You can now see traffic on <code>patch-tun</code> by running <placeholder-1/>"
+msgid "Profit. You can now see traffic on <code>patch-tun</code> by running <placeholder-1/>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:227(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:228(para)
 msgid "Clean up by clearing all mirrors on <code>br-int</code> and deleting the dummy interface."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:236(para)
-msgid "On the integration bridge networks are distinguished using internal VLANs regardless of how the networking service defines them. This allows instances on the same host to communicate directly without transiting the rest of the virtual, or physical, network. These internal VLAN id are based on the order they are created on the node and may vary between nodes. These ids are in no way related to the segmentation ids used in the network definition and on the physical wire."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:237(para)
+msgid "On the integration bridge, networks are distinguished using internal VLANs regardless of how the networking service defines them. This allows instances on the same host to communicate directly without transiting the rest of the virtual, or physical, network. These internal VLAN IDs are based on the order they are created on the node and may vary between nodes. These IDs are in no way related to the segmentation IDs used in the network definition and on the physical wire."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:246(para)
-msgid "VLAN tags are translated between the external tag, defined in the network settings, and internal tags in several places. On the <code>br-int</code>, incoming packets from the <code>int-br-eth1</code> are translated from external tags to internal tags. Other translations also happen on the other bridges, and will be discussed in those sections."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:247(para)
+msgid "VLAN tags are translated between the external tag, defined in the network settings, and internal tags in several places. On the <code>br-int</code>, incoming packets from the <code>int-br-eth1</code> are translated from external tags to internal tags. Other translations also happen on the other bridges and will be discussed in those sections."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:248(title)
-msgid "Discover which internal VLAN tag is in use for a given external VLAN by using the <placeholder-1/> command."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:253(title)
+msgid "To discover which internal VLAN tag is in use for a given external VLAN by using the <placeholder-1/> command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:252(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:257(para)
 msgid "Find the external VLAN tag of the network you're interested in. This is the <code>provider:segmentation_id</code> as returned by the networking service:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:266(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:271(para)
 msgid "Grep for the <code>provider:segmentation_id</code>, 2113 in this case, in the output of <placeholder-1/>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:273(para)
-msgid "Here we see packets received on port id 1 with the VLAN tag 2113 are modified to have the internal VLAN tag 7. Digging a little deeper we can confirm that port 1 is in face <code>int-br-eth1</code>."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:306(para)
-msgid "The next step depends on whether the virtual network is configured to use 802.11q VLAN tags or GRE"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:278(para)
+msgid "Here you can see packets received on port ID 1 with the VLAN tag 2113 are modified to have the internal VLAN tag 7. Digging a little deeper, you can confirm that port 1 is in fact <code>int-br-eth1</code>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:311(para)
-msgid "VLAN based networks will exit the integration bridge via veth interface <code>int-br-eth1</code> and arrive on the bridge <code>br-eth1</code> on the other member of the veth pair <code>phy-br-eth1</code>. Packets on this interface arrive with internal VLAN tags and are translated to external tags in the reverse of the process described above."
+msgid "The next step depends on whether the virtual network is configured to use 802.11q VLAN tags or GRE"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:322(para)
-msgid "Packets, now tagged with the external VLAN tag, then exit onto the physical network via <code>eth1</code>. The Layer2 switch this interface is connected to must be configured to accept traffic with the VLAN id used. The next hop for this packet must also be on the same Layer 2 network."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:316(para)
+msgid "VLAN-based networks exit the integration bridge via veth interface <code>int-br-eth1</code> and arrive on the bridge <code>br-eth1</code> on the other member of the veth pair <code>phy-br-eth1</code>. Packets on this interface arrive with internal VLAN tags and are translated to external tags in the reverse of the process described above."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:330(para)
-msgid "GRE based networks are passed via <code>patch-tun</code> to the tunnel bridge <code>br-tun</code> on interface <code>patch-int</code>. This bridge also contains one port for each GRE tunnel peer, so one for each compute node and network node in your network. The ports are named sequentially from <code>gre-1</code> onwards."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:327(para)
+msgid "Packets, now tagged with the external VLAN tag, then exit onto the physical network via <code>eth1</code>. The Layer2 switch this interface is connected to must be configured to accept traffic with the VLAN ID used. The next hop for this packet must also be on the same layer-2 network."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:338(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:335(para)
+msgid "GRE-based networks are passed with <code>patch-tun</code> to the tunnel bridge <code>br-tun</code> on interface <code>patch-int</code>. This bridge also contains one port for each GRE tunnel peer, so one for each compute node and network node in your network. The ports are named sequentially from <code>gre-1</code> onward."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:343(para)
 msgid "Matching <code>gre-&lt;n&gt;</code> interfaces to tunnel endpoints is possible by looking at the Open vSwitch state:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:347(para)
-msgid "In this case <code>gre-1</code> is a tunnel from IP 10.10.128.21, which should match a local interface on this node, to IP 10.10.128.16 on the remote side."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:351(para)
-msgid "These tunnels use the regular routing tables on the host to route the resulting GRE packet, so there is no requirement that GRE endpoints are all on the same layer2 network, unlike VLAN encapsulation."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:352(para)
+msgid "In this case, <code>gre-1</code> is a tunnel from IP 10.10.128.21, which should match a local interface on this node, to IP 10.10.128.16 on the remote side."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:356(para)
-msgid "All interfaces on the <code>br-tun</code> are internal to Open vSwitch. To monitor traffic on them you need to set up a mirror port as described above for <code>patch-tun</code> in the <code>br-int</code> bridge."
+msgid "These tunnels use the regular routing tables on the host to route the resulting GRE packet, so there is no requirement that GRE endpoints are all on the same layer-2 network, unlike VLAN encapsulation."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:361(para)
+msgid "All interfaces on the <code>br-tun</code> are internal to Open vSwitch. To monitor traffic on them you need to set up a mirror port as described above for <code>patch-tun</code> in the <code>br-int</code> bridge."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:366(para)
 msgid "All translation of GRE tunnels to and from internal VLANs happens on this bridge."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:364(title)
-msgid "Discover which internal VLAN tag is in use for a GRE tunnel by using the <placeholder-1/> command."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:369(title)
+msgid "To discover which internal VLAN tag is in use for a GRE tunnel by using the <placeholder-1/> command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:369(para)
-msgid "Find the <code>provider:segmentation_id</code> of the network you're interested in. This is the same field used for VLAN id in VLAN based networks"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:374(para)
+msgid "Find the <code>provider:segmentation_id</code> of the network you're interested in. This is the same field used for the VLAN ID in VLAN-based networks:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:384(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:387(para)
 msgid "Grep for 0x&lt;<code>provider:segmentation_id</code>&gt;, 0x3 in this case, in the output of <placeholder-1/>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:394(para)
-msgid "Here we see three flows related to this GRE tunnel. The first is the translation from inbound packets with this tunnel id to internal VLAN id 1. The second shows a unicast flow to output port 53 for packets destined for MAC address fa:16:3e:a6:48:24. The third shows the translation from the internal VLAN representation to the GRE tunnel id flooded to all output ports. For further details of the flow descriptions see the man page for <placeholder-1/>. As in the VLAN example above, numeric port ids can be matched with their named representations by examining the output of <placeholder-2/>."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:397(para)
+msgid "Here, you see three flows related to this GRE tunnel. The first is the translation from inbound packets with this tunnel ID to internal VLAN ID 1. The second shows a unicast flow to output port 53 for packets destined for MAC address fa:16:3e:a6:48:24. The third shows the translation from the internal VLAN representation to the GRE tunnel ID flooded to all output ports. For further details of the flow descriptions, see the man page for <placeholder-1/>. As in the VLAN example above, numeric port IDs can be matched with their named representations by examining the output of <placeholder-2/>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:416(para)
-msgid "The packet is then received on the network node. Note that any traffic to the l3-agent or dhcp-agent will only be visible within their network namespace. Watching any interfaces outside those namespaces, even those that carry the network traffic will only show broadcast packets like Address Resolution Protocols (ARPs), but unicast traffic to the router or DHCP address will not be seen. See the <xref linkend=\"dealing_with_netns\"/> section below for detail on how to run commands within these namespaces."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:419(para)
+msgid "The packet is then received on the network node. Note that any traffic to the l3-agent or dhcp-agent will be visible only within their network namespace. Watching any interfaces outside those namespaces, even those that carry the network traffic, will only show broadcast packets like Address Resolution Protocols (ARPs), but unicast traffic to the router or DHCP address will not be seen. See the <xref linkend=\"dealing_with_netns\"/> section below for detail on how to run commands within these namespaces."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:425(para)
-msgid "Alternatively, it is possible to configure VLAN based networks to use external routers rather than the l3-agent shown here, so long as the external router is on the same VLAN."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:426(para)
+msgid "Alternatively, it is possible to configure VLAN-based networks to use external routers rather than the l3-agent shown here, so long as the external router is on the same VLAN."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:431(para)
-msgid "VLAN-based networks are received as tagged packets on a physical network interface, <code>eth1</code> in this example. Just as on the compute node this interface is member of the <code>br-eth1</code> bridge."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:432(para)
+msgid "VLAN-based networks are received as tagged packets on a physical network interface, <code>eth1</code> in this example. Just as on the compute node, this interface is a member of the <code>br-eth1</code> bridge."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:438(para)
-msgid "GRE based networks will be passed to the tunnel bridge <code>br-tun</code> which behaves just like the GRE interfaces on the compute node."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:439(para)
+msgid "GRE-based networks will be passed to the tunnel bridge <code>br-tun</code>, which behaves just like the GRE interfaces on the compute node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:445(para)
-msgid "Next the packets from either input go through the integration bridge, again just as on the compute node."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:446(para)
+msgid "Next, the packets from either input go through the integration bridge, again just as on the compute node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:450(para)
-msgid "The packet then makes it to the l3-agent. This is actually another TAP device within the router's network namespace. Router namespaces are named in the form <code>qrouter-&lt;router-uuid&gt;</code> running <placeholder-1/> within the namespace will show the TAP device name, qr-e6256f7d-31 in this example:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:451(para)
+msgid "The packet then makes it to the l3-agent. This is actually another TAP device within the router's network namespace. Router namespaces are named in the form <code>qrouter-&lt;router-uuid&gt;</code>. Running <placeholder-1/> within the namespace will show the TAP device name, qr-e6256f7d-31 in this example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:464(para)
-msgid "The <code>qg-&lt;n&gt;</code> interface in the l3-agent router namespace sends the packet on to its next hop through device <code>eth0</code> is on the external bridge <code>br-ex</code>. This bridge is constructed similarly to <code>br-eth1</code> and may be inspected in the same way."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:465(para)
+msgid "The <code>qg-&lt;n&gt;</code> interface in the l3-agent router namespace sends the packet on to its next hop through device <code>eth0</code> on the external bridge <code>br-ex</code>. This bridge is constructed similarly to <code>br-eth1</code> and may be inspected in the same way."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:472(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:473(para)
 msgid "This external bridge also includes a physical network interface, <code>eth0</code> in this example, which finally lands the packet on the external network destined for an external router or destination."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:479(para)
-msgid "DHCP-agents running on OpenStack networks run in names spaces similar to the l3-agents. DHCP namespaces are named <code>qdhcp-&lt;uuid&gt;</code> and have a TAP device on the integration bridge. Debugging of DHCP issues usually involves working inside this network namespace."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:480(para)
+msgid "DHCP agents running on OpenStack networks run in namespaces similar to the l3-agents. DHCP namespaces are named <code>qdhcp-&lt;uuid&gt;</code> and have a TAP device on the integration bridge. Debugging of DHCP issues usually involves working inside this network namespace."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:489(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:490(title)
 msgid "Finding a Failure in the Path"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:490(para)
-msgid "Use ping to quickly find where a failure exists in the network path. In an instance, first see if you can ping an external host, such as google.com. If you can, then there shouldn't be a network problem at all."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:491(para)
+msgid "Use ping to quickly find where a failure exists in the network path. In an instance, first see whether you can ping an external host, such as google.com. If you can, then there shouldn't be a network problem at all."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:494(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:495(para)
 msgid "If you can't, try pinging the IP address of the compute node where the instance is hosted. If you can ping this IP, then the problem is somewhere between the compute node and that compute node's gateway."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:498(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:499(para)
 msgid "If you can't ping the IP address of the compute node, the problem is between the instance and the compute node. This includes the bridge connecting the compute node's main NIC with the vnet NIC of the instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:502(para)
-msgid "One last test is to launch a second instance and see if the two instances can ping each other. If they can, the issue might be related to the firewall on the compute node."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:503(para)
+msgid "One last test is to launch a second instance and see whether the two instances can ping each other. If they can, the issue might be related to the firewall on the compute node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:508(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:509(title)
 msgid "tcpdump"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:509(para)
-msgid "One great, although very in-depth, way of troubleshooting network issues is to use <placeholder-1/>. We recommended using <placeholder-2/> at several points along the network path to correlate where a problem might be. If you prefer working with a GUI, either live or by using a <placeholder-3/> capture do also check out <link title=\"Wireshark\" href=\"http://www.wireshark.org/\">Wireshark</link> (http://www.wireshark.org/)."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:510(para)
+msgid "One great, although very in-depth, way of troubleshooting network issues is to use <placeholder-1/>. We recommended using <placeholder-2/> at several points along the network path to correlate where a problem might be. If you prefer working with a GUI, either live or by using a <placeholder-3/> capture, do also check out <link title=\"Wireshark\" href=\"http://www.wireshark.org/\">Wireshark</link> (http://www.wireshark.org/)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:517(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:518(para)
 msgid "For example, run the following command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:519(code)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:520(code)
 msgid "tcpdump -i any -n -v 'icmp[icmptype] = icmp-echoreply or icmp[icmptype] = icmp-echo'"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:522(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:523(para)
 msgid "Run this on the command line of the following areas:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:526(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:527(para)
 msgid "An external server outside of the cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:529(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:530(para)
 msgid "A compute node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:532(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:533(para)
 msgid "An instance running on that compute node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:535(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:536(para)
 msgid "In this example, these locations have the following IP addresses:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:545(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:546(para)
 msgid "Next, open a new shell to the instance and then ping the external host where <placeholder-1/> is running. If the network path to the external server and back is fully functional, you see something like the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:549(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:550(para)
 msgid "On the external server:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:555(para)
-msgid "On the Compute Node:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:556(para)
+msgid "On the compute node:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:568(para)
-msgid "On the Instance:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:569(para)
+msgid "On the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:571(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:572(para)
 msgid "Here, the external server received the ping request and sent a ping reply. On the compute node, you can see that both the ping and ping reply successfully passed through. You might also see duplicate packets on the compute node, as seen above, because <placeholder-1/> captured the packet on both the bridge and outgoing interface."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:580(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:581(para)
 msgid "Through nova-network, OpenStack Compute automatically manages iptables, including forwarding packets to and from instances on a compute node, forwarding floating IP traffic, and managing security group rules."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:584(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:585(para)
 msgid "Run the following command to view the current iptables configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:587(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:588(para)
 msgid "If you modify the configuration, it reverts the next time you restart nova-network. You must use OpenStack to manage iptables."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:593(title)
-msgid "Network Configuration in the Database for nova-network"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:594(title)
+msgid "Network Configuration in the Database for Nova-Network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:594(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:595(para)
 msgid "With nova-network, the nova database table contains a few tables with networking information:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:598(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:599(para)
 msgid "fixed_ips: contains each possible IP address for the subnet(s) added to Compute. This table is related to the instances table by way of the fixed_ips.instance_uuid column."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:604(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:605(para)
 msgid "floating_ips: contains each floating IP address that was added to Compute. This table is related to the fixed_ips table by way of the floating_ips.fixed_ip_id column."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:609(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:610(para)
 msgid "instances: not entirely network specific, but it contains information about the instance that is utilizing the fixed_ip and optional floating_ip."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:615(para)
-msgid "From these tables, you can see that a Floating IP is technically never directly related to an instance, it must always go through a Fixed IP."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:616(para)
+msgid "From these tables, you can see that a floating IP is technically never directly related to an instance, it must always go through a fixed IP."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:619(title)
-msgid "Manually De-Associating a Floating IP"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:620(title)
+msgid "Manually Deassociating a Floating IP"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:620(para)
-msgid "Sometimes an instance is terminated but the Floating IP was not correctly de-associated from that instance. Because the database is in an inconsistent state, the usual tools to de-associate the IP no longer work. To fix this, you must manually update the database."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:621(para)
+msgid "Sometimes an instance is terminated but the floating IP was not correctly de-associated from that instance. Because the database is in an inconsistent state, the usual tools to deassociate the IP no longer work. To fix this, you must manually update the database."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:626(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:627(para)
 msgid "First, find the UUID of the instance in question:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:630(para)
-msgid "Next, find the Fixed IP entry for that UUID:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:631(para)
+msgid "Next, find the fixed IP entry for that UUID:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:633(para)
-msgid "You can now get the related Floating IP entry:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:634(para)
+msgid "You can now get the related floating IP entry:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:637(para)
-msgid "And finally, you can de-associate the Floating IP:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:638(para)
+msgid "And finally, you can deassociate the floating IP:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:641(para)
-msgid "You can optionally also de-allocate the IP from the user's pool:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:642(para)
+msgid "You can optionally also deallocate the IP from the user's pool:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:648(title)
-msgid "Debugging DHCP Issues with nova-network"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:649(title)
+msgid "Debugging DHCP Issues with Nova-Network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:649(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:650(para)
 msgid "One common networking problem is that an instance boots successfully but is not reachable because it failed to obtain an IP address from dnsmasq, which is the DHCP server that is launched by the nova-network service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:654(para)
-msgid "The simplest way to identify that this the problem with your instance is to look at the console output of your instance. If DHCP failed, you can retrieve the console log by doing:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:655(para)
+msgid "The simplest way to identify that this is the problem with your instance is to look at the console output of your instance. If DHCP failed, you can retrieve the console log by doing:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:659(para)
-msgid "If your instance failed to obtain an IP through DHCP, some messages should appear in the console. For example, for the Cirros image, you see output that looks like:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:660(para)
+msgid "If your instance failed to obtain an IP through DHCP, some messages should appear in the console. For example, for the Cirros image, you see output that looks like the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:672(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:673(para)
 msgid "After you establish that the instance booted properly, the task is to figure out where the failure is."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:674(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:675(para)
 msgid "A DHCP problem might be caused by a misbehaving dnsmasq process. First, debug by checking logs and then restart the dnsmasq processes only for that project (tenant). In VLAN mode there is a dnsmasq process for each tenant. Once you have restarted targeted dnsmasq processes, the simplest way to rule out dnsmasq causes is to kill all of the dnsmasq processes on the machine, and restart nova-network. As a last resort, do this as root:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:685(para)
-msgid "It's openstack-nova-network on RHEL/CentOS/Fedora but nova-network on Ubuntu/Debian."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:686(para)
+msgid "Use openstack-nova-network on RHEL/CentOS/Fedora but nova-network on Ubuntu/Debian."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:686(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:687(para)
 msgid "Several minutes after nova-network is restarted, you should see new dnsmasq processes running:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:698(para)
-msgid "If your instances are still not able to obtain IP addresses, the next thing to check is if dnsmasq is seeing the DHCP requests from the instance. On the machine that is running the dnsmasq process, which is the compute host if running in multi-host mode, look at /var/log/syslog to see the dnsmasq output. If dnsmasq is seeing the request properly and handing out an IP, the output looks like:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:699(para)
+msgid "If your instances are still not able to obtain IP addresses, the next thing to check is whether dnsmasq is seeing the DHCP requests from the instance. On the machine that is running the dnsmasq process, which is the compute host if running in multi-host mode, look at /var/log/syslog to see the dnsmasq output. If dnsmasq is seeing the request properly and handing out an IP, the output looks like this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:711(para)
-msgid "If you do not see the DHCPDISCOVER, a problem exists with the packet getting from the instance to the machine running dnsmasq. If you see all of above output and your instances are still not able to obtain IP addresses then the packet is able to get from the instance to the host running dnsmasq, but it is not able to make the return trip."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:712(para)
+msgid "If you do not see the DHCPDISCOVER, a problem exists with the packet getting from the instance to the machine running dnsmasq. If you see all of the preceding output and your instances are still not able to obtain IP addresses, then the packet is able to get from the instance to the host running dnsmasq, but it is not able to make the return trip."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:718(para)
-msgid "If you see any other message, such as:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:719(para)
+msgid "You might also see a message such as this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:721(para)
-msgid "Then this may be a dnsmasq and/or nova-network related issue. (For the example above, the problem happened to be that dnsmasq did not have any more IP addresses to give away because there were no more Fixed IPs available in the OpenStack Compute database)."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:722(para)
+msgid "This may be a dnsmasq and/or nova-network related issue. (For the example above, the problem happened to be that dnsmasq did not have any more IP addresses to give away because there were no more fixed IPs available in the OpenStack Compute database)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:726(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:727(para)
 msgid "If there's a suspicious-looking dnsmasq log message, take a look at the command-line arguments to the dnsmasq processes to see if they look correct."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:730(para)
-msgid "The output looks something like:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:731(para)
+msgid "The output looks something like the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:744(para)
-msgid "The output shows three different dnsmasq processes. The dnsmasq process that has the DHCP subnet range of 192.168.122.0 belongs to libvirt and can be ignored. The other two dnsmasq processes belong to nova-network. The two processes are actually related -- one is simply the parent process of the other. The arguments of the dnsmasq processes should correspond to the details you configured nova-network with."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:745(para)
+msgid "The output shows three different dnsmasq processes. The dnsmasq process that has the DHCP subnet range of 192.168.122.0 belongs to libvirt and can be ignored. The other two dnsmasq processes belong to nova-network. The two processes are actually related—one is simply the parent process of the other. The arguments of the dnsmasq processes should correspond to the details you configured nova-network with."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:752(para)
-msgid "If the problem does not seem to be related to dnsmasq itself, at this point, use tcpdump on the interfaces to determine where the packets are getting lost."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:753(para)
+msgid "If the problem does not seem to be related to dnsmasq itself, at this point use <code>tcpdump</code> on the interfaces to determine where the packets are getting lost."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:755(para)
-msgid "DHCP traffic uses UDP. The client sends from port 68 to port 67 on the server. Try to boot a new instance and then systematically listen on the NICs until you identify the one that isn't seeing the traffic. To use tcpdump to listen to ports 67 and 68 on br100, you would do:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:756(para)
+msgid "DHCP traffic uses UDP. The client sends from port 68 to port 67 on the server. Try to boot a new instance and then systematically listen on the NICs until you identify the one that isn't seeing the traffic. To use <code>tcpdump</code> to listen to ports 67 and 68 on br100, you would do:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:761(para)
-msgid "You should be doing sanity checks on the interfaces using command such as \"<code>ip a</code>\" and \"<code>brctl show</code>\" to ensure that the interfaces are actually up and configured the way that you think that they are."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:762(para)
+msgid "You should be doing sanity checks on the interfaces using command such as <code>ip a</code> and <code>brctl show</code> to ensure that the interfaces are actually up and configured the way that you think that they are."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:768(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:769(title)
 msgid "Debugging DNS Issues"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:769(para)
-msgid "If you are able to ssh into an instance, but it takes a very long time (on the order of a minute) to get a prompt, then you might have a DNS issue. The reason a DNS issue can cause this problem is that the ssh server does a reverse DNS lookup on the IP address that you are connecting from. If DNS lookup isn't working on your instances, then you must wait for the DNS reverse lookup timeout to occur for the ssh login process to complete."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:770(para)
+msgid "If you are able to use SSH to log into an instance, but it takes a very long time (on the order of a minute) to get a prompt, then you might have a DNS issue. The reason a DNS issue can cause this problem is that the SSH server does a reverse DNS lookup on the IP address that you are connecting from. If DNS lookup isn't working on your instances, then you must wait for the DNS reverse lookup timeout to occur for the SSH login process to complete."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:778(para)
-msgid "When debugging DNS issues, start by making sure the host where the dnsmasq process for that instance runs is able to correctly resolve. If the host cannot resolve, then the instances won't be able either."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:779(para)
+msgid "When debugging DNS issues, start by making sure that the host where the dnsmasq process for that instance runs is able to correctly resolve. If the host cannot resolve, then the instances won't be able to either."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:782(para)
-msgid "A quick way to check if DNS is working is to resolve a hostname inside your instance using the <code>host</code> command. If DNS is working, you should see:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:783(para)
+msgid "A quick way to check whether DNS is working is to resolve a hostname inside your instance by using the <code>host</code> command. If DNS is working, you should see:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:790(para)
-msgid "If you're running the Cirros image, it doesn't have the \"host\" program installed, in which case you can use ping to try to access a machine by hostname to see if it resolves. If DNS is working, the first line of ping would be:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:791(para)
+msgid "If you're running the Cirros image, it doesn't have the \"host\" program installed, in which case you can use ping to try to access a machine by hostname to see whether it resolves. If DNS is working, the first line of ping would be:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:797(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:798(para)
 msgid "If the instance fails to resolve the hostname, you have a DNS problem. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:801(para)
-msgid "In an OpenStack cloud, the dnsmasq process acts as the DNS server for the instances in addition to acting as the DHCP server. A misbehaving dnsmasq process may be the source of DNS-related issues inside the instance. As mentioned in the previous section, the simplest way to rule out a misbehaving dnsmasq process is to kill all of the dnsmasq processes on the machine, and restart nova-network. However, be aware that this command affects everyone running instances on this node, including tenants that have not seen the issue. As a last resort, as root:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:802(para)
+msgid "In an OpenStack cloud, the dnsmasq process acts as the DNS server for the instances in addition to acting as the DHCP server. A misbehaving dnsmasq process may be the source of DNS-related issues inside the instance. As mentioned in the previous section, the simplest way to rule out a misbehaving dnsmasq process is to kill all the dnsmasq processes on the machine and restart nova-network. However, be aware that this command affects everyone running instances on this node, including tenants that have not seen the issue. As a last resort, as root:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:814(para)
-msgid "After the dnsmasq processes start again, check if DNS is working."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:815(para)
+msgid "After the dnsmasq processes start again, check whether DNS is working."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:816(para)
-msgid "If restarting the dnsmasq process doesn't fix the issue, you might need to use tcpdump to look at the packets to trace where the failure is. The DNS server listens on UDP port 53. You should see the DNS request on the bridge (such as, br100) of your compute node. If you start listening with tcpdump on the compute node:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:817(para)
+msgid "If restarting the dnsmasq process doesn't fix the issue, you might need to use tcpdump to look at the packets to trace where the failure is. The DNS server listens on UDP port 53. You should see the DNS request on the bridge (such as, br100) of your compute node. Let's say you start listening with tcpdump on the compute node:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:825(para)
-msgid "Then, if you ssh into your instance and try to <code>ping openstack.org</code>, you should see something like:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:826(para)
+msgid "Then, if you use SSH to log into your instance and try <code>ping openstack.org</code>, you should see something like:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:835(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:836(title)
 msgid "Troubleshooting Open vSwitch"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:836(para)
-msgid "Open vSwitch as used in the OpenStack Networking Service examples above is full-featured multilayer virtual switch licensed under the open source Apache 2.0 license. Full documentation can be found at the project's web site <link href=\"http://openvswitch.org/\">http://openvswitch.org/</link>. In practice, given the configuration above, the most common issues are being sure that the required bridges (<code>br-int</code>, <code>br-tun</code>, <code>br-ex</code>, etc...) exist and have the proper ports connected to them."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:837(para)
+msgid "Open vSwitch as used in the previous OpenStack Networking Service examples is a full-featured multilayer virtual switch licensed under the open source Apache 2.0 license. Full documentation can be found at the project's website at <link href=\"http://openvswitch.org/\">http://openvswitch.org/</link>. In practice, given the configuration above, the most common issues are being sure that the required bridges (<code>br-int</code>, <code>br-tun</code>, <code>br-ex</code>, etc...) exist and have the proper ports connected to them."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:845(para)
-msgid "The Open vSwitch driver should and usually does manage this automatically, but it is useful to know how to do this by hand with the <placeholder-1/> command. This command has many more sub commands that we will use here see the man page or <placeholder-2/> for the full listing."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:846(para)
+msgid "The Open vSwitch driver should and usually does manage this automatically, but it is useful to know how to do this by hand with the <placeholder-1/> command. This command has many more subcommands than we will use here; see the man page or use <placeholder-2/> for the full listing."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:851(para)
-msgid "To list the bridges on a system use <placeholder-1/>. This example shows a compute node which has internal bridge and tunnel bridge. VLAN networks are trunked through the <code>eth1</code> network interface:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:852(para)
+msgid "To list the bridges on a system use <placeholder-1/>. This example shows a compute node that has an internal bridge and a tunnel bridge. VLAN networks are trunked through the <code>eth1</code> network interface:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:862(para)
-msgid "Working from the physical interface inwards, we can see the chain of ports and bridges. First the bridge <code>eth1-br</code> which contains the physical network interface eth1 and the virtual interface <code>phy-eth1-br</code>."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:863(para)
+msgid "Working from the physical interface inwards, we can see the chain of ports and bridges. First, the bridge <code>eth1-br</code>, which contains the physical network interface eth1 and the virtual interface <code>phy-eth1-br</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:873(para)
-msgid "Next the internal bridge, <code>br-int</code>, contains <code>int-eth1-br</code> which pairs with the <code>phy-eth1-br</code> to connect to the physical network we saw in the previous bridge, <code>br-tun</code>, which is used to connect to the GRE tunnel bridge and the TAP devices that connect to the instances currently running on the system."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:874(para)
+msgid "Next, the internal bridge, <code>br-int</code>, contains <code>int-eth1-br</code>, which pairs with <code>phy-eth1-br</code> to connect to the physical network shown in the previous bridge, <code>br-tun</code>, which is used to connect to the GRE tunnel bridge and the TAP devices that connect to the instances currently running on the system."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:888(para)
-msgid "The tunnel bridge, <code>br-tun</code>, contains the <code>patch-int</code> interface and <code>gre-&lt;N&gt;</code> interfaces for each peer in connects to via GRE, one for each compute and network node in your cluster."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:889(para)
+msgid "The tunnel bridge, <code>br-tun</code>, contains the <code>patch-int</code> interface and <code>gre-&lt;N&gt;</code> interfaces for each peer it connects to via GRE, one for each compute and network node in your cluster."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:903(para)
-msgid "If any of these links are missing or incorrect, it suggests a configuration error. Bridges can be added with <placeholder-1/> and ports can be added to bridges with <placeholder-2/>. While running these by hand can be useful debugging, it is imperative that manual changes which you intend to keep be reflected back into your configuration files."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:904(para)
+msgid "If any of these links are missing or incorrect, it suggests a configuration error. Bridges can be added with <placeholder-1/> and ports can be added to bridges with <placeholder-2/>. While running these by hand can be useful debugging, it is imperative that manual changes that you intend to keep be reflected back into your configuration files."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:912(title)
-msgid "Dealing with network namespaces"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:913(title)
+msgid "Dealing with Network Namespaces"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:913(para)
-msgid "Linux network namespaces are a kernel feature the networking service uses to support multiple isolated layer2 networks with overlapping IP address ranges. The support may be disabled, but is on by default. If it is enabled in your environment, your network nodes will run their dhcp-agents and l3-agents in isolated namespaces. Network interfaces and traffic on those interfaces will not be visible in the default namespace."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:914(para)
+msgid "Linux network namespaces are a kernel feature the networking service uses to support multiple isolated layer-2 networks with overlapping IP address ranges. The support may be disabled, but it is on by default. If it is enabled in your environment, your network nodes will run their dhcp-agents and l3-agents in isolated namespaces. Network interfaces and traffic on those interfaces will not be visible in the default namespace."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:921(para)
-msgid "To see if you are using namespaces run <placeholder-1/>"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:922(para)
+msgid "To see whether you are using namespaces, run <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:930(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:931(para)
 msgid "L3-agent router namespaces are named qrouter-&lt;router_uuid&gt;, and dhcp-agent name spaces are named qdhcp-&lt;net_uuid&gt;. This output shows a network node with four networks running dhcp-agents, one of which is also running an l3-agent router. It's important to know which network you need to be working in. A list of existing networks and their UUIDs can be obtained buy running <placeholder-1/> with administrative credentials."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:936(para)
-msgid "Once you've determined which namespace you need to work in, you can use any of the debugging tools mention above by prefixing the command with <placeholder-1/>. For example, to see what network interfaces exist in the first qdhcp name space returned above:"
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:937(para)
+msgid "Once you've determined which namespace you need to work in, you can use any of the debugging tools mention earlier by prefixing the command with <placeholder-1/>. For example, to see what network interfaces exist in the first qdhcp namespace returned above, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:954(para)
-msgid "From this we see that the DHCP server on that network is using the tape6256f7d-31 device and has an IP address 10.0.1.100, seeing the address 169.254.169.254 we can also see that the dhcp-agent is running a metadata-proxy service. Any of the commands mentioned previously in this chapter can be run in the same way. It is also possible to run a shell, such as <placeholder-1/>, and have an interactive session within the namespace. In the latter case exiting the shell will return you to the top level default namespace."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:955(para)
+msgid "From this you see that the DHCP server on that network is using the tape6256f7d-31 device and has an IP address 10.0.1.100. Seeing the address 169.254.169.254, you can also see that the dhcp-agent is running a metadata-proxy service. Any of the commands mentioned previously in this chapter can be run in the same way. It is also possible to run a shell, such as <placeholder-1/>, and have an interactive session within the namespace. In the latter case, exiting the shell returns you to the top-level default namespace."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:966(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:967(para)
 msgid "The authors have spent too long a time looking at packet dumps in order to distill this information for you. We trust that, following the methods outlined in this chapter, you will have an easier time! Aside from working with the tools and steps above, don't forget that sometimes an extra pair of eyes goes a long way to assist."
 msgstr ""
 
