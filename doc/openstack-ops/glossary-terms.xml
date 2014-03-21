@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY mdash  "&#x2014;">
+]>
+
 <glossary xmlns="http://docbook.org/ns/docbook"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xml:id="openstack_glossary"
@@ -29,22 +34,29 @@
         <glossentry>
             <glossterm>access control list</glossterm>
             <glossdef>
-                <para>A list of permissions attached to an object. An ACL specifies which users or system processes have access to objects. It also
-defines which operations can be performed on specified objects.
-Each entry in a typical ACL specifies a subject and an operation. For instance, ACL entry, <code>(Alice, delete)</code>, for a file gives Alice permission to delete the file.</para>
+                <para>
+                  A list of permissions attached to an object. An ACL
+                  specifies which users or system processes have
+                  access to objects. It also defines which operations
+                  can be performed on specified objects.  Each entry
+                  in a typical ACL specifies a subject and an
+                  operation. For instance, the ACL entry <code>(Alice,
+                  delete)</code> for a file gives Alice permission to
+                  delete the file.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>access key</glossterm>
             <glossdef>
                 <para>Alternative term for an Amazon EC2 access key.
-                    See EC2 Access key.</para>
+                    See EC2 access key.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>account</glossterm>
             <glossdef>
-                <para>The swift context of an account. Do not confuse
+                <para>The Object Storage context of an account. Do not confuse
                     with a user account from an authentication service such
                     as Active Directory, /etc/passwd, OpenLDAP,
                     OpenStack Identity Service, and so on.</para>
@@ -53,8 +65,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>account auditor</glossterm>
             <glossdef>
-                <para>Checks for missing replicas, incorrect, and
-                    corrupted objects in a specified swift account by
+                <para>Checks for missing replicas and incorrect or
+                    corrupted objects in a specified Object Storage account by
                     running queries against the back-end SQLite
                     database.</para>
             </glossdef>
@@ -62,30 +74,31 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>account database</glossterm>
             <glossdef>
-                <para>A SQLite database that contains swift accounts
-                    and related metadata and is accessed by the
-                    accounts server.</para>
+                <para>A SQLite database that contains Object Storage accounts
+                    and related metadata and that the
+                    accounts server accesses.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>account reaper</glossterm>
             <glossdef>
-                <para>A swift worker that scans for and deletes
-                    account databases that are marked for deletion on
-                    an account server.</para>
+                <para>An Object Storage worker that scans for and deletes
+                    account databases and that the account server has marked
+                    for deletion.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>account server</glossterm>
             <glossdef>
-                <para>Lists containers in swift and stores container
+                <para>Lists containers in Object Storage and stores container
                     information in the account database.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>account service</glossterm>
             <glossdef>
-                <para>A swift component that provides account services
+                <para>An Object Storage component that provides account services
                     such as list, create, modify, and audit. Do not
                     confuse with OpenStack Identity Service, OpenLDAP, or
                     similar user account services.</para>
@@ -94,7 +107,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>accounting</glossterm>
             <glossdef>
-                <para>The Compute Service  provides accounting information
+                <para>The Compute Service provides accounting information
                     through the event notification and system usage data
                     facilities.</para>
             </glossdef>
@@ -118,7 +131,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>Active Directory</glossterm>
             <glossdef>
-                <para>Authentication and Identity Service by
+                <para>Authentication and identity service by
                     Microsoft, based on LDAP. Supported in
                     OpenStack.</para>
             </glossdef>
@@ -126,7 +139,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>active/passive configuration</glossterm>
             <glossdef>
-              <para>In a high availability setup with an
+              <para>In a high-availability setup with an
               active/passive configuration, systems are set up to
               bring additional resources online to replace those that
               have failed.
@@ -147,7 +160,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>A subset of API calls that are accessible to
                     authorized administrators and are generally not
-                    accessible to end users or the public internet,
+                    accessible to end users or the public Internet. They
                     can exist as a separate service (keystone) or can
                     be a subset of another API (nova).</para>
             </glossdef>
@@ -180,7 +193,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>alert</glossterm>
             <glossdef>
-                <para>The Compute Service  can send alerts through its
+                <para>The Compute Service can send alerts through its
                     notification system, which includes a facility to
                     create custom notification drivers. Alerts can be
                     sent to and displayed on the horizon dashboard.</para>
@@ -189,7 +202,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>allocate</glossterm>
             <glossdef>
-                <para>The process of taking floating IP address from
+                <para>The process of taking a floating IP address from
                     the address pool so it can be associated with a
                     fixed IP on a guest VM instance.</para>
             </glossdef>
@@ -216,19 +229,10 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>AMQP</glossterm>
-            <glossdef>
-                <para>Advanced Message Queue Protocol. An open
-                    Internet protocol for reliably sending and
-                    receiving messages. It enables building a diverse,
-                    coherent messaging ecosystem.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
             <glossterm>Anvil</glossterm>
             <glossdef>
                 <para>A project that ports the shell script-based
-                    project named devstack to Python.</para>
+                    project named DevStack to Python.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -266,7 +270,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>The daemon, worker, or service that a client
                     communicates with to access an API. API endpoints
-                    can provide any number of services such as
+                    can provide any number of services, such as
                     authentication, sales data, performance
                     metrics, Compute VM commands, census data, and so
                     on.</para>
@@ -283,8 +287,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>API extension plug-in</glossterm>
             <glossdef>
-                <para>Alternative term for a neutron plug-in or
-                    neutron API extension.</para>
+                <para>Alternative term for a Networking plug-in or
+                    Networking API extension.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -385,7 +389,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>attach</glossterm>
             <glossdef>
                 <para>The process of connecting a VIF or vNIC to a L2
-                    network in neutron. In the context of Compute, this
+                    network in Networking. In the context of Compute, this
                     process connects a storage volume to an
                     instance.</para>
             </glossdef>
@@ -408,8 +412,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>auditor</glossterm>
             <glossdef>
                 <para>A worker process that verifies the integrity
-                    of swift objects, containers, and accounts.
-                    Auditors is the collective term for the swift
+                    of Object Storage objects, containers, and accounts.
+                    Auditors is the collective term for the Object Storage
                     account auditor, container auditor, and object
                     auditor.</para>
             </glossdef>
@@ -424,7 +428,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>auth node</glossterm>
             <glossdef>
-                <para>Alternative term for a swift authorization
+                <para>Alternative term for an Object Storage authorization
                     node.</para>
             </glossdef>
         </glossentry>
@@ -457,16 +461,13 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>authorization</glossterm>
             <glossdef>
                 <para>The act of verifying that a user, process, or
-                    client is authorized to perform an action, such as
-                    delete a swift object, list a swift container,
-                    start a guest VM, reset a password, and so
-                    on.</para>
+                    client is authorized to perform an action.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>authorization node</glossterm>
             <glossdef>
-                <para>A swift node that provides authorization
+                <para>An Object Storage node that provides authorization
                     services.</para>
             </glossdef>
         </glossentry>
@@ -488,7 +489,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>auto declare</glossterm>
             <glossdef>
-                <para>A Compute RabbitMQ setting that determines if a
+                <para>A Compute RabbitMQ setting that determines whether a
                     message exchange is automatically created when the
                     program starts.</para>
             </glossdef>
@@ -512,11 +513,11 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
     <glossdiv>
         <title>B</title>
         <glossentry>
-            <glossterm>back-end</glossterm>
+            <glossterm>back end</glossterm>
             <glossdef>
                 <para>Interactions and processes that are obfuscated
                     from the user, such as Compute volume mount, data
-                    transmission to an isCSI target by a daemon, or
+                    transmission to an iSCSI target by a daemon, or
                     Object Storage object integrity checks.
                 </para>
             </glossdef>
@@ -535,11 +536,11 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>back-end store</glossterm>
             <glossdef>
                 <para>The persistent data store used to save and
-                    retrieve a information for a service, such as lists of
+                    retrieve information for a service, such as lists of
                     Object Storage objects, current state of guest VMs, lists
                     of user names, and so on. Also, the method that the
                     Image Service uses to get and store VM images.
-                    Options include swift, local file system, S3, and
+                    Options include Object Storage, local file system, S3, and
                     HTTP.</para>
             </glossdef>
         </glossentry>
@@ -556,7 +557,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>bare</glossterm>
             <glossdef>
-                <para>A Image Service container format that indicates that no
+                <para>An Image Service container format that indicates that no
                     container exists for the VM image.</para>
             </glossdef>
         </glossentry>
@@ -591,7 +592,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>bit-per-second (BPS)</glossterm>
+            <glossterm>bits-per-second (BPS)</glossterm>
             <glossdef>
                 <para>The universal measurement of how quickly data is
                     transferred from place to place.</para>
@@ -663,10 +664,10 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>builder file</glossterm>
             <glossdef>
-                <para>Contains configuration information for a swift
-                    ring, and is used to re-configure the ring or to
-                    recreate it from scratch after a serious
-                    failure.</para>
+                <para>Contains configuration information that Object
+                  Storage uses to reconfigure a ring or to re-create it from
+                  scratch after a serious failure.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -684,12 +685,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>Set of bits that make up a single character;
                     there are usually 8 bits to a byte.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -727,7 +722,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>An OpenStack grouped release of projects that
                     came out in the spring of 2011. It included
                     Compute (nova), Object Storage (swift), and the
-                    Image service (glance).</para>
+                    Image Service (glance).</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -749,8 +744,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>capacity cache</glossterm>
             <glossdef>
-                <para>A Compute back end database table that contains
-                    the current workload, amount of free RAM,
+                <para>A Compute back-end database table that contains
+                    the current workload, amount of free RAM, and
                     number of VMs running on each host. Used to
                     determine on which VM a host starts.</para>
             </glossdef>
@@ -783,7 +778,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>catalog service</glossterm>
             <glossdef>
                 <para>
-                  An Identity Service service that lists API endpoints
+                  An Identity Service that lists API endpoints
                   that are available to a user after authentication
                   with the Identity Service.
                 </para>
@@ -906,7 +901,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>Cisco neutron plug-in</glossterm>
             <glossdef>
-                <para>A neutron plug-in for Cisco devices and
+                <para>A Networking plug-in for Cisco devices and
                     technologies including UCS and Nexus.</para>
             </glossdef>
         </glossentry>
@@ -940,7 +935,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>cloud controller node</glossterm>
             <glossdef>
-                <para>A node that runs network, volume, API, scheduler
+                <para>A node that runs network, volume, API, scheduler,
                     and image services. Each service may be broken out
                     into separate nodes for scalability or
                     availability.</para>
@@ -970,7 +965,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>A package commonly installed in VM images that
                     performs initialization of an instance after boot
                     using information that it retrieves from the
-                    metadata service such as the SSH public key and
+                    metadata service, such as the SSH public key and
                     user data.</para>
             </glossdef>
         </glossentry>
@@ -1022,9 +1017,11 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>compression</glossterm>
             <glossdef>
-                <para>OpenStack supports compression at the Linux file
+                <para>Reduce the size of files by special encoding, the file
+                    can be decompressed again to its original content.
+                    OpenStack supports compression at the Linux file
                     system level but does not support compression for
-                    things such as swift objects or Image Service VM
+                    things such as Object Storage objects or Image Service VM
                     images.</para>
             </glossdef>
         </glossentry>
@@ -1062,9 +1059,13 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>compute node</glossterm>
             <glossdef>
-                <para>A node that runs the <systemitem class="service">nova-compute</systemitem> daemon, a VM
-                    instance that provides a wide range of services
-                    such as a web services and analytics.</para>
+                <para>
+                  A node that runs the <systemitem
+                  class="service">nova-compute</systemitem> daemon
+                  which manages VM instances that provide a wide range
+                  of services such as a web applications and
+                  analytics.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1088,9 +1089,9 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>concatenated object</glossterm>
             <glossdef>
-                <para>A segmented large object within swift that is
-                    put back together again and then sent to the
-                    client.</para>
+                <para>A set of segment objects that Object Storage combines
+                   and sends to the client.
+                </para>
             </glossdef>
         </glossentry>
          <glossentry>
@@ -1098,14 +1099,14 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>In Compute, conductor is the process that proxies
                     database requests from the compute process. Using
-                    conductor improves security as compute nodes do not
+                    conductor improves security because compute nodes do not
                     need direct access to the database.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>consistency window</glossterm>
             <glossdef>
-                <para>The amount of time it takes for a new swift
+                <para>The amount of time it takes for a new Object Storage
                     object to become accessible to all clients.</para>
             </glossdef>
         </glossentry>
@@ -1119,9 +1120,9 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>container</glossterm>
             <glossdef>
-                <para>Used to organize and store objects within swift,
-                    similar to the concept as a Linux directory but
-                    cannot be nested. Alternative term for a Image Service
+                <para>Organizes and stores objects in Object Storage.
+                    Similar to the concept of a Linux directory but
+                    cannot be nested. Alternative term for an Image Service
                     container format.</para>
             </glossdef>
         </glossentry>
@@ -1129,16 +1130,18 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>container auditor</glossterm>
             <glossdef>
                 <para>Checks for missing replicas or incorrect objects
-                    in the specified swift containers through queries
+                    in specified Object Storage containers through queries
                     to the SQLite back-end database.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>container database</glossterm>
             <glossdef>
-                <para>A SQLite database that contains swift containers
-                    and related metadata and is accessed by the
-                    container server</para>
+                <para>
+                   A SQLite database that stores Object Storage
+                   containers and container metadata. The container
+                   server accesses this database.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1154,13 +1157,13 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>container server</glossterm>
             <glossdef>
-                <para>A swift that manages containers.</para>
+                <para>An Object Storage server that manages containers.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>container service</glossterm>
             <glossdef>
-                <para>The swift component that provides container
+                <para>The Object Storage component that provides container
                     services, such as create, delete, list, and so
                     on.</para>
             </glossdef>
@@ -1184,12 +1187,17 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>core project</glossterm>
             <glossdef>
-                <para>An official OpenStack project. Currently consists of Compute (nova), Object
-                    Storage (swift), Image Service (glance), Identity (keystone), Dashboard
-                    (horizon), Networking (neutron), and Block Storage (cinder). The Telemetry
-                    module (ceilometer) and Orchestration module (heat) are integrated projects as
-                    of the Havana release. In the Icehouse release, the Database module (trove)
-                    gains integrated project status.</para>
+                <para>
+                  An official OpenStack project. Currently consists of
+                  Compute (nova), Object Storage (swift), Image
+                  Service (glance), Identity (keystone), Dashboard
+                  (horizon), Networking (neutron), and Block Storage
+                  (cinder). The Telemetry module (ceilometer) and
+                  Orchestration module (heat) are integrated projects
+                  as of the Havana release. In the Icehouse release,
+                  the Database module (trove) gains integrated project
+                  status.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1204,12 +1212,13 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>credentials</glossterm>
             <glossdef>
-                <para>Data that is only known to or accessible by a
-                    user that is used to verify the user is who they
-                    say they are and presented to the server during
-                    authentication. Examples include a password,
-                    secret key, digital certificate, fingerprint, and
-                    so on.</para>
+                <para>
+                  Data that is only known to or accessible by a user
+                  and used to verify that the user is who they say
+                  they are. Credentials are presented to the server
+                  during authentication. Examples include a password,
+                  secret key, digital certificate, fingerprint, and so
+                  on.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1241,12 +1250,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>A user-created Python module that is loaded by
                     horizon to change the look and feel of the
                     dashboard.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -1301,7 +1304,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>database replicator</glossterm>
             <glossdef>
-                <para>A swift component that copies changes in the
+                <para>An Object Storage component that copies changes in the
                     account, container, and object databases to other
                     nodes.</para>
             </glossdef>
@@ -1310,9 +1313,10 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>deallocate</glossterm>
             <glossdef>
                 <para>The process of removing the association between
-                    a floating IP address and a fixed IP address thus
-                    returning the floating IP to the address
-                    pool.</para>
+                    a floating IP address and a fixed IP address.
+                    Once this association is removed, the floating IP
+                    returns to the address pool.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1327,7 +1331,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>The process of finding duplicate data at the
                     disk block, file, and/or object level to minimize
-                    storage use, currently unsupported within
+                    storage use&mdash;currently unsupported within
                     OpenStack.</para>
             </glossdef>
         </glossentry>
@@ -1357,16 +1361,18 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>delayed delete</glossterm>
             <glossdef>
-                <para>An option within Image Service so that rather than
-                    immediately delete an image, it is deleted after a
-                    pre-defined number of seconds.</para>
+                <para>
+                  An option within Image Service so that an image is
+                  deleted after a predefined number of seconds instead
+                  of immediately.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>delivery mode</glossterm>
             <glossdef>
                 <para>Setting for the Compute RabbitMQ message delivery
-                    mode, can be set to either transient or
+                    mode; can be set to either transient or
                     persistent.</para>
             </glossdef>
         </glossentry>
@@ -1388,25 +1394,20 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>device</glossterm>
-            <glossdef>
-                <para>In the context of swift this refers to the
-                    underlying storage device.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
             <glossterm>device ID</glossterm>
             <glossdef>
-                <para>Maps swift partitions to physical storage
+                <para>Maps Object Storage partitions to physical storage
                     devices.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>device weight</glossterm>
             <glossdef>
-                <para>Used to distribute the partitions among swift
-                    devices. The distribution is usually proportional
-                    to the storage capacity of the device.</para>
+                <para>
+                   Distributes partitions proportionately across
+                   Object Storage devices based on the storage
+                   capacity of each device.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1420,15 +1421,16 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>DHCP</glossterm>
             <glossdef>
-                <para>Dynamic Host Configuration Protocol. A network
-                    protocol that configures devices that are
-                    connected to a network so they can communicate on
-                    that network by using the Internet Protocol (IP).
-                    The protocol is implemented in a client-server
-                    model where DHCP clients request configuration
-                    data such as, an IP address, a default route, and
-                    one or more DNS server addresses from a DHCP
-                    server.</para>
+                <para>
+                  Dynamic Host Configuration Protocol. A network
+                  protocol that configures devices that are connected
+                  to a network so that they can communicate on that
+                  network by using the Internet Protocol (IP).  The
+                  protocol is implemented in a client-server model
+                  where DHCP clients request configuration data such
+                  as, an IP address, a default route, and one or more
+                  DNS server addresses from a DHCP server.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1438,7 +1440,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     OpenStack that came out in the fall of 2011, the
                     fourth release of OpenStack. It included Compute
                     (nova 2011.3), Object Storage (swift 1.4.3), and
-                    the Image service (glance).</para>
+                    the Image Service (glance).</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1478,7 +1480,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>disk encryption</glossterm>
             <glossdef>
                 <para>The ability to encrypt data at the file system,
-                    disk partition or whole disk level. Supported
+                    disk partition, or whole-disk level. Supported
                     within Compute VMs.</para>
             </glossdef>
         </glossentry>
@@ -1493,7 +1495,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>dispersion</glossterm>
             <glossdef>
-                <para>In swift, tools to test and ensure dispersion of
+                <para>In Object Storage, tools to test and ensure dispersion of
                     objects and containers to ensure fault
                     tolerance.</para>
             </glossdef>
@@ -1548,7 +1550,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>In Compute, the support that enables associating
                     DNS entries with floating IP addresses, nodes, or
-                    cells so host names are consistent across
+                    cells so that hostnames are consistent across
                     reboots.</para>
             </glossdef>
         </glossentry>
@@ -1612,9 +1614,9 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Dynamic HyperText Markup Language
                 (DHTML)</glossterm>
             <glossdef>
-                <para>Pages that use HTML,
-                    JavaScript, and CCS to enable users to interact
-                    with a web page or show simple animation.</para>
+                <para>Pages that use HTML, JavaScript, and Cascading
+                Style Sheets to enable users to interact with a web
+                page or show simple animation.</para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -1669,7 +1671,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>EC2 secret key</glossterm>
             <glossdef>
                 <para>Used along with an EC2 access key when
-                    communicating with the Compute EC2 API, is used to
+                    communicating with the Compute EC2 API; used to
                     digitally sign each request.</para>
             </glossdef>
         </glossentry>
@@ -1704,8 +1706,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>endpoint template</glossterm>
             <glossdef>
                 <para>A list of URL and port number endpoints that
-                    indicate where a service, such as object storage,
-                    compute, identity, and so on, can be
+                    indicate where a service, such as Object Storage,
+                    Compute, Identity, and so on, can be
                     accessed.</para>
             </glossdef>
         </glossentry>
@@ -1714,8 +1716,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>Any piece of hardware or software that wants to
                     connect to the network services provided by
-                    neutron, the Network Connectivity service. An
-                    entity can make use of neutron by implementing a
+                    Networking, the network connectivity service. An
+                    entity can make use of Networking by implementing a
                     VIF.</para>
             </glossdef>
         </glossentry>
@@ -1771,14 +1773,14 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>ETag</glossterm>
             <glossdef>
-                <para>MD5 hash of an object within swift, used to
+                <para>MD5 hash of an object within Object Storage, used to
                     ensure data integrity.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>euca2ools</glossterm>
             <glossdef>
-                <para>A collection of command line tools for
+                <para>A collection of command-line tools for
                     administering VMs, most are compatible with
                     OpenStack.</para>
             </glossdef>
@@ -1827,9 +1829,11 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>exclusive queue</glossterm>
             <glossdef>
-                <para>Connected to by a direct consumer in RabbitMQ /
-                    Compute, the message can only be consumed by the
-                    current connection.</para>
+                <para>
+                  Connected to by a direct consumer in
+                  RabbitMQ&mdash;Compute, the message can be consumed
+                  only by the current connection.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1838,17 +1842,19 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>File system option that enables storage of
                     additional information beyond owner, group,
                     permissions, modification time, and so on. The
-                    underlying swift file system must support extended
+                    underlying Object Storage file system must support extended
                     attributes.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>extension</glossterm>
             <glossdef>
-                <para>Alternative term for a Compute API extension or
-                    plug-in. In the context of Identity Service this is a call
-                    that is specific to the implementation, such as
-                    adding support for OpenID.</para>
+                <para>
+                  Alternative term for an API extension or
+                  plug-in. In the context of Identity Service, this is
+                  a call that is specific to the implementation, such
+                  as adding support for OpenID.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -1923,16 +1929,25 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>Used to restrict communications between hosts
                     and/or nodes, implemented in Compute using iptables,
-                    arptables, ip6tables and etables.</para>
+                    arptables, ip6tables, and etables.</para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>Firewall-as-a-Service (FWaaS)</glossterm>
+            <glossdef>
+                <para>
+                  A Networking extension that provides perimeter
+                  firewall functionality.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>fixed IP address</glossterm>
             <glossdef>
                 <para>An IP address that is associated with the same
-                    instance each time that instance boots, generally
+                    instance each time that instance boots, is generally
                     not accessible to end users or the public
-                    internet, used for management of the
+                    Internet, and used for management of the
                     instance.</para>
             </glossdef>
         </glossentry>
@@ -1990,7 +2005,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>floating IP address</glossterm>
             <glossdef>
                 <para>An IP address that a project can associate
-                    with a VM so the instance has the same public IP
+                    with a VM so that the instance has the same public IP
                     address each time that it boots. You create a pool
                     of floating IP addresses and assign them to
                     instances as they are launched to maintain a
@@ -2005,31 +2020,25 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     OpenStack that came out in the fall of 2012, the
                     sixth release of OpenStack. It includes Compute
                     (nova), Object Storage (swift), Identity
-                    (keystone), Networking (neutron), Image service
-                    (glance) and Volumes or Block Storage
+                    (keystone), Networking (neutron), Image Service
+                    (glance), and Volumes or Block Storage
                     (cinder).</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>FormPost</glossterm>
             <glossdef>
-                <para>swift middleware that uploads
+                <para>Object Storage middleware that uploads
                     (posts) an image through a form on a web
                     page.</para>
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>front-end</glossterm>
+            <glossterm>frontend</glossterm>
             <glossdef>
-                <para>The point where a user interacts with a service,
+                <para>The point where a user interacts with a service;
                     can be an API endpoint, the horizon dashboard, or
-                    a command line tool.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
+                    a command-line tool.</para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -2105,8 +2114,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>Green Threads</glossterm>
             <glossdef>
-                <para>The cooperative threading model used by Python,
-                    reduces race conditions, and only context switches
+                <para>The cooperative threading model used by Python;
+                    reduces race conditions and only context switches
                     when specific library calls are made. Each
                     OpenStack service is its own thread.</para>
             </glossdef>
@@ -2140,7 +2149,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>handover</glossterm>
             <glossdef>
-                <para>An object state in swift where a new replica of
+                <para>An object state in Object Storage where a new replica of
                     the object is automatically created due to a drive
                     failure.</para>
             </glossdef>
@@ -2248,7 +2257,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>HyperText Transfer Protocol (HTTP)</glossterm>
+            <glossterm>Hypertext Transfer Protocol (HTTP)</glossterm>
             <glossdef>
                 <para>The protocol that tells browsers where to go to
                     find information.</para>
@@ -2258,7 +2267,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Hypertext Transfer Protocol Secure
                 (HTTPS)</glossterm>
             <glossdef>
-                <para>Encrypted HTTP communications using SSL or TLS,
+                <para>Encrypted HTTP communications using SSL or TLS;
                     most OpenStack API endpoints and many
                     inter-component communications support HTTPS
                     communication.</para>
@@ -2278,12 +2287,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     through host aggregates.</para>
             </glossdef>
         </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
-            </glossdef>
-        </glossentry>
     </glossdiv>
     <!-- .I. -->
     <glossdiv>
@@ -2291,15 +2294,16 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>IaaS</glossterm>
             <glossdef>
-                <para>Infrastructure as a Service. IaaS is a provision
-                    model in which an organization outsources the
-                    equipment used to support operations, including
-                    storage, hardware, servers and networking
-                    components. The service provider owns the
-                    equipment and is responsible for housing, running
-                    and maintaining it. The client typically pays on a
-                    per-use basis. IaaS is a model for providing cloud
-                    services.</para>
+                <para>
+                  Infrastructure-as-a-Service. IaaS is a provisioning
+                  model in which an organization outsources physical
+                  components of a data center such as storage,
+                  hardware, servers and networking components. A
+                  service provider owns the equipment and is
+                  responsible for housing, operating and maintaining
+                  it. The client typically pays on a per-use
+                  basis. IaaS is a model for providing cloud services.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -2324,10 +2328,10 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>Identity back-end</glossterm>
+            <glossterm>Identity back end</glossterm>
             <glossdef>
                 <para>The source used by Identity Service to retrieve user
-                    information an OpenLDAP server for example.</para>
+                    information; an OpenLDAP server for example.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -2386,7 +2390,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>image ID</glossterm>
             <glossdef>
-                <para>Combination of URI and UUID used to access
+                <para>Combination of a URI and UUID used to access
                     Image Service VM images through the image API.</para>
             </glossdef>
         </glossentry>
@@ -2439,7 +2443,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>image store</glossterm>
             <glossdef>
                 <para>The back-end store used by Image Service to store VM
-                    images, options include swift, local file system,
+                    images, options include Object Storage, local file system,
                     S3, or HTTP.</para>
             </glossdef>
         </glossentry>
@@ -2477,7 +2481,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>instance</glossterm>
             <glossdef>
                 <para>A running VM, or a VM in a known state such as
-                    suspended that can be used like a hardware server.
+                    suspended, that can be used like a hardware server.
                </para>
             </glossdef>
         </glossentry>
@@ -2518,7 +2522,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>interface ID</glossterm>
             <glossdef>
-                <para>Unique ID for a neutron VIF or vNIC in the form
+                <para>Unique ID for a Networking VIF or vNIC in the form
                     of a UUID.</para>
             </glossdef>
         </glossentry>
@@ -2592,7 +2596,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     as different Netfilter modules) and the chains and
                     rules it stores. Different kernel modules and
                     programs are currently used for different
-                    protocols; iptables applies to IPv4, ip6tables to
+                    protocols: iptables applies to IPv4, ip6tables to
                     IPv6, arptables to ARP, and ebtables to Ethernet
                     frames. Requires root privilege to
                     manipulate.</para>
@@ -2619,12 +2623,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>A default role in the Compute RBAC system that
                     can quarantine an instance in any
                     project.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -2666,12 +2664,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <para>Project name for the tenth release of OpenStack.</para>
           </glossdef>
         </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
-            </glossdef>
-        </glossentry>
     </glossdiv>
     <!-- .K. -->
     <glossdiv>
@@ -2704,7 +2696,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>large object</glossterm>
             <glossdef>
-                <para>An object within swift that is larger than 5
+                <para>An object within Object Storage that is larger than 5
                     GBs.</para>
             </glossdef>
         </glossentry>
@@ -2740,7 +2732,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Linux Bridge neutron plug-in</glossterm>
             <glossdef>
                 <para>Enables a Linux bridge to understand
-                    a neutron port, interface attachment, and other
+                    a Networking port, interface attachment, and other
                     abstractions.</para>
             </glossdef>
         </glossentry>
@@ -2762,7 +2754,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>load balancer</glossterm>
             <glossdef>
-                <para>A load balancer is a logical device which
+                <para>A load balancer is a logical device that
                     belongs to a cloud account. It is used to
                     distribute workloads between multiple back-end
                     systems or services, based on the criteria defined
@@ -2778,9 +2770,10 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm/>
+            <glossterm>Load-Balancing-as-a-Service (LBaaS)</glossterm>
             <glossdef>
-                <para/>
+                <para>Enables Networking to distribute incoming
+                     requests evenly between designated instances.</para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -2797,7 +2790,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>management network</glossterm>
             <glossdef>
                 <para>A network segment used for administration, not
-                    accessible to the public internet.</para>
+                    accessible to the public Internet.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -2811,13 +2804,13 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>manifest</glossterm>
             <glossdef>
                 <para>Used to track segments of a large object within
-                    swift.</para>
+                    Object Storage.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>manifest object</glossterm>
             <glossdef>
-                <para>A special swift object that contains the
+                <para>A special Object Storage object that contains the
                     manifest for a large object.</para>
             </glossdef>
         </glossentry>
@@ -2832,7 +2825,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>melange</glossterm>
             <glossdef>
                 <para>Project name for OpenStack Network Information
-                    Service. To be merged with neutron.</para>
+                    Service. To be merged with Networking.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -2854,7 +2847,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>memcached</glossterm>
             <glossdef>
                 <para>A distributed memory object caching system that
-                    is used by swift for caching.</para>
+                    is used by Object Storage for caching.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -2916,8 +2909,16 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Modular Layer 2 (ML2) neutron plug-in</glossterm>
             <glossdef>
                 <para>Can concurrently use multiple
-                    layer 2 networking technologies, such as 802.1Q and
-                    VXLAN, in neutron.</para>
+                    layer-2 networking technologies, such as 802.1Q and
+                    VXLAN, in Networking.</para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>Monitor (LBaaS)</glossterm>
+            <glossdef>
+                <para>LBaaS feature that provides availability monitoring
+                    using the <command>ping</command> command, TCP, and
+                    HTTP/HTTPS GET.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -2942,12 +2943,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>Facility in Compute that enables a virtual
                     machine instance to have more than one VIF
                     connected to it.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -2984,7 +2979,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>A virtual network that provides connectivity
                     between entities. For example, a collection of
                     virtual ports that share network connectivity. In
-                    neutron terminology, a network is always a Layer-2
+                    Networking terminology, a network is always a Layer-2
                     network.</para>
             </glossdef>
         </glossentry>
@@ -2999,10 +2994,12 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>network controller</glossterm>
             <glossdef>
-                <para>A Compute daemon that orchestrates the network
-                    configuration of nodes including includes IP
-                    addresses, VLANs, bridging, and manages routing
-                    for both public and private networks.</para>
+                <para>
+                  A Compute daemon that orchestrates the network
+                  configuration of nodes, including IP addresses,
+                  VLANs, and bridging. Also manages routing for both
+                  public and private networks.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3016,7 +3013,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>network ID</glossterm>
             <glossdef>
                 <para>Unique ID assigned to each network segment
-                    within neutron. Same as network UUID</para>
+                    within Networking. Same as network UUID</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3030,15 +3027,15 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>network node</glossterm>
             <glossdef>
-                <para>Any Compute node that runs the network worker
+                <para>Any compute node that runs the network worker
                     daemon.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>network segment</glossterm>
             <glossdef>
-                <para>Represents a virtual, isolated OSI layer 2
-                    subnet in neutron.</para>
+                <para>Represents a virtual, isolated OSI layer-2
+                    subnet in Networking.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3052,7 +3049,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>network UUID</glossterm>
             <glossdef>
-                <para>Unique ID for a neutron network segment.</para>
+                <para>Unique ID for a Networking network segment.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3073,6 +3070,14 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
+            <glossterm>Networking API</glossterm>
+            <glossdef>
+                <para>API used to access OpenStack Networking. Provides an
+                    extensible architecture to enable custom plug-in
+                    creation.</para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
             <glossterm>neutron</glossterm>
             <glossdef>
                 <para>A core OpenStack project that provides a network
@@ -3083,9 +3088,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>neutron API</glossterm>
             <glossdef>
-                <para>API used to access neutron. Provides an
-                    extensible architecture to enable custom plug-in
-                    creation.</para>
+                <para>An alternative name for Networking API.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3099,7 +3102,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>neutron plug-in</glossterm>
             <glossdef>
-                <para>Interface within neutron that enables
+                <para>Interface within Networking that enables
                     organizations to create custom plug-ins for
                     advanced features such as QoS, ACLs, or
                     IDS.</para>
@@ -3110,13 +3113,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>Provides support for NexentaStor devices in
                     Compute.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm>Nicira NVP neutron plug-in</glossterm>
-            <glossdef>
-                <para>Provides support for the Nicira Network
-                    Virtualization Platform (NVP) in neutron.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3170,7 +3166,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>nova network</glossterm>
+            <glossterm>nova-network</glossterm>
             <glossdef>
                 <para>A Compute component that manages IP address
                     allocation, firewalls, and other network-related
@@ -3186,15 +3182,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>object</glossterm>
             <glossdef>
-                <para>A BLOB of data held by swift, can be in any
+                <para>A BLOB of data held by Object Storage; can be in any
                     format.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm>Object API</glossterm>
-            <glossdef>
-                <para>Alternative term for the swift object
-                    API.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3208,7 +3197,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>object expiration</glossterm>
             <glossdef>
-                <para>A configurable option within swift to
+                <para>A configurable option within Object Storage to
                     automatically delete objects after a specified
                     amount of time has passed or a certain date is
                     reached.</para>
@@ -3217,13 +3206,13 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>object hash</glossterm>
             <glossdef>
-                <para>Uniquely ID for a swift object.</para>
+                <para>Uniquely ID for an Object Storage object.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>object path hash</glossterm>
             <glossdef>
-                <para>Used by swift to determine the location of an
+                <para>Used by Object Storage to determine the location of an
                     object in the ring. Maps objects to
                     partitions.</para>
             </glossdef>
@@ -3231,31 +3220,32 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>object replicator</glossterm>
             <glossdef>
-                <para>A swift component that copies and object to
+                <para>An Object Storage component that copies and object to
                     remote partitions for fault tolerance.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>object server</glossterm>
             <glossdef>
-                <para>A swift component that is responsible for
+                <para>An Object Storage component that is responsible for
                     managing objects.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm>Object Service API</glossterm>
-            <glossdef>
-                <para>Alternative term for the swift object
-                    API.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>Object Storage</glossterm>
             <glossdef>
-                <para>The OpenStack core project that provides
-                eventually consistent and redundant storage and
-                retrieval of fixed digital content. The project name
-                of Object Storage is swift.</para>
+                <para>The OpenStack core project that
+                    provides eventually consistent and redundant
+                    storage and retrieval of fixed digital
+                    content. The project name of OpenStack
+                    Object Storage is swift.
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>Object Storage API</glossterm>
+            <glossdef>
+                <para>API used to access OpenStack Object Storage.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3267,15 +3257,16 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>object versioning</glossterm>
             <glossdef>
-                <para>Allows a user to set a flag on a swift container
-                    so all objects within the container are
-                    versioned.</para>
+                <para>
+                  Allows a user to set a flag on an Object Storage
+                  container so that all objects within the container
+                  are versioned.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>Oldie</glossterm>
             <glossdef>
-                <para>Term for a swift process that runs
+                <para>Term for an Object Storage process that runs
                     for a long time. Can indicate a hung
                     process.</para>
             </glossdef>
@@ -3300,7 +3291,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Open vSwitch neutron plug-in</glossterm>
             <glossdef>
                 <para>Provides support for
-                    Open vSwitch in neutron.</para>
+                    Open vSwitch in Networking.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3316,10 +3307,10 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>
                   OpenStack is a cloud operating system that controls
                   large pools of compute, storage, and networking
-                  resources throughout a datacenter, all managed through
+                  resources throughout a data center, all managed through
                   a dashboard that gives administrators control while
                   empowering their users to provision resources through
-                  a web interface. OpenStack is an Open Source project licensed
+                  a web interface. OpenStack is an open source project licensed
                   under the Apache License 2.0.
                 </para>
             </glossdef>
@@ -3350,9 +3341,11 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>orphan</glossterm>
             <glossdef>
-                <para>In the context of swift this is a process that
-                    is not terminated after an upgrade, restart, or
-                    reload of the service.</para>
+                <para>
+                  In the context of Object Storage, this is a process
+                  that is not terminated after an upgrade, restart, or
+                  reload of the service.
+                </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -3371,22 +3364,24 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>partition</glossterm>
             <glossdef>
-                <para>A unit of storage within swift used to store
-                    objects, exists on top of devices, replicated for
-                    fault tolerance.</para>
+                <para>
+                  A unit of storage within Object Storage used to
+                  store objects. It exists on top of devices and is,
+                  replicated for fault tolerance.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>partition index</glossterm>
             <glossdef>
-                <para>Contains the locations of all swift partitions
+                <para>Contains the locations of all Object Storage partitions
                     within the ring.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>partition shift value</glossterm>
             <glossdef>
-                <para>Used by swift to determine which partition data
+                <para>Used by Object Storage to determine which partition data
                     should reside on.</para>
             </glossdef>
         </glossentry>
@@ -3394,7 +3389,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>pause</glossterm>
             <glossdef>
                 <para>A VM state where no changes occur (no changes in
-                    memory, network communications stop, etc), the VM
+                    memory, network communications stop, etc); the VM
                     is frozen but not shut down.</para>
             </glossdef>
         </glossentry>
@@ -3410,7 +3405,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>persistent message</glossterm>
             <glossdef>
                 <para>A message that is stored both in memory and on
-                    disk, the message is not lost after a failure or
+                    disk. The message is not lost after a failure or
                     restart.</para>
             </glossdef>
         </glossentry>
@@ -3424,38 +3419,55 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>personality file</glossterm>
             <glossdef>
-                <para>A file used to customize a Compute instance, can be
-                    used to inject SSH keys or a specific network
-                    configuration.</para>
+                <para>
+                  A file used to customize a Compute instance. It can
+                  be used to inject SSH keys or a specific network
+                  configuration.
+                </para>
             </glossdef>
+        </glossentry>
+        <glossentry>
+             <glossterm>Platform-as-a-Service (PaaS)</glossterm>
+             <glossdef>
+               <para>
+                 Provides to the consumer the ability to deploy
+                 applications through a programming language or tools
+                 supported by the cloud platform provider. An example
+                 of Platform-as-a-Service is an Eclipse/Java
+                 programming platform provided with no downloads
+                 required.
+               </para>
+             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>plug-in</glossterm>
             <glossdef>
                 <para>Software component providing the actual
-                    implementation for neutron APIs, or for Compute
+                    implementation for Networking APIs, or for Compute
                     APIs, depending on the context.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>policy service</glossterm>
             <glossdef>
-                <para>Component of Identity Service that provides a rule
-                    management interface and a rule based
-                    authorization engine.</para>
+                <para>
+                  Component of Identity Service that provides a
+                  rule-management interface and a rule-based
+                  authorization engine.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>port</glossterm>
             <glossdef>
-                <para>A virtual network port within neutron, VIFs /
+                <para>A virtual network port within Networking; VIFs /
                     vNICs are connected to a port.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>port UUID</glossterm>
             <glossdef>
-                <para>Unique ID for a neutron port.</para>
+                <para>Unique ID for a Networking port.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3478,7 +3490,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>An IP address used for management and
                     administration, not available to the public
-                    internet.</para>
+                    Internet.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3506,7 +3518,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>project ID</glossterm>
             <glossdef>
-                <para>User defined alpha-numeric string in Compute, the
+                <para>User-defined alpha-numeric string in Compute; the
                     name of a project.</para>
             </glossdef>
         </glossentry>
@@ -3526,15 +3538,15 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>proxy node</glossterm>
             <glossdef>
-                <para>A node that provides the swift proxy
+                <para>A node that provides the Object Storage proxy
                     service.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>proxy server</glossterm>
             <glossdef>
-                <para>Users of swift interact with the service through
-                    the proxy server which in-turn looks up the
+                <para>Users of Object Storage interact with the service through
+                    the proxy server, which in-turn looks up the
                     location of the requested data within the ring and
                     returns the results to the user.</para>
             </glossdef>
@@ -3542,8 +3554,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>public API</glossterm>
             <glossdef>
-                <para>An API endpoint used for both service to service
-                    communication and end user interactions.</para>
+                <para>An API endpoint used for both service-to-service
+                    communication and end-user interactions.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3574,7 +3586,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>Puppet</glossterm>
             <glossdef>
-                <para>An operating system configuration management
+                <para>An operating system configuration-management
                     tool supported by OpenStack.</para>
             </glossdef>
         </glossentry>
@@ -3599,15 +3611,15 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>Qpid</glossterm>
             <glossdef>
-                <para>Message queue software supported by OpenStack,
+                <para>Message queue software supported by OpenStack;
                     an alternative to RabbitMQ.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>quarantine</glossterm>
             <glossdef>
-                <para>If swift finds objects, containers, or accounts
-                    that are corrupt they are placed in this state,
+                <para>If Object Storage finds objects, containers, or accounts
+                    that are corrupt, they are placed in this state,
                     are not replicated, cannot be read by clients, and
                     a correct copy is re-replicated.</para>
             </glossdef>
@@ -3644,7 +3656,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Rackspace Cloud Files</glossterm>
             <glossdef>
                 <para>Released as open source by Rackspace in 2010,
-                    the basis for swift.</para>
+                    the basis for Object Storage.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3683,7 +3695,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>rate limit</glossterm>
             <glossdef>
-                <para>Configurable option within swift to limit
+                <para>Configurable option within Object Storage to limit
                     database writes on a per-account and/or
                     per-container basis.</para>
             </glossdef>
@@ -3692,14 +3704,14 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>raw</glossterm>
             <glossdef>
                 <para>One of the VM image disk formats supported by
-                    Image Service, an unstructured disk image.</para>
+                    Image Service; an unstructured disk image.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>rebalance</glossterm>
             <glossdef>
-                <para>The process of distributing swift partitions
-                    across all drives in the ring, used during initial
+                <para>The process of distributing Object Storage partitions
+                    across all drives in the ring; used during initial
                     ring creation and after ring
                     reconfiguration.</para>
             </glossdef>
@@ -3714,7 +3726,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     power cycling the server. The virtualization
                     platform should ensure that the reboot action has
                     completed successfully even in cases in which the
-                    underlying domain/vm is paused or halted/stopped.
+                    underlying domain/VM is paused or halted/stopped.
                </para>
             </glossdef>
         </glossentry>
@@ -3729,7 +3741,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>Recon</glossterm>
             <glossdef>
-                <para>A swift component that collects metrics.</para>
+                <para>An Object Storage component that collects metrics.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3750,15 +3762,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>record ID</glossterm>
             <glossdef>
                 <para>A number within a database that is incremented
-                    each time a change is made. Used by swift when
+                    each time a change is made. Used by Object Storage when
                     replicating.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm>Red Dwarf Lite</glossterm>
-            <glossdef>
-                <para>Community project that aims to provide database
-                    as a service.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3778,7 +3783,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>region</glossterm>
             <glossdef>
-                <para>A Discrete OpenStack environment with dedicated API
+                <para>A discrete OpenStack environment with dedicated API
                       endpoints that typically shares only the Identity
                       Service (keystone) with other regions.</para>
             </glossdef>
@@ -3802,7 +3807,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 (RADOS)</glossterm>
             <glossdef>
                 <para>A collection of components that provides object
-                    storage within Ceph. Similar to swift.</para>
+                    storage within Ceph. Similar to OpenStack Object
+                    Storage.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -3816,15 +3822,15 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>replica</glossterm>
             <glossdef>
                 <para>Provides data redundancy and fault tolerance by
-                    creating copies of swift objects, accounts, and
-                    containers so they are not lost when the
+                    creating copies of Object Storage objects, accounts, and
+                    containers so that they are not lost when the
                     underlying storage fails.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>replica count</glossterm>
             <glossdef>
-                <para>The number of replicas of the data in a swift
+                <para>The number of replicas of the data in an Object Storage
                     ring.</para>
             </glossdef>
         </glossentry>
@@ -3839,7 +3845,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>replicator</glossterm>
             <glossdef>
-                <para>The swift back-end process that creates and
+                <para>The Object Storage back-end process that creates and
                     manages object replicas.</para>
             </glossdef>
         </glossentry>
@@ -3882,7 +3888,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>ring</glossterm>
             <glossdef>
-                <para>An entity that maps swift data to partitions. A
+                <para>An entity that maps Object Storage data to partitions. A
                     separate ring exists for each service, such as
                     account, object, and container.</para>
             </glossdef>
@@ -3890,7 +3896,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>ring builder</glossterm>
             <glossdef>
-                <para>Builds and manages rings within swift, assigns
+                <para>Builds and manages rings within Object Storage, assigns
                     partitions to devices, and pushes the
                     configuration to other storage nodes.</para>
             </glossdef>
@@ -3899,7 +3905,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Role Based Access Control (RBAC)</glossterm>
             <glossdef>
                 <para>Provides a predefined list of actions that the
-                    user can perform such as start or stop VMs, reset
+                    user can perform, such as start or stop VMs, reset
                     passwords, and so on. Supported in both Identity Service
                     and Compute and can be configured using the horizon
                     dashboard.</para>
@@ -3941,8 +3947,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>routing key</glossterm>
             <glossdef>
                 <para>The Compute direct exchanges, fanout exchanges, and
-                    topic exchanges use this to determine how to
-                    process a message, processing varies depending on
+                    topic exchanges use this key to determine how to
+                    process a message; processing varies depending on
                     exchange type.</para>
             </glossdef>
         </glossentry>
@@ -3979,7 +3985,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Ryu neutron plug-in</glossterm>
             <glossdef>
                 <para>Enables the Ryu network operating system to
-                    function as a neutron OpenFlow controller.</para>
+                    function as a Networking OpenFlow controller.</para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -3989,17 +3995,21 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>S3</glossterm>
             <glossdef>
-                <para>Object storage service by Amazon, similar in
-                    function to swift, can act as a back-end store for
-                    Image Service VM images.</para>
+                <para>
+                  Object storage service by Amazon; similar in
+                  function to Object Storage, it can act as a back-end
+                  store for Image Service VM images.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>savanna</glossterm>
+            <glossterm>sahara</glossterm>
             <glossdef>
-                <para>OpenStack project that provisions Hadoop on top
-                    of OpenStack to provide a data processing
-                    service.</para>
+                <para>
+                  OpenStack project that provides a scalable
+                  data-processing stack and associated management
+                  interfaces.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4020,14 +4030,14 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>scrubber</glossterm>
             <glossdef>
-                <para>Checks for and deletes unused VM, the component
+                <para>Checks for and deletes unused VMs; the component
                     of Image Service that implements delayed delete.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>secret key</glossterm>
             <glossdef>
-                <para>String of text only known by the user, used
+                <para>String of text known only by the user; used
                     along with an access key to make requests to the
                     Compute API.</para>
             </glossdef>
@@ -4050,8 +4060,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>segmented object</glossterm>
             <glossdef>
-                <para>A swift large object that has been broken up
-                    into pieces, the re-assembled object is called a
+                <para>An Object Storage large object that has been broken up
+                    into pieces. The re-assembled object is called a
                     concatenated object.</para>
             </glossdef>
         </glossentry>
@@ -4061,7 +4071,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>Computer that provides explicit services to the
                     client software running on that system, often
                     managing a variety of computer operations.</para>
-                <para>A server is a VM instance in the compute system.
+                <para>A server is a VM instance in the Compute system.
                     Flavor and image are requisite elements when
                     creating a server.</para>
             </glossdef>
@@ -4138,7 +4148,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>session persistence</glossterm>
             <glossdef>
-                <para>A feature of the load balancing service. It
+                <para>A feature of the load-balancing service. It
                     attempts to force subsequent connections to a
                     service to be redirected to the same node as long
                     as it is online.</para>
@@ -4178,15 +4188,15 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     can share one or more public IPs with any other
                     server in the group. With the exception of the
                     first server in a shared IP group, servers must be
-                    launched into shared IP groups. A server may only
-                    be a member of one shared IP group.</para>
+                    launched into shared IP groups. A server may
+                    be a member of only one shared IP group.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>shared storage</glossterm>
             <glossdef>
                 <para>Block storage that is simultaneously accessible
-                    by multiple clients. For example, NFS.</para>
+                    by multiple clients, for example, NFS.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4221,7 +4231,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>SmokeStack</glossterm>
             <glossdef>
                 <para>Runs automated tests against the core OpenStack
-                    API, written in Rails.</para>
+                    API; written in Rails.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4264,7 +4274,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>spread-first scheduler</glossterm>
             <glossdef>
                 <para>The Compute VM scheduling algorithm that attempts
-                    to start new VM on the host with the least amount
+                    to start a new VM on the host with the least amount
                     of load.</para>
             </glossdef>
         </glossentry>
@@ -4299,22 +4309,22 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>StaticWeb</glossterm>
             <glossdef>
-                <para>WSGI middleware component of swift that serves
+                <para>WSGI middleware component of Object Storage that serves
                     container data as a static web page.</para>
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>storage back-end</glossterm>
+            <glossterm>storage back end</glossterm>
             <glossdef>
                 <para>The method that a service uses for persistent
-                    storage such as iSCSI, NFS, or local disk.</para>
+                    storage, such as iSCSI, NFS, or local disk.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>storage node</glossterm>
             <glossdef>
-                <para>A swift node that provides container services,
-                    account services, and object services, controls
+                <para>An Object Storage node that provides container services,
+                    account services, and object services; controls
                     the account databases, container databases, and
                     object storage.</para>
             </glossdef>
@@ -4324,20 +4334,20 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>A XenAPI component that provides a pluggable
                     interface to support a wide variety of persistent
-                    storage back-ends.</para>
+                    storage back ends.</para>
             </glossdef>
         </glossentry>
         <glossentry>
-            <glossterm>storage manager back-end</glossterm>
+            <glossterm>storage manager back end</glossterm>
             <glossdef>
-                <para>A persistent storage method supported by XenAPI
+                <para>A persistent storage method supported by XenAPI,
                     such as iSCSI or NFS.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>storage services</glossterm>
             <glossdef>
-                <para>Collective name for the swift object services,
+                <para>Collective name for the Object Storage object services,
                     container services, and account services.</para>
             </glossdef>
         </glossentry>
@@ -4385,8 +4395,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>swawth</glossterm>
             <glossdef>
                 <para>An authentication and authorization service for
-                    swift, implemented through WSGI middleware, uses
-                    swift itself as the persistent backing
+                    Object Storage, implemented through WSGI middleware; uses
+                    Object Storage itself as the persistent backing
                     store.</para>
             </glossdef>
         </glossentry>
@@ -4400,28 +4410,28 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>swift All in One (SAIO)</glossterm>
             <glossdef>
-                <para>Creates a full swift development environment
+                <para>Creates a full Object Storage development environment
                     within a single VM.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>swift middleware</glossterm>
             <glossdef>
-                <para>Collective term for swift components that
+                <para>Collective term for Object Storage components that
                     provide additional functionality.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>swift proxy server</glossterm>
             <glossdef>
-                <para>Acts as the gatekeeper to swift and is
+                <para>Acts as the gatekeeper to Object Storage and is
                     responsible for authenticating the user.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>swift storage node</glossterm>
             <glossdef>
-                <para>A node that runs swift account, container, and
+                <para>A node that runs Object Storage account, container, and
                     object services.</para>
             </glossdef>
         </glossentry>
@@ -4430,7 +4440,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>Point in time since the last container and
                     accounts database sync among nodes within
-                    swift.</para>
+                    Object Storage.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4467,8 +4477,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>TempAuth</glossterm>
             <glossdef>
-                <para>An authentication facility within swift that
-                    enables swift itself to perform authentication and
+                <para>An authentication facility within Object Storage that
+                    enables Object Storage itself to perform authentication and
                     authorization. Frequently used in testing and
                     development.</para>
             </glossdef>
@@ -4484,7 +4494,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>TempURL</glossterm>
             <glossdef>
-                <para>A swift middleware component that enables creation of URLs for temporary object access.</para>
+                <para>An Object Storage middleware component that enables creation of URLs for temporary object access.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4512,7 +4522,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>tenant ID</glossterm>
             <glossdef>
                 <para>Unique ID assigned to each tenant within
-                    the Identity Service, the project IDs map to the
+                    the Identity Service. The project IDs map to the
                     tenant IDs.</para>
             </glossdef>
         </glossentry>
@@ -4534,8 +4544,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>tombstone</glossterm>
             <glossdef>
-                <para>Used to mark swift objects that have been
-                    deleted, ensures the object is not updated on
+                <para>Used to mark Object Storage objects that have been
+                    deleted; ensures that the object is not updated on
                     another node after it has been deleted.</para>
             </glossdef>
         </glossentry>
@@ -4543,7 +4553,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>topic publisher</glossterm>
             <glossdef>
                 <para>A process that is created when a RPC call is
-                    executed, used to push the message to the topic
+                    executed; used to push the message to the topic
                     exchange.</para>
             </glossdef>
         </glossentry>
@@ -4557,7 +4567,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>transaction ID</glossterm>
             <glossdef>
-                <para>Unique ID assigned to each swift request, used
+                <para>Unique ID assigned to each Object Storage request; used
                     for debugging and tracing.</para>
             </glossdef>
         </glossentry>
@@ -4594,13 +4604,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     services to applications.</para>
             </glossdef>
         </glossentry>
-
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
-            </glossdef>
-        </glossentry>
     </glossdiv>
     <!-- .U. -->
     <glossdiv>
@@ -4614,14 +4617,14 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
        <glossentry>
             <glossterm>unscoped token</glossterm>
             <glossdef>
-                <para>Alternative term for a Identity Service default
+                <para>Alternative term for an Identity Service default
                     token.</para>
             </glossdef>
         </glossentry>
         <glossentry>
             <glossterm>updater</glossterm>
             <glossdef>
-                <para>Collective term for a group of swift components
+                <para>Collective term for a group of Object Storage components
                     that processes queued and failed updates for
                     containers and objects.</para>
             </glossdef>
@@ -4629,8 +4632,8 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>user</glossterm>
             <glossdef>
-                <para>In Identity Service each user is associated with one or
-                    more tenants, and in Compute they can be associated
+                <para>In Identity Service, each user is associated with one or
+                    more tenants, and in Compute can be associated
                     with roles, projects, or both.</para>
             </glossdef>
         </glossentry>
@@ -4651,12 +4654,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>An OpenStack-supported hypervisor.</para>
             </glossdef>
         </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
-            </glossdef>
-        </glossentry>
     </glossdiv>
     <!-- .V. -->
     <glossdiv>
@@ -4664,7 +4661,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>VIF UUID</glossterm>
             <glossdef>
-                <para>Unique ID assigned to each neutron VIF.</para>
+                <para>Unique ID assigned to each Networking VIF.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4711,7 +4708,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>virtual network</glossterm>
             <glossdef>
-                <para>An L2 network segment within neutron.</para>
+                <para>An L2 network segment within Networking.</para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4725,7 +4722,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossterm>Virtual Network InterFace (VIF)</glossterm>
             <glossdef>
                 <para>An interface that is plugged into a port in a
-                    neutron network. Typically a virtual network
+                    Networking network. Typically a virtual network
                     interface belonging to a VM.</para>
             </glossdef>
         </glossentry>
@@ -4753,9 +4750,11 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>virtual switch (vSwitch)</glossterm>
             <glossdef>
-                <para>Software that runs on a host or node and
-                    provides the features and functions of a hardware
-                    based network switch.</para>
+                <para>
+                  Software that runs on a host or node and provides
+                  the features and functions of a hardware-based
+                  network switch.
+                </para>
             </glossdef>
         </glossentry>
         <glossentry>
@@ -4773,7 +4772,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>VLAN manager</glossterm>
             <glossdef>
-                <para>A Compute component that provides dnsmasq, radvd,
+                <para>A Compute component that provides dnsmasq and radvd
                     and sets up forwarding to and from cloudpipe
                     instances.</para>
             </glossdef>
@@ -4818,6 +4817,12 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             </glossdef>
         </glossentry>
         <glossentry>
+            <glossterm>VMware NSX Neutron plugin</glossterm>
+            <glossdef>
+                <para>Provides support for VMware NSX in Neutron.</para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
             <glossterm>VNC proxy</glossterm>
             <glossdef>
                 <para>A Compute component that provides users access to
@@ -4830,7 +4835,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
             <glossdef>
                 <para>Disk-based data storage generally represented as
                     an iSCSI target with a file system that supports
-                    extended attributes, can be persistent or
+                    extended attributes; can be persistent or
                     ephemeral.</para>
             </glossdef>
         </glossentry>
@@ -4907,12 +4912,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>An OpenStack-supported hypervisor.</para>
             </glossdef>
         </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
-            </glossdef>
-        </glossentry>
     </glossdiv>
     <!-- .W. -->
     <glossdiv>
@@ -4929,7 +4928,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>weight</glossterm>
             <glossdef>
-                <para>Used by swift storage devices to determine which
+                <para>Used by Object Storage devices to determine which
                     storage devices are suitable for the job. Devices
                     are weighted by size.</para>
             </glossdef>
@@ -4944,15 +4943,14 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
         <glossentry>
             <glossterm>worker</glossterm>
             <glossdef>
-                <para>A daemon that listens to a queue and carries out tasks in response to messages. For example,
-                    the <systemitem class="service">cinder-volume</systemitem> worker attaches
-                    storage to instances.</para>
-            </glossdef>
-        </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
+                <para>
+                  A daemon that listens to a queue and carries out
+                  tasks in response to messages. For example, the
+                  <systemitem
+                  class="service">cinder-volume</systemitem> worker
+                  manages volume creation and deletion on storage
+                  arrays.
+                </para>
             </glossdef>
         </glossentry>
     </glossdiv>
@@ -4986,12 +4984,6 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                 <para>An OpenStack-supported hypervisor.</para>
             </glossdef>
         </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
-            </glossdef>
-        </glossentry>
     </glossdiv>
     <!-- .Y. -->
     <glossdiv>
@@ -5022,12 +5014,7 @@ Each entry in a typical ACL specifies a subject and an operation. For instance, 
                     parallel.</para>
             </glossdef>
         </glossentry>
-        <glossentry>
-            <glossterm/>
-            <glossdef>
-                <para/>
-            </glossdef>
-        </glossentry>
     </glossdiv>
     <!-- ... -->
 </glossary>
+

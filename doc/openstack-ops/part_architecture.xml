@@ -14,11 +14,11 @@
     <partintro>
       <para>
         Designing an OpenStack cloud is a great achievement. It requires a
-        robust understanding of the requirements and needs of the cloud
+        robust understanding of the requirements and needs of the cloud's
         users to determine the best possible configuration to meet them.
         OpenStack provides a great deal of flexibility to achieve your
         needs, and this part of the book aims to shine light on many of the
-        decisions you will need to make during the process.
+        decisions you need to make during the process.
       </para>
       <para>To design, deploy, and configure OpenStack, administrators
         must understand the logical architecture. A diagram can help
@@ -43,7 +43,7 @@
         Identity Service and individual services interact with each
         other through public APIs, except where privileged
         administrator commands are necessary. The diagram shows the
-        most common, but not the only, logical architecture for an
+        most common, but not the only logical architecture for an
         OpenStack cloud.</para>
       <!-- O'Reilly production to insert image here -->
     </partintro>

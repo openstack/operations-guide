@@ -29,12 +29,12 @@
         <para>If you're encountering any sort of networking
             difficulty, one good initial sanity check is to make sure
             that your interfaces are up. For example:</para>
-        <screen><prompt>$</prompt> <userinput>ip a | grep state</userinput></screen>
-<screen><computeroutput>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN
+        <screen><prompt>$</prompt> <userinput>ip a | grep state</userinput>
+        <computeroutput>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN
 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
 3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master br100 state UP qlen 1000
 4: virbr0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
-6: br100: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state
+5: br100: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state
 UP</computeroutput></screen>
         <para>You can safely ignore the state of virbr0, which is a
             default bridge created by libvirt and not used by
@@ -44,32 +44,32 @@ UP</computeroutput></screen>
         <title>Nova-Network Traffic in the Cloud</title>
         <para>If you are logged in to an instance and ping an external
             host, for example google.com, the ping packet takes the
-            following route:</para>
-        <informalfigure>
+            route:</para>
+        <figure>
+            <title>Traffic Route for Ping Packet</title>
             <mediaobject>
                 <imageobject>
                     <imagedata width="5in"
                         fileref="figures/network_packet_ping.png"/>
                 </imageobject>
             </mediaobject>
-        </informalfigure>
+        </figure>
         <orderedlist>
             <listitem>
                 <para>The instance generates a packet and places it on the
                     virtual Network Interface Card (NIC) inside the instance,
-                    such as, eth0.</para>
+                    such as eth0.</para>
             </listitem>
             <listitem>
                 <para>The packet transfers to the virtual NIC of the
                     compute host, such as, vnet1. You can find out
-                    what vent NIC is being used by looking at the
-                    /etc/libvirt/qemu/instance-xxxxxxxx.xml file.
+                    what vnet NIC is being used by looking at the
+                    <filename>/etc/libvirt/qemu/instance-xxxxxxxx.xml</filename> file.
                 </para>
             </listitem>
             <listitem>
                 <para>From the vnet NIC, the packet transfers to a
-                    bridge on the compute node, such as,
-                        <code>br100.</code>
+                    bridge on the compute node, such as <code>br100</code>.
                 </para>
                 <para>If you run FlatDHCPManager, one bridge is on
                     the compute node. If you run VlanManager, one
@@ -80,7 +80,7 @@ UP</computeroutput></screen>
                 </para>
                 <para>Look for the vnet NIC. You can also reference
                     <filename>nova.conf</filename> and look for the
-                    <programlisting language="ini">flat_interface_bridge</programlisting>
+                    <code>flat_interface_bridge</code>
                     option.</para>
             </listitem>
             <listitem>
@@ -106,10 +106,10 @@ UP</computeroutput></screen>
     </section>
     <section xml:id="neutron_network_traffic_in_cloud">
         <title>OpenStack Networking Service Traffic in the Cloud</title>
-        <para>The OpenStack Networking Service, Neutron, has many more degrees
-            of freedom than nova-network does due to its pluggable back-end. It
-            can be configured with open source or vendor proprietary plugins
-            that control software defined networking (SDN) hardware or plugins
+        <para>The OpenStack Networking Service, neutron, has many more degrees
+            of freedom than nova-network does because of its pluggable back end. It
+            can be configured with open source or vendor proprietary plug-ins
+            that control software defined networking (SDN) hardware or plug-ins
             that use Linux native facilities on your hosts such as Open vSwitch
             or Linux Bridge.</para>
         <para>The networking chapter of the OpenStack <link
@@ -121,76 +121,76 @@ UP</computeroutput></screen>
         paths. The purpose of this section is to give you the tools
         to troubleshoot the various components involved however they
         are plumbed together in your environment.</para>
-        <para>For this example we will use the  Open vSwitch (ovs) backend. Other back-end
-        plugins will have very different flow paths. OVS is the most
+        <para>For this example we will use the  Open vSwitch (OVS) back end. Other back-end
+        plug-ins will have very different flow paths. OVS is the most
         popularly deployed network driver according to the October
-        2013 OpenStack User Survey with 50% more sites using it than
+        2013 OpenStack User Survey, with 50 percent more sites using it than
         the second place Linux Bridge driver.</para>
         <para>We'll describe each step in turn with this diagram for reference:</para>
-        <informalfigure>
+        <figure xml:id="neutron-packet-ping">
+            <title>Neutron Network Paths</title>
             <mediaobject>
                 <imageobject>
                     <imagedata width="5in"
                         fileref="figures/neutron_packet_ping.png"/>
                 </imageobject>
             </mediaobject>
-        </informalfigure>
+        </figure>
         <orderedlist>
             <listitem>
                 <para>The instance generates a packet and places it on
-                    the virtual NIC inside the instance, such as,
-                    eth0.</para>
+                    the virtual NIC inside the instance, such as eth0.</para>
             </listitem>
             <listitem>
                 <para>The packet transfers to a Test Access Point (TAP) device
-                    on the compute host, such as, tap690466bc-92. You can find
+                    on the compute host, such as tap690466bc-92. You can find
                     out what TAP is being used by looking at the
-                    /etc/libvirt/qemu/instance-xxxxxxxx.xml file.</para>
+                    <filename>/etc/libvirt/qemu/instance-xxxxxxxx.xml</filename> file.</para>
                 <para>The TAP device name is constructed using the first 11
-                    characters of the port id (10 hex digits plus an included
+                    characters of the port ID (10 hex digits plus an included
                     '-'), so another means of finding the device name is to use
-                    the <command>neutron</command> command. This returns a pipe
-                    delimited list, the first item of which is the port id. For
-                    example to get the port id associated with IP address
-                    10.0.0.10:</para>
+                    the <command>neutron</command> command. This returns a pipe-
+                    delimited list, the first item of which is the port ID. For
+                    example, to get the port ID associated with IP address
+                    10.0.0.10, do this:</para>
                 <screen><prompt>#</prompt> <userinput>neutron port-list |grep 10.0.0.10|cut -d \| -f 2</userinput>
 <computeroutput> ff387e54-9e54-442b-94a3-aa4481764f1d
                 </computeroutput></screen>
-                <para>Taking the first 11 characters we can construct a
+                <para>Taking the first 11 characters, we can construct a
                 device name of tapff387e54-9e from this output.</para>
             </listitem>
             <listitem>
                 <para>The TAP device is connected to the integration
                 bridge, <code>br-int</code>. This bridge connects all
                 the instance TAP devices and any other bridges on the
-                system. In this example we have
+                system. In this example, we have
                 <code>int-br-eth1</code> and
                 <code>patch-tun</code>. <code>int-br-eth1</code> is
                 one half of a veth pair connecting to the bridge
-                <code>br-eth1</code> which handles VLAN networks
+                <code>br-eth1</code>, which handles VLAN networks
                 trunked over the physical Ethernet device
                 <code>eth1</code>. <code>patch-tun</code> is an Open
-                vSwitch internal port which connects to the
+                vSwitch internal port that connects to the
                 <code>br-tun</code> bridge for GRE networks.</para>
 
                 <para>The TAP devices and veth devices are normal
                 Linux network devices and may be inspected with the
                 usual tools such as <command>ip</command> and
                 <command>tcpdump</command>. Open vSwitch internal
-                devices, such as <code>patch-tun</code> are only
-                visible within the Open vSwitch environment, if you
-                try to run <command>tcpdump -i patch-tun</command> it
-                will error saying the device does not exist.</para>
+                devices, such as <code>patch-tun</code>, are only
+                visible within the Open vSwitch environment. If you
+                try to run <command>tcpdump -i patch-tun</command>, it
+                will raise an error saying that the device does not exist.</para>
 
                 <para>It is possible to watch packets on internal
                 interfaces, but it does take a little bit of
-                networking gymnastics. First we need to create a
+                networking gymnastics. First you need to create a
                 dummy network device that normal Linux tools can see.
-                Then we need to add it to the bridge containing the
-                internal interface we want to snoop on. Finally we
+                Then you need to add it to the bridge containing the
+                internal interface you want to snoop on. Finally, you
                 need to tell Open vSwitch to mirror all traffic to or
                 from the internal port onto this dummy port. After all
-                this we can then run <command>tcpdump</command> on our
+                this, you can then run <command>tcpdump</command> on the
                 dummy interface and see the traffic on the internal
                 port.</para>
 
@@ -201,7 +201,7 @@ UP</computeroutput></screen>
 
                   <step>
                     <para>Create and bring up a dummy interface,
-                                <code>snooper0</code></para>
+                                <code>snooper0</code>.</para>
 
                     <screen><prompt>#</prompt> <userinput>ip link add name snooper0 type dummy</userinput>
 <computeroutput></computeroutput></screen>
@@ -210,18 +210,19 @@ UP</computeroutput></screen>
                   </step>
                   <step>
                     <para>Add device <code>snooper0</code> to bridge
-                                <code>br-int</code></para>
+                                <code>br-int</code>.</para>
                     <screen><prompt>#</prompt> <userinput>ovs-vsctl add-port br-int snooper0</userinput>
 <computeroutput></computeroutput></screen>
                   </step>
                   <step>
                     <para>Create mirror of <code>patch-tun</code> to
-                    <code>snooper0</code> (returns UUID of mirror port)</para>
+                    <code>snooper0</code> (returns UUID of mirror port).</para>
                     <screen><prompt>#</prompt> <userinput>ovs-vsctl -- set Bridge br-int mirrors=@m  -- --id=@snooper0 get Port snooper0  -- --id=@patch-tun get Port patch-tun  -- --id=@m create Mirror name=mymirror select-dst-port=@patch-tun  select-src-port=@patch-tun output-port=@snooper0</userinput>
 <computeroutput>90eb8cb9-8441-4f6d-8f67-0ea037f40e6c</computeroutput></screen>
                   </step>
                   <step>
-                    <para>Profit. You can now see traffic on <code>patch-tun</code> by running <command>tcpdump -i snooper0</command></para>
+                    <para>Profit. You can now see traffic on <code>patch-tun</code> by running
+                        <command>tcpdump -i snooper0</command>.</para>
                   </step>
                   <step>
                     <para>Clean up by clearing all mirrors on
@@ -233,19 +234,23 @@ UP</computeroutput></screen>
 <computeroutput></computeroutput></screen>
                   </step>
                 </procedure>
-                <para>On the integration bridge networks are
+                <para>On the integration bridge, networks are
                 distinguished using internal VLANs regardless of how
                 the networking service defines them. This allows
                 instances on the same host to communicate directly
                 without transiting the rest of the virtual, or
-                physical, network. These internal VLAN id are based on
+                physical, network. These internal VLAN IDs are based on
                 the order they are created on the node and may vary
-                between nodes. These ids are in no way related to the
-                segmentation ids used in the network definition and on
+                between nodes. These IDs are in no way related to the
+                segmentation IDs used in the network definition and on
                 the physical wire.</para>
-                <para>VLAN tags are translated between the external tag, defined in the network settings, and internal tags in several places. On the <code>br-int</code>, incoming packets from the <code>int-br-eth1</code> are translated from external tags to internal tags. Other translations also happen on the other bridges, and will be discussed in those sections.</para>
+                <para>VLAN tags are translated between the external tag, defined in the network
+                    settings, and internal tags in several places. On the <code>br-int</code>,
+                    incoming packets from the <code>int-br-eth1</code> are translated from external
+                    tags to internal tags. Other translations also happen on the other bridges and
+                    will be discussed in those sections.</para>
                 <procedure>
-                    <title>Discover which internal VLAN tag is in use for a
+                    <title>To discover which internal VLAN tag is in use for a
                         given external VLAN by using the
                             <command>ovs-ofctl</command> command.</title>
                     <step>
@@ -270,10 +275,10 @@ UP</computeroutput></screen>
                         <screen><prompt>#</prompt> <userinput>ovs-ofctl dump-flows br-int|grep vlan=2113</userinput>
 <computeroutput>cookie=0x0, duration=173615.481s, table=0, n_packets=7676140, n_bytes=444818637, idle_age=0, hard_age=65534, priority=3,in_port=1,dl_vlan=2113 actions=mod_vlan_vid:7,NORMAL
 </computeroutput></screen>
-                        <para>Here we see packets received on port id 1 with the
+                        <para>Here you can see packets received on port ID 1 with the
                             VLAN tag 2113 are modified to have the internal VLAN
-                            tag 7. Digging a little deeper we can confirm that
-                            port 1 is in face <code>int-br-eth1</code>.</para>
+                            tag 7. Digging a little deeper, you can confirm that
+                            port 1 is in fact <code>int-br-eth1</code>.</para>
                         <screen><prompt>#</prompt> <userinput>ovs-ofctl show br-int</userinput>
 <computeroutput>OFPT_FEATURES_REPLY (xid=0x2): dpid:000022bc45e1914b
 n_tables:254, n_buffers:256
@@ -308,7 +313,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
               GRE</para>
               <orderedlist>
                 <listitem>
-                  <para>VLAN based networks will exit the integration
+                  <para>VLAN-based networks exit the integration
                   bridge via veth interface <code>int-br-eth1</code>
                   and arrive on the bridge <code>br-eth1</code> on the
                   other member of the veth pair
@@ -322,19 +327,19 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 <para>Packets, now tagged with the external VLAN tag, then exit
                             onto the physical network via <code>eth1</code>. The
                             Layer2 switch this interface is connected to must be
-                            configured to accept traffic with the VLAN id used.
+                            configured to accept traffic with the VLAN ID used.
                             The next hop for this packet must also be on the
-                            same Layer 2 network.</para>
+                            same layer-2 network.</para>
                 </listitem>
                     <listitem>
-                        <para>GRE based networks are passed via
+                        <para>GRE-based networks are passed with
                                 <code>patch-tun</code> to the tunnel bridge
                                 <code>br-tun</code> on interface
                                 <code>patch-int</code>. This bridge also
                             contains one port for each GRE tunnel peer, so one
                             for each compute node and network node in your
                             network. The ports are named sequentially from
-                                <code>gre-1</code> onwards.</para>
+                                <code>gre-1</code> onward.</para>
                         <para>Matching <code>gre-&lt;n&gt;</code> interfaces to
                             tunnel endpoints is possible by looking at the Open
                             vSwitch state:</para>
@@ -344,14 +349,14 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 type: gre
                 options: {in_key=flow, local_ip="10.10.128.21", out_key=flow, remote_ip="10.10.128.16"}
 </computeroutput></screen>
-                        <para>In this case <code>gre-1</code> is a tunnel from
+                        <para>In this case, <code>gre-1</code> is a tunnel from
                             IP 10.10.128.21, which should match a local
                             interface on this node, to IP 10.10.128.16 on the
                             remote side.</para>
                         <para>These tunnels use the regular routing tables on
                             the host to route the resulting GRE packet, so there
                             is no requirement that GRE endpoints are all on the
-                            same layer2 network, unlike VLAN
+                            same layer-2 network, unlike VLAN
                             encapsulation.</para>
                         <para>All interfaces on the <code>br-tun</code> are
                             internal to Open vSwitch. To monitor traffic on them
@@ -361,16 +366,14 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                         <para>All translation of GRE tunnels to and from
                             internal VLANs happens on this bridge.</para>
                         <procedure>
-                            <title>Discover which internal VLAN tag is in use
+                            <title>To discover which internal VLAN tag is in use
                                 for a GRE tunnel by using the
                                     <command>ovs-ofctl</command>
                                 command.</title>
                             <step>
-                                <para>Find the
-                                        <code>provider:segmentation_id</code> of
-                                    the network you're interested in. This is
-                                    the same field used for VLAN id in VLAN
-                                    based networks</para>
+                                <para>Find the <code>provider:segmentation_id</code> of the network
+                                    you're interested in. This is the same field used for the VLAN
+                                    ID in VLAN-based networks:</para>
                                 <screen><prompt>#</prompt> <userinput>neutron net-show --fields provider:segmentation_id &lt;network name&gt;</userinput>
 <computeroutput>+--------------------------+-------+
 | Field                    | Value |
@@ -387,23 +390,23 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                                         <command>ovs-ofctl dump-flows
                                         br-int</command>:</para>
                                 <screen><prompt>#</prompt> <userinput>ovs-ofctl dump-flows br-int|grep 0x3</userinput>
-<computeroutput> cookie=0x0, duration=380575.724s, table=2, n_packets=1800, n_bytes=286104, priority=1,tun_id=0x3 actions=mod_vlan_vid:1,resubmit(,10)
+<computeroutput>cookie=0x0, duration=380575.724s, table=2, n_packets=1800, n_bytes=286104, priority=1,tun_id=0x3 actions=mod_vlan_vid:1,resubmit(,10)
  cookie=0x0, duration=715.529s, table=20, n_packets=5, n_bytes=830, hard_timeout=300,priority=1,vlan_tci=0x0001/0x0fff,dl_dst=fa:16:3e:a6:48:24 actions=load:0->NXM_OF_VLAN_TCI[],load:0x3->NXM_NX_TUN_ID[],output:53
  cookie=0x0, duration=193729.242s, table=21, n_packets=58761, n_bytes=2618498, dl_vlan=1 actions=strip_vlan,set_tunnel:0x3,output:4,output:58,output:56,output:11,output:12,output:47,output:13,output:48,output:49,output:44,output:43,output:45,output:46,output:30,output:31,output:29,output:28,output:26,output:27,output:24,output:25,output:32,output:19,output:21,output:59,output:60,output:57,output:6,output:5,output:20,output:18,output:17,output:16,output:15,output:14,output:7,output:9,output:8,output:53,output:10,output:3,output:2,output:38,output:37,output:39,output:40,output:34,output:23,output:36,output:35,output:22,output:42,output:41,output:54,output:52,output:51,output:50,output:55,output:33
 </computeroutput></screen>
-                                <para>Here we see three flows related to this
+                                <para>Here, you see three flows related to this
                                     GRE tunnel. The first is the translation
-                                    from inbound packets with this tunnel id to
-                                    internal VLAN id 1. The second shows a
+                                    from inbound packets with this tunnel ID to
+                                    internal VLAN ID 1. The second shows a
                                     unicast flow to output port 53 for packets
                                     destined for MAC address fa:16:3e:a6:48:24.
                                     The third shows the translation from the
                                     internal VLAN representation to the GRE
-                                    tunnel id flooded to all output ports. For
-                                    further details of the flow descriptions see
+                                    tunnel ID flooded to all output ports. For
+                                    further details of the flow descriptions, see
                                     the man page for
                                         <command>ovs-ofctl</command>. As in the
-                                    VLAN example above, numeric port ids can be
+                                    VLAN example above, numeric port IDs can be
                                     matched with their named representations by
                                     examining the output of <command>ovs-ofctl
                                         show br-tun</command>.</para>
@@ -413,16 +416,14 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
               </orderedlist>
             </listitem>
             <listitem>
-              <para>The packet is then received on the network node. Note that
-                    any traffic to the l3-agent or dhcp-agent will only be
-                    visible within their network namespace. Watching any
-                    interfaces outside those namespaces, even those that carry
-                    the network traffic will only show broadcast packets like
-                    Address Resolution Protocols (ARPs), but unicast traffic to
-                    the router or DHCP address will not be seen. See the <xref
-                        linkend="dealing_with_netns"/> section below for detail
-                    on how to run commands within these namespaces.</para>
-              <para>Alternatively, it is possible to configure VLAN based
+              <para>The packet is then received on the network node. Note that any traffic to the
+                    l3-agent or dhcp-agent will be visible only within their network namespace.
+                    Watching any interfaces outside those namespaces, even those that carry the
+                    network traffic, will only show broadcast packets like Address Resolution
+                    Protocols (ARPs), but unicast traffic to the router or DHCP address will not be
+                    seen. See the <xref linkend="dealing_with_netns"/> section below for detail on
+                    how to run commands within these namespaces.</para>
+              <para>Alternatively, it is possible to configure VLAN-based
                     networks to use external routers rather than the l3-agent
                     shown here, so long as the external router is on the same
                     VLAN.</para>
@@ -430,19 +431,19 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 <listitem>
                   <para>VLAN-based networks are received as tagged packets on a
                             physical network interface, <code>eth1</code> in
-                            this example. Just as on the compute node this
-                            interface is member of the <code>br-eth1</code>
+                            this example. Just as on the compute node, this
+                            interface is a member of the <code>br-eth1</code>
                             bridge.</para>
                 </listitem>
                 <listitem>
-                  <para>GRE based networks will be passed to the tunnel bridge
-                                <code>br-tun</code> which behaves just like the
+                  <para>GRE-based networks will be passed to the tunnel bridge
+                                <code>br-tun</code>, which behaves just like the
                             GRE interfaces on the compute node.</para>
                 </listitem>
               </orderedlist>
             </listitem>
             <listitem>
-              <para>Next the packets from either input go through the
+              <para>Next, the packets from either input go through the
               integration bridge, again just as on the compute node.
               </para>
             </listitem>
@@ -450,7 +451,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 <para>The packet then makes it to the l3-agent. This
                 is actually another TAP device within the router's
                 network namespace. Router namespaces are named in the
-                form <code>qrouter-&lt;router-uuid&gt;</code> running
+                form <code>qrouter-&lt;router-uuid&gt;</code>. Running
                 <command>ip a</command> within the namespace will show
                 the TAP device name, qr-e6256f7d-31 in this example:
                 </para>
@@ -463,7 +464,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
             <listitem>
                 <para>The <code>qg-&lt;n&gt;</code> interface in the
                 l3-agent router namespace sends the packet on to its
-                next hop through device <code>eth0</code> is on the
+                next hop through device <code>eth0</code> on the
                 external bridge <code>br-ex</code>. This bridge is
                 constructed similarly to <code>br-eth1</code> and may
                 be inspected in the same way.</para>
@@ -476,8 +477,8 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 </para>
             </listitem>
             <listitem>
-              <para>DHCP-agents running on OpenStack networks run in
-              names spaces similar to the l3-agents. DHCP namespaces
+              <para>DHCP agents running on OpenStack networks run in
+              namespaces similar to the l3-agents. DHCP namespaces
               are named <code>qdhcp-&lt;uuid&gt;</code> and have a TAP
               device on the integration bridge. Debugging of DHCP
               issues usually involves working inside this network
@@ -488,7 +489,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
     <section xml:id="failure_in_path">
         <title>Finding a Failure in the Path</title>
         <para>Use ping to quickly find where a failure exists in the
-            network path. In an instance, first see if you can ping an
+            network path. In an instance, first see whether you can ping an
             external host, such as google.com. If you can, then there
             shouldn't be a network problem at all.</para>
         <para>If you can't, try pinging the IP address of the compute
@@ -499,7 +500,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
             the problem is between the instance and the compute node.
             This includes the bridge connecting the compute node's
             main NIC with the vnet NIC of the instance.</para>
-        <para>One last test is to launch a second instance and see if
+        <para>One last test is to launch a second instance and see whether
             the two instances can ping each other. If they can, the
             issue might be related to the firewall on the compute
             node.</para>
@@ -511,7 +512,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                 <command>tcpdump</command> at several points along the network
             path to correlate where a problem might be. If you prefer working
             with a GUI, either live or by using a <command>tcpdump</command>
-            capture do also check out <link xlink:title="Wireshark"
+            capture, do also check out <link xlink:title="Wireshark"
                 xlink:href="http://www.wireshark.org/">Wireshark</link>
             (http://www.wireshark.org/).</para>
         <para>For example, run the following command:</para>
@@ -552,7 +553,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
 12:51:42.020255 IP (tos 0x0, ttl 64, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
     1.2.3.4 &gt; 203.0.113.30: ICMP echo reply, id 24895, seq 1, length
     64</computeroutput></screen>
-        <para>On the Compute Node:</para>
+        <para>On the compute node:</para>
         <screen><computeroutput>12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
     10.0.2.24 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
 12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
@@ -565,7 +566,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
     1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64
 12:51:42.019807 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
     1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</computeroutput></screen>
-        <para>On the Instance:</para>
+        <para>On the instance:</para>
         <screen><computeroutput>12:51:42.020974 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], proto ICMP (1), length 84)
  1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</computeroutput></screen>
         <para>Here, the external server received the ping request and sent a
@@ -590,7 +591,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
             iptables.</para></note>
     </section>
     <section xml:id="network_config_database">
-        <title>Network Configuration in the Database for nova-network</title>
+        <title>Network Configuration in the Database for Nova-Network</title>
         <para>With nova-network, the nova database table contains a few tables
             with networking information:</para>
         <itemizedlist>
@@ -612,46 +613,46 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
                     floating_ip.</para>
             </listitem>
         </itemizedlist>
-        <para>From these tables, you can see that a Floating IP is
+        <para>From these tables, you can see that a floating IP is
             technically never directly related to an instance, it must
-            always go through a Fixed IP.</para>
+            always go through a fixed IP.</para>
         <section xml:id="deassociate_floating_ip">
-            <title>Manually De-Associating a Floating IP</title>
-            <para>Sometimes an instance is terminated but the Floating
+            <title>Manually Deassociating a Floating IP</title>
+            <para>Sometimes an instance is terminated but the floating
                 IP was not correctly de-associated from that instance.
                 Because the database is in an inconsistent state, the
-                usual tools to de-associate the IP no longer work. To
+                usual tools to deassociate the IP no longer work. To
                 fix this, you must manually update the
                 database.</para>
             <para>First, find the UUID of the instance in
                 question:</para>
             <screen><prompt>mysql&gt;</prompt> <userinput>select uuid from instances where hostname =
                 'hostname';</userinput></screen>
-            <para>Next, find the Fixed IP entry for that UUID:</para>
+            <para>Next, find the fixed IP entry for that UUID:</para>
             <screen><prompt>mysql&gt;</prompt> <userinput>select * from fixed_ips where instance_uuid =
                 '&lt;uuid&gt;';</userinput></screen>
-            <para>You can now get the related Floating IP
+            <para>You can now get the related floating IP
                 entry:</para>
             <screen><prompt>mysql&gt;</prompt> <userinput>select * from floating_ips where fixed_ip_id =
                 '&lt;fixed_ip_id&gt;';</userinput></screen>
-            <para>And finally, you can de-associate the Floating
+            <para>And finally, you can deassociate the floating
                 IP:</para>
             <screen><prompt>mysql&gt;</prompt> <userinput>update floating_ips set fixed_ip_id = NULL, host = NULL
                 where fixed_ip_id = '&lt;fixed_ip_id&gt;';</userinput></screen>
-            <para>You can optionally also de-allocate the IP from the
+            <para>You can optionally also deallocate the IP from the
                 user's pool:</para>
             <screen><prompt>mysql&gt;</prompt> <userinput>update floating_ips set project_id = NULL where
                 fixed_ip_id = '&lt;fixed_ip_id&gt;';</userinput></screen>
         </section>
     </section>
     <section xml:id="debug_dhcp_issues">
-        <title>Debugging DHCP Issues with nova-network</title>
+        <title>Debugging DHCP Issues with Nova-Network</title>
         <para>One common networking problem is that an instance boots
             successfully but is not reachable because it failed to
             obtain an IP address from dnsmasq, which is the DHCP
             server that is launched by the nova-network
             service.</para>
-        <para>The simplest way to identify that this the problem with
+        <para>The simplest way to identify that this is the problem with
             your instance is to look at the console output of your
             instance. If DHCP failed, you can retrieve the console log
             by doing:</para>
@@ -659,7 +660,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
         <para>If your instance failed to obtain an IP through DHCP,
             some messages should appear in the console. For example,
             for the Cirros image, you see output that looks
-            like:</para>
+            like the following:</para>
         <screen><computeroutput>udhcpc (v1.17.2) started
 Sending discover...
 Sending discover...
@@ -682,7 +683,7 @@ unreachable</computeroutput></screen>
             root:</para>
         <screen><prompt>#</prompt> <userinput>killall dnsmasq
 # restart nova-network</userinput></screen>
-        <note><para>It's openstack-nova-network on RHEL/CentOS/Fedora but nova-network on Ubuntu/Debian.</para></note>
+        <note><para>Use openstack-nova-network on RHEL/CentOS/Fedora but nova-network on Ubuntu/Debian.</para></note>
         <para>Several minutes after nova-network is restarted, you
             should see new dnsmasq processes running:</para>
         <screen><prompt>#</prompt> <userinput>ps aux | grep dnsmasq</userinput></screen>
@@ -696,13 +697,13 @@ root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order --bi
      --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf
      --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</computeroutput></screen>
         <para>If your instances are still not able to obtain IP
-            addresses, the next thing to check is if dnsmasq is seeing
+            addresses, the next thing to check is whether dnsmasq is seeing
             the DHCP requests from the instance. On the machine that
             is running the dnsmasq process, which is the compute host
             if running in multi-host mode, look at /var/log/syslog to
             see the dnsmasq output. If dnsmasq is seeing the request
             properly and handing out an IP, the output looks
-            like:</para>
+            like this:</para>
         <screen><computeroutput>Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPDISCOVER(br100) fa:16:3e:56:0b:6f
 Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPOFFER(br100) 192.168.100.3 fa:16:3e:56:0b:6f
 Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPREQUEST(br100) 192.168.100.3 fa:16:3e:56:0b:6f
@@ -710,24 +711,24 @@ Feb 27 22:01:36 mynode dnsmasq-dhcp[2438]: DHCPACK(br100) 192.168.100.3
 fa:16:3e:56:0b:6f test</computeroutput></screen>
         <para>If you do not see the DHCPDISCOVER, a problem exists
             with the packet getting from the instance to the machine
-            running dnsmasq. If you see all of above output and your
-            instances are still not able to obtain IP addresses then
+            running dnsmasq. If you see all of the preceding output and your
+            instances are still not able to obtain IP addresses, then
             the packet is able to get from the instance to the host
             running dnsmasq, but it is not able to make the return
             trip.</para>
-        <para>If you see any other message, such as:</para>
+        <para>You might also see a message such as this:</para>
         <screen><computeroutput>Feb 27 22:01:36 mynode dnsmasq-dhcp[25435]: DHCPDISCOVER(br100)
             fa:16:3e:78:44:84 no address available</computeroutput></screen>
-        <para>Then this may be a dnsmasq and/or nova-network related
+        <para>This may be a dnsmasq and/or nova-network related
             issue. (For the example above, the problem happened to be
             that dnsmasq did not have any more IP addresses to give
-            away because there were no more Fixed IPs available in the
+            away because there were no more fixed IPs available in the
             OpenStack Compute database).</para>
         <para>If there's a suspicious-looking dnsmasq log message,
             take a look at the command-line arguments to the dnsmasq
             processes to see if they look correct.</para>
         <screen><prompt>$</prompt> <userinput>ps aux | grep dnsmasq</userinput></screen>
-        <para>The output looks something like:</para>
+        <para>The output looks something like the following:</para>
         <screen><computeroutput>108 1695 0.0 0.0 25972 1000 ? S Feb26 0:00 /usr/sbin/dnsmasq -u libvirt-dnsmasq --strict-order --bind-interfaces
  --pid-file=/var/run/libvirt/network/default.pid --conf-file= --except-interface lo --listen-address 192.168.122.1
  --dhcp-range 192.168.122.2,192.168.122.254 --dhcp-leasefile=/var/lib/libvirt/dnsmasq/default.leases
@@ -745,84 +746,84 @@ nobody 2438 0.0 0.0 27540 1096 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order -
             dnsmasq process that has the DHCP subnet range of
             192.168.122.0 belongs to libvirt and can be ignored. The
             other two dnsmasq processes belong to nova-network. The
-            two processes are actually related -- one is simply the
+            two processes are actually related&mdash;one is simply the
             parent process of the other. The arguments of the dnsmasq
             processes should correspond to the details you configured
             nova-network with.</para>
         <para>If the problem does not seem to be related to dnsmasq
-            itself, at this point, use tcpdump on the interfaces to
+            itself, at this point use <code>tcpdump</code> on the interfaces to
             determine where the packets are getting lost.</para>
         <para>DHCP traffic uses UDP. The client sends from port 68 to
             port 67 on the server. Try to boot a new instance and then
             systematically listen on the NICs until you identify the
-            one that isn't seeing the traffic. To use tcpdump to
+            one that isn't seeing the traffic. To use <code>tcpdump</code> to
             listen to ports 67 and 68 on br100, you would do:</para>
         <screen><prompt>#</prompt> <userinput>tcpdump -i br100 -n port 67 or port 68</userinput></screen>
         <para>You should be doing sanity checks on the interfaces
-            using command such as "<code>ip a</code>" and "<code>brctl
-                show</code>" to ensure that the interfaces are
+            using command such as <code>ip a</code> and <code>brctl
+                show</code> to ensure that the interfaces are
             actually up and configured the way that you think that
             they are.</para>
     </section>
     <section xml:id="debugging_dns_issues">
         <title>Debugging DNS Issues</title>
-        <para>If you are able to ssh into an instance, but it takes a
+        <para>If you are able to use SSH to log into an instance, but it takes a
             very long time (on the order of a minute) to get a prompt,
             then you might have a DNS issue. The reason a DNS issue
-            can cause this problem is that the ssh server does a
+            can cause this problem is that the SSH server does a
             reverse DNS lookup on the IP address that you are
             connecting from. If DNS lookup isn't working on your
             instances, then you must wait for the DNS reverse lookup
-            timeout to occur for the ssh login process to
+            timeout to occur for the SSH login process to
             complete.</para>
-        <para>When debugging DNS issues, start by making sure the host
+        <para>When debugging DNS issues, start by making sure that the host
             where the dnsmasq process for that instance runs is able
             to correctly resolve. If the host cannot resolve, then the
-            instances won't be able either.</para>
-        <para>A quick way to check if DNS is working is to
-            resolve a hostname inside your instance using the
+            instances won't be able to either.</para>
+        <para>A quick way to check whether DNS is working is to
+            resolve a hostname inside your instance by using the
                 <code>host</code> command. If DNS is working, you
             should see:</para>
-        <screen><prompt>$</prompt> <userinput>host openstack.org</userinput></screen>
-<screen><userinput>openstack.org has address 174.143.194.225
+        <screen><prompt>$</prompt> <userinput>host openstack.org</userinput>
+<computeroutput>openstack.org has address 174.143.194.225
 openstack.org mail is handled by 10 mx1.emailsrvr.com.
-openstack.org mail is handled by 20 mx2.emailsrvr.com.</userinput></screen>
+openstack.org mail is handled by 20 mx2.emailsrvr.com.</computeroutput></screen>
         <para>If you're running the Cirros image, it doesn't have the
             "host" program installed, in which case you can use ping
-            to try to access a machine by hostname to see if it
+            to try to access a machine by hostname to see whether it
             resolves. If DNS is working, the first line of ping would
             be:</para>
-        <screen><prompt>$</prompt> <userinput>ping openstack.org</userinput></screen>
-<screen><computeroutput>PING openstack.org (174.143.194.225): 56 data bytes</computeroutput></screen>
+        <screen><prompt>$</prompt> <userinput>ping openstack.org</userinput>
+<computeroutput>PING openstack.org (174.143.194.225): 56 data bytes</computeroutput></screen>
         <para>If the instance fails to resolve the hostname, you have
             a DNS problem. For example:</para>
-        <screen><prompt>$</prompt> <userinput>ping openstack.org</userinput></screen>
-<screen><computeroutput>ping: bad address 'openstack.org'</computeroutput></screen>
+        <screen><prompt>$</prompt> <userinput>ping openstack.org</userinput>
+        <computeroutput>ping: bad address 'openstack.org'</computeroutput></screen>
         <para>In an OpenStack cloud, the dnsmasq process acts as the
             DNS server for the instances in addition to acting as the
             DHCP server. A misbehaving dnsmasq process may be the
             source of DNS-related issues inside the instance. As
             mentioned in the previous section, the simplest way to
-            rule out a misbehaving dnsmasq process is to kill all of
-            the dnsmasq processes on the machine, and restart
+            rule out a misbehaving dnsmasq process is to kill all
+            the dnsmasq processes on the machine and restart
             nova-network. However, be aware that this command affects
             everyone running instances on this node, including tenants
             that have not seen the issue. As a last resort, as
             root:</para>
         <screen><prompt>#</prompt> <userinput>killall dnsmasq</userinput>
 <prompt>#</prompt> <userinput>restart nova-network</userinput></screen>
-        <para>After the dnsmasq processes start again, check if DNS is
+        <para>After the dnsmasq processes start again, check whether DNS is
             working.</para>
         <para>If restarting the dnsmasq process doesn't fix the issue,
             you might need to use tcpdump to look at the packets to
             trace where the failure is. The DNS server listens on UDP
             port 53. You should see the DNS request on the bridge
-            (such as, br100) of your compute node. If you start
+            (such as, br100) of your compute node. Let's say you start
             listening with tcpdump on the compute node:</para>
         <screen><prompt>#</prompt> <userinput>tcpdump -i br100 -n -v udp port 53
 tcpdump: listening on br100, link-type EN10MB (Ethernet), capture size 65535
 bytes</userinput></screen>
-        <para>Then, if you ssh into your instance and try to
+        <para>Then, if you use SSH to log into your instance and try
                 <code>ping openstack.org</code>, you should see
             something like:</para>
         <screen><computeroutput>16:36:18.807518 IP (tos 0x0, ttl 64, id 56057, offset 0, flags [DF], proto UDP (17), length 59)
@@ -833,10 +834,10 @@ bytes</userinput></screen>
     </section>
     <section xml:id="trouble_shooting_ovs">
       <title>Troubleshooting Open vSwitch</title>
-      <para>Open vSwitch as used in the OpenStack Networking Service examples
-            above is full-featured multilayer virtual switch licensed under the
+      <para>Open vSwitch as used in the previous OpenStack Networking Service examples
+            is a full-featured multilayer virtual switch licensed under the
             open source Apache 2.0 license. Full documentation can be found at
-            the project's web site <link xlink:href="http://openvswitch.org/"
+            the project's website at <link xlink:href="http://openvswitch.org/"
                 >http://openvswitch.org/</link>. In practice, given the
             configuration above, the most common issues are being sure that the
             required bridges (<code>br-int</code>, <code>br-tun</code>,
@@ -845,13 +846,13 @@ bytes</userinput></screen>
       <para>The Open vSwitch driver should and usually does manage
       this automatically, but it is useful to know how to do this by
       hand with the <command>ovs-vsctl</command> command.
-      This command has many more sub commands that we will use here see the man
-      page or <command>ovs-vsctl --help</command> for the full
+      This command has many more subcommands than we will use here; see the man
+      page or use <command>ovs-vsctl --help</command> for the full
       listing.</para>
       <para>
         To list the bridges on a system use <command>ovs-vsctl
-        list-br</command>. This example shows a compute node which has
-        internal bridge and tunnel bridge. VLAN networks are trunked
+        list-br</command>. This example shows a compute node that has an
+        internal bridge and a tunnel bridge. VLAN networks are trunked
         through the <code>eth1</code> network interface:
       </para>
       <screen><prompt>#</prompt> <userinput>ovs-vsctl list-br</userinput>
@@ -861,8 +862,8 @@ eth1-br
       </computeroutput></screen>
       <para>
         Working from the physical interface inwards, we can see the
-        chain of ports and bridges. First the bridge
-        <code>eth1-br</code> which contains the physical network
+        chain of ports and bridges. First, the bridge
+        <code>eth1-br</code>, which contains the physical network
         interface eth1 and the virtual interface
         <code>phy-eth1-br</code>.
       </para>
@@ -871,10 +872,10 @@ eth1-br
 phy-eth1-br
       </computeroutput></screen>
       <para>
-        Next the internal bridge, <code>br-int</code>, contains
-        <code>int-eth1-br</code> which pairs with the
-        <code>phy-eth1-br</code> to connect to the physical network we
-        saw in the previous bridge, <code>br-tun</code>, which is used
+        Next, the internal bridge, <code>br-int</code>, contains
+        <code>int-eth1-br</code>, which pairs with
+        <code>phy-eth1-br</code> to connect to the physical network shown
+        in the previous bridge, <code>br-tun</code>, which is used
         to connect to the GRE tunnel bridge and the TAP devices that
         connect to the instances currently running on the system.
       </para>
@@ -888,7 +889,7 @@ tap8a864970-2d
       <para>
         The tunnel bridge, <code>br-tun</code>, contains the
         <code>patch-int</code> interface and
-        <code>gre-&lt;N&gt;</code> interfaces for each peer in
+        <code>gre-&lt;N&gt;</code> interfaces for each peer it
         connects to via GRE, one for each compute and network node in
         your cluster.
       </para>
@@ -905,20 +906,20 @@ gre-&lt;N&gt;
       <command>ovs-vsctl add-br</command> and ports can be added to
       bridges with <command>ovs-vsctl add-port</command>. While
       running these by hand can be useful debugging, it is imperative
-      that manual changes which you intend to keep be reflected back
+      that manual changes that you intend to keep be reflected back
       into your configuration files.</para>
     </section>
     <section xml:id="dealing_with_netns">
-      <title>Dealing with network namespaces</title>
+      <title>Dealing with Network Namespaces</title>
       <para>Linux network namespaces are a kernel feature the
-      networking service uses to support multiple isolated layer2
+      networking service uses to support multiple isolated layer-2
       networks with overlapping IP address ranges. The support may be
-      disabled, but is on by default. If it is enabled in your
+      disabled, but it is on by default. If it is enabled in your
       environment, your network nodes will run their dhcp-agents and
       l3-agents in isolated namespaces. Network interfaces and traffic
       on those interfaces will not be visible in the default namespace.
       </para>
-      <para>To see if you are using namespaces run <command>ip netns</command>
+      <para>To see whether you are using namespaces, run <command>ip netns</command>
       </para>
       <screen><prompt>#</prompt> <userinput>ip netns</userinput>
 <computeroutput>qdhcp-e521f9d0-a1bd-4ff4-bc81-78a60dd88fe5
@@ -934,10 +935,10 @@ qrouter-8a4ce760-ab55-4f2f-8ec5-a2e858ce0d39
             and their UUIDs can be obtained buy running <command>neutron net-list</command> with
             administrative credentials.</para>
       <para>Once you've determined which namespace you need to work in,
-      you can use any of the debugging tools mention above by prefixing
+      you can use any of the debugging tools mention earlier by prefixing
       the command with <command>ip netns exec
       &lt;namespace&gt;</command>. For example, to see what network interfaces
-      exist in the first qdhcp name space returned above:</para>
+      exist in the first qdhcp namespace returned above, do this:</para>
       <screen><prompt>#</prompt> <userinput>ip netns exec qdhcp-e521f9d0-a1bd-4ff4-bc81-78a60dd88fe5 ip a</userinput>
 <computeroutput>10: tape6256f7d-31: &lt;BROADCAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN
     link/ether fa:16:3e:aa:f7:a1 brd ff:ff:ff:ff:ff:ff
@@ -951,15 +952,15 @@ qrouter-8a4ce760-ab55-4f2f-8ec5-a2e858ce0d39
     inet6 ::1/128 scope host
        valid_lft forever preferred_lft forever
       </computeroutput></screen>
-      <para>From this we see that the DHCP server on that network is
+      <para>From this you see that the DHCP server on that network is
       using the tape6256f7d-31 device and has an IP address
-      10.0.1.100, seeing the address 169.254.169.254 we can also see
+      10.0.1.100. Seeing the address 169.254.169.254, you can also see
       that the dhcp-agent is running a metadata-proxy service. Any of
       the commands mentioned previously in this chapter can be run in
       the same way. It is also possible to run a shell, such as
       <command>bash</command>, and have an interactive session within
-      the namespace. In the latter case exiting the shell will return
-      you to the top level default namespace.</para>
+      the namespace. In the latter case, exiting the shell returns
+      you to the top-level default namespace.</para>
     </section>
     <section xml:id="ops-network-troubleshooting-summary">
         <title>Summary</title>

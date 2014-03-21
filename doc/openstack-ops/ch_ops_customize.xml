@@ -18,40 +18,40 @@
     <para>To take the first path, you can modify the OpenStack code directly.
         Learn <link
             xlink:href="https://wiki.openstack.org/wiki/How_To_Contribute"
-            >How To Contribute</link>
+            >how to contribute</link>
         (https://wiki.openstack.org/wiki/How_To_Contribute), follow
         the <link
             xlink:href="https://wiki.openstack.org/wiki/GerritWorkflow"
-            >Code Review Workflow</link>
+            >code review workflow</link>
         (https://wiki.openstack.org/wiki/GerritWorkflow), make your
         changes, and contribute them back to the upstream OpenStack
         project. This path is recommended if the feature you need
         requires deep integration with an existing project. The
         community is always open to contributions and welcomes new
-        functionality that follows the feature development
+        functionality that follows the feature-development
         guidelines. This path still requires you to use DevStack for testing
-        your feature additions so this section walks you through the DevStack
+        your feature additions, so this chapter walks you through the DevStack
         environment.</para>
     <para>For the second path, you can write new features and plug them in using
         changes to a configuration file. If the project where your feature would
         need to reside uses the Python Paste framework, you can create
         middleware for it and plug it in through configuration. There may also
         be specific ways of customizing a project such as creating a new
-        scheduler driver for Compute or a custom tab for the Dashboard.</para>
+        scheduler driver for Compute or a custom tab for the dashboard.</para>
     <para>This chapter focuses on the second path for customizing OpenStack by
         providing two examples for writing new features. The first example shows
         how to modify Object Storage (swift) middleware to add a new feature,
         and the second example provides a new scheduler feature for OpenStack
-        Compute (nova). To customize OpenStack this way you'll need a
+        Compute (nova). To customize OpenStack this way you need a
         development environment. The best way to get an environment up and
         running quickly is to run DevStack within your cloud.</para>
     <section xml:id="devstack">
         <title>Create an OpenStack Development Environment</title>
-        <para>To create a development environment you can use DevStack. DevStack
-            is essentially a collection of shell scripts and configuration files
-            that will build an OpenStack development environment for you. We
-            will use it to create such an environment for developing a new
-            feature.</para>
+        <para>To create a development environment, you can use DevStack.
+            DevStack is essentially a collection of shell scripts and
+            configuration files that builds an OpenStack development environment
+            for you. You use it to create such an environment for developing a
+            new feature.</para>
         <para>You can find all of the documentation at the <link
                 xlink:href="http://devstack.org/">DevStack</link>
             (http://devstack.org/) website.</para>
@@ -59,7 +59,7 @@
             <title>To run DevStack for the stable Havana branch on an
                 instance in your OpenStack cloud:</title>
             <step>
-                <para>Boot an instance from the Dashboard or the nova
+                <para>Boot an instance from the dashboard or the nova
                     command-line interface (CLI) with the following
                     parameters.</para>
                 <itemizedlist>
@@ -82,14 +82,16 @@
                     disk sizes.</para>
             </step>
             <step>
-                <para>Login and set up DevStack. Here's an example of the commands you can use to set up DevStack on a virtual machine.</para>
-                <substeps><step><para>Login to the instance.</para>
+                <para>Log in and set up DevStack. Here's an example of the
+                    commands you can use to set up DevStack on a virtual
+                    machine.</para>
+                <substeps><step><para>Log in to the instance.</para>
 <screen><prompt>$</prompt> <userinput>ssh <replaceable>username</replaceable>@<replaceable>my.instance.ip.address</replaceable></userinput></screen>
                 </step>
 <step><para>Update the virtual machine's operating system.</para>
-                <screen><prompt>$</prompt> <userinput>sudo apt-get -y update</userinput></screen></step>
+                <screen><prompt>#</prompt> <userinput>apt-get -y update</userinput></screen></step>
 <step><para>Install git.</para>
-            <screen><prompt>$</prompt> <userinput>sudo apt-get -y install git</userinput></screen></step>
+            <screen><prompt>#</prompt> <userinput>apt-get -y install git</userinput></screen></step>
 <step><para>Clone the stable/havana branch of the devstack repository.</para>
                     <screen><prompt>$</prompt> <userinput>git clone https://github.com/openstack-dev/devstack.git -b stable/havana devstack/</userinput></screen></step>
 <step><para>Change to the devstack repository.</para>
@@ -103,27 +105,31 @@
                     can skip these steps.</para>
                 <substeps>
                     <step><para>Run the DevStack script to create the stack user.</para>
-                        <screen><prompt>$</prompt> <userinput>tools/create-stack-user.sh</userinput></screen></step>
+                        <screen><prompt>#</prompt> <userinput>tools/create-stack-user.sh</userinput></screen></step>
 <step><para>Give ownership of the devstack directory to the stack user.</para>
-                    <screen><prompt>$</prompt> <userinput>chown -R stack:stack /root/devstack</userinput></screen></step>
+                    <screen><prompt>#</prompt> <userinput>chown -R stack:stack /root/devstack</userinput></screen></step>
+<step><para>Set some permissions you can use to view the DevStack screen later.</para>
+<screen><prompt>#</prompt> <userinput>chmod o+rwx /dev/pts/0</userinput></screen></step>
 <step><para>Switch to the stack user.</para>
 <screen><prompt>$</prompt> <userinput>su stack</userinput></screen></step>
-<step><para>Set some permissions to you can view the DevStack screen later.</para>
-<screen><prompt>$</prompt> <userinput>sudo chmod o+rwx /dev/pts/0</userinput></screen></step></substeps>
+                </substeps>
             </step>
             <step>
-                <para>Edit the <filename>localrc</filename> configuration file that controls what
-                    DevStack will deploy. Copy in the example <filename>localrc</filename> file at
-                    the end of this section.</para>
+                <para>Edit the <filename>localrc</filename> configuration file
+                    that controls what DevStack will deploy. Copy the example
+                        <filename>localrc</filename> file at the end of this
+                    section. (See <xref linkend="localrc"/>.)</para>
                     <screen><prompt>$</prompt> <userinput>vim localrc</userinput></screen></step>
 <step><para>Run the stack script that will install OpenStack.</para>
 <screen><prompt>$</prompt> <userinput>./stack.sh></userinput></screen></step>
-<step><para>When the stack script is done you can open the screen session it started to view all of the running OpenStack services.</para>
+<step><para>When the stack script is done, you can open the screen session it started
+                    to view all of the running OpenStack services.</para>
 <screen><prompt>$</prompt> <userinput>screen -r stack</userinput></screen></step>
 <step><para>Press <keycombo>
                         <keycap>Ctrl</keycap>
                         <keycap>A</keycap>
-                    </keycombo> followed by pressing 0 to go to the first <command>screen</command> window.</para>
+                    </keycombo> followed by 0 to go to the first
+                        <command>screen</command> window.</para>
             </step>
         </procedure>
             <note>
@@ -139,13 +145,12 @@
                                (http://www.openstack.org/join/).</para>
                         </listitem>
                         <listitem>
-                            <para><command>Screen</command> is a useful program for
-                               viewing many related services at
-                               once. For more information, see
-                               <link
-                               xlink:href="http://aperiodic.net/screen/quick_reference"
-                               >GNU screen quick reference</link>.
-                               (http://aperiodic.net/screen/quick_reference)</para>
+                            <para><command>Screen</command> is a useful program
+                            for viewing many related services at once. For more
+                            information, see the <link
+                                xlink:href="http://aperiodic.net/screen/quick_reference"
+                                >GNU screen quick reference</link>.
+                            (http://aperiodic.net/screen/quick_reference)</para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -199,36 +204,34 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
     </section>
     <section xml:id="swift_middleware_example">
         <title>Customizing Object Storage (Swift) Middleware</title>
-        <para>OpenStack Object Storage, known as swift when reading the code,
-            is based on the Python <link
-                xlink:href="http://pythonpaste.org/"
+        <para>OpenStack Object Storage, known as swift when reading the code, is
+            based on the Python <link xlink:href="http://pythonpaste.org/"
                 >Paste</link> (http://pythonpaste.org/) framework. The best
             introduction to its architecture is <link
                 xlink:href="http://pythonpaste.org/do-it-yourself-framework.html"
                 >A Do-It-Yourself Framework</link>
-            (http://pythonpaste.org/do-it-yourself-framework.html). Due to the
-            swift project's use of this framework, you are able to add features
-            to a project by placing some custom code in a project's pipeline
-            without having to change any of the core code.</para>
+            (http://pythonpaste.org/do-it-yourself-framework.html). Because of
+            the swift project's use of this framework, you are able to add
+            features to a project by placing some custom code in a project's
+            pipeline without having to change any of the core code.</para>
         <para>Imagine a scenario where you have public access to one of your
             containers, but what you really want is to restrict access to that
-            to a set of IPs based on a whitelist. In this example we'll
-            create a piece of middleware for Swift that allows access
-            to a container from only a set of IP addresses, as
-            determined by the container's metadata items. Only those IP
-            addresses that you explicitly whitelist using the container's
-            metadata will be able to access the container.</para>
+            to a set of IPs based on a whitelist. In this example, we'll create
+            a piece of middleware for swift that allows access to a container
+            from only a set of IP addresses, as determined by the container's
+            metadata items. Only those IP addresses that you explicitly
+            whitelist using the container's metadata will be able to access the
+            container.</para>
         <warning>
             <para>This example is for illustrative purposes only. It
                 should not be used as a container IP whitelist
                 solution without further development and extensive
                 security testing.</para>
         </warning>
-        <para>When you join the screen session that
-            <code>stack.sh</code> starts with <code>screen -r stack</code>,
-            you see a screen for each service running, which can be a few
-            or several depending on how many services you configured Devstack
-            to run.</para>
+        <para>When you join the screen session that <code>stack.sh</code> starts
+            with <code>screen -r stack</code>, you see a screen for each service
+            running, which can be a few or several depending on how many
+            services you configured DevStack to run.</para>
         <para>The asterisk * indicates which screen window you are viewing.
             This example shows we are viewing the key (for keystone) screen
             window.</para>
@@ -242,18 +245,18 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"
-                    ><code>key*</code></emphasis> The Keystone service.</para>
+                    <emphasis role="bold"><code>key*</code></emphasis> The
+                    keystone service.</para>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"><code>horizon</code></emphasis>
-                    The Horizon dashboard web application.</para>
+                    <emphasis role="bold"><code>horizon</code></emphasis> The
+                    horizon dashboard web application.</para>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"
-                    ><code>s-{name}</code></emphasis> The Swift services.</para>
+                    <emphasis role="bold"><code>s-{name}</code></emphasis> The
+                    swift services.</para>
             </listitem>
         </itemizedlist>
         <procedure>
@@ -263,13 +266,21 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
                     <code>/opt/stack</code>. Go to the swift
                     directory in the <code>shell</code> screen and edit your
                     middleware module.</para>
-                <step><para>Change to the directory where Swift is installed.</para>
+                <step><para>Change to the directory where Object Storage is installed.</para>
                     <screen><prompt>$</prompt> <userinput>cd /opt/stack/swift</userinput></screen></step>
 <step><para>Create the ip_whitelist.py Python source code file.</para>
                     <screen><prompt>$</prompt> <userinput>vim swift/common/middleware/ip_whitelist.py</userinput></screen>
             </step>
             <step>
-                <para>Copy the following code into <filename>ip_whitelist.py</filename>. The following code is a middleware example that restricts access to a container based on IP address as explained at the beginning of the section. Middleware passes the request on to another application. This example uses the swift "swob" library to wrap Web Server Gateway Interface (WSGI) requests and responses into objects for swift to interact with. When you're done, save and close the file.</para>
+                <para>Copy the code in <xref linkend="ip_whitelist"/> into
+                        <filename>ip_whitelist.py</filename>. The following code
+                    is a middleware example that restricts access to a container
+                    based on IP address as explained at the beginning of the
+                    section. Middleware passes the request on to another
+                    application. This example uses the swift "swob" library to
+                    wrap Web Server Gateway Interface (WSGI) requests and
+                    responses into objects for swift to interact with. When
+                    you're done, save and close the file.</para>
                 <example xml:id="ip_whitelist">
                     <title>ip_whitelist.py</title>
                     <programlisting language="python"><?db-font-size 75%?># vim: tabstop=4 shiftwidth=4 softtabstop=4
@@ -379,11 +390,12 @@ def filter_factory(global_conf, **local_conf):
                 <programlisting language="python"><?db-font-size 75%?>self.logger.debug("env = %(env)s", locals())</programlisting>
             </step>
             <step>
-                <para>To plug this middleware into the Swift Paste pipeline you edit one configuration file, <filename>/etc/swift/proxy-server.conf</filename>.</para>
+                <para>To plug this middleware into the swift Paste pipeline, you edit one configuration file, <filename>/etc/swift/proxy-server.conf</filename>.</para>
                 <screen><prompt>$</prompt> <userinput>vim /etc/swift/proxy-server.conf</userinput></screen>
             </step>
             <step>
-                <para>Find the <code>[filter:ratelimit]</code> section in <filename>/etc/swift/proxy-server.conf</filename>
+                <para>Find the <code>[filter:ratelimit]</code> section in
+                    <filename>/etc/swift/proxy-server.conf</filename>,
                     and copy in the following configuration
                     section after it.</para>
                 <programlisting language="ini"><?db-font-size 75%?>[filter:ip_whitelist]
@@ -397,7 +409,8 @@ paste.filter_factory = swift.common.middleware.ip_whitelist:filter_factory
 deny_message = You shall not pass!</programlisting>
             </step>
             <step>
-                <para>Find the <code>[pipeline:main]</code> section in <filename>/etc/swift/proxy-server.conf</filename>
+                <para>Find the <code>[pipeline:main]</code> section in
+                    <filename>/etc/swift/proxy-server.conf</filename>,
                     and add <code>ip_whitelist</code> after ratelimit to the list like
                     so. When you're done, save and close the
                     file.</para>
@@ -405,57 +418,57 @@ deny_message = You shall not pass!</programlisting>
 pipeline = catch_errors healthcheck proxy-logging cache bulk slo ratelimit ip_whitelist ...</programlisting>
             </step>
             <step>
-                <para>Restart the Swift Proxy service to make Swift
+                <para>Restart the Swift Proxy service to make swift
                     use your middleware. Start by switching to the
                     swift-proxy screen.</para>
                 <substeps>
-                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing 3.</para></step>
+                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by <keycap>3</keycap>.</para></step>
                     <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>C</keycap></keycombo> to kill the service.</para></step>
                     <step><para>Press Up Arrow to bring up the last command.</para></step>
                     <step><para>Press Enter to run it.</para></step>
                 </substeps>
             </step>
             <step>
-                <para>Test your middleware with the Swift CLI. Start
+                <para>Test your middleware with the <code>swift</code> CLI. Start
                     by switching to the shell screen and finish by
                     switching back to the <code>swift-proxy</code> screen
                     to check the log output.</para>
                 <substeps>
-                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing 0.</para></step>
+                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by 0.</para></step>
 <step><para>Make sure you're in the devstack directory.</para>
                         <screen><prompt>$</prompt> <userinput>cd /root/devstack</userinput></screen></step>
 
-<step><para>Source openrc to setup your environment variables for the CLI.</para>
+<step><para>Source openrc to set up your environment variables for the CLI.</para>
                         <screen><prompt>$</prompt> <userinput>source openrc</userinput></screen></step>
 
 <step><para>Create a container called middleware-test.</para>
                         <screen><prompt>$</prompt> <userinput>swift post middleware-test</userinput></screen></step>
-                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing <keycap>3</keycap> to check the log output.
+                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by <keycap>3</keycap> to check the log output.
 </para></step></substeps></step>
             <step>
                 <para>Among the log statements you'll see the lines.</para>
                 <screen><computeroutput>proxy-server Remote IP: my.instance.ip.address (txn: ...)
 proxy-server Allow IPs: set(['my.instance.ip.address']) (txn: ...)</computeroutput></screen>
-                <para>These 2 statements are produced by
+                <para>These two statements are produced by
                     our middleware and show that the request was sent
                     from our DevStack instance and was allowed.</para>
             </step>
-            <step xml:id="test_middleware_step">
-                <para>Test the middleware from outside of DevStack on
+            <step xml:id="test_middleware_step"><para>Test the middleware from outside DevStack on
                     a remote machine that has access to your DevStack
                     instance.</para>
                 <substeps>
                     <step>
-               <para>Install the Keystone and Swift clients on your local machine.</para>
-                        <screen><prompt>$</prompt> <userinput>sudo pip install python-keystoneclient python-swiftclient</userinput></screen></step>
+               <para>Install the <code>keystone</code> and <code>swift</code> clients on your local machine.</para>
+<screen><prompt>#</prompt> <userinput>pip install python-keystoneclient python-swiftclient</userinput></screen></step>
 <step><para>Attempt to list the objects in the middleware-test container.</para>
     <screen><prompt>$</prompt> <userinput>swift --os-auth-url=http://my.instance.ip.address:5000/v2.0/ --os-region-name=RegionOne --os-username=demo:demo --os-password=devstack list middleware-test</userinput>
-<computeroutput>
-Container GET failed: http://my.instance.ip.address:8080/v1/AUTH_.../middleware-test?format=json 403 Forbidden   You shall not pass!</computeroutput></screen></step>
+<computeroutput>Container GET failed: http://my.instance.ip.address:8080/v1/AUTH_.../middleware-test?format=json 403 Forbidden   You shall not pass!</computeroutput></screen></step>
             </substeps></step>
             <step>
-                <para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing <keycap>3</keycap> to check the log output. Look at the Swift log statements again and among
-                    the log statements you'll see the lines:</para>
+                <para>Press <keycombo><keycap>Ctrl</keycap>
+                    <keycap>A</keycap></keycombo> followed by <keycap>3</keycap>
+                    to check the log output. Look at the swift log statements again,
+                    and among the log statements you'll see the lines:</para>
                 <screen><computeroutput>proxy-server Authorizing from an overriding middleware (i.e: tempurl) (txn: ...)
 proxy-server ... IPWhitelistMiddleware
 proxy-server Remote IP: my.local.ip.address (txn: ...)
@@ -466,26 +479,29 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... Container=
                     allowed IPs.</para>
             </step>
             <step>
-                <para>Back in your DevStack instance on the shell screen add
+                <para>Back in your DevStack instance on the shell screen, add
                     some metadata to your container to allow the request from
                     the remote machine.</para>
                 <substeps>
-                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing <keycap>0</keycap>.</para></step>
+                    <step><para>Press <keycombo>
+                                <keycap>Ctrl</keycap>
+                                <keycap>A</keycap>
+                            </keycombo> followed by <keycap>0</keycap>.</para></step>
 
 <step><para>Add metadata to the container to allow the IP.</para>
     <screen><prompt>$</prompt> <userinput>swift post --meta allow-dev:my.local.ip.address middleware-test</userinput></screen>
             </step>
             <step>
-                <para>Now try the command from
-                    <xref linkend="test_middleware_step"/> again and it
-                    succeeds. There are no objects in the container so there is
-                    nothing to list, however there is also no error to report.</para>
+                <para>Now try the command from <xref
+                                linkend="test_middleware_step"/> again and it
+                            succeeds. There are no objects in the container, so
+                            there is nothing to list, however there is also no
+                            error to report.</para>
             </step></substeps>
             </step>
         </procedure>
-        <warning><para>Functional testing like this is not a replacement for
-            proper unit and integration testing but it serves to get
-            you started.</para></warning>
+        <warning><para>Functional testing like this is not a replacement for proper unit and
+                integration testing, but it serves to get you started.</para></warning>
         <para>You can follow a similar pattern in other projects
             that use the Python Paste framework. Simply create a
             middleware module and plug it in through configuration.
@@ -496,12 +512,11 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... Container=
             <code>conf</code> or <code>ini</code> configuration
             files in <code>/etc/&lt;project&gt;</code> to identify
             projects that use Paste.</para>
-        <para>When your middleware is done, we encourage you to open
-            source it and let the community know on the OpenStack
-            mailing list. Perhaps others need the same functionality.
-            They can use your code, provide feedback, and possibly
-            contribute. If enough support exists for it, perhaps you
-            can propose that it be added to the official Swift <link
+        <para>When your middleware is done, we encourage you to open source it
+            and let the community know on the OpenStack mailing list. Perhaps
+            others need the same functionality. They can use your code, provide
+            feedback, and possibly contribute. If enough support exists for it,
+            perhaps you can propose that it be added to the official swift <link
                 xlink:href="https://github.com/openstack/swift/tree/master/swift/common/middleware"
                 >middleware</link>
             (https://github.com/openstack/swift/tree/master/swift/common/middleware).</para>
@@ -521,11 +536,10 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... Container=
             However, depending on your user's use cases, the existing
             schedulers might not meet your requirements. You might
             need to create a new scheduler.</para>
-        <para>To create a scheduler you must inherit from the class
-            <code>nova.scheduler.driver.Scheduler</code>. Of the
-            five methods that you can override, you
-            <emphasis>must</emphasis> override the two methods
-            indicated with a "*" below.</para>
+        <para>To create a scheduler, you must inherit from the class
+                <code>nova.scheduler.driver.Scheduler</code>. Of the five
+            methods that you can override, you <emphasis>must</emphasis>
+            override the two methods marked with an asterisk (*) below.</para>
         <itemizedlist>
             <listitem>
                 <para>
@@ -573,43 +587,43 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... Container=
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"><code>key</code></emphasis>
-                    The Keystone service.</para>
+                    <emphasis role="bold"><code>key</code></emphasis> The
+                    keystone service.</para>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"><code>horizon</code></emphasis>
-                    The Horizon dashboard web application.</para>
+                    <emphasis role="bold"><code>horizon</code></emphasis> The
+                    horizon dashboard web application.</para>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"><code>n-{name}</code></emphasis>
-                    The Nova services.</para>
+                    <emphasis role="bold"><code>n-{name}</code></emphasis> The
+                    nova services.</para>
             </listitem>
             <listitem>
                 <para>
-                    <emphasis role="bold"><code>n-sch</code></emphasis>
-                    The Nova scheduler service.</para>
+                    <emphasis role="bold"><code>n-sch</code></emphasis> The nova
+                    scheduler service.</para>
             </listitem>
         </itemizedlist>
-
         <procedure>
             <title>To create the scheduler and plug it in through
                 configuration:</title>
             <step>
-                <para>The code for OpenStack lives in
-                    <code>/opt/stack</code> so go to the nova
-                    directory and edit your scheduler module. Change to the directory where Nova is installed:</para>
+                <para>The code for OpenStack lives in <code>/opt/stack</code>,
+                    so go to the nova directory and edit your scheduler module.
+                    Change to the directory where nova is installed:</para>
                 <screen><prompt>$</prompt> <userinput>cd /opt/stack/nova</userinput></screen></step>
 <step><para>Create the <filename>ip_scheduler.py</filename> Python source code file.</para>
 <screen><prompt>$</prompt> <userinput>vim nova/scheduler/ip_scheduler.py</userinput></screen>
             </step>
             <step>
-                <para>The following code is a driver that will schedule
-                    servers to hosts based on IP address as
-                    explained at the beginning of the section.  Copy the
-                    following code into ip_scheduler.py. When you're done,
-                    save and close the file.</para>
+                <para>The code in <xref linkend="ip_scheduler"/> is a driver
+                    that will schedule servers to hosts based on IP address as
+                    explained at the beginning of the section. Copy the
+                    code into <filename>ip_scheduler.py</filename>.
+                    When you're done, save
+                    and close the file.</para>
                 <example xml:id="ip_scheduler">
                     <title>ip_scheduler.py</title>
                     <programlisting language="python"><?db-font-size 65%?># vim: tabstop=4 shiftwidth=4 softtabstop=4
@@ -656,7 +670,8 @@ class IPScheduler(driver.Scheduler):
         super(IPScheduler, self).__init__(*args, **kwargs)
         self.compute_rpcapi = compute_rpcapi.ComputeAPI()
 
-    def _filter_hosts(self, request_spec, hosts, filter_properties, hostname_prefix):
+    def _filter_hosts(self, request_spec, hosts, filter_properties,
+        hostname_prefix):
         """Filter a list of hosts based on hostname prefix."""
 
         hosts = [host for host in hosts if host.startswith(hostname_prefix)]
@@ -680,7 +695,8 @@ class IPScheduler(driver.Scheduler):
         else:
             hostname_prefix = 'dev'
 
-        hosts = self._filter_hosts(request_spec, hosts, filter_properties, hostname_prefix)
+        hosts = self._filter_hosts(request_spec, hosts, filter_properties,
+            hostname_prefix)
         if not hosts:
             msg = _("Could not find another compute")
             raise exception.NoValidHost(reason=msg)
@@ -736,21 +752,20 @@ class IPScheduler(driver.Scheduler):
                                              request_spec)</programlisting>
                 </example>
                 <para>There is a lot of useful information in
-                    <code>context</code>,
-                    <code>request_spec</code>, and
-                    <code>filter_properties</code> that you can
-                    use to decide where to schedule the instance. To
-                    find out more about what properties are available
-                    you can insert the following log statements into
-                    the <code>schedule_run_instance</code> method of
-                    the scheduler above.</para>
+                        <code>context</code>, <code>request_spec</code>, and
+                        <code>filter_properties</code> that you can use to
+                    decide where to schedule the instance. To find out more
+                    about what properties are available, you can insert the
+                    following log statements into the
+                        <code>schedule_run_instance</code> method of the
+                    scheduler above.</para>
                 <programlisting language="python"><?db-font-size 65%?>LOG.debug("context = %(context)s" % {'context': context.__dict__})
 LOG.debug("request_spec = %(request_spec)s" % locals())
 LOG.debug("filter_properties = %(filter_properties)s" % locals())</programlisting>
             </step>
             <step>
-                <para>To plug this scheduler into Nova
-                    edit one configuration file, <filename>/etc/nova/nova.conf</filename>.</para>
+                <para>To plug this scheduler into nova, edit one configuration
+                    file, <filename>/etc/nova/nova.conf</filename>.</para>
                 <screen><prompt>$</prompt> <userinput>vim /etc/nova/nova.conf</userinput></screen>
             </step>
             <step>
@@ -759,29 +774,40 @@ LOG.debug("filter_properties = %(filter_properties)s" % locals())</programlistin
                 <programlisting language="ini"><?db-font-size 65%?>scheduler_driver=nova.scheduler.ip_scheduler.IPScheduler</programlisting>
             </step>
             <step>
-                <para>Restart the Nova scheduler service to make Nova
-                    use your scheduler. Start by switching to the
-                    <code>n-sch</code> screen.</para>
+                <para>Restart the nova scheduler service to make nova use your
+                    scheduler. Start by switching to the <code>n-sch</code>
+                    screen.</para>
                 <substeps>
-                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing <keycap>9</keycap>.</para></step>
-                    <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing <keycap>N</keycap> until you reach the n-sch screen.</para></step>
+                    <step><para>Press <keycombo>
+                                <keycap>Ctrl</keycap>
+                                <keycap>A</keycap>
+                            </keycombo> followed by <keycap>9</keycap>.</para></step>
+                    <step><para>Press <keycombo>
+                                <keycap>Ctrl</keycap>
+                                <keycap>A</keycap>
+                            </keycombo> followed by <keycap>N</keycap> until you
+                            reach the n-sch screen.</para></step>
                     <step><para>Press <keycombo><keycap>Ctrl</keycap> <keycap>C</keycap></keycombo> to kill the service.</para></step>
                     <step><para>Press Up Arrow to bring up the last command.</para></step>
                     <step><para>Press Enter to run it.</para></step>
                 </substeps>
             </step>
             <step>
-                <para>Test your scheduler with the Nova CLI. Start by
-                    switching to the <code>shell</code> screen and finish by
-                    switching back to the <code>n-sch</code> screen to
-                    check the log output.</para>
+                <para>Test your scheduler with the nova CLI. Start by switching
+                    to the <code>shell</code> screen and finish by switching
+                    back to the <code>n-sch</code> screen to check the log
+                    output.</para>
                 <substeps>
                     <step>
-                        <para>Press <keycombo><keycap>Ctrl</keycap> <keycap>A</keycap></keycombo> followed by pressing <keycap>0</keycap>.</para></step>
-<step><para>Make sure you're in the devstack directory.</para>
+                        <para>Press <keycombo>
+                                <keycap>Ctrl</keycap>
+                                <keycap>A</keycap>
+                            </keycombo> followed by <keycap>0</keycap>.</para></step>
+<step><para>Make sure you're in the <filename>devstack</filename> directory.</para>
 <screen><prompt>$</prompt> <userinput>cd /root/devstack</userinput></screen>
 </step>
-<step><para>Source openrc to setup your environment variables for the CLI.</para>
+<step><para>Source <filename>openrc</filename> to set up your environment variables
+                            for the CLI.</para>
 <screen><prompt>$</prompt> <userinput>source openrc</userinput></screen></step>
 <step><para>Put the image ID for the only installed image into an environment variable.</para>
 <screen><prompt>$</prompt> <userinput>IMAGE_ID=`nova image-list | egrep cirros | egrep -v "kernel|ramdisk" | awk '{print $2}'`</userinput></screen></step>
@@ -790,22 +816,21 @@ LOG.debug("filter_properties = %(filter_properties)s" % locals())</programlistin
             </step></substeps></step>
             <step>
                 <para>Switch back to the <code>n-sch</code> screen. Among the
-                    log statements you'll see the line:</para>
+                    log statements, you'll see the line:</para>
                 <screen><computeroutput>2014-01-23 19:57:47.262 DEBUG nova.scheduler.ip_scheduler [req-... demo demo] Request from 162.242.221.84 scheduled to devstack-havana _schedule /opt/stack/nova/nova/scheduler/ip_scheduler.py:76</computeroutput></screen>
             </step>
         </procedure>
         <warning><para>Functional testing like this is not a replacement for
             proper unit and integration testing but it serves to get
             you started.</para></warning>
-        <para>A similar pattern can be followed in other projects
-            that use the driver architecture. Simply create a module
-            and class that conform to the driver interface and plug it
-            in through configuration. Your code runs when that feature
-            is used and can call out to other services as necessary.
-            No project core code is touched. Look for a "driver" value
-            in the project's conf configuration files in
-            <code>/etc/&lt;project&gt;</code> to identify projects
-            that use a driver architecture.</para>
+        <para>A similar pattern can be followed in other projects that use the
+            driver architecture. Simply create a module and class that conform
+            to the driver interface and plug it in through configuration. Your
+            code runs when that feature is used and can call out to other
+            services as necessary. No project core code is touched. Look for a
+            "driver" value in the project's <filename>.conf</filename>
+            configuration files in <code>/etc/&lt;project&gt;</code> to identify
+            projects that use a driver architecture.</para>
         <para>When your scheduler is done, we encourage you to open
             source it and let the community know on the OpenStack
             mailing list. Perhaps others need the same functionality.
@@ -817,22 +842,21 @@ LOG.debug("filter_properties = %(filter_properties)s" % locals())</programlistin
     </section>
     <section xml:id="ops_dashboard">
         <title>Customizing the Dashboard (Horizon)</title>
-        <para>The Dashboard is based on the Python
-            <link xlink:href="https://www.djangoproject.com/">Django</link>
-            (https://www.djangoproject.com/) web application framework. The
-            best guide to customizing it has already been written and can be
-            found at <link
+        <para>The dashboard is based on the Python <link
+                xlink:href="https://www.djangoproject.com/">Django</link>
+            (https://www.djangoproject.com/) web application framework. The best
+            guide to customizing it has already been written and can be found at
+                <link
                 xlink:href="http://docs.openstack.org/developer/horizon/topics/tutorial.html"
                 >Building on Horizon</link>
-            (http://docs.openstack.org/developer/horizon/topics/tutorial.html).
-        </para>
+            (http://docs.openstack.org/developer/horizon/topics/tutorial.html).</para>
     </section>
     <section xml:id="customize_conclusion">
         <title>Conclusion</title>
-        <para>When operating an OpenStack cloud you may discover that your
+        <para>When operating an OpenStack cloud, you may discover that your
             users can be quite demanding. If OpenStack doesn't do what your
-            users need, it may be up to you to fulfill those requirements.
-            This chapter provided you with some options for customization and
-            gave you the tools you need to get started.</para>
+            users need, it may be up to you to fulfill those requirements. This
+            chapter provided you with some options for customization and gave
+            you the tools you need to get started.</para>
     </section>
 </chapter>

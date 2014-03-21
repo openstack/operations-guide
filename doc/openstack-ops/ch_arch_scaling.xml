@@ -12,8 +12,8 @@
     xml:id="scaling">
     <?dbhtml stop-chunking?>
     <title>Scaling</title>
-    <para>Where traditional applications required larger hardware to scale
-        ("vertical scaling"), cloud based applications typically request more,
+    <para>Whereas traditional applications required larger hardware to scale
+        ("vertical scaling"), cloud-based applications typically request more,
         discrete hardware ("horizontal scaling"). If your cloud is successful,
         eventually you must add resources to meet the increasing demand.
     </para>
@@ -22,8 +22,8 @@
         to be horizontally scalable. Rather than switching to larger
         servers, you procure more servers and simply install identically
         configured services. Ideally, you scale out and load balance among
-        groups of functionally-identical services (for example, "compute
-        nodes", "nova-api nodes"), which communicate on a message bus.</para>
+        groups of functionally identical services (for example, compute
+        nodes, nova-api nodes), that communicate on a message bus.</para>
     <section xml:id="starting">
         <title>The Starting Point</title>
         <para>Determining the scalability of your cloud and how to improve it is
@@ -87,27 +87,27 @@
             cloud. By applying some ratios, you can gather information
             about:
            <itemizedlist>
-                <listitem><para>the number of virtual machines (VMs) you
-                  expect to run
+                <listitem><para>The number of virtual machines (VMs) you
+                  expect to run,
                 <code>((overcommit fraction × cores) / virtual cores per instance)</code>,
                 </para></listitem>
-                <listitem><para>how much storage is required
+                <listitem><para>How much storage is required
                 <code>(flavor disk size × number of instances)</code>.
                 </para></listitem>
             </itemizedlist>
             You can use these ratios to determine how much additional
             infrastructure you need to support your cloud.</para>
-        <para>Here is a worked example using the ratios for gathering
+        <para>Here is an example using the ratios for gathering
             scalability information for the number of VMs expected as well as
             the storage needed. The following numbers support (200 / 2) × 16 =
-            1600 VM instances and requires 80 TB of storage for
+            1600 VM instances and require 80 TB of storage for
             <code>/var/lib/nova/instances</code>:</para>
         <itemizedlist>
             <listitem>
                 <para>200 physical cores</para>
             </listitem>
             <listitem>
-                <para>Most instances are size m1.medium (2 virtual
+                <para>Most instances are size m1.medium (two virtual
                     cores, 50 GB of storage)</para>
             </listitem>
             <listitem>
@@ -121,7 +121,7 @@
             and queue servers are likely to encounter. You must also
             consider the usage patterns of your cloud.</para>
         <para>As a specific example, compare a cloud that supports a
-            managed web hosting platform with one running integration
+            managed web-hosting platform with one running integration
             tests for a development project that creates one VM per
             code commit. In the former, the heavy work of creating a
             VM happens only every few months, whereas the latter puts
@@ -129,22 +129,23 @@
             consider your average VM lifetime, as a larger number
             generally means less load on the cloud controller.</para>
         <para>Aside from the creation and termination of VMs, you must
-            consider the impact of users accessing the service
-            — particularly on nova-api and its associated database.
+            consider the impact of users accessing the
+            service&mdash;particularly on nova-api and its associated database.
             Listing instances garners a great deal of information and,
             given the frequency with which users run this operation, a
             cloud with a large number of users can increase the load
-            significantly. This can even occur without their knowledge
-            — leaving the OpenStack Dashboard instances tab open in
+            significantly. This can occur even without their
+            knowledge&mdash;leaving the OpenStack dashboard instances
+            tab open in
             the browser refreshes the list of VMs every 30
             seconds.</para>
         <para>After you consider these factors, you can determine how
-            many cloud controller cores you require. A typical 8 core,
+            many cloud controller cores you require. A typical eight core,
             8 GB of RAM server is sufficient for up to a rack of
             compute nodes — given the above caveats.</para>
         <para>You must also consider key hardware specifications for
             the performance of user VMs. You must consider both budget
-            and performance needs. Examples include: Storage
+            and performance needs. Examples include: storage
             performance (spindles/core), memory availability
             (RAM/core), network bandwidth (Gbps/core), and overall CPU
             performance (CPU/core).</para>
@@ -158,23 +159,23 @@
         <title>Adding Cloud Controller Nodes</title>
         <para>You can facilitate the horizontal expansion of your
             cloud by adding nodes. Adding compute nodes is
-            straightforward — they are easily picked up by the
+            straightforward&mdash;they are easily picked up by the
             existing installation. However, you must consider some
             important points when you design your cluster to be highly
             available.</para>
         <para>Recall that a cloud controller node runs several
             different services. You can install services that
-            communicate only using the message queue internally
-                — <code>nova-scheduler</code> and
-                <code>nova-console</code> — on a new server for
+            communicate only using the message queue
+            internally&mdash;<code>nova-scheduler</code> and
+                <code>nova-console</code>&mdash;on a new server for
             expansion. However, other integral parts require more
             care.</para>
         <para>You should load balance user-facing services such as
-            Dashboard, <code>nova-api</code> or the Object Storage
-            proxy. Use any standard HTTP load balancing method (DNS
-            round robin, hardware load balancer, software like Pound
+            Dashboard, <code>nova-api</code>, or the Object Storage
+            proxy. Use any standard HTTP load-balancing method (DNS
+            round robin, hardware load balancer, software such as Pound
             or HAProxy). One caveat with Dashboard is the VNC proxy,
-            which uses the WebSocket protocol — something that a L7
+            which uses the WebSocket protocol&mdash;something that an L7
             load balancer might struggle with. See also <link
                 xlink:title="Horizon session storage"
                 xlink:href="http://docs.openstack.org/developer/horizon/topics/deployment.html#session-storage"
@@ -183,14 +184,14 @@
         <para>You can configure some services, such as
                 <code>nova-api</code> and <code>glance-api</code>, to
             use multiple processes by changing a flag in their
-            configuration file — allowing them to share work between
+            configuration file&mdash;allowing them to share work between
             multiple cores on the one machine.</para>
         <tip>
             <para>Several options are available for MySQL load balancing, and
                 the supported AMQP brokers have in-built clustering support.
                 Information on how to configure these and many of the other
-                services can be found in the <emphasis role="bold">Operations
-                Part.</emphasis>
+                services can be found in <emphasis role="bold">Part II:
+                Operations</emphasis>.
             </para>
         </tip>
     </section>
@@ -203,7 +204,7 @@
             Use one of the following OpenStack methods to segregate
             your cloud: <emphasis>cells</emphasis>,
                 <emphasis>regions</emphasis>,
-                <emphasis>zones</emphasis> and <emphasis>host
+                <emphasis>zones</emphasis>, and <emphasis>host
                 aggregates</emphasis>.</para>
         <para>Each method provides different functionality, and can be best
             divided into two groups:</para>
@@ -213,13 +214,15 @@
                     result in running separate Compute deployments.</para>
             </listitem>
             <listitem>
-                <para><glossterm>Availability zone</glossterm>s and host
-                    aggregates which merely divide a single Compute deployment.</para>
+                <para><glossterm baseform="Availability zone">Availability zones</glossterm> and host
+                    aggregates, which merely divide a single Compute deployment.</para>
             </listitem>
         </itemizedlist>
-        <para>This table provides a comparison view of each segregation method
-        currently provided by OpenStack Compute.</para>
-        <informaltable rules="all">
+        <para><xref linkend="segragation_methods"/> provides a
+            comparison view of each segregation method currently provided
+            by OpenStack Compute.</para>
+        <table rules="all" xml:id="segragation_methods">
+          <caption>OpenStack Segregation Methods</caption>
             <thead>
                 <tr>
                     <th/>
@@ -256,7 +259,7 @@
                     <td><para>A cloud with multiple sites, where you
                             schedule VMs to a particular site and you
                             want a shared infrastructure.</para></td>
-                    <td><para>A single site cloud with equipment fed
+                    <td><para>A single-site cloud with equipment fed
                             by separate power supplies.</para></td>
                     <td><para>Scheduling to hosts with trusted
                             hardware support.</para></td>
@@ -318,7 +321,7 @@
                             services</para></td>
                 </tr>
             </tbody>
-        </informaltable>
+        </table>
        <?hard-pagebreak?>
         <section xml:id="cells_regions">
             <title>Cells and Regions</title>
@@ -347,12 +350,12 @@
                 machines are run.</para>
             <para>Contrast this with regions. Regions have a separate
                 API endpoint per installation, allowing for a more
-                discrete separation. Users wishing to run instances
+                discrete separation. Users wanting to run instances
                 across sites have to explicitly select a region.
                 However, the additional complexity of a running a new
                 service is not required.</para>
-            <para>The OpenStack Dashboard (Horizon) currently only
-                uses a single region, so one dashboard service should
+            <para>The OpenStack dashboard (horizon) currently uses
+                only a single region, so one dashboard service should
                 be run per region. Regions are a robust way to share
                 some infrastructure between OpenStack Compute
                 installations, while allowing for a high degree of
@@ -371,7 +374,7 @@
                         Enables you to arrange OpenStack Compute hosts into
                         logical groups, and provides a form of physical
                         isolation and redundancy from other availability zones,
-                        such as by using separate power supply or network
+                        such as by using a separate power supply or network
                         equipment.</para>
                     <para>You define the availability zone in which a specified
                         Compute host resides locally on each server. An
@@ -382,15 +385,15 @@
                         their own availability zone. Availability zones can also
                         help separate different classes of hardware.</para>
                     <para>When users provision resources, they can specify from
-                        which availability zone they would like their instance
+                        which availability zone they want their instance
                         to be built. This allows cloud consumers to ensure that
                         their application resources are spread across disparate
                         machines to achieve high availability in the event of
                         hardware failure.</para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">Host aggregates</emphasis>
-                        enable you to partition OpenStack Compute deployments
+                    <para><emphasis role="bold">Host aggregates</emphasis>.
+                        Enable you to partition OpenStack Compute deployments
                         into logical groups for load balancing and instance
                         distribution. You can use host aggregates to further
                         partition an availability zone. For example, you might
@@ -402,19 +405,19 @@
                         information for use with the nova-scheduler. For
                         example, you might use a host aggregate to group a set
                         of hosts that share specific flavors or images.</para>
-                    <para>The general case for this is setting key value pairs
-                        in the aggregate metadata and matching key value pairs
+                    <para>The general case for this is setting key-value pairs
+                        in the aggregate metadata and matching key-value pairs
                         in instance type extra specs. The
                         <parameter>AggregateInstanceExtraSpecsFilter</parameter> in the filter
-                        scheduler will enforce that instances will only be
-                        scheduled on hosts in aggregates that define the same
+                        scheduler will enforce that instances be scheduled
+                        only on hosts in aggregates that define the same
                         key to the same value.</para>
                     <para>An advanced use of this general concept allows
                         different instance types to run with different CPU and
-                        RAM allocation rations so that high intensity computing
-                        loads and low intensity development and testing systems
+                        RAM allocation rations so that high-intensity computing
+                        loads and low-intensity development and testing systems
                         can share the same cloud without either starving the
-                        high use systems or wasting resources on low utilization
+                        high-use systems or wasting resources on low-utilization
                         systems. This works by setting
                             <parameter>metadata</parameter> in your host
                         aggregates and matching
@@ -430,27 +433,28 @@
                             <filename>nova.conf</filename> when scheduling to
                         hosts in the aggregate. It is important to be cautious
                         when using this feature since each host can be in multiple
-                        aggregates but should only have one allocation ratio for
-                        each resources. It is left up to you to avoid
+                        aggregates but should have only one allocation ratio for
+                        each resources. It is up to you to avoid
                         putting a host in multiple aggregates that define
                         different values for the same resource.</para>
                     <para>This is the first half of the equation. To
                         get instance types that are guaranteed a
-                        particular ratio you must set the <parameter>extra_specs</parameter>
+                        particular ratio, you must set the <parameter>extra_specs</parameter>
                         in the instance type to the key value pair you want to match in the aggregate.
-                        For example if you define extra specs
+                        For example if you define
+                        <parameter>extra specs</parameter>
                         <parameter>cpu_allocation_ratio</parameter> to
-                        '1.0' then instances of that type will only
-                        run in aggregates where the metadata key
+                        "1.0", then instances of that type will
+                        run in aggregates only where the metadata key
                         <parameter>cpu_allocation_ratio</parameter>
-                        is also defined as '1.0'. In practice it is
-                        better to define an additional key value pair
+                        is also defined as "1.0." In practice, it is
+                        better to define an additional key-value pair
                         in the aggregate metadata to match on rather
                         than match directly on <parameter>cpu_allocation_ratio</parameter>
                         or <parameter>core_allocation_ratio</parameter>.
-                        This allows better abstraction. For example by
+                        This allows better abstraction. For example, by
                         defining a key <parameter>overcommit</parameter>
-                        and setting value of 'high', 'medium', or 'low'
+                        and setting a value of "high," "medium," or "low,"
                         you could then tune the numeric allocation
                         ratios in the aggregates without also needing
                         to change all instance types relating to them.</para>
@@ -459,7 +463,7 @@
             <note><para>Previously, all services had an availability zone. Currently,
                     only the nova-compute service has its own
                     availability zone. Services such as
-                    nova-scheduler, nova-network, nova-conductor have
+                    nova-scheduler, nova-network, and nova-conductor have
                     always spanned all availability zones.</para>
                 <para>When you run any of the following operations, the services
                     appear in their own internal availability zone
@@ -478,7 +482,7 @@
                     hidden in euca-describe-availability_zones
                     (non-verbose).</para>
                 <para>CONF.node_availability_zone has been renamed to
-                    CONF.default_availability_zone and is only used by
+                    CONF.default_availability_zone and is used only by
                     the nova-api and nova-scheduler services.</para>
                 <para>CONF.node_availability_zone still works but is
                     deprecated.</para></note>
@@ -488,7 +492,7 @@
         <title>Scalable Hardware</title>
         <para>While several resources already exist to help with
             deploying and installing OpenStack, it's very important to
-            make sure you have your deployment planned out ahead of
+            make sure that you have your deployment planned out ahead of
             time. This guide presumes that you have at least set aside a rack
             for the OpenStack cloud but also offers suggestions
             for when and what to scale.</para>
@@ -498,14 +502,14 @@
                 environment where servers can be created and
                 terminated at will. While this may be true, it does
                 not mean that your servers must be volatile. Ensuring
-                your cloud’s hardware is stable and configured
-                correctly means your cloud environment remains up and
+                that your cloud’s hardware is stable and configured
+                correctly means that your cloud environment remains up and
                 running. Basically, put effort into creating a stable
-                hardware environment so you can host a cloud that
+                hardware environment so that you can host a cloud that
                 users may treat as unstable and volatile.</para>
             <para>OpenStack can be deployed on any hardware supported
                 by an OpenStack-compatible Linux distribution.</para>
-            <para>Hardware does not have to be consistent, but should
+            <para>Hardware does not have to be consistent, but it should
                 at least have the same type of CPU to support instance
                 migration.</para>
             <para>The typical hardware recommended for use with
@@ -514,33 +518,33 @@
                 straightforward to divide your procurement into
                 building blocks such as "compute," "object storage,"
                 and "cloud controller," and request as many of these
-                as desired. Alternately should you be unable to spend
-                more, if you have existing servers, provided they meet
+                as you need. Alternatively, should you be unable to spend
+                more, if you have existing servers&mdash;provided they meet
                 your performance requirements and virtualization
-                technology, these are quite likely to be able to
+                technology&mdash;they are quite likely to be able to
                 support OpenStack.</para>
         </section>
         <section xml:id="capacity_planning">
             <title>Capacity Planning</title>
             <para>OpenStack is designed to increase in size in a straightforward
                 manner. Taking into account the considerations that we've
-                mentioned in this chapter — particularly on
-                the sizing of the cloud controller — it should be
+                mentioned in this chapter&mdash;particularly on
+                the sizing of the cloud controller&mdash;it should be
                 possible to procure additional compute or object
                 storage nodes as needed. New nodes do not need to be
                 the same specification, or even vendor, as existing
                 nodes.</para>
             <para>For compute nodes, <code>nova-scheduler</code> will
-                take care of differences in sizing to do with core
-                count and RAM amounts, however you should consider the
+                take care of differences in sizing having to do with core
+                count and RAM amounts, however you should consider that the
                 user experience changes with differing CPU speeds.
                 When adding object storage nodes, a
                     <glossterm>weight</glossterm> should be specified
                 that reflects the <glossterm>capability</glossterm> of
                 the node.</para>
             <para>Monitoring the resource usage and user growth will
-                enable you to know when to procure. The <emphasis
-                    role="bold">Monitoring</emphasis> chapter details
+                enable you to know when to procure. The
+                <xref linkend="logging_monitoring"/> chapter details
                 some useful metrics.</para>
         </section>
         <section xml:id="burin_testing">
