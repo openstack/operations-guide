@@ -22,7 +22,7 @@ the Icehouse release and perhaps further afield.</para>
             each cycle, the community gathers in a single location for
             a design summit. At the summit, the features for the
             coming releases are discussed, prioritized, and planned. The
-            <link linkend="release-cycle-diagram">figure</link> shows an example release cycle with dates showing
+            <xref linkend="release-cycle-diagram"/> shows an example release cycle with dates showing
             milestone releases, code freeze, and string freeze dates
             along with an example of when the summit occurs.
             Milestones are interim releases within the cycle that are
