@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-22 06:14+0000\n"
+"POT-Creation-Date: 2014-03-23 06:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -432,7 +432,7 @@ msgid "Is_Public"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:266(para)
-msgid "Boolean value that indicates whether the flavor is available to all users or private to the tenant it was created in. Defaults to True."
+msgid "Boolean value that indicates whether the flavor is available to all users or private. Private flavors do not get the current tenant assigned to them. Defaults to True."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:272(para)
