@@ -121,7 +121,7 @@
                     section. (See <xref linkend="localrc"/>.)</para>
                     <screen><prompt>$</prompt> <userinput>vim localrc</userinput></screen></step>
 <step><para>Run the stack script that will install OpenStack.</para>
-<screen><prompt>$</prompt> <userinput>./stack.sh></userinput></screen></step>
+<screen><prompt>$</prompt> <userinput>./stack.sh</userinput></screen></step>
 <step><para>When the stack script is done, you can open the screen session it started
                     to view all of the running OpenStack services.</para>
 <screen><prompt>$</prompt> <userinput>screen -r stack</userinput></screen></step>
