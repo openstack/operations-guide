@@ -451,7 +451,7 @@ the Icehouse release and perhaps further afield.</para>
                 deployments.</para>
         </section>
         <section xml:id="roadmap-savanna">
-        <title>Hadoop-as-a-Service (Sahara)</title>
+        <title>Data Processing (Sahara)</title>
                 <para>A much-requested answer to big data problems, a dedicated
                         team has been making solid progress on a
                         Hadoop-as-a-Service project.</para>
