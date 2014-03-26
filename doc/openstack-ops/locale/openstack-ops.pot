@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-24 06:14+0000\n"
+"POT-Creation-Date: 2014-03-26 06:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2394,7 +2394,7 @@ msgid "This project continues to improve and you may consider using it for green
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:454(title)
-msgid "Hadoop-as-a-Service (Sahara)"
+msgid "Data Processing (Sahara)"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:455(para)
