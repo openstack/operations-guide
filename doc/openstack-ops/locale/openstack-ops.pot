@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-26 06:15+0000\n"
+"POT-Creation-Date: 2014-03-28 06:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -7136,7 +7136,7 @@ msgid "The cloud controller runs: the dashboard, the API services, the database 
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:285(para)
-msgid "Compute nodes are where the computing resources are held, and in our example architecture they run the hypervisor (KVM), libvirt (the driver for the hypervisor, which enables live migration node to node), <code>nova-compute</code>, <code>nova-api-metadata</code> (generally only used when running in multi-host mode, it retrieves instance-specific metadata), <code>nova-vncproxy</code>, and <code>nova-network</code>."
+msgid "Compute nodes are where the computing resources are held, and in our example architecture they run the hypervisor (KVM), libvirt (the driver for the hypervisor, which enables live migration from node to node), <code>nova-compute</code>, <code>nova-api-metadata</code> (generally only used when running in multi-host mode, it retrieves instance-specific metadata), <code>nova-vncproxy</code>, and <code>nova-network</code>."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:295(para)
