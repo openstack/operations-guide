@@ -245,8 +245,8 @@ admin_password = GLANCE_PASS
 flavor = keystone</programlisting>
             <para>If currently present, remove the following key from the
                 [filter:authtoken] section in
-                <filename>/etc/glance/glance-api-paste.conf</filename> and
-                <filename>/etc/glance/glance-registry-paste.conf</filename>.
+                <filename>/etc/glance/glance-api-paste.ini</filename> and
+                <filename>/etc/glance/glance-registry-paste.ini</filename>.
             </para>
             <programlisting language="ini">[filter:authtoken]
 flavor = keystone</programlisting>
