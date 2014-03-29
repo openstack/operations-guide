@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-28 06:15+0000\n"
+"POT-Creation-Date: 2014-03-29 06:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4569,8 +4569,8 @@ msgstr ""
 msgid "If not currently present and configured as follows, add or modify the following keys in <filename>/etc/glance/glance-api.conf</filename> and <filename>/etc/glance/glance-registry.conf</filename>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:246(para)
-msgid "If currently present, remove the following key from the [filter:authtoken] section in <filename>/etc/glance/glance-api-paste.conf</filename> and <filename>/etc/glance/glance-registry-paste.conf</filename>."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:246(para) ./doc/openstack-ops/ch_ops_upgrades.xml:516(para)
+msgid "If currently present, remove the following key from the [filter:authtoken] section in <filename>/etc/glance/glance-api-paste.ini</filename> and <filename>/etc/glance/glance-registry-paste.ini</filename>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:253(para) ./doc/openstack-ops/ch_ops_upgrades.xml:523(para)
@@ -4731,10 +4731,6 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:480(para)
 msgid "Consider checking for newer versions of the <link href=\"http://repos.fedorapeople.org/repos/openstack/openstack-havana\">Havana repository</link>."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:516(para)
-msgid "If currently present, remove the following key from the [filter:authtoken] section in <filename>/etc/glance/glance-api-paste.ini</filename> and <filename>/etc/glance/glance-registry-paste.ini</filename>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:529(para)
