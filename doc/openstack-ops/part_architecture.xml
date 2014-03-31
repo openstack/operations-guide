@@ -45,7 +45,14 @@
         administrator commands are necessary. The diagram shows the
         most common, but not the only logical architecture for an
         OpenStack cloud.</para>
-      <!-- O'Reilly production to insert image here -->
+      <figure>
+        <title>OpenStack Havana Logical Architecture</title>
+        <mediaobject>
+        <imageobject>
+          <imagedata width="4in"
+            fileref="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/figures/openstack-arch-havana-logical-v1.jpg"/>
+        </imageobject>
+      </mediaobject></figure>
     </partintro>
     <xi:include href="ch_arch_examples.xml"/>
     <xi:include href="ch_arch_provision.xml"/>
