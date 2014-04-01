@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-29 06:14+0000\n"
+"POT-Creation-Date: 2014-04-01 06:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5519,6 +5519,12 @@ msgstr ""
 msgid "With so many considerations and options available our hope is to provide a few clearly-marked and tested paths for your OpenStack exploration. If you're looking for additional ideas, check out the <link linkend=\"use-cases\">Use Cases</link> appendix, the <link href=\"http://docs.openstack.org/\">OpenStack Installation Guides</link>, or the <link href=\"http://openstack.org/user-stories/\">OpenStack User Stories page</link>."
 msgstr ""
 
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ./doc/openstack-ops/part_architecture.xml:53(None)
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/figures/openstack-arch-havana-logical-v1.jpg'; md5=THIS FILE DOESN'T EXIST"
+msgstr ""
+
 #: ./doc/openstack-ops/part_architecture.xml:13(title)
 msgid "Architecture"
 msgstr ""
@@ -5549,6 +5555,10 @@ msgstr ""
 
 #: ./doc/openstack-ops/part_architecture.xml:41(para)
 msgid "As shown, end users can interact through the dashboard, CLIs, and APIs. All services authenticate through a common Identity Service and individual services interact with each other through public APIs, except where privileged administrator commands are necessary. The diagram shows the most common, but not the only logical architecture for an OpenStack cloud."
+msgstr ""
+
+#: ./doc/openstack-ops/part_architecture.xml:49(title)
+msgid "OpenStack Havana Logical Architecture"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_dochistory.xml:15(title)
@@ -7048,7 +7058,7 @@ msgid "<glossterm>live migration</glossterm>: If you need to move running virtua
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:135(para)
-msgid "<glossterm>object storage</glossterm>: You may chose to store machine images on a file system rather than in object storage if you do not have the extra hardware for the required replication and redundancy that OpenStack Object Storage offers."
+msgid "<glossterm>object storage</glossterm>: You may choose to store machine images on a file system rather than in object storage if you do not have the extra hardware for the required replication and redundancy that OpenStack Object Storage offers."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:116(para)
