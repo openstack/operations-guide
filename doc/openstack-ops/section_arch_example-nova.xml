@@ -133,7 +133,7 @@
                     </listitem>
                     <listitem>
                         <para><glossterm>object
-                            storage</glossterm>: You may chose to store machine
+                            storage</glossterm>: You may choose to store machine
                             images on a file system rather than in object
                             storage if you do not have the extra hardware for
                             the required replication and redundancy that
