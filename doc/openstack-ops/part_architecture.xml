@@ -49,8 +49,8 @@
         <title>OpenStack Havana Logical Architecture</title>
         <mediaobject>
         <imageobject>
-          <imagedata width="4in"
-            fileref="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/figures/openstack-arch-havana-logical-v1.jpg"/>
+          <imagedata width="6in"
+            fileref="figures/osog_0001online.png"/>
         </imageobject>
       </mediaobject></figure>
     </partintro>
