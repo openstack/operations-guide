@@ -353,21 +353,24 @@ auth_uri = http://controller:5000</programlisting>
 <prompt>#</prompt> <userinput>glance-manage db_sync</userinput>
 <prompt>#</prompt> <userinput>service glance-api start</userinput>
 <prompt>#</prompt> <userinput>service glance-registry start</userinput>
-<prompt>#</prompt> <userinput>service nova-api restart</userinput>
-<prompt>#</prompt> <userinput>service nova-scheduler restart</userinput>
-<prompt>#</prompt> <userinput>service nova-conductor restart</userinput>
-<prompt>#</prompt> <userinput>service nova-cert restart</userinput>
-<prompt>#</prompt> <userinput>service nova-consoleauth restart</userinput>
-<prompt>#</prompt> <userinput>service nova-novncproxy restart</userinput>
+<prompt>#</prompt> <userinput>service nova-api stop</userinput>
+<prompt>#</prompt> <userinput>service nova-scheduler stop</userinput>
+<prompt>#</prompt> <userinput>service nova-conductor stop</userinput>
+<prompt>#</prompt> <userinput>service nova-cert stop</userinput>
+<prompt>#</prompt> <userinput>service nova-consoleauth stop</userinput>
+<prompt>#</prompt> <userinput>service nova-novncproxy stop</userinput>
+<prompt>#</prompt> <userinput>nova-manage db sync</userinput>
+<prompt>#</prompt> <userinput>service nova-api start</userinput>
+<prompt>#</prompt> <userinput>service nova-scheduler start</userinput>
+<prompt>#</prompt> <userinput>service nova-conductor start</userinput>
+<prompt>#</prompt> <userinput>service nova-cert start</userinput>
+<prompt>#</prompt> <userinput>service nova-consoleauth start</userinput>
+<prompt>#</prompt> <userinput>service nova-novncproxy start</userinput>
 <prompt>#</prompt> <userinput>service cinder-api stop</userinput>
 <prompt>#</prompt> <userinput>service cinder-scheduler stop</userinput>
 <prompt>#</prompt> <userinput>cinder-manage db sync</userinput>
 <prompt>#</prompt> <userinput>service cinder-api start</userinput>
 <prompt>#</prompt> <userinput>service cinder-scheduler start</userinput></screen>
-            <note>
-                <para>The Compute services only need restarting because the
-                    package manager handles database synchronization.</para>
-            </note>
             <para>The controller node update is complete. Now you can upgrade
                 the compute nodes.</para>
         </section>
