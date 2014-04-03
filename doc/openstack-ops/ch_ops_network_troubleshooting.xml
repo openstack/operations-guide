@@ -309,7 +309,7 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
             </listitem>
             <listitem>
               <para>The next step depends on whether the virtual
-              network is configured to use 802.11q VLAN tags or
+              network is configured to use 802.1Q VLAN tags or
               GRE</para>
               <orderedlist>
                 <listitem>
