@@ -220,9 +220,9 @@
             xlink:href="https://github.com/stackforge/puppet-openstack"
             >https://github.com/stackforge/puppet-openstack</link>. Chef
             configuration management is provided within <link
-            xlink:href="https://github.com/rcbops/chef-cookbooks"
-            >https://github.com/rcbops/chef-cookbooks</link>, soon to
-            move to Stackforge also.  Additional configuration-management
+            xlink:href="https://github.com/stackforge/openstack-chef-repo"
+            >https://github.com/stackforge/openstack-chef-repo</link>.
+            Additional configuration-management
             systems include Juju, Ansible, and Salt. Also,
             PackStack is a command-line utility for Red Hat Enterprise
             Linux and derivatives that uses Puppet modules to support
