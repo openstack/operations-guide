@@ -875,7 +875,7 @@ phy-eth1-br
         Next, the internal bridge, <code>br-int</code>, contains
         <code>int-eth1-br</code>, which pairs with
         <code>phy-eth1-br</code> to connect to the physical network shown
-        in the previous bridge, <code>br-tun</code>, which is used
+        in the previous bridge, <code>patch-tun</code>, which is used
         to connect to the GRE tunnel bridge and the TAP devices that
         connect to the instances currently running on the system.
       </para>
