@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-04 06:19+0000\n"
+"POT-Creation-Date: 2014-04-09 06:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,7 @@ msgid "The purpose of automatic configuration management is to establish and mai
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:213(para)
-msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet—a configuration management tool—even provides official modules for OpenStack in an OpenStack infrastructure system known as Stackforge at <link href=\"https://github.com/stackforge/puppet-openstack\">https://github.com/stackforge/puppet-openstack</link>. Chef configuration management is provided within <link href=\"https://github.com/rcbops/chef-cookbooks\">https://github.com/rcbops/chef-cookbooks</link>, soon to move to Stackforge also. Additional configuration-management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection."
+msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet—a configuration management tool—even provides official modules for OpenStack in an OpenStack infrastructure system known as Stackforge at <link href=\"https://github.com/stackforge/puppet-openstack\">https://github.com/stackforge/puppet-openstack</link>. Chef configuration management is provided within <link href=\"https://github.com/stackforge/openstack-chef-repo\">https://github.com/stackforge/openstack-chef-repo</link>. Additional configuration-management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:231(para)
