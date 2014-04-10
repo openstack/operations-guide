@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-09 06:17+0000\n"
+"POT-Creation-Date: 2014-04-10 06:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13834,7 +13834,7 @@ msgid "Working from the physical interface inwards, we can see the chain of port
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:874(para)
-msgid "Next, the internal bridge, <code>br-int</code>, contains <code>int-eth1-br</code>, which pairs with <code>phy-eth1-br</code> to connect to the physical network shown in the previous bridge, <code>br-tun</code>, which is used to connect to the GRE tunnel bridge and the TAP devices that connect to the instances currently running on the system."
+msgid "Next, the internal bridge, <code>br-int</code>, contains <code>int-eth1-br</code>, which pairs with <code>phy-eth1-br</code> to connect to the physical network shown in the previous bridge, <code>patch-tun</code>, which is used to connect to the GRE tunnel bridge and the TAP devices that connect to the instances currently running on the system."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:889(para)
