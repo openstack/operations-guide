@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-10 07:06+0000\n"
-"PO-Revision-Date: 2014-04-10 07:21+0000\n"
+"POT-Creation-Date: 2014-04-11 08:47+0000\n"
+"PO-Revision-Date: 2014-04-13 11:40+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/openstack/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -692,7 +692,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_user_facing.xml244(para)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml305(para)
 msgid "VCPUs"
-msgstr ""
+msgstr "VCPUs"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml247(para)
 msgid "Number of virtual CPUs presented to the instance."
