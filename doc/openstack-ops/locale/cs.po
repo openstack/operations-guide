@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-14 06:48+0000\n"
-"PO-Revision-Date: 2014-04-14 18:40+0000\n"
+"POT-Creation-Date: 2014-04-15 07:29+0000\n"
+"PO-Revision-Date: 2014-04-15 15:20+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/openstack/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -2544,7 +2544,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-nova.xml64(para)
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml285(title)
 msgid "Database"
-msgstr ""
+msgstr "Databáze"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml49(para)
 msgid "MySQL"
@@ -2575,7 +2575,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml61(para)
 msgid "VLAN"
-msgstr ""
+msgstr "VLAN"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml65(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml86(para)
@@ -4718,7 +4718,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml60(title)
 msgid "Database Backups"
-msgstr ""
+msgstr "Zálohy databáze"
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml61(para)
 msgid ""
@@ -5744,7 +5744,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml746(title)
 msgid "Databases"
-msgstr ""
+msgstr "Databáze"
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml747(para)
 msgid ""
