@@ -3,10 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-14 06:48+0000\n"
-"PO-Revision-Date: 2014-04-14 18:40+0000\n"
+"POT-Creation-Date: 2014-04-19 13:01+0000\n"
+"PO-Revision-Date: 2014-04-23 17:50+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/openstack/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2557,7 +2557,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-neutron.xml53(para)
 #: ./doc/openstack-ops/glossary-terms.xml3612(glossterm)
 msgid "Qpid"
-msgstr ""
+msgstr "Qpid"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml56(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml73(para)
@@ -16166,7 +16166,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2977(glossterm)
 msgid "network"
-msgstr ""
+msgstr "Netzwerk"
 
 #: ./doc/openstack-ops/glossary-terms.xml2979(para)
 msgid ""
@@ -16931,7 +16931,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3649(glossterm)
 msgid "RabbitMQ"
-msgstr ""
+msgstr "RabbitMQ"
 
 #: ./doc/openstack-ops/glossary-terms.xml3651(para)
 msgid "The default message queue software used by OpenStack."
@@ -18522,7 +18522,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml5002(glossterm)
 msgid "ZeroMQ"
-msgstr ""
+msgstr "ZeroMQ"
 
 #: ./doc/openstack-ops/glossary-terms.xml5004(para)
 msgid ""

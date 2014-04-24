@@ -8,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-14 06:48+0000\n"
-"PO-Revision-Date: 2014-04-14 18:40+0000\n"
+"POT-Creation-Date: 2014-04-19 13:01+0000\n"
+"PO-Revision-Date: 2014-04-23 17:00+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
-"Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/openstack/language/ko_KR/)\n"
+"Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ko_KR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1446,7 +1446,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml899(th)
 msgid "name"
-msgstr ""
+msgstr "name"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml900(th)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml350(replaceable)
@@ -2562,7 +2562,7 @@ msgstr "메시지 큐"
 #: ./doc/openstack-ops/section_arch_example-neutron.xml53(para)
 #: ./doc/openstack-ops/glossary-terms.xml3612(glossterm)
 msgid "Qpid"
-msgstr ""
+msgstr "Qpid"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml56(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml73(para)
@@ -16936,7 +16936,7 @@ msgstr "R"
 
 #: ./doc/openstack-ops/glossary-terms.xml3649(glossterm)
 msgid "RabbitMQ"
-msgstr ""
+msgstr "RabbitMQ"
 
 #: ./doc/openstack-ops/glossary-terms.xml3651(para)
 msgid "The default message queue software used by OpenStack."
@@ -18079,7 +18079,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4601(glossterm)
 msgid "trove"
-msgstr ""
+msgstr "trove"
 
 #: ./doc/openstack-ops/glossary-terms.xml4603(para)
 msgid "OpenStack project that provides database services to applications."
@@ -18527,7 +18527,7 @@ msgstr "Z"
 
 #: ./doc/openstack-ops/glossary-terms.xml5002(glossterm)
 msgid "ZeroMQ"
-msgstr ""
+msgstr "ZeroMQ"
 
 #: ./doc/openstack-ops/glossary-terms.xml5004(para)
 msgid ""
