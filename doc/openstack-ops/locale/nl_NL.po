@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-22 11:30+0000\n"
+"POT-Creation-Date: 2014-04-24 07:03+0000\n"
+"PO-Revision-Date: 2014-04-24 19:10+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -503,7 +503,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_projects_users.xml560(para)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml580(para)
 msgid "For example:"
-msgstr ""
+msgstr "Bijvoorbeeld:"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml84(para)
 msgid ""
@@ -4029,7 +4029,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml89(replaceable)
 msgid "username"
-msgstr ""
+msgstr "gebruikersnaam"
 
 #: ./doc/openstack-ops/ch_ops_customize.xml89(replaceable)
 msgid "my.instance.ip.address"
@@ -5514,7 +5514,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_maintenance.xml543(para)
 #: ./doc/openstack-ops/ch_arch_scaling.xml65(para)
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml545(para)
 msgid "Backing storage services"
@@ -5563,7 +5563,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml583(para)
 msgid "20"
-msgstr ""
+msgstr "20"
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml585(para)
 msgid "Cinder-scheduler"
@@ -5579,7 +5579,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml596(para)
 msgid "22"
-msgstr ""
+msgstr "22"
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml598(para)
 msgid "nova-scheduler services"
@@ -5603,7 +5603,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml614(para)
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml616(para)
 msgid "Dashboard node"
@@ -6063,7 +6063,7 @@ msgstr "Middelen"
 #: ./doc/openstack-ops/bk_ops_guide.xml34(productname)
 #: ./doc/openstack-ops/glossary-terms.xml3305(glossterm)
 msgid "OpenStack"
-msgstr ""
+msgstr "OpenStack"
 
 #: ./doc/openstack-ops/ch_ops_resources.xml20(para)
 msgid ""
@@ -11203,15 +11203,15 @@ msgstr ""
 #: ./doc/openstack-ops/bk_ops_guide.xml26(orgname)
 #: ./doc/openstack-ops/bk_ops_guide.xml32(holder)
 msgid "OpenStack Foundation"
-msgstr ""
+msgstr "OpenStack Foundation"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml31(year)
 msgid "2014"
-msgstr ""
+msgstr "2014"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml38(remark)
 msgid "Copyright details are filled in by the template."
-msgstr ""
+msgstr "Details van het auteursrecht worden ingevuld door de template"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml43(para)
 msgid ""
@@ -12697,7 +12697,7 @@ msgstr ""
 #.      with entries that are marked with glossterm/firstterm
 #: ./doc/openstack-ops/glossary-terms.xml15(title)
 msgid "Glossary"
-msgstr ""
+msgstr "Woordenlijst"
 
 #: ./doc/openstack-ops/glossary-terms.xml16(para)
 msgid ""
@@ -12992,7 +12992,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml263(glossterm)
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ./doc/openstack-ops/glossary-terms.xml265(para)
 msgid "Application programming interface."
@@ -17435,7 +17435,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4069(glossterm)
 msgid "server"
-msgstr ""
+msgstr "server"
 
 #: ./doc/openstack-ops/glossary-terms.xml4071(para)
 msgid ""
@@ -18510,7 +18510,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4982(glossterm)
 msgid "XenServer"
-msgstr ""
+msgstr "XenServer"
 
 #: ./doc/openstack-ops/glossary-terms.xml4990(title)
 msgid "Y"

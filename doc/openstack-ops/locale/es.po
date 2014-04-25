@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-22 20:50+0000\n"
+"POT-Creation-Date: 2014-04-24 07:03+0000\n"
+"PO-Revision-Date: 2014-04-24 19:10+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17986,7 +17986,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4530(glossterm)
 msgid "token"
-msgstr ""
+msgstr "token"
 
 #: ./doc/openstack-ops/glossary-terms.xml4532(para)
 msgid ""
@@ -18849,7 +18849,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml230(link)
 msgid "OpenStack API Quick Start"
-msgstr ""
+msgstr "OpenStack API. Guía de inicio rápido."
 
 #: ./doc/openstack-ops/preface_ops.xml232(para)
 msgid ""
@@ -21289,7 +21289,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_projects_users.xml559(replaceable)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml575(replaceable)
 msgid "tenantName"
-msgstr ""
+msgstr "Nombre del proyecto"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml362(para)
 msgid "List the currently set quota values for a tenant, as follows:"

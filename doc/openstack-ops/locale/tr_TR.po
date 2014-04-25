@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-22 11:30+0000\n"
+"POT-Creation-Date: 2014-04-24 07:03+0000\n"
+"PO-Revision-Date: 2014-04-24 19:10+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -692,7 +692,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_user_facing.xml244(para)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml305(para)
 msgid "VCPUs"
-msgstr ""
+msgstr "VCPUlar"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml247(para)
 msgid "Number of virtual CPUs presented to the instance."
@@ -788,7 +788,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_user_facing.xml323(title)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml292(para)
 msgid "Security Groups"
-msgstr ""
+msgstr "Güvenlik Grupları"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml324(para)
 msgid ""
@@ -4893,7 +4893,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml966(title)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml833(title)
 msgid "Summary"
-msgstr ""
+msgstr "Özet"
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml203(para)
 msgid ""
@@ -21205,7 +21205,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml266(para)
 msgid "RAM"
-msgstr ""
+msgstr "RAM"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml269(para)
 msgid "Megabytes of instance RAM allowed per tenant."
