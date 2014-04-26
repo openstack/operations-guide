@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-23 17:50+0000\n"
+"POT-Creation-Date: 2014-04-25 07:21+0000\n"
+"PO-Revision-Date: 2014-04-25 07:10+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -11207,7 +11207,7 @@ msgstr "OpenStack Foundation"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml31(year)
 msgid "2014"
-msgstr ""
+msgstr "2014"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml38(remark)
 msgid "Copyright details are filled in by the template."
@@ -18845,7 +18845,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml230(link)
 msgid "OpenStack API Quick Start"
-msgstr ""
+msgstr "OpenStack API Schnellstart"
 
 #: ./doc/openstack-ops/preface_ops.xml232(para)
 msgid ""
