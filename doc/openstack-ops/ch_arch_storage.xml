@@ -344,7 +344,7 @@ format="SVG" scale="60"/>
                 <tr>
                     <td><para>Gluster</para></td>
                     <td><para>&CHECK;</para></td>
-                    <td><para> </para></td>
+                    <td><para>&CHECK;</para></td>
                     <td><para>&CHECK;</para></td>
                 </tr>
                 <tr>
