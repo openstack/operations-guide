@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-24 07:03+0000\n"
-"PO-Revision-Date: 2014-04-24 20:10+0000\n"
+"POT-Creation-Date: 2014-04-26 07:28+0000\n"
+"PO-Revision-Date: 2014-04-27 22:40+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -415,7 +415,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_user_facing.xml880(para)
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml427(title)
 msgid "Images"
-msgstr ""
+msgstr "Immagini"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml23(para)
 msgid ""
@@ -629,11 +629,11 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_projects_users.xml153(th)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml495(td)
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml190(para)
 msgid "ID"
-msgstr ""
+msgstr "Identificativo"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml193(para)
 msgid "A unique numeric ID."
@@ -2705,7 +2705,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml156(th)
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml158(th)
 msgid "Example Hardware"
@@ -2853,7 +2853,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml233(td)
 msgid "Network"
-msgstr ""
+msgstr "Rete"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml234(para)
 msgid ""
@@ -7663,7 +7663,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml29(th)
 msgid "Service"
-msgstr ""
+msgstr "Servizio"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml30(th)
 msgid "Log Location"
@@ -21116,7 +21116,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml160(para)
 msgid "Fixed IPs"
-msgstr ""
+msgstr "IP Fissi"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml163(para)
 msgid ""
