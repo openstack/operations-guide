@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-26 07:28+0000\n"
-"PO-Revision-Date: 2014-04-27 22:40+0000\n"
+"POT-Creation-Date: 2014-04-28 11:19+0000\n"
+"PO-Revision-Date: 2014-04-29 10:40+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -9273,7 +9273,6 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_storage.xml330(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml334(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml336(para)
-#: ./doc/openstack-ops/ch_arch_storage.xml347(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml358(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml360(para)
 msgid " "
@@ -21107,7 +21106,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml152(th)
 msgid "Quota"
-msgstr ""
+msgstr "Limite"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml154(th)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml494(td)

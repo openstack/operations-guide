@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-22 11:30+0000\n"
+"POT-Creation-Date: 2014-04-28 11:19+0000\n"
+"PO-Revision-Date: 2014-04-29 17:20+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Panjabi (Punjabi) (India) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/pa_IN/)\n"
 "MIME-Version: 1.0\n"
@@ -643,7 +643,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_user_facing.xml198(para)
 #: ./doc/openstack-ops/ch_arch_scaling.xml41(th)
 msgid "Name"
-msgstr ""
+msgstr "ਨਾਂ"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml201(para)
 msgid ""
@@ -9274,7 +9274,6 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_storage.xml330(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml334(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml336(para)
-#: ./doc/openstack-ops/ch_arch_storage.xml347(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml358(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml360(para)
 msgid " "
@@ -13734,7 +13733,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml895(glossterm)
 msgid "cinder"
-msgstr ""
+msgstr "cinder"
 
 #: ./doc/openstack-ops/glossary-terms.xml897(para)
 msgid "A core OpenStack project that provides block storage services for VMs."

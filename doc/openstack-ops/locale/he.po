@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-14 18:40+0000\n"
+"POT-Creation-Date: 2014-04-28 11:19+0000\n"
+"PO-Revision-Date: 2014-04-29 10:40+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -9272,7 +9272,6 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_storage.xml330(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml334(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml336(para)
-#: ./doc/openstack-ops/ch_arch_storage.xml347(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml358(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml360(para)
 msgid " "
@@ -21106,7 +21105,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml152(th)
 msgid "Quota"
-msgstr ""
+msgstr "מגבלה"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml154(th)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml494(td)
