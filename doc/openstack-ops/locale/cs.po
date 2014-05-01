@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-22 11:30+0000\n"
+"POT-Creation-Date: 2014-04-30 07:20+0000\n"
+"PO-Revision-Date: 2014-05-01 05:50+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -6141,7 +6141,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_resources.xml70(emphasis)
 #: ./doc/openstack-ops/glossary-terms.xml3594(glossterm)
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ./doc/openstack-ops/ch_ops_resources.xml72(para)
 msgid ""
@@ -9273,7 +9273,6 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_storage.xml330(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml334(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml336(para)
-#: ./doc/openstack-ops/ch_arch_storage.xml347(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml358(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml360(para)
 msgid " "
@@ -10285,7 +10284,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_network_design.xml370(title)
 #: ./doc/openstack-ops/glossary-terms.xml1511(glossterm)
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml371(para)
 msgid ""
@@ -12822,7 +12821,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml116(glossterm)
 msgid "ACL"
-msgstr ""
+msgstr "ACL"
 
 #: ./doc/openstack-ops/glossary-terms.xml118(para)
 msgid "See access control list."
@@ -12993,7 +12992,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml263(glossterm)
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ./doc/openstack-ops/glossary-terms.xml265(para)
 msgid "Application programming interface."
@@ -13454,7 +13453,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml658(glossterm)
 msgid "browser"
-msgstr ""
+msgstr "prohlížeč"
 
 #: ./doc/openstack-ops/glossary-terms.xml660(para)
 msgid ""
@@ -13852,7 +13851,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml995(glossterm)
 msgid "CMDB"
-msgstr ""
+msgstr "CMDB"
 
 #: ./doc/openstack-ops/glossary-terms.xml997(para)
 msgid "Configuration Management Database."
@@ -14155,7 +14154,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1260(glossterm)
 msgid "daemon"
-msgstr ""
+msgstr "démon"
 
 #: ./doc/openstack-ops/glossary-terms.xml1262(para)
 msgid ""
@@ -14342,7 +14341,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1422(glossterm)
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 #: ./doc/openstack-ops/glossary-terms.xml1424(para)
 msgid ""
@@ -14448,7 +14447,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1521(glossterm)
 msgid "DNS record"
-msgstr ""
+msgstr "DNS záznam"
 
 #: ./doc/openstack-ops/glossary-terms.xml1523(para)
 msgid ""
@@ -14656,7 +14655,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1686(glossterm)
 msgid "encryption"
-msgstr ""
+msgstr "šifrování"
 
 #: ./doc/openstack-ops/glossary-terms.xml1688(para)
 msgid ""
@@ -14666,7 +14665,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1694(glossterm)
 msgid "endpoint"
-msgstr ""
+msgstr "koncový bod"
 
 #: ./doc/openstack-ops/glossary-terms.xml1696(para)
 msgid "See API endpoint."
@@ -14933,7 +14932,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1920(glossterm)
 msgid "filter"
-msgstr ""
+msgstr "filtr"
 
 #: ./doc/openstack-ops/glossary-terms.xml1922(para)
 msgid ""
@@ -14961,7 +14960,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1945(glossterm)
 msgid "fixed IP address"
-msgstr ""
+msgstr "statická IP adresa"
 
 #: ./doc/openstack-ops/glossary-terms.xml1947(para)
 msgid ""
@@ -15369,7 +15368,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2316(glossterm)
 msgid "ID number"
-msgstr ""
+msgstr "ID číslo"
 
 #: ./doc/openstack-ops/glossary-terms.xml2318(para)
 msgid ""
@@ -15580,7 +15579,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2489(glossterm)
 msgid "instance ID"
-msgstr ""
+msgstr "ID instance"
 
 #: ./doc/openstack-ops/glossary-terms.xml2491(para)
 msgid "Alternative term for instance UUID."
@@ -15651,7 +15650,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2544(glossterm)
 msgid "IP address"
-msgstr ""
+msgstr "IP adresa:"
 
 #: ./doc/openstack-ops/glossary-terms.xml2546(para)
 msgid ""
@@ -15706,7 +15705,7 @@ msgstr ""
 #: ./doc/openstack-ops/glossary-terms.xml2591(glossterm)
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml580(title)
 msgid "iptables"
-msgstr ""
+msgstr "iptables"
 
 #: ./doc/openstack-ops/glossary-terms.xml2593(para)
 msgid ""
@@ -15894,7 +15893,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2755(glossterm)
 msgid "load balancer"
-msgstr ""
+msgstr "vyvažovač zátěže"
 
 #: ./doc/openstack-ops/glossary-terms.xml2757(para)
 msgid ""
@@ -15905,7 +15904,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2765(glossterm)
 msgid "load balancing"
-msgstr ""
+msgstr "vyvažování zátěže"
 
 #: ./doc/openstack-ops/glossary-terms.xml2767(para)
 msgid ""
@@ -16167,7 +16166,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2977(glossterm)
 msgid "network"
-msgstr ""
+msgstr "síť"
 
 #: ./doc/openstack-ops/glossary-terms.xml2979(para)
 msgid ""
@@ -16408,7 +16407,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3183(glossterm)
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 #: ./doc/openstack-ops/glossary-terms.xml3185(para)
 msgid "A BLOB of data held by Object Storage; can be in any format."
@@ -16541,7 +16540,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3298(glossterm)
 msgid "OpenLDAP"
-msgstr ""
+msgstr "OpenLDAP"
 
 #: ./doc/openstack-ops/glossary-terms.xml3300(para)
 msgid ""
@@ -16716,7 +16715,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3461(glossterm)
 msgid "port"
-msgstr ""
+msgstr "port"
 
 #: ./doc/openstack-ops/glossary-terms.xml3463(para)
 msgid ""
@@ -16847,7 +16846,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3569(glossterm)
 msgid "public IP address"
-msgstr ""
+msgstr "veřejná IP adresa"
 
 #: ./doc/openstack-ops/glossary-terms.xml3571(para)
 msgid "An IP address that is accessible to end-users."
@@ -16918,7 +16917,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3637(glossterm)
 msgid "quota"
-msgstr ""
+msgstr "kvóta"
 
 #: ./doc/openstack-ops/glossary-terms.xml3639(para)
 msgid ""
@@ -17050,7 +17049,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3748(glossterm)
 msgid "record"
-msgstr ""
+msgstr "záznam"
 
 #: ./doc/openstack-ops/glossary-terms.xml3750(para)
 msgid ""
@@ -17304,7 +17303,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3965(glossterm)
 msgid "rsync"
-msgstr ""
+msgstr "rsync"
 
 #: ./doc/openstack-ops/glossary-terms.xml3967(para)
 msgid "Used by Object Storage to push object replicas."
@@ -17464,7 +17463,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4093(glossterm)
 msgid "service"
-msgstr ""
+msgstr "služba"
 
 #: ./doc/openstack-ops/glossary-terms.xml4095(para)
 msgid ""
@@ -17701,7 +17700,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4304(glossterm)
 msgid "static IP address"
-msgstr ""
+msgstr "pevná IP adresa"
 
 #: ./doc/openstack-ops/glossary-terms.xml4306(para)
 msgid "Alternative term for a fixed IP address."

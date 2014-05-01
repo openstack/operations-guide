@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-22 11:30+0000\n"
+"POT-Creation-Date: 2014-04-30 07:20+0000\n"
+"PO-Revision-Date: 2014-04-30 10:11+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: English (Australia) (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/en_AU/)\n"
 "MIME-Version: 1.0\n"
@@ -9272,7 +9272,6 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_storage.xml330(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml334(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml336(para)
-#: ./doc/openstack-ops/ch_arch_storage.xml347(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml358(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml360(para)
 msgid " "
@@ -20715,7 +20714,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml407(title)
 msgid "Scheduling"
-msgstr ""
+msgstr "Scheduling"
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml408(para)
 msgid ""
