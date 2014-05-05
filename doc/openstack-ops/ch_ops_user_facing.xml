@@ -294,7 +294,7 @@
                 to the custom flavor using the <command>nova</command> command:</para>
             <screen><prompt>$</prompt> <userinput>nova flavor-access-add &lt;flavor-id&gt; &lt;project-id&gt;</userinput></screen>
             <para>To view a flavor's access list, do the following:</para>
-            <screen><prompt>$</prompt> <userinput>nova flavor-access-list &lt;flavor-id&gt;</userinput></screen>
+            <screen><prompt>$</prompt> <userinput>nova flavor-access-list --flavor &lt;flavor-id&gt;</userinput></screen>
             <note>
                 <title>Best practices</title>
                 <para>Once access to a flavor has been restricted, no other
