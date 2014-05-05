@@ -105,8 +105,8 @@
         <para>This guide assumes that you are familiar with a Linux
             distribution that supports OpenStack, SQL databases, and virtualization.
              You must be comfortable administering and configuring multiple Linux machines
-            for networking. You must install and maintain a MySQL database and
-            occasionally run SQL queries against it.</para>
+            for networking. You must install and maintain an SQL database and
+            occasionally run queries against it.</para>
         <para>One of the most complex aspects of an OpenStack cloud is the
             networking configuration. You should be familiar with concepts such
             as DHCP, Linux bridges, VLANs, and iptables. You must also have
