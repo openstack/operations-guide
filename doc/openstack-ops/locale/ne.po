@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-04-19 13:01+0000\n"
-"PO-Revision-Date: 2014-04-21 16:28+0000\n"
+"POT-Creation-Date: 2014-05-05 13:17+0000\n"
+"PO-Revision-Date: 2014-05-05 13:11+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Nepali (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ne/)\n"
 "MIME-Version: 1.0\n"
@@ -9272,7 +9272,6 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_storage.xml330(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml334(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml336(para)
-#: ./doc/openstack-ops/ch_arch_storage.xml347(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml358(para)
 #: ./doc/openstack-ops/ch_arch_storage.xml360(para)
 msgid " "
@@ -18709,8 +18708,8 @@ msgid ""
 "This guide assumes that you are familiar with a Linux distribution that "
 "supports OpenStack, SQL databases, and virtualization. You must be "
 "comfortable administering and configuring multiple Linux machines for "
-"networking. You must install and maintain a MySQL database and occasionally "
-"run SQL queries against it."
+"networking. You must install and maintain an SQL database and occasionally "
+"run queries against it."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml110(para)

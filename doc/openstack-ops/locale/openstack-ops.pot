@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-14 06:17+0000\n"
+"POT-Creation-Date: 2014-05-06 06:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6021,7 +6021,7 @@ msgstr ""
 msgid "Persistent file-based storage support"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:319(th) ./doc/openstack-ops/ch_arch_storage.xml:329(para) ./doc/openstack-ops/ch_arch_storage.xml:330(para) ./doc/openstack-ops/ch_arch_storage.xml:334(para) ./doc/openstack-ops/ch_arch_storage.xml:336(para) ./doc/openstack-ops/ch_arch_storage.xml:347(para) ./doc/openstack-ops/ch_arch_storage.xml:358(para) ./doc/openstack-ops/ch_arch_storage.xml:360(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:319(th) ./doc/openstack-ops/ch_arch_storage.xml:329(para) ./doc/openstack-ops/ch_arch_storage.xml:330(para) ./doc/openstack-ops/ch_arch_storage.xml:334(para) ./doc/openstack-ops/ch_arch_storage.xml:336(para) ./doc/openstack-ops/ch_arch_storage.xml:358(para) ./doc/openstack-ops/ch_arch_storage.xml:360(para)
 msgid " "
 msgstr ""
 
@@ -12954,7 +12954,7 @@ msgid "This book is for those of you starting to run OpenStack clouds as well as
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:105(para)
-msgid "This guide assumes that you are familiar with a Linux distribution that supports OpenStack, SQL databases, and virtualization. You must be comfortable administering and configuring multiple Linux machines for networking. You must install and maintain a MySQL database and occasionally run SQL queries against it."
+msgid "This guide assumes that you are familiar with a Linux distribution that supports OpenStack, SQL databases, and virtualization. You must be comfortable administering and configuring multiple Linux machines for networking. You must install and maintain an SQL database and occasionally run queries against it."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:110(para)
