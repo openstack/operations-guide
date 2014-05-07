@@ -70,46 +70,37 @@
     <section xml:id="preface_plug_and_play">
       <title>Plug and Play OpenStack</title>
 
-      <para>However, the enticing part of OpenStack might be to build
-        your own private cloud, and there are several ways to
-        accomplish this goal. Perhaps the simplest of all is an
-        appliance-style solution. You purchase an appliance, unpack
-        it, plug in the power and the network, and watch it transform
-        into an OpenStack cloud with minimal additional configuration.
-        Few, if any, other open source cloud products have such
-        turnkey options. If a turnkey solution is interesting to you,
-        take a look at Nebula One.</para>
+      <para>However, the enticing part of OpenStack might be to build your own
+      private cloud, and there are several ways to accomplish this goal.
+      Perhaps the simplest of all is an appliance-style solution. You purchase
+      an appliance, unpack it, plug in the power and the network, and watch it
+      transform into an OpenStack cloud with minimal additional configuration.
+      Few, if any, other open source cloud products have such turnkey options.
+      If a turnkey solution is interesting to you, take a look at Nebula
+      One.</para>
 
-      <para>However, hardware choice is important for many
-        applications, so if that applies to you, consider that there
-        are several software distributions available that you can run
-        on servers, storage, and network products of your choosing.
-        Canonical (where OpenStack replaced Eucalyptus as the default
-        cloud option in 2011), Red Hat, and SUSE offer enterprise
-        OpenStack solutions and support. You may also want to take a
-        look at some of the specialized distributions, such as those
-        from Rackspace, Piston, SwiftStack, or Cloudscaling. Also, a
-        hat tip to Apache CloudStack, which Citrix donated to the
-        Apache Foundation after its $200 million purchase of
-        Cloud.com. While not currently packaged in any distributions,
-        like Eucalyptus, it is an example of an alternative private
-        cloud software developed in an open source–like manner.</para>
+      <para>However, hardware choice is important for many applications, so if
+        that applies to you, consider that there are several software
+        distributions available that you can run on servers, storage, and
+        network products of your choosing. Canonical (where OpenStack replaced
+        Eucalyptus as the default cloud option in 2011), Red Hat, and SUSE offer
+        enterprise OpenStack solutions and support. You may also want to take a
+        look at some of the specialized distributions, such as those from
+        Rackspace, Piston, SwiftStack, or Cloudscaling.</para>
 
-      <para>Alternatively, if you want someone to help guide you
-        through the decisions about the underlying hardware or your
-        applications, perhaps adding in a few features or integrating
-        components along the way, consider contacting one of the
-        system integrators with OpenStack experience, such as Mirantis
-        or Metacloud.</para>
+      <para>Alternatively, if you want someone to help guide you through the
+      decisions about the underlying hardware or your applications, perhaps
+      adding in a few features or integrating components along the way,
+      consider contacting one of the system integrators with OpenStack
+      experience, such as Mirantis or Metacloud.</para>
 
-      <para>If you prefer to build your own OpenStack expertise
-        internally, a good way to kick-start that might be to attend
-        or arrange a training session. The OpenStack Foundation
-        recently launched a <link xlink:href="http://opsgui.de/NPH6JZ"
-          >Training Marketplace</link> where you can look for nearby
-        events. Also, the OpenStack community is <link
-          xlink:href="http://opsgui.de/1eLCyio">working to
-          produce</link> open source training materials.</para>
+      <para>If your preference is to build your own OpenStack expertise
+      internally, a good way to kick-start that might be to attend or arrange
+      a training session. The OpenStack Foundation recently launched a <link
+      xlink:href="http://opsgui.de/NPH6JZ">Training Marketplace</link> where
+      you can look for nearby events. Also, the OpenStack community is <link
+      xlink:href="http://opsgui.de/1eLCyio">working to produce</link> open
+      source training materials.</para>
     </section>
 
     <section xml:id="preface_roll_your_own_openstack">
