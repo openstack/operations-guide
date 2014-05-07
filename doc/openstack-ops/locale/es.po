@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-05-05 13:17+0000\n"
-"PO-Revision-Date: 2014-05-05 22:00+0000\n"
+"POT-Creation-Date: 2014-05-06 06:57+0000\n"
+"PO-Revision-Date: 2014-05-06 22:30+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -20718,7 +20718,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml407(title)
 msgid "Scheduling"
-msgstr ""
+msgstr "Programando"
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml408(para)
 msgid ""
