@@ -8,53 +8,41 @@
   xmlns:ns3="http://www.w3.org/1999/xhtml"
   xmlns:ns="http://docbook.org/ns/docbook">
   <?dbhtml stop-chunking?>
-  
   <title>Resources</title>
-  
   <section xml:id="openstack-resources">
     <title>OpenStack</title>
-    
     <itemizedlist>
-      <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGtjs">OpenStack
-          Configuration Reference</link></para>
-      </listitem>
-      
-      <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBGtX">OpenStack Install
-          Guide for Debian 7.0</link></para>
-      </listitem>
-      
-      <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGvrs">OpenStack Install
-          Guide for Red Hat Enterprise Linux, CentOS, and Fedora</link></para>
-      </listitem>
-      
-      <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBI50">OpenStack Install
-          Guide for openSUSE, SUSE Linux Enterprise Server</link></para>
-      </listitem>
-      
-      <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGunp">OpenStack Install
-          Guide for Ubuntu 12.04 (LTS) Server</link></para>
-      </listitem>
-      
+        <listitem>
+            <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt-debian/content/"
+                >Installation Guide for Debian 7.0</link></para>
+        </listitem>
+        <listitem>
+            <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/zypper/content/">Installation
+                Guide for openSUSE and SUSE Linux Enterprise
+                Server</link></para>
+        </listitem>
+        <listitem>
+            <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/yum/content/">Installation
+                Guide for Red Hat Enterprise Linux, CentOS, and
+                Fedora</link></para>
+        </listitem>
+        <listitem>
+            <para><link
+                xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/">Installation
+                Guide for Ubuntu 12.04/14.04 (LTS) Server</link></para>
+        </listitem>
       <listitem>
         <para><link xlink:href="http://opsgui.de/1eLBL0N">OpenStack Cloud
           Administrator Guide</link></para>
       </listitem>
-      
       <listitem>
         <para><link xlink:href="http://opsgui.de/NPGwvz"><emphasis>OpenStack
           Cloud Computing Cookbook</emphasis> (Packt Publishing) </link></para>
       </listitem>
     </itemizedlist>
   </section>
-  
   <section xml:id="cloud-general-resources">
     <title>Cloud (General)</title>
-    
     <itemizedlist>
       <listitem>
         <para><link xlink:href="http://opsgui.de/1eLBLOv">“The NIST Definition
@@ -62,10 +50,8 @@
       </listitem>
     </itemizedlist>
   </section>
-  
   <section xml:id="python-resources">
     <title>Python</title>
-    
     <itemizedlist>
       <listitem>
         <para><link xlink:href="http://opsgui.de/NPGxQd"><emphasis>Dive Into
@@ -73,34 +59,26 @@
       </listitem>
     </itemizedlist>
   </section>
-  
-  <?hard-pagebreak ?>
-  
   <section xml:id="networking-resources">
     <title>Networking</title>
-    
     <itemizedlist>
       <listitem>
         <para><link xlink:href="http://opsgui.de/1eLBNWl"><emphasis>TCP/IP
           Illustrated, Volume 1: The Protocols, 2/E</emphasis>
           (Pearson)</link></para>
       </listitem>
-      
       <listitem>
         <para><link xlink:href="http://opsgui.de/NPGzYr"><emphasis>The TCP/IP
           Guide</emphasis> (No Starch Press)</link></para>
       </listitem>
-      
       <listitem>
         <para><link xlink:href="http://opsgui.de/1eLBOJS">“A
           <code>tcpdump</code> Tutorial and Primer”</link></para>
       </listitem>
     </itemizedlist>
   </section>
-  
   <section xml:id="system-admin-resources">
     <title>Systems Administration</title>
-    
     <itemizedlist>
       <listitem>
         <para><link xlink:href="http://opsgui.de/NPGyDR"><emphasis>UNIX and
@@ -109,10 +87,8 @@
       </listitem>
     </itemizedlist>
   </section>
-  
   <section xml:id="virtualization-resources">
     <title>Virtualization</title>
-    
     <itemizedlist>
       <listitem>
         <para><link xlink:href="http://opsgui.de/1eLBQSb"><emphasis>The Book
@@ -120,16 +96,13 @@
       </listitem>
     </itemizedlist>
   </section>
-  
   <section xml:id="config-management-resources">
     <title>Configuration Management</title>
-    
     <itemizedlist>
       <listitem>
         <para><link xlink:href="http://opsgui.de/NPGzrj">Puppet Labs
           Documentation</link></para>
       </listitem>
-      
       <listitem>
         <para><link xlink:href="http://opsgui.de/1eLBRFD"><emphasis>Pro
           Puppet</emphasis> (Apress)</link></para>
