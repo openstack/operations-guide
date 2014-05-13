@@ -1,13 +1,14 @@
 # 
 # Translators:
 # steff00 <stephane.eveillard@gmail.com>, 2013
+# Drew Melim <nokostya.translation@gmail.com>, 2014
 # obuisson <obuisson1976@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-05-05 13:17+0000\n"
-"PO-Revision-Date: 2014-05-05 13:11+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2014-05-12 21:12+0000\n"
+"PO-Revision-Date: 2014-05-12 19:37+0000\n"
+"Last-Translator: Drew Melim <nokostya.translation@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +51,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml28(title)
 msgid "Automated Deployment"
-msgstr ""
+msgstr "Déploiement automatisé"
 
 #: ./doc/openstack-ops/ch_arch_provision.xml29(para)
 msgid ""
@@ -90,7 +91,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml60(title)
 msgid "Disk Partitioning and RAID"
-msgstr ""
+msgstr "Partition du Disque et RAID"
 
 #: ./doc/openstack-ops/ch_arch_provision.xml61(para)
 msgid ""
@@ -246,7 +247,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml190(title)
 msgid "Network Configuration"
-msgstr ""
+msgstr "Configuration du réseau "
 
 #: ./doc/openstack-ops/ch_arch_provision.xml191(para)
 msgid ""
@@ -265,7 +266,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml203(title)
 msgid "Automated Configuration"
-msgstr ""
+msgstr "Configuration automatisé"
 
 #: ./doc/openstack-ops/ch_arch_provision.xml204(para)
 msgid ""
@@ -306,7 +307,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml239(title)
 msgid "Remote Management"
-msgstr ""
+msgstr "Gestion à distance"
 
 #: ./doc/openstack-ops/ch_arch_provision.xml240(para)
 msgid ""
@@ -6210,7 +6211,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml14(title)
 msgid "Compute Nodes"
-msgstr ""
+msgstr "Noeud de Calcul"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml15(para)
 msgid ""
@@ -7645,7 +7646,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml20(title)
 msgid "Where Are the Logs?"
-msgstr ""
+msgstr "Sont ou les journaux?"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml21(para)
 msgid ""
@@ -7681,27 +7682,27 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml37(code)
 msgid "nova-*"
-msgstr ""
+msgstr "nova-*"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml40(code)
 msgid "/var/log/nova"
-msgstr ""
+msgstr "/var/log/nova"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml46(code)
 msgid "glance-*"
-msgstr ""
+msgstr "glance-*"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml49(code)
 msgid "/var/log/glance"
-msgstr ""
+msgstr "/var/log/glance"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml55(code)
 msgid "cinder-*"
-msgstr ""
+msgstr "cinder-*"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml58(code)
 msgid "/var/log/cinder"
-msgstr ""
+msgstr "/var/log/cinder"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml64(code)
 msgid "keystone-*"
@@ -7709,7 +7710,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml67(code)
 msgid "/var/log/keystone"
-msgstr ""
+msgstr "/var/log/keystone"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml73(code)
 msgid "neutron-*"
@@ -7722,11 +7723,11 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml81(para)
 #: ./doc/openstack-ops/glossary-terms.xml2180(glossterm)
 msgid "horizon"
-msgstr ""
+msgstr "horizon"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml83(code)
 msgid "/var/log/apache2/"
-msgstr ""
+msgstr "/var/log/apache2/"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml87(para)
 msgid "All nodes"
@@ -7738,7 +7739,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml91(code)
 msgid "/var/log/syslog"
-msgstr ""
+msgstr "/var/log/syslog"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml95(para)
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml102(para)
@@ -8031,7 +8032,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml333(title)
 msgid "rsyslog Server Configuration"
-msgstr ""
+msgstr "Configuration du Serveur rsyslog"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml334(para)
 msgid ""
@@ -8052,12 +8053,12 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml371(filename)
 msgid "/var/log/rsyslog/c01.example.com/nova.log"
-msgstr ""
+msgstr "/var/log/rsyslog/c01.example.com/nova.log"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml376(filename)
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml389(filename)
 msgid "/var/log/rsyslog/nova.log"
-msgstr ""
+msgstr "/var/log/rsyslog/nova.log"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml380(para)
 msgid "This is useful, as logs from c02.example.com go to:"
@@ -8065,7 +8066,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml384(filename)
 msgid "/var/log/rsyslog/c02.example.com/nova.log"
-msgstr ""
+msgstr "/var/log/rsyslog/c02.example.com/nova.log"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml393(para)
 msgid ""
@@ -8078,7 +8079,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml401(title)
 #: ./doc/openstack-ops/glossary-terms.xml4297(glossterm)
 msgid "StackTach"
-msgstr ""
+msgstr "StackTach"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml402(para)
 msgid ""
@@ -21456,7 +21457,7 @@ msgstr "Nouvelle valeur"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml596(title)
 msgid "User Management"
-msgstr ""
+msgstr "Gestion des Utilisateurs"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml597(para)
 msgid ""
