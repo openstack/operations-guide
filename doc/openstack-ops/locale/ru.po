@@ -1,12 +1,13 @@
 # 
 # Translators:
+# Айнур Шакиров <ainur.shakirov.tt@gmail.com>, 2014
 # adiantum <ilyaalekseyev@acm.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-05-05 13:17+0000\n"
-"PO-Revision-Date: 2014-05-05 13:11+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2014-05-13 16:27+0000\n"
+"PO-Revision-Date: 2014-05-14 17:26+0000\n"
+"Last-Translator: Айнур Шакиров <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -245,7 +246,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml190(title)
 msgid "Network Configuration"
-msgstr ""
+msgstr "Конфигурация сети"
 
 #: ./doc/openstack-ops/ch_arch_provision.xml191(para)
 msgid ""
@@ -264,7 +265,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml203(title)
 msgid "Automated Configuration"
-msgstr ""
+msgstr "Автоматическая конфигурация"
 
 #: ./doc/openstack-ops/ch_arch_provision.xml204(para)
 msgid ""
@@ -305,7 +306,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml239(title)
 msgid "Remote Management"
-msgstr ""
+msgstr "Удаленное управление"
 
 #: ./doc/openstack-ops/ch_arch_provision.xml240(para)
 msgid ""
@@ -2499,7 +2500,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-neutron.xml29(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml41(para)
 msgid "OpenStack release"
-msgstr ""
+msgstr "Версия OpenStack"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml30(para)
 #: ./doc/openstack-ops/app_roadmaps.xml74(para)
@@ -2533,7 +2534,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-neutron.xml44(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml60(para)
 msgid "Hypervisor"
-msgstr ""
+msgstr "Гипервизор"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml45(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml61(para)
@@ -2563,7 +2564,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-neutron.xml56(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml73(para)
 msgid "Networking service"
-msgstr ""
+msgstr "Служба Сети"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml57(para)
 msgid "OpenStack Networking"
@@ -2587,7 +2588,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml301(para)
 #: ./doc/openstack-ops/glossary-terms.xml2086(glossterm)
 msgid "GlusterFS"
-msgstr ""
+msgstr "GlusterFS"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml70(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml91(para)
@@ -2597,7 +2598,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-neutron.xml72(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml93(para)
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml75(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml96(para)
@@ -2688,7 +2689,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-neutron.xml142(title)
 #: ./doc/openstack-ops/section_arch_example-nova.xml258(title)
 msgid "Detailed Description"
-msgstr ""
+msgstr "Детальное описание"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml144(title)
 #: ./doc/openstack-ops/section_arch_example-neutron.xml150(caption)
@@ -3440,7 +3441,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml139(para)
 #: ./doc/openstack-ops/glossary-terms.xml2017(glossterm)
 msgid "Folsom"
-msgstr ""
+msgstr "Folsom"
 
 #: ./doc/openstack-ops/app_roadmaps.xml140(para)
 #: ./doc/openstack-ops/app_roadmaps.xml185(para)
@@ -6141,7 +6142,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_resources.xml70(emphasis)
 #: ./doc/openstack-ops/glossary-terms.xml3594(glossterm)
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ./doc/openstack-ops/ch_ops_resources.xml72(para)
 msgid ""
@@ -6187,7 +6188,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_resources.xml98(emphasis)
 msgid "Virtualization"
-msgstr ""
+msgstr "Виртуализация"
 
 #: ./doc/openstack-ops/ch_ops_resources.xml100(para)
 msgid ""
@@ -6209,7 +6210,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml14(title)
 msgid "Compute Nodes"
-msgstr ""
+msgstr "Вычислительные узлы"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml15(para)
 msgid ""
@@ -6634,11 +6635,11 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml304(para)
 msgid "MooseFS"
-msgstr ""
+msgstr "MooseFS"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml307(para)
 msgid "Lustre"
-msgstr ""
+msgstr "Lustre"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml310(para)
 msgid ""
@@ -6685,7 +6686,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml343(emphasis)
 msgid "OR"
-msgstr ""
+msgstr "OR"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml345(para)
 msgid "CPU overcommit ratio (virtual cores per physical core)."
@@ -6693,15 +6694,15 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml350(emphasis)
 msgid "PC"
-msgstr ""
+msgstr "PC"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml352(para)
 msgid "Number of physical cores."
-msgstr ""
+msgstr "Число физических ядер."
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml356(emphasis)
 msgid "VC"
-msgstr ""
+msgstr "VC"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml358(para)
 msgid "Number of virtual cores per instance."
@@ -6731,7 +6732,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml376(title)
 msgid "Logging"
-msgstr ""
+msgstr "Журналирование"
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml377(para)
 msgid ""
@@ -7632,7 +7633,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml14(title)
 msgid "Logging and Monitoring"
-msgstr ""
+msgstr "Журналирование и мониторинг"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml15(para)
 msgid ""
@@ -7644,7 +7645,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml20(title)
 msgid "Where Are the Logs?"
-msgstr ""
+msgstr "Где лежат журналы?"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml21(para)
 msgid ""
@@ -7667,7 +7668,7 @@ msgstr "Служба"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml30(th)
 msgid "Log Location"
-msgstr ""
+msgstr "Место журналов"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml35(para)
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml44(para)
@@ -7684,23 +7685,23 @@ msgstr "nova-*"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml40(code)
 msgid "/var/log/nova"
-msgstr ""
+msgstr "/var/log/nova"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml46(code)
 msgid "glance-*"
-msgstr ""
+msgstr "glance-*"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml49(code)
 msgid "/var/log/glance"
-msgstr ""
+msgstr "/var/log/glance"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml55(code)
 msgid "cinder-*"
-msgstr ""
+msgstr "cinder-*"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml58(code)
 msgid "/var/log/cinder"
-msgstr ""
+msgstr "/var/log/cinder"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml64(code)
 msgid "keystone-*"
@@ -7708,7 +7709,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml67(code)
 msgid "/var/log/keystone"
-msgstr ""
+msgstr "/var/log/keystone"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml73(code)
 msgid "neutron-*"
@@ -7721,11 +7722,11 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml81(para)
 #: ./doc/openstack-ops/glossary-terms.xml2180(glossterm)
 msgid "horizon"
-msgstr ""
+msgstr "horizon"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml83(code)
 msgid "/var/log/apache2/"
-msgstr ""
+msgstr "/var/log/apache2/"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml87(para)
 msgid "All nodes"
@@ -7737,7 +7738,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml91(code)
 msgid "/var/log/syslog"
-msgstr ""
+msgstr "/var/log/syslog"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml95(para)
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml102(para)
@@ -8051,12 +8052,12 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml371(filename)
 msgid "/var/log/rsyslog/c01.example.com/nova.log"
-msgstr ""
+msgstr "/var/log/rsyslog/c01.example.com/nova.log"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml376(filename)
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml389(filename)
 msgid "/var/log/rsyslog/nova.log"
-msgstr ""
+msgstr "/var/log/rsyslog/nova.log"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml380(para)
 msgid "This is useful, as logs from c02.example.com go to:"
@@ -8064,7 +8065,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml384(filename)
 msgid "/var/log/rsyslog/c02.example.com/nova.log"
-msgstr ""
+msgstr "/var/log/rsyslog/c02.example.com/nova.log"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml393(para)
 msgid ""
@@ -8195,7 +8196,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml499(para)
 msgid "Available vCPUs"
-msgstr ""
+msgstr "Доступные vCPU"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml502(para)
 msgid ""
@@ -8434,7 +8435,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml743(para)
 msgid "# grep INFO /var/log/nova/nova-api.log | wc"
-msgstr ""
+msgstr "# grep INFO /var/log/nova/nova-api.log | wc"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml744(para)
 msgid ""
@@ -8444,7 +8445,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml746(para)
 msgid "# grep \" 200 \" /var/log/nova/nova-api.log | wc"
-msgstr ""
+msgstr "# grep \" 200 \" /var/log/nova/nova-api.log | wc"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml748(para)
 msgid ""
@@ -8592,7 +8593,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml14(title)
 msgid "Advanced Configuration"
-msgstr ""
+msgstr "Продвинутая конфигурация"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml15(para)
 msgid ""
@@ -8700,43 +8701,43 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml90(para)
 msgid "bandwidth_poll_interval"
-msgstr ""
+msgstr "bandwidth_poll_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml91(para)
 msgid "sync_power_state_interval"
-msgstr ""
+msgstr "sync_power_state_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml92(para)
 msgid "heal_instance_info_cache_interval"
-msgstr ""
+msgstr "heal_instance_info_cache_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml93(para)
 msgid "host_state_interval"
-msgstr ""
+msgstr "host_state_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml94(para)
 msgid "image_cache_manager_interval"
-msgstr ""
+msgstr "image_cache_manager_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml95(para)
 msgid "reclaim_instance_interval"
-msgstr ""
+msgstr "reclaim_instance_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml96(para)
 msgid "volume_usage_poll_interval"
-msgstr ""
+msgstr "volume_usage_poll_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml97(para)
 msgid "shelved_poll_interval"
-msgstr ""
+msgstr "shelved_poll_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml98(para)
 msgid "shelved_offload_time"
-msgstr ""
+msgstr "shelved_offload_time"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml99(para)
 msgid "instance_delete_interval"
-msgstr ""
+msgstr "instance_delete_interval"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml102(para)
 msgid ""
@@ -9551,7 +9552,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml23(title)
 msgid "NeCTAR"
-msgstr ""
+msgstr "NeCTAR"
 
 #: ./doc/openstack-ops/app_usecases.xml24(para)
 msgid ""
@@ -9621,7 +9622,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml81(title)
 msgid "MIT CSAIL"
-msgstr ""
+msgstr "MIT CSAIL"
 
 #: ./doc/openstack-ops/app_usecases.xml82(para)
 msgid ""
@@ -9704,7 +9705,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml160(title)
 msgid "DAIR"
-msgstr ""
+msgstr "DAIR"
 
 #: ./doc/openstack-ops/app_usecases.xml161(para)
 msgid ""
@@ -9755,7 +9756,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml209(title)
 msgid "CERN"
-msgstr ""
+msgstr "CERN"
 
 #: ./doc/openstack-ops/app_usecases.xml210(para)
 msgid ""
@@ -10085,7 +10086,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_network_design.xml222(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml78(para)
 msgid "FlatDHCP"
-msgstr ""
+msgstr "FlatDHCP"
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml225(para)
 msgid "Relatively simple to deploy."
@@ -10828,7 +10829,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-nova.xml271(None)
 msgid ""
 "@@image: 'figures/os-ref-arch.png'; md5=d14dd97ceaea1a78af7f292c5d6bd605"
-msgstr ""
+msgstr "@@image: 'figures/os-ref-arch.png'; md5=d14dd97ceaea1a78af7f292c5d6bd605"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -10837,7 +10838,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/os_physical_network.png'; "
 "md5=1dea1a64bd3be35646459de1b33f3c48"
-msgstr ""
+msgstr "@@image: 'figures/os_physical_network.png'; md5=1dea1a64bd3be35646459de1b33f3c48"
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml16(title)
 msgid "Example Architecture - Legacy Networking (nova)"
@@ -10881,7 +10882,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml65(para)
 msgid "MySQL*"
-msgstr ""
+msgstr "MySQL*"
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml69(para)
 msgid "RabbitMQ for Ubuntu, Qpid for Red Hat Enterprise Linux and derivatives"
@@ -10902,7 +10903,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml83(para)
 msgid "multi-host*"
-msgstr ""
+msgstr "multi-host*"
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml88(para)
 msgid "file"
@@ -10910,7 +10911,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml98(para)
 msgid "LVM/iSCSI"
-msgstr ""
+msgstr "LVM/iSCSI"
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml101(para)
 msgid "Live Migration back-end"
@@ -11203,7 +11204,7 @@ msgstr ""
 #: ./doc/openstack-ops/bk_ops_guide.xml26(orgname)
 #: ./doc/openstack-ops/bk_ops_guide.xml32(holder)
 msgid "OpenStack Foundation"
-msgstr "Основы OpenStack "
+msgstr "OpenStack Foundation"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml31(year)
 msgid "2014"
@@ -12697,7 +12698,7 @@ msgstr ""
 #.      with entries that are marked with glossterm/firstterm
 #: ./doc/openstack-ops/glossary-terms.xml15(title)
 msgid "Glossary"
-msgstr "Глоссарий"
+msgstr "Словарь"
 
 #: ./doc/openstack-ops/glossary-terms.xml16(para)
 msgid ""
@@ -12748,7 +12749,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml57(glossterm)
 msgid "account"
-msgstr ""
+msgstr "аккаунт"
 
 #: ./doc/openstack-ops/glossary-terms.xml59(para)
 msgid ""
@@ -14176,7 +14177,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1279(glossterm)
 msgid "dashboard"
-msgstr ""
+msgstr "панель управления"
 
 #: ./doc/openstack-ops/glossary-terms.xml1281(para)
 msgid ""
@@ -15882,7 +15883,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2746(glossterm)
 msgid "live migration"
-msgstr ""
+msgstr "живая миграция"
 
 #: ./doc/openstack-ops/glossary-terms.xml2748(para)
 msgid ""

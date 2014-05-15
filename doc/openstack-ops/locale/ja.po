@@ -24,8 +24,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-05-05 13:17+0000\n"
-"PO-Revision-Date: 2014-05-05 13:11+0000\n"
+"POT-Creation-Date: 2014-05-13 16:27+0000\n"
+"PO-Revision-Date: 2014-05-15 03:04+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -11227,7 +11227,7 @@ msgstr "OpenStack Foundation"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml31(year)
 msgid "2014"
-msgstr ""
+msgstr "2014"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml38(remark)
 msgid "Copyright details are filled in by the template."
@@ -12756,7 +12756,7 @@ msgid ""
 "can be performed on specified objects. Each entry in a typical ACL specifies"
 " a subject and an operation. For instance, the ACL entry <code>(Alice, "
 "delete)</code> for a file gives Alice permission to delete the file."
-msgstr ""
+msgstr "オブジェクトに対する権限の一覧。オブジェクトに対して、アクセスできるユーザーやシステムプロセスを特定する。また、特定のオブジェクトに対してどのような操作が行えるかを定義する。アクセス制御リスト（ACL）の一般的な項目では対象項目と操作を指定する。例えば、1つのファイルに対して<code>(Alice, delete)</code>というACL項目が定義されると、Aliceにファイルを削除する権限が与えられる。"
 
 #: ./doc/openstack-ops/glossary-terms.xml50(glossterm)
 msgid "access key"
@@ -12764,7 +12764,7 @@ msgstr "アクセスキー"
 
 #: ./doc/openstack-ops/glossary-terms.xml52(para)
 msgid "Alternative term for an Amazon EC2 access key. See EC2 access key."
-msgstr ""
+msgstr "Amazon EC2 アクセスキーの別名。EC2 アクセスキー参照。"
 
 #: ./doc/openstack-ops/glossary-terms.xml57(glossterm)
 msgid "account"
@@ -14463,7 +14463,7 @@ msgid ""
 "Domain Name Server. A hierarchical and distributed naming system for "
 "computers, services, and resources connected to the Internet or a private "
 "network. Associates a human-friendly names to IP addresses."
-msgstr ""
+msgstr "ドメインネームサーバー。インターネットやプライベートネットワークに接続されるコンピューター、サービス、リソースの名前を管理する階層化分散システム。人間が理解しやすい名前を IP アドレスに関連づけます。"
 
 #: ./doc/openstack-ops/glossary-terms.xml1521(glossterm)
 msgid "DNS record"
@@ -14697,7 +14697,7 @@ msgstr "エンドポイントレジストリ"
 
 #: ./doc/openstack-ops/glossary-terms.xml1702(para)
 msgid "Alternative term for an Identity Service catalog."
-msgstr ""
+msgstr "Identity サービスカタログの別名。"
 
 #: ./doc/openstack-ops/glossary-terms.xml1706(glossterm)
 msgid "endpoint template"
@@ -14836,7 +14836,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1819(para)
 msgid "Alternative term for a RabbitMQ message exchange."
-msgstr ""
+msgstr "RabbitMQ メッセージ交換の別名。"
 
 #: ./doc/openstack-ops/glossary-terms.xml1824(glossterm)
 msgid "exchange type"
@@ -15039,7 +15039,7 @@ msgstr "フレーバー"
 
 #: ./doc/openstack-ops/glossary-terms.xml1994(para)
 msgid "Alternative term for a VM instance type."
-msgstr ""
+msgstr "VM インスタンスタイプの別名。"
 
 #: ./doc/openstack-ops/glossary-terms.xml1998(glossterm)
 msgid "flavor ID"
@@ -15126,7 +15126,7 @@ msgstr "Glance レジストリ"
 
 #: ./doc/openstack-ops/glossary-terms.xml2074(para)
 msgid "Alternative term for the Image Service image registry."
-msgstr ""
+msgstr "Image Service イメージレジストリの別名。"
 
 #: ./doc/openstack-ops/glossary-terms.xml2079(glossterm)
 msgid "global endpoint template"
@@ -16412,7 +16412,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3164(para)
 msgid "Alternative term for the Compute API."
-msgstr ""
+msgstr "Compute API の別名。"
 
 #: ./doc/openstack-ops/glossary-terms.xml3171(para)
 msgid ""
@@ -16891,7 +16891,7 @@ msgstr "Puppet"
 #: ./doc/openstack-ops/glossary-terms.xml3589(para)
 msgid ""
 "An operating system configuration-management tool supported by OpenStack."
-msgstr ""
+msgstr "OpenStackがサポートするオペレーティングシステム構成管理ツール。"
 
 #: ./doc/openstack-ops/glossary-terms.xml3596(para)
 msgid "Programming language used extensively in OpenStack."
@@ -16908,7 +16908,7 @@ msgstr "QEMU Copy On Write 2 (QCOW2)"
 #: ./doc/openstack-ops/glossary-terms.xml3614(para)
 msgid ""
 "Message queue software supported by OpenStack; an alternative to RabbitMQ."
-msgstr ""
+msgstr "OpenStackでサポートされているメッセージキューのソフトウェア。RabbitMQの代替品。"
 
 #: ./doc/openstack-ops/glossary-terms.xml3619(glossterm)
 msgid "quarantine"
@@ -17441,7 +17441,7 @@ msgstr "セキュリティグループ"
 msgid ""
 "A set of network traffic filtering rules that are applied to a Compute "
 "instance."
-msgstr ""
+msgstr "Compute のインスタンスに適用される、ネットワーク通信のフィルタリングルールの集合。"
 
 #: ./doc/openstack-ops/glossary-terms.xml4061(glossterm)
 msgid "segmented object"
@@ -17498,7 +17498,7 @@ msgstr "サービスカタログ"
 
 #: ./doc/openstack-ops/glossary-terms.xml4106(para)
 msgid "Alternative term for the Identity Service catalog."
-msgstr ""
+msgstr "Identity サービスカタログの別名。"
 
 #: ./doc/openstack-ops/glossary-terms.xml4111(glossterm)
 msgid "service ID"
@@ -17682,7 +17682,7 @@ msgid ""
 "The Simple Protocol for Independent Computing Environments (SPICE) provides "
 "remote desktop access to guest virtual machines. It is an alternative to "
 "VNC. SPICE is supported by OpenStack."
-msgstr ""
+msgstr "Simple Protocol for Independent Computing Environments (SPICE) は、ゲスト仮想マシンに対するリモートデスクトップアクセスを提供する。VNC の代替品。SPICE は OpenStack によりサポートされる。"
 
 #: ./doc/openstack-ops/glossary-terms.xml4274(glossterm)
 msgid "spread-first scheduler"
@@ -18222,7 +18222,7 @@ msgstr "Virtual Network Computing (VNC)"
 msgid ""
 "Open source GUI and CLI tools used for remote console access to VMs. "
 "Supported by Compute."
-msgstr ""
+msgstr "仮想マシンへのリモートコンソールアクセスに使用される、オープンソースの GUI / CUI ツール。"
 
 #: ./doc/openstack-ops/glossary-terms.xml4722(glossterm)
 msgid "Virtual Network InterFace (VIF)"
@@ -18390,7 +18390,7 @@ msgstr "ボリュームドライバー"
 
 #: ./doc/openstack-ops/glossary-terms.xml4860(para)
 msgid "Alternative term for a volume plug-in."
-msgstr ""
+msgstr "ボリュームプラグインの別名。"
 
 #: ./doc/openstack-ops/glossary-terms.xml4864(glossterm)
 msgid "volume ID"
