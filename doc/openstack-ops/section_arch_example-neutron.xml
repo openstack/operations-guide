@@ -534,7 +534,7 @@
                         <td>Configured to use <systemitem>memcached</systemitem> as a session store,
                                 <systemitem>neutron</systemitem> support is enabled,
                                 <systemitem>can_set_mount_point = False</systemitem></td>
-                        <td>The Dashboard is run on all controller nodes, ensuring at least once
+                        <td>The Dashboard is run on all controller nodes, ensuring at least one
                             instance will be available in case of node failure. It also sits behind
                             HAProxy, which detects when the software fails and routes requests
                             around the failing instance.</td>
@@ -545,7 +545,7 @@
                         <td>Identity (keystone)</td>
                         <td>Controller</td>
                         <td>Configured to use memcached for caching, and use PKI for tokens.</td>
-                        <td>Identity is run on all controller nodes, ensuring at least once instance will be available
+                        <td>Identity is run on all controller nodes, ensuring at least one instance will be available
                             in case of node failure. Identity also sits behind HAProxy, which detects when the software fails
                             and routes requests around the failing instance.</td>
                         <td>Identity is run on all controller nodes, so scalability can be achieved with additional
@@ -556,7 +556,7 @@
                         <td>Controller</td>
                         <td><systemitem>/var/lib/glance/images</systemitem> is a GlusterFS native
                             mount to a Gluster volume off the storage layer.</td>
-                        <td>The Image Service is run on all controller nodes, ensuring at least once
+                        <td>The Image Service is run on all controller nodes, ensuring at least one
                             instance will be available in case of node failure. It also sits behind
                             HAProxy, which detects when the software fails and routes requests
                             around the failing instance.</td>
@@ -574,7 +574,7 @@
                                     <systemitem>memcached</systemitem> for session management (so
                                 that it can have multiple copies and run in a load balancer).</para></td>
                         <td><para>The nova API, scheduler, objectstore, cert, consoleauth, conductor, and vncproxy services are
-                                run on all controller nodes, ensuring at least once instance will be
+                                run on all controller nodes, ensuring at least one instance will be
                                 available in case of node failure. Compute is also behind HAProxy,
                                 which detects when the software fails and routes requests around the
                                 failing instance.</para>
@@ -596,7 +596,7 @@
                             configured to use a Gluster volume from the storage layer as the backend
                             for Block Storage, using the Gluster native client.</td>
                         <td>Block Storage API, scheduler, and volume services are run on all controller nodes,
-                            ensuring at least once instance will be available in case of node failure. Block
+                            ensuring at least one instance will be available in case of node failure. Block
                             Storage also sits behind HAProxy, which detects if the software fails and routes
                             requests around the failing instance.</td>
                         <td>Block Storage API, scheduler and volume services are run on all
