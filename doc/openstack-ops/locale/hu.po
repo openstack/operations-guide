@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-05-05 13:17+0000\n"
-"PO-Revision-Date: 2014-05-05 13:11+0000\n"
+"POT-Creation-Date: 2014-05-15 13:33+0000\n"
+"PO-Revision-Date: 2014-05-15 19:52+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -655,7 +655,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml210(para)
 msgid "Virtual machine memory in megabytes."
-msgstr ""
+msgstr "Virtuális gép memóriája megabájtokban."
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml215(para)
 #: ./doc/openstack-ops/ch_arch_scaling.xml44(th)
@@ -2505,7 +2505,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-nova.xml42(para)
 #: ./doc/openstack-ops/glossary-terms.xml2166(glossterm)
 msgid "Havana"
-msgstr ""
+msgstr "Havana"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml33(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml45(para)
@@ -2543,7 +2543,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-nova.xml64(para)
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml285(title)
 msgid "Database"
-msgstr ""
+msgstr "Adatbázis"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml49(para)
 msgid "MySQL"
@@ -3120,7 +3120,7 @@ msgstr ""
 #: ./doc/openstack-ops/section_arch_example-neutron.xml576(para)
 msgid ""
 "The nova API, scheduler, objectstore, cert, consoleauth, conductor, and "
-"vncproxy services are run on all controller nodes, ensuring at least once "
+"vncproxy services are run on all controller nodes, ensuring at least one "
 "instance will be available in case of node failure. Compute is also behind "
 "HAProxy, which detects when the software fails and routes requests around "
 "the failing instance."
@@ -3222,7 +3222,7 @@ msgid ""
 "<systemitem>memcached</systemitem> as a session store, "
 "<systemitem>neutron</systemitem> support is enabled, "
 "<systemitem>can_set_mount_point = False</systemitem></td><td>The Dashboard "
-"is run on all controller nodes, ensuring at least once instance will be "
+"is run on all controller nodes, ensuring at least one instance will be "
 "available in case of node failure. It also sits behind HAProxy, which "
 "detects when the software fails and routes requests around the failing "
 "instance.</td><td>The Dashboard is run on all controller nodes, so "
@@ -3231,7 +3231,7 @@ msgid ""
 "added.</td></tr><tr><td>Identity "
 "(keystone)</td><td>Controller</td><td>Configured to use memcached for "
 "caching, and use PKI for tokens.</td><td>Identity is run on all controller "
-"nodes, ensuring at least once instance will be available in case of node "
+"nodes, ensuring at least one instance will be available in case of node "
 "failure. Identity also sits behind HAProxy, which detects when the software "
 "fails and routes requests around the failing instance.</td><td>Identity is "
 "run on all controller nodes, so scalability can be achieved with additional "
@@ -3240,8 +3240,8 @@ msgid ""
 "(glance)</td><td>Controller</td><td><systemitem>/var/lib/glance/images</systemitem>"
 " is a GlusterFS native mount to a Gluster volume off the storage "
 "layer.</td><td>The Image Service is run on all controller nodes, ensuring at"
-" least once instance will be available in case of node failure. It also sits"
-" behind HAProxy, which detects when the software fails and routes requests "
+" least one instance will be available in case of node failure. It also sits "
+"behind HAProxy, which detects when the software fails and routes requests "
 "around the failing instance.</td><td>The Image Service is run on all "
 "controller nodes, so scalability can be achieved with additional controller "
 "nodes. HAProxy allows scalability for the Image Service as more nodes are "
@@ -3257,7 +3257,7 @@ msgid ""
 "<systemitem>qpid_heartbeat = 10</systemitem>, configured to use a Gluster "
 "volume from the storage layer as the backend for Block Storage, using the "
 "Gluster native client.</td><td>Block Storage API, scheduler, and volume "
-"services are run on all controller nodes, ensuring at least once instance "
+"services are run on all controller nodes, ensuring at least one instance "
 "will be available in case of node failure. Block Storage also sits behind "
 "HAProxy, which detects if the software fails and routes requests around the "
 "failing instance.</td><td>Block Storage API, scheduler and volume services "
@@ -3394,7 +3394,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml94(para)
 #: ./doc/openstack-ops/glossary-terms.xml2124(glossterm)
 msgid "Grizzly"
-msgstr ""
+msgstr "Grizzly"
 
 #: ./doc/openstack-ops/app_roadmaps.xml95(para)
 msgid "Security-supported"
@@ -3439,7 +3439,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml139(para)
 #: ./doc/openstack-ops/glossary-terms.xml2017(glossterm)
 msgid "Folsom"
-msgstr ""
+msgstr "Folsom"
 
 #: ./doc/openstack-ops/app_roadmaps.xml140(para)
 #: ./doc/openstack-ops/app_roadmaps.xml185(para)
@@ -3489,7 +3489,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml184(para)
 #: ./doc/openstack-ops/glossary-terms.xml1741(glossterm)
 msgid "Essex"
-msgstr ""
+msgstr "Essex"
 
 #: ./doc/openstack-ops/app_roadmaps.xml189(link)
 msgid "2012.1"
@@ -3526,7 +3526,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml221(para)
 #: ./doc/openstack-ops/glossary-terms.xml1437(glossterm)
 msgid "Diablo"
-msgstr ""
+msgstr "Diablo"
 
 #: ./doc/openstack-ops/app_roadmaps.xml223(para)
 #: ./doc/openstack-ops/app_roadmaps.xml242(para)
@@ -3554,7 +3554,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml241(para)
 #: ./doc/openstack-ops/glossary-terms.xml720(glossterm)
 msgid "Cactus"
-msgstr ""
+msgstr "Cactus"
 
 #: ./doc/openstack-ops/app_roadmaps.xml246(link)
 msgid "2011.2"
@@ -3567,7 +3567,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml251(para)
 #: ./doc/openstack-ops/glossary-terms.xml571(glossterm)
 msgid "Bexar"
-msgstr ""
+msgstr "Bexar"
 
 #: ./doc/openstack-ops/app_roadmaps.xml256(link)
 msgid "2011.1"
@@ -3580,7 +3580,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml261(para)
 #: ./doc/openstack-ops/glossary-terms.xml422(glossterm)
 msgid "Austin"
-msgstr ""
+msgstr "Austi"
 
 #: ./doc/openstack-ops/app_roadmaps.xml266(link)
 msgid "2010.1"
@@ -5743,7 +5743,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml746(title)
 msgid "Databases"
-msgstr ""
+msgstr "Adatbázisok"
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml747(para)
 msgid ""
@@ -9102,7 +9102,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml201(para)
 msgid "REST API"
-msgstr ""
+msgstr "REST API"
 
 #: ./doc/openstack-ops/ch_arch_storage.xml204(para)
 msgid "Accessible from…"
@@ -9754,7 +9754,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml209(title)
 msgid "CERN"
-msgstr ""
+msgstr "CERN"
 
 #: ./doc/openstack-ops/app_usecases.xml210(para)
 msgid ""
@@ -11202,7 +11202,7 @@ msgstr ""
 #: ./doc/openstack-ops/bk_ops_guide.xml26(orgname)
 #: ./doc/openstack-ops/bk_ops_guide.xml32(holder)
 msgid "OpenStack Foundation"
-msgstr ""
+msgstr "OpenStack Alapítvány"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml31(year)
 msgid "2014"
@@ -12382,7 +12382,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_scaling.xml318(para)
 #: ./doc/openstack-ops/ch_arch_scaling.xml320(para)
 msgid "Keystone"
-msgstr ""
+msgstr "Keystone"
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml315(code)
 msgid "nova-api"
@@ -14664,7 +14664,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1694(glossterm)
 msgid "endpoint"
-msgstr ""
+msgstr "végpont"
 
 #: ./doc/openstack-ops/glossary-terms.xml1696(para)
 msgid "See API endpoint."
@@ -16714,7 +16714,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3461(glossterm)
 msgid "port"
-msgstr ""
+msgstr "port"
 
 #: ./doc/openstack-ops/glossary-terms.xml3463(para)
 msgid ""
@@ -16930,7 +16930,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3649(glossterm)
 msgid "RabbitMQ"
-msgstr ""
+msgstr "RabbitMQ"
 
 #: ./doc/openstack-ops/glossary-terms.xml3651(para)
 msgid "The default message queue software used by OpenStack."
@@ -17434,7 +17434,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4069(glossterm)
 msgid "server"
-msgstr ""
+msgstr "szerver"
 
 #: ./doc/openstack-ops/glossary-terms.xml4071(para)
 msgid ""
@@ -17981,7 +17981,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4530(glossterm)
 msgid "token"
-msgstr ""
+msgstr "token"
 
 #: ./doc/openstack-ops/glossary-terms.xml4532(para)
 msgid ""
@@ -18766,7 +18766,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml152(link)
 msgid "Installation Guide for Red Hat Enterprise Linux, CentOS, and Fedora"
-msgstr ""
+msgstr "Telepítési útmutató Red Hat Enterprise Linux-hoz, CentOS-hoz és Fedora-hoz"
 
 #: ./doc/openstack-ops/preface_ops.xml158(link)
 msgid "Installation Guide for Ubuntu 12.04 (LTS) Server"
@@ -20781,7 +20781,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml461(title)
 msgid "Dashboard"
-msgstr ""
+msgstr "Vezérlőpult"
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml462(para)
 msgid ""
@@ -21284,7 +21284,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_projects_users.xml559(replaceable)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml575(replaceable)
 msgid "tenantName"
-msgstr ""
+msgstr "tenantNames"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml362(para)
 msgid "List the currently set quota values for a tenant, as follows:"
