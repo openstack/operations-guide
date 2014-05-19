@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-05-15 13:33+0000\n"
-"PO-Revision-Date: 2014-05-15 19:52+0000\n"
+"POT-Creation-Date: 2014-05-16 14:49+0000\n"
+"PO-Revision-Date: 2014-05-18 21:11+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Hungarian (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -503,7 +503,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_projects_users.xml560(para)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml580(para)
 msgid "For example:"
-msgstr ""
+msgstr "Például:"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml84(para)
 msgid ""
@@ -1441,7 +1441,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml899(th)
 msgid "name"
-msgstr ""
+msgstr "név"
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml900(th)
 #: ./doc/openstack-ops/ch_ops_projects_users.xml350(replaceable)
@@ -3356,7 +3356,7 @@ msgstr ""
 #: ./doc/openstack-ops/app_roadmaps.xml61(para)
 #: ./doc/openstack-ops/glossary-terms.xml2310(glossterm)
 msgid "Icehouse"
-msgstr ""
+msgstr "Icehouse"
 
 #: ./doc/openstack-ops/app_roadmaps.xml65(link)
 msgid "Under development, Release schedule"
@@ -6063,7 +6063,7 @@ msgstr ""
 #: ./doc/openstack-ops/bk_ops_guide.xml34(productname)
 #: ./doc/openstack-ops/glossary-terms.xml3305(glossterm)
 msgid "OpenStack"
-msgstr ""
+msgstr "OpenStack"
 
 #: ./doc/openstack-ops/ch_ops_resources.xml20(para)
 msgid ""
@@ -6140,7 +6140,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_resources.xml70(emphasis)
 #: ./doc/openstack-ops/glossary-terms.xml3594(glossterm)
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ./doc/openstack-ops/ch_ops_resources.xml72(para)
 msgid ""
@@ -9300,7 +9300,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_arch_storage.xml339(para)
 #: ./doc/openstack-ops/glossary-terms.xml829(glossterm)
 msgid "Ceph"
-msgstr ""
+msgstr "Ceph"
 
 #: ./doc/openstack-ops/ch_arch_storage.xml342(para)
 msgid "Experimental"
@@ -11206,11 +11206,11 @@ msgstr "OpenStack Alapítvány"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml31(year)
 msgid "2014"
-msgstr ""
+msgstr "2014"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml38(remark)
 msgid "Copyright details are filled in by the template."
-msgstr ""
+msgstr "Copyright adatok kitöltése a sablonból"
 
 #: ./doc/openstack-ops/bk_ops_guide.xml43(para)
 msgid ""
@@ -12696,7 +12696,7 @@ msgstr ""
 #.      with entries that are marked with glossterm/firstterm
 #: ./doc/openstack-ops/glossary-terms.xml15(title)
 msgid "Glossary"
-msgstr ""
+msgstr "Szójegyzék"
 
 #: ./doc/openstack-ops/glossary-terms.xml16(para)
 msgid ""
@@ -12712,7 +12712,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml25(title)
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: ./doc/openstack-ops/glossary-terms.xml27(glossterm)
 msgid "absolute limit"
@@ -12991,7 +12991,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml263(glossterm)
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ./doc/openstack-ops/glossary-terms.xml265(para)
 msgid "Application programming interface."
@@ -12999,7 +12999,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml269(glossterm)
 msgid "API endpoint"
-msgstr ""
+msgstr "API végpont"
 
 #: ./doc/openstack-ops/glossary-terms.xml271(para)
 msgid ""
@@ -13027,7 +13027,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml295(glossterm)
 msgid "API key"
-msgstr ""
+msgstr "API kulcs"
 
 #: ./doc/openstack-ops/glossary-terms.xml297(para)
 msgid "Alternative term for an API token."
@@ -13035,7 +13035,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml301(glossterm)
 msgid "API server"
-msgstr ""
+msgstr "API kiszolgáló"
 
 #: ./doc/openstack-ops/glossary-terms.xml303(para)
 msgid "Any node running a daemon or worker that provides an API endpoint."
@@ -13043,7 +13043,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml308(glossterm)
 msgid "API token"
-msgstr ""
+msgstr "API token"
 
 #: ./doc/openstack-ops/glossary-terms.xml310(para)
 msgid ""
@@ -13053,7 +13053,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml316(glossterm)
 msgid "API version"
-msgstr ""
+msgstr "API verzió"
 
 #: ./doc/openstack-ops/glossary-terms.xml318(para)
 msgid ""
@@ -13285,11 +13285,11 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml508(para)
 msgid "Amazon Web Services."
-msgstr ""
+msgstr "Amazon Web Services."
 
 #: ./doc/openstack-ops/glossary-terms.xml514(title)
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: ./doc/openstack-ops/glossary-terms.xml516(glossterm)
 msgid "back end"
@@ -13328,7 +13328,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml548(glossterm)
 msgid "bandwidth"
-msgstr ""
+msgstr "sávszélesség"
 
 #: ./doc/openstack-ops/glossary-terms.xml550(para)
 msgid ""
@@ -13452,7 +13452,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml658(glossterm)
 msgid "browser"
-msgstr ""
+msgstr "böngésző"
 
 #: ./doc/openstack-ops/glossary-terms.xml660(para)
 msgid ""
@@ -13483,7 +13483,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml684(glossterm)
 msgid "byte"
-msgstr ""
+msgstr "báj"
 
 #: ./doc/openstack-ops/glossary-terms.xml686(para)
 msgid ""
@@ -13493,7 +13493,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml693(title)
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: ./doc/openstack-ops/glossary-terms.xml695(glossterm)
 msgid "CA"
@@ -13643,7 +13643,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml822(glossterm)
 msgid "CentOS"
-msgstr ""
+msgstr "CentOS"
 
 #: ./doc/openstack-ops/glossary-terms.xml824(para)
 #: ./doc/openstack-ops/glossary-terms.xml1325(para)
@@ -13709,7 +13709,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml877(glossterm)
 msgid "Chef"
-msgstr ""
+msgstr "Chef"
 
 #: ./doc/openstack-ops/glossary-terms.xml879(para)
 msgid ""
@@ -14175,7 +14175,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1279(glossterm)
 msgid "dashboard"
-msgstr ""
+msgstr "vezérlőpult"
 
 #: ./doc/openstack-ops/glossary-terms.xml1281(para)
 msgid ""
@@ -14227,7 +14227,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1323(glossterm)
 msgid "Debian"
-msgstr ""
+msgstr "Debian"
 
 #: ./doc/openstack-ops/glossary-terms.xml1330(glossterm)
 msgid "deduplication"
@@ -14330,7 +14330,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1414(glossterm)
 msgid "DevStack"
-msgstr ""
+msgstr "DevStack"
 
 #: ./doc/openstack-ops/glossary-terms.xml1416(para)
 msgid ""
@@ -14340,7 +14340,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1422(glossterm)
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 #: ./doc/openstack-ops/glossary-terms.xml1424(para)
 msgid ""
@@ -14431,11 +14431,11 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1504(glossterm)
 msgid "Django"
-msgstr ""
+msgstr "Django"
 
 #: ./doc/openstack-ops/glossary-terms.xml1506(para)
 msgid "A web framework used extensively in horizon."
-msgstr ""
+msgstr "A Horizon által használt web keretrendszer."
 
 #: ./doc/openstack-ops/glossary-terms.xml1513(para)
 msgid ""
@@ -14466,14 +14466,14 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1537(glossterm)
 msgid "domain"
-msgstr ""
+msgstr "domain"
 
 #: ./doc/openstack-ops/glossary-terms.xml1539(para)
 msgid ""
 "Separates a web site from other sites. Often, the domain name has two or "
 "more parts that are separated by dots. For example, yahoo.com, usa.gov, "
 "Harvard.edu, or mail.yahoo.com."
-msgstr ""
+msgstr "Megkülönbözteti az egyik weboldalt a másiktól. A domain név gyakran két vagy több részt tartalmaz, pontokkal elválasztva. Például yahoo.com, usa.gov, Harvard.eu vagy mail. yahoo.com"
 
 #: ./doc/openstack-ops/glossary-terms.xml1543(para)
 msgid ""
@@ -14520,13 +14520,13 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml1578(glossterm)
 msgid "download"
-msgstr ""
+msgstr "letöltés"
 
 #: ./doc/openstack-ops/glossary-terms.xml1580(para)
 msgid ""
 "The transfer of data, usually in the form of files, from one computer to "
 "another."
-msgstr ""
+msgstr "Adattovábbítás módja, általában fájlok formájában, egyik gépről a másikra."
 
 #: ./doc/openstack-ops/glossary-terms.xml1585(glossterm)
 msgid "DRTM"
@@ -15181,7 +15181,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2142(glossterm)
 msgid "Hadoop"
-msgstr ""
+msgstr "Hadoop"
 
 #: ./doc/openstack-ops/glossary-terms.xml2144(para)
 msgid ""
@@ -15225,7 +15225,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2182(para)
 msgid "OpenStack project that provides a dashboard, which is a web interface."
-msgstr ""
+msgstr "OpenStack projekt, amely egy webes vezérlőpult felületet biztosít."
 
 #: ./doc/openstack-ops/glossary-terms.xml2187(glossterm)
 msgid "horizon plug-in"
@@ -15291,7 +15291,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2244(glossterm)
 msgid "Hyper-V"
-msgstr ""
+msgstr "Hyper-V"
 
 #: ./doc/openstack-ops/glossary-terms.xml2246(para)
 msgid "One of the hypervisors supported by OpenStack."
@@ -15327,7 +15327,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2277(glossterm)
 msgid "hypervisor"
-msgstr ""
+msgstr "hypervisor"
 
 #: ./doc/openstack-ops/glossary-terms.xml2279(para)
 msgid ""
@@ -15349,7 +15349,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2295(glossterm)
 msgid "IaaS"
-msgstr ""
+msgstr "IaaS"
 
 #: ./doc/openstack-ops/glossary-terms.xml2297(para)
 msgid ""
@@ -15789,7 +15789,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml2662(glossterm)
 msgid "Juno"
-msgstr ""
+msgstr "Juno"
 
 #: ./doc/openstack-ops/glossary-terms.xml2664(para)
 msgid "Project name for the tenth release of OpenStack."
@@ -16277,7 +16277,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3073(glossterm)
 msgid "Networking API"
-msgstr ""
+msgstr "Hálózatkezelés API"
 
 #: ./doc/openstack-ops/glossary-terms.xml3075(para)
 msgid ""
@@ -16865,7 +16865,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3587(glossterm)
 msgid "Puppet"
-msgstr ""
+msgstr "Puppet"
 
 #: ./doc/openstack-ops/glossary-terms.xml3589(para)
 msgid ""
@@ -16874,11 +16874,11 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3596(para)
 msgid "Programming language used extensively in OpenStack."
-msgstr ""
+msgstr "OpenStack által használt programozási nyelv."
 
 #: ./doc/openstack-ops/glossary-terms.xml3603(title)
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: ./doc/openstack-ops/glossary-terms.xml3605(glossterm)
 msgid "QEMU Copy On Write 2 (QCOW2)"
@@ -16916,7 +16916,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3637(glossterm)
 msgid "quota"
-msgstr ""
+msgstr "kvóta"
 
 #: ./doc/openstack-ops/glossary-terms.xml3639(para)
 msgid ""
@@ -17084,7 +17084,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3784(glossterm)
 msgid "region"
-msgstr ""
+msgstr "régió"
 
 #: ./doc/openstack-ops/glossary-terms.xml3786(para)
 msgid ""
@@ -17200,7 +17200,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml3880(glossterm)
 msgid "RESTful"
-msgstr ""
+msgstr "RESTful"
 
 #: ./doc/openstack-ops/glossary-terms.xml3882(para)
 msgid ""
@@ -18081,15 +18081,15 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4610(title)
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #: ./doc/openstack-ops/glossary-terms.xml4612(glossterm)
 msgid "Ubuntu"
-msgstr ""
+msgstr "Ubuntu"
 
 #: ./doc/openstack-ops/glossary-terms.xml4614(para)
 msgid "A Debian-based Linux distribution."
-msgstr ""
+msgstr "Debian-alapú Linux disztribúció."
 
 #: ./doc/openstack-ops/glossary-terms.xml4618(glossterm)
 msgid "unscoped token"
@@ -18111,7 +18111,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4633(glossterm)
 msgid "user"
-msgstr ""
+msgstr "felhasználó"
 
 #: ./doc/openstack-ops/glossary-terms.xml4635(para)
 msgid ""
@@ -18165,7 +18165,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4690(glossterm)
 msgid "virtual IP"
-msgstr ""
+msgstr "virtuális IP"
 
 #: ./doc/openstack-ops/glossary-terms.xml4692(para)
 msgid ""
@@ -18187,7 +18187,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4709(glossterm)
 msgid "virtual network"
-msgstr ""
+msgstr "virtuális hálózat"
 
 #: ./doc/openstack-ops/glossary-terms.xml4711(para)
 msgid "An L2 network segment within Networking."
@@ -18215,7 +18215,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4730(glossterm)
 msgid "virtual port"
-msgstr ""
+msgstr "virtuális port"
 
 #: ./doc/openstack-ops/glossary-terms.xml4732(para)
 msgid ""
@@ -18234,7 +18234,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4745(glossterm)
 msgid "virtual server"
-msgstr ""
+msgstr "virtuális szerver"
 
 #: ./doc/openstack-ops/glossary-terms.xml4747(para)
 msgid "Alternative term for a VM or guest."
@@ -18260,7 +18260,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4767(glossterm)
 msgid "VirtualBox"
-msgstr ""
+msgstr "VirtualBox"
 
 #: ./doc/openstack-ops/glossary-terms.xml4773(glossterm)
 msgid "VLAN manager"
@@ -18436,7 +18436,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4918(title)
 msgid "W"
-msgstr ""
+msgstr "W"
 
 #: ./doc/openstack-ops/glossary-terms.xml4920(glossterm)
 msgid "weighing"
@@ -18483,11 +18483,11 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4959(title)
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: ./doc/openstack-ops/glossary-terms.xml4961(glossterm)
 msgid "Xen API"
-msgstr ""
+msgstr "Xen API"
 
 #: ./doc/openstack-ops/glossary-terms.xml4963(para)
 msgid "The Xen administrative API, which is supported by Compute."
@@ -18495,7 +18495,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4968(glossterm)
 msgid "Xen Cloud Platform (XCP)"
-msgstr ""
+msgstr "Xen Cloud Platform (XCP)"
 
 #: ./doc/openstack-ops/glossary-terms.xml4974(glossterm)
 msgid "Xen Storage Manager Volume Driver"
@@ -18509,19 +18509,19 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml4982(glossterm)
 msgid "XenServer"
-msgstr ""
+msgstr "XenServer"
 
 #: ./doc/openstack-ops/glossary-terms.xml4990(title)
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: ./doc/openstack-ops/glossary-terms.xml5000(title)
 msgid "Z"
-msgstr ""
+msgstr "Z"
 
 #: ./doc/openstack-ops/glossary-terms.xml5002(glossterm)
 msgid "ZeroMQ"
-msgstr ""
+msgstr "ZeroMQ"
 
 #: ./doc/openstack-ops/glossary-terms.xml5004(para)
 msgid ""
@@ -18531,7 +18531,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/glossary-terms.xml5010(glossterm)
 msgid "Zuul"
-msgstr ""
+msgstr "Zuul"
 
 #: ./doc/openstack-ops/glossary-terms.xml5012(para)
 msgid ""
@@ -18844,7 +18844,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml230(link)
 msgid "OpenStack API Quick Start"
-msgstr ""
+msgstr "OpenStack API Rövid útmutató"
 
 #: ./doc/openstack-ops/preface_ops.xml232(para)
 msgid ""
@@ -21393,7 +21393,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml501(para)
 msgid "gigabytes"
-msgstr ""
+msgstr "gigabájt"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml504(para)
 msgid "Number of volume gigabytes allowed per tenant."
