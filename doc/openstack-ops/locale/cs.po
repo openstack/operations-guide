@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-05-15 13:33+0000\n"
-"PO-Revision-Date: 2014-05-15 14:01+0000\n"
+"POT-Creation-Date: 2014-05-19 18:12+0000\n"
+"PO-Revision-Date: 2014-05-19 14:42+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -20715,7 +20715,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml407(title)
 msgid "Scheduling"
-msgstr ""
+msgstr "Plánování"
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml408(para)
 msgid ""
