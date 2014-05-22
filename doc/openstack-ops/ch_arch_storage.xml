@@ -359,6 +359,12 @@ format="SVG" scale="60"/>
                     <td><para>&CHECK;</para></td>
                     <td><para> </para></td>
                 </tr>
+                <tr>
+                    <td><para>Sheepdog</para></td>
+                    <td><para>&CHECK;</para></td>
+                    <td><para>&CHECK;</para></td>
+                    <td><para> </para></td>
+                </tr>
             </tbody>
         </table>
         <para>* This list of open source file-level shared storage
@@ -553,6 +559,22 @@ format="SVG" scale="60"/>
                         Solaris-based operating system, and we assume
                         that your experience is primarily with
                         Linux-based systems.</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Sheepdog</emphasis>. A
+                        distributed storage system which provides a virtual
+                        storage pool using the internal disks of commodity servers.
+                        It can be used with QEMU/KVM and TGT. Sheepdog is deployed
+                        in production environments.</para>
+                    <para>Sheepdog provides block storage and object
+                        storage as storage interfaces. The only thing you need
+                        to do is to add commodity servers to your cluster and
+                        launch Sheepdog when you want
+                        to increase storage capacity. Sheepdog removes failed
+                        servers from your cluster and recover redundancy of
+                        replicated objects automatically. It has powerful virtual
+                        disk management features like snapshot, clone, rollback and
+                        thin provisioning.</para>
                 </listitem>
             </itemizedlist>
         </section>
