@@ -1,64 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE part [
-<!-- Some useful entities borrowed from HTML -->
-<!ENTITY ndash  "&#x2013;">
-<!ENTITY mdash  "&#x2014;">
-<!ENTITY hellip "&#x2026;">
-<!ENTITY plusmn "&#xB1;">
-]>
-<part xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="architecture">
-    <title>Architecture</title>
-    <partintro>
-      <para>
-        Designing an OpenStack cloud is a great achievement. It requires a
-        robust understanding of the requirements and needs of the cloud's
-        users to determine the best possible configuration to meet them.
-        OpenStack provides a great deal of flexibility to achieve your
-        needs, and this part of the book aims to shine light on many of the
-        decisions you need to make during the process.
-      </para>
-      <para>To design, deploy, and configure OpenStack, administrators
-        must understand the logical architecture. A diagram can help
-        you envision all the integrated services within
-        OpenStack and how they interact with each other.</para>
-      <para>OpenStack modules are one of the following types:</para>
-      <itemizedlist role="compact">
+<part version="5.0" xml:id="architecture"
+      xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:ns5="http://www.w3.org/2000/svg"
+      xmlns:ns4="http://www.w3.org/1998/Math/MathML"
+      xmlns:ns3="http://www.w3.org/1999/xhtml"
+      xmlns:ns="http://docbook.org/ns/docbook">
+  <title>Architecture</title>
+
+  <partintro>
+    <para>Designing an OpenStack cloud is a great achievement. It requires a
+    robust understanding of the requirements and needs of the cloud's users to
+    determine the best possible configuration to meet them. OpenStack provides
+    a great deal of flexibility to achieve your needs, and this part of the
+    book aims to shine light on many of the decisions you need to make during
+    the process.</para>
+
+    <para>To design, deploy, and configure OpenStack, administrators must
+    understand the logical architecture. A diagram can help you envision all
+    the integrated services within OpenStack and how they interact with each
+    other.<indexterm class="singular">
+        <primary>modules, types of</primary>
+      </indexterm><indexterm class="singular">
+        <primary>OpenStack</primary>
+
+        <secondary>module types in</secondary>
+      </indexterm></para>
+
+    <para>OpenStack modules are one of the following types:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Daemon</term>
+
         <listitem>
-          <para>Daemon. Runs as a background process. On Linux platforms, a daemon is
-            usually installed as a service.</para>
+          <para>Runs as a background process. On Linux platforms, a daemon is
+          usually installed as a service.<indexterm class="singular">
+              <primary>daemons</primary>
+
+              <secondary>basics of</secondary>
+            </indexterm></para>
         </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Script</term>
+
         <listitem>
-          <para>Script. Installs a virtual environment and runs tests.</para>
+          <para>Installs a virtual environment and runs tests.<indexterm
+              class="singular">
+              <primary>script modules</primary>
+            </indexterm></para>
         </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Command-line interface (CLI)</term>
+
         <listitem>
-          <para>Command-line interface (CLI). Enables users to submit API
-            calls to OpenStack services through commands.</para>
+          <para>Enables users to submit API calls to OpenStack services
+          through commands.<indexterm class="singular">
+              <primary>Command-line interface (CLI)</primary>
+            </indexterm></para>
         </listitem>
-      </itemizedlist>
-      <para>As shown, end users can interact through the dashboard,
-        CLIs, and APIs. All services authenticate through a common
-        Identity Service and individual services interact with each
-        other through public APIs, except where privileged
-        administrator commands are necessary. The diagram shows the
-        most common, but not the only logical architecture for an
-        OpenStack cloud.</para>
-      <figure>
-        <title>OpenStack Havana Logical Architecture</title>
-        <mediaobject>
+      </varlistentry>
+    </variablelist>
+
+    <para>As shown, end users can interact through the dashboard, CLIs, and
+    APIs. All services authenticate through a common Identity Service, and
+    individual services interact with each other through public APIs, except
+    where privileged administrator commands are necessary. <xref
+    linkend="openstack-havana-diagram" /> shows the most common, but not the
+    only logical architecture for an OpenStack cloud.</para>
+
+    <figure xml:id="openstack-havana-diagram">
+      <title>OpenStack Havana Logical Architecture (<link
+      xlink:href="http://opsgui.de/1kYnyy1"></link>)</title>
+
+      <mediaobject>
         <imageobject>
-          <imagedata width="6in"
-            fileref="figures/osog_0001online.png"/>
+          <imagedata fileref="figures/osog_0001.png"></imagedata>
         </imageobject>
-      </mediaobject></figure>
-    </partintro>
-    <xi:include href="ch_arch_examples.xml"/>
-    <xi:include href="ch_arch_provision.xml"/>
-    <xi:include href="ch_arch_cloud_controller.xml"/>
-    <xi:include href="ch_arch_compute_nodes.xml"/>
-    <xi:include href="ch_arch_scaling.xml"/>
-    <xi:include href="ch_arch_storage.xml"/>
-    <xi:include href="ch_arch_network_design.xml"/>
+      </mediaobject>
+    </figure>
+  </partintro>
+
+  <xi:include href="ch_arch_examples.xml" />
+
+  <xi:include href="ch_arch_provision.xml" />
+
+  <xi:include href="ch_arch_cloud_controller.xml" />
+
+  <xi:include href="ch_arch_compute_nodes.xml" />
+
+  <xi:include href="ch_arch_scaling.xml" />
+
+  <xi:include href="ch_arch_storage.xml" />
+
+  <xi:include href="ch_arch_network_design.xml" />
 </part>

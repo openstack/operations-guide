@@ -1,183 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
-        <!-- Some useful entities borrowed from HTML -->
-        <!ENTITY ndash  "&#x2013;">
-        <!ENTITY mdash  "&#x2014;">
-        <!ENTITY hellip "&#x2026;">
-        <!ENTITY plusmn "&#xB1;">
-]>
-<chapter xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="advanced_configuration">
-    <?dbhtml stop-chunking?>
-    <title>Advanced Configuration</title>
-    <para>OpenStack is intended to work well across a variety of installation
-          flavors, from very small private clouds to large public clouds.
-          To achieve this, the developers add configuration options to
-          their code that allow the behaviour of the various components to be
-          tweaked depending on your needs. Unfortunately, it is not possible to
-          cover all possible deployments with the default configuration values.</para>
+<chapter version="5.0" xml:id="advanced_configuration"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:ns5="http://www.w3.org/1999/xhtml"
+         xmlns:ns4="http://www.w3.org/2000/svg"
+         xmlns:ns3="http://www.w3.org/1998/Math/MathML"
+         xmlns:ns="http://docbook.org/ns/docbook">
+  <?dbhtml stop-chunking?>
 
-    <para>At the time of writing, OpenStack has more than 1,500 configuration options.
-          You can see them documented at
-          <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/config_overview.html">the OpenStack configuration reference guide</link>. This chapter cannot hope to
-          document all of these, but we do try to introduce the important
-          concepts so that you know where to go digging for more information.</para>
+  <title>Advanced Configuration</title>
 
-    <section xml:id="driver_differences">
+  <para>OpenStack is intended to work well across a variety of installation
+  flavors, from very small private clouds to large public clouds. To achieve
+  this, the developers add configuration options to their code that allow the
+  behavior of the various components to be tweaked depending on your needs.
+  Unfortunately, it is not possible to cover all possible deployments with the
+  default configuration values.<indexterm class="singular">
+      <primary>advanced configuration</primary>
+
+      <see>configuration options</see>
+    </indexterm><indexterm class="singular">
+      <primary>configuration options</primary>
+
+      <secondary>wide availability of</secondary>
+    </indexterm></para>
+
+  <para>At the time of writing, OpenStack has more than 1,500 configuration
+  options. You can see them documented at <link
+  xlink:href="http://opsgui.de/1eLATt4">the OpenStack configuration reference
+  guide</link>. This chapter cannot hope to document all of these, but we do
+  try to introduce the important concepts so that you know where to go digging
+  for more information.</para>
+
+  <section xml:id="driver_differences">
     <title>Differences Between Various Drivers</title>
-    <para>Many OpenStack projects implement a driver layer, and each of these
-          drivers will implement their own configuration options. For example
-          in OpenStack Compute (nova), there are various hypervisor drivers
-          implemented&mdash;libvirt, xenserver, hyper-v, and vmware, for example.
-          Not all of these hypervisor drivers have the same features, and each
-          has different tuning requirements.</para>
 
-    <note><para>The currently implemented hypervisors are listed on
-          <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html">the OpenStack documentation website</link>. You can see a matrix of the
-          various features in OpenStack Compute
-          (nova) hypervisor drivers on the OpenStack wiki at
-          <link xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix">the Hypervisor support matrix page</link>.</para></note>
+    <para>Many OpenStack projects implement a driver layer, and each of these
+    drivers will implement its own configuration options. For example, in
+    OpenStack Compute (nova), there are various hypervisor drivers
+    implemented—libvirt, xenserver, hyper-v, and vmware, for example. Not all
+    of these hypervisor drivers have the same features, and each has different
+    tuning requirements.<indexterm class="singular">
+        <primary>hypervisors</primary>
+
+        <secondary>differences between</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>drivers</primary>
+
+        <secondary>differences between</secondary>
+      </indexterm></para>
+
+    <note>
+      <para>The currently implemented hypervisors are listed on <link
+      xlink:href="http://opsgui.de/1eLAwP2">the OpenStack documentation
+      website</link>. You can see a matrix of the various features in
+      OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at
+      <link xlink:href="http://opsgui.de/NPFQ9w">the Hypervisor support matrix
+      page</link>.</para>
+    </note>
 
     <para>The point we are trying to make here is that just because an option
-          exists doesn't mean that option is relevant to your driver choices.
-          Normally, the documentation notes which drivers the configuration
-          applies to.</para>
-    </section>
+    exists doesn't mean that option is relevant to your driver choices.
+    Normally, the documentation notes which drivers the configuration applies
+    to.</para>
+  </section>
 
-    <section xml:id="periodic_tasks">
+  <section xml:id="periodic_tasks">
     <title>Implementing Periodic Tasks</title>
+
     <para>Another common concept across various OpenStack projects is that of
-          periodic tasks. Periodic tasks are much like cron jobs on traditional
-          Unix systems, but they are run inside an OpenStack process. For
-          example, when OpenStack Compute (nova) needs to work out what images
-          it can remove from its local cache, it runs a periodic task to do this.</para>
+    periodic tasks. Periodic tasks are much like cron jobs on traditional Unix
+    systems, but they are run inside an OpenStack process. For example, when
+    OpenStack Compute (nova) needs to work out what images it can remove from
+    its local cache, it runs a periodic task to do this.<indexterm
+        class="singular">
+        <primary>periodic tasks</primary>
+      </indexterm><indexterm class="singular">
+        <primary>configuration options</primary>
+
+        <secondary>periodic task implementation</secondary>
+      </indexterm></para>
 
     <para>Periodic tasks are important to understand because of limitations in
-          the threading model that OpenStack uses. OpenStack uses cooperative
-          threading in python, which means that if something long and
-          complicated is running, it will block other tasks inside that process
-          from running unless it voluntarily yields execution to another
-          cooperative thread.</para>
+    the threading model that OpenStack uses. OpenStack uses cooperative
+    threading in Python, which means that if something long and complicated is
+    running, it will block other tasks inside that process from running unless
+    it voluntarily yields execution to another cooperative thread.<indexterm
+        class="singular">
+        <primary>cooperative threading</primary>
+      </indexterm></para>
 
-    <para>A tangible example of this is the nova-compute process. In order to
-          manage the image cache with libvirt, nova-compute has a periodic
-          process that scans the contents of the image cache. Part of this
-          scan is calculating a checksum for each of the images and making sure
-          that checksum matches what nova-compute expects it to be. However,
-          images can be very large, and these checksums can take a long time to
-          generate. At one point, before it was reported as a bug and fixed,
-          nova-compute would block on this task and stop responding to RPC
-          requests. This was visible to users as failure of operations such
-          as spawning or deleting instances.</para>
+    <para>A tangible example of this is the <literal>nova-compute</literal>
+    process. In order to manage the image cache with libvirt,
+    <literal>nova-compute</literal> has a periodic process that scans the
+    contents of the image cache. Part of this scan is calculating a checksum
+    for each of the images and making sure that checksum matches what
+    <literal>nova-compute</literal> expects it to be. However, images can be
+    very large, and these checksums can take a long time to generate. At one
+    point, before it was reported as a bug and fixed,
+    <literal>nova-compute</literal> would block on this task and stop
+    responding to RPC requests. This was visible to users as failure of
+    operations such as spawning or deleting instances.</para>
 
     <para>The take away from this is if you observe an OpenStack process that
-          appears to "stop" for a while and then continue to process normally,
-          you should check that periodic tasks aren't the problem. One way to
-          do this is to disable the periodic tasks by setting their interval to
-          zero. Additionally, you can configure how often these periodic tasks
-          run&mdash;in some cases it might make sense to run them at a different
-          frequency from the default.</para>
+    appears to "stop" for a while and then continue to process normally, you
+    should check that periodic tasks aren't the problem. One way to do this is
+    to disable the periodic tasks by setting their interval to zero.
+    Additionally, you can configure how often these periodic tasks run—in some
+    cases, it might make sense to run them at a different frequency from the
+    default.</para>
 
     <para>The frequency is defined separately for each periodic task.
-          Therefore, to disable every periodic task in OpenStack Compute
-          (nova), you would need to set a number of configuration
-          options to zero. The current list of configuration options
-          you would need to set to zero are:</para>
+    Therefore, to disable every periodic task in OpenStack Compute (nova), you
+    would need to set a number of configuration options to zero. The current
+    list of configuration options you would need to set to zero are:</para>
 
-                <itemizedlist>
-                <listitem><para>bandwidth_poll_interval</para></listitem>
-                <listitem><para>sync_power_state_interval</para></listitem>
-                <listitem><para>heal_instance_info_cache_interval</para></listitem>
-                <listitem><para>host_state_interval</para></listitem>
-                <listitem><para>image_cache_manager_interval</para></listitem>
-                <listitem><para>reclaim_instance_interval</para></listitem>
-                <listitem><para>volume_usage_poll_interval</para></listitem>
-                <listitem><para>shelved_poll_interval</para></listitem>
-                <listitem><para>shelved_offload_time</para></listitem>
-                <listitem><para>instance_delete_interval</para></listitem>
-                </itemizedlist>
+    <itemizedlist>
+      <listitem>
+        <para><literal>bandwidth_poll_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>sync_power_state_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>heal_instance_info_cache_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>host_state_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>image_cache_manager_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>reclaim_instance_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>volume_usage_poll_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>shelved_poll_interval</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>shelved_offload_time</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>instance_delete_interval</literal></para>
+      </listitem>
+    </itemizedlist>
 
     <para>To set a configuration option to zero, include a line such as
-          <literal>image_cache_manager_interval=0</literal> in your
-          <filename>nova.conf</filename> file.</para>
+    <literal>image_cache_manager_interval=0</literal> in your
+    <filename>nova.conf</filename> file.</para>
 
-    <para>This list will change between releases, so please refer to
-          your configuration guide for up to date information.</para>
+    <para>This list will change between releases, so please refer to your
+    configuration guide for up-to-date information.</para>
+  </section>
 
-    </section>
-
-    <section xml:id="specific-advanced-config-topics">
+  <section xml:id="specific-advanced-config-topics">
     <title>Specific Configuration Topics</title>
+
     <para>This section covers specific examples of configuration options you
-          might consider tuning. It is by no means an exhaustive list.</para>
-          <section xml:id="adv-config-security"><title>Security Configuration
-                for Compute, Networking, and Storage</title>
-          <para>The <citetitle><link
-                xlink:href="http://docs.openstack.org/sec/">OpenStack Security
-                Guide</link></citetitle> provides a deep dive into securing an
-                OpenStack cloud, including SSL/TLS, key management, PKI and certificate
-                management, data transport and privacy concerns, and
-                compliance.</para></section>
-          <section xml:id="adv-config-ha"><title>High Availability</title>
-                <para>The <citetitle><link
-                      xlink:href="http://docs.openstack.org/high-availability-guide/content/">OpenStack
-                      High Availability
-                      Guide</link></citetitle> offers suggestions for
-                      elimination of a single point of failure that could cause
-                      system downtime. While it is not a completely prescriptive
-                document, it offers methods and techniques for avoiding downtime
-                and data loss.</para></section>
-            <section xml:id="adv-config-ipv6">
-                  <title>Enabling IPv6 Support</title>
-                  <para>The Havana release with OpenStack Networking
-                        (neutron) does not offer complete support of
-                        IPv6. Better support is planned for the
-                        Icehouse release. You can follow along the
-                        progress being made by watching the neutron
-                        IPv6 Subteam at work (<link
-                              xlink:href="https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam"
-                              >https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam</link>).
-                  </para>
-                  <para>By modifying your configuration setup, you can set up
-                        IPv6 when using nova-network for networking, and a tested
-                        setup is documented for FlatDHCP and a multi-host
-                        configuration. The key is to make nova-network think a
-                        radvd command ran successfully. The entire
-                        configuration is detailed in a Cybera blog post, <link
-                              xlink:href="http://www.cybera.ca/news-and-events/tech-radar/an-ipv6-enabled-cloud/"
-                              >An IPv6 enabled cloud</link>.</para>
-            </section>
-   <section xml:id="specific-advanced-config-period-tasks">
-            <title>Periodic Task Frequency for Compute</title>
-            <para>Before the Grizzly release, the frequency of periodic tasks
-                  was specified in seconds between runs. This meant that if the
-                  periodic task took 30 minutes to run and the frequency was
-                  set to hourly, then the periodic task actually ran every 90
-                  minutes, because the task would wait an hour after running
-                  before running again. This changed in Grizzly, and we now
-                  time the frequency of periodic tasks from the start of the
-                  work the task does. So, our 30 minute periodic task will run
-                  every hour, with a 30 minute wait between the end of the
-                  first run and the start of the next.</para>
-            </section>
-            <section xml:id="adv-config-geography">
-            <title>Geographical Considerations for Object Storage</title>
-                  <para>Enhanced support for global clustering of object storage
-                        servers continues to be added since the Grizzly (1.8.0)
-                        release, when regions were introduced. You would
-                        implement these global clusters to ensure replication
-                        across geographic areas in case of a natural disaster
-                        and also to ensure that users can write or access their
-                        objects more quickly based on the closest data center.
-                        You configure a default region with one zone for each
-                        cluster, but be sure your network (WAN) can handle the
-                        additional request and response load between zones as
-                        you add more zones and build a ring that handles more
-                        zones. Refer to Geographically Distributed Clusters
-                        (<link xlink:href="http://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters">http://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters</link>)
-                  in the documentation for additional information.</para>
-            </section>
+    might consider tuning. It is by no means an exhaustive list.</para>
+
+    <section xml:id="adv-config-security">
+      <title>Security Configuration for Compute, Networking, and
+      Storage</title>
+
+      <para>The <emphasis><link xlink:href="http://opsgui.de/NPG4NW">OpenStack
+      Security Guide</link></emphasis> provides a deep dive into securing an
+      OpenStack cloud, including SSL/TLS, key management, PKI and certificate
+      management, data transport and privacy concerns, and
+      compliance.<indexterm class="singular">
+          <primary>security issues</primary>
+
+          <secondary>configuration options</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>configuration options</primary>
+
+          <secondary>security</secondary>
+        </indexterm></para>
     </section>
+
+    <section xml:id="adv-config-ha">
+      <title>High Availability</title>
+
+      <para>The <emphasis><link
+      xlink:href="http://opsgui.de/1eLAYwS">OpenStack High Availability
+      Guide</link></emphasis> offers suggestions for elimination of a single
+      point of failure that could cause system downtime. While it is not a
+      completely prescriptive document, it offers methods and techniques for
+      avoiding downtime and data loss.<indexterm class="singular">
+          <primary>high availability</primary>
+        </indexterm><indexterm class="singular">
+          <primary>configuration options</primary>
+
+          <secondary>high availability</secondary>
+        </indexterm></para>
+    </section>
+
+    <section xml:id="adv-config-ipv6">
+      <title>Enabling IPv6 Support</title>
+
+      <para>The Havana release with OpenStack Networking (neutron) does not
+      offer complete support of IPv6. Better support is planned for the
+      Icehouse release. You can follow along the progress being made by
+      watching the <link xlink:href="http://opsgui.de/NPG5kQ">neutron IPv6
+      Subteam at work</link>.<indexterm class="singular">
+          <primary>Icehouse</primary>
+
+          <secondary>IPv6 support</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>IPv6, enabling support for</primary>
+        </indexterm><indexterm class="singular">
+          <primary>configuration options</primary>
+
+          <secondary>IPv6 support</secondary>
+        </indexterm></para>
+
+      <para>By modifying your configuration setup, you can set up IPv6 when
+      using <literal>nova-network</literal> for networking, and a tested setup
+      is documented for FlatDHCP and a multi-host configuration. The key is to
+      make <literal>nova-network</literal> think a <literal>radvd</literal>
+      command ran successfully. The entire configuration is detailed in a
+      Cybera blog post, <link xlink:href="http://opsgui.de/1eLB0F2">“An IPv6
+      enabled cloud”</link>.</para>
+    </section>
+
+    <section xml:id="specific-advanced-config-period-tasks">
+      <title>Periodic Task Frequency for Compute</title>
+
+      <para>Before the Grizzly release, the frequency of periodic tasks was
+      specified in seconds between runs. This meant that if the periodic task
+      took 30 minutes to run and the frequency was set to hourly, then the
+      periodic task actually ran every 90 minutes, because the task would wait
+      an hour after running before running again. This changed in Grizzly, and
+      we now time the frequency of periodic tasks from the start of the work
+      the task does. So, our 30 minute periodic task will run every hour, with
+      a 30 minute wait between the end of the first run and the start of the
+      next.<indexterm class="singular">
+          <primary>configuration options</primary>
+
+          <secondary>periodic task frequency</secondary>
+        </indexterm></para>
+    </section>
+
+    <section xml:id="adv-config-geography">
+      <title>Geographical Considerations for Object Storage</title>
+
+      <para>Enhanced support for global clustering of object storage servers
+      continues to be added since the Grizzly (1.8.0) release, when regions
+      were introduced. You would implement these global clusters to ensure
+      replication across geographic areas in case of a natural disaster and
+      also to ensure that users can write or access their objects more quickly
+      based on the closest data center. You configure a default region with
+      one zone for each cluster, but be sure your network (WAN) can handle the
+      additional request and response load between zones as you add more zones
+      and build a ring that handles more zones. Refer to <link
+      xlink:href="http://opsgui.de/NPG6FJ">Geographically Distributed
+      Clusters</link> in the documentation for additional
+      information.<indexterm class="singular">
+          <primary>Object Storage</primary>
+
+          <secondary>geographical considerations</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>storage</primary>
+
+          <secondary>geographical considerations</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>configuration options</primary>
+
+          <secondary>geographical storage considerations</secondary>
+        </indexterm></para>
+    </section>
+  </section>
 </chapter>

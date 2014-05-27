@@ -47,7 +47,6 @@
         </info>
         <!-- front matter -->
         <xi:include href="acknowledgements.xml"/>
-        <xi:include href="ch_ops_dochistory.xml"/>
         <xi:include href="preface_ops.xml"/>
         <!-- parts: architecture and operations -->
         <xi:include href="part_architecture.xml"/>
@@ -60,4 +59,5 @@
         <xi:include href="ch_ops_resources.xml"/>
         <!-- glossary -->
         <xi:include href="glossary-terms.xml"/>
+<index/>
 </book>

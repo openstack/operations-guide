@@ -1,113 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE appendix [
-        <!-- Some useful entities borrowed from HTML -->
-        <!ENTITY ndash  "&#x2013;">
-        <!ENTITY mdash  "&#x2014;">
-        <!ENTITY hellip "&#x2026;">
-        <!ENTITY plusmn "&#xB1;">
-]>
-<appendix xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="5.0"
-    label="D"
-    xml:id="recommended-reading">
-    <?dbhtml stop-chunking?>
-    <title>Resources</title>
-    <para>
-        <emphasis role="bold">OpenStack</emphasis>
-    </para>
-    <para>
-        <link
-            xlink:href="http://docs.openstack.org/trunk/config-reference/content/"
-            >OpenStack Configuration Reference</link>
-        (http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html)</para>
-    <para>
-        <link
-            xlink:href="http://docs.openstack.org/havana/install-guide/install/apt-debian/content/"
-            >OpenStack Install Guide for Debian 7.0</link>
-        (http://docs.openstack.org/havana/install-guide/install/apt-debian/content/)</para>
-    <para>
-        <link
-            xlink:href="http://docs.openstack.org/havana/install-guide/install/yum/content/"
-            >OpenStack Install Guide for Red Hat Enterprise Linux,
-            CentOS, and Fedora</link>
-        (http://docs.openstack.org/havana/install-guide/install/yum/content/)</para>
-    <para>
-        <link
-            xlink:href="http://docs.openstack.org/havana/install-guide/install/zypper/content/"
-            >OpenStack Install Guide for openSUSE, SUSE Linux Enterprise Server</link>
-        (http://docs.openstack.org/havana/install-guide/install/zypper/content/)</para>
-    <para>
-        <link
-            xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/"
-            >OpenStack Install Guide for Ubuntu 12.04 (LTS) Server</link>
-        (http://docs.openstack.org/havana/install-guide/install/apt/content/)</para>
-    <para>
-        <link
-            xlink:href="http://docs.openstack.org/admin-guide-cloud/content/"
-            >OpenStack Cloud Administrator Guide</link>
-        (http://docs.openstack.org/admin-guide-cloud/content/)</para>
-    <para>
-        <link
-            xlink:href="http://docs.openstack.org/security-guide/content/"
-            >OpenStack Security Guide</link>
-        (http://docs.openstack.org/security-guide/content/)</para>
-    <para>
-        <link
-            xlink:href="http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book"
-            >OpenStack Cloud Computing Cookbook</link>
-        (http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book)</para>
-    <para>
-        <emphasis role="bold">Cloud (General)</emphasis>
-    </para>
-    <para>
-        <link
-            xlink:href="http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf"
-            >NIST Cloud Computing Definition</link>
-        (http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf)</para>
-    <para>
-        <emphasis role="bold">Python</emphasis>
-    </para>
-    <para>
-        <link xlink:href="http://www.diveintopython.net">Dive Into
-            Python</link> (http://www.diveintopython.net)</para>
-    <para>
-        <emphasis role="bold">Networking</emphasis>
-    </para>
-    <para>
-        <link
-            xlink:href="http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page"
-            >TCP/IP Illustrated</link>
-        (http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page)</para>
-    <para>
-        <link xlink:href="http://nostarch.com/tcpip.htm">The TCP/IP
-            Guide</link> (http://nostarch.com/tcpip.htm)</para>
-    <para>
-        <link xlink:href="http://danielmiessler.com/study/tcpdump/">A
-            tcpdump Tutorial and Primer</link>
-        (http://danielmiessler.com/study/tcpdump/)</para>
-    <para>
-        <emphasis role="bold">Systems Administration</emphasis>
-    </para>
-    <para>
-        <link xlink:href="http://www.admin.com/">UNIX and Linux
-            Systems Administration Handbook</link>
-        (http://www.admin.com/)</para>
-    <para>
-        <emphasis role="bold">Virtualization </emphasis>
-    </para>
-    <para>
-        <link xlink:href="http://nostarch.com/xen.htm">The Book of
-            Xen</link> (http://nostarch.com/xen.htm)</para>
-    <para>
-        <emphasis role="bold"> Configuration Management</emphasis>
-    </para>
-    <para>
-        <link xlink:href="http://docs.puppetlabs.com/">Puppet Labs
-            Documentation</link> (http://docs.puppetlabs.com/)</para>
-    <para>
-        <link xlink:href="http://www.apress.com/9781430230571">Pro
-            Puppet</link> (http://www.apress.com/9781430230571)
-    </para>
+<appendix label="D" version="5.0" xml:id="recommended-reading"
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:ns5="http://www.w3.org/1998/Math/MathML"
+  xmlns:ns4="http://www.w3.org/2000/svg"
+  xmlns:ns3="http://www.w3.org/1999/xhtml"
+  xmlns:ns="http://docbook.org/ns/docbook">
+  <?dbhtml stop-chunking?>
+  
+  <title>Resources</title>
+  
+  <section xml:id="openstack-resources">
+    <title>OpenStack</title>
+    
+    <itemizedlist>
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGtjs">OpenStack
+          Configuration Reference</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBGtX">OpenStack Install
+          Guide for Debian 7.0</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGvrs">OpenStack Install
+          Guide for Red Hat Enterprise Linux, CentOS, and Fedora</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBI50">OpenStack Install
+          Guide for openSUSE, SUSE Linux Enterprise Server</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGunp">OpenStack Install
+          Guide for Ubuntu 12.04 (LTS) Server</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBL0N">OpenStack Cloud
+          Administrator Guide</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGwvz"><emphasis>OpenStack
+          Cloud Computing Cookbook</emphasis> (Packt Publishing) </link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+  <section xml:id="cloud-general-resources">
+    <title>Cloud (General)</title>
+    
+    <itemizedlist>
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBLOv">“The NIST Definition
+          of Cloud Computing”</link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+  <section xml:id="python-resources">
+    <title>Python</title>
+    
+    <itemizedlist>
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGxQd"><emphasis>Dive Into
+          Python</emphasis> (Apress)</link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+  <?hard-pagebreak ?>
+  
+  <section xml:id="networking-resources">
+    <title>Networking</title>
+    
+    <itemizedlist>
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBNWl"><emphasis>TCP/IP
+          Illustrated, Volume 1: The Protocols, 2/E</emphasis>
+          (Pearson)</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGzYr"><emphasis>The TCP/IP
+          Guide</emphasis> (No Starch Press)</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBOJS">“A
+          <code>tcpdump</code> Tutorial and Primer”</link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+  <section xml:id="system-admin-resources">
+    <title>Systems Administration</title>
+    
+    <itemizedlist>
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGyDR"><emphasis>UNIX and
+          Linux Systems Administration Handbook</emphasis> (Prentice
+          Hall)</link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+  <section xml:id="virtualization-resources">
+    <title>Virtualization</title>
+    
+    <itemizedlist>
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBQSb"><emphasis>The Book
+          of Xen</emphasis> (No Starch Press)</link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  
+  <section xml:id="config-management-resources">
+    <title>Configuration Management</title>
+    
+    <itemizedlist>
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/NPGzrj">Puppet Labs
+          Documentation</link></para>
+      </listitem>
+      
+      <listitem>
+        <para><link xlink:href="http://opsgui.de/1eLBRFD"><emphasis>Pro
+          Puppet</emphasis> (Apress)</link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
 </appendix>

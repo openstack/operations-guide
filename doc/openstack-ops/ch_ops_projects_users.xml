@@ -1,332 +1,376 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
-<!-- Some useful entities borrowed from HTML -->
-<!ENTITY ndash  "&#x2013;">
-<!ENTITY mdash  "&#x2014;">
-<!ENTITY hellip "&#x2026;">
-<!ENTITY plusmn "&#xB1;">
-]>
-<chapter xmlns="http://docbook.org/ns/docbook"
-  xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-  xml:id="projects_users">
+<chapter version="5.0" xml:id="projects_users"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:ns5="http://www.w3.org/1999/xhtml"
+         xmlns:ns4="http://www.w3.org/2000/svg"
+         xmlns:ns3="http://www.w3.org/1998/Math/MathML"
+         xmlns:ns="http://docbook.org/ns/docbook">
   <?dbhtml stop-chunking?>
+
   <title>Managing Projects and Users</title>
-  <para>An OpenStack cloud does not have much value without users. This chapter
-    covers topics that relate to managing users, projects, and quotas. This
-    chapter describes users and projects as described by version 2 of the
-    OpenStack Identity API.
-    </para>
-  <warning><para>While version 3 of the Identity API is available,
-  the client tools do not yet implement those calls and most OpenStack clouds
-  are still implementing Identity API v2.0.</para></warning>
+
+  <para>An OpenStack cloud does not have much value without users. This
+  chapter covers topics that relate to managing users, projects, and quotas.
+  This chapter describes users and projects as described by version 2 of the
+  OpenStack Identity API.</para>
+
+  <warning>
+    <para>While version 3 of the Identity API is available, the client tools
+    do not yet implement those calls, and most OpenStack clouds are still
+    implementing Identity API v2.0.<indexterm class="singular">
+        <primary>Identity Service</primary>
+
+        <secondary>Identity Service API</secondary>
+      </indexterm></para>
+  </warning>
+
   <section xml:id="projects_or_tenants">
     <title>Projects or Tenants?</title>
+
     <para>In OpenStack user interfaces and documentation, a group of users is
-      referred to as a <glossterm>project</glossterm> or
-        <glossterm>tenant</glossterm>. These terms are interchangeable.</para>
-    <para>The initial implementation of the OpenStack Compute Service (nova) had
-      its own authentication system and used the term
-      <literal>project</literal>. When authentication moved into the OpenStack
-      Identity Service (keystone) project, it used the term
-        <literal>tenant</literal> to refer to a group of users. Because of this
-      legacy, some of the OpenStack tools refer to projects and some refer to
-      tenants.</para>
-    <tip><para>This guide uses the term <literal>project</literal>, unless an example
-      shows interaction with a tool that uses the term
-      <literal>tenant</literal>.</para></tip>
+    referred to as a <glossterm>project</glossterm> or
+    <glossterm>tenant</glossterm>. These terms are interchangeable.<indexterm
+        class="singular">
+        <primary>user management</primary>
+
+        <secondary>terminology for</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>tenant</primary>
+
+        <secondary>definition of</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>projects</primary>
+
+        <secondary>definition of</secondary>
+      </indexterm></para>
+
+    <para>The initial implementation of the OpenStack Compute Service (nova)
+    had its own authentication system and used the term
+    <literal>project</literal>. When authentication moved into the OpenStack
+    Identity Service (keystone) project, it used the term
+    <literal>tenant</literal> to refer to a group of users. Because of this
+    legacy, some of the OpenStack tools refer to projects and some refer to
+    tenants.</para>
+
+    <tip>
+      <para>This guide uses the term <literal>project</literal>, unless an
+      example shows interaction with a tool that uses the term
+      <literal>tenant</literal>.</para>
+    </tip>
   </section>
+
   <section xml:id="managing_projects">
     <title>Managing Projects</title>
+
     <para>Users must be associated with at least one project, though they may
-      belong to many. Therefore, you should add at least one project before
-      adding users.</para>
+    belong to many. Therefore, you should add at least one project before
+    adding users.<indexterm class="singular">
+        <primary>user management</primary>
+
+        <secondary>adding projects</secondary>
+      </indexterm></para>
+
     <section xml:id="add_projects">
       <title>Adding Projects</title>
+
       <para>To create a project through the OpenStack dashboard:</para>
+
       <orderedlist>
         <listitem>
           <para>Log in as an administrative user.</para>
         </listitem>
+
         <listitem>
-          <para>Select the <guilabel>Admin</guilabel> tab in the left navigation bar.</para>
+          <para>Select the <guilabel>Admin</guilabel> tab in the left
+          navigation bar.</para>
         </listitem>
+
         <listitem>
-          <para>Under Identity Panel, click <guilabel>Projects</guilabel>.</para>
+          <para>Under Identity Panel, click
+          <guilabel>Projects</guilabel>.</para>
         </listitem>
+
         <listitem>
           <para>Click the <guibutton>Create Project</guibutton> button.</para>
         </listitem>
       </orderedlist>
-      <para>You are prompted for a project name and an optional, but recommended, description.
-        Select the check box at the bottom of the form to enable this project. By default, it is
-        enabled, which is shown in <xref linkend='horizon-add-project'/>.</para>
+
+      <para>You are prompted for a project name and an optional, but
+      recommended, description. Select the checkbox at the bottom of the form
+      to enable this project. By default, it is enabled, as shown in <xref
+      linkend="horizon-add-project" />.</para>
+
       <figure xml:id="horizon-add-project">
         <title>Dashboard's Create Project form</title>
-                <mediaobject>
-                    <imageobject>
-                        <imagedata width="5in"
-                            fileref="figures/horizon-add-project.png"
-                        />
-                    </imageobject>
-                </mediaobject>
-            </figure>
-      <para>It is also possible to add project members and adjust the project quotas. We'll discuss
-        those actions later, but in practice it can be quite convenient to deal with all these
-        operations at one time.</para>
-      <para>To add a project through the command line, you must use the keystone
-        utility, which uses "tenant" in place of "project":</para>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/osog_0901.png"></imagedata>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <para>It is also possible to add project members and adjust the project
+      quotas. We'll discuss those actions later, but in practice, it can be
+      quite convenient to deal with all these operations at one time.</para>
+
+      <para>To add a project through the command line, you must use the
+      keystone utility, which uses <literal>tenant</literal> in place of
+      <literal>project</literal>:</para>
+
       <programlisting><?db-font-size 75%?><prompt>#</prompt> keystone tenant-create --name=demo</programlisting>
-      <para>This command creates a project named "demo." Optionally, you can add a description
-        string by appending <code>--description
-        <replaceable>tenant-description</replaceable></code>, which can be very useful. You can also
-        create a group in a disabled state by appending <code>--enabled false</code> to the command.
-        By default, projects are created in an enabled state.</para>
+
+      <para>This command creates a project named "demo." Optionally, you can
+      add a description string by appending <code>--description
+      <replaceable>tenant-description</replaceable></code>, which can be very
+      useful. You can also create a group in a disabled state by appending
+      <code>--enabled false</code> to the command. By default, projects are
+      created in an enabled state.</para>
     </section>
   </section>
-  <?hard-pagebreak?>
+
   <section xml:id="quotas">
     <title>Quotas</title>
+
     <para>To prevent system capacities from being exhausted without
-      notification, you can set up <glossterm baseform="quota">quotas</glossterm>.
-      Quotas are operational limits. For
-      example, the number of gigabytes allowed per tenant can be controlled to
-      ensure that a single tenant cannot consume all of the disk space. Quotas
-      are currently enforced at the tenant (or project) level, rather than by
-      user.</para>
-    <warning><para>Because without sensible quotas a single tenant could use up
-      all the available resources, default quotas are shipped with OpenStack.
-      You should pay attention to what quota settings make sense for your
-      hardware capabilities.</para></warning>
+    notification, you can set up <glossterm
+    baseform="quota">quotas</glossterm>. Quotas are operational limits. For
+    example, the number of gigabytes allowed per tenant can be controlled to
+    ensure that a single tenant cannot consume all of the disk space. Quotas
+    are currently enforced at the tenant (or project) level, rather than by
+    users.<indexterm class="startofrange" xml:id="quotas9">
+        <primary>quotas</primary>
+      </indexterm><indexterm class="singular">
+        <primary>user management</primary>
+
+        <secondary>quotas</secondary>
+      </indexterm></para>
+
+    <warning>
+      <para>Because without sensible quotas a single tenant could use up all
+      the available resources, default quotas are shipped with OpenStack. You
+      should pay attention to which quota settings make sense for your
+      hardware capabilities.</para>
+    </warning>
+
     <para>Using the command-line interface, you can manage quotas for the
-      OpenStack Compute Service and the Block Storage Service.</para>
-    <para>Typically, default values are changed because a tenant requires more than the OpenStack
-      default of 10 volumes per tenant, or more than the OpenStack default of 1 TB of disk space on
-      a compute node.</para>
+    OpenStack Compute Service and the Block Storage Service.</para>
+
+    <para>Typically, default values are changed because a tenant requires more
+    than the OpenStack default of 10 volumes per tenant, or more than the
+    OpenStack default of 1 TB of disk space on a compute node.</para>
+
     <note>
-      <para>To view all tenants, run:
-        <screen><prompt>$</prompt> <userinput>keystone tenant-list</userinput>
+      <para>To view all tenants, run: <screen><prompt>$</prompt> <userinput>keystone tenant-list</userinput>
 <computeroutput>
-+----------------------------------+----------+---------+
-|                id                |   name   | enabled |
-+----------------------------------+----------+---------+
-| a981642d22c94e159a4a6540f70f9f8d |  admin   |   True  |
-| 934b662357674c7b9f5e4ec6ded4d0e7 | tenant01 |   True  |
-| 7bc1dbfd7d284ec4a856ea1eb82dca80 | tenant02 |   True  |
-| 9c554aaef7804ba49e1b21cbd97d218a | services |   True  |
-+----------------------------------+----------+---------+
-</computeroutput></screen>
-      </para>
++---------------------------------+----------+---------+
+|                id               |   name   | enabled |
++---------------------------------+----------+---------+
+| a981642d22c94e159a4a6540f70f9f8 |  admin   |   True  |
+| 934b662357674c7b9f5e4ec6ded4d0e | tenant01 |   True  |
+| 7bc1dbfd7d284ec4a856ea1eb82dca8 | tenant02 |   True  |
+| 9c554aaef7804ba49e1b21cbd97d218 | services |   True  |
++---------------------------------+----------+---------+
+</computeroutput></screen></para>
     </note>
+
     <section xml:id="set_image_quotas">
       <title>Set Image Quotas</title>
-      <para>OpenStack Havana introduced a basic quota feature for the Image service, so you can now
-        restrict a project's image storage by total number of bytes. Currently, this quota is
-        applied cloud-wide, so if you were to set an Image quota limit of 5 GB, then all projects in
-        your cloud will be able to store only 5 GB of images and snapshots.</para>
+
+      <para>OpenStack Havana introduced a basic quota feature for the Image
+      service, so you can now restrict a project's image storage by total
+      number of bytes. Currently, this quota is applied cloud-wide, so if you
+      were to set an Image quota limit of 5 GB, then all projects in your
+      cloud will be able to store only 5 GB of images and snapshots.<indexterm
+          class="singular">
+          <primary>Image Service</primary>
+
+          <secondary>quota setting</secondary>
+        </indexterm></para>
+
       <para>To enable this feature, edit the
-          <filename>/etc/glance/glance-api.conf</filename> file, and under the
-        [DEFAULT] section, add:</para>
+      <filename>/etc/glance/glance-api.conf</filename> file, and under the
+      [DEFAULT] section, add:</para>
+
       <programlisting language="ini">user_storage_quota = &lt;bytes&gt;</programlisting>
-      <para>For example, to restrict a project's image storage to 5 GB, do this:</para>
+
+      <para>For example, to restrict a project's image storage to 5 GB, do
+      this:</para>
+
       <programlisting language="ini">user_storage_quota = 5368709120</programlisting>
+
       <note>
         <para>In the Icehouse release, there is a configuration option in
-            <filename>glance-api.conf</filename> that limits the number of members allowed per
-          image, called <code>image_member_quota</code>, set to 128 by default. That setting is a
-          different quota from the storage quota.</para>
+        <filename>glance-api.conf</filename> that limits the number of members
+        allowed per image, called <code>image_member_quota</code>, set to 128
+        by default. That setting is a different quota from the storage
+        quota.<indexterm class="singular">
+            <primary>Icehouse</primary>
+
+            <secondary>image quotas</secondary>
+          </indexterm></para>
       </note>
     </section>
+
     <section xml:id="cli_set_compute_quotas">
       <title>Set Compute Service Quotas</title>
-      <para>As an administrative user, you can update the Compute Service quotas
-        for an existing tenant, as well as update the quota defaults for a new
-        tenant.</para>
-      <table rules="all">
-        <caption>Compute Quota Descriptions</caption>
-        <col width="20%"/>
-        <col width="45%"/>
-        <col width="35%"/>
+
+      <para>As an administrative user, you can update the Compute Service
+      quotas for an existing tenant, as well as update the quota defaults for
+      a new tenant.<indexterm class="singular">
+          <primary>Compute</primary>
+
+          <secondary>Compute Service</secondary>
+        </indexterm> See <xref linkend="compute-quota-table" />.</para>
+
+      <table rules="all" xml:id="compute-quota-table">
+        <caption>Compute quota descriptions</caption>
+
+        <col width="20%" />
+
+        <col width="45%" />
+
+        <col width="35%" />
+
         <thead>
           <tr>
             <th>Quota</th>
+
             <th>Description</th>
-            <th>Property Name</th>
+
+            <th>Property name</th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
-            <td>
-              <para>Fixed IPs</para>
-            </td>
-            <td>
-              <para>Number of fixed IP addresses allowed per tenant. This number
-                must be equal to or greater than the number of allowed
-                instances.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>fixed-ips</systemitem>
-              </para>
-            </td>
+            <td><para>Fixed IPs</para></td>
+
+            <td><para>Number of fixed IP addresses allowed per tenant. This
+            number must be equal to or greater than the number of allowed
+            instances.</para></td>
+
+            <td><para> <systemitem>fixed-ips</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Floating IPs</para>
-            </td>
-            <td>
-              <para>Number of floating IP addresses allowed per tenant.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>floating-ips</systemitem>
-              </para>
-            </td>
+            <td><para>Floating IPs</para></td>
+
+            <td><para>Number of floating IP addresses allowed per
+            tenant.</para></td>
+
+            <td><para> <systemitem>floating-ips</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Injected File Content Bytes</para>
-            </td>
-            <td>
-              <para>Number of content bytes allowed per injected file.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>injected-file-content-bytes</systemitem>
-              </para>
-            </td>
+            <td><para>Injected file content bytes</para></td>
+
+            <td><para>Number of content bytes allowed per injected
+            file.</para></td>
+
+            <td><para> <systemitem>injected-file-content-bytes</systemitem>
+            </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Injected File Path Bytes</para>
-            </td>
-            <td>
-              <para>Number of bytes allowed per injected file path.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>injected-file-path-bytes</systemitem>
-              </para>
-            </td>
+            <td><para>Injected file path bytes</para></td>
+
+            <td><para>Number of bytes allowed per injected file
+            path.</para></td>
+
+            <td><para> <systemitem>injected-file-path-bytes</systemitem>
+            </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Injected Files</para>
-            </td>
-            <td>
-              <para>Number of injected files allowed per tenant.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>injected-files</systemitem>
-              </para>
-            </td>
+            <td><para>Injected files</para></td>
+
+            <td><para>Number of injected files allowed per tenant.</para></td>
+
+            <td><para> <systemitem>injected-files</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Instances</para>
-            </td>
-            <td>
-              <para>Number of instances allowed per tenant.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>instances</systemitem>
-              </para>
-            </td>
+            <td><para>Instances</para></td>
+
+            <td><para>Number of instances allowed per tenant.</para></td>
+
+            <td><para> <systemitem>instances</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Key Pairs</para>
-            </td>
-            <td>
-              <para>Number of key pairs allowed per user.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>key-pairs</systemitem>
-              </para>
-            </td>
+            <td><para>Key pairs</para></td>
+
+            <td><para>Number of key pairs allowed per user.</para></td>
+
+            <td><para> <systemitem>key-pairs</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Metadata Items</para>
-            </td>
-            <td>
-              <para>Number of metadata items allowed per instance.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>metadata-items</systemitem>
-              </para>
-            </td>
+            <td><para>Metadata items</para></td>
+
+            <td><para>Number of metadata items allowed per
+            instance.</para></td>
+
+            <td><para> <systemitem>metadata-items</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>RAM</para>
-            </td>
-            <td>
-              <para>Megabytes of instance RAM allowed per tenant.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>ram</systemitem>
-              </para>
-            </td>
+            <td><para>RAM</para></td>
+
+            <td><para>Megabytes of instance RAM allowed per
+            tenant.</para></td>
+
+            <td><para> <systemitem>ram</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Security Group Rules</para>
-            </td>
-            <td>
-              <para>Number of rules per security group.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>security-group-rules</systemitem>
-              </para>
-            </td>
+            <td><para>Security group rules</para></td>
+
+            <td><para>Number of rules per security group.</para></td>
+
+            <td><para> <systemitem>security-group-rules</systemitem>
+            </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>Security Groups</para>
-            </td>
-            <td>
-              <para>Number of security groups per tenant.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>security-groups</systemitem>
-              </para>
-            </td>
+            <td><para>Security groups</para></td>
+
+            <td><para>Number of security groups per tenant.</para></td>
+
+            <td><para> <systemitem>security-groups</systemitem> </para></td>
           </tr>
+
           <tr>
-            <td>
-              <para>VCPUs</para>
-            </td>
-            <td>
-              <para>Number of instance cores allowed per tenant.</para>
-            </td>
-            <td>
-              <para>
-                <systemitem>cores</systemitem>
-              </para>
-            </td>
+            <td><para>VCPUs</para></td>
+
+            <td><para>Number of instance cores allowed per tenant.</para></td>
+
+            <td><para> <systemitem>cores</systemitem> </para></td>
           </tr>
         </tbody>
       </table>
+
       <section xml:id="cli_set_compute_quotas_procedure">
-        <title>View and Update Compute Quotas for a Tenant (Project)</title>
-        <para>As an administrative user, you can use the <command>nova
-            quota-*</command> commands, which are provided by the
-            <literal>python-novaclient</literal> package, to view and update
-          tenant quotas.</para>
+        <title>View and update compute quotas for a tenant (project)</title>
+
+        <para>As an administrative user, you can use the <literal>nova
+        quota-*</literal> commands, which are provided by the
+        <literal>python-novaclient</literal> package, to view and update
+        tenant quotas.</para>
+
         <procedure>
           <title>To view and update default quota values</title>
+
           <step>
             <para>List all default quotas for all tenants, as follows:</para>
+
             <screen><prompt>$</prompt> <userinput>nova quota-defaults</userinput></screen>
+
             <para>For example:</para>
+
             <screen><prompt>$</prompt> <userinput>nova quota-defaults</userinput>
 <computeroutput>+-----------------------------+-------+
 | Property                    | Value |
@@ -345,24 +389,38 @@
 | security_groups             | 10    |
 +-----------------------------+-------+</computeroutput></screen>
           </step>
+
           <step>
             <para>Update a default value for a new tenant, as follows:</para>
+
             <screen><prompt>$</prompt> <userinput>nova quota-class-update default <replaceable>key</replaceable> <replaceable>value</replaceable></userinput></screen>
+
             <para>For example:</para>
+
             <screen><prompt>$</prompt> <userinput>nova quota-class-update default instances 15</userinput></screen>
           </step>
         </procedure>
+
+        <?hard-pagebreak ?>
+
         <procedure>
           <title>To view quota values for a tenant (project)</title>
+
           <step>
-            <para>Place the tenant ID in a useable variable, as follows:</para>
+            <para>Place the tenant ID in a useable variable, as
+            follows:</para>
+
             <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
+
           <step>
             <para>List the currently set quota values for a tenant, as
-              follows:</para>
+            follows:</para>
+
             <screen><prompt>$</prompt> <userinput>nova quota-show --tenant $tenant</userinput></screen>
+
             <para>For example:</para>
+
             <screen><prompt>$</prompt> <userinput>nova quota-show --tenant $tenant</userinput>
 <computeroutput>+-----------------------------+-------+
 | Property                    | Value |
@@ -382,16 +440,23 @@
 +-----------------------------+-------+</computeroutput></screen>
           </step>
         </procedure>
+
         <procedure>
           <title>To update quota values for a tenant (project)</title>
+
           <step>
             <para>Obtain the tenant ID, as follows:</para>
+
             <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
+
           <step>
             <para>Update a particular quota value, as follows:</para>
+
             <screen><prompt>#</prompt> <userinput>nova quota-update --<replaceable>quotaName</replaceable> <replaceable>quotaValue</replaceable> <replaceable>tenantID</replaceable></userinput></screen>
+
             <para>For example:</para>
+
             <screen><prompt>#</prompt> <userinput>nova quota-update --floating-ips 20 $tenant
 <prompt>#</prompt> nova quota-show --tenant $tenant</userinput>
 <computeroutput>+-----------------------------+-------+
@@ -410,34 +475,63 @@
 | injected_file_path_bytes    | 255   |
 | security_groups             | 10    |
 +-----------------------------+-------+</computeroutput></screen>
+
             <note>
               <para>To view a list of options for the
-                  <command>quota-update</command> command, run:</para>
+              <literal>quota-update</literal> command, run:</para>
+
               <screen><prompt>$</prompt> <userinput>nova help quota-update</userinput></screen>
             </note>
           </step>
         </procedure>
       </section>
     </section>
+
     <section xml:id="cli_set_object_storage_quotas">
       <title>Set Object Storage Quotas</title>
+
       <para>Object Storage quotas were introduced in Swift 1.8 (OpenStack
-        Grizzly). There are currently two categories of quotas for Object
-        Storage:</para>
-      <itemizedlist>
-        <listitem>
-          <para>Container quotas: Limits the total size (in bytes) or number of objects that can be
-            stored in a single container.</para>
-        </listitem>
-        <listitem>
-          <para>Account quotas: Limits the total size (in bytes) that a user has available in the
-            Object Storage service.</para>
-        </listitem>
-      </itemizedlist>
-      <para>To take advantage of either container quotas or account quotas, your Object Storage
-        proxy server must have <code>container_quotas</code> or <code>account_quotas</code> (or
-        both) added to the [pipeline:main] pipeline. Each quota type also requires its own section
-        in the <filename>proxy-server.conf</filename> file:</para>
+      Grizzly). There are currently two categories of quotas for Object
+      Storage:<indexterm class="singular">
+          <primary>account quotas</primary>
+        </indexterm><indexterm class="singular">
+          <primary>containers</primary>
+
+          <secondary>quota setting</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>Object Storage</primary>
+
+          <secondary>quota setting</secondary>
+        </indexterm></para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Container quotas</term>
+
+          <listitem>
+            <para>Limit the total size (in bytes) or number of objects that
+            can be stored in a single container.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Account quotas</term>
+
+          <listitem>
+            <para>Limit the total size (in bytes) that a user has available in
+            the Object Storage <phrase
+            role="keep-together">service</phrase>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <para>To take advantage of either container quotas or account quotas,
+      your Object Storage proxy server must have <code>container_quotas</code>
+      or <code>account_quotas</code> (or both) added to the
+      <literal>[pipeline:main]</literal> pipeline. Each quota type also
+      requires its own section in the <filename>proxy-server.conf</filename>
+      file:</para>
+
       <programlisting language="ini">[pipeline:main]
 pipeline = healthcheck [...] container_quotas account_quotas proxy-server
 
@@ -447,12 +541,20 @@ use = egg:swift#account_quotas
 [filter:container_quotas]
 use = egg:swift#container_quotas
    </programlisting>
-      <para>To view and update Object Storage quotas, use the <code>swift</code> command provided by
-        the <code>python-swiftclient</code> package. Any user included in the project can view the
-        quotas placed on their project. To update Object Storage quotas on a project, you must have
-        the role of ResellerAdmin in the project that the quota is being applied to.</para>
+
+      <para>To view and update Object Storage quotas, use the
+      <code>swift</code> command provided by the
+      <code>python-swiftclient</code> package. Any user included in the
+      project can view the quotas placed on their project. To update Object
+      Storage quotas on a project, you must have the role of ResellerAdmin in
+      the project that the quota is being applied to.</para>
+
+      <?hard-pagebreak ?>
+
       <para>To view account quotas placed on a project:</para>
+
       <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
+
       <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
 Containers: 0
    Objects: 0
@@ -461,15 +563,22 @@ Meta Quota-Bytes: 214748364800
 X-Timestamp: 1351050521.29419
 Content-Type: text/plain; charset=utf-8
 Accept-Ranges: bytes</computeroutput></screen>
+
       <para>To apply or update account quotas on a project:</para>
+
       <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
      &lt;bytes&gt;</userinput></screen>
+
       <para>For example, to place a 5 GB quota on an account:</para>
+
       <screen><prompt>$</prompt> <userinput>swift post -m quota-bytes:
      5368709120</userinput></screen>
-      <para>To verify the quota, run the <command>swift stat</command> command
-        again:</para>
+
+      <para>To verify the quota, run the <literal>swift stat</literal> command
+      again:</para>
+
       <screen><prompt>$</prompt> <userinput>swift stat</userinput></screen>
+
       <screen><computeroutput>   Account: AUTH_b36ed2d326034beba0a9dd1fb19b70f9
 Containers: 0
    Objects: 0
@@ -479,64 +588,77 @@ X-Timestamp: 1351541410.38328
 Content-Type: text/plain; charset=utf-8
 Accept-Ranges: bytes</computeroutput></screen>
     </section>
+
     <section xml:id="cli_set_block_storage_quotas">
       <title>Set Block Storage Quotas</title>
-      <para>As an administrative user, you can update the Block Storage Service
-        quotas for a tenant, as well as update the quota defaults for a new
-        tenant.</para>
-      <para>
-        <table rules="all">
-          <caption>Block Storage Quota Descriptions</caption>
-          <col width="20%"/>
-          <col width="80%"/>
+
+      <para>As an administrative user, you can update the Block Storage
+      Service quotas for a tenant, as well as update the quota defaults for a
+      new tenant. See <xref linkend="block-storage-quota-table" />.<indexterm
+          class="singular">
+          <primary>Block Storage</primary>
+        </indexterm></para>
+
+      <para><table rules="all" xml:id="block-storage-quota-table">
+          <caption>Block Storage quota descriptions</caption>
+
+          <col width="20%" />
+
+          <col width="80%" />
+
           <thead>
             <tr>
-              <td>Property Name</td>
-              <td>Description</td>
+              <th>Property name</th>
+
+              <th>Description</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
-              <td>
-                <para>gigabytes</para>
-              </td>
-              <td>
-                <para>Number of volume gigabytes allowed per tenant.</para>
-              </td>
+              <td><para>gigabytes</para></td>
+
+              <td><para>Number of volume gigabytes allowed per
+              tenant</para></td>
             </tr>
+
             <tr>
-              <td>
-                <para>snapshots</para>
-              </td>
-              <td>
-                <para>Number of Block Storage snapshots allowed per tenant.
-                </para>
-              </td>
+              <td><para>snapshots</para></td>
+
+              <td><para>Number of Block Storage snapshots allowed per
+              tenant.</para></td>
             </tr>
+
             <tr>
-              <td>
-                <para>volumes</para>
-              </td>
-              <td>
-                <para>Number of Block Storage volumes allowed per tenant.
-                </para>
-              </td>
+              <td><para>volumes</para></td>
+
+              <td><para>Number of Block Storage volumes allowed per
+              tenant</para></td>
             </tr>
           </tbody>
-        </table>
-      </para>
+        </table></para>
+
+      <?hard-pagebreak ?>
+
       <section xml:id="cli_set_block_storage_quotas_procedure">
-        <title>View and Update Block Storage Quotas for a Tenant (Project)</title>
-        <para>As an administrative user, you can use the <command>cinder
-            quota-*</command> commands, which are provided by the
-            <literal>python-cinderclient</literal> package, to view and update
-          tenant quotas.</para>
+        <title>View and update Block Storage quotas for a tenant
+        (project)</title>
+
+        <para>As an administrative user, you can use the <literal>cinder
+        quota-*</literal> commands, which are provided by the
+        <literal>python-cinderclient</literal> package, to view and update
+        tenant quotas.</para>
+
         <procedure>
           <title>To view and update default Block Storage quota values</title>
+
           <step>
             <para>List all default quotas for all tenants, as follows:</para>
+
             <screen><prompt>$</prompt> <userinput>cinder quota-defaults</userinput></screen>
+
             <para>For example:</para>
+
             <screen><prompt>$</prompt> <userinput>cinder quota-defaults</userinput>
 <computeroutput>+-----------+-------+
 |  Property | Value |
@@ -546,18 +668,24 @@ Accept-Ranges: bytes</computeroutput></screen>
 |  volumes  |   10  |
 +-----------+-------+</computeroutput></screen>
           </step>
+
           <step>
             <para>To update a default value for a new tenant, update the
-              property in the <filename>/etc/cinder/cinder.conf</filename> file.
-            </para>
+            property in the <filename>/etc/cinder/cinder.conf</filename>
+            file.</para>
           </step>
         </procedure>
+
         <procedure>
           <title>To view Block Storage quotas for a tenant</title>
+
           <step>
             <para>View quotas for the tenant, as follows:</para>
+
             <screen><prompt>#</prompt> <userinput>cinder quota-show <replaceable>tenantName</replaceable></userinput></screen>
+
             <para>For example:</para>
+
             <screen><prompt>#</prompt> <userinput>cinder quota-show tenant01</userinput>
 <computeroutput>+-----------+-------+
 |  Property | Value |
@@ -568,16 +696,25 @@ Accept-Ranges: bytes</computeroutput></screen>
 +-----------+-------+</computeroutput></screen>
           </step>
         </procedure>
+
         <procedure>
-          <title>To update Compute service quotas</title>
+          <title>To update Compute Service quotas</title>
+
           <step>
-            <para>Place the tenant ID in a useable variable, as follows:</para>
+            <para>Place the tenant ID in a useable variable, as
+            follows:</para>
+
             <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
+
           <step>
             <para>Update a particular quota value, as follows:</para>
+
             <screen><prompt>#</prompt> <userinput>cinder quota-update --<replaceable>quotaName</replaceable> <replaceable>NewValue</replaceable> <replaceable>tenantID</replaceable></userinput></screen>
-            <para>For example:</para>
+
+            <para>For example:<indexterm class="endofrange"
+            startref="quotas9" /></para>
+
             <screen><prompt>#</prompt> <userinput>cinder quota-update --volumes 15 $tenant</userinput>
 <prompt>#</prompt> <userinput>cinder quota-show tenant01</userinput>
 <computeroutput>+-----------+-------+
@@ -592,188 +729,279 @@ Accept-Ranges: bytes</computeroutput></screen>
       </section>
     </section>
   </section>
-    <section xml:id="user_mgmt">
-        <title>User Management</title>
-        <para>The command-line tools for managing users are inconvenient to use directly. They
-      require issuing multiple commands to complete a single task, and they use UUIDs rather than
-      symbolic names for many items. In practice, humans typically do not use these tools directly.
-      Fortunately, the OpenStack dashboard provides a reasonable interface to this. In addition,
-      many sites write custom tools for local needs to enforce local policies and provide levels of
-      self-service to users that aren't currently available with packaged tools.</para>
-    </section>
-    <section xml:id="create_new_users">
-        <title>Creating New Users</title>
-        <para>To create a user, you need the following
-            information:</para>
-        <itemizedlist role="compact">
-            <listitem>
-                <para>Username</para>
-            </listitem>
-            <listitem>
-                <para>Email address</para>
-            </listitem>
-            <listitem>
-                <para>Password</para>
-            </listitem>
-            <listitem>
-                <para>Primary project</para>
-            </listitem>
-            <listitem>
-                <para>Role</para>
-            </listitem>
-        </itemizedlist>
-        <para>Username and email address are self-explanatory, though your site may have local
-      conventions you should observe. Setting and changing passwords in the Identity service
-      requires administrative privileges. As of the Folsom release, users cannot change their own
-      passwords. This is a large driver for creating local custom tools, and must be kept in mind
-      when assigning and distributing passwords. The primary project is simply the first project the
-      user is associated with and must exist prior to creating the user. Role is almost always going
-      to be "member." Out of the box, OpenStack comes with two roles defined:</para>
-        <itemizedlist role="compact">
-            <listitem>
-                <para>member: a typical user.</para>
-            </listitem>
-            <listitem>
-                <para>admin: an administrative super user, which has full permissions across all
-          projects and should be used with great care.</para>
-            </listitem>
-        </itemizedlist>
-        <para>It is possible to define other roles, but doing so is
-            uncommon.</para>
-        <para>Once you've gathered this information, creating the user in the dashboard is just
-      another web form similar to what we've seen before and can be found by clicking the Users link
-      in the Admin navigation bar and then clicking the Create User button at the top right.</para>
-        <para>Modifying users is also done from this Users page. If you have a large number of
-      users, this page can get quite crowded. The Filter search box at the top of the page can be
-      used to limit the users listing. A form very similar to the user creation dialog can be pulled
-      up by selecting Edit from the actions dropdown menu at the end of the line for the user you
-      are modifying.</para>
-    </section>
-    <section xml:id="associate_users_with_projects">
-        <title>Associating Users with Projects</title>
-        <para>Many sites run with users being associated with only one project. This is a more
-      conservative and simpler choice both for administration and for users. Administratively, if a
-      user reports a problem with an instance or quota, it is obvious which project this relates to
-      as well. Users needn't worry about what project they are acting in if they are only in one
-      project. However, note that, by default, any user can affect the resources of any other user
-      within their project. It is also possible to associate users with multiple projects if that
-      makes sense for your organization.</para>
-        <para>Associating existing users with an additional project or removing them from an older
-      project is done from the Projects page of the dashboard by selecting  Modify Users from the
-      Actions column, as shown in <xref linkend='horizon-edit-project'/>:</para>
-        <figure xml:id ="horizon-edit-project">
-          <title><guilabel>Edit Project Members</guilabel> tab</title>
-            <mediaobject>
-                <imageobject>
-                    <imagedata width="5in"
-                        fileref="figures/horizon-user-project.png"/>
-                </imageobject>
-            </mediaobject>
-        </figure>
-        <para>From this view you can do a number of useful and a few
-            dangerous things.</para>
-        <para>The first column of this form, named All Users, includes a list of all the users in
-      your cloud who are not already associated with this project. The second column shows all the
-      users who are. These lists can be quite long, but they can be limited by typing a substring of
-      the user name you are looking for in the filter field at the top of the column.</para>
-        <para>From here, click the <guiicon>+</guiicon> icon to add
-            users to the project. Click the <guiicon>-</guiicon> to
-            remove them.</para>
-        <para>The dangerous possibility comes with the ability to change member roles. This is the
-      dropdown list below the user name in the <guilabel>Project Members</guilabel> list. In
-      virtually all cases this value should be set to Member. This example purposefully shows an
-      administrative user where this value is admin.</para>
-      <warning>
-        <para>The admin is global not per project, so granting a user the admin role in any project gives
-        the user administrative rights across the whole cloud.</para>
-      </warning>
-        <para>Typical use is to only create administrative users in a single project, by convention
-      the admin project, which is created by default during cloud setup. If your administrative
-      users also use the cloud to launch and manage instances, it is strongly recommended that you
-      use separate user accounts for administrative access and normal operations and that they be in
-      distinct projects.</para>
-        <section xml:id="customize_auth">
-            <title>Customizing Authorization</title>
-            <para>The default <glossterm>authorization</glossterm> settings allow administrative
-        users only to create resources on behalf of a different project. OpenStack handles two kind
-        of authorization policies:</para>
-            <itemizedlist role="compact">
-                <listitem>
-                    <para>
-            <emphasis role="bold">Operation-based</emphasis>: Policies specify access criteria for
-            specific operations, possibly with fine-grained control over specific attributes.</para>
-                </listitem>
-                <listitem>
-                    <para>
-            <emphasis role="bold">Resource-based</emphasis>: Whether access to a specific resource
-            might be granted or not according to the permissions configured for the resource
-            (currently available only for the network resource). The actual authorization policies
-            enforced in an OpenStack service vary from deployment to deployment.</para>
-                </listitem>
-            </itemizedlist>
-            <para>The policy engine reads entries from the <code>policy.json</code> file. The actual
-        location of this file might vary from distribution to distribution: for nova, it is
-        typically in <code>/etc/nova/policy.json</code>. You can update entries while the system is
-        running, and you do not have to restart services. Currently, the only way to update such
-        policies is to edit the policy file.</para>
-            <para>The OpenStack service's policy engine matches a
-                policy directly. A rule indicates evaluation of the
-                elements of such policies. For instance, in a
-                    <code>compute:create:
-                    [["rule:admin_or_owner"]]</code> statement, the
-                policy is <code>compute:create</code>, and the rule is
-                    <code>admin_or_owner</code>.</para>
-            <para>Policies are triggered by an OpenStack policy engine
-                whenever one of them matches an OpenStack API
-                operation or a specific attribute being used in a
-                given operation. For instance, the engine tests the
-                    <code>create:compute</code> policy every time a
-                user sends a <code>POST /v2/{tenant_id}/servers</code>
-                request to the OpenStack Compute API server. Policies
-                can be also related to specific <glossterm>API
-                    extension</glossterm>s. For instance, if a user
-                needs an extension like
-                    <code>compute_extension:rescue</code> the
-                attributes defined by the provider extensions trigger
-                the rule test for that operation.</para>
-            <para>An authorization policy can be composed by one or
-                more rules. If more rules are specified, evaluation
-                policy is successful if any of the rules evaluates
-                successfully; if an API operation matches multiple
-                policies, then all the policies must evaluate
-                successfully. Also, authorization rules are recursive.
-                Once a rule is matched, the rule(s) can be resolved to
-                another rule, until a terminal rule is reached. These
-                are the rules defined:</para>
-            <itemizedlist role="compact">
-                <listitem>
-          <para>
-            <emphasis role="bold">Role-based rules</emphasis>: Evaluate successfully if the user
-            submitting the request has the specified role. For instance <code>"role:admin"</code> is
-            successful if the user submitting the request is an administrator.</para>
-        </listitem>
+
+  <section xml:id="user_mgmt">
+    <title>User Management</title>
+
+    <para>The command-line tools for managing users are inconvenient to use
+    directly. They require issuing multiple commands to complete a single
+    task, and they use UUIDs rather than symbolic names for many items. In
+    practice, humans typically do not use these tools directly. Fortunately,
+    the OpenStack dashboard provides a reasonable interface to this. In
+    addition, many sites write custom tools for local needs to enforce local
+    policies and provide levels of self-service to users that aren't currently
+    available with packaged tools.<indexterm class="singular">
+        <primary>user management</primary>
+
+        <secondary>creating new users</secondary>
+      </indexterm></para>
+  </section>
+
+  <section xml:id="create_new_users">
+    <title>Creating New Users</title>
+
+    <para>To create a user, you need the following information:</para>
+
+    <itemizedlist role="compact">
+      <listitem>
+        <para>Username</para>
+      </listitem>
+
+      <listitem>
+        <para>Email address</para>
+      </listitem>
+
+      <listitem>
+        <para>Password</para>
+      </listitem>
+
+      <listitem>
+        <para>Primary project</para>
+      </listitem>
+
+      <listitem>
+        <para>Role</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>Username and email address are self-explanatory, though your site
+    may have local conventions you should observe. Setting and changing
+    passwords in the Identity service requires administrative privileges. As
+    of the Folsom release, users cannot change their own passwords. This is a
+    large driver for creating local custom tools, and must be kept in mind
+    when assigning and distributing passwords. The primary project is simply
+    the first project the user is associated with and must exist prior to
+    creating the user. Role is almost always going to be "member." Out of the
+    box, OpenStack comes with two roles defined:</para>
+
+    <?hard-pagebreak ?>
+
+    <variablelist>
+      <varlistentry>
+        <term>member</term>
+
         <listitem>
-          <para>
-            <emphasis role="bold">Field-based rules: </emphasis>Evaluate successfully if a field of
-            the resource specified in the current request matches a specific value. For instance
-              <code>"field:networks:shared=True"</code> is successful if the attribute shared of the
-            network resource is set to true.</para>
+          <para>A typical user</para>
         </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>admin</term>
+
         <listitem>
-          <para>
-            <emphasis role="bold">Generic rules:</emphasis> Compare an attribute in the resource
-            with an attribute extracted from the user's security credentials and evaluates
-            successfully if the comparison is successful. For instance
-              <code>"tenant_id:%(tenant_id)s"</code> is successful if the tenant identifier in the
-            resource is equal to the tenant identifier of the user submitting the request.</para>
+          <para>An administrative super user, which has full permissions
+          across all projects and should be used with great care</para>
         </listitem>
-      </itemizedlist>
+      </varlistentry>
+    </variablelist>
+
+    <para>It is possible to define other roles, but doing so is
+    uncommon.</para>
+
+    <para>Once you've gathered this information, creating the user in the
+    dashboard is just another web form similar to what we've seen before and
+    can be found by clicking the Users link in the Admin navigation bar and
+    then clicking the Create User button at the top right.</para>
+
+    <para>Modifying users is also done from this Users page. If you have a
+    large number of users, this page can get quite crowded. The Filter search
+    box at the top of the page can be used to limit the users listing. A form
+    very similar to the user creation dialog can be pulled up by selecting
+    Edit from the actions dropdown menu at the end of the line for the user
+    you are modifying.</para>
+  </section>
+
+  <section xml:id="associate_users_with_projects">
+    <title>Associating Users with Projects</title>
+
+    <para>Many sites run with users being associated with only one project.
+    This is a more conservative and simpler choice both for administration and
+    for users. Administratively, if a user reports a problem with an instance
+    or quota, it is obvious which project this relates to. Users needn't worry
+    about what project they are acting in if they are only in one project.
+    However, note that, by default, any user can affect the resources of any
+    other user within their project. It is also possible to associate users
+    with multiple projects if that makes sense for your
+    organization.<indexterm class="singular">
+        <primary>Project Members tab</primary>
+      </indexterm><indexterm class="singular">
+        <primary>user management</primary>
+
+        <secondary>associating users with projects</secondary>
+      </indexterm></para>
+
+    <para>Associating existing users with an additional project or removing
+    them from an older project is done from the Projects page of the dashboard
+    by selecting Modify Users from the Actions column, as shown in <xref
+    linkend="horizon-edit-project" />.</para>
+
+    <para>From this view, you can do a number of useful things, as well as a
+    few dangerous ones.</para>
+
+    <para>The first column of this form, named All Users, includes a list of
+    all the users in your cloud who are not already associated with this
+    project. The second column shows all the users who are. These lists can be
+    quite long, but they can be limited by typing a substring of the username
+    you are looking for in the filter field at the top of the <phrase
+    role="keep-together">column</phrase>.</para>
+
+    <para>From here, click the <guiicon>+</guiicon> icon to add users to the
+    project. Click the <guiicon>-</guiicon> to remove them.</para>
+
+    <figure xml:id="horizon-edit-project">
+      <title><guilabel>Edit Project Members</guilabel> tab</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="figures/osog_0902.png"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>The dangerous possibility comes with the ability to change member
+    roles. This is the dropdown list below the username in the
+    <guilabel>Project Members</guilabel> list. In virtually all cases, this
+    value should be set to Member. This example purposefully shows an
+    administrative user where this value is admin.</para>
+
+    <warning>
+      <para>The admin is global, not per project, so granting a user the admin
+      role in any project gives the user administrative rights across the
+      whole cloud.</para>
+    </warning>
+
+    <para>Typical use is to only create administrative users in a single
+    project, by convention the admin project, which is created by default
+    during cloud setup. If your administrative users also use the cloud to
+    launch and manage instances, it is strongly recommended that you use
+    separate user accounts for administrative access and normal operations and
+    that they be in distinct projects.<indexterm class="singular">
+        <primary>accounts</primary>
+      </indexterm></para>
+
+    <section xml:id="customize_auth">
+      <title>Customizing Authorization</title>
+
+      <para>The default <glossterm>authorization</glossterm> settings allow
+      administrative users only to create resources on behalf of a different
+      project. OpenStack handles two kinds of authorization <phrase
+      role="keep-together">policies</phrase>:<indexterm class="singular">
+          <primary>authorization</primary>
+        </indexterm></para>
+
+      <?hard-pagebreak ?>
+
+      <variablelist>
+        <varlistentry>
+          <term>Operation based</term>
+
+          <listitem>
+            <para>Policies specify access criteria for specific operations,
+            possibly with fine-grained control over specific
+            attributes.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Resource based</term>
+
+          <listitem>
+            <para>Whether access to a specific resource might be granted or
+            not according to the permissions configured for the resource
+            (currently available only for the network resource). The actual
+            authorization policies enforced in an OpenStack service vary from
+            deployment to deployment.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <para>The policy engine reads entries from the <code>policy.json</code>
+      file. The actual location of this file might vary from distribution to
+      distribution: for nova, it is typically in
+      <code>/etc/nova/policy.json</code>. You can update entries while the
+      system is running, and you do not have to restart services. Currently,
+      the only way to update such policies is to edit the policy file.</para>
+
+      <para>The OpenStack service's policy engine matches a policy directly. A
+      rule indicates evaluation of the elements of such policies. For
+      instance, in a <code>compute:create: [["rule:admin_or_owner"]]</code>
+      statement, the policy is <code>compute:create</code>, and the rule is
+      <code>admin_or_owner</code>.</para>
+
+      <para>Policies are triggered by an OpenStack policy engine whenever one
+      of them matches an OpenStack API operation or a specific attribute being
+      used in a given operation. For instance, the engine tests the
+      <code>create:compute</code> policy every time a user sends a <code>POST
+      /v2/{tenant_id}/servers</code> request to the OpenStack Compute API
+      server. Policies can be also related to specific <glossterm>API
+      extension</glossterm>s. For instance, if a user needs an extension like
+      <code>compute_extension:rescue</code>, the attributes defined by the
+      provider extensions trigger the rule test for that operation.</para>
+
+      <para>An authorization policy can be composed by one or more rules. If
+      more rules are specified, evaluation policy is successful if any of the
+      rules evaluates successfully; if an API operation matches multiple
+      policies, then all the policies must evaluate successfully. Also,
+      authorization rules are recursive. Once a rule is matched, the rule(s)
+      can be resolved to another rule, until a terminal rule is reached. These
+      are the rules <phrase role="keep-together">defined</phrase>:</para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Role-based rules</term>
+
+          <listitem>
+            <para>Evaluate successfully if the user submitting the request has
+            the specified role. For instance, <code>"role:admin"</code> is
+            successful if the user submitting the request is an
+            administrator.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Field-based rules</term>
+
+          <listitem>
+            <para>Evaluate successfully if a field of the resource specified
+            in the current request matches a specific value. For instance,
+            <code>"field:networks:shared=True"</code> is successful if the
+            attribute shared of the network resource is set to
+            <literal>true</literal>.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Generic rules</term>
+
+          <listitem>
+            <para>Compare an attribute in the resource with an attribute
+            extracted from the user's security credentials and evaluates
+            successfully if the comparison is successful. For instance,
+            <code>"tenant_id:%(tenant_id)s"</code> is successful if the tenant
+            identifier in the resource is equal to the tenant identifier of
+            the user submitting the request.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
       <para>Here are snippets of the default nova
-          <filename>policy.json</filename> file:</para>
-      <programlisting><?db-font-size 65%?>{
+      <filename>policy.json</filename> file:</para>
+
+      <programlisting language="json"><?db-font-size 65%?>{
         "context_is_admin":  [["role:admin"]],
-        "admin_or_owner":  [["is_admin:True"], ["project_id:%(project_id)s"]], <emphasis role="bold">[1]</emphasis>
-        "default": [["rule:admin_or_owner"]], <emphasis role="bold">[2]</emphasis>
+        "admin_or_owner":  [["is_admin:True"], \
+        ["project_id:%(project_id)s"]], <co xml:id="ch9-co-1" />
+        "default": [["rule:admin_or_owner"]], <co xml:id="ch9-co-2" />
         "compute:create": [ ],
         "compute:create:attach_network": [ ],
         "compute:create:attach_volume": [ ],
@@ -789,54 +1017,96 @@ Accept-Ranges: bytes</computeroutput></screen>
         "compute_extension:certificates": [ ],
         ...
         "compute_extension:flavorextraspecs": [ ],
-        "compute_extension:flavormanage": [["rule:admin_api"]],  <emphasis role="bold">[3]</emphasis>
+        "compute_extension:flavormanage": [["rule:admin_api"]], <co
+          xml:id="ch9-co-3" />
         }
         </programlisting>
-      <para>[1] Shows a rule that evaluates successfully if the current user is an administrator or
-        the owner of the resource specified in the request (tenant identifier is equal).</para>
-      <para>[2] Shows the default policy, which is always evaluated if an API operation does not
-        match any of the policies in <code>policy.json</code>.</para>
-      <para>[3] Shows a policy restricting the ability to manipulate flavors to administrators using
-        the Admin API only.</para>
+
+      <calloutlist>
+        <callout arearefs="ch9-co-1">
+          <para>Shows a rule that evaluates successfully if the current user
+          is an administrator or the owner of the resource specified in the
+          request (tenant identifier is equal).</para>
+        </callout>
+
+        <callout arearefs="ch9-co-2">
+          <para>Shows the default policy, which is always evaluated if an API
+          operation does not match any of the policies in
+          <code>policy.json</code>.</para>
+        </callout>
+
+        <callout arearefs="ch9-co-3">
+          <para>Shows a policy restricting the ability to manipulate flavors
+          to administrators using the Admin API only.<indexterm
+              class="singular">
+              <primary>admin API</primary>
+            </indexterm></para>
+        </callout>
+      </calloutlist>
+
       <para>In some cases, some operations should be restricted to
-        administrators only. Therefore, as a further example, let us consider
-        how this sample policy file could be modified in a scenario where we
-        enable users to create their own flavors:</para>
+      administrators only. Therefore, as a further example, let us consider
+      how this sample policy file could be modified in a scenario where we
+      enable users to create their own flavors:</para>
+
       <programlisting><?db-font-size 65%?>"compute_extension:flavormanage": [ ],</programlisting>
     </section>
+
     <section xml:id="problem_users">
       <title>Users Who Disrupt Other Users</title>
-      <para>Users on your cloud can disrupt other users, sometimes intentionally
-        and maliciously and other times by accident. Understanding the situation
-        allows you to make a better decision on how to handle the
-        disruption.</para>
-      <para>For example, a group of users have instances that are utilizing a large amount of
-        compute resources for very compute-intensive tasks. This is driving the load up on compute
-        nodes and affecting other users. In this situation, review your user use cases. You may find
-        that high compute scenarios are common, and should then plan for proper segregation in your
-        cloud, such as host aggregation or regions.</para>
-      <para>Another example is a user consuming a very large amount of bandwidth. Again, the key is
-        to understand what the user is doing. If they naturally need a high amount of bandwidth, you
-        might have to limit their transmission rate as to not affect other users or move the user to
-        an area with more bandwidth available. On the other hand, maybe the user's instance has been
-        hacked and is part of a botnet launching DDOS attacks. Resolution of this issue is the same
-        as though any other server on your network has been hacked. Contact the user and give them
-        time to respond. If they don't respond, shut down the instance.</para>
+
+      <para>Users on your cloud can disrupt other users, sometimes
+      intentionally and maliciously and other times by accident. Understanding
+      the situation allows you to make a better decision on how to handle the
+      disruption.<indexterm class="singular">
+          <primary>user management</primary>
+
+          <secondary>handling disruptive users</secondary>
+        </indexterm></para>
+
+      <para>For example, a group of users have instances that are utilizing a
+      large amount of compute resources for very compute-intensive tasks. This
+      is driving the load up on compute nodes and affecting other users. In
+      this situation, review your user use cases. You may find that high
+      compute scenarios are common, and should then plan for proper
+      segregation in your cloud, such as host aggregation or regions.</para>
+
+      <para>Another example is a user consuming a very large amount of
+      bandwidth<indexterm class="singular">
+          <primary>bandwidth</primary>
+
+          <secondary>recognizing DDOS attacks</secondary>
+        </indexterm>. Again, the key is to understand what the user is doing.
+      If she naturally needs a high amount of bandwidth, you might have to
+      limit her transmission rate as to not affect other users or move her to
+      an area with more bandwidth available. On the other hand, maybe her
+      instance has been hacked and is part of a botnet launching DDOS attacks.
+      Resolution of this issue is the same as though any other server on your
+      network has been hacked. Contact the user and give her time to respond.
+      If she doesn't respond, shut down the instance.</para>
+
       <para>A final example is if a user is hammering cloud resources
-        repeatedly. Contact the user and learn what they are trying to do. Maybe
-        they don't understand that what they're doing is inappropriate or maybe
-        there is an issue with the resource they are trying to access that is
-        causing their requests to queue or lag.</para>
+      repeatedly. Contact the user and learn what he is trying to do. Maybe he
+      doesn't understand that what he’s doing is inappropriate, or maybe there
+      is an issue with the resource he is trying to access that is causing his
+      requests to queue or lag.</para>
     </section>
   </section>
+
   <section xml:id="projects_users_summary">
     <title>Summary</title>
-    <para>One key element of systems administration that is often overlooked is
-      that end users are the reason why systems administrators exist. Don't go
-      the BOFH route and terminate every user who causes an alert to go off.
-      Work with them to understand what they're trying to accomplish and see how
-      your environment can better assist them in achieving their goals. Meet
-      your users needs by organizing your users into projects, applying
-      policies, managing quotas, and working with them.</para>
+
+    <para>One key element of systems administration that is often overlooked
+    is that end users are the reason systems administrators exist. Don't go
+    the BOFH route and terminate every user who causes an alert to go off.
+    Work with users to understand what they're trying to accomplish and see
+    how your environment can better assist them in achieving their goals. Meet
+    your users needs by organizing your users into projects, applying
+    policies, managing quotas, and working with them.<indexterm
+        class="singular">
+        <primary>systems administration</primary>
+
+        <see>user management</see>
+      </indexterm></para>
   </section>
 </chapter>

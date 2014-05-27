@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
-<!-- Some useful entities borrowed from HTML -->
-<!ENTITY ndash  "&#x2013;">
-<!ENTITY mdash  "&#x2014;">
-<!ENTITY hellip "&#x2026;">
-<!ENTITY plusmn "&#xB1;">
-]>
-<chapter xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="example_architecture">
-    <?dbhtml stop-chunking?>
-    <title>Example Architectures</title>
-    <para>To understand the possibilities OpenStack offers it's best to start
-    with basic architectures that are tried-and-true and have been tested
-    in production environments. We offer two such examples with basic pivots on
-    the base operating system (Ubuntu and Red Hat Enterprise Linux) and the
-    networking architectures. There are other differences between these two
-    examples, but you should find the considerations made for the choices in each
-    as well as a rationale for why it worked well in a given environment.</para>
-    <para>Because OpenStack is highly configurable, with many different
-    back-ends and network configuration options, it is difficult to write
-    documentation that covers all possible OpenStack deployments. Therefore,
-    this guide defines example architectures to simplify the task of
-    documenting, as well as to provide the scope for this guide. Both of the
-    offered architecture examples are currently running in production and
-    serving users.</para>
-    <tip><para>As always, refer to the Glossary if you are unclear about any of the
-    terminology mentioned in these architectures.</para></tip>
-    <xi:include href="section_arch_example-nova.xml"/>
-    <xi:include href="section_arch_example-neutron.xml"/>
-    <section xml:id="example_archs_conclusion">
-        <title>Parting Thoughts on Architectures</title>
-        <para>With so many considerations and options available our hope is to
-        provide a few clearly-marked and tested paths for your OpenStack
-        exploration. If you're looking for additional ideas, check out the
-            <link linkend="use-cases"
-            >Use Cases</link> appendix, the <link xlink:href="http://docs.openstack.org/"
-                >OpenStack Installation Guides</link>, or the <link
-                    xlink:href="http://openstack.org/user-stories/"
-                    >OpenStack User Stories page</link>.</para>
-    </section>
-</chapter>
+<chapter version="5.0" xml:id="example_architecture"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:ns5="http://www.w3.org/1998/Math/MathML"
+         xmlns:ns4="http://www.w3.org/1999/xhtml"
+         xmlns:ns3="http://www.w3.org/2000/svg"
+         xmlns:ns="http://docbook.org/ns/docbook">
+  <?dbhtml stop-chunking?>
 
+  <title>Example Architectures</title>
+
+  <para>To understand the possibilities OpenStack offers, it's best to start
+  with basic architectures that are tried-and-true and have been tested in
+  production environments. We offer two such examples with basic pivots on the
+  base operating system (Ubuntu and Red Hat Enterprise Linux) and the
+  networking architectures. There are other differences between these two
+  examples, but you should find the considerations made for the choices in
+  each as well as a rationale for why it worked well in a given
+  environment.</para>
+
+  <para>Because OpenStack is highly configurable, with many different backends
+  and network configuration options, it is difficult to write documentation
+  that covers all possible OpenStack deployments. Therefore, this guide
+  defines example architectures to simplify the task of documenting, as well
+  as to provide the scope for this guide. Both of the offered architecture
+  examples are currently running in production and serving users.</para>
+
+  <tip>
+    <para>As always, refer to the <xref linkend="openstack_glossary" /> if you
+    are unclear about any of the terminology mentioned in these
+    architectures.</para>
+  </tip>
+
+  <xi:include href="section_arch_example-nova.xml" />
+
+  <xi:include href="section_arch_example-neutron.xml" />
+
+  <section xml:id="example_archs_conclusion">
+    <title>Parting Thoughts on Architectures</title>
+
+    <para>With so many considerations and options available, our hope is to
+    provide a few clearly-marked and tested paths for your OpenStack
+    exploration. If you're looking for additional ideas, check out <xref
+    linkend="use-cases" />, the <link
+    xlink:href="http://opsgui.de/NPFTC8">OpenStack Installation Guides</link>,
+    or the <link xlink:href="http://opsgui.de/1eLAAhX">OpenStack User Stories
+    page</link>.</para>
+  </section>
+</chapter>

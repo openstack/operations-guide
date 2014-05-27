@@ -1,156 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
-        <!-- Some useful entities borrowed from HTML -->
-        <!ENTITY ndash  "&#x2013;">
-        <!ENTITY mdash  "&#x2014;">
-        <!ENTITY hellip "&#x2026;">
-        <!ENTITY plusmn "&#xB1;">
-]>
-<chapter xmlns="http://docbook.org/ns/docbook"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-    xml:id="user_facing_operations">
-    <title>User-Facing Operations</title>
-    <para>This guide is for OpenStack operators and does not seek to be an exhaustive reference for
-        users, but as an operator you should have a basic understanding of how to use
-        the cloud facilities. This chapter looks at OpenStack from a basic user perspective, which
-        helps you understand your users' needs and determine, when you get a trouble ticket, whether
-        it is a user issue or a service issue. The main concepts covered are images, flavors,
-        security groups, blocks storage, and instances.</para>
-    <section xml:id="user_facing_images">
-        <title>Images</title>
-        <?dbhtml stop-chunking?>
-        <para>OpenStack images can often be thought of as "virtual machine templates." Images can
-            also be standard installation media such as ISO images. Essentially, they contain bootable
-            file systems that are used to launch instances.</para>
-        <section xml:id="add_images">
-            <title>Adding Images</title>
-            <para>Several premade images exist and can easily be imported into the Image Service. A
-                common image to add is the CirrOS image, which is very small and used for testing
-                purposes. To add this image, simply do:</para>
-            <screen><prompt>$</prompt> <userinput>wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img</userinput>
+<chapter version="5.0" xml:id="user_facing_operations"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:ns5="http://www.w3.org/2000/svg"
+         xmlns:ns4="http://www.w3.org/1998/Math/MathML"
+         xmlns:ns3="http://www.w3.org/1999/xhtml"
+         xmlns:ns="http://docbook.org/ns/docbook">
+  <title>User-Facing Operations</title>
+
+  <para>This guide is for OpenStack operators and does not seek to be an
+  exhaustive reference for users, but as an operator, you should have a basic
+  understanding of how to use the cloud facilities. This chapter looks at
+  OpenStack from a basic user perspective, which helps you understand your
+  users' needs and determine, when you get a trouble ticket, whether it is a
+  user issue or a service issue. The main concepts covered are images,
+  flavors, security groups, block storage, and instances.</para>
+
+  <section xml:id="user_facing_images">
+    <title>Images</title>
+
+    <?dbhtml stop-chunking?>
+
+    <para>OpenStack images can often be thought of as "virtual machine
+    templates." Images can also be standard installation media such as ISO
+    images. Essentially, they contain bootable file systems that are used to
+    launch instances.<indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>images</secondary>
+      </indexterm></para>
+
+    <section xml:id="add_images">
+      <title>Adding Images</title>
+
+      <para>Several premade images exist and can easily be imported into the
+      Image Service. A common image to add is the CirrOS image, which is very
+      small and used for testing purposes.<indexterm class="singular">
+          <primary>images</primary>
+
+          <secondary>adding</secondary>
+        </indexterm> To add this image, simply do:</para>
+
+      <screen><prompt>$</prompt> <userinput>wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img</userinput>
 <prompt>$</prompt> <userinput>glance image-create --name='cirros image' --is-public=true \
-    --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.1-x86_64-disk.img</userinput></screen>
-            <para>The <code>glance image-create</code> command
-                provides a large set of options for working with your image.
-                For example, the <code>min-disk</code> option is
-                useful for images that require root disks of a certain
-                size (for example, large Windows images). To view
-                these options, do:</para>
-            <screen><prompt>$</prompt> <userinput>glance help image-create</userinput></screen>
-            <para>The <code>location</code> option is important to
-                note. It does not copy the entire image into the Image Service,
-                but references an original location where the image
-                can be found. Upon launching an instance of that
-                image, the Image Service accesses the image from the location
-                specified.</para>
-            <para>The <code>copy-from</code> option copies the image
-                from the location specified into the
-                    <code>/var/lib/glance/images</code> directory. The
-                same thing is done when using the STDIN redirection with &lt;
-                such as shown in the example.</para>
-            <para>Run the following command to view the properties of
-                existing images:</para>
-            <screen><prompt>$</prompt> <userinput>glance details</userinput></screen>
-        </section>
-        <section xml:id="sharing_images">
-            <title>Sharing Images Between Projects</title>
-            <para>In a multitenant cloud environment, users sometimes want
-                to share their personal images or snapshots with other projects.
-                This can be done on the command line with the <command>glance</command> tool by
-                the owner of the image.</para>
-        <para>To share an image or snapshot with another project, do the
-            following:</para>
-            <procedure>
-                <step>
-                    <para>Obtain the UUID of the image:</para>
-                    <screen><prompt>$</prompt> <userinput>glance image-list</userinput></screen>
-                </step>
-                <step>
-                    <para>Obtain the UUID of the project with which you want to
-                        share your image. Unfortunately, nonadmin users are
-                        unable to use the <command>keystone</command> command to do this. The
-                        easiest solution is to obtain the UUID either from an
-                        administrator of the cloud or from a user located in the
-                        project.</para>
-                </step>
-                <step>
-                    <para>Once you have both pieces of information, run the
-                        glance command:</para>
-<screen><prompt>$</prompt> <userinput>glance member-create &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
-                    <para>For example:</para>
-<screen><prompt>$</prompt> <userinput>glance member-create 733d1c44-a2ea-414b-aca7-69decf20d810 \
-    771ed149ef7e4b2b88665cc1c98f77ca</userinput></screen>
-                    <para>Project 771ed149ef7e4b2b88665cc1c98f77ca
-                        will now have access to image
-                        733d1c44-a2ea-414b-aca7-69decf20d810.</para>
-                </step>
-            </procedure>
-        </section>
-        <section xml:id="delete_images">
-            <title>Deleting Images</title>
-            <para>To delete an image, just execute:</para>
-            <screen><prompt>$</prompt> <userinput>glance image-delete &lt;image uuid&gt;</userinput></screen>
-            <note>
-                <para>Deleting an image does not affect instances or
-                    snapshots that were based on the image.</para>
-            </note>
-        </section>
-        <section xml:id="other_cli">
-            <title>Other CLI Options</title>
-            <para>A full set of options can be found using:</para>
-            <screen><prompt>$</prompt> <userinput>glance help</userinput></screen>
-            <para>or the <link
-                    xlink:href="http://docs.openstack.org/cli/quick-start/content/glance-cli-reference.html"
-                    >OpenStack Image Service</link> CLI Guide.
-                (http://docs.openstack.org/cli/quick-start/content/glance-cli-reference.html)</para>
-        </section>
-        <section xml:id="image_service_and_database">
-            <title>The Image Service and the Database</title>
-            <para>The only thing that the Image Service does not store in a
-                database is the image itself. The Image Service database has
-                two main tables:</para>
-            <itemizedlist role="compact">
-                <listitem>
-                    <para>images</para>
-                </listitem>
-                <listitem>
-                    <para>image_properties</para>
-                </listitem>
-            </itemizedlist>
-            <para>Working directly with the database and SQL queries
-                can provide you with custom lists and reports of
-                images. Technically, you can update properties
-                about images through the database, although this is
-                not generally recommended.</para>
-        </section>
-        <section xml:id="sample_image_database">
-            <title>Example Image Service Database Queries</title>
-            <para>One interesting example is modifying the table of
-                images and the owner of that image. This can be easily
-                done if you simply display the unique ID of the owner.
-                This example goes one step further and displays the
-                readable name of the owner:</para>
-            <screen><prompt>mysql&gt;</prompt> <userinput>select glance.images.id,
-                glance.images.name, keystone.tenant.name, is_public from
-                glance.images inner join keystone.tenant on
-                glance.images.owner=keystone.tenant.id;</userinput></screen>
-            <para>Another example is displaying all properties for a
-                certain image:</para>
-            <screen><prompt>mysql&gt;</prompt> <userinput>select name, value from
-                image_properties where id = &lt;image_id&gt;</userinput></screen>
-        </section>
+  --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.1-x86_64-disk.img</userinput></screen>
+
+      <para>The <code>glance image-create</code> command provides a large set
+      of options for working with your image. For example, the
+      <code>min-disk</code> option is useful for images that require root
+      disks of a certain size (for example, large Windows images). To view
+      these options, do:</para>
+
+      <screen><prompt>$</prompt> <userinput>glance help image-create</userinput></screen>
+
+      <para>The <code>location</code> option is important to note. It does not
+      copy the entire image into the Image Service, but references an original
+      location where the image can be found. Upon launching an instance of
+      that image, the Image Service accesses the image from the location
+      specified.</para>
+
+      <para>The <code>copy-from</code> option copies the image from the
+      location specified into the <code>/var/lib/glance/images</code>
+      directory. The same thing is done when using the STDIN redirection with
+      &lt;, as shown in the example.</para>
+
+      <para>Run the following command to view the properties of existing
+      images:</para>
+
+      <screen><prompt>$</prompt> <userinput>glance details</userinput></screen>
     </section>
-    <section xml:id="flavors">
-        <title>Flavors</title>
-        <para>Virtual hardware templates are called "flavors" in OpenStack, defining sizes for RAM,
-            disk, number of cores, and so on. The default install provides five flavors. These are
-            configurable by admin users (the rights may also be delegated to other users by
-            redefining the access controls for <code>compute_extension:flavormanage</code> in
-                <code>/etc/nova/policy.json</code> on the <code>nova-api</code> server). To get the
-            list of available flavors on your system, run:</para>
-            <screen><prompt>$</prompt> <userinput>nova flavor-list</userinput>
-            <computeroutput>+----+-----------+-----------+------+-----------+\+-------+-\+-------------+
+
+    <section xml:id="sharing_images">
+      <title>Sharing Images Between Projects</title>
+
+      <para>In a multitenant cloud environment, users sometimes want to share
+      their personal images or snapshots with other projects.<indexterm
+          class="singular">
+          <primary>projects</primary>
+
+          <secondary>sharing images between</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>images</primary>
+
+          <secondary>sharing between projects</secondary>
+        </indexterm> This can be done on the command line with the
+      <literal>glance</literal> tool by the owner of the image.</para>
+
+      <para>To share an image or snapshot with another project, do the
+      following:</para>
+
+      <procedure>
+        <step>
+          <para>Obtain the UUID of the image:</para>
+
+          <screen><prompt>$</prompt> <userinput>glance image-list</userinput></screen>
+        </step>
+
+        <step>
+          <para>Obtain the UUID of the project with which you want to share
+          your image. Unfortunately, nonadmin users are unable to use the
+          <literal>keystone</literal> command to do this. The easiest solution
+          is to obtain the UUID either from an administrator of the cloud or
+          from a user located in the project.</para>
+        </step>
+
+        <step>
+          <para>Once you have both pieces of information, run the
+          <literal>glance</literal> command:</para>
+
+          <screen><prompt>$</prompt> <userinput>glance member-create &lt;image-uuid&gt; &lt;project-uuid&gt;</userinput></screen>
+
+          <para>For example:</para>
+
+          <screen><prompt>$</prompt> <userinput>glance member-create 733d1c44-a2ea-414b-aca7-69decf20d810 \
+    771ed149ef7e4b2b88665cc1c98f77ca</userinput></screen>
+
+          <para>Project 771ed149ef7e4b2b88665cc1c98f77ca will now have access
+          to image 733d1c44-a2ea-414b-aca7-69decf20d810.</para>
+        </step>
+      </procedure>
+    </section>
+
+    <section xml:id="delete_images">
+      <title>Deleting Images</title>
+
+      <para>To delete an image,<indexterm class="singular">
+          <primary>images</primary>
+
+          <secondary>deleting</secondary>
+        </indexterm> just execute:</para>
+
+      <screen><prompt>$</prompt> <userinput>glance image-delete &lt;image uuid&gt;</userinput></screen>
+
+      <note>
+        <para>Deleting an image does not affect instances or snapshots that
+        were based on the image.</para>
+      </note>
+    </section>
+
+    <section xml:id="other_cli">
+      <title>Other CLI Options</title>
+
+      <para>A full set of options can be found using:<indexterm
+          class="singular">
+          <primary>images</primary>
+
+          <secondary>CLI options for</secondary>
+        </indexterm></para>
+
+      <screen><prompt>$</prompt> <userinput>glance help</userinput></screen>
+
+      <para>or the <link xlink:href="http://opsgui.de/NPH3Od">OpenStack Image
+      Service CLI Guide</link>.</para>
+    </section>
+
+    <section xml:id="image_service_and_database">
+      <title>The Image Service and the Database</title>
+
+      <para>The only thing that the Image Service does not store in a database
+      is the image itself. The Image Service database has two main
+      tables:<indexterm class="singular">
+          <primary>databases</primary>
+
+          <secondary>Image Service</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>Image Service</primary>
+
+          <secondary>database tables</secondary>
+        </indexterm></para>
+
+      <itemizedlist role="compact">
+        <listitem>
+          <para><literal>images</literal></para>
+        </listitem>
+
+        <listitem>
+          <para><literal>image_properties</literal></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>Working directly with the database and SQL queries can provide you
+      with custom lists and reports of images. Technically, you can update
+      properties about images through the database, although this is not
+      generally recommended.</para>
+    </section>
+
+    <section xml:id="sample_image_database">
+      <title>Example Image Service Database Queries</title>
+
+      <para>One interesting example is modifying the table of images and the
+      owner of that image. This can be easily done if you simply display the
+      unique ID of the owner. <indexterm class="singular">
+          <primary>Image Service</primary>
+
+          <secondary>database queries</secondary>
+        </indexterm>This example goes one step further and displays the
+      readable name of the owner:</para>
+
+      <screen><prompt>mysql&gt;</prompt> <userinput>select glance.images.id,
+              glance.images.name, keystone.tenant.name, is_public from
+              glance.images inner join keystone.tenant on
+              glance.images.owner=keystone.tenant.id;</userinput></screen>
+
+      <para>Another example is displaying all properties for a certain
+      image:</para>
+
+      <screen><prompt>mysql&gt;</prompt> <userinput>select name, value from
+              image_properties where id = &lt;image_id&gt;</userinput></screen>
+    </section>
+  </section>
+
+  <section xml:id="flavors">
+    <title>Flavors</title>
+
+    <para>Virtual hardware templates are called "flavors" in OpenStack,
+    defining sizes for RAM, disk, number of cores, and so on. The default
+    install provides five flavors.</para>
+
+    <para>These are configurable by admin users (the rights may also be
+    delegated to other users by redefining the access controls for
+    <code>compute_extension:flavormanage</code> in
+    <code>/etc/nova/policy.json</code> on the <code>nova-api</code> server).
+    To get the list of available flavors on your system, run:<indexterm
+        class="singular">
+        <primary>DAC (discretionary access control)</primary>
+      </indexterm><indexterm class="singular">
+        <primary>flavor</primary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>flavors</secondary>
+      </indexterm></para>
+
+    <screen><prompt>$</prompt> <userinput>nova flavor-list</userinput>
+<computeroutput>+----+-----------+-----------+------+-----------+\+-------+-\+-------------+
 | ID | Name      | Memory_MB | Disk | Ephemeral |/| VCPUs | /| extra_specs |
 +----+-----------+-----------+------+-----------+\+-------+-\+-------------+
 | 1  | m1.tiny   | 512       | 1    | 0         |/| 1     | /| {}          |
@@ -159,426 +243,518 @@
 | 4  | m1.large  | 8192      | 10   | 80        |\| 4     | \| {}          |
 | 5  | m1.xlarge | 16384     | 10   | 160       |/| 8     | /| {}          |
 +----+-----------+-----------+------+-----------+\+-------+-\+-------------+</computeroutput></screen>
-        <para>The <code>nova flavor-create</code> command allows authorized users to create new flavors. Additional flavor manipulation commands can be shown with the command: <screen><prompt>$</prompt> <userinput>nova help | grep flavor</userinput></screen>
-        </para>
-        <para>Flavors define a number of parameters, resulting in the
-        user having a choice of what type of virtual machine to run&mdash;just
-        like they would have if they were purchasing a physical server.
-        The table lists the elements that can be set. Note
-        in particular <literal>extra_specs</literal>, which can be used to
-        define free-form characteristics, giving a lot of flexibility beyond
-        just the size of RAM, CPU, and Disk.</para>
-        <table rules="all">
-            <caption>Flavor Parameters</caption>
-            <col width="25%"/>
-            <col width="75%"/>
-            <thead>
-                <tr>
-                    <td>
-                        <para>
-                            <emphasis role="bold">Column</emphasis>
-                        </para>
-                    </td>
-                    <td>
-                        <para>
-                            <emphasis role="bold">Description</emphasis>
-                        </para>
-                    </td>
-                </tr></thead>
-                <tbody><tr>
-                    <td>
-                        <para>ID</para>
-                    </td>
-                    <td>
-                        <para>A unique numeric ID.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>Name</para>
-                    </td>
-                    <td>
-                        <para>A descriptive name, such as xx.size_name, is conventional but not
-                            required, though some third-party tools may rely on it.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>Memory_MB</para>
-                    </td>
-                    <td>
-                        <para>Virtual machine memory in megabytes.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>Disk</para>
-                    </td>
-                    <td>
-                        <para>Virtual root disk size in gigabytes. This is an ephemeral disk the
-                            base image is copied into. You don't use it when you boot from a
-                            persistent volume. The "0" size is a special case that uses the native
-                            base image size as the size of the ephemeral root volume.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>Ephemeral</para>
-                    </td>
-                    <td>
-                        <para>Specifies the size of a secondary ephemeral data disk. This is an
-                            empty, unformatted disk and exists only for the life of the
-                            instance.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>Swap</para>
-                    </td>
-                    <td>
-                        <para>Optional swap space allocation for the instance.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>VCPUs</para>
-                    </td>
-                    <td>
-                        <para>Number of virtual CPUs presented to the instance.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>RXTX_Factor</para>
-                    </td>
-                    <td>
-                        <para>Optional property that allows created servers to have a different bandwidth
-                            cap from that defined in the network they are attached to. This factor
-                            is multiplied by the rxtx_base property of the network. Default value is
-                            1.0 (that is, the same as the attached network).</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>Is_Public</para>
-                    </td>
-                    <td>
-                        <para>Boolean value that indicates whether the flavor is available to all users or private.
-                              Private flavors do not get the current tenant assigned to them. Defaults to True.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <para>extra_specs</para>
-                    </td>
-                    <td>
-                        <para>Additional optional restrictions on which compute nodes the flavor can
-                            run on. This is implemented as key-value pairs that must match against
-                            the corresponding key-value pairs on compute nodes. Can be used to
-                            implement things like special resources (such as flavors that can
-                            run only on compute nodes with GPU hardware).</para>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <section xml:id="private-flavors">
-            <title>Private Flavors</title>
-            <para>A user might need a custom flavor that is uniquely-tuned for a
-                project they are working on. For example, the user might require
-                128 GB of memory. If you create a new flavor as described above,
-                the user would have access to the custom flavor, but so will all
-                other tenants in your cloud. Sometimes this sharing isn't desirable. In
-                this scenario, allowing all users to have access to a flavor
-                with 128 GB of memory might cause your cloud to reach full
-                capacity very quickly. To prevent this, you can restrict access
-                to the custom flavor using the <command>nova</command> command:</para>
-            <screen><prompt>$</prompt> <userinput>nova flavor-access-add &lt;flavor-id&gt; &lt;project-id&gt;</userinput></screen>
-            <para>To view a flavor's access list, do the following:</para>
-            <screen><prompt>$</prompt> <userinput>nova flavor-access-list --flavor &lt;flavor-id&gt;</userinput></screen>
-            <note>
-                <title>Best practices</title>
-                <para>Once access to a flavor has been restricted, no other
-                    projects besides the ones granted explicit access will be
-                    able to see the flavor. This includes the admin project.
-                    Make sure to add the admin project in addition to the
-                    original project.</para>
-                <para>It's also helpful to allocate a specific numeric range for
-                    custom and private flavors. On UNIX-based systems,
-                    non-system accounts usually have a UID starting at 500. A
-                    similar approach can be taken with custom flavors. This
-                    helps you easily identify which flavors are custom, private,
-                    and public for the entire cloud.</para>
-            </note>
-        </section>
-        <simplesect>
-            <title>How Do I Modify an Existing Flavor?</title>
-            <para>The OpenStack dashboard simulates the ability to modify a
-                flavor by deleting an existing flavor and creating a new one
-                with the same name.</para>
-        </simplesect>
+
+    <para>The <code>nova flavor-create</code> command allows authorized users
+    to create new flavors. Additional flavor manipulation commands can be
+    shown with the command: <screen><prompt>$</prompt> <userinput>nova help | grep flavor</userinput></screen></para>
+
+    <para>Flavors define a number of parameters, resulting in the user having
+    a choice of what type of virtual machine to run—just like they would have
+    if they were purchasing a physical server. <xref
+    linkend="table-flavor-params" /> lists the elements that can be set. Note
+    in particular <phrase
+    role="keep-together"><literal>extra_specs</literal>,</phrase> which can be
+    used to define free-form characteristics, giving a lot of flexibility
+    beyond just the size of RAM, CPU, and Disk.<indexterm class="singular">
+        <primary>base image</primary>
+      </indexterm></para>
+
+    <table rules="all" xml:id="table-flavor-params">
+      <caption>Flavor parameters</caption>
+
+      <col width="25%" />
+
+      <col width="75%" />
+
+      <thead>
+        <tr>
+          <th><para> <emphasis role="bold">Column</emphasis> </para></th>
+
+          <th><para> <emphasis role="bold">Description</emphasis> </para></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><para>ID</para></td>
+
+          <td><para>A unique numeric ID.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>Name</para></td>
+
+          <td><para>A descriptive name, such as xx.size_name, is conventional
+          but not required, though some third-party tools may rely on
+          it.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>Memory_MB</para></td>
+
+          <td><para>Virtual machine memory in megabytes.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>Disk</para></td>
+
+          <td><para>Virtual root disk size in gigabytes. This is an ephemeral
+          disk the base image is copied into. You don't use it when you boot
+          from a persistent volume. The "0" size is a special case that uses
+          the native base image size as the size of the ephemeral root
+          volume.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>Ephemeral</para></td>
+
+          <td><para>Specifies the size of a secondary ephemeral data disk.
+          This is an empty, unformatted disk and exists only for the life of
+          the instance.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>Swap</para></td>
+
+          <td><para>Optional swap space allocation for the
+          instance.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>VCPUs</para></td>
+
+          <td><para>Number of virtual CPUs presented to the
+          instance.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>RXTX_Factor</para></td>
+
+          <td><para>Optional property that allows created servers to have a
+          different bandwidth<indexterm class="singular">
+              <primary>bandwidth</primary>
+
+              <secondary>capping</secondary>
+            </indexterm> cap from that defined in the network they are
+          attached to. This factor is multiplied by the rxtx_base property of
+          the network. Default value is 1.0 (that is, the same as the attached
+          network).</para></td>
+        </tr>
+
+        <tr>
+          <td><para>Is_Public</para></td>
+
+          <td><para>Boolean value that indicates whether the flavor is
+          available to all users or private. Private flavors do not get the
+          current tenant assigned to them. Defaults to
+          <literal>True</literal>.</para></td>
+        </tr>
+
+        <tr>
+          <td><para>extra_specs</para></td>
+
+          <td><para>Additional optional restrictions on which compute nodes
+          the flavor can run on. This is implemented as key-value pairs that
+          must match against the corresponding key-value pairs on compute
+          nodes. Can be used to implement things like special resources (such
+          as flavors that can run only on compute nodes with GPU
+          hardware).</para></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section xml:id="private-flavors">
+      <title>Private Flavors</title>
+
+      <para>A user might need a custom flavor that is uniquely tuned for a
+      project she is working on. For example, the user might require 128 GB of
+      memory. If you create a new flavor as described above, the user would
+      have access to the custom flavor, but so would all other tenants in your
+      cloud. Sometimes this sharing isn't desirable. In this scenario,
+      allowing all users to have access to a flavor with 128 GB of memory
+      might cause your cloud to reach full capacity very quickly. To prevent
+      this, you can restrict access to the custom flavor using the
+      <literal>nova</literal> command:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova flavor-access-add &lt;flavor-id&gt; &lt;project-id&gt;</userinput></screen>
+
+      <para>To view a flavor's access list, do the following:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova flavor-access-list &lt;flavor-id&gt;</userinput></screen>
+
+      <note>
+        <title>Best Practices</title>
+
+        <para>Once access to a flavor has been restricted, no other projects
+        besides the ones granted explicit access will be able to see the
+        flavor. This includes the admin project. Make sure to add the admin
+        project in addition to the original project.</para>
+
+        <para>It's also helpful to allocate a specific numeric range for
+        custom and private flavors. On UNIX-based systems, nonsystem accounts
+        usually have a UID starting at 500. A similar approach can be taken
+        with custom flavors. This helps you easily identify which flavors are
+        custom, private, and public for the entire cloud.</para>
+      </note>
     </section>
-    <?hard-pagebreak?>
-    <section xml:id="security_groups">
-        <?dbhtml stop-chunking?>
-        <title>Security Groups</title>
-        <para>A common new-user issue with OpenStack is failing to set an appropriate security group
-            when launching an instance. As a result, the user is unable to contact the instance on
-            the network.</para>
-        <para>Security groups are sets of IP filter rules that are
-            applied to an instance's networking. They are project
-            specific and project members can edit the default rules
-            for their group and add new rules sets. All projects have
-            a "default" security group, which is applied to instances
-            that have no other security group defined. Unless changed,
-            this security group denies all incoming traffic.</para>
-        <section xml:id="general-security-group-config">
-            <title>General Security Groups Configuration</title>
-        <para>The <code>nova.conf</code> option
-                <code>allow_same_net_traffic</code> (which defaults to
-            true) globally controls whether the rules apply to hosts
-            that share a network. When set to true, hosts on the same
-            subnet are not filtered and are allowed to pass all types
-            of traffic between them. On a flat network, this allows
-            all instances from all projects unfiltered communication.
-            With VLAN networking, this allows access between instances
-            within the same project. If
-                <code>allow_same_net_traffic</code> is set to false,
-            security groups are enforced for all connections. In this
-            case, it is possible for projects to simulate
-                <code>allow_same_net_traffic</code> by configuring
-            their default security group to allow all traffic from
-            their subnet.</para>
-            <tip><para>As noted in the previous chapter, the number of rules per
-                security group is controlled by the
-                <code>quota_security_group_rules</code> and the number of allowed
-                security groups per project is controlled by the
-                <code>quota_security_groups</code> quota.</para></tip>
-        </section>
-        <section xml:id="end-user-config-sec-group">
-            <title>End User Configuration of Security Groups</title>
-        <para>Security groups for the current project can be found on
-            the OpenStack dashboard under <guilabel>Access &amp; Security</guilabel>. To see
-            details of an existing group, select the <guilabel>edit</guilabel> action for
-            that security group. Obviously, modifying existing groups
-            can be done from this <guilabel>edit</guilabel> interface. There is a <guibutton>Create
-            Security Group</guibutton> button on the main <guilabel>Access &amp; Security</guilabel>
-            page for creating new groups. We discuss the terms used in
-            these fields when we explain the command line
-            equivalents.</para>
-        <para>From the command line you can get a list of security
-            groups for the project you're acting in using the nova
-            command:</para>
-        <screen><prompt>$</prompt> <userinput>nova secgroup-list</userinput>
-        <computeroutput>+---------+-------------+
+
+    <simplesect>
+      <title>How Do I Modify an Existing Flavor?</title>
+
+      <para>The OpenStack dashboard simulates the ability to modify a flavor
+      by deleting an existing flavor and creating a new one with the same
+      name.</para>
+    </simplesect>
+  </section>
+
+  <section xml:id="security_groups">
+    <?dbhtml stop-chunking?>
+
+    <title>Security Groups</title>
+
+    <para>A common new-user issue with OpenStack is failing to set an
+    appropriate security group when launching an instance. As a result, the
+    user is unable to contact the instance on the network.<indexterm
+        class="singular">
+        <primary>security groups</primary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>security groups</secondary>
+      </indexterm></para>
+
+    <para>Security groups are sets of IP filter rules that are applied to an
+    instance's networking. They are project specific, and project members can
+    edit the default rules for their group and add new rules sets. All
+    projects have a "default" security group, which is applied to instances
+    that have no other security group defined. Unless changed, this security
+    group denies all incoming traffic.</para>
+
+    <section xml:id="general-security-group-config">
+      <title>General Security Groups Configuration</title>
+
+      <para>The <code>nova.conf</code> option
+      <code>allow_same_net_traffic</code> (which defaults to
+      <literal>true</literal>) globally controls whether the rules apply to
+      hosts that share a network. When set to <literal>true</literal>, hosts
+      on the same subnet are not filtered and are allowed to pass all types of
+      traffic between them. On a flat network, this allows all instances from
+      all projects unfiltered communication. With VLAN networking, this allows
+      access between instances within the same project. If
+      <code>allow_same_net_traffic</code> is set to <literal>false</literal>,
+      security groups are enforced for all connections. In this case, it is
+      possible for projects to simulate <code>allow_same_net_traffic</code> by
+      configuring their default security group to allow all traffic from their
+      subnet.</para>
+
+      <tip>
+        <para>As noted in the previous chapter, the number of rules per
+        security group is controlled by the
+        <code>quota_security_group_rules</code>, and the number of allowed
+        security groups per project is controlled by the
+        <code>quota_security_groups</code> quota.</para>
+      </tip>
+    </section>
+
+    <section xml:id="end-user-config-sec-group">
+      <title>End-User Configuration of Security Groups</title>
+
+      <para>Security groups for the current project can be found on the
+      OpenStack dashboard under <guilabel>Access &amp; Security</guilabel>. To
+      see details of an existing group, select the <guilabel>edit</guilabel>
+      action for that security group. Obviously, modifying existing groups can
+      be done from this <guilabel>edit</guilabel> interface. There is a
+      <guibutton>Create Security Group</guibutton> button on the main
+      <guilabel>Access &amp; Security</guilabel> page for creating new groups.
+      We discuss the terms used in these fields when we explain the
+      command-line equivalents.</para>
+
+      <para>From the command line, you can get a list of security groups for
+      the project you're acting in using the <literal>nova</literal>
+      command:</para>
+
+      <?hard-pagebreak ?>
+
+      <screen><prompt>$</prompt> <userinput>nova secgroup-list</userinput>
+<computeroutput>+---------+-------------+
 | Name    | Description |
 +---------+-------------+
 | default | default     |
 | open    | all ports   |
 +---------+-------------+</computeroutput></screen>
-        <para>To view the details of the "open" security group:</para>
-        <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules open</userinput>
-        <computeroutput>+-------------+-----------+---------+-----------+--------------+
+
+      <para>To view the details of the "open" security group:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules open</userinput>
+<computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | icmp        | -1        | 255     | 0.0.0.0/0 |              |
 | tcp         | 1         | 65535   | 0.0.0.0/0 |              |
 | udp         | 1         | 65535   | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
-        <para>These rules are all "allow" type rules as the default is
-            deny. The first column is the IP protocol (one of icmp,
-            tcp, or udp), and the second and third columns specify the
-            affected port range. The fourth column specifies the IP
-            range in CIDR format. This example shows the full port
-            range for all protocols allowed from all IPs.</para>
-        <para>When adding a new security group you should pick a
-            descriptive but brief name. This name shows up in brief
-            descriptions of the instances that use it where the longer
-            description field often does not. Seeing that an instance
-            is using security group "http" is much easier to
-            understand than "bobs_group" or "secgrp1."</para>
-        <para>As an example, let's create a security group that allows
-            web traffic anywhere on the Internet. We'll call this group
-            "global_http," which is clear and reasonably concise,
-            encapsulating what is allowed and from where. From the
-            command line, do:</para>
-        <screen><prompt>$</prompt> <userinput>nova secgroup-create
-            global_http "allow web traffic from the Internet"</userinput>
-        <computeroutput>+-------------+-------------------------------------+
+
+      <para>These rules are all "allow" type rules, as the default is deny.
+      The first column is the IP protocol (one of icmp, tcp, or udp), and the
+      second and third columns specify the affected port range. The fourth
+      column specifies the IP range in CIDR format. This example shows the
+      full port range for all protocols allowed from all IPs.</para>
+
+      <para>When adding a new security group, you should pick a descriptive
+      but brief name. This name shows up in brief descriptions of the
+      instances that use it where the longer description field often does not.
+      Seeing that an instance is using security group <literal>http</literal>
+      is much easier to understand than <literal>bobs_group</literal> or
+      <literal>secgrp1</literal>.</para>
+
+      <para>As an example, let's create a security group that allows web
+      traffic anywhere on the Internet. We'll call this group
+      <literal>global_http</literal>, which is clear and reasonably concise,
+      encapsulating what is allowed and from where. From the command line,
+      do:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova secgroup-create \
+       global_http "allow web traffic from the Internet"</userinput>
+<computeroutput>+-------------+-------------------------------------+
 | Name        | Description                         |
 +-------------+-------------------------------------+
 | global_http | allow web traffic from the Internet |
 +-------------+-------------------------------------+</computeroutput></screen>
-        <para>This creates the empty security group. To make it do what
-            we want we need to add some rules.</para>
-        <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule &lt;secgroup&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt; &lt;cidr&gt;</userinput>
+
+      <para>This creates the empty security group. To make it do what we want,
+      we need to add some rules:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule &lt;secgroup&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt; &lt;cidr&gt;</userinput>
 <prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0</userinput>
-        <computeroutput>+-------------+-----------+---------+-----------+--------------+
+<computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | tcp         | 80        | 80      | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
-        <para>Note that the arguments are positional, and the
-            "from-port" and "to-port" arguments specify the allowed local port
-            range connections. These arguments are not indicating source and
-            destination ports of the connection. More complex rule
-            sets can be built up through multiple invocations of <command>nova
-            secgroup-add-rule</command>. For example, if you want to pass both
-            http and https traffic, do this:</para>
-        <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 443 443 0.0.0.0/0</userinput>
-        <computeroutput>+-------------+-----------+---------+-----------+--------------+
+
+      <para>Note that the arguments are positional, and the
+      <literal>from-port</literal> and <literal>to-port</literal> arguments
+      specify the allowed local port range connections. These arguments are
+      not indicating source and destination ports of the connection. More
+      complex rule sets can be built up through multiple invocations of
+      <literal>nova secgroup-add-rule</literal>. For example, if you want to
+      pass both http and https traffic, do this:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 443 443 0.0.0.0/0</userinput>
+<computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | tcp         | 443       | 443     | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
-        <para>Despite only outputting the newly added rule, this
-            operation is additive:</para>
-        <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules global_http</userinput>
-        <computeroutput>+-------------+-----------+---------+-----------+--------------+
+
+      <para>Despite only outputting the newly added rule, this operation is
+      additive:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules global_http</userinput>
+<computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | tcp         | 80        | 80      | 0.0.0.0/0 |              |
 | tcp         | 443       | 443     | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
-        <para>The inverse operation is called <command>secgroup-delete-rule</command>,
-            using the same format. Whole security groups can be
-            removed with <command>secgroup-delete</command>.</para>
-        <para>To create security group rules for a cluster of
-            instances, you want to use SourceGroups.</para>
-        <para>SourceGroups are a special dynamic way of defining the CIDR of allowed sources. The
-            user specifies a SourceGroup (security group name) and then all the users' other instances using
-            the specified SourceGroup are selected dynamically. This dynamic
-            selection alleviates the need for
-            individual rules to allow each new member of the cluster.</para>
-        <para>Example usage: <code>nova secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code></para>
-        <screen><prompt>$</prompt> <userinput>nova secgroup-add-group-rule cluster global-http tcp 22 22</userinput></screen>
-        <para>The "cluster" rule allows ssh access from any other
-            instance that uses the "global-http" group.</para>
+
+      <para>The inverse operation is called
+      <literal>secgroup-delete-rule</literal>, using the same format. Whole
+      security groups can be removed with
+      <literal>secgroup-delete</literal>.</para>
+
+      <para>To create security group rules for a cluster of instances, you
+      want to use <phrase role="keep-together">SourceGroups</phrase>.</para>
+
+      <para>SourceGroups are a special dynamic way of defining the CIDR of
+      allowed sources. The user specifies a SourceGroup (security group name)
+      and then all the users' other instances using the specified SourceGroup
+      are selected dynamically. This dynamic selection alleviates the need for
+      individual rules to allow each new member of the <phrase
+      role="keep-together">cluster</phrase>.</para>
+
+      <para>The code is structured like this: <code>nova
+      secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt;
+      &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code>. An example
+      usage is shown here:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova secgroup-add-group-rule cluster global-http tcp 22 22</userinput></screen>
+
+      <para>The "cluster" rule allows SSH access from any other instance that
+      uses the <literal>global-http</literal> group.</para>
     </section>
-    </section>
-    <?hard-pagebreak?>
-    <section xml:id="user_facing_block_storage">
-        <?dbhtml stop-chunking?>
-        <title>Block Storage</title>
-        <para>OpenStack volumes are persistent block-storage devices
-            that may be attached and detached from instances, but they can
-            be attached to only one instance at a time. Similar to an
-            external hard drive, they do not provide shared storage in
-            the way a network file system or object store does. It is
-            left to the operating system in the instance to put a file
-            system on the block device and mount it, or not.</para>
-        <para>As with other removable disk technology, it is
-            important that the operating system is not trying to make use
-            of the disk before removing it. On Linux instances this
-            typically involves unmounting any file systems mounted
-            from the volume. The OpenStack volume service cannot tell
-            whether it is safe to remove volumes from an instance, so it
-            does what it is told. If a user tells the volume service
-            to detach a volume from an instance while it is being
-            written to, you can expect some level of file system
-            corruption as well as faults from whatever process within
-            the instance was using the device.</para>
-        <para>There is nothing OpenStack-specific in being aware of
-            the steps needed to access block devices from within the instance
-            operating system, potentially formatting
-            them for first use and being cautious when removing
-            them. What is specific is how to create new volumes and
-            attach and detach them from instances. These operations
-            can all be done from the <guilabel>Volumes</guilabel> page of the dashboard
-            or by using the <command>cinder</command> command-line client.</para>
-        <para>To add new volumes, you need only a name and a volume
-            size in gigabytes. Either put these into the <guilabel>create
-            volume</guilabel> web form or use the command line:</para>
-        <screen><prompt>$</prompt> <userinput>cinder create --display-name test-volume 10</userinput></screen>
-        <para>This creates a 10 GB volume named "test-volume." To list
-            existing volumes and the instances they are connected to
-            if any:</para>
-<screen><prompt>$</prompt> <userinput>cinder list</userinput>
+  </section>
+
+  <section xml:id="user_facing_block_storage">
+    <?dbhtml stop-chunking?>
+
+    <title>Block Storage</title>
+
+    <para>OpenStack volumes are persistent block-storage devices that may be
+    attached and detached from instances, but they can be attached to only one
+    instance at a time. Similar to an external hard drive, they do not provide
+    shared storage in the way a network file system or object store does. It
+    is left to the operating system in the instance to put a file system on
+    the block device and mount it, or not.<indexterm class="singular">
+        <primary>block storage</primary>
+      </indexterm><indexterm class="singular">
+        <primary>storage</primary>
+
+        <secondary>block storage</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>block storage</secondary>
+      </indexterm></para>
+
+    <para>As with other removable disk technology, it is important that the
+    operating system is not trying to make use of the disk before removing it.
+    On Linux instances, this typically involves unmounting any file systems
+    mounted from the volume. The OpenStack volume service cannot tell whether
+    it is safe to remove volumes from an instance, so it does what it is told.
+    If a user tells the volume service to detach a volume from an instance
+    while it is being written to, you can expect some level of file system
+    corruption as well as faults from whatever process within the instance was
+    using the device.</para>
+
+    <para>There is nothing OpenStack-specific in being aware of the steps
+    needed to access block devices from within the instance operating system,
+    potentially formatting them for first use and being cautious when removing
+    them. What is specific is how to create new volumes and attach and detach
+    them from instances. These operations can all be done from the
+    <guilabel>Volumes</guilabel> page of the dashboard or by using the
+    <literal>cinder</literal> command-line client.</para>
+
+    <para>To add new volumes, you need only a name and a volume size in
+    gigabytes. Either put these into the <guilabel>create volume</guilabel>
+    web form or use the command line:</para>
+
+    <screen><prompt>$</prompt> <userinput>cinder create --display-name test-volume 10</userinput></screen>
+
+    <para>This creates a 10 GB volume named <literal>test-volume</literal>. To
+    list existing volumes and the instances they are connected to, if
+    any:</para>
+
+    <screen><prompt>$</prompt> <userinput>cinder list</userinput>
 <computeroutput>+------------+---------+--------------------+------+-------------+-------------+
 |     ID     | Status  |    Display Name    | Size | Volume Type | Attached to |
 +------------+---------+--------------------+------+-------------+-------------+
 | 0821...19f |  active |    test-volume     |  10  |     None    |             |
 +------------+---------+--------------------+------+-------------+-------------+</computeroutput></screen>
-        <para>OpenStack Block Storage also allows for creating
-            snapshots of volumes. Remember that this is a block level
-            snapshot that is crash consistent, so it is best if the
-            volume is not connected to an instance when the snapshot
-            is taken and second best if the volume is not in use on
-            the instance it is attached to. If the volume is under
-            heavy use, the snapshot may have an inconsistent file
-            system. In fact, by default, the volume service does not
-            take a snapshot of a volume that is attached to an image,
-            though it can be forced to. To take a volume snapshot either
-            select <guilabel>Create Snapshot</guilabel> from the actions column next to
-            the volume name on the dashboard volume page, or run this from the
-            command line:</para>
-<screen><computeroutput>usage: cinder snapshot-create [--force &lt;True|False&gt;]
+
+    <para>OpenStack Block Storage also allows for creating snapshots of
+    volumes. Remember that this is a block-level snapshot that is crash
+    consistent, so it is best if the volume is not connected to an instance
+    when the snapshot is taken and second best if the volume is not in use on
+    the instance it is attached to. If the volume is under heavy use, the
+    snapshot may have an inconsistent file system. In fact, by default, the
+    volume service does not take a snapshot of a volume that is attached to an
+    image, though it can be forced to. To take a volume snapshot, either
+    select <guilabel>Create Snapshot</guilabel> from the actions column next
+    to the volume name on the dashboard volume page, or run this from the
+    command line:</para>
+
+    <programlisting>usage: cinder snapshot-create [--force &lt;True|False&gt;]
 [--display-name &lt;display-name&gt;]
 [--display-description &lt;display-description&gt;]
 &lt;volume-id&gt;
 Add a new snapshot.
-Positional arguments:  &lt;volume-id&gt;           ID of the volume to snapshot
-Optional arguments:  --force &lt;True|False&gt;  Optional flag to indicate whether to snapshot a volume                        even if its attached to an instance. (Default=False)  --display-name &lt;display-name&gt;                        Optional snapshot name. (Default=None)
+Positional arguments:  &lt;volume-id&gt;         ID of the volume to snapshot
+Optional arguments:  --force &lt;True|False&gt;  Optional flag to indicate whether to
+                                           snapshot a volume even if its
+                                           attached to an instance.
+                                           (Default=False)
+--display-name &lt;display-name&gt;              Optional snapshot name.
+                                           (Default=None)
 --display-description &lt;display-description&gt;
-Optional snapshot description. (Default=None)</computeroutput></screen>
-        <section xml:id="block_storage_creation_failures">
-            <title>Block Storage Creation Failures</title>
-            <para>If a user tries to create a volume and the volume
-                immediately goes into an error state, the best way to
-                troubleshoot is to grep the cinder log files for the
-                volume's UUID. First try the log files on the cloud
-                controller and then try the storage node where the
-                volume was attempted to be created:</para>
-            <screen><prompt>#</prompt> <userinput>grep                 903b85d0-bacc-4855-a261-10843fc2d65b /var/log/cinder/*.log</userinput></screen>
-        </section>
+Optional snapshot description. (Default=None)</programlisting>
+
+    <section xml:id="block_storage_creation_failures">
+      <title>Block Storage Creation Failures</title>
+
+      <para>If a user tries to create a volume and the volume immediately goes
+      into an error state, the best way to troubleshoot is to grep the cinder
+      log files for the volume's UUID. First try the log files on the cloud
+      controller, and then try the storage node where the volume was attempted
+      to be created:</para>
+
+      <screen><prompt>#</prompt> <userinput>grep  903b85d0-bacc-4855-a261-10843fc2d65b /var/log/cinder/*.log</userinput></screen>
     </section>
-    <section xml:id="instances">
-        <?dbhtml stop-chunking?>
-        <title>Instances</title>
-        <para>Instances are the running virtual machines within an
-            OpenStack cloud. This section deals with how to work with
-            them and their underlying images, their network properties,
-            and how they are represented in the database.</para>
-        <section xml:id="start_instances">
-            <title>Starting Instances</title>
-            <para>To launch an instance you need to select an image, a
-                flavor, and a name. The name needn't be unique, but
-                your life is simpler if it is because many tools will
-                use the name in place of UUID so long as the name is
-                unique. You can start an instance from the dashboard
-                from the <guibutton>Launch Instance</guibutton> button on the <guilabel>Instances</guilabel>
-                page or by selecting the <guilabel>Launch</guilabel> action next to an
-                image or snapshot on the <guilabel>Images &amp; Snapshots</guilabel>
-                page.</para>
-            <para>On the command line, do this:</para>
-            <screen><prompt>$</prompt> <userinput>nova boot --flavor &lt;flavor&gt; --image &lt;image&gt; &lt;name&gt;</userinput></screen>
-            <para>There are a number of optional items that can be
-                specified. You should read the rest of this
-                section before trying to start an instance, but this is the
-                base command that later details are layered
-                upon.</para>
-            <para>To delete instances from the dashboard select the
-                <guilabel>Terminate instance</guilabel> action next to the instance on
-                the <guilabel>Instances</guilabel> page. From the command line, do this:</para>
-            <screen><prompt>$</prompt> <userinput>nova delete &lt;instance-uuid&gt;</userinput></screen>
-            <para>It is important to note that powering off an
-                instance does not terminate it in the OpenStack
-                sense.</para>
-        </section>
-        <section xml:id="instance_boot_failures">
-            <title>Instance Boot Failures</title>
-            <para>If an instance fails to start and immediately moves
-                to an error state, there are a few different ways to
-                track down what has gone wrong. Some of these can be
-                done with normal user access, while others require
-                access to your log server or compute nodes.</para>
-            <para>The simplest reasons for nodes to fail to launch are
-                quota violations or the scheduler being unable to find
-                a suitable compute node on which to run the instance.
-                In these cases the error is apparent when you run a
-                    <code>nova show</code> on the faulted
-                instance:</para>
-            <screen><prompt>$</prompt> <userinput>nova show test-instance</userinput></screen>
-            <screen><?db-font-size 55%?>
+  </section>
+
+  <section xml:id="instances">
+    <?dbhtml stop-chunking?>
+
+    <title>Instances</title>
+
+    <para>Instances are the running virtual machines within an OpenStack
+    cloud. This section deals with how to work with them and their underlying
+    images, their network properties, and how they are represented in the
+    database.<indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>instances</secondary>
+      </indexterm></para>
+
+    <section xml:id="start_instances">
+      <title>Starting Instances</title>
+
+      <para>To launch an instance, you need to select an image, a flavor, and
+      a name. The name needn't be unique, but your life will be simpler if it
+      is because many tools will use the name in place of the UUID so long as
+      the name is unique. You can start an instance from the dashboard from
+      the <guibutton>Launch Instance</guibutton> button on the
+      <guilabel>Instances</guilabel> page or by selecting the
+      <guilabel>Launch</guilabel> action next to an image or snapshot on the
+      <guilabel>Images &amp; Snapshots</guilabel> page.<indexterm
+          class="singular">
+          <primary>instances</primary>
+
+          <secondary>starting</secondary>
+        </indexterm></para>
+
+      <para>On the command line, do this:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova boot --flavor &lt;flavor&gt; --image &lt;image&gt; &lt;name&gt;</userinput></screen>
+
+      <para>There are a number of optional items that can be specified. You
+      should read the rest of this section before trying to start an instance,
+      but this is the base command that later details are layered upon.</para>
+
+      <para>To delete instances from the dashboard, select the
+      <guilabel>Terminate instance</guilabel> action next to the instance on
+      the <guilabel>Instances</guilabel> page. From the command line, do
+      this:</para>
+
+      <screen><prompt>$</prompt> <userinput>nova delete &lt;instance-uuid&gt;</userinput></screen>
+
+      <para>It is important to note that powering off an instance does not
+      terminate it in the OpenStack sense.</para>
+    </section>
+
+    <section xml:id="instance_boot_failures">
+      <title>Instance Boot Failures</title>
+
+      <para>If an instance fails to start and immediately moves to an error
+      state, there are a few different ways to track down what has gone wrong.
+      Some of these can be done with normal user access, while others require
+      access to your log server or compute nodes.<indexterm class="singular">
+          <primary>instances</primary>
+
+          <secondary>boot failures</secondary>
+        </indexterm></para>
+
+      <para>The simplest reasons for nodes to fail to launch are quota
+      violations or the scheduler being unable to find a suitable compute node
+      on which to run the instance. In these cases, the error is apparent when
+      you run a <code>nova show</code> on the faulted instance:<indexterm
+          class="singular">
+          <primary>config drive</primary>
+        </indexterm></para>
+
+      <screen><prompt>$</prompt> <userinput>nova show test-instance</userinput></screen>
+
+      <screen><?db-font-size 55%?>
 <computeroutput>+------------------------+-----------------------------------------------------\
 | Property               | Value                                               /
 +------------------------+-----------------------------------------------------\
@@ -605,66 +781,90 @@ Optional snapshot description. (Default=None)</computeroutput></screen>
 | user_id                | a1ef823458d24a68955fec6f3d390019                    /
 +------------------------+-----------------------------------------------------\</computeroutput>
             </screen>
-            <para>In this case, looking at the "fault" message shows
-                NoValidHost, indicating that the scheduler was unable to
-                match the instance requirements.</para>
-            <para>If <code>nova show</code> does not sufficiently
-                explain the failure, searching for the instance UUID in
-                the <code>nova-compute.log</code> on the compute node
-                it was scheduled on or the
-                    <code>nova-scheduler.log</code> on your scheduler
-                hosts is a good place to start looking for lower-level
-                problems.</para>
-            <para>Using <code>nova show</code> as an admin user will
-                show the compute node the instance was scheduled on as
-                    <code>hostId</code>. If the instance failed during
-                scheduling this field is blank.</para>
-        </section>
-        <section xml:id="instance_specific_data">
-            <title>Using Instance-specific Data</title>
-            <para>There are two main types of instance-specific data: metadata and user data.</para>
-            <section xml:id="instance_metadata">
-                <title>Instance Metadata</title>
-                <para>For Compute, instance metadata is a collection of
-                    key-value pairs associated with an instance. Compute
-                    reads and writes to these key-value pairs any time
-                    during the instance lifetime, from inside and outside
-                    the instance, when the end user uses the Compute API
-                    to do so. However, you cannot query the instance-associated
-                    key-value pairs with the metadata service
-                    that is compatible with the Amazon EC2 metadata
-                    service.</para>
-                <para>For an example of instance metadata, users can
-                    generate and register ssh keys using the nova
-                    command:</para>
-                <screen><prompt>$</prompt> <userinput>nova keypair-add mykey &gt; mykey.pem</userinput></screen>
-                <para>This creates a key named <userinput>mykey</userinput>, which you can
-                    associate with instances. The file <filename>mykey.pem</filename> is the
-                    private key, which should be saved to a secure location
-                    because it allows root access to instances the <userinput>mykey</userinput> key is
-                    associated with.</para>
-                <para>Use this command to register an existing key
-                    with OpenStack:</para>
-                <screen><prompt>$</prompt> <userinput>nova keypair-add --pub-key mykey.pub mykey</userinput></screen>
-                <note><para>You must have the matching private key to access
-                    instances associated with this key.</para></note>
-                <para>To associate a key with an instance on boot, add
-                    <code>--key_name mykey</code> to your command line.
-                    For example:</para>
-                <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 2 --key_name mykey myimage</userinput></screen>
-                <para>When booting a server, you can also add
-                    arbitrary metadata so that you can more easily
-                    identify it among other running instances. Use
-                    the <code>--meta</code> option with a key=value
-                    pair, where you can make up the string for both
-                    the key and the value. For example, you could add
-                    a description and also the creator of the
-                    server:</para>
-                <screen><prompt>$</prompt> <userinput>nova boot --image=test-image --flavor=1 \
---meta description='Small test image' smallimage</userinput></screen>
-                <para>When viewing the server information, you can see the
-                    metadata included on the metadata line:</para>
-<screen><prompt>$</prompt> <userinput>nova show smallimage</userinput>
+
+      <para>In this case, looking at the <literal>fault</literal> message
+      shows <literal>NoValidHost</literal>, indicating that the scheduler was
+      unable to match the instance requirements.</para>
+
+      <para>If <code>nova show</code> does not sufficiently explain the
+      failure, searching for the instance UUID in the
+      <code>nova-compute.log</code> on the compute node it was scheduled on or
+      the <code>nova-scheduler.log</code> on your scheduler hosts is a good
+      place to start looking for lower-level problems.</para>
+
+      <para>Using <code>nova show</code> as an admin user will show the
+      compute node the instance was scheduled on as <code>hostId</code>. If
+      the instance failed during scheduling, this field is blank.</para>
+    </section>
+
+    <section xml:id="instance_specific_data">
+      <title>Using Instance-Specific Data</title>
+
+      <para>There are two main types of instance-specific data: metadata and
+      user data.<indexterm class="singular">
+          <primary>metadata</primary>
+
+          <secondary>instance metadata</secondary>
+        </indexterm><indexterm class="singular">
+          <primary>instances</primary>
+
+          <secondary>instance-specific data</secondary>
+        </indexterm></para>
+
+      <section xml:id="instance_metadata">
+        <title>Instance metadata</title>
+
+        <para>For Compute, instance metadata is a collection of key-value
+        pairs associated with an instance. Compute reads and writes to these
+        key-value pairs any time during the instance lifetime, from inside and
+        outside the instance, when the end user uses the Compute API to do so.
+        However, you cannot query the instance-associated key-value pairs with
+        the metadata service that is compatible with the Amazon EC2 metadata
+        service.</para>
+
+        <para>For an example of instance metadata, users can generate and
+        register SSH keys using the <literal>nova</literal> command:</para>
+
+        <screen><prompt>$</prompt> <userinput>nova keypair-add mykey &gt; mykey.pem</userinput></screen>
+
+        <para>This creates a key named <userinput>mykey</userinput>, which you
+        can associate with instances. The file <filename>mykey.pem</filename>
+        is the private key, which should be saved to a secure location because
+        it allows root access to instances the <userinput>mykey</userinput>
+        key is associated with.</para>
+
+        <para>Use this command to register an existing key with
+        OpenStack:</para>
+
+        <screen><prompt>$</prompt> <userinput>nova keypair-add --pub-key mykey.pub mykey</userinput></screen>
+
+        <note>
+          <para>You must have the matching private key to access instances
+          associated with this key.</para>
+        </note>
+
+        <para>To associate a key with an instance on boot, add
+        <code>--key_name mykey</code> to your command line. For
+        example:</para>
+
+        <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 2 --key_name mykey myimage</userinput></screen>
+
+        <para>When booting a server, you can also add arbitrary metadata so
+        that you can more easily identify it among other running instances.
+        Use the <code>--meta</code> option with a key-value pair, where you
+        can make up the string for both the key and the value. For example,
+        you could add a description and also the creator of the server:</para>
+
+        <screen><prompt>$</prompt> <userinput>nova boot --image=test-image --flavor=1 \
+  --meta description='Small test image' smallimage</userinput></screen>
+
+        <para>When viewing the server information, you can see the metadata
+        included on the <phrase role="keep-together">metadata</phrase>
+        line:</para>
+
+        <?hard-pagebreak ?>
+
+        <screen><prompt>$</prompt> <userinput>nova show smallimage</userinput>
 <computeroutput>+------------------------+-----------------------------------------+
 |     Property           |                   Value                 |
 +------------------------+-----------------------------------------+
@@ -691,416 +891,568 @@ Optional snapshot description. (Default=None)</computeroutput></screen>
 |     updated            |            2012-05-16T20:48:35Z         |
 |     user_id            |          de3...0a9                      |
 +------------------------+-----------------------------------------+</computeroutput></screen>
-            </section>
-            <section xml:id="instance_user_data">
-                <title>Instance User Data</title>
-                <para>The <code>user-data</code> key is a special key in the
-                    metadata service that holds a file that cloud-aware
-                    applications within the guest instance can access.
-                    For example <link
-                        xlink:title="OpenStack Image Service"
-                        xlink:href="https://help.ubuntu.com/community/CloudInit"
-                    >cloudinit</link> (https://help.ubuntu.com/community/CloudInit)
-                    is an open source package from Ubuntu, but available in most
-                    distributions, that handles early initialization of a cloud
-                    instance that makes use of this user data.</para>
-                <para>This user data can be put in a file on your local
-                    system and then passed in at instance creation with
-                    the flag <code>--user-data &lt;user-data-file&gt;</code>.
-                    For example:</para>
-                <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</userinput></screen>
-                <para>To understand the difference between user data and
-                    metadata, realize that user data is created before an
-                    instance is started. User data is accessible
-                    from within the instance when it is running. User data
-                    can be used to store configuration, a script,
-                    or anything the tenant wants.</para>
-            </section>
-            <section xml:id="file_injection">
-                <title>File Injection</title>
-                <para>Arbitrary local files can also be placed into the
-                    instance file system at creation time by using the <code>--file
-                    &lt;dst-path=src-path&gt;</code> option. You may store up to
-                    five files. For example, let's say you have a special
-                    <filename>authorized_keys</filename> file named special_authorized_keysfile
-                    that for some reason you want to put on the instance instead of using
-                    the regular ssh key injection. In this case, you can
-                    use the following command:</para>
-                <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 1 --file /root/.ssh/authorized_keys=special_authorized_keysfile</userinput></screen>
-            </section>
-        </section>
+      </section>
+
+      <section xml:id="instance_user_data">
+        <title>Instance user data</title>
+
+        <para>The <code>user-data</code> key is a special key in the metadata
+        service that holds a file that cloud-aware applications within the
+        guest instance can access. For example, <link
+        xlink:href="http://opsgui.de/1eLCtLs"
+        xlink:title="OpenStack Image Service">cloudinit</link> is an open
+        source package from Ubuntu, but available in most distributions, that
+        handles early initialization of a cloud instance that makes use of
+        this user data.<indexterm class="singular">
+            <primary>user data</primary>
+          </indexterm></para>
+
+        <para>This user data can be put in a file on your local system and
+        then passed in at instance creation with the flag <code>--user-data
+        &lt;user-data-file&gt;</code>. For example:</para>
+
+        <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</userinput></screen>
+
+        <para>To understand the difference between user data and metadata,
+        realize that user data is created before an instance is started. User
+        data is accessible from within the instance when it is running. User
+        data can be used to store configuration, a script, or anything the
+        tenant wants.</para>
+      </section>
+
+      <section xml:id="file_injection">
+        <title>File injection</title>
+
+        <para>Arbitrary local files can also be placed into the instance file
+        system at creation time by using the <code>--file
+        &lt;dst-path=src-path&gt;</code> option. You may store up to five
+        files.<indexterm class="singular">
+            <primary>file injection</primary>
+          </indexterm></para>
+
+        <para>For example, let's say you have a special
+        <filename>authorized_keys</filename> file named
+        special_authorized_keysfile that for some reason you want to put on
+        the instance instead of using the regular SSH key injection. In this
+        case, you can use the following command:</para>
+
+        <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 1  \
+  --file /root/.ssh/authorized_keys=special_authorized_keysfile</userinput></screen>
+      </section>
     </section>
-    <section xml:id="associate_security_groups">
-        <title>Associating Security Groups</title>
-        <para>Security groups, as discussed earlier, are typically
-            required to allow network traffic to an instance, unless
-            the default security group for a project has been modified
-            to be more permissive.</para>
-        <para>Adding security groups is typically done on instance
-            boot. When launching from the dashboard you do this on the
-            <guilabel>Access &amp; Security</guilabel> tab of the <guilabel>Launch Instance</guilabel>
-            dialog. When launching from the command line, append
-            <code>--security-groups</code> with a comma-separated list of
-            security groups.</para>
-        <para>It is also possible to add and remove security groups
-            when an instance is running. Currently this is only
-            available through the command-line tools. Here is an example:</para>
-        <screen><prompt>$</prompt> <userinput>nova add-secgroup &lt;server&gt; &lt;securitygroup&gt;</userinput></screen>
-        <screen><prompt>$</prompt> <userinput>nova remove-secgroup &lt;server&gt; &lt;securitygroup&gt;</userinput></screen>
-    </section>
-    <section xml:id="floating_ips">
-        <title>Floating IPs</title>
-        <para>Where floating IPs are configured in a deployment,
-            each project will have a limited number of floating IPs
-            controlled by a quota. However, these need to
-            be allocated to the project from the central pool prior
-            to their use&mdash;usually by the administrator of the project.
-            To allocate a floating IP to a project, use the
-            <guibutton>Allocate IP to Project</guibutton> button on the
-            <guilabel>Access &amp; Security</guilabel> page of the dashboard. The command
-            line can also be used:</para>
-        <screen><prompt>$</prompt> <userinput>nova floating-ip-create</userinput></screen>
-        <para>Once allocated, a floating IP can be assigned to running
-            instances from the dashboard either by selecting
-            <guibutton>Associate Floating IP</guibutton> from the actions drop-down next to
-            the IP on the <guilabel>Access &amp; Security</guilabel> page or by making this selection
-            next to the instance you want to associate it with
-            on the <guilabel>Instances</guilabel> page. The inverse action,
-            <guibutton>Dissociate Floating IP</guibutton>, is available only from the
-            <guilabel>Access &amp;
-            Security</guilabel> page and not from the
-            <guilabel>Instances</guilabel> page.</para>
-        <para>To associate or disassociate a floating IP with a server
-            from the command line, use the following commands:
-        </para>
-        <screen><prompt>$</prompt> <userinput>nova add-floating-ip &lt;server&gt; &lt;address&gt;</userinput></screen>
-        <screen><prompt>$</prompt> <userinput>nova remove-floating-ip &lt;server&gt; &lt;address&gt;</userinput></screen>
-    </section>
-    <section xml:id="attach_block_storage">
-        <title>Attaching Block Storage</title>
-        <para>You can attach block storage to instances from the dashboard on
-            the <guilabel>Volumes</guilabel> page. Click the <guibutton>Edit
-                Attachments</guibutton> action next to the volume you want to
-            attach.</para>
-        <para>To perform this action from command line, run the following
-            command:</para>
-        <screen><prompt>$</prompt> <userinput>nova volume-attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;</userinput></screen>
-        <para>You can also specify block device mapping at instance boot time
-            through the nova command-line client with this option set:</para>
-        <screen><userinput>--block-device-mapping &lt;dev-name=mapping&gt; </userinput></screen>
-        <para>The block device mapping format is
-                <code>&lt;dev-name&gt;=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:&lt;delete-on-terminate&gt;</code>,
-            where:</para>
-        <variablelist>
-            <varlistentry>
-                <term>dev-name</term>
-                <listitem>
-                    <para>A device name where the volume is attached in the
-                        system at <code>/dev/<replaceable>dev_name</replaceable>
-                        </code>.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>id</term>
-                <listitem>
-                    <para>The ID of the volume to boot from, as shown in the
-                        output of nova volume-list.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>type</term>
-                <listitem>
-                    <para>Either <literal
-                            >snap</literal>, which means that the volume was
-                        created from a snapshot, or anything other than <literal
-                            >snap</literal> (a blank string is valid). In the
-                        example above, the volume was not created from a
-                        snapshot, so we leave this field blank in our example
-                        below.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>size (GB)</term>
-                <listitem>
-                    <para>The size of the volume in gigabytes. It is safe to leave
-                        this blank and have the Compute Service infer the
-                        size.</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>delete-on-terminate</term>
-                <listitem>
-                    <para>A boolean to indicate whether the volume should be
-                        deleted when the instance is terminated. True can be
-                        specified as <literal>True</literal> or
-                        <literal>1</literal>. False can be specified as
-                  <literal>False</literal> or <literal>0</literal>.</para>
-                </listitem>
-            </varlistentry>
-        </variablelist>
-        <para>The following command will boot a new instance and
-            attach a volume at the same time. The volume of ID 13 will
-            be attached as <code>/dev/vdc</code>. It is not a snapshot,
-            does not specify a size, and will not be deleted when the
-            instance is terminated:</para>
-        <screen><prompt>$</prompt> <userinput>nova boot --image 4042220e-4f5e-4398-9054-39fbd75a5dd7
-            --flavor 2 --key-name mykey --block-device-mapping vdc=13:::0 boot-with-vol-test</userinput></screen>
-        <para>If you have previously prepared block storage with a
-            bootable file system image, it is even possible to boot
-            from persistent block storage. The following command
-            boots an image from the specified volume. It is
-            similar to the previous command, but the image is
-            omitted and the volume is now attached as
-                <code>/dev/vda</code>:</para>
-        <screen><prompt>$</prompt> <userinput>nova boot --flavor 2 --key-name mykey
-            --block-device-mapping vda=13:::0 boot-from-vol-test</userinput></screen>
-        <para>Read more detailed instructions for launching an instance from a
-            bootable volume in the <link
-                xlink:href="http://docs.openstack.org/user-guide/content/boot_from_volume.html"
-                >OpenStack End User Guide</link>.</para>
-        <para>To boot normally from an image and attach block storage, map to a
-            device other than vda. You can find instructions for launching an
-            instance and attaching a volume to the instance and for copying the image
-            to the attached volume in the <link xlink:href="http://docs.openstack.org/user-guide/content/dashboard_launch_instances_from_volume.html">OpenStack End User Guide</link>.</para>
-    </section>
-    <section xml:id="snapshots">
-        <?dbhtml stop-chunking?>
-        <title>Taking Snapshots</title>
-        <para>The OpenStack snapshot mechanism allows you to create new
-            images from running instances. This is very convenient
-            for upgrading base images or for taking a published image and
-            customizing it for local use. To snapshot a running instance
-            to an image using the CLI, do this:</para>
-        <screen><prompt>$</prompt> <userinput>nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</userinput></screen>
-        <para>The dashboard interface for snapshots can be confusing
-            because the <guilabel>Images &amp; Snapshots</guilabel> page splits content up
-            into several areas:</para>
-        <itemizedlist role="compact">
-            <listitem>
-                <para>Images</para>
-            </listitem>
-            <listitem>
-                <para>Instance snapshots</para>
-            </listitem>
-            <listitem>
-                <para>Volume snapshots</para>
-            </listitem>
-        </itemizedlist>
-        <para>However, an instance snapshot <emphasis>is</emphasis> an
-            image. The only difference between an image that you
-            upload directly to the Image Service and an image that you create by
-            snapshot is that an image created by snapshot has
-            additional properties in the glance database. These
-            properties are found in the image_properties table and
-            include:</para>
-        <informaltable rules="all">
-            <thead>
-                <tr>
-                    <th>name</th>
-                    <th>value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><para>image_type</para></td>
-                    <td><para>snapshot</para></td>
-                </tr>
-                <tr>
-                    <td><para>instance_uuid</para></td>
-                    <td><para>&lt;uuid of instance that was
-                            snapshotted&gt;</para></td>
-                </tr>
-                <tr>
-                    <td><para>base_image_ref</para></td>
-                    <td><para>&lt;uuid of original image of
-                            instance that was
-                        snapshotted&gt;</para></td>
-                </tr>
-                <tr>
-                    <td><para>image_location</para></td>
-                    <td><para>snapshot</para></td>
-                </tr>
-            </tbody>
-        </informaltable>
-        <section xml:id="live-snapshots">
-            <title>Live snapshots</title>
-            <para>Live snapshots is a feature that allows users to snapshot the running virtual
-                machines without pausing them. These snapshots are simply disk-only snapshots.
-                Snapshotting an instance can now be performed with no downtime (assuming QEMU 1.3+
-                and libvirt 1.0+ are used).</para>
-        <sidebar>
-            <title>Ensuring snapshots are consistent</title>
-            <para>The following section is from Sébastien Han's <link
-                    xlink:title="OpenStack Image Service"
-                    xlink:href="http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/"
-                    >OpenStack: Perform Consistent Snapshots blog
-                    entry</link>
-                (http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/).</para>
-            <para>A snapshot captures the state of the file system,
-                but not the state of the memory. Therefore, to ensure
-                your snapshot contains the data that you want, before
-                your snapshot you need to ensure that:</para>
-            <itemizedlist role="compact">
-                <listitem>
-                    <para>Running programs have written their contents
-                        to disk</para>
-                </listitem>
-                <listitem>
-                    <para>The file system does not have any "dirty"
-                        buffers: where programs have issued the
-                        command to write to disk, but the operating
-                        system has not yet done the write</para>
-                </listitem>
-            </itemizedlist>
-            <para>To ensure that important services have written their
-                contents to disk (such as databases), we recommend that
-                you read the documentation for those applications to
-                determine what commands to issue to have them sync
-                their contents to disk. If you are unsure how to do
-                this, the safest approach is to simply stop these
-                running services normally.</para>
-            <para>To deal with the "dirty" buffer issue, we recommend
-                using the sync command before snapshotting:</para>
-            <screen><prompt>#</prompt> <userinput>sync</userinput></screen>
-            <para>Running <code>sync</code> writes dirty buffers
-                (buffered blocks that have been modified but not
-                written yet to the disk block) to disk.</para>
-            <para>Just running <code>sync</code> is not enough to
-                ensure that the file system is consistent. We recommend that you
-                use the <code>fsfreeze</code> tool, which halts new
-                access to the file system, and create a stable image on
-                disk that is suitable for snapshotting. The <code>fsfreeze</code>
-                tool supports several file systems, including ext3, ext4,
-                and XFS. If your virtual machine instance is running
-                on Ubuntu, install the util-linux package to get
-                fsfreeze:</para>
-            <screen><prompt>#</prompt> <userinput>apt-get install util-linux</userinput></screen>
-            <para>If your operating system doesn't have a version of
-                fsfreeze available, you can use xfs_freeze instead,
-                which is available on Ubuntu in the xfsprogs package.
-                Despite the "xfs" in the name, xfs_freeze also works
-                on ext3 and ext4 if you are using a Linux kernel
-                version 2.6.29 or greater, since it works at the
-                virtual file system (VFS) level starting at 2.6.29. The
-                xfs_freeze version supports the same command-line arguments as
-                fsfreeze.</para>
-            <para>Consider the example where you want to take a
-                snapshot of a persistent block storage volume,
-                detected by the guest operating system as /dev/vdb and
-                mounted on /mnt. The fsfreeze command accepts 2
-                arguments:</para>
-            <itemizedlist role="compact">
-                <listitem>
-                    <para>-f: freeze the system</para>
-                </listitem>
-                <listitem>
-                    <para>-u: thaw (unfreeze) the system</para>
-                </listitem>
-            </itemizedlist>
-            <para>To freeze the volume in preparation for
-                snapshotting, you would do the following, as root, inside the
-                instance:</para>
-            <screen><prompt>#</prompt> <userinput>fsfreeze -f /mnt</userinput></screen>
-            <para>You <emphasis role="bold">must mount the file
-                    system</emphasis> before you run the
-                    <command>fsfreeze</command> command.</para>
-            <para>When the "fsfreeze -f" command is issued, all
-                ongoing transactions in the file system are allowed to
-                complete, new write system calls are halted, and other
-                calls that modify the file system are halted. Most
-                importantly, all dirty data, metadata, and log
-                information are written to disk.</para>
-            <para>Once the volume has been frozen, do not attempt to
-                read from or write to the volume, as these operations
-                hang. The operating system stops every I/O operation
-                and any I/O attempts are delayed until the file system
-                has been unfrozen.</para>
-            <para>Once you have issued the fsfreeze command, it is
-                safe to perform the snapshot. For example, if your
-                instance was named mon-instance and you wanted to
-                snapshot it to an image named mon-snapshot, you could
-                now run the following:</para>
-            <screen><prompt>$</prompt> <userinput>nova image-create mon-instance mon-snapshot</userinput></screen>
-            <para>When the snapshot is done, you can thaw the file
-                system with the following command, as root, inside of
-                the instance:</para>
-            <screen><prompt>#</prompt> <userinput>fsfreeze -u /mnt</userinput></screen>
-            <para>If you want to backup the root file system, you
-                can't simply run the command above because it will
-                freeze the prompt. Instead, run the following
-                one-liner, as root, inside the instance:</para>
-            <screen><prompt>#</prompt> <userinput>fsfreeze -f / &amp;&amp;
-                sleep 30 &amp;&amp; fsfreeze -u /</userinput></screen>
-        </sidebar>
-        </section>
-    </section>
-    <section xml:id="database_instances">
-        <?dbhtml stop-chunking?>
-        <title>Instances in the Database</title>
-        <para>While instance information is stored in a number of
-            database tables, the table you most likely
-            need to look at in relation to user instances is the
-            "instances" table.</para>
-        <para>The instances table carries most of the information
-            related to both running and deleted instances. It has a
-            bewildering array of fields; for an exhaustive list, look
-            at the database. These are the most useful fields for
-            operators looking to form queries:</para>
-        <itemizedlist>
+  </section>
+
+  <section xml:id="associate_security_groups">
+    <title>Associating Security Groups</title>
+
+    <para>Security groups, as discussed earlier, are typically required to
+    allow network traffic to an instance, unless the default security group
+    for a project has been modified to be more permissive.<indexterm
+        class="singular">
+        <primary>security groups</primary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>security groups</secondary>
+      </indexterm></para>
+
+    <para>Adding security groups is typically done on instance boot. When
+    launching from the dashboard, you do this on the <guilabel>Access &amp;
+    Security</guilabel> tab of the <guilabel>Launch Instance</guilabel>
+    dialog. When launching from the command line, append
+    <code>--security-groups</code> with a comma-separated list of security
+    groups.</para>
+
+    <para>It is also possible to add and remove security groups when an
+    instance is running. Currently this is only available through the
+    command-line tools. Here is an example:</para>
+
+    <screen><prompt>$</prompt> <userinput>nova add-secgroup &lt;server&gt; &lt;securitygroup&gt;</userinput></screen>
+
+    <screen><prompt>$</prompt> <userinput>nova remove-secgroup &lt;server&gt; &lt;securitygroup&gt;</userinput></screen>
+  </section>
+
+  <section xml:id="floating_ips">
+    <title>Floating IPs</title>
+
+    <para>Where floating IPs are configured in a deployment, each project will
+    have a limited number of floating IPs controlled by a quota. However,
+    these need to be allocated to the project from the central pool prior to
+    their use—usually by the administrator of the project. To allocate a
+    floating IP to a project, use the <guibutton>Allocate IP to
+    Project</guibutton> button on the <guilabel>Access &amp;
+    Security</guilabel> page of the dashboard. The command line can also be
+    used:<indexterm class="singular">
+        <primary>address pool</primary>
+      </indexterm><indexterm class="singular">
+        <primary>IP addresses</primary>
+
+        <secondary>floating</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>floating IPs</secondary>
+      </indexterm></para>
+
+    <screen><prompt>$</prompt> <userinput>nova floating-ip-create</userinput></screen>
+
+    <para>Once allocated, a floating IP can be assigned to running instances
+    from the dashboard either by selecting <guibutton>Associate Floating
+    IP</guibutton> from the actions drop-down next to the IP on the
+    <guilabel>Access &amp; Security</guilabel> page or by making this
+    selection next to the instance you want to associate it with on the
+    <guilabel>Instances</guilabel> page. The inverse action,
+    <guibutton>Dissociate Floating IP</guibutton>, is available only from the
+    <guilabel>Access &amp; Security</guilabel> page and not from the
+    <guilabel>Instances</guilabel> page.</para>
+
+    <para>To associate or disassociate a floating IP with a server from the
+    command line, use the following commands:</para>
+
+    <screen><prompt>$</prompt> <userinput>nova add-floating-ip &lt;server&gt; &lt;address&gt;</userinput></screen>
+
+    <screen><prompt>$</prompt> <userinput>nova remove-floating-ip &lt;server&gt; &lt;address&gt;</userinput></screen>
+  </section>
+
+  <section xml:id="attach_block_storage">
+    <title>Attaching Block Storage</title>
+
+    <para>You can attach block storage to instances from the dashboard on the
+    <guilabel>Volumes</guilabel> page. Click the <guibutton>Edit
+    Attachments</guibutton> action next to the volume you want to
+    attach.<indexterm class="singular">
+        <primary>storage</primary>
+
+        <secondary>block storage</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>block storage</primary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>block storage</secondary>
+      </indexterm></para>
+
+    <para>To perform this action from command line, run the following
+    command:</para>
+
+    <screen><prompt>$</prompt> <userinput>nova volume-attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;</userinput></screen>
+
+    <para>You can also specify block device<indexterm class="singular">
+        <primary>block device</primary>
+      </indexterm> mapping at instance boot time through the nova command-line
+    client with this option set:</para>
+
+    <screen><userinput>--block-device-mapping &lt;dev-name=mapping&gt; </userinput></screen>
+
+    <para><phrase role="keep-together">The block device mapping format is
+    <code>&lt;dev-name&gt;=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:</code></phrase><phrase
+    role="keep-together"><code>&lt;delete-on-terminate&gt;</code>,
+    where:</phrase></para>
+
+    <variablelist>
+      <varlistentry>
+        <term>dev-name</term>
+
         <listitem>
-                <para>The deleted field is set to 1 if the instance
-                    has been deleted and NULL if it has not been deleted&mdash;
-                    this field is important for excluding
-                    deleted instances from your queries.</para></listitem>
-        <listitem><para>The uuid field is the UUID of the instance and is used
-            throughout other tables in the database as a foreign key.
-            This ID is also reported in logs, the dashboard, and
-            command-line tools to uniquely identify an
-            instance.</para></listitem>
-        <listitem><para>A collection of foreign keys are available to find
-            relations to the instance. The most useful of these&mdash;user_id and project_id&mdash;are the UUIDs of the user who
-            launched the instance and the project it was launched
-            in.</para></listitem>
-        <listitem><para>The host field tells which compute node is hosting the
-            instance.</para></listitem>
-        <listitem><para>The hostname field holds the name of the instance when
-            it is launched. The display-name is initially the same
-            as hostname but can be reset using the nova rename
-            command.</para></listitem>
-        </itemizedlist>
-        <para>A number of time-related fields are useful for tracking
-            when state changes happened on an instance:</para>
+          <para>A device name where the volume is attached in the system at
+          <code>/dev/<replaceable>dev_name</replaceable></code></para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>id</term>
+
+        <listitem>
+          <para>The ID of the volume to boot from, as shown in the output of
+          <literal>nova volume-list</literal></para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>type</term>
+
+        <listitem>
+          <para>Either <literal>snap</literal>, which means that the volume
+          was created from a snapshot, or anything other than
+          <literal>snap</literal> (a blank string is valid). In the preceding
+          example, the volume was not created from a snapshot, so we leave
+          this field blank in our following example.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>size (GB)</term>
+
+        <listitem>
+          <para>The size of the volume in gigabytes. It is safe to leave this
+          blank and have the Compute Service infer the size.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>delete-on-terminate</term>
+
+        <listitem>
+          <para>A boolean to indicate whether the volume should be deleted
+          when the instance is terminated. True can be specified as
+          <literal>True</literal> or <literal>1</literal>. False can be
+          specified as <literal>False</literal> or
+          <literal>0</literal>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>The following command will boot a new instance and attach a volume
+    at the same time. The volume of ID 13 will be attached as
+    <code>/dev/vdc</code>. It is not a snapshot, does not specify a size, and
+    will not be deleted when the instance is terminated:</para>
+
+    <screen><prompt>$</prompt> <userinput>nova boot --image 4042220e-4f5e-4398-9054-39fbd75a5dd7 \
+            --flavor 2 --key-name mykey --block-device-mapping vdc=13:::0 \
+            boot-with-vol-test</userinput></screen>
+
+    <para>If you have previously prepared block storage with a bootable file
+    system image, it is even possible to boot from persistent block storage.
+    The following command boots an image from the specified volume. It is
+    similar to the previous command, but the image is omitted and the volume
+    is now attached as <code>/dev/vda</code>:</para>
+
+    <screen><prompt>$</prompt> <userinput>nova boot --flavor 2 --key-name mykey \
+            --block-device-mapping vda=13:::0 boot-from-vol-test</userinput></screen>
+
+    <para>Read more detailed instructions for launching an instance from a
+    bootable volume in the <link
+    xlink:href="http://opsgui.de/NPH30v">OpenStack End User
+    Guide</link>.</para>
+
+    <para>To boot normally from an image and attach block storage, map to a
+    device other than vda. You can find instructions for launching an instance
+    and attaching a volume to the instance and for copying the image to the
+    attached volume in the <link
+    xlink:href="http://opsgui.de/1eLCwHb">OpenStack End User
+    Guide</link>.</para>
+  </section>
+
+  <section xml:id="snapshots">
+    <?dbhtml stop-chunking?>
+
+    <title>Taking Snapshots</title>
+
+    <para>The OpenStack snapshot mechanism allows you to create new images
+    from running instances. This is very convenient for upgrading base images
+    or for taking a published image and customizing it for local use. To
+    snapshot a running instance to an image using the CLI, do this:<indexterm
+        class="singular">
+        <primary>base image</primary>
+      </indexterm><indexterm class="singular">
+        <primary>snapshot</primary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>snapshots</secondary>
+      </indexterm></para>
+
+    <screen><prompt>$</prompt> <userinput>nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</userinput></screen>
+
+    <para>The dashboard interface for snapshots can be confusing because the
+    <guilabel>Images &amp; Snapshots</guilabel> page splits content up into
+    several areas:</para>
+
+    <itemizedlist role="compact">
+      <listitem>
+        <para>Images</para>
+      </listitem>
+
+      <listitem>
+        <para>Instance snapshots</para>
+      </listitem>
+
+      <listitem>
+        <para>Volume snapshots</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>However, an instance snapshot <emphasis>is</emphasis> an image. The
+    only difference between an image that you upload directly to the Image
+    Service and an image that you create by snapshot is that an image created
+    by snapshot has additional properties in the glance database. These
+    properties are found in the <literal>image_properties</literal> table and
+    include:</para>
+
+    <informaltable rules="all">
+      <thead>
+        <tr>
+          <th>Name</th>
+
+          <th>Value</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><para><literal>image_type</literal></para></td>
+
+          <td><para>snapshot</para></td>
+        </tr>
+
+        <tr>
+          <td><para><literal>instance_uuid</literal></para></td>
+
+          <td><para>&lt;uuid of instance that was snapshotted&gt;</para></td>
+        </tr>
+
+        <tr>
+          <td><para><literal>base_image_ref</literal></para></td>
+
+          <td><para>&lt;uuid of original image of instance that was
+          snapshotted&gt;</para></td>
+        </tr>
+
+        <tr>
+          <td><para><literal>image_location</literal></para></td>
+
+          <td><para>snapshot</para></td>
+        </tr>
+      </tbody>
+    </informaltable>
+
+    <section xml:id="live-snapshots">
+      <title>Live Snapshots</title>
+
+      <para>Live snapshots is a feature that allows users to snapshot the
+      running virtual machines without pausing them. These snapshots are
+      simply disk-only snapshots. Snapshotting an instance can now be
+      performed with no downtime (assuming QEMU 1.3+ and libvirt 1.0+ are
+      used).<indexterm class="singular">
+          <primary>live snapshots</primary>
+        </indexterm></para>
+
+      <sidebar>
+        <title>Ensuring Snapshots Are Consistent</title>
+
+        <para>The following section is from Sébastien Han's <link
+        xlink:href="http://opsgui.de/NPH5Wn"
+        xlink:title="OpenStack Image Service">“OpenStack: Perform Consistent
+        Snapshots” blog entry</link>.</para>
+
+        <para>A snapshot captures the state of the file system, but not the
+        state of the memory. Therefore, to ensure your snapshot contains the
+        data that you want, before your snapshot you need to ensure
+        that:</para>
+
         <itemizedlist role="compact">
-            <listitem>
-                <para>created_at</para>
-            </listitem>
-            <listitem>
-                <para>updated_at</para>
-            </listitem>
-            <listitem>
-                <para>deleted_at</para>
-            </listitem>
-            <listitem>
-                <para>scheduled_at</para>
-            </listitem>
-            <listitem>
-                <para>launched_at</para>
-            </listitem>
-            <listitem>
-                <para>terminated_at</para>
-            </listitem>
+          <listitem>
+            <para>Running programs have written their contents to disk</para>
+          </listitem>
+
+          <listitem>
+            <para>The file system does not have any "dirty" buffers: where
+            programs have issued the command to write to disk, but the
+            operating system has not yet done the write</para>
+          </listitem>
         </itemizedlist>
+
+        <para>To ensure that important services have written their contents to
+        disk (such as databases), we recommend that you read the documentation
+        for those applications to determine what commands to issue to have
+        them sync their contents to disk. If you are unsure how to do this,
+        the safest approach is to simply stop these running services
+        normally.</para>
+
+        <para>To deal with the "dirty" buffer issue, we recommend using the
+        sync command before snapshotting:</para>
+
+        <screen><prompt>#</prompt> <userinput>sync</userinput></screen>
+
+        <para>Running <code>sync</code> writes dirty buffers (buffered blocks
+        that have been modified but not written yet to the disk block) to
+        disk.</para>
+
+        <para>Just running <code>sync</code> is not enough to ensure that the
+        file system is consistent. We recommend that you use the
+        <code>fsfreeze</code> tool, which halts new access to the file system,
+        and create a stable image on disk that is suitable for snapshotting.
+        The <code>fsfreeze</code> tool supports several file systems,
+        including ext3, ext4, and XFS. If your virtual machine instance is
+        running on Ubuntu, install the util-linux package to get
+        <literal>fsfreeze</literal>:</para>
+
+        <screen><prompt>#</prompt> <userinput>apt-get install util-linux</userinput></screen>
+
+        <para>If your operating system doesn't have a version of
+        <literal>fsfreeze</literal> available, you can use
+        <literal>xfs_freeze</literal> instead, which is available on Ubuntu in
+        the xfsprogs package. Despite the "xfs" in the name, xfs_freeze also
+        works on ext3 and ext4 if you are using a Linux kernel version 2.6.29
+        or greater, since it works at the virtual file system (VFS) level
+        starting at 2.6.29. The xfs_freeze version supports the same
+        command-line arguments as <literal>fsfreeze</literal>.</para>
+
+        <para>Consider the example where you want to take a snapshot of a
+        persistent block storage volume, detected by the guest operating
+        system as <literal>/dev/vdb</literal> and mounted on
+        <literal>/mnt</literal>. The fsfreeze command accepts two
+        arguments:</para>
+
+        <variablelist>
+          <varlistentry>
+            <term>-f</term>
+
+            <listitem>
+              <para>Freeze the system</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>-u</term>
+
+            <listitem>
+              <para>Thaw (unfreeze) the system</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+        <para>To freeze the volume in preparation for snapshotting, you would
+        do the following, as root, inside the instance:</para>
+
+        <screen><prompt>#</prompt> <userinput>fsfreeze -f /mnt</userinput></screen>
+
+        <para>You <emphasis>must mount the file system</emphasis> before you
+        run the <literal>fsfreeze</literal> command.</para>
+
+        <para>When the <literal>fsfreeze -f</literal> command is issued, all
+        ongoing transactions in the file system are allowed to complete, new
+        write system calls are halted, and other calls that modify the file
+        system are halted. Most importantly, all dirty data, metadata, and log
+        information are written to disk.</para>
+
+        <para>Once the volume has been frozen, do not attempt to read from or
+        write to the volume, as these operations hang. The operating system
+        stops every I/O operation and any I/O attempts are delayed until the
+        file system has been unfrozen.</para>
+
+        <para>Once you have issued the <literal>fsfreeze</literal> command, it
+        is safe to perform the snapshot. For example, if your instance was
+        named <literal>mon-instance</literal> and you wanted to snapshot it to
+        an image named <literal>mon-snapshot</literal>, you could now run the
+        following:</para>
+
+        <screen><prompt>$</prompt> <userinput>nova image-create mon-instance mon-snapshot</userinput></screen>
+
+        <para>When the snapshot is done, you can thaw the file system with the
+        following command, as root, inside of the instance:</para>
+
+        <screen><prompt>#</prompt> <userinput>fsfreeze -u /mnt</userinput></screen>
+
+        <para>If you want to back up the root file system, you can't simply
+        run the preceding command because it will freeze the prompt. Instead,
+        run the following one-liner, as root, inside the instance:</para>
+
+        <screen><prompt>#</prompt> <userinput>fsfreeze -f / &amp;&amp; sleep 30 &amp;&amp; fsfreeze -u /</userinput></screen>
+      </sidebar>
     </section>
-    <section xml:id="user-facing-outro">
-        <title>Good Luck!</title>
-        <para>This section was intended as a brief introduction to
-        some of the most useful of many OpenStack commands. For
-        an exhaustive list, please refer to the <link
-        xlink:href="http://docs.openstack.org/user-guide-admin/content/">Admin User
-        Guide</link>, and for additional hints and tips please see
-        the <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">Cloud Admin Guide</link>.
-        We hope your users remain happy and recognize your hard work!
-        (For more hard work, turn the page to the next chapter, where we discuss
-        the system-facing operations: maintenance, failures and debugging.)</para>
-    </section>
+  </section>
+
+  <section xml:id="database_instances">
+    <?dbhtml stop-chunking?>
+
+    <title>Instances in the Database</title>
+
+    <para>While instance information is stored in a number of database tables,
+    the table you most likely need to look at in relation to user instances is
+    the instances table.<indexterm class="singular">
+        <primary>instances</primary>
+
+        <secondary>database information</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>databases</primary>
+
+        <secondary>instance information in</secondary>
+      </indexterm><indexterm class="singular">
+        <primary>user training</primary>
+
+        <secondary>instances</secondary>
+      </indexterm></para>
+
+    <para>The instances table carries most of the information related to both
+    running and deleted instances. It has a bewildering array of fields; for
+    an exhaustive list, look at the database. These are the most useful fields
+    for operators looking to form queries:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>The <literal>deleted</literal> field is set to
+        <literal>1</literal> if the instance has been deleted and
+        <literal>NULL</literal> if it has not been deleted. This field is
+        important for excluding deleted instances from your queries.</para>
+      </listitem>
+
+      <listitem>
+        <para>The <literal>uuid</literal> field is the UUID of the instance
+        and is used throughout other tables in the database as a foreign key.
+        This ID is also reported in logs, the dashboard, and command-line
+        tools to uniquely identify an instance.</para>
+      </listitem>
+
+      <listitem>
+        <para>A collection of foreign keys are available to find relations to
+        the instance. The most useful of these—<literal>user_id</literal> and
+        <literal>project_id</literal>—are the UUIDs of the user who launched
+        the instance and the project it was launched in.</para>
+      </listitem>
+
+      <listitem>
+        <para>The <literal>host</literal> field tells which compute node is
+        hosting the instance.</para>
+      </listitem>
+
+      <listitem>
+        <para>The <literal>hostname</literal> field holds the name of the
+        instance when it is launched. The display-name is initially the same
+        as hostname but can be reset using the nova rename command.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>A number of time-related fields are useful for tracking when state
+    changes happened on an instance:</para>
+
+    <itemizedlist role="compact">
+      <listitem>
+        <para><literal>created_at</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>updated_at</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>deleted_at</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>scheduled_at</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>launched_at</literal></para>
+      </listitem>
+
+      <listitem>
+        <para><literal>terminated_at</literal></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section xml:id="user-facing-outro">
+    <title>Good Luck!</title>
+
+    <para>This section was intended as a brief introduction to some of the
+    most useful of many OpenStack commands. For an exhaustive list, please
+    refer to the <link xlink:href="http://opsgui.de/1eLBkDJ">Admin User
+    Guide</link>, and for additional hints and tips, see the <link
+    xlink:href="http://opsgui.de/1eLBL0N">Cloud Admin Guide</link>. We hope
+    your users remain happy and recognize your hard work! (For more hard work,
+    turn the page to the next chapter, where we discuss the system-facing
+    operations: maintenance, failures and debugging.)</para>
+  </section>
 </chapter>
