@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glossary version="5.0" xml:id="openstack_glossary"
-          xmlns="http://docbook.org/ns/docbook"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xmlns:xi="http://www.w3.org/2001/XInclude"
-          xmlns:ns5="http://www.w3.org/2000/svg"
-          xmlns:ns4="http://www.w3.org/1998/Math/MathML"
-          xmlns:ns3="http://www.w3.org/1999/xhtml"
-          xmlns:db="http://docbook.org/ns/docbook">
+<!DOCTYPE chapter [
+<!ENTITY % openstack SYSTEM "openstack.ent">
+%openstack;
+]>
+
+<glossary xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="openstack_glossary"
+    version="5.0" role="auto">
   <!-- Add role="auto" above if you want to only generate a glossary
      with entries that are marked with glossterm/firstterm -->
 
@@ -137,7 +137,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>The Compute Service provides accounting information through the
+        <para>The Compute service provides accounting information through the
         event notification and system usage data facilities.</para>
       </glossdef>
     </glossentry>
@@ -257,7 +257,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>The Compute Service can send alerts through its notification
+        <para>The Compute service can send alerts through its notification
         system, which includes a facility to create custom notification
         drivers. Alerts can be sent to and displayed on the horizon
         dashboard.</para>
@@ -604,7 +604,9 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Project name for the initial release of OpenStack.</para>
+        <para>The code name for the initial release of
+        OpenStack. The first design summit took place in
+        Austin, Texas, US.</para>
       </glossdef>
     </glossentry>
 
@@ -823,9 +825,12 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>A grouped release of projects related to OpenStack that came out
-        in February of 2011. It included Compute (nova) and Object Storage
-        (swift) only.</para>
+        <para>A grouped release of projects related to
+        OpenStack that came out in February of 2011. It
+        included only Compute (nova) and Object Storage (swift).</para>
+        <para>Bexar is the code name for the second release of
+        OpenStack. The design summit took place in
+        San Antonio, Texas, US, which is the county seat for Bexar county.</para>
       </glossdef>
     </glossentry>
 
@@ -899,6 +904,18 @@
         volume snapshots, and volume types. The project name of Block Storage
         is cinder.</para>
       </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>Block Storage API<indexterm class="singular">
+          <primary>Block Storage API</primary>
+        </indexterm></glossterm>
+
+        <glossdef>
+          <para>An API on a separate endpoint for attaching,
+          detaching, and creating block storage for compute
+          VMs.</para>
+        </glossdef>
     </glossentry>
 
     <glossentry>
@@ -1031,6 +1048,21 @@
         <para>An OpenStack grouped release of projects that came out in the
         spring of 2011. It included Compute (nova), Object Storage (swift),
         and the Image Service (glance).</para>
+        <para>Cactus is a city in Texas, US and is the code name for
+        the third release of OpenStack. When OpenStack releases went
+        from three to six months long, the code name of the release
+        changed to match a geography nearest the previous
+        summit.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>CADF</glossterm>
+      <glossdef>
+        <para>
+          Cloud Auditing Data Federation (CADF) is a
+          specification for audit event data. CADF is
+          supported by OpenStack Identity.
+        </para>
       </glossdef>
     </glossentry>
 
@@ -1289,6 +1321,17 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>CirrOS<indexterm class="singular">
+          <primary>CirrOS</primary>
+        </indexterm></glossterm>
+
+        <glossdef>
+          <para>A minimal Linux distribution designed for use as a test
+             image on clouds such as OpenStack.</para>
+        </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>Cisco neutron plug-in<indexterm class="singular">
           <primary>Cisco neutron plug-in</primary>
         </indexterm></glossterm>
@@ -1485,7 +1528,7 @@
 
       <glossdef>
         <para>The OpenStack core project that provides compute services. The
-        project name of Compute Service is nova.</para>
+        project name of Compute service is nova.</para>
       </glossdef>
     </glossentry>
 
@@ -1544,10 +1587,10 @@
     </glossentry>
 
     <glossentry>
-      <glossterm>Compute Service<indexterm class="singular">
+      <glossterm>Compute service<indexterm class="singular">
           <primary>Compute</primary>
 
-          <secondary>Compute Service</secondary>
+          <secondary>Compute service</secondary>
         </indexterm></glossterm>
 
       <glossdef>
@@ -1900,6 +1943,21 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>Database Service<indexterm class="singular">
+          <primary>Database Service</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>
+          An integrated project that provide scalable and reliable
+          Cloud Database-as-a-Service functionality for both
+          relational and non-relational database engines. The project
+          name of Database Service is trove.
+        </para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>deallocate<indexterm class="singular">
           <primary>deallocate, definition of</primary>
         </indexterm></glossterm>
@@ -2064,6 +2122,17 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>DHCP agent<indexterm class="singular">
+        <primary>DHCP agent</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>OpenStack Networking agent that provides DHCP services
+          for virtual networks.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>Diablo<indexterm class="singular">
           <primary>Diablo</primary>
         </indexterm></glossterm>
@@ -2073,6 +2142,10 @@
         in the fall of 2011, the fourth release of OpenStack. It included
         Compute (nova 2011.3), Object Storage (swift 1.4.3), and the Image
         Service (glance).</para>
+        <para>Diablo is the code name for the fourth release of
+        OpenStack. The design summit took place in
+        in the Bay Area near Santa Clara,
+        California, US and Diablo is a nearby city.</para>
       </glossdef>
     </glossentry>
 
@@ -2508,6 +2581,9 @@
         in April 2012, the fifth release of OpenStack. It included Compute
         (nova 2012.1), Object Storage (swift 1.4.8), Image (glance), Identity
         (keystone), and Dashboard (horizon).</para>
+        <para>Essex is the code name for the fifth release of
+        OpenStack. The design summit took place in
+        Boston, Massachusetts, US and Essex is a nearby city.</para>
       </glossdef>
     </glossentry>
 
@@ -2667,6 +2743,17 @@
         <para>Alternative term for an API extension or plug-in. In the context
         of Identity Service, this is a call that is specific to the
         implementation, such as adding support for OpenID.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>external network<indexterm class="singular">
+          <primary>external network, definition of</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>A network segment typically used for instance Internet
+        access.</para>
       </glossdef>
     </glossentry>
 
@@ -2906,6 +2993,10 @@
         Compute (nova), Object Storage (swift), Identity (keystone),
         Networking (neutron), Image Service (glance), and Volumes or Block
         Storage (cinder).</para>
+        <para>Folsom is the code name for the sixth release of
+        OpenStack. The design summit took place in
+        San Francisco, California, US and Folsom is a nearby city.
+        </para>
       </glossdef>
     </glossentry>
 
@@ -2921,8 +3012,8 @@
     </glossentry>
 
     <glossentry>
-      <glossterm>frontend<indexterm class="singular">
-          <primary>frontend, definition of</primary>
+      <glossterm>front end<indexterm class="singular">
+          <primary>front end, definition of</primary>
         </indexterm></glossterm>
 
       <glossdef>
@@ -2943,10 +3034,32 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Hardware or software that translates between two different
-        protocols.</para>
+        <para>An IP address, typically assigned to a router, that
+        passes network traffic between different networks.</para>
       </glossdef>
     </glossentry>
+
+    <glossentry>
+      <glossterm>Generic Receive Offload (GRO)<indexterm class="singular">
+          <primary>Generic Receive Offload (GRO)</primary>
+        </indexterm></glossterm>
+      <glossdef>
+        <para>Feature of certain network interface drivers that
+        combines many smaller received packets into a large packet
+        before delivery to the kernel IP stack.</para>
+      </glossdef>
+      </glossentry>
+
+      <glossentry>
+        <glossterm>Generic Routing Encapsulation (GRE)<indexterm class="singular">
+          <primary>Generic Routing Encapsulation (GRE)</primary>
+        </indexterm></glossterm>
+        <glossdef>
+          <para>Protocol that encapsulates a wide variety of network
+          layer protocols inside virtual point-to-point links.
+          </para>
+        </glossdef>
+      </glossentry>
 
     <glossentry>
       <glossterm>glance</glossterm>
@@ -3060,7 +3173,10 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Project name for the seventh release of OpenStack.</para>
+        <para>The code name for the seventh release of
+        OpenStack. The design summit took place in
+        San Diego, California, US and Grizzly is an element of the state flag of
+        California.</para>
       </glossdef>
     </glossentry>
 
@@ -3121,7 +3237,9 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Project name for the eighth release of OpenStack.</para>
+        <para>The code name for the eighth release of OpenStack. The
+        design summit took place in Portland, Oregon, US and Havana is
+        an unincorporated community in Oregon.</para>
       </glossdef>
     </glossentry>
 
@@ -3134,6 +3252,31 @@
         <para>An integrated project that aims to orchestrate multiple cloud
         applications for OpenStack.</para>
       </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>Heat Orchestration Template (HOT)<indexterm class="singular">
+          <primary>Heat Orchestration Template (HOT)</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>Heat input in the format native to OpenStack.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+        <glossterm>health monitor<indexterm class="singular">
+          <primary>health monitor</primary>
+        </indexterm></glossterm>
+
+        <glossdef>
+          <para>Determines whether back-end members of a VIP pool can
+          process a request. A pool can have several health monitors
+          associated with it. When a pool has several monitors
+          associated with it, all monitors check each member of the
+          pool. All monitors must declare a member to be healthy for
+          it to stay active.</para>
+        </glossdef>
     </glossentry>
 
     <glossentry>
@@ -3318,8 +3461,23 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Project name for the ninth release of OpenStack.</para>
+        <para>The code name for the ninth release of OpenStack. The
+        design summit took place in Hong Kong and Ice House is a
+        street in that city.</para>
       </glossdef>
+    </glossentry>
+
+    <glossentry>
+        <glossterm>ICMP<indexterm class="singular">
+          <primary>Internet Control Message Protocol (ICMP)</primary>
+        </indexterm></glossterm>
+
+        <glossdef>
+            <para>Internet Control Message Protocol, used by network
+            devices for control messages. For example,
+            <command>ping</command> uses ICMP to test
+            connectivity.</para>
+        </glossdef>
     </glossentry>
 
     <glossentry>
@@ -3572,6 +3730,19 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>INI<indexterm class="singular">
+          <primary>INI</primary></indexterm></glossterm>
+
+      <glossdef>
+        <para>
+          The OpenStack configuration files use an INI format to
+          describe options and their values. It consists of sections
+          and key value pairs.
+        </para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>injection<indexterm class="singular">
           <primary>injection</primary>
         </indexterm></glossterm>
@@ -3620,6 +3791,17 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>instance tunnels network<indexterm class="singular">
+          <primary>instance tunnels network</primary></indexterm>
+        </glossterm>
+
+      <glossdef>
+        <para>A network segment used for instance traffic tunnels
+        between compute nodes and the network node.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>instance type<indexterm class="singular">
           <primary>instances</primary>
 
@@ -3655,6 +3837,17 @@
       <glossdef>
         <para>Unique ID assigned to each guest VM <phrase
         role="keep-together">instance</phrase>.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>interface<indexterm class="singular">
+          <primary>interface</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>A physical or virtual device that provides connectivity
+        to another device or medium.</para>
       </glossdef>
     </glossentry>
 
@@ -3859,7 +4052,9 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Project name for the 10th release of OpenStack.</para>
+        <para>The code name for the tenth release of OpenStack. The
+        design summit took place in Atlanta, Georgia, US and Juno is
+        an unincorporated community in Georgia.</para>
       </glossdef>
     </glossentry>
   </glossdiv>
@@ -3912,7 +4107,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>An object within Object Storage that is larger than 5 GB.</para>
+        <para>An object within Object Storage that is larger than 5&nbsp;GB.</para>
       </glossdef>
     </glossentry>
 
@@ -3934,6 +4129,17 @@
       <glossdef>
         <para>Term used for OSI network architecture for the data link
         layer.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>Layer-3 (L3) agent<indexterm class="singular">
+          <primary>Layer-3 (L3) agent</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>OpenStack Networking agent that provides layer-3
+        (routing) services for virtual networks.</para>
       </glossdef>
     </glossentry>
 
@@ -4023,6 +4229,18 @@
       <glossdef>
         <para>Enables Networking to distribute incoming requests evenly
         between designated instances.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>Logical Volume Manager (LVM)<indexterm class="singular">
+          <primary>Logical Volume Manager (LVM)</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>Provides a method of allocating space on mass-storage
+        devices that is more flexible than conventional partitioning
+        schemes.</para>
       </glossdef>
     </glossentry>
   </glossdiv>
@@ -4198,6 +4416,17 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>Metadata agent<indexterm class="singular">
+          <primary>Metadata agent</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>OpenStack Networking agent that provides metadata
+        services for instances.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>Meta-Data Server (MDS)<indexterm class="singular">
           <primary>Meta-Data Server (MDS)</primary>
         </indexterm></glossterm>
@@ -4215,6 +4444,19 @@
       <glossdef>
         <para>The process of moving a VM instance from one host to
         another.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>multi-host<indexterm class="singular">
+          <primary>multi-host</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>High-availability mode for legacy (nova) networking.
+        Each compute node handles NAT and DHCP and acts as a gateway
+        for all of the VMs on it. A networking failure on one compute
+        node doesn't affect VMs on other compute nodes.</para>
       </glossdef>
     </glossentry>
 
@@ -4871,6 +5113,26 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>OpenStack code name<indexterm class="singular">
+          <primary>OpenStack</primary>
+          <secondary>code name</secondary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>
+          Each OpenStack release has a code name. Code names ascend in
+          alphabetical order: Austin, Bexar, Cactus, Diablo, Essex,
+          Folsom, Grizzly, Havana, Icehouse, and Juno.  Code names are
+          cities or counties near where the corresponding OpenStack
+          design summit took place. An exception, called the Waldon
+          exception, is granted to elements of the state flag that
+          sound especially cool. Code names are chosen by popular
+          vote.
+        </para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>openSUSE<indexterm class="singular">
           <primary>openSUSE</primary>
         </indexterm></glossterm>
@@ -5071,6 +5333,31 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>pool<indexterm class="singular">
+          <primary>pool</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>A logical set of devices, such as web servers, that you
+        group together to receive and process traffic. The load
+        balancing function chooses which member of the pool handles
+        the new requests or connections received on the VIP
+        address. Each VIP has one pool.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>pool member<indexterm class="singular">
+          <primary>pool member</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>An application that runs on the back-end server in a
+        load-balancing system.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>port<indexterm class="singular">
           <primary>ports</primary>
 
@@ -5192,6 +5479,32 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>promiscuous mode<indexterm class="singular">
+          <primary>promiscuous mode</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>Causes the network interface to pass all traffic it
+        receives to the host rather than passing only the frames
+        addressed to it.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>protected property<indexterm class="singular">
+          <primary>protected property</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>Generally, extra properties on an Image Service image to
+        which only cloud administrators have access. Limits which user
+        roles can perform CRUD operations on that property. The cloud
+        administrator can configure any image property as
+        protected.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>provider<indexterm class="singular">
           <primary>provider</primary>
         </indexterm></glossterm>
@@ -5273,6 +5586,17 @@
 
       <glossdef>
         <para>An IP address that is accessible to end-users.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>public key authentication<indexterm class="singular">
+          <primary>public key authentication</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>Authentication method that uses keys rather than
+        passwords.</para>
       </glossdef>
     </glossentry>
 
@@ -5830,6 +6154,17 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>router<indexterm class="singular">
+          <primary>router</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>A physical or virtual network device that passes network
+        traffic between different networks.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>routing key<indexterm class="singular">
           <primary>routing keys</primary>
         </indexterm></glossterm>
@@ -6344,6 +6679,19 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>stack<indexterm class="singular">
+          <primary>stack</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>A set of OpenStack resources created and managed by the
+        Orchestration service according to a given template (either an
+        AWS CloudFormation template or a <glossterm>Heat Orchestration
+        Template (HOT)</glossterm>).</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>StackTach<indexterm class="singular">
           <primary>StackTach</primary>
         </indexterm></glossterm>
@@ -6466,6 +6814,16 @@
         registered. Subdomains enable you to delegate domains. Subdomains can
         themselves have subdomains, so third-level, fourth-level, fifth-level,
         and deeper levels of nesting are possible.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>subnet<indexterm class="singular">
+          <primary>subnet</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>Logical subdivision of an IP network.</para>
       </glossdef>
     </glossentry>
 
@@ -6938,6 +7296,21 @@
     </glossentry>
 
     <glossentry>
+      <glossterm>VIP<indexterm class="singular">
+          <primary>VIP</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>The primary load balancing configuration object.
+        Specifies the virtual IP address and port where client traffic
+        is received. Also defines other details such as the load
+        balancing method to be used, protocol, and so on. This entity
+        is sometimes known in load-balancing products as a virtual
+        server, vserver, or listener.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
       <glossterm>Virtual Central Processing Unit (vCPU)<indexterm
           class="singular">
           <primary>Virtual Central Processing Unit (vCPU)</primary>
@@ -7007,6 +7380,20 @@
 
       <glossdef>
         <para>An L2 network segment within Networking.</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry>
+      <glossterm>virtual networking<indexterm class="singular">
+          <primary>virtual networking</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>A generic term for virtualization of network functions
+        such as switching, routing, load balancing, and security using
+        a combination of VMs and overlays on physical network
+        infrastructure.
+        </para>
       </glossdef>
     </glossentry>
 
@@ -7214,8 +7601,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>An API on a separate endpoint for attaching, detaching, and
-        creating block storage for compute VMs.</para>
+        <para>Alternative name for the Block Storage API.</para>
       </glossdef>
     </glossentry>
 
@@ -7293,16 +7679,6 @@
       <glossdef>
         <para>Provides support for new and specialized types of backend
         storage for the Block Storage volume manager.</para>
-      </glossdef>
-    </glossentry>
-
-    <glossentry>
-      <glossterm>Volume Service API<indexterm class="singular">
-          <primary>Volume Service API</primary>
-        </indexterm></glossterm>
-
-      <glossdef>
-        <para>Alternative term for the Compute volume API.</para>
       </glossdef>
     </glossentry>
 
