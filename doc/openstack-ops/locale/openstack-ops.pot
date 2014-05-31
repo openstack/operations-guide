@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-05-30 06:03+0000\n"
+"POT-Creation-Date: 2014-05-31 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17636,7 +17636,7 @@ msgid "To update a default value for a new tenant, update the property in the <f
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:680(title)
-msgid "To view Block Storage quotas for a tenant"
+msgid "To view Block Storage quotas for a tenant (project)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:683(para)
@@ -17644,7 +17644,7 @@ msgid "View quotas for the tenant, as follows:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:701(title)
-msgid "To update Compute Service quotas"
+msgid "To update Block Storage quotas for a tenant (project)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:713(replaceable)
