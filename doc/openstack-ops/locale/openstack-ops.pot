@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-06-04 06:04+0000\n"
+"POT-Creation-Date: 2014-06-19 06:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4361,7 +4361,7 @@ msgstr ""
 msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://opsgui.de/1eLBkDJ\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://opsgui.de/1eLBL0N\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:10(title) ./doc/openstack-ops/ch_ops_upgrades.xml:152(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:10(title) ./doc/openstack-ops/ch_ops_upgrades.xml:160(title)
 msgid "Upgrades"
 msgstr ""
 
@@ -4369,836 +4369,960 @@ msgstr ""
 msgid "With the exception of Object Storage, upgrading from one version of OpenStack to another can take a great deal of effort. Until the situation improves, this chapter provides some guidance on the operational aspects that you should consider for performing an upgrade based on detailed steps for a basic architecture."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:19(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:20(title)
 msgid "Pre-Upgrade Testing Environment"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:21(para)
-msgid "Probably the most important step of all is the pre-upgrade testing. Especially if you are upgrading immediately after release of a new version, undiscovered bugs might hinder your progress. Some deployers prefer to wait until the first point release is announced. However, if you have a significant deployment, you might follow the development and testing of the release, thereby ensuring that bugs for your use cases are fixed.<indexterm class=\"singular\"><primary>upgrading</primary><secondary>pre-upgrade testing</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:22(para)
+msgid "The most important step is the pre-upgrade testing. If you are upgrading immediately after release of a new version, undiscovered bugs might hinder your progress. Some deployers prefer to wait until the first point release is announced. However, if you have a significant deployment, you might follow the development and testing of the release to ensure that bugs for your use cases are fixed.<indexterm class=\"singular\"><primary>upgrading</primary><secondary>pre-upgrade testing</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:33(para)
-msgid "Each OpenStack cloud is different, and as a result, even with what may seem a near-identical architecture to this guide, you must still test upgrades between versions in your environment. For this, you need an approximate clone of your environment."
+msgid "Even if you have what seems to be a near-identical architecture as the one described in this guide, each OpenStack cloud is different. As a result, you must still test upgrades between versions in your environment. For this, you need an approximate clone of your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:38(para)
-msgid "However, that is not to say that it needs to be the same size or use identical hardware as the production environment—few of us have that luxury. It is important to consider the hardware and scale of the cloud you are upgrading, but here are some tips to avoid that incredible cost:<indexterm class=\"singular\"><primary>upgrading</primary><secondary>controlling cost of</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:39(para)
+msgid "However, that is not to say that it needs to be the same size or use identical hardware as the production environment—few of us have that luxury. It is important to consider the hardware and scale of the cloud that you are upgrading, but these tips can help you avoid that incredible cost:<indexterm class=\"singular\"><primary>upgrading</primary><secondary>controlling cost of</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:50(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:51(term)
 msgid "Use your own cloud"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:53(para)
-msgid "The simplest place to start testing the next version of OpenStack is by setting up a new environment inside your own cloud. This may seem odd—especially the double virtualization used in running compute nodes—but it's a sure way to very quickly test your configuration."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:54(para)
+msgid "The simplest place to start testing the next version of OpenStack is by setting up a new environment inside your own cloud. This might seem odd—especially the double virtualization used in running compute nodes—but it's a sure way to very quickly test your configuration."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:62(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:63(term)
 msgid "Use a public cloud"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:65(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:66(para)
 msgid "Especially because your own cloud is unlikely to have sufficient space to scale test to the level of the entire cloud, consider using a public cloud to test the scalability limits of your cloud controller configuration. Most public clouds bill by the hour, which means it can be inexpensive to perform even a test with many nodes.<indexterm class=\"singular\"><primary>cloud controllers</primary><secondary>scalability and</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:79(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:80(term)
 msgid "Make another storage endpoint on the same system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:82(para)
-msgid "If you use an external storage plug-in or shared file system with your cloud, in many cases, it's possible to test that it works by creating a second share or endpoint. This will enable you to test the system before entrusting the new version onto your storage."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:83(para)
+msgid "If you use an external storage plug-in or shared file system with your cloud, in many cases, you can test whether it works by creating a second share or endpoint. This action enables you to test the system before entrusting the new version onto your storage."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:91(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:92(term)
 msgid "Watch the network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:94(para)
-msgid "Even at smaller-scale testing, it should be possible to determine whether something is going horribly wrong in intercomponent communication if you look at the network packets and see too many."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:95(para)
+msgid "Even at smaller-scale testing, look for excess network packets to determine whether something is going horribly wrong in inter-component communication."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:102(para)
-msgid "To actually set up the test environment, there are several methods. Some prefer to do a full manual install using the <emphasis><link href=\"http://opsgui.de/NPFTC8\">OpenStack Installation Guides</link></emphasis> and then see what the final configuration files look like and which packages were installed. Others prefer to create a clone of their automated configuration infrastructure with changed package repository URLs and then alter the configuration until it starts working. Either approach is valid, and which you use depends on experience."
+msgid "To set up the test environment, you can use one of several methods:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:113(para)
-msgid "An upgrade pre-testing system is excellent for getting the configuration to work; however, it is important to note that the historical use of the system and differences in user interaction can affect the success of upgrades, too. We've seen experiences where database migrations encountered a bug (later fixed!) because of slight table differences between fresh Grizzly installs and those that migrated from Folsom to Grizzly."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:109(para)
+msgid "Do a full manual install by using the <link href=\"http://docs.openstack.org/\"><citetitle>OpenStack Installation Guide</citetitle></link> for your platform. Review the final configuration files and installed packages."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:116(para)
+msgid "Create a clone of your automated configuration infrastructure with changed package repository URLs."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:118(para)
+msgid "Alter the configuration until it works."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:121(para)
-msgid "Artificial scale testing can go only so far. Once your cloud is upgraded, you'll also need to pay careful attention to the performance aspects of your cloud."
+msgid "Either approach is valid. Use the approach that matches your experience."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:127(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:123(para)
+msgid "An upgrade pre-testing system is excellent for getting the configuration to work; however, it is important to note that the historical use of the system and differences in user interaction can affect the success of upgrades, too. We've seen experiences where database migrations encountered a bug (later fixed!) because of slight table differences between fresh Grizzly installs and those that migrated from Folsom to Grizzly."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:131(para)
+msgid "Artificial scale testing can go only so far. After your cloud is upgraded, you must pay careful attention to the performance aspects of your cloud."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:137(title)
 msgid "Preparing for a Rollback"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:129(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:139(para)
 msgid "Like all major system upgrades, your upgrade could fail for one or more difficult-to-determine reasons. You should prepare for this situation by leaving the ability to roll back your environment to the previous release, including databases, configuration files, and packages. We provide an example process for rolling back your environment in <xref linkend=\"ops_upgrades-roll-back\"/>.<indexterm class=\"singular\"><primary>upgrading</primary><secondary>process overview</secondary></indexterm><indexterm class=\"singular\"><primary>rollbacks</primary><secondary>preparing for</secondary></indexterm><indexterm class=\"singular\"><primary>upgrading</primary><secondary>preparation for</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:154(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:162(para)
 msgid "The upgrade process generally follows these steps:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:158(para)
-msgid "Perform some \"cleaning\" of the environment prior to starting the upgrade process to ensure a consistent state. For example, instances not fully purged from the system after deletion may cause indeterminate behavior."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:165(para)
-msgid "Read the release notes and documentation."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:169(para)
-msgid "Find incompatibilities between your versions."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:166(para)
+msgid "Perform some \"cleaning\" of the environment prior to starting the upgrade process to ensure a consistent state. For example, instances not fully purged from the system after deletion might cause indeterminate behavior."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:173(para)
-msgid "Develop an upgrade procedure and assess it thoroughly using a test environment similar to your production environment."
+msgid "Read the release notes and documentation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:178(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:177(para)
+msgid "Find incompatibilities between your versions."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:181(para)
+msgid "Develop an upgrade procedure and assess it thoroughly by using a test environment similar to your production environment."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:187(para)
 msgid "Run the upgrade procedure on the production environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:182(para)
-msgid "You can perform an upgrade with operational instances, but this strategy can be dangerous. You might consider using live migration to temporarily relocate instances to other compute nodes while performing upgrades. However, you must ensure database consistency throughout the process; otherwise your environment may become unstable. Also, don't forget to provide sufficient notice to your users, including giving them plenty of time to perform their own backups."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:192(para)
+msgid "You can perform an upgrade with operational instances, but this strategy can be dangerous. You might consider using live migration to temporarily relocate instances to other compute nodes while performing upgrades. However, you must ensure database consistency throughout the process; otherwise your environment might become unstable. Also, don't forget to provide sufficient notice to your users, including giving them plenty of time to perform their own backups."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:190(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:201(para)
 msgid "The following order for service upgrades seems the most successful:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:195(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:206(para)
 msgid "Upgrade the OpenStack Identity Service (keystone)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:199(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:211(para)
 msgid "Upgrade the OpenStack Image Service (glance)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:203(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:215(para)
 msgid "Upgrade OpenStack Compute (nova), including networking components."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:208(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:220(para)
 msgid "Upgrade OpenStack Block Storage (cinder)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:212(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:224(para)
 msgid "Upgrade the OpenStack dashboard."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:216(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:228(para)
 msgid "The general upgrade process includes the following steps:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:220(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:233(para)
 msgid "Create a backup of configuration files and databases."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:224(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:238(para)
 msgid "Update the configuration files according to the release notes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:229(para)
-msgid "Upgrade the packages using your distribution's package manager."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:243(para)
+msgid "Upgrade the packages by using your distribution's package manager."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:234(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:248(para)
 msgid "Stop services, update database schemas, and restart services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:239(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:253(para)
 msgid "Verify proper operation of your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:245(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:259(title)
 msgid "How to Perform an Upgrade from Grizzly to Havana—Ubuntu"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:249(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://opsgui.de/NPGunp\">Installation Guide</link> and upgrading to the same architecture for Havana. All nodes should run Ubuntu 12.04 LTS. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPubuntu\"><primary>upgrading</primary><secondary>Grizzly to Havana (Ubuntu)</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:264(para)
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://opsgui.de/NPGunp\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Ubuntu 12.04 LTS. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPubuntu\"><primary>upgrading</primary><secondary>Grizzly to Havana (Ubuntu)</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:263(title) ./doc/openstack-ops/ch_ops_upgrades.xml:633(title) ./doc/openstack-ops/ch_ops_upgrades.xml:995(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:279(title) ./doc/openstack-ops/ch_ops_upgrades.xml:666(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1047(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1441(title)
 msgid "Impact on Users"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:265(para) ./doc/openstack-ops/ch_ops_upgrades.xml:635(para) ./doc/openstack-ops/ch_ops_upgrades.xml:996(para)
-msgid "The upgrade process will interrupt management of your environment, including the dashboard. If you properly prepare for this upgrade, tenant instances will continue to operate normally."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:281(para) ./doc/openstack-ops/ch_ops_upgrades.xml:668(para)
+msgid "The upgrade process interrupts management of your environment, including the dashboard. If you properly prepare for this upgrade, tenant instances continue to operate normally."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:271(title) ./doc/openstack-ops/ch_ops_upgrades.xml:641(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1002(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:288(title) ./doc/openstack-ops/ch_ops_upgrades.xml:675(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1056(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1450(title)
 msgid "Upgrade Considerations"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:273(para) ./doc/openstack-ops/ch_ops_upgrades.xml:643(para)
-msgid "Always review the <link href=\"http://opsgui.de/1eLzHFY\">release notes</link> before performing an upgrade to learn about newly available features that you may want to enable and deprecated features that you should disable."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:290(para) ./doc/openstack-ops/ch_ops_upgrades.xml:677(para)
+msgid "Always review the <link href=\"http://opsgui.de/1eLzHFY\">release notes</link> before performing an upgrade to learn about newly available features that you might want to enable and deprecated features that you should disable."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:281(title) ./doc/openstack-ops/ch_ops_upgrades.xml:651(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1010(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:298(title) ./doc/openstack-ops/ch_ops_upgrades.xml:685(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1064(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1458(title)
 msgid "Perform a Backup"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:283(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1011(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:300(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1459(para)
 msgid "Save the configuration files on all nodes, as shown here:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:293(para) ./doc/openstack-ops/ch_ops_upgrades.xml:663(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1019(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:311(para) ./doc/openstack-ops/ch_ops_upgrades.xml:697(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1073(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1468(para)
 msgid "You can modify this example script on each node to handle different services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:297(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1022(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:315(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1076(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1471(para)
 msgid "Back up all databases on the controller:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:304(title) ./doc/openstack-ops/ch_ops_upgrades.xml:674(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1034(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:322(title) ./doc/openstack-ops/ch_ops_upgrades.xml:708(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1089(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1484(title)
 msgid "Manage Repositories"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:306(para) ./doc/openstack-ops/ch_ops_upgrades.xml:676(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:324(para) ./doc/openstack-ops/ch_ops_upgrades.xml:710(para)
 msgid "On all nodes, remove the repository for Grizzly packages and add the repository for Havana packages:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:313(para) ./doc/openstack-ops/ch_ops_upgrades.xml:684(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:331(para) ./doc/openstack-ops/ch_ops_upgrades.xml:718(para)
 msgid "Make sure any automatic updates are disabled."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:318(title) ./doc/openstack-ops/ch_ops_upgrades.xml:694(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:336(title) ./doc/openstack-ops/ch_ops_upgrades.xml:729(title)
 msgid "Update Configuration Files"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:320(para) ./doc/openstack-ops/ch_ops_upgrades.xml:696(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:338(para) ./doc/openstack-ops/ch_ops_upgrades.xml:731(para)
 msgid "Update the glance configuration on the controller node for compatibility with <phrase role=\"keep-together\">Havana</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:323(para) ./doc/openstack-ops/ch_ops_upgrades.xml:699(para)
-msgid "If not currently present and configured as follows, add or modify the following keys in <filename>/etc/glance/glance-api.conf</filename> and <filename>/etc/glance/glance-registry.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:342(para) ./doc/openstack-ops/ch_ops_upgrades.xml:735(para)
+msgid "Add or modify the following keys in the <filename>/etc/glance/glance-api.conf</filename> and <filename>/etc/glance/glance-registry.conf</filename> files:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:337(para)
-msgid "If currently present, remove the following key from the <literal>[filter:authtoken]</literal> section in <filename>/etc/glance/glance-api-paste.ini</filename> and <filename>/etc/glance/glance-registry-paste.ini</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:357(para)
+msgid "If currently present, remove the following key from the <literal>[filter:authtoken]</literal> section in the <filename>/etc/glance/glance-api-paste.ini</filename> and <filename>/etc/glance/glance-registry-paste.ini</filename> files:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:345(para) ./doc/openstack-ops/ch_ops_upgrades.xml:737(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:366(para) ./doc/openstack-ops/ch_ops_upgrades.xml:775(para)
 msgid "Update the nova configuration on all nodes for compatibility with Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:348(para)
-msgid "Add the new <literal>[database]</literal>section and associated key to <filename>/etc/nova/nova.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:369(para) ./doc/openstack-ops/ch_ops_upgrades.xml:778(para)
+msgid "Add the <literal>[database]</literal> section and associated key to the <filename>/etc/nova/nova.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:354(para)
-msgid "Remove defunct configuration from the <literal>[DEFAULT]</literal> section in <filename>/etc/nova/nova.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:376(para)
+msgid "Remove defunct configuration from the <literal>[DEFAULT]</literal> section in the <filename>/etc/nova/nova.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:360(para) ./doc/openstack-ops/ch_ops_upgrades.xml:751(para)
-msgid "If not already present and configured as follows, add or modify the following keys in <filename>/etc/nova/nova.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:383(para) ./doc/openstack-ops/ch_ops_upgrades.xml:790(para)
+msgid "Add or modify the following keys in the <filename>/etc/nova/nova.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:372(para)
-msgid "On all compute nodes, increase the DHCP lease time (measured in seconds) in <filename>/etc/nova/nova.conf</filename> to enable currently active instances to continue leasing their IP addresses during the upgrade process:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:395(para)
+msgid "On all compute nodes, increase the DHCP lease time (measured in seconds) in the <filename>/etc/nova/nova.conf</filename> file to enable currently active instances to continue leasing their IP addresses during the upgrade process:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:382(para) ./doc/openstack-ops/ch_ops_upgrades.xml:774(para)
-msgid "Setting this value too high may cause more dynamic environments to run out of available IP addresses. Use an appropriate value for your environment."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:406(para) ./doc/openstack-ops/ch_ops_upgrades.xml:814(para)
+msgid "Setting this value too high might cause more dynamic environments to run out of available IP addresses. Use an appropriate value for your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:387(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:411(para)
 msgid "You must restart dnsmasq and the networking component of Compute to enable the new DHCP lease time:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:393(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:417(para)
 msgid "Update the Cinder configuration on the controller and storage nodes for compatibility with Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:396(para)
-msgid "Add the new <literal>[database]</literal> section and associated key to <filename>/etc/cinder/cinder.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:420(para) ./doc/openstack-ops/ch_ops_upgrades.xml:830(para)
+msgid "Add the <literal>[database]</literal> section and associated key to the <filename>/etc/cinder/cinder.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:402(para)
-msgid "Remove defunct configuration from the <literal>[DEFAULT]</literal> section in <filename>/etc/cinder/cinder.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:427(para)
+msgid "Remove defunct configuration from the <literal>[DEFAULT]</literal> section in the <filename>/etc/cinder/cinder.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:408(para) ./doc/openstack-ops/ch_ops_upgrades.xml:801(para)
-msgid "If not currently present and configured as follows, add or modify the following key in <filename>/etc/cinder/cinder.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:434(para) ./doc/openstack-ops/ch_ops_upgrades.xml:842(para)
+msgid "Add or modify the following key in the <filename>/etc/cinder/cinder.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:415(para) ./doc/openstack-ops/ch_ops_upgrades.xml:808(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:440(para) ./doc/openstack-ops/ch_ops_upgrades.xml:848(para)
 msgid "Update the dashboard configuration on the controller node for compatibility with Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:418(para) ./doc/openstack-ops/ch_ops_upgrades.xml:811(para)
-msgid "The dashboard installation procedure and configuration file changed substantially between Grizzly and Havana. Particularly, if you are running Django 1.5 or later, you must ensure that <filename>/etc/openstack-dashboard/local_settings</filename> contains a correctly configured <literal>ALLOWED_HOSTS</literal> key that contains a list of hostnames recognized by the dashboard."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:443(para)
+msgid "The dashboard installation procedure and configuration file changed substantially between Grizzly and Havana. Particularly, if you are running Django 1.5 or later, you must ensure that <filename>/etc/openstack-dashboard/local_settings</filename> contains a correctly configured <option>ALLOWED_HOSTS</option> key that contains a list of host names recognized by the dashboard."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:425(para) ./doc/openstack-ops/ch_ops_upgrades.xml:818(para)
-msgid "If users will access your dashboard using <emphasis>http://dashboard.example.com</emphasis>, you would set:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:452(para) ./doc/openstack-ops/ch_ops_upgrades.xml:860(para)
+msgid "If users access your dashboard by using <emphasis>http://dashboard.example.com</emphasis>, define <option>ALLOWED_HOSTS</option>, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:430(para) ./doc/openstack-ops/ch_ops_upgrades.xml:823(para)
-msgid "If users will access your dashboard on the local system, you would set:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:458(para) ./doc/openstack-ops/ch_ops_upgrades.xml:866(para)
+msgid "If users access your dashboard on the local system, define <option>ALLOWED_HOSTS</option>, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:435(para) ./doc/openstack-ops/ch_ops_upgrades.xml:828(para)
-msgid "If users will access your dashboard using an IP address in addition to a hostname, you would set:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:463(para) ./doc/openstack-ops/ch_ops_upgrades.xml:871(para)
+msgid "If users access your dashboard by using an IP address in addition to a host name, define <option>ALLOWED_HOSTS</option>, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:442(title) ./doc/openstack-ops/ch_ops_upgrades.xml:835(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:471(title) ./doc/openstack-ops/ch_ops_upgrades.xml:879(title)
 msgid "Upgrade Packages on the Controller Node"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:444(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1079(para)
-msgid "Upgrade packages on the controller node to Havana, as shown below:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:473(para)
+msgid "Upgrade packages on the controller node to Havana, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:451(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1084(para)
-msgid "Depending on your specific configuration, performing a <code>dist-upgrade</code> may restart services supplemental to your OpenStack environment. For example, if you use Open-iSCSI for Block Storage volumes and the upgrade includes a new <code>open-scsi</code> package, the package manager will restart Open-iSCSI services, which may cause the volumes for your users to be disconnected."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:480(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1145(para)
+msgid "Depending on your specific configuration, performing a <code>dist-upgrade</code> might restart services supplemental to your OpenStack environment. For example, if you use Open-iSCSI for Block Storage volumes and the upgrade includes a new <code>open-scsi</code> package, the package manager restarts Open-iSCSI services, which might cause the volumes for your users to be disconnected."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:459(para)
-msgid "The package manager will ask you about updating various configuration files. We recommend denying these changes. The package manager will append <code>.dpkg-dist</code> to the end of newer versions of existing configuration files. You should consider adopting conventions associated with the newer configuration files and merging them with your existing configuration files after completing the upgrade process."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:489(para)
+msgid "The package manager prompts you to update various configuration files. Reject these changes. The package manager appends <filename>.dpkg-dist</filename> to the newer versions of existing configuration files. You should consider adopting conventions associated with the newer configuration files and merging them with your existing configuration files after completing the upgrade process."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:469(title) ./doc/openstack-ops/ch_ops_upgrades.xml:862(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:499(title) ./doc/openstack-ops/ch_ops_upgrades.xml:908(title)
 msgid "Stop Services, Update Database Schemas, and Restart Services on the Controller Node"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:472(para) ./doc/openstack-ops/ch_ops_upgrades.xml:865(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:502(para) ./doc/openstack-ops/ch_ops_upgrades.xml:911(para)
 msgid "Stop each service, run the database synchronization command if necessary to update the associated database schema, and restart each service to apply the new configuration. Some services require additional commands:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:479(term) ./doc/openstack-ops/ch_ops_upgrades.xml:872(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:509(term) ./doc/openstack-ops/ch_ops_upgrades.xml:918(term)
 msgid "OpenStack Identity"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:490(term) ./doc/openstack-ops/ch_ops_upgrades.xml:883(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:520(term) ./doc/openstack-ops/ch_ops_upgrades.xml:929(term)
 msgid "OpenStack Image Service"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:502(term) ./doc/openstack-ops/ch_ops_upgrades.xml:895(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:532(term) ./doc/openstack-ops/ch_ops_upgrades.xml:941(term)
 msgid "OpenStack Compute"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:522(term) ./doc/openstack-ops/ch_ops_upgrades.xml:915(term)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:552(term) ./doc/openstack-ops/ch_ops_upgrades.xml:961(term)
 msgid "OpenStack Block Storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:534(para) ./doc/openstack-ops/ch_ops_upgrades.xml:927(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:564(para) ./doc/openstack-ops/ch_ops_upgrades.xml:973(para)
 msgid "The controller node update is complete. Now you can upgrade the compute nodes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:539(title) ./doc/openstack-ops/ch_ops_upgrades.xml:932(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:569(title) ./doc/openstack-ops/ch_ops_upgrades.xml:978(title)
 msgid "Upgrade Packages and Restart Services on the Compute Nodes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:542(para) ./doc/openstack-ops/ch_ops_upgrades.xml:935(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:572(para) ./doc/openstack-ops/ch_ops_upgrades.xml:981(para)
 msgid "Upgrade packages on the compute nodes to Havana:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:548(para) ./doc/openstack-ops/ch_ops_upgrades.xml:593(para) ./doc/openstack-ops/ch_ops_upgrades.xml:940(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:578(para) ./doc/openstack-ops/ch_ops_upgrades.xml:624(para) ./doc/openstack-ops/ch_ops_upgrades.xml:986(para)
 msgid "Make sure you have removed the repository for Grizzly packages and added the repository for Havana packages."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:553(para)
-msgid "Due to a packaging issue, this command may fail with the following error:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:584(para)
+msgid "Due to a packaging issue, this command might fail with the following error:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:565(para)
-msgid "You can fix this issue by using the following command:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:596(para)
+msgid "Fix this issue by running this command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:570(para)
-msgid "The packaging system will ask about updating the <filename>/etc/nova/api-paste.ini</filename> file. As with the controller upgrade, we recommend denying these changes and reviewing the <code>.dpkg-dist</code> file after completing the upgrade process."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:601(para)
+msgid "The packaging system prompts you to update the <filename>/etc/nova/api-paste.ini</filename> file. As with the controller upgrade, we recommend that you reject these changes and review the <filename>.dpkg-dist</filename> file after the upgrade process completes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:576(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:607(para)
 msgid "To restart compute services:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:584(title) ./doc/openstack-ops/ch_ops_upgrades.xml:956(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:615(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1004(title)
 msgid "Upgrade Packages and Restart Services on the Block Storage Nodes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:587(para) ./doc/openstack-ops/ch_ops_upgrades.xml:959(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:618(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1007(para)
 msgid "Upgrade packages on the storage nodes to Havana:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:597(para)
-msgid "The packaging system will ask about updating the <filename>/etc/cinder/api-paste.ini</filename> file. Like the controller upgrade, we recommend denying these changes and reviewing the <code>.dpkg-dist</code> file after completing the upgrade process."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:629(para)
+msgid "The packaging system prompts you to update the <filename>/etc/cinder/api-paste.ini</filename> file. Like the controller upgrade, reject these changes and review the <filename>.dpkg-dist</filename> file after the the upgrade process completes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:605(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:637(para)
 msgid "To restart Block Storage services:<indexterm class=\"endofrange\" startref=\"UPubuntu\"/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:613(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:645(title)
 msgid "How to Perform an Upgrade from Grizzly to Havana—Red Hat Enterprise Linux and Derivatives"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:618(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://opsgui.de/NPGvrs\">Installation Guide</link> and upgrading to the same architecture for Havana. All nodes should run Red Hat Enterprise Linux 6.4 or compatible derivatives. Newer minor releases should also work. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPredhat\"><primary>upgrading</primary><secondary>Grizzly to Havana (Red Hat)</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:650(para)
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://opsgui.de/NPGvrs\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Red Hat Enterprise Linux 6.4 or compatible derivatives. Newer minor releases should also work. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPredhat\"><primary>upgrading</primary><secondary>Grizzly to Havana (Red Hat)</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:653(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:687(para)
 msgid "First, save the configuration files on all nodes:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:667(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:701(para)
 msgid "Next, back up all databases on the controller:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:688(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:722(para)
 msgid "Consider checking for newer versions of the <link href=\"http://opsgui.de/1eLBXNB\">Havana repository</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:729(para)
-msgid "If currently present, remove the following key from the [filter:authtoken] section in <filename>/etc/glance/glance-api-paste.ini</filename> and <filename>/etc/glance/glance-registry-paste.ini</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:766(para)
+msgid "If currently present, remove the following key from the [filter:authtoken] section in the <filename>/etc/glance/glance-api-paste.ini</filename> and <filename>/etc/glance/glance-registry-paste.ini</filename> files:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:740(para)
-msgid "Add the new <literal>[database]</literal> section and associated key to <filename>/etc/nova/nova.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:785(para)
+msgid "Remove defunct database configuration from the <filename>/etc/nova/nova.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:746(para)
-msgid "Remove defunct database configuration from <filename>/etc/nova/nova.conf</filename>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:804(para)
+msgid "On all compute nodes, increase the DHCP lease time (measured in seconds) in the <filename>/etc/nova/nova.conf</filename> file to enable currently active instances to continue leasing their IP addresses during the upgrade process, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:765(para)
-msgid "On all compute nodes, increase the DHCP lease time (measured in seconds) in <filename>/etc/nova/nova.conf</filename> to enable currently active instances to continue leasing their IP addresses during the upgrade process, as shown here:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:781(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:821(para)
 msgid "You must restart dnsmasq and the nova networking service to enable the new DHCP lease time:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:787(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:827(para)
 msgid "Update the cinder configuration on the controller and storage nodes for compatibility with Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:790(para)
-msgid "Add the new [database] section and associated key to <filename>/etc/cinder/cinder.conf</filename>:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:796(para)
-msgid "Remove defunct database configuration from <filename>/etc/cinder/cinder.conf</filename>:"
-msgstr ""
-
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:837(para)
+msgid "Remove defunct database configuration from the <filename>/etc/cinder/cinder.conf</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:851(para)
+msgid "The dashboard installation procedure and configuration file changed substantially between Grizzly and Havana. Particularly, if you are running Django 1.5 or later, you must ensure that the <filename>/etc/openstack-dashboard/local_settings</filename> file contains a correctly configured <option>ALLOWED_HOSTS</option> key that contains a list of host names recognized by the dashboard."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:881(para)
 msgid "Upgrade packages on the controller node to Havana:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:842(para)
-msgid "Some services may terminate with an error during the package upgrade process. If this may cause a problem with your environment, consider stopping all services before upgrading them to Havana."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:886(para)
+msgid "Some services might terminate with an error during the package upgrade process. If this error might cause a problem with your environment, consider stopping all services before upgrading them to Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:847(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:892(para)
 msgid "Install the OpenStack SELinux package on the controller node:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:853(para)
-msgid "The package manager will append <code>.rpmnew</code> to the end of newer versions of existing configuration files. You should consider adopting conventions associated with the newer configuration files and merging them with your existing configuration files after completing the upgrade process."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:898(para)
+msgid "The package manager appends <filename>.rpmnew</filename> to the end of newer versions of existing configuration files. You should consider adopting conventions associated with the newer configuration files and merging them with your existing configuration files after completing the upgrade process."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:944(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:991(para)
 msgid "Install the OpenStack SELinux package on the compute nodes:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:948(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:996(para)
 msgid "Restart compute services:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:964(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1012(para)
 msgid "Make sure you have removed the repository for Grizzly packages and added the repository for Havana packages.<indexterm class=\"endofrange\" startref=\"UPredhat\"/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:969(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1018(para)
 msgid "Install the OpenStack SELinux package on the storage nodes:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:973(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1023(para)
 msgid "Restart Block Storage services:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:979(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1029(title)
 msgid "How to Perform an Upgrade from Havana to Icehouse—Ubuntu"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:981(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/\">Installation Guide</link> and upgrading to the same architecture for Icehouse. All nodes should run Ubuntu 12.04 LTS with Linux kernel 3.11 and the latest Havana packages installed and operational. This section primarily addresses upgrading core OpenStack services such as Identity (keystone), Image Service (glance), Compute (nova), Networking (neutron), Block Storage (cinder), and the dashboard. The Networking upgrade includes conversion from the Open vSwitch (OVS) plug-in to the Modular Layer 2 (M2) plug-in. This section does not cover the upgrade process from Ubuntu 12.04 LTS to Ubuntu 14.04 LTS."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1032(para)
+msgid "For this section, we assume that you are starting with the architecture provided in the <link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Icehouse. All nodes should run Ubuntu 12.04 LTS with Linux kernel 3.11 and the latest Havana packages installed and operational. This section primarily addresses upgrading core OpenStack services such as Identity (keystone), Image Service (glance), Compute (nova), Networking (neutron), Block Storage (cinder), and the dashboard. The Networking upgrade includes conversion from the Open vSwitch (OVS) plug-in to the Modular Layer 2 (M2) plug-in. This section does not cover the upgrade process from Ubuntu 12.04 LTS to Ubuntu 14.04 LTS."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1003(para)
-msgid "Always review the <link href=\"https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse\">release notes</link> before performing an upgrade to learn about newly available features that you may want to enable and deprecated features that you should disable."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1048(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1442(para)
+msgid "The upgrade process interrupts management of your environment, including the dashboard. If you properly prepare for this upgrade, tenant instances continue to operate normally. However, instances might experience intermittent network interruptions while the Networking service rebuilds virtual networking infrastructure."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1025(para)
-msgid "Although not necessary, you should consider updating your MySQL server configuration as described in the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/basics-database-controller.html\">MySQL controller setup</link> section of the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/\">Installation Guide</link>."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1057(para)
+msgid "Always review the <link href=\"https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse\">Icehouse Release Notes</link> before you upgrade to learn about newly available features that you might want to enable and deprecated features that you should disable."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1035(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1065(para)
+msgid "Save the configuration files on all nodes:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1079(para)
+msgid "Although not necessary, you should consider updating your MySQL server configuration as described in the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/basics-database-controller.html\">MySQL controller setup</link> section of the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link>."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1090(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1485(para)
 msgid "On all nodes, remove the repository for Havana packages and add the repository for Icehouse packages:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1040(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1095(para)
 msgid "Disable any <link href=\"https://help.ubuntu.com/12.04/serverguide/automatic-updates.html\">automatic package updates</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1044(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1101(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1500(title)
 msgid "Upgrade Notes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1047(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1104(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1503(para)
 msgid "Disable Compute file injection:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1048(para)
-msgid "Icehouse disables file injection by default per the <link href=\"https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse\">release notes</link>."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1105(para)
+msgid "Icehouse disables file injection by default per the <link href=\"https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse\">Icehouse Release Notes</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1051(para)
-msgid "If you plan to deploy Icehouse in stages, you must disable file injection on all compute nodes that will remain on Havana."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1109(para)
+msgid "If you plan to deploy Icehouse in stages, you must disable file injection on all compute nodes that remain on Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1054(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1112(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1511(para)
 msgid "Edit the <filename>/etc/nova/nova-compute.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1062(para)
-msgid "Convert from OVS to ML2 plug-in:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1063(para)
-msgid "You must convert the configuration for your environment contained in the <filename>/etc/neutron/neutron.conf</filename> and <filename>/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini</filename> files from OVS to ML2. For example, the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/\">Installation Guide</link> covers <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/section_neutron-networking-ml2.html\">ML2 plug-in configuration</link> using GRE tunnels."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1072(para)
-msgid "We recommend keeping the OVS plug-in packages and configuration files until you verify the upgrade."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1078(title)
-msgid "Upgrade the Controller Node"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1092(para)
-msgid "The package manager will ask you about updating various configuration files. We recommend denying these changes. The package manager will append <code>.dpkg-dist</code> to the end of newer versions of existing configuration files. You should consider adopting conventions associated with the newer configuration files and merging them with your existing configuration files after completing the upgrade process. One way to quickly find what configuration files are yet to be merged is using the following command:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1104(title)
-msgid "Upgrade Each Service"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1105(para)
-msgid "The upgrade procedure for each service typically requires that you stop the service, run the database synchronization command to update the associated database, and start the service to apply the new configuration. You will need administrator privileges for these procedures. Some services require additional steps."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1113(para)
-msgid "OpenStack Identity:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1114(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1186(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1252(para)
-msgid "Stop services, upgrade the database, and start services."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1120(para)
+msgid "Convert from the OVS plug-in to the ML2 plug-in:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1122(para)
-msgid "OpenStack Image Service:"
+msgid "You must convert the configuration for your environment contained in the <filename>/etc/neutron/neutron.conf</filename> and <filename>/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini</filename> files from OVS to ML2. For example, the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> covers <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/section_neutron-networking-ml2.html\">ML2 plug-in configuration</link> using GRE tunnels."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1123(para)
-msgid "Before upgrading the Image Service database, you must convert the character set for each table to UTF-8."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1133(para)
+msgid "Keep the OVS plug-in packages and configuration files until you verify the upgrade."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1125(para)
-msgid "Use the MySQL client to execute the following commands:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1139(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1537(title)
+msgid "Upgrade the Controller Node"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1138(para)
-msgid "Your environment might contain different or additional tables that you must also convert to UTF-8 using similar commands."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1140(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1538(para)
+msgid "Upgrade packages on the controller node to Icehouse, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1142(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1174(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1264(para)
-msgid "Update the configuration for compatibility with Icehouse."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1153(para)
+msgid "The package manager prompts you to update various configuration files. Reject these changes. The package manager appends <filename>.dpkg-dist</filename> to the newer versions of existing configuration files. You should consider adopting conventions associated with the newer configuration files and merging them with your existing configuration files after completing the upgrade process. You can find newer versions of existing configuration files with the following command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1144(para)
-msgid "Edit the <filename>/etc/glance/glance-api.conf</filename> and <filename>/etc/glance/glance-registry.conf</filename> files:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1165(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1553(title)
+msgid "Upgrade Each Service"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1148(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1166(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1554(para)
+msgid "The upgrade procedure for each service typically requires that you stop the service, run the database synchronization command to update the associated database, and start the service to apply the new configuration. You need administrator privileges for these procedures. Some services require additional steps."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1174(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1562(para)
+msgid "OpenStack Identity:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1175(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1563(para)
+msgid "Update the configuration file for compatibility with Icehouse."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1177(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1565(para)
+msgid "Edit the <filename>/etc/keystone/keystone.conf</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1180(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1218(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1568(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1606(para)
 msgid "Add the <literal>[database]</literal> section."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1149(para)
-msgid "Rename the <literal>sql_connection</literal> key to <literal>connection</literal> and move it to the <literal>[database]</literal> section."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1181(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1569(para)
+msgid "Move the <option>connection</option> key from the <literal>[sql]</literal> section to the <literal>[database]</literal> section."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1152(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1184(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1259(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1326(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1572(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1643(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1716(para)
+msgid "Stop services, upgrade the database, and start services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1192(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1580(para)
+msgid "OpenStack Image Service:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1193(para)
+msgid "Before upgrading the Image Service database, you must convert the character set for each table to UTF-8."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1195(para)
+msgid "Use the MySQL client to execute the following commands:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1208(para)
+msgid "Your environment might contain different or additional tables that you must also convert to UTF-8 by using similar commands."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1212(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1245(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1338(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1600(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1629(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1728(para)
+msgid "Update the configuration for compatibility with Icehouse."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1214(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1602(para)
+msgid "Edit the <filename>/etc/glance/glance-api.conf</filename> and <filename>/etc/glance/glance-registry.conf</filename> files:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1219(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1607(para)
+msgid "Rename the <option>sql_connection</option> key to <option>connection</option> and move it to the <literal>[database]</literal> section."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1222(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1610(para)
 msgid "Edit the <filename>/etc/glance/glance-api.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1155(para)
-msgid "Replace <replaceable>RABBIT_PASS</replaceable> with with the password you chose for the <literal>guest</literal> account in <application>RabbitMQ</application>."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1225(para)
+msgid "Add RabbitMQ message broker keys to the <literal>[DEFAULT]</literal> section."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1162(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1241(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1245(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1227(para)
+msgid "Replace <replaceable>RABBIT_PASS</replaceable> with the password you chose for the <literal>guest</literal> account in <application>RabbitMQ</application>."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1233(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1315(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1319(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1618(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1705(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1709(replaceable)
 msgid "controller"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1163(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1234(replaceable)
 msgid "RABBIT_PASS"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1164(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1235(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1619(para)
 msgid "Stop services, upgrade the database, and start services:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1173(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1244(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1628(para)
 msgid "OpenStack Compute:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1176(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1247(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1631(para)
 msgid "Edit the <filename>/etc/nova/nova.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1178(para)
-msgid "Change the <literal>rpc_backend</literal> key from <literal>nova.rpc.impl_kombu</literal> to <literal>rabbit</literal>."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1249(para)
+msgid "Change the <option>rpc_backend</option> key from <literal>nova.rpc.impl_kombu</literal> to <literal>rabbit</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1181(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1252(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1636(para)
 msgid "Edit the <filename>/etc/nova/api-paste.ini</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1183(para)
-msgid "Comment out or remove any keys in the <literal>[filter:authtoken]</literal> section below <literal>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</literal>."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1254(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1638(para)
+msgid "Comment out or remove any keys in the <literal>[filter:authtoken]</literal> section beneath the <literal>paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory</literal> statement."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1203(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1276(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1660(para)
 msgid "OpenStack Networking:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1204(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1277(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1663(para)
 msgid "Populate the <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename> file with the equivalent configuration for your environment. Do not edit the <filename>/etc/neutron/neutron.conf</filename> file until after the conversion steps."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1210(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1283(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1673(para)
 msgid "Stop services, upgrade the database, and perform the conversion from OVS to ML2."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1212(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1285(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1675(para)
 msgid "Replace <replaceable>NEUTRON_DBPASS</replaceable> with the password you chose for the database."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1215(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1288(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1678(para)
 msgid "We highly recommend that you perform a database backup prior to executing the following commands as the conversion script cannot roll back."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1226(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1288(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1315(para)
-msgid "Edit the <filename>/etc/neutron/neutron.conf</filename> file to use the ML2 plug-in:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1299(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1689(para)
+msgid "Edit the <filename>/etc/neutron/neutron.conf</filename> file to use the ML2 plug-in and enable network change notifications:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1229(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1303(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1693(para)
 msgid "Replace <replaceable>SERVICE_TENANT_ID</replaceable> with the service tenant identifier (id) in the Identity service and <replaceable>NOVA_PASS</replaceable> with the password you chose for the <literal>nova</literal> user in the Identity service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1243(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1317(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1707(replaceable)
 msgid "SERVICE_TENANT_ID"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1244(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1318(replaceable) ./doc/openstack-ops/ch_ops_upgrades.xml:1708(replaceable)
 msgid "NOVA_PASS"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1247(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1321(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1711(para)
 msgid "Start Networking services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1251(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1325(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1715(para)
 msgid "OpenStack Block Storage:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1263(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1337(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1727(para)
 msgid "Dashboard:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1266(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1340(para)
 msgid "Edit the <filename>/etc/openstack-dashboard/local_settings.py</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1268(para)
-msgid "Change the <literal>OPENSTACK_KEYSTONE_DEFAULT_ROLE</literal> key from <literal>\"Member\"</literal> to <literal>\"_member_\"</literal>."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1343(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1733(para)
+msgid "Change the <option>OPENSTACK_KEYSTONE_DEFAULT_ROLE</option> key from <literal>\"Member\"</literal> to <literal>\"_member_\"</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1272(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1347(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1737(para)
 msgid "Restart Dashboard services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1276(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1351(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1741(para)
 msgid "The controller node update is complete. Now you can upgrade the remaining nodes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1280(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1355(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1745(title)
 msgid "Upgrade the Network Node"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1281(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1356(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1746(para)
 msgid "Upgrade packages on the network node to Icehouse:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1283(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1310(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1338(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1358(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1385(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1411(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1748(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1779(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1809(para)
 msgid "Make sure you have removed the repository for Havana packages and added the repository for Icehouse packages."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1294(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1321(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1364(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1391(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1755(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1786(para)
+msgid "Edit the <filename>/etc/neutron/neutron.conf</filename> file to use the ML2 plug-in:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1369(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1396(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1760(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1791(para)
 msgid "Populate the <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename> file with the equivalent configuration for your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1298(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1325(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1373(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1400(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1767(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1798(para)
 msgid "Clean the active OVS configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1300(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1327(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1375(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1402(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1769(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1800(para)
 msgid "Restart Networking services:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1307(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1382(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1776(title)
 msgid "Upgrade the Compute Nodes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1308(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1383(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1777(para)
 msgid "Upgrade packages on the compute nodes to Icehouse:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1329(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1404(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1802(para)
 msgid "Restart Compute services:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1333(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1408(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1806(title)
 msgid "Upgrade the Storage Nodes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1334(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1409(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1807(para)
 msgid "Upgrade packages on the storage nodes to Icehouse:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1341(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1417(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1814(para)
 msgid "Restart Block Storage services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1347(title)
-msgid "Cleaning Up and Final Configuration File Updates"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1423(title)
+msgid "How to Perform an Upgrade from Havana to Icehouse—Red Hat Enterprise Linux and Derivatives"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1349(para)
-msgid "On all distributions, you need to perform some final tasks to complete the upgrade process.<indexterm class=\"singular\"><primary>upgrading</primary><secondary>final steps</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1426(para)
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Icehouse. All nodes should run Red Hat Enterprise Linux 6.5 or compatible derivatives such as CentOS and Scientific Linux with the latest Havana packages installed and operational. This section primarily addresses upgrading core OpenStack services such as Identity (keystone), Image Service (glance), Compute (nova), Networking (neutron), Block Storage (cinder), and the dashboard. The Networking upgrade procedure includes conversion from the Open vSwitch (OVS) plug-in to the Modular Layer 2 (ML2) plug-in."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1356(para)
-msgid "Decrease DHCP timeouts by modifying <filename>/etc/nova/nova.conf</filename> on the compute nodes back to the original value for your environment."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1451(para)
+msgid "Always review the <link href=\"https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse\">release notes</link> before performing an upgrade to learn about newly available features that you might want to enable and deprecated features that you should disable."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1360(para)
-msgid "Update all of the <filename>.ini</filename> files to match passwords and pipelines as required for Havana in your environment."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1474(para)
+msgid "You must update your MySQL server configuration and restart the service as described in the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/yum/content/basics-database-controller.html\">MySQL controller setup</link> section of the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1363(para)
-msgid "After a migration, your users will see different results from <systemitem class=\"service\">nova image-list</systemitem> and <systemitem class=\"service\">glance image-list</systemitem> unless you match up policies for access to private images. To do so, edit <filename>/etc/glance/policy.json</filename> and <filename>/etc/nova/policy.json</filename> to contain <code>\"context_is_admin\": \"role:admin\",</code> which limits access to private images for projects."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1491(para)
+msgid "Disable any automatic package updates."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1372(para)
-msgid "Thoroughly test the environment, and then let your users know that their cloud is running normally again."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1494(para)
+msgid "Consider checking for newer versions of the <link href=\"http://repos.fedorapeople.org/repos/openstack/openstack-icehouse/\">Icehouse repository</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1377(title)
-msgid "Rolling Back a Failed Upgrade"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1504(para)
+msgid "Icehouse disables file injection by default per the <link href=\"https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse\">release notes</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1379(para)
-msgid "While we do not wish this fate upon anyone, upgrades involve complex operations and can fail. This section provides guidance for rolling back to a previous release of OpenStack. Although only tested on Ubuntu, other distributions follow a similar <phrase role=\"keep-together\">procedure</phrase>.<indexterm class=\"singular\"><primary>rollbacks</primary><secondary>process for</secondary></indexterm><indexterm class=\"singular\"><primary>upgrading</primary><secondary>rolling back failures</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1508(para)
+msgid "If you plan to deploy Icehouse in stages, you must disable file injection on all compute nodes that will remain on Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1393(para)
-msgid "In this section, we consider only the most immediate case: you have taken down production management services in preparation for an upgrade, completed part of the upgrade process, discovered one or more problems not encountered during testing, and need to roll back your environment to the original \"known good\" state. We specifically assume that you did not make any state changes after attempting the upgrade process: no new instances, networks, storage volumes, etc."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1401(para)
-msgid "Within this scope, you need to accomplish three main steps to successfully roll back your environment:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1406(para)
-msgid "Roll back configuration files"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1410(para)
-msgid "Roll back databases"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1414(para)
-msgid "Roll back packages"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1418(para)
-msgid "The upgrade instructions provided in earlier sections ensure that you have proper backups of your databases and configuration files. You should read through this section carefully and verify that you have the requisite backups to restore. Rolling back upgrades is a tricky process because distributions tend to put much more effort into testing upgrades than downgrades. Broken downgrades often take significantly more effort to troubleshoot and, hopefully, resolve than broken upgrades. Only you can weigh the risks of trying to push a failed upgrade forward versus rolling it back. Generally, we consider rolling back the very last option."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1428(para)
-msgid "The following steps described for Ubuntu have worked on at least one production environment, but they may not work for all environments."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1432(title)
-msgid "Perform the rollback from Havana to Grizzly"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1435(para)
-msgid "Stop all OpenStack services."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1439(para)
-msgid "Copy contents of configuration backup directories <filename>/etc/&lt;service&gt;.grizzly</filename> that you created during the upgrade process back to <filename>/etc/&lt;service&gt;</filename>:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1446(para)
-msgid "Restore databases from the backup file <filename>grizzly-db-backup.sql</filename> that you created with <literal>mysqldump</literal> during the upgrade process:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1452(para)
-msgid "If you created this backup using the <literal>--add-drop-database</literal> flag as instructed, you can proceed to the next step. If you omitted this flag, MySQL will revert all of the tables that existed in Grizzly, but not drop any tables created during the database migration for Havana. In this case, you need to manually determine which tables should not exist and drop them to prevent issues with your next upgrade <phrase role=\"keep-together\">attempt</phrase>."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1463(para)
-msgid "Downgrade OpenStack packages."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1466(para)
-msgid "We consider downgrading packages by far the most complicated step; it is highly dependent on the distribution as well as overall administration of the system."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1473(para)
-msgid "Determine the OpenStack packages installed on your system. This is done using <literal>dpkg --get-selections</literal>, filtering for OpenStack packages, filtering again to omit packages explicitly marked in the <code>deinstall</code> state, and saving the final output to a file. For example, the following command covers a controller node with keystone, glance, nova, neutron, and cinder:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1519(para)
+msgid "Convert from OVS to ML2 plug-in:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1520(para)
-msgid "Depending on the type of server, the contents and order of your package list may vary from this example."
+msgid "You must convert the configuration for your environment contained in the <filename>/etc/neutron/neutron.conf</filename> and <filename>/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini</filename> files from OVS to ML2. For example, the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> covers <link href=\"http://docs.openstack.org/icehouse/install-guide/install/yum/content/section_neutron-networking-ml2.html\">ML2 plug-in configuration</link> using GRE tunnels."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1526(para)
-msgid "You can determine the package versions available for reversion by using <literal>apt-cache policy</literal>. If you removed the Grizzly repositories, you must first reinstall them and run <literal>apt-get update</literal>:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1531(para)
+msgid "We recommend keeping the OVS plug-in packages and configuration files until you verify the upgrade."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1557(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1542(para)
+msgid "The package manager appends <filename>.rpmnew</filename> to the end of newer versions of existing configuration files. You should consider adopting conventions associated with the newer configuration files and merging them with your existing configuration files after completing the upgrade process. You can find newer versions of existing configuration files with the following command:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1581(para)
+msgid "Before you upgrade the Image Service database, convert the character set for each table to UTF-8."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1583(para)
+msgid "Use the MySQL client to run the following commands:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1596(para)
+msgid "Your environment might contain different or additional tables that you must convert to UTF-8 by using similar commands."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1613(para)
+msgid "Add Qpid message broker keys to the <literal>[DEFAULT]</literal> section."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1633(para)
+msgid "Change the <option>rpc_backend</option> key from <literal>nova.openstack.common.rpc.impl_qpid</literal> to <literal>qpid</literal>."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1661(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1753(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1784(para)
+msgid "Install the ML2 plug-in package:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1669(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1764(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1795(para)
+msgid "Change the <filename>/etc/neutron/plugin.ini</filename> symbolic link to reference <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1730(para)
+msgid "Edit the <filename>/etc/openstack-dashboard/local_settings</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1819(title)
+msgid "Cleaning Up and Final Configuration File Updates"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1821(para)
+msgid "On all distributions, you must perform some final tasks to complete the upgrade process.<indexterm class=\"singular\"><primary>upgrading</primary><secondary>final steps</secondary></indexterm>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1827(para)
+msgid "Decrease DHCP timeouts by modifying <filename>/etc/nova/nova.conf</filename> on the compute nodes back to the original value for your environment."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1831(para)
+msgid "Update all <filename>.ini</filename> files to match passwords and pipelines as required for Havana in your environment."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1835(para)
+msgid "After a migration, your users see different results from <placeholder-1/> and <placeholder-2/> unless you match policies for access to private images. To do so, edit the <filename>/etc/glance/policy.json</filename> and <filename>/etc/nova/policy.json</filename> files to contain <code>\"context_is_admin\": \"role:admin\"</code>, which limits access to private images for projects."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1844(para)
+msgid "Thoroughly test the environment. Then, let your users know that their cloud is running normally again."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1849(title)
+msgid "Rolling Back a Failed Upgrade"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1851(para)
+msgid "Upgrades involve complex operations and can fail. This section provides guidance for rolling back to a previous release of OpenStack. Although only tested on Ubuntu, other distributions follow a similar <phrase role=\"keep-together\">procedure</phrase>.<indexterm class=\"singular\"><primary>rollbacks</primary><secondary>process for</secondary></indexterm><indexterm class=\"singular\"><primary>upgrading</primary><secondary>rolling back failures</secondary></indexterm>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1863(para)
+msgid "In this section, we consider only the most immediate case: you have taken down production management services in preparation for an upgrade, completed part of the upgrade process, discovered one or more problems not encountered during testing, and you must roll back your environment to the original \"known good\" state. Make sure that you did not make any state changes after attempting the upgrade process: no new instances, networks, storage volumes, and so on."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1872(para)
+msgid "Within this scope, you must complete these steps to successfully roll back your environment:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1877(para)
+msgid "Roll back configuration files."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1881(para)
+msgid "Roll back databases."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1885(para)
+msgid "Roll back packages."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1889(para)
+msgid "The upgrade instructions provided in earlier sections ensure that you have proper backups of your databases and configuration files. Read through this section carefully and verify that you have the requisite backups to restore. Rolling back upgrades is a tricky process because distributions tend to put much more effort into testing upgrades than downgrades. Broken downgrades often take significantly more effort to troubleshoot and, hopefully, resolve than broken upgrades. Only you can weigh the risks of trying to push a failed upgrade forward versus rolling it back. Generally, consider rolling back as the very last option."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1901(para)
+msgid "The following steps described for Ubuntu have worked on at least one production environment, but they might not work for all environments."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1906(title)
+msgid "To perform the rollback from Havana to Grizzly"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1909(para)
+msgid "Stop all OpenStack services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1913(para)
+msgid "Copy contents of configuration backup directories <filename>/etc/&lt;service&gt;.grizzly</filename> that you created during the upgrade process back to <filename>/etc/&lt;service&gt;</filename>:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1920(para)
+msgid "Restore databases from the <filename>grizzly-db-backup.sql</filename> backup file that you created with the <placeholder-1/> command during the upgrade process:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1927(para)
+msgid "If you created this backup by using the <option>--add-drop-database</option> flag as instructed, you can proceed to the next step. If you omitted this flag, MySQL reverts all tables that existed in Grizzly, but does not drop any tables created during the database migration for Havana. In this case, you must manually determine which tables to drop, and drop them to prevent issues with your next upgrade <phrase role=\"keep-together\">attempt</phrase>."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1939(para)
+msgid "Downgrade OpenStack packages."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1942(para)
+msgid "Downgrading packages is by far the most complicated step; it is highly dependent on the distribution and the overall administration of the system."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1949(para)
+msgid "Determine which OpenStack packages are installed on your system. Use the <placeholder-1/> command. Filter for OpenStack packages, filter again to omit packages explicitly marked in the <code>deinstall</code> state, and save the final output to a file. For example, the following command covers a controller node with keystone, glance, nova, neutron, and cinder:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:1997(para)
+msgid "Depending on the type of server, the contents and order of your package list might vary from this example."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:2004(para)
+msgid "You can determine the package versions available for reversion by using the <placeholder-1/> command. If you removed the Grizzly repositories, you must first reinstall them and run <placeholder-2/>:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:2035(para)
 msgid "This tells us the currently installed version of the package, newest candidate version, and all versions along with the repository that contains each version. Look for the appropriate Grizzly version—<code>1:2013.1.4-0ubuntu1~cloud0</code> in this case. The process of manually picking through this list of packages is rather tedious and prone to errors. You should consider using the following script to help with this process:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1608(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:2087(para)
 msgid "If you decide to continue this step manually, don't forget to change <code>neutron</code> to <code>quantum</code> where applicable."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1615(para)
-msgid "Use <literal>apt-get install</literal> to install specific versions of each package by specifying <code>&lt;package-name&gt;=&lt;version&gt;</code>. The script in the previous step conveniently created a list of <code>package=version</code> pairs for you:"
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:2094(para)
+msgid "Use the <placeholder-1/> command to install specific versions of each package by specifying <code>&lt;package-name&gt;=&lt;version&gt;</code>. The script in the previous step conveniently created a list of <code>package=version</code> pairs for you:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:1623(para)
-msgid "This completes the rollback procedure. You should remove the Havana repository and run <literal>apt-get update</literal> to prevent accidental upgrades until you solve whatever issue caused you to roll back your environment."
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:2103(para)
+msgid "This step completes the rollback procedure. You should remove the Havana repository and run <placeholder-1/> to prevent accidental upgrades until you solve whatever issue caused you to roll back your environment."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
