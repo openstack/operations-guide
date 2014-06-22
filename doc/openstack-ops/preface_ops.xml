@@ -177,22 +177,19 @@
               </listitem>
 
               <listitem>
-                <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/insta
-                  ll/zypper/content/">Installation
+                <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/zypper/content/">Installation
                 Guide for openSUSE and SUSE Linux Enterprise
                 Server</link></para>
               </listitem>
 
               <listitem>
-                <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/insta
-                  ll/yum/content/">Installation
+                <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/yum/content/">Installation
                 Guide for Red Hat Enterprise Linux, CentOS, and
                 Fedora</link></para>
               </listitem>
 
               <listitem>
-                <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/ins
-                  tall/apt/content/">Installation
+                <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/">Installation
                 Guide for Ubuntu 12.04/14.04 (LTS) Server</link></para>
               </listitem>
             </itemizedlist>
