@@ -37,7 +37,6 @@
                         <phase>generate-sources</phase>
                         <configuration>
                             <!-- These parameters only apply to webhelp -->
-                            <!-- <pdfUrl>../openstack-ops-manual-${operating.system}-${release.path.name}.pdf</pdfUrl> -->
                             <enableDisqus>${comments.enabled}</enableDisqus>
                             <sourceDirectory>.</sourceDirectory>
                             <disqusShortname>openstack-ops</disqusShortname>
@@ -65,8 +64,8 @@
                                 set toc,title
                             </generateToc>
 
-                            <webhelpDirname>${release.path.name}/openstack-ops</webhelpDirname>
-                            <pdfFilenameBase>openstack-ops-manual-${release.path.name}</pdfFilenameBase>
+                            <webhelpDirname>openstack-ops</webhelpDirname>
+                            <pdfFilenameBase>openstack-ops-manual</pdfFilenameBase>
                             <pageWidth>7.44in</pageWidth>
                             <pageHeight>9.68in</pageHeight>
                             <doubleSided>1</doubleSided>
@@ -81,7 +80,7 @@
                     <includes>bk_ops_guide.xml </includes>
                     <branding>openstack</branding>
                     <glossaryCollection>glossary-terms.xml</glossaryCollection>
-                    <canonicalUrlBase>http://docs.openstack.org/${release.path.name}/openstack-ops/content/</canonicalUrlBase>
+                    <canonicalUrlBase>http://docs.openstack.org/openstack-ops/content/</canonicalUrlBase>
                 </configuration>
             </plugin>
         </plugins>
