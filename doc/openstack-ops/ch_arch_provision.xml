@@ -52,13 +52,14 @@
         <secondary>automated deployment</secondary>
       </indexterm></para>
 
-    <para>Both Ubuntu and Red Hat Linux include mechanisms for configuring the
-    operating system, including preseed and kickstart, that you can use after
-    a network boot. Typically, these are used to bootstrap an automated
-    configuration system. Alternatively, you can use an image-based approach
-    for deploying the operating system, such as systemimager. You can use both
-    approaches with a virtualized infrastructure, such as when you run VMs to
-    separate your control services and physical infrastructure.</para>
+    <para>Both Ubuntu and Red Hat Enterprise Linux include mechanisms for
+    configuring the operating system, including preseed and kickstart, that
+    you can use after a network boot. Typically, these are used to
+    bootstrap an automated configuration system. Alternatively, you can use
+    an image-based approach for deploying the operating system, such as
+    systemimager. You can use both approaches with a virtualized
+    infrastructure, such as when you run VMs to separate your control
+    services and physical infrastructure.</para>
 
     <para>When you create a deployment plan, focus on a few vital areas
     because they are very hard to modify post deployment. The next two
