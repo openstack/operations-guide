@@ -535,7 +535,7 @@
 
         <para>The first step is setting the aggregate metadata keys
         <parameter>cpu_allocation_ratio</parameter> and
-        <parameter>ram_allocation_ration</parameter> to a floating-point
+        <parameter>ram_allocation_ratio</parameter> to a floating-point
         value. The filter schedulers
         <parameter>AggregateCoreFilter</parameter> and
         <parameter>AggregateRamFilter</parameter> will use those values rather
