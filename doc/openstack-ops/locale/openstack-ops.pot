@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-01 06:03+0000\n"
+"POT-Creation-Date: 2014-07-02 06:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6192,7 +6192,7 @@ msgid "An advanced use of this general concept allows different instance types t
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:536(para)
-msgid "The first step is setting the aggregate metadata keys <parameter>cpu_allocation_ratio</parameter> and <parameter>ram_allocation_ration</parameter> to a floating-point value. The filter schedulers <parameter>AggregateCoreFilter</parameter> and <parameter>AggregateRamFilter</parameter> will use those values rather than the global defaults in <filename>nova.conf</filename> when scheduling to hosts in the aggregate. It is important to be cautious when using this feature, since each host can be in multiple aggregates but should have only one allocation ratio for each resources. It is up to you to avoid putting a host in multiple aggregates that define different values for the same <phrase role=\"keep-together\">resource</phrase>."
+msgid "The first step is setting the aggregate metadata keys <parameter>cpu_allocation_ratio</parameter> and <parameter>ram_allocation_ratio</parameter> to a floating-point value. The filter schedulers <parameter>AggregateCoreFilter</parameter> and <parameter>AggregateRamFilter</parameter> will use those values rather than the global defaults in <filename>nova.conf</filename> when scheduling to hosts in the aggregate. It is important to be cautious when using this feature, since each host can be in multiple aggregates but should have only one allocation ratio for each resources. It is up to you to avoid putting a host in multiple aggregates that define different values for the same <phrase role=\"keep-together\">resource</phrase>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:550(para)
