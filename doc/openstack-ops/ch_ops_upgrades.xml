@@ -299,14 +299,12 @@
 
       <para>Save the configuration files on all nodes, as shown
         here:</para>
-
-      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do mkdir $i-grizzly</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput>
-<prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do cp -r /etc/$i/* $i-grizzly/</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput></screen>
-
+      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard; \
+  do mkdir $i-grizzly; \
+  done</userinput>
+<prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard; \
+  do cp -r /etc/$i/* $i-grizzly/; \
+  done</userinput></screen>
       <note>
         <para>You can modify this example script on each node to
           handle different services.</para>
@@ -685,14 +683,12 @@ auth_uri = http://controller:5000</programlisting>
       <title>Perform a Backup</title>
 
       <para>First, save the configuration files on all nodes:</para>
-
-      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do mkdir $i-grizzly</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput>
-<prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do cp -r /etc/$i/* $i-grizzly/</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput></screen>
-
+      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard; \
+  do mkdir $i-grizzly; \
+  done</userinput>
+<prompt>#</prompt> <userinput>for i in keystone glance nova cinder openstack-dashboard; \
+  do cp -r /etc/$i/* $i-grizzly/; \
+  done</userinput></screen>
       <note>
         <para>You can modify this example script on each node to
           handle different services.</para>
@@ -1063,12 +1059,12 @@ flavor = keystone</programlisting>
     <section xml:id="upgrade_icehouse-ubuntu-backup">
       <title>Perform a Backup</title>
       <para>Save the configuration files on all nodes:</para>
-      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do mkdir $i-havana</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput>
-<prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do cp -r /etc/$i/* $i-havana/</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput></screen>
+      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard; \
+  do mkdir $i-havana; \
+  done</userinput>
+<prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard; \
+  do cp -r /etc/$i/* $i-havana/; \
+  done</userinput></screen>
       <note>
         <para>You can modify this example script on each node to
           handle different services.</para>
@@ -1458,12 +1454,12 @@ service_plugins = router</programlisting>
       <title>Perform a Backup</title>
       <para>Save the configuration files on all nodes, as shown
         here:</para>
-      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do mkdir $i-havana</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput>
-<prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard</userinput>
-<prompt>&gt;</prompt> <userinput>do cp -r /etc/$i/* $i-havana/</userinput>
-<prompt>&gt;</prompt> <userinput>done</userinput></screen>
+      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard; \
+  do mkdir $i-havana; \
+  done</userinput>
+<prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard; \
+  do cp -r /etc/$i/* $i-havana/; \
+  done</userinput></screen>
       <note>
         <para>You can modify this example script on each node to
           handle different services.</para>
