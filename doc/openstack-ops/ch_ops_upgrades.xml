@@ -255,6 +255,58 @@
     </orderedlist>
   </section>
 
+  <section xml:id="ops_upgrades_upgrade_levels">
+    <title>Upgrade Levels</title>
+    <para>Upgrade levels are a feature added to OpenStack Compute in the
+      Grizzly release to provide version locking on the RPC
+      (Message Queue) communications between the various Compute services.
+    </para>
+    <para>This functionality is an important piece of the puzzle when
+      it comes to live upgrades and is conceptually similar to the
+      existing API versioning that allows OpenStack services of
+      different versions to communicate without issue, for example Grizzly
+      Compute can still make Grizzly Identity API calls even if Identity
+      is running Icehouse.</para>
+    <para>Without upgrade levels, an X+1 version Compute service can
+      receive and understand X version RPC messages, but it can only
+      send out X+1 version RPC messages. For example, if a
+      <systemitem class="service">nova-conductor</systemitem>
+      process has been upgraded to Icehouse, then the conductor service
+      will be able to understand messages from Havana
+      <systemitem class="service">nova-compute</systemitem>
+      processes, but those compute services will not be able to
+      understand messages sent by the conductor service.</para>
+    <para>During an upgrade, operators can add configuration options to
+      <filename>nova.conf</filename> which lock the version of RPC
+      messages and allow live upgrading of the services without
+      interruption caused by version mismatch. The configuration
+      options allow the specification of RPC version numbers if desired,
+      but release name alias are also supported. For example:</para>
+    <programlisting language="ini">[upgrade_levels]
+compute=havana
+conductor=havana
+scheduler=havana</programlisting>
+    <para>will keep the RPC version locked across the specified services
+      to the RPC version used in Havana. As all instances of a particular
+      service are upgraded to the newer version, the corresponding line
+      can be removed from <filename>nova.conf</filename>.</para>
+    <para>Using this functionality, ideally one would lock the RPC version
+      to the OpenStack version being upgraded from on
+      <systemitem class="service">nova-compute</systemitem> nodes, to
+      ensure that, for example Havana
+      <systemitem class="service">nova-compute</systemitem>
+      processes will continue to work with Grizzly
+      <systemitem class="service">nova-conductor</systemitem>
+      processes while the upgrade completes. Once the upgrade of
+      <systemitem class="service">nova-compute</systemitem>
+      processes is complete, the operator can move onto upgrading
+      <systemitem class="service">nova-conductor</systemitem>
+      and remove the version locking for
+      <systemitem class="service">nova-compute</systemitem> in
+      <filename>nova.conf</filename>.
+    </para>
+  </section>
+
   <section xml:id="ops_upgrades_grizzly_havana-ubuntu">
     <title>How to Perform an Upgrade from Grizzly to
       Havana—Ubuntu</title>
