@@ -136,7 +136,7 @@
 
         <listitem>
           <para><link xlink:href="http://opsgui.de/NPFOyn"
-          xlink:title="reference manual">VMWare ESX/ESXi</link></para>
+          xlink:title="reference manual">VMware ESX/ESXi</link></para>
         </listitem>
 
         <listitem>
@@ -161,7 +161,7 @@
     community experience.</para>
 
     <para>For example, KVM is the most widely adopted hypervisor in the
-    OpenStack community. Besides KVM, more deployments run Xen, LXC, VMWare,
+    OpenStack community. Besides KVM, more deployments run Xen, LXC, VMware,
     and Hyper-V than the others listed.&#160;However, each of these are
     lacking some feature support or the documentation on how to use them with
     OpenStack is out of date.</para>
