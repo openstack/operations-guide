@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-08 06:05+0000\n"
+"POT-Creation-Date: 2014-07-19 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15030,7 +15030,7 @@ msgid "QEMU"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:139(link)
-msgid "VMWare ESX/ESXi"
+msgid "VMware ESX/ESXi"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:144(link)
@@ -15050,7 +15050,7 @@ msgid "Probably the most important factor in your choice of hypervisor is your c
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:163(para)
-msgid "For example, KVM is the most widely adopted hypervisor in the OpenStack community. Besides KVM, more deployments run Xen, LXC, VMWare, and Hyper-V than the others listed. However, each of these are lacking some feature support or the documentation on how to use them with OpenStack is out of date."
+msgid "For example, KVM is the most widely adopted hypervisor in the OpenStack community. Besides KVM, more deployments run Xen, LXC, VMware, and Hyper-V than the others listed. However, each of these are lacking some feature support or the documentation on how to use them with OpenStack is out of date."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:169(para)
