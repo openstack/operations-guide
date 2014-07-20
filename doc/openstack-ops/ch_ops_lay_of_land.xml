@@ -564,7 +564,7 @@ Service: identity
 
       <para>You can find the version of the Compute installation by using the
       <literal>nova-manage</literal> <phrase
-      role="keep-together">command</phrase>: <screen><prompt>#</prompt> <userinput>nova-manage version list</userinput></screen></para>
+      role="keep-together">command</phrase>: <screen><prompt>#</prompt> <userinput>nova-manage version</userinput></screen></para>
     </section>
 
     <section xml:id="diagnose-compute">
