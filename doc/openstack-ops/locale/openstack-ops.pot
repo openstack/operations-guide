@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-19 06:00+0000\n"
+"POT-Creation-Date: 2014-07-30 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3509,7 +3509,7 @@ msgstr ""
 msgid "This guide is for OpenStack operators and does not seek to be an exhaustive reference for users, but as an operator, you should have a basic understanding of how to use the cloud facilities. This chapter looks at OpenStack from a basic user perspective, which helps you understand your users' needs and determine, when you get a trouble ticket, whether it is a user issue or a service issue. The main concepts covered are images, flavors, security groups, block storage, and instances."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:21(title) ./doc/openstack-ops/ch_ops_user_facing.xml:1163(para) ./doc/openstack-ops/ch_arch_cloud_controller.xml:585(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:21(title) ./doc/openstack-ops/ch_ops_user_facing.xml:1165(para) ./doc/openstack-ops/ch_arch_cloud_controller.xml:585(title)
 msgid "Images"
 msgstr ""
 
@@ -3665,7 +3665,7 @@ msgstr ""
 msgid "A unique numeric ID."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:285(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1185(th) ./doc/openstack-ops/ch_arch_scaling.xml:74(th)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:285(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1187(th) ./doc/openstack-ops/ch_arch_scaling.xml:74(th)
 msgid "Name"
 msgstr ""
 
@@ -3881,479 +3881,483 @@ msgstr ""
 msgid "OpenStack Block Storage also allows for creating snapshots of volumes. Remember that this is a block-level snapshot that is crash consistent, so it is best if the volume is not connected to an instance when the snapshot is taken and second best if the volume is not in use on the instance it is attached to. If the volume is under heavy use, the snapshot may have an inconsistent file system. In fact, by default, the volume service does not take a snapshot of a volume that is attached to an image, though it can be forced to. To take a volume snapshot, either select <guilabel>Create Snapshot</guilabel> from the actions column next to the volume name on the dashboard volume page, or run this from the command line:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:673(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:671(para)
+msgid "For more information about updating Block Storage volumes (for example, resizing or transferring), see the <link href=\"http://docs.openstack.org/user-guide/content/\">OpenStack End User Guide</link>."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:675(title)
 msgid "Block Storage Creation Failures"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:675(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:677(para)
 msgid "If a user tries to create a volume and the volume immediately goes into an error state, the best way to troubleshoot is to grep the cinder log files for the volume's UUID. First try the log files on the cloud controller, and then try the storage node where the volume was attempted to be created:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:688(title) ./doc/openstack-ops/ch_ops_projects_users.xml:296(para) ./doc/openstack-ops/ch_ops_maintenance.xml:267(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:690(title) ./doc/openstack-ops/ch_ops_projects_users.xml:296(para) ./doc/openstack-ops/ch_ops_maintenance.xml:267(title)
 msgid "Instances"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:690(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:692(para)
 msgid "Instances are the running virtual machines within an OpenStack cloud. This section deals with how to work with them and their underlying images, their network properties, and how they are represented in the database.<indexterm class=\"singular\"><primary>user training</primary><secondary>instances</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:700(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:702(title)
 msgid "Starting Instances"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:702(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:704(para)
 msgid "To launch an instance, you need to select an image, a flavor, and a name. The name needn't be unique, but your life will be simpler if it is because many tools will use the name in place of the UUID so long as the name is unique. You can start an instance from the dashboard from the <guibutton>Launch Instance</guibutton> button on the <guilabel>Instances</guilabel> page or by selecting the <guilabel>Launch</guilabel> action next to an image or snapshot on the <guilabel>Images &amp; Snapshots</guilabel> page.<indexterm class=\"singular\"><primary>instances</primary><secondary>starting</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:716(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:718(para)
 msgid "On the command line, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:720(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:722(para)
 msgid "There are a number of optional items that can be specified. You should read the rest of this section before trying to start an instance, but this is the base command that later details are layered upon."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:724(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:726(para)
 msgid "To delete instances from the dashboard, select the <guilabel>Terminate instance</guilabel> action next to the instance on the <guilabel>Instances</guilabel> page. From the command line, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:731(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:733(para)
 msgid "It is important to note that powering off an instance does not terminate it in the OpenStack sense."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:736(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:738(title)
 msgid "Instance Boot Failures"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:738(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:740(para)
 msgid "If an instance fails to start and immediately moves to an error state, there are a few different ways to track down what has gone wrong. Some of these can be done with normal user access, while others require access to your log server or compute nodes.<indexterm class=\"singular\"><primary>instances</primary><secondary>boot failures</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:747(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:749(para)
 msgid "The simplest reasons for nodes to fail to launch are quota violations or the scheduler being unable to find a suitable compute node on which to run the instance. In these cases, the error is apparent when you run a <code>nova show</code> on the faulted instance:<indexterm class=\"singular\"><primary>config drive</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:785(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:787(para)
 msgid "In this case, looking at the <literal>fault</literal> message shows <literal>NoValidHost</literal>, indicating that the scheduler was unable to match the instance requirements."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:789(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:791(para)
 msgid "If <code>nova show</code> does not sufficiently explain the failure, searching for the instance UUID in the <code>nova-compute.log</code> on the compute node it was scheduled on or the <code>nova-scheduler.log</code> on your scheduler hosts is a good place to start looking for lower-level problems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:795(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:797(para)
 msgid "Using <code>nova show</code> as an admin user will show the compute node the instance was scheduled on as <code>hostId</code>. If the instance failed during scheduling, this field is blank."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:801(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:803(title)
 msgid "Using Instance-Specific Data"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:803(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:805(para)
 msgid "There are two main types of instance-specific data: metadata and user data.<indexterm class=\"singular\"><primary>metadata</primary><secondary>instance metadata</secondary></indexterm><indexterm class=\"singular\"><primary>instances</primary><secondary>instance-specific data</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:815(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:817(title)
 msgid "Instance metadata"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:817(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:819(para)
 msgid "For Compute, instance metadata is a collection of key-value pairs associated with an instance. Compute reads and writes to these key-value pairs any time during the instance lifetime, from inside and outside the instance, when the end user uses the Compute API to do so. However, you cannot query the instance-associated key-value pairs with the metadata service that is compatible with the Amazon EC2 metadata service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:825(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:827(para)
 msgid "For an example of instance metadata, users can generate and register SSH keys using the <literal>nova</literal> command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:830(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:832(para)
 msgid "This creates a key named <placeholder-1/>, which you can associate with instances. The file <filename>mykey.pem</filename> is the private key, which should be saved to a secure location because it allows root access to instances the <placeholder-2/> key is associated with."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:836(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:838(para)
 msgid "Use this command to register an existing key with OpenStack:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:842(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:844(para)
 msgid "You must have the matching private key to access instances associated with this key."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:846(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:848(para)
 msgid "To associate a key with an instance on boot, add <code>--key_name mykey</code> to your command line. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:852(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:854(para)
 msgid "When booting a server, you can also add arbitrary metadata so that you can more easily identify it among other running instances. Use the <code>--meta</code> option with a key-value pair, where you can make up the string for both the key and the value. For example, you could add a description and also the creator of the server:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:861(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:863(para)
 msgid "When viewing the server information, you can see the metadata included on the <phrase role=\"keep-together\">metadata</phrase> line:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:897(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:899(title)
 msgid "Instance user data"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:899(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:901(para)
 msgid "The <code>user-data</code> key is a special key in the metadata service that holds a file that cloud-aware applications within the guest instance can access. For example, <link href=\"http://opsgui.de/1eLCtLs\" title=\"OpenStack Image Service\">cloudinit</link> is an open source package from Ubuntu, but available in most distributions, that handles early initialization of a cloud instance that makes use of this user data.<indexterm class=\"singular\"><primary>user data</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:910(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:912(para)
 msgid "This user data can be put in a file on your local system and then passed in at instance creation with the flag <code>--user-data &lt;user-data-file&gt;</code>. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:916(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:918(para)
 msgid "To understand the difference between user data and metadata, realize that user data is created before an instance is started. User data is accessible from within the instance when it is running. User data can be used to store configuration, a script, or anything the tenant wants."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:924(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:926(title)
 msgid "File injection"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:926(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:928(para)
 msgid "Arbitrary local files can also be placed into the instance file system at creation time by using the <code>--file &lt;dst-path=src-path&gt;</code> option. You may store up to five files.<indexterm class=\"singular\"><primary>file injection</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:933(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:935(para)
 msgid "For example, let's say you have a special <filename>authorized_keys</filename> file named special_authorized_keysfile that for some reason you want to put on the instance instead of using the regular SSH key injection. In this case, you can use the following command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:946(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:948(title)
 msgid "Associating Security Groups"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:948(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:950(para)
 msgid "Security groups, as discussed earlier, are typically required to allow network traffic to an instance, unless the default security group for a project has been modified to be more permissive.<indexterm class=\"singular\"><primary>security groups</primary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>security groups</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:959(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:961(para)
 msgid "Adding security groups is typically done on instance boot. When launching from the dashboard, you do this on the <guilabel>Access &amp; Security</guilabel> tab of the <guilabel>Launch Instance</guilabel> dialog. When launching from the command line, append <code>--security-groups</code> with a comma-separated list of security groups."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:966(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:968(para)
 msgid "It is also possible to add and remove security groups when an instance is running. Currently this is only available through the command-line tools. Here is an example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:976(title) ./doc/openstack-ops/ch_ops_projects_users.xml:259(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:978(title) ./doc/openstack-ops/ch_ops_projects_users.xml:259(para)
 msgid "Floating IPs"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:978(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:980(para)
 msgid "Where floating IPs are configured in a deployment, each project will have a limited number of floating IPs controlled by a quota. However, these need to be allocated to the project from the central pool prior to their use—usually by the administrator of the project. To allocate a floating IP to a project, use the <guibutton>Allocate IP to Project</guibutton> button on the <guilabel>Access &amp; Security</guilabel> page of the dashboard. The command line can also be used:<indexterm class=\"singular\"><primary>address pool</primary></indexterm><indexterm class=\"singular\"><primary>IP addresses</primary><secondary>floating</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>floating IPs</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:999(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1001(para)
 msgid "Once allocated, a floating IP can be assigned to running instances from the dashboard either by selecting <guibutton>Associate Floating IP</guibutton> from the actions drop-down next to the IP on the <guilabel>Access &amp; Security</guilabel> page or by making this selection next to the instance you want to associate it with on the <guilabel>Instances</guilabel> page. The inverse action, <guibutton>Dissociate Floating IP</guibutton>, is available only from the <guilabel>Access &amp; Security</guilabel> page and not from the <guilabel>Instances</guilabel> page."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1009(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1011(para)
 msgid "To associate or disassociate a floating IP with a server from the command line, use the following commands:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1018(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1020(title)
 msgid "Attaching Block Storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1020(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1022(para)
 msgid "You can attach block storage to instances from the dashboard on the <guilabel>Volumes</guilabel> page. Click the <guibutton>Edit Attachments</guibutton> action next to the volume you want to attach.<indexterm class=\"singular\"><primary>storage</primary><secondary>block storage</secondary></indexterm><indexterm class=\"singular\"><primary>block storage</primary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>block storage</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1035(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1037(para)
 msgid "To perform this action from command line, run the following command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1040(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1042(para)
 msgid "You can also specify block device<indexterm class=\"singular\"><primary>block device</primary></indexterm> mapping at instance boot time through the nova command-line client with this option set:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1048(code)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1050(code)
 msgid "&lt;dev-name&gt;=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1047(phrase)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1049(phrase)
 msgid "The block device mapping format is <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1049(code)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1051(code)
 msgid "&lt;delete-on-terminate&gt;"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1049(phrase)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1051(phrase)
 msgid "<placeholder-1/>, where:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1054(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1056(term)
 msgid "dev-name"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1057(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1059(para)
 msgid "A device name where the volume is attached in the system at <code>/dev/<replaceable>dev_name</replaceable></code>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1063(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1065(term)
 msgid "id"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1066(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1068(para)
 msgid "The ID of the volume to boot from, as shown in the output of <literal>nova volume-list</literal>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1072(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1074(term)
 msgid "type"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1075(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1077(para)
 msgid "Either <literal>snap</literal>, which means that the volume was created from a snapshot, or anything other than <literal>snap</literal> (a blank string is valid). In the preceding example, the volume was not created from a snapshot, so we leave this field blank in our following example."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1084(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1086(term)
 msgid "size (GB)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1087(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1089(para)
 msgid "The size of the volume in gigabytes. It is safe to leave this blank and have the Compute Service infer the size."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1093(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1095(term)
 msgid "delete-on-terminate"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1096(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1098(para)
 msgid "A boolean to indicate whether the volume should be deleted when the instance is terminated. True can be specified as <literal>True</literal> or <literal>1</literal>. False can be specified as <literal>False</literal> or <literal>0</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1105(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1107(para)
 msgid "The following command will boot a new instance and attach a volume at the same time. The volume of ID 13 will be attached as <code>/dev/vdc</code>. It is not a snapshot, does not specify a size, and will not be deleted when the instance is terminated:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1114(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1116(para)
 msgid "If you have previously prepared block storage with a bootable file system image, it is even possible to boot from persistent block storage. The following command boots an image from the specified volume. It is similar to the previous command, but the image is omitted and the volume is now attached as <code>/dev/vda</code>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1123(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1125(para)
 msgid "Read more detailed instructions for launching an instance from a bootable volume in the <link href=\"http://opsgui.de/NPH30v\">OpenStack End User Guide</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1128(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1130(para)
 msgid "To boot normally from an image and attach block storage, map to a device other than vda. You can find instructions for launching an instance and attaching a volume to the instance and for copying the image to the attached volume in the <link href=\"http://opsgui.de/1eLCwHb\">OpenStack End User Guide</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1139(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1141(title)
 msgid "Taking Snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1141(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1143(para)
 msgid "The OpenStack snapshot mechanism allows you to create new images from running instances. This is very convenient for upgrading base images or for taking a published image and customizing it for local use. To snapshot a running instance to an image using the CLI, do this:<indexterm class=\"singular\"><primary>base image</primary></indexterm><indexterm class=\"singular\"><primary>snapshot</primary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>snapshots</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1157(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1159(para)
 msgid "The dashboard interface for snapshots can be confusing because the <guilabel>Images &amp; Snapshots</guilabel> page splits content up into several areas:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1167(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1169(para)
 msgid "Instance snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1171(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1173(para)
 msgid "Volume snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1175(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1177(para)
 msgid "However, an instance snapshot <emphasis>is</emphasis> an image. The only difference between an image that you upload directly to the Image Service and an image that you create by snapshot is that an image created by snapshot has additional properties in the glance database. These properties are found in the <literal>image_properties</literal> table and include:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1187(th)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1189(th)
 msgid "Value"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1193(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1195(literal)
 msgid "image_type"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1195(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1214(para) ./doc/openstack-ops/glossary-terms.xml:6596(primary)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1197(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1216(para) ./doc/openstack-ops/glossary-terms.xml:6596(primary)
 msgid "snapshot"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1199(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1201(literal)
 msgid "instance_uuid"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1201(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1203(para)
 msgid "&lt;uuid of instance that was snapshotted&gt;"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1205(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1207(literal)
 msgid "base_image_ref"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1207(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1209(para)
 msgid "&lt;uuid of original image of instance that was snapshotted&gt;"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1212(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1214(literal)
 msgid "image_location"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1220(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1222(title)
 msgid "Live Snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1222(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1224(para)
 msgid "Live snapshots is a feature that allows users to snapshot the running virtual machines without pausing them. These snapshots are simply disk-only snapshots. Snapshotting an instance can now be performed with no downtime (assuming QEMU 1.3+ and libvirt 1.0+ are used).<indexterm class=\"singular\"><primary>live snapshots</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1231(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1233(title)
 msgid "Ensuring Snapshots Are Consistent"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1233(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1235(para)
 msgid "The following section is from Sébastien Han's <link href=\"http://opsgui.de/NPH5Wn\" title=\"OpenStack Image Service\">“OpenStack: Perform Consistent Snapshots” blog entry</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1238(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1240(para)
 msgid "A snapshot captures the state of the file system, but not the state of the memory. Therefore, to ensure your snapshot contains the data that you want, before your snapshot you need to ensure that:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1245(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1247(para)
 msgid "Running programs have written their contents to disk"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1249(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1251(para)
 msgid "The file system does not have any \"dirty\" buffers: where programs have issued the command to write to disk, but the operating system has not yet done the write"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1255(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1257(para)
 msgid "To ensure that important services have written their contents to disk (such as databases), we recommend that you read the documentation for those applications to determine what commands to issue to have them sync their contents to disk. If you are unsure how to do this, the safest approach is to simply stop these running services normally."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1262(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1264(para)
 msgid "To deal with the \"dirty\" buffer issue, we recommend using the sync command before snapshotting:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1267(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1269(para)
 msgid "Running <code>sync</code> writes dirty buffers (buffered blocks that have been modified but not written yet to the disk block) to disk."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1271(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1273(para)
 msgid "Just running <code>sync</code> is not enough to ensure that the file system is consistent. We recommend that you use the <code>fsfreeze</code> tool, which halts new access to the file system, and create a stable image on disk that is suitable for snapshotting. The <code>fsfreeze</code> tool supports several file systems, including ext3, ext4, and XFS. If your virtual machine instance is running on Ubuntu, install the util-linux package to get <literal>fsfreeze</literal>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1282(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1284(para)
 msgid "If your operating system doesn't have a version of <literal>fsfreeze</literal> available, you can use <literal>xfs_freeze</literal> instead, which is available on Ubuntu in the xfsprogs package. Despite the \"xfs\" in the name, xfs_freeze also works on ext3 and ext4 if you are using a Linux kernel version 2.6.29 or greater, since it works at the virtual file system (VFS) level starting at 2.6.29. The xfs_freeze version supports the same command-line arguments as <literal>fsfreeze</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1291(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1293(para)
 msgid "Consider the example where you want to take a snapshot of a persistent block storage volume, detected by the guest operating system as <literal>/dev/vdb</literal> and mounted on <literal>/mnt</literal>. The fsfreeze command accepts two arguments:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1299(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1301(term)
 msgid "-f"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1302(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1304(para)
 msgid "Freeze the system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1307(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1309(term)
 msgid "-u"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1310(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1312(para)
 msgid "Thaw (unfreeze) the system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1315(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1317(para)
 msgid "To freeze the volume in preparation for snapshotting, you would do the following, as root, inside the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1320(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1322(para)
 msgid "You <emphasis>must mount the file system</emphasis> before you run the <literal>fsfreeze</literal> command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1323(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1325(para)
 msgid "When the <literal>fsfreeze -f</literal> command is issued, all ongoing transactions in the file system are allowed to complete, new write system calls are halted, and other calls that modify the file system are halted. Most importantly, all dirty data, metadata, and log information are written to disk."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1329(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1331(para)
 msgid "Once the volume has been frozen, do not attempt to read from or write to the volume, as these operations hang. The operating system stops every I/O operation and any I/O attempts are delayed until the file system has been unfrozen."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1334(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1336(para)
 msgid "Once you have issued the <literal>fsfreeze</literal> command, it is safe to perform the snapshot. For example, if your instance was named <literal>mon-instance</literal> and you wanted to snapshot it to an image named <literal>mon-snapshot</literal>, you could now run the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1342(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1344(para)
 msgid "When the snapshot is done, you can thaw the file system with the following command, as root, inside of the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1347(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1349(para)
 msgid "If you want to back up the root file system, you can't simply run the preceding command because it will freeze the prompt. Instead, run the following one-liner, as root, inside the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1359(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1361(title)
 msgid "Instances in the Database"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1361(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1363(para)
 msgid "While instance information is stored in a number of database tables, the table you most likely need to look at in relation to user instances is the instances table.<indexterm class=\"singular\"><primary>instances</primary><secondary>database information</secondary></indexterm><indexterm class=\"singular\"><primary>databases</primary><secondary>instance information in</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>instances</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1377(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1379(para)
 msgid "The instances table carries most of the information related to both running and deleted instances. It has a bewildering array of fields; for an exhaustive list, look at the database. These are the most useful fields for operators looking to form queries:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1384(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1386(para)
 msgid "The <literal>deleted</literal> field is set to <literal>1</literal> if the instance has been deleted and <literal>NULL</literal> if it has not been deleted. This field is important for excluding deleted instances from your queries."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1391(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1393(para)
 msgid "The <literal>uuid</literal> field is the UUID of the instance and is used throughout other tables in the database as a foreign key. This ID is also reported in logs, the dashboard, and command-line tools to uniquely identify an instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1398(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1400(para)
 msgid "A collection of foreign keys are available to find relations to the instance. The most useful of these—<literal>user_id</literal> and <literal>project_id</literal>—are the UUIDs of the user who launched the instance and the project it was launched in."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1405(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1407(para)
 msgid "The <literal>host</literal> field tells which compute node is hosting the instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1410(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1412(para)
 msgid "The <literal>hostname</literal> field holds the name of the instance when it is launched. The display-name is initially the same as hostname but can be reset using the nova rename command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1416(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1418(para)
 msgid "A number of time-related fields are useful for tracking when state changes happened on an instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1421(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1423(literal)
 msgid "created_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1425(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1427(literal)
 msgid "updated_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1429(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1431(literal)
 msgid "deleted_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1433(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1435(literal)
 msgid "scheduled_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1437(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1439(literal)
 msgid "launched_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1441(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1443(literal)
 msgid "terminated_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1447(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1449(title)
 msgid "Good Luck!"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1449(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1451(para)
 msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://opsgui.de/1eLBkDJ\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://opsgui.de/1eLBL0N\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 
