@@ -15,7 +15,8 @@ function setup_lang {
     echo "Setting up files for $SET_LANG"
     echo "======================="
     echo "  Directories:"
-    setup_directory $SET_LANG 'openstack-ops'
+    # openstack.ent is in opestack-ops but needed by glossary
+    setup_directory $SET_LANG 'openstack-ops' 'glossary'
 }
 
 
@@ -45,11 +46,11 @@ function test_ops_guide {
 function test_language () {
 
     case "$language" in
-	all)
-	    test_ops_guide "ja"
-	    ;;
+        all)
+            test_ops_guide "ja"
+            ;;
         ja)
-	    test_ops_guide "$language"
+            test_ops_guide "$language"
             ;;
         *)
             BUILD_FAIL=1
