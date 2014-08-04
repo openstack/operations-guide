@@ -58,6 +58,6 @@
         <!-- doc history and resources -->
         <xi:include href="ch_ops_resources.xml"/>
         <!-- glossary -->
-        <xi:include href="glossary-terms.xml"/>
+        <xi:include href="../glossary/glossary-terms.xml"/>
 <index/>
 </book>
