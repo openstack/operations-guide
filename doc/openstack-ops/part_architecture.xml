@@ -71,16 +71,15 @@
     APIs. All services authenticate through a common Identity Service, and
     individual services interact with each other through public APIs, except
     where privileged administrator commands are necessary. <xref
-    linkend="openstack-havana-diagram" /> shows the most common, but not the
+    linkend="openstack-diagram" /> shows the most common, but not the
     only logical architecture for an OpenStack cloud.</para>
-
-    <figure xml:id="openstack-havana-diagram">
-      <title>OpenStack Havana Logical Architecture (<link
-      xlink:href="http://docs.openstack.org/openstack-ops/content/figures/2/figures/osog_0001.png"></link>)</title>
-
+    <figure xml:id="openstack-diagram">
+      <title>OpenStack Logical Architecture (<link
+          xlink:href="http://docs.openstack.org/openstack-ops/content/figures/2/figures/osog_0001.png"
+        />)</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/osog_0001.png"></imagedata>
+          <imagedata fileref="figures/osog_0001.png"/>
         </imageobject>
       </mediaobject>
     </figure>
