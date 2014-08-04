@@ -32,11 +32,11 @@
                 Guide for Ubuntu 12.04/14.04 (LTS) Server</link></para>
         </listitem>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBL0N">OpenStack Cloud
+        <para><link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">OpenStack Cloud
           Administrator Guide</link></para>
       </listitem>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGwvz"><emphasis>OpenStack
+        <para><link xlink:href="http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book"><emphasis>OpenStack
           Cloud Computing Cookbook</emphasis> (Packt Publishing) </link></para>
       </listitem>
     </itemizedlist>
@@ -45,7 +45,7 @@
     <title>Cloud (General)</title>
     <itemizedlist>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBLOv">“The NIST Definition
+        <para><link xlink:href="http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf">“The NIST Definition
           of Cloud Computing”</link></para>
       </listitem>
     </itemizedlist>
@@ -54,7 +54,7 @@
     <title>Python</title>
     <itemizedlist>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGxQd"><emphasis>Dive Into
+        <para><link xlink:href="http://www.diveintopython.net/"><emphasis>Dive Into
           Python</emphasis> (Apress)</link></para>
       </listitem>
     </itemizedlist>
@@ -63,16 +63,16 @@
     <title>Networking</title>
     <itemizedlist>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBNWl"><emphasis>TCP/IP
+        <para><link xlink:href="http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page"><emphasis>TCP/IP
           Illustrated, Volume 1: The Protocols, 2/E</emphasis>
           (Pearson)</link></para>
       </listitem>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGzYr"><emphasis>The TCP/IP
+        <para><link xlink:href="http://www.nostarch.com/tcpip.htm"><emphasis>The TCP/IP
           Guide</emphasis> (No Starch Press)</link></para>
       </listitem>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBOJS">“A
+        <para><link xlink:href="http://danielmiessler.com/study/tcpdump/">“A
           <code>tcpdump</code> Tutorial and Primer”</link></para>
       </listitem>
     </itemizedlist>
@@ -81,7 +81,7 @@
     <title>Systems Administration</title>
     <itemizedlist>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGyDR"><emphasis>UNIX and
+        <para><link xlink:href="http://www.admin.com/"><emphasis>UNIX and
           Linux Systems Administration Handbook</emphasis> (Prentice
           Hall)</link></para>
       </listitem>
@@ -91,7 +91,7 @@
     <title>Virtualization</title>
     <itemizedlist>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBQSb"><emphasis>The Book
+        <para><link xlink:href="http://www.nostarch.com/xen.htm"><emphasis>The Book
           of Xen</emphasis> (No Starch Press)</link></para>
       </listitem>
     </itemizedlist>
@@ -100,11 +100,11 @@
     <title>Configuration Management</title>
     <itemizedlist>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/NPGzrj">Puppet Labs
+        <para><link xlink:href="http://docs.puppetlabs.com/">Puppet Labs
           Documentation</link></para>
       </listitem>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLBRFD"><emphasis>Pro
+        <para><link xlink:href="http://www.apress.com/9781430230571"><emphasis>Pro
           Puppet</emphasis> (Apress)</link></para>
       </listitem>
     </itemizedlist>

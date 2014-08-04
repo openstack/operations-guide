@@ -525,7 +525,7 @@
   <section xml:id="extensions">
     <title>Extensions</title>
 
-    <para>The <link xlink:href="http://opsgui.de/NPFK1H"
+    <para>The <link xlink:href="http://docs.openstack.org/api/api-specs.html"
     xlink:title="API Specifications">API Specifications</link> define the core
     actions, capabilities, and mediatypes of the OpenStack API. A client can
     always depend on the availability of this core API, and implementers are

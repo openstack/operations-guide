@@ -44,8 +44,8 @@
     provide a few clearly-marked and tested paths for your OpenStack
     exploration. If you're looking for additional ideas, check out <xref
     linkend="use-cases" />, the <link
-    xlink:href="http://opsgui.de/NPFTC8">OpenStack Installation Guides</link>,
-    or the <link xlink:href="http://opsgui.de/1eLAAhX">OpenStack User Stories
+    xlink:href="http://docs.openstack.org/">OpenStack Installation Guides</link>,
+    or the <link xlink:href="http://www.openstack.org/user-stories/">OpenStack User Stories
     page</link>.</para>
   </section>
 </chapter>

@@ -93,7 +93,7 @@
         </indexterm></para>
 
       <para>A good document describing the Object Storage architecture is
-      found within <link xlink:href="http://opsgui.de/NPG0xO"
+      found within <link xlink:href="http://docs.openstack.org/developer/swift/overview_architecture.html"
       xlink:title="OpenStack wiki">the developer documentation</link>—read
       this first. Once you understand the architecture, you should know what a
       proxy server does and how zones work. However, some important points are
@@ -589,7 +589,7 @@
 
       <para>You can find a matrix of the functionality provided by all of the
       supported Block Storage drivers on the <link
-      xlink:href="http://opsgui.de/1eLAQxg"
+      xlink:href="https://wiki.openstack.org/wiki/CinderSupportMatrix"
       xlink:title="OpenStack wiki">OpenStack wiki</link>.</para>
     </sidebar>
 
@@ -680,7 +680,7 @@
             storage, enables very fast provisioning of boot-from-volume
             instances using thin provisioning, and supports a distributed
             file-system interface, though this interface is <link
-            xlink:href="http://opsgui.de/NPG1BD"
+            xlink:href="http://ceph.com/docs/master/cephfs/"
             xlink:title="OpenStack wiki">not yet recommended</link> for use in
             production deployment by the Ceph project.</para>
 

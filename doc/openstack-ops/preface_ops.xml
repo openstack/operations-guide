@@ -97,9 +97,9 @@
       <para>If your preference is to build your own OpenStack expertise
       internally, a good way to kick-start that might be to attend or arrange
       a training session. The OpenStack Foundation recently launched a <link
-      xlink:href="http://opsgui.de/NPH6JZ">Training Marketplace</link> where
+      xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace</link> where
       you can look for nearby events. Also, the OpenStack community is <link
-      xlink:href="http://opsgui.de/1eLCyio">working to produce</link> open
+      xlink:href="https://wiki.openstack.org/wiki/Training-manuals">working to produce</link> open
       source training materials.</para>
     </section>
 
@@ -193,7 +193,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/1eLCDTf">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/havana/config-reference/content/">OpenStack
               Configuration Reference</link></term>
 
           <listitem>
@@ -204,7 +204,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/1eLBL0N">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">OpenStack
               Cloud Administrator Guide</link></term>
 
           <listitem>
@@ -216,7 +216,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/1eLCEGD">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/high-availability-guide/content/index.html">OpenStack
               High Availability Guide</link></term>
 
           <listitem>
@@ -227,7 +227,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/NPG4NW">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/sec/">OpenStack
               Security Guide</link></term>
 
           <listitem>
@@ -237,7 +237,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/1eLCHlR">Virtual
+          <term><link xlink:href="http://docs.openstack.org/image-guide/content/">Virtual
               Machine Image Guide</link></term>
 
           <listitem>
@@ -247,7 +247,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/NPHaJI">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/user-guide/content/">OpenStack
               End User Guide</link></term>
 
           <listitem>
@@ -258,7 +258,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/1eLBkDJ">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/user-guide-admin/content/">OpenStack
               Admin User Guide</link></term>
 
           <listitem>
@@ -270,7 +270,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://opsgui.de/NPHdVO">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/api/quick-start/content/">OpenStack
               API Quick Start</link></term>
 
           <listitem>
@@ -575,7 +575,7 @@
 
     <para>We wrote this book in a book sprint, which is a facilitated,
       rapid development production method for books. For more
-      information, see the <link xlink:href="http://opsgui.de/1eLCIpY"
+      information, see the <link xlink:href="http://www.booksprints.net/"
         >BookSprints site</link>. Your authors cobbled this book
       together in five days during February 2013, fueled by caffeine
       and the best takeout food that Austin, Texas, could <phrase
@@ -757,12 +757,12 @@
       GitHub and enables collaboration among contributors.</para>
 
     <para>Learn more about how to contribute to the OpenStack docs at
-        <link xlink:href="http://opsgui.de/1eLCK10">Documentation How
+        <link xlink:href="https://wiki.openstack.org/wiki/Documentation/HowTo">Documentation How
         To</link>.</para>
 
     <para>If you find a bug and can't fix it or aren't sure it's
       really a doc bug, log a bug at <link
-        xlink:href="http://opsgui.de/NPHdoC">OpenStack Manuals</link>.
+        xlink:href="https://bugs.launchpad.net/openstack-manuals">OpenStack Manuals</link>.
       Tag the bug under <guilabel>Extra</guilabel> options with the
         <literal>ops-guide</literal> tag to indicate that the bug is
       in this guide. You can assign the bug to yourself if you know

@@ -11,7 +11,7 @@
 
   <para>This appendix contains a small selection of use cases from the
   community, with more technical detail than usual. Further examples can be
-  found on the <link xlink:href="http://opsgui.de/1eLAdUw"
+  found on the <link xlink:href="https://www.openstack.org/user-stories/"
   xlink:title="OpenStack User Stories Website">OpenStack
   website</link>.</para>
 
@@ -71,17 +71,17 @@
 
       <itemizedlist>
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFCiF">OpenStack.org case
+          <para><link xlink:href="https://www.openstack.org/user-stories/nectar/">OpenStack.org case
           study</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/1eLAhnd">NeCTAR-RC
+          <para><link xlink:href="https://github.com/NeCTAR-RC/">NeCTAR-RC
           GitHub</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFEHm">NeCTAR
+          <para><link xlink:href="https://www.nectar.org.au/">NeCTAR
           website</link></para>
         </listitem>
       </itemizedlist>
@@ -124,7 +124,7 @@
 
       <para>The software stack is still Ubuntu 12.04 LTS, but now with
       OpenStack Havana from the Ubuntu Cloud Archive. KVM is the hypervisor,
-      deployed using <link xlink:href="http://opsgui.de/1eLAhUr">FAI</link>
+      deployed using <link xlink:href="http://fai-project.org/">FAI</link>
       and Puppet for configuration management. The FAI and Puppet combination
       is used lab-wide, not only for OpenStack. There is a single cloud
       controller node, which also acts as network controller, with the
@@ -171,7 +171,7 @@
 
       <itemizedlist>
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFFez">CSAIL
+          <para><link xlink:href="http://www.csail.mit.edu/">CSAIL
           homepage</link></para>
         </listitem>
       </itemizedlist>
@@ -232,7 +232,7 @@
 
       <itemizedlist>
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFgIP">DAIR
+          <para><link xlink:href="http://www.canarie.ca/en/dair-program/about">DAIR
           homepage</link></para>
         </listitem>
       </itemizedlist>
@@ -286,17 +286,17 @@
 
       <itemizedlist>
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFGiu">“OpenStack in
+          <para><link xlink:href="http://openstack-in-production.blogspot.de/2013/09/a-tale-of-3-openstack-clouds-50000.html">“OpenStack in
           Production: A tale of 3 OpenStack Clouds”</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/1eLAkPR">“Review of CERN
+          <para><link xlink:href="http://cds.cern.ch/record/1457989/files/chep%202012%20CERN%20infrastructure%20final.pdf?version=1">“Review of CERN
           Data Centre Infrastructure”</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFGPD">“CERN Cloud
+          <para><link xlink:href="http://information-technology.web.cern.ch/book/cern-private-cloud-user-guide">“CERN Cloud
           Infrastructure User Guide”</link></para>
         </listitem>
       </itemizedlist>

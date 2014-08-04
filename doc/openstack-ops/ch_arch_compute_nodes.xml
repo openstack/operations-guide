@@ -34,10 +34,10 @@
 
     <tip>
       <para>Consult the vendor documentation to check for virtualization
-      support. For Intel, read <link xlink:href="http://opsgui.de/1eLAoiC"
+      support. For Intel, read <link xlink:href="http://www.intel.com/support/processors/sb/cs-030729.htm"
       xlink:title="Intel VT-x"> “Does my processor support Intel®
       Virtualization Technology?”</link>. For AMD, read <link
-      xlink:href="http://opsgui.de/NPFI9Z" xlink:title="AMD-v"> AMD
+      xlink:href="http://sites.amd.com/us/business/it-solutions/virtualization/Pages/client-side-virtualization.aspx" xlink:title="AMD-v"> AMD
       Virtualization</link>. Note that your CPU may support virtualization but
       it may be disabled. Consult your BIOS documentation for how to enable
       CPU features.<indexterm class="singular">
@@ -120,37 +120,37 @@
       </indexterm> OpenStack Compute supports many hypervisors to various
     degrees, including: <itemizedlist role="compact">
         <listitem>
-          <para><link xlink:href="http://opsgui.de/1eLApTQ"
+          <para><link xlink:href="http://www.linux-kvm.org/page/Main_Page"
           xlink:title="reference manual">KVM</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFL5O"
+          <para><link xlink:href="https://linuxcontainers.org/"
           xlink:title="reference manual">LXC</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/1eLAs1W"
+          <para><link xlink:href="http://wiki.qemu.org/Main_Page"
           xlink:title="reference manual">QEMU</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFOyn"
+          <para><link xlink:href="https://www.vmware.com/support/vsphere-hypervisor"
           xlink:title="reference manual">VMware ESX/ESXi</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/1eLAt5Z"
+          <para><link xlink:href="http://www.xenproject.org/"
           xlink:title="reference manual">Xen</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/NPFMXx"
+          <para><link xlink:href="http://technet.microsoft.com/en-us/library/hh831531.aspx"
           xlink:title="reference manual">Hyper-V</link></para>
         </listitem>
 
         <listitem>
-          <para><link xlink:href="http://opsgui.de/1eLAxm5"
+          <para><link xlink:href="https://www.docker.com/"
           xlink:title="reference manual">Docker</link></para>
         </listitem>
       </itemizedlist></para>
@@ -167,9 +167,9 @@
     OpenStack is out of date.</para>
 
     <para>The best information available to support your choice is found on
-    the <link xlink:href="http://opsgui.de/NPFQ9w"
+    the <link xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix"
     xlink:title="reference manual">Hypervisor Support Matrix</link> and in the
-    <link xlink:href="http://opsgui.de/1eLAwP2"
+    <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html"
     xlink:title="configuration reference">configuration
     reference</link>.</para>
 

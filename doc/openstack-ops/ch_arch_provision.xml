@@ -279,7 +279,7 @@
     done by the OpenStack community in this space. Puppet, a configuration
     management tool, even provides official modules for OpenStack in an
     OpenStack infrastructure system known as <link
-    xlink:href="http://opsgui.de/NPFUpL">Stackforge</link>. Chef configuration
+    xlink:href="https://github.com/stackforge/puppet-openstack">Stackforge</link>. Chef configuration
     management is provided within <link role="orm:hideurl:ital"
     xlink:href="https://github.com/stackforge/openstack-chef-repo"></link>.
     Additional configuration management systems include Juju, Ansible, and
@@ -350,17 +350,17 @@
       <para>For further research about OpenStack deployment, investigate the
       supported and documented preconfigured, prepackaged installers for
       OpenStack from companies such as <link
-      xlink:href="http://opsgui.de/NPFSy7">Canonical</link>, <link
-      xlink:href="http://opsgui.de/1gwRmlS">Cisco</link>, <link
-      xlink:href="http://opsgui.de/1eLAFSL">Cloudscaling</link>, <link
-      xlink:href="http://opsgui.de/NPFYG3">IBM</link>, <link
-      xlink:href="http://opsgui.de/1eLAGWE">Metacloud</link>, <link
-      xlink:href="http://opsgui.de/NPFWOy">Mirantis</link>, <link
-      xlink:href="http://opsgui.de/1eLAHKd">Piston</link>, <link
-      xlink:href="http://opsgui.de/1gwRm58">Rackspace</link>, <link
-      xlink:href="http://opsgui.de/NPFXlq">Red Hat</link>, <link
-      xlink:href="http://opsgui.de/1eLALK5">SUSE</link>, and <link
-      xlink:href="http://opsgui.de/NPG0hb">SwiftStack</link>.</para>
+      xlink:href="http://www.ubuntu.com/cloud/ubuntu-openstack">Canonical</link>, <link
+      xlink:href="http://www.cisco.com/web/solutions/openstack/index.html">Cisco</link>, <link
+      xlink:href="http://www.cloudscaling.com/">Cloudscaling</link>, <link
+      xlink:href="http://www-03.ibm.com/software/products/en/smartcloud-orchestrator/">IBM</link>, <link
+      xlink:href="http://www.metacloud.com/">Metacloud</link>, <link
+      xlink:href="http://www.mirantis.com/">Mirantis</link>, <link
+      xlink:href="http://www.pistoncloud.com/">Piston</link>, <link
+      xlink:href="http://www.rackspace.com/cloud/private/">Rackspace</link>, <link
+      xlink:href="http://www.redhat.com/openstack/">Red Hat</link>, <link
+      xlink:href="https://www.suse.com/products/suse-cloud/">SUSE</link>, and <link
+      xlink:href="https://www.swiftstack.com/">SwiftStack</link>.</para>
     </tip>
   </section>
 

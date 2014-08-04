@@ -84,7 +84,7 @@
             development</para></td>
 
           <td><para><link
-            xlink:href="http://opsgui.de/NPFhMW">2014.1</link></para></td>
+            xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse">2014.1</link></para></td>
 
           <td><para>Apr 17, 2014</para></td>
         </tr>
@@ -92,10 +92,10 @@
         <tr>
           <td><para>Icehouse</para></td>
 
-          <td><para><link xlink:href="http://opsgui.de/1eLzG51">Current stable release, security-supported</link> </para></td>
+          <td><para><link xlink:href="https://wiki.openstack.org/wiki/Icehouse_Release_Schedule">Current stable release, security-supported</link> </para></td>
 
           <td><para><link
-          xlink:href="http://opsgui.de/NPFhMW">2014.1</link></para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse">2014.1</link></para></td>
 
           <td><para>Apr 17, 2014</para></td>
         </tr>
@@ -106,7 +106,7 @@
           <td rowspan="2"><para>Security-supported
           </para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/1eLzHFY">2013.2</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana">2013.2</link>
           </para></td>
 
           <td><para>Apr 4, 2013</para></td>
@@ -115,7 +115,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFjEI">2013.2.1</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1">2013.2.1</link> </para></td>
 
           <td><para>Dec 16, 2013</para></td>
         </tr>
@@ -125,7 +125,7 @@
 
           <td rowspan="5"><para>EOL</para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/1eLzK4A">2013.1</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly">2013.1</link>
           </para></td>
 
           <td><para>Apr 4, 2013</para></td>
@@ -134,7 +134,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFlw8">2013.1.1</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.1">2013.1.1</link> </para></td>
 
           <td><para>May 9, 2013</para></td>
         </tr>
@@ -142,7 +142,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/1eLzMtp">2013.1.2</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.2">2013.1.2</link> </para></td>
 
           <td><para>Jun 6, 2013</para></td>
         </tr>
@@ -150,7 +150,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFks3">2013.1.3</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.3">2013.1.3</link> </para></td>
 
           <td><para>Aug 8, 2013</para></td>
         </tr>
@@ -158,7 +158,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/1eLzNgP">2013.1.4</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.4">2013.1.4</link> </para></td>
 
           <td><para>Oct 17, 2013</para></td>
         </tr>
@@ -168,7 +168,7 @@
 
           <td rowspan="5"><para>Community-supported</para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/NPFmjO">2012.2</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Folsom">2012.2</link>
           </para></td>
 
           <td><para>Sep 27, 2012</para></td>
@@ -177,7 +177,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/1eLzOBB">2012.2.1</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.1">2012.2.1</link> </para></td>
 
           <td><para>Nov 29, 2012</para></td>
         </tr>
@@ -185,7 +185,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFobr">2012.2.2</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.2">2012.2.2</link> </para></td>
 
           <td><para>Dec 13, 2012</para></td>
         </tr>
@@ -193,7 +193,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/1eLzPpd">2012.2.3</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.3">2012.2.3</link> </para></td>
 
           <td><para>Jan 31, 2013</para></td>
         </tr>
@@ -201,7 +201,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFos2">2012.2.4</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.4">2012.2.4</link> </para></td>
 
           <td><para>Apr 11, 2013</para></td>
         </tr>
@@ -211,7 +211,7 @@
 
           <td rowspan="4"><para>Community-supported</para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/1eLzSRP">2012.1</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Essex">2012.1</link>
           </para></td>
 
           <td><para>Apr 5, 2012</para></td>
@@ -220,7 +220,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFqjB">2012.1.1</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.1">2012.1.1</link> </para></td>
 
           <td><para>Jun 22, 2012</para></td>
         </tr>
@@ -228,7 +228,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/1eLzUsX">2012.1.2</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.2">2012.1.2</link> </para></td>
 
           <td><para>Aug 10, 2012</para></td>
         </tr>
@@ -236,7 +236,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFqQs">2012.1.3</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.3">2012.1.3</link> </para></td>
 
           <td><para>Oct 12, 2012</para></td>
         </tr>
@@ -246,7 +246,7 @@
 
           <td rowspan="2"><para>Deprecated</para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/1eLzVwW">2011.3</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Diablo">2011.3</link>
           </para></td>
 
           <td><para>Sep 22, 2011</para></td>
@@ -255,7 +255,7 @@
         <tr>
 
           <td><para> <link
-          xlink:href="http://opsgui.de/NPFsYy">2011.3.1</link> </para></td>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2011.3.1">2011.3.1</link> </para></td>
 
           <td><para>Jan 19, 2012</para></td>
         </tr>
@@ -265,7 +265,7 @@
 
           <td><para>Deprecated</para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/1eLzYsI">2011.2</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Cactus">2011.2</link>
           </para></td>
 
           <td><para>Apr 15, 2011</para></td>
@@ -276,7 +276,7 @@
 
           <td><para>Deprecated</para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/NPFtvH">2011.1</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Bexar">2011.1</link>
           </para></td>
 
           <td><para>Feb 3, 2011</para></td>
@@ -287,7 +287,7 @@
 
           <td><para>Deprecated</para></td>
 
-          <td><para> <link xlink:href="http://opsgui.de/1eLA1Vm">2010.1</link>
+          <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Austin">2010.1</link>
           </para></td>
 
           <td><para>Oct 21, 2010</para></td>
@@ -299,23 +299,23 @@
 
     <itemizedlist>
       <listitem>
-        <para><link xlink:href="http://opsgui.de/NPFvnh">A breakdown of
+        <para><link xlink:href="http://status.openstack.org/release/">A breakdown of
         current features under development, with their target
         milestone</link></para>
       </listitem>
 
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLA2IT">A list of all
+        <para><link xlink:href="https://blueprints.launchpad.net/openstack">A list of all
         features, including those not yet under development</link></para>
       </listitem>
 
       <listitem>
-        <para><link xlink:href="http://opsgui.de/NPFwaQ">Rough-draft design
+        <para><link xlink:href="https://wiki.openstack.org/wiki/Summit/Icehouse/Etherpads">Rough-draft design
         discussions ("etherpads") from the last design summit</link></para>
       </listitem>
 
       <listitem>
-        <para><link xlink:href="http://opsgui.de/1eLA43u">List of individual
+        <para><link xlink:href="https://review.openstack.org/">List of individual
         code changes under review</link></para>
       </listitem>
     </itemizedlist>
@@ -347,18 +347,18 @@
     consideration is to create an Etherpad with your ideas and propose a
     session to the design summit. If the design summit has already passed, you
     may also create a blueprint directly. Read this <link
-    xlink:href="http://opsgui.de/NPFy2x">blog post about how to work with
+    xlink:href="http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/">blog post about how to work with
     blueprints</link> the perspective of Victoria Martínez, a developer
     intern.</para>
 
     <para>The roadmap for the next release as it is developed can be seen at
-    <link xlink:href="http://opsgui.de/1eLA7wg">Releases</link>.</para>
+    <link xlink:href="http://status.openstack.org/release/">Releases</link>.</para>
 
     <para>To determine the potential features going in to future releases, or
     to look at features implemented previously, take a look at the existing
     blueprints such as&#160;<link
-    xlink:href="http://opsgui.de/NPFxf5">OpenStack Compute (nova)
-    Blueprints</link>, <link xlink:href="http://opsgui.de/1eLA8An">OpenStack
+    xlink:href="https://blueprints.launchpad.net/nova">OpenStack Compute (nova)
+    Blueprints</link>, <link xlink:href="https://blueprints.launchpad.net/keystone">OpenStack
     Identity (keystone) Blueprints</link>, and release notes.</para>
 
     <para>Aside from the direct-to-blueprint pathway, there is another very
@@ -503,7 +503,7 @@
     poor testing of existing XML responses in the V2 API and the lack of
     effort to continue to develop and maintain an entire second response type.
     Feedback on this and any such change is welcome by responding to the <link
-    xlink:href="http://opsgui.de/1eLAaba">user survey</link>.<indexterm
+    xlink:href="https://www.openstack.org/user-survey/Login">user survey</link>.<indexterm
         class="singular">
         <primary>Icehouse</primary>
 
@@ -531,7 +531,7 @@
     <para>Though bare-metal deployment has been widely lauded, and development
     continues, the project to replace the Compute bare-metal driver will not
     graduate in Icehouse. A particular blueprint to follow is <link
-    xlink:href="http://opsgui.de/NPFBex"> Migration Path from Nova's BM
+    xlink:href="https://blueprints.launchpad.net/ironic/+spec/migration-from-nova"> Migration Path from Nova's BM
     Driver</link>, which tracks the ability to move to the new project from an
     existing bare-metal deployment.<indexterm class="singular">
         <primary>Icehouse</primary>
@@ -592,10 +592,10 @@
       <para>Though many successfully use the various python-*client code as an
       effective SDK for interacting with OpenStack, consistency between the
       projects and documentation availability waxes and wanes. To combat this,
-      an <link xlink:href="http://opsgui.de/1eLAaYU">effort to improve the
+      an <link xlink:href="https://wiki.openstack.org/wiki/PythonOpenStackSDK">effort to improve the
       experience</link> has started. Cross-project development efforts in
       OpenStack have a checkered history, such as the <link
-      xlink:href="http://opsgui.de/NPFBLH"> unified client project</link>
+      xlink:href="https://wiki.openstack.org/wiki/OpenStackClient"> unified client project</link>
       having several false starts. However, the early signs for the SDK
       project are promising, and we expect to see results during the Juno
       cycle.<indexterm class="endofrange" startref="OSaspect" /></para>

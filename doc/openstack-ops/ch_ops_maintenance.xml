@@ -144,7 +144,7 @@
       <para>To avoid this situation, create a highly available cloud
       controller cluster. This is outside the scope of this document, but you
       can read more in the draft <link
-      xlink:href="http://opsgui.de/NPGlAo">OpenStack High Availability
+      xlink:href="http://docs.openstack.org/high-availability-guide/content/ch-intro.html">OpenStack High Availability
       Guide</link>.</para>
 
       <para>The next best approach is to use a configuration-management tool,
@@ -881,18 +881,18 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
       <para>Several configuration-management tools are available, and this
       guide does not recommend a specific one. The two most popular ones in
       the OpenStack community are <link
-      xlink:href="http://opsgui.de/1eLBsD7">Puppet</link>, with available
-      <link xlink:href="http://opsgui.de/NPGmnU">OpenStack Puppet
+      xlink:href="https://puppetlabs.com/">Puppet</link>, with available
+      <link xlink:href="https://github.com/puppetlabs/puppetlabs-openstack">OpenStack Puppet
       modules</link>; and <link
-      xlink:href="http://opsgui.de/1eLBtqO">Chef</link>, with available <link
-      xlink:href="http://opsgui.de/NPGnID">OpenStack Chef recipes</link>.
+      xlink:href="http://www.getchef.com/chef/">Chef</link>, with available <link
+      xlink:href="https://github.com/opscode/openstack-chef-repo">OpenStack Chef recipes</link>.
       Other newer configuration tools include <link
-      xlink:href="http://opsgui.de/1eLBxqm">Juju</link>, <link
-      xlink:href="http://opsgui.de/NPGpQQ">Ansible</link>, and <link
-      xlink:href="http://opsgui.de/1eLBACD">Salt</link>; and more mature
+      xlink:href="https://juju.ubuntu.com/">Juju</link>, <link
+      xlink:href="http://www.ansible.com/home">Ansible</link>, and <link
+      xlink:href="http://www.saltstack.com/">Salt</link>; and more mature
       configuration management tools include <link
-      xlink:href="http://opsgui.de/NPGoMP">CFEngine</link> and <link
-      xlink:href="http://opsgui.de/1eLBB9M">Bcfg2</link>.</para>
+      xlink:href="http://cfengine.com/">CFEngine</link> and <link
+      xlink:href="http://bcfg2.org/">Bcfg2</link>.</para>
     </tip>
   </section>
 
@@ -1056,7 +1056,7 @@ sql_connection = mysql://cinder:password@cloud.example.com/cinder
       suspect that MySQL might be becoming a bottleneck, you should start
       researching MySQL optimization. The MySQL manual has an entire section
       dedicated to this topic: <link
-      xlink:href="http://opsgui.de/NPGqUV">Optimization
+      xlink:href="http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html">Optimization
       Overview</link>.</para>
     </section>
   </section>

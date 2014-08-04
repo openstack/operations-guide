@@ -157,7 +157,7 @@
       </indexterm></para>
 
     <para>The networking chapter of the OpenStack <link
-    xlink:href="http://opsgui.de/1eLBD1f"
+    xlink:href="http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html"
     xlink:title="Cloud Administrator Guide">Cloud Administrator Guide</link>
     shows a variety of networking scenarios and their connection paths. The
     purpose of this section is to give you the tools to troubleshoot the
@@ -613,7 +613,7 @@ output:52,output:51,output:50,output:55,output:33
     <literal>tcpdump</literal> at several points along the network path to
     correlate where a problem might be. If you prefer working with a GUI,
     either live or by using a <literal>tcpdump</literal> capture, do also
-    check out <link xlink:href="http://opsgui.de/NPGrIm"
+    check out <link xlink:href="http://www.wireshark.org/"
     xlink:title="Wireshark">Wireshark</link>.<indexterm class="singular">
         <primary>tcpdump</primary>
       </indexterm></para>
@@ -1084,7 +1084,7 @@ proto UDP (17), length 75)
     <para>Open vSwitch as used in the previous OpenStack Networking Service
     examples is a full-featured multilayer virtual switch licensed under the
     open source Apache 2.0 license. Full documentation can be found at <link
-    xlink:href="http://opsgui.de/1eLBFGA">the project's website</link>. In
+    xlink:href="http://openvswitch.org/">the project's website</link>. In
     practice, given the preceding configuration, the most common issues are
     being sure that the required bridges (<code>br-int</code>,
     <code>br-tun</code>, <code>br-ex</code>, etc.) exist and have the proper

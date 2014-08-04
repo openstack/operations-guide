@@ -268,7 +268,7 @@
     software such as Pound or HAProxy). One caveat with dashboard is the VNC
     proxy, which uses the WebSocket protocol—something that an L7 load
     balancer might struggle with. See also <link
-    xlink:href="http://opsgui.de/1eLAOFE"
+    xlink:href="http://docs.openstack.org/developer/horizon/topics/deployment.html#session-storage"
     xlink:title="Horizon session storage">Horizon session
     storage</link>.</para>
 

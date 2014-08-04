@@ -151,8 +151,8 @@
 
       <screen><prompt>$</prompt> <userinput>glance help</userinput></screen>
 
-      <para>or the <link xlink:href="http://opsgui.de/NPH3Od">OpenStack Image
-      Service CLI Guide</link>.</para>
+      <para>or the <link xlink:href="http://docs.openstack.org/cli-reference/content/glanceclient_commands.html">Command-Line Interface Reference
+      </link>.</para>
     </section>
 
     <section xml:id="image_service_and_database">
@@ -901,7 +901,7 @@ Optional snapshot description. (Default=None)</programlisting>
         <para>The <code>user-data</code> key is a special key in the metadata
         service that holds a file that cloud-aware applications within the
         guest instance can access. For example, <link
-        xlink:href="http://opsgui.de/1eLCtLs"
+        xlink:href="https://help.ubuntu.com/community/CloudInit"
         xlink:title="OpenStack Image Service">cloudinit</link> is an open
         source package from Ubuntu, but available in most distributions, that
         handles early initialization of a cloud instance that makes use of
@@ -1124,14 +1124,14 @@ Optional snapshot description. (Default=None)</programlisting>
 
     <para>Read more detailed instructions for launching an instance from a
     bootable volume in the <link
-    xlink:href="http://opsgui.de/NPH30v">OpenStack End User
+    xlink:href="http://docs.openstack.org/user-guide/content/boot_from_volume.html">OpenStack End User
     Guide</link>.</para>
 
     <para>To boot normally from an image and attach block storage, map to a
     device other than vda. You can find instructions for launching an instance
     and attaching a volume to the instance and for copying the image to the
     attached volume in the <link
-    xlink:href="http://opsgui.de/1eLCwHb">OpenStack End User
+    xlink:href="http://docs.openstack.org/user-guide/content/dashboard_launch_instances_from_image.html">OpenStack End User
     Guide</link>.</para>
   </section>
 
@@ -1233,7 +1233,7 @@ Optional snapshot description. (Default=None)</programlisting>
         <title>Ensuring Snapshots Are Consistent</title>
 
         <para>The following section is from Sébastien Han's <link
-        xlink:href="http://opsgui.de/NPH5Wn"
+        xlink:href="http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/"
         xlink:title="OpenStack Image Service">“OpenStack: Perform Consistent
         Snapshots” blog entry</link>.</para>
 
@@ -1450,9 +1450,9 @@ Optional snapshot description. (Default=None)</programlisting>
 
     <para>This section was intended as a brief introduction to some of the
     most useful of many OpenStack commands. For an exhaustive list, please
-    refer to the <link xlink:href="http://opsgui.de/1eLBkDJ">Admin User
+    refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/content/">Admin User
     Guide</link>, and for additional hints and tips, see the <link
-    xlink:href="http://opsgui.de/1eLBL0N">Cloud Admin Guide</link>. We hope
+    xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">Cloud Admin Guide</link>. We hope
     your users remain happy and recognize your hard work! (For more hard work,
     turn the page to the next chapter, where we discuss the system-facing
     operations: maintenance, failures and debugging.)</para>

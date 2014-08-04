@@ -20,8 +20,8 @@
     </indexterm></para>
 
   <para>To take the first path, you can modify the OpenStack code directly.
-  Learn <link xlink:href="http://opsgui.de/NPG68B">how to contribute</link>,
-  follow the <link xlink:href="http://opsgui.de/1eLB2ww">code review
+  Learn <link xlink:href="https://wiki.openstack.org/wiki/How_To_Contribute">how to contribute</link>,
+  follow the <link xlink:href="https://wiki.openstack.org/wiki/GerritWorkflow">code review
   workflow</link>, make your changes, and contribute them back to the upstream
   OpenStack project. This path is recommended if the feature you need requires
   deep integration with an existing project. The community is always open to
@@ -69,7 +69,7 @@
       </indexterm></para>
 
     <para>You can find all of the documentation at the <link
-    xlink:href="http://opsgui.de/NPG9kK">DevStack</link> website.</para>
+    xlink:href="http://devstack.org/">DevStack</link> website.</para>
 
     <procedure>
       <title>To run DevStack for the stable Havana branch on an instance in
@@ -213,14 +213,14 @@ stable/havana devstack/</userinput></screen>
           <listitem>
             <para>The <code>stack.sh</code> script takes a while to run.
             Perhaps you can take this opportunity to <link
-            xlink:href="http://opsgui.de/1eLB5bJ">join the OpenStack
+            xlink:href="https://www.openstack.org/join/">join the OpenStack
             Foundation</link>.</para>
           </listitem>
 
           <listitem>
             <para><literal>Screen</literal> is a useful program for viewing
             many related services at once. For more information, see the <link
-            xlink:href="http://opsgui.de/NPG9Bi">GNU screen quick
+            xlink:href="http://aperiodic.net/screen/quick_reference">GNU screen quick
             reference</link>.</para>
           </listitem>
         </itemizedlist></para>
@@ -283,9 +283,9 @@ SCREEN_LOGDIR=/opt/stack/logs</programlisting>
 
     <para>OpenStack Object Storage, known as swift when reading the code, is
     based on the Python <link
-    xlink:href="http://opsgui.de/1eLB8Ew">Paste</link> framework. The best
+    xlink:href="http://pythonpaste.org/">Paste</link> framework. The best
     introduction to its architecture is <link
-    xlink:href="http://opsgui.de/NPG8xl">A Do-It-Yourself Framework</link>.
+    xlink:href="http://pythonpaste.org/do-it-yourself-framework.html">A Do-It-Yourself Framework</link>.
     Because of the swift project's use of this framework, you are able to add
     features to a project by placing some custom code in a project's pipeline
     without having to change any of the core code.<indexterm class="singular">
@@ -741,7 +741,7 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... \
     the same functionality. They can use your code, provide feedback, and
     possibly contribute. If enough support exists for it, perhaps you can
     propose that it be added to the official swift <link
-    xlink:href="http://opsgui.de/1eLB87p">middleware</link>.</para>
+    xlink:href="https://github.com/openstack/swift/tree/master/swift/common/middleware">middleware</link>.</para>
   </section>
 
   <section xml:id="nova_scheduler_example">
@@ -752,7 +752,7 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... \
     particular interface and plug it in through configuration. For example,
     you can easily plug in a new scheduler for Compute. The existing
     schedulers for Compute are feature full and well documented at <link
-    xlink:href="http://opsgui.de/NPGaFk">Scheduling</link>. However, depending
+    xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html">Scheduling</link>. However, depending
     on your user's use cases, the existing schedulers might not meet your
     requirements. You might need to create a new scheduler.<indexterm
         class="singular">
@@ -1156,16 +1156,16 @@ _schedule /opt/stack/nova/nova/scheduler/ip_scheduler.py:76</computeroutput></sc
     the same functionality. They can use your code, provide feedback, and
     possibly contribute. If enough support exists for it, perhaps you can
     propose that it be added to the official Compute <link
-    xlink:href="http://opsgui.de/1eLBbA1">schedulers</link>.</para>
+    xlink:href="https://github.com/openstack/nova/tree/master/nova/scheduler">schedulers</link>.</para>
   </section>
 
   <section xml:id="ops_dashboard">
     <title>Customizing the Dashboard (Horizon)</title>
 
     <para>The dashboard is based on the Python <link
-    xlink:href="http://opsgui.de/NPGbZX">Django</link> web application
+    xlink:href="https://www.djangoproject.com/">Django</link> web application
     framework. The best guide to customizing it has already been written and
-    can be found at <link xlink:href="http://opsgui.de/1eLBcnE">Building on
+    can be found at <link xlink:href="http://docs.openstack.org/developer/horizon/topics/tutorial.html">Building on
     Horizon</link>.<indexterm class="singular">
         <primary>Django</primary>
       </indexterm><indexterm class="singular">

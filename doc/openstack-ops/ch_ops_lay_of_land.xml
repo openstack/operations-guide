@@ -26,7 +26,7 @@
     with a <guilabel>System Panel</guilabel> and <guilabel>Identity
     Panel</guilabel>. These interfaces give you access to system information
     and usage as well as to settings for configuring what end users can do.
-    Refer to the <link xlink:href="http://opsgui.de/NPGcgz">OpenStack Admin
+    Refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/content/ch_dashboard.html">OpenStack Admin
     User Guide</link> for detailed how-to information about using the
     dashboard as an admin user.<indexterm class="singular">
         <primary>working environment</primary>
@@ -51,7 +51,7 @@
       </indexterm></para>
 
     <para>We strongly suggest that you install the command-line clients from
-    the <link xlink:href="http://opsgui.de/1eLBdb8">Python Package
+    the <link xlink:href="https://pypi.python.org/pypi">Python Package
     Index</link> (PyPI) instead of from the distribution packages. The clients
     are under heavy development, and it is very likely at any given time that
     the version of the packages distributed by your operating-system vendor
@@ -347,7 +347,7 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
       tools written to the OpenStack API.</para>
 
       <tip>
-        <para><link xlink:href="http://opsgui.de/NPGeVy">Keyring
+        <para><link xlink:href="https://wiki.openstack.org/wiki/KeyringSupport">Keyring
         Support</link> enables you to securely save your OpenStack password in
         an encrypted file.<indexterm class="singular">
             <primary>Keyring Support</primary>
@@ -372,8 +372,8 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
         where you want to interact with the API directly or need to use it
         because of a suspected bug in one of the CLI tools. The best way to do
         this is to use a combination of&#160;<link
-        xlink:href="http://opsgui.de/1eLBfQy">cURL</link> and another tool,
-        such as&#160;<link xlink:href="http://opsgui.de/NPGdB5">jq</link>, to
+        xlink:href="http://curl.haxx.se/">cURL</link> and another tool,
+        such as&#160;<link xlink:href="http://stedolan.github.io/jq/">jq</link>, to
         parse the JSON from the responses.<indexterm class="singular">
             <primary>authentication tokens</primary>
           </indexterm><indexterm class="singular">
@@ -439,9 +439,9 @@ http://203.0.113.10:8774/v2/98333aba48e756fa8f629c83a818ad57/servers | jq .</pro
           </orderedlist></para>
 
         <para>To discover how API requests should be structured, read the
-        <link xlink:href="http://opsgui.de/1eLBhrz">OpenStack API
+        <link xlink:href="http://developer.openstack.org/api-ref.html">OpenStack API
         Reference</link>. To chew through the responses using jq, see the
-        <link xlink:href="http://opsgui.de/NPGeoH">jq Manual</link>.</para>
+        <link xlink:href="http://stedolan.github.io/jq/manual/">jq Manual</link>.</para>
 
         <para>The <code>-s flag</code> used in the cURL commands above are
         used to prevent the&#160;progress meter from being shown. If you are
@@ -825,7 +825,7 @@ None            1.2.3.5 48a415...b010ff nova vlan20</programlisting>
     <para>We hope you have enjoyed this quick tour of your working
     environment, including how to interact with your cloud and extract useful
     information. From here, you can use the <emphasis><link
-    xlink:href="http://opsgui.de/1eLBkDJ">Admin User Guide</link></emphasis>
+    xlink:href="http://docs.openstack.org/user-guide-admin/content/">Admin User Guide</link></emphasis>
     as your reference for all of the command-line functionality in your
     cloud.</para>
   </section>

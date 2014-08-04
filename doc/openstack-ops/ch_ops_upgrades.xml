@@ -315,7 +315,7 @@ scheduler=havana</programlisting>
 
     <para>For this section, we assume that you are starting with the
       architecture provided in the OpenStack <link
-        xlink:href="http://opsgui.de/NPGunp"><citetitle>OpenStack
+        xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/"><citetitle>OpenStack
           Installation Guide</citetitle></link> and upgrading to the
       same architecture for Havana. All nodes should run Ubuntu 12.04
       LTS. This section primarily addresses upgrading core OpenStack
@@ -340,7 +340,7 @@ scheduler=havana</programlisting>
       <title>Upgrade Considerations</title>
 
       <para>Always review the <link
-          xlink:href="http://opsgui.de/1eLzHFY">release notes</link>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana">release notes</link>
         before performing an upgrade to learn about newly available
         features that you might want to enable and deprecated features
         that you should disable.</para>
@@ -699,7 +699,7 @@ auth_uri = http://controller:5000</programlisting>
 
     <para>For this section, we assume that you are starting with the
       architecture provided in the OpenStack <link
-        xlink:href="http://opsgui.de/NPGvrs"><citetitle>OpenStack
+        xlink:href="http://docs.openstack.org/havana/install-guide/install/yum/content/"><citetitle>OpenStack
           Installation Guide</citetitle></link> and upgrading to the
       same architecture for Havana. All nodes should run Red Hat
       Enterprise Linux 6.4 or compatible derivatives. Newer minor
@@ -725,7 +725,7 @@ auth_uri = http://controller:5000</programlisting>
       <title>Upgrade Considerations</title>
 
       <para>Always review the <link
-          xlink:href="http://opsgui.de/1eLzHFY">release notes</link>
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana">release notes</link>
         before performing an upgrade to learn about newly available
         features that you might want to enable and deprecated features
         that you should disable.</para>
@@ -768,7 +768,7 @@ auth_uri = http://controller:5000</programlisting>
 
       <note>
         <para>Consider checking for newer versions of the <link
-            xlink:href="http://opsgui.de/1eLBXNB">Havana
+            xlink:href="https://repos.fedorapeople.org/repos/openstack/openstack-havana/">Havana
             repository</link>.</para>
       </note>
     </section>

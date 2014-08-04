@@ -502,7 +502,7 @@
       <para>All servers running OpenStack components should be able to access
       an appropriate NTP server. You may decide to set up one locally or use
       the public pools available from the <link
-      xlink:href="http://opsgui.de/NPFRua"> Network Time Protocol
+      xlink:href="http://www.pool.ntp.org/en/"> Network Time Protocol
       project</link>.</para>
     </section>
 
@@ -528,7 +528,7 @@
     <para>Armed with your IP address layout and numbers and knowledge about
     the topologies and services you can use, it's now time to prepare the
     network for your installation. Be sure to also check out the <link
-    xlink:href="http://opsgui.de/NPG4NW"
+    xlink:href="http://docs.openstack.org/sec/"
     xlink:title="OpenStack Security Guide"><emphasis>OpenStack Security
     Guide</emphasis></link> for tips on securing your network. We wish you a
     good relationship with your networking team!</para>

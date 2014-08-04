@@ -28,7 +28,7 @@
 
   <para>At the time of writing, OpenStack has more than 1,500 configuration
   options. You can see them documented at <link
-  xlink:href="http://opsgui.de/1eLATt4">the OpenStack configuration reference
+  xlink:href="http://docs.openstack.org/trunk/config-reference/content/config_overview.html">the OpenStack configuration reference
   guide</link>. This chapter cannot hope to document all of these, but we do
   try to introduce the important concepts so that you know where to go digging
   for more information.</para>
@@ -53,10 +53,10 @@
 
     <note>
       <para>The currently implemented hypervisors are listed on <link
-      xlink:href="http://opsgui.de/1eLAwP2">the OpenStack documentation
+      xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html">the OpenStack documentation
       website</link>. You can see a matrix of the various features in
       OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at
-      <link xlink:href="http://opsgui.de/NPFQ9w">the Hypervisor support matrix
+      <link xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix">the Hypervisor support matrix
       page</link>.</para>
     </note>
 
@@ -176,7 +176,7 @@
       <title>Security Configuration for Compute, Networking, and
       Storage</title>
 
-      <para>The <emphasis><link xlink:href="http://opsgui.de/NPG4NW">OpenStack
+      <para>The <emphasis><link xlink:href="http://docs.openstack.org/sec/">OpenStack
       Security Guide</link></emphasis> provides a deep dive into securing an
       OpenStack cloud, including SSL/TLS, key management, PKI and certificate
       management, data transport and privacy concerns, and
@@ -195,7 +195,7 @@
       <title>High Availability</title>
 
       <para>The <emphasis><link
-      xlink:href="http://opsgui.de/1eLAYwS">OpenStack High Availability
+      xlink:href="http://docs.openstack.org/high-availability-guide/content/">OpenStack High Availability
       Guide</link></emphasis> offers suggestions for elimination of a single
       point of failure that could cause system downtime. While it is not a
       completely prescriptive document, it offers methods and techniques for
@@ -214,7 +214,7 @@
       <para>The Havana release with OpenStack Networking (neutron) does not
       offer complete support of IPv6. Better support is planned for the
       Icehouse release. You can follow along the progress being made by
-      watching the <link xlink:href="http://opsgui.de/NPG5kQ">neutron IPv6
+      watching the <link xlink:href="https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam">neutron IPv6
       Subteam at work</link>.<indexterm class="singular">
           <primary>Icehouse</primary>
 
@@ -232,7 +232,7 @@
       is documented for FlatDHCP and a multi-host configuration. The key is to
       make <literal>nova-network</literal> think a <literal>radvd</literal>
       command ran successfully. The entire configuration is detailed in a
-      Cybera blog post, <link xlink:href="http://opsgui.de/1eLB0F2">“An IPv6
+      Cybera blog post, <link xlink:href="http://www.cybera.ca/news-and-events/tech-radar/an-ipv6-enabled-cloud/">“An IPv6
       enabled cloud”</link>.</para>
     </section>
 
@@ -266,7 +266,7 @@
       one zone for each cluster, but be sure your network (WAN) can handle the
       additional request and response load between zones as you add more zones
       and build a ring that handles more zones. Refer to <link
-      xlink:href="http://opsgui.de/NPG6FJ">Geographically Distributed
+      xlink:href="http://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters">Geographically Distributed
       Clusters</link> in the documentation for additional
       information.<indexterm class="singular">
           <primary>Object Storage</primary>

@@ -92,9 +92,9 @@
           <tr>
             <td><para>OpenStack package repository</para></td>
 
-            <td><para><link xlink:href="http://opsgui.de/NPHp7s">Ubuntu Cloud
+            <td><para><link xlink:href="https://wiki.ubuntu.com/ServerTeam/CloudArchive">Ubuntu Cloud
             Archive</link> or <link
-            xlink:href="http://opsgui.de/1eLCZcm">RDO</link>*</para></td>
+            xlink:href="http://openstack.redhat.com/Frequently_Asked_Questions">RDO</link>*</para></td>
           </tr>
 
           <tr>
@@ -268,7 +268,7 @@
 
       <para>We recommend that you do not use the default Ubuntu OpenStack
       install packages and instead use the <link
-      xlink:href="http://opsgui.de/NPHp7s">Ubuntu Cloud Archive</link>. The
+      xlink:href="https://wiki.ubuntu.com/ServerTeam/CloudArchive">Ubuntu Cloud Archive</link>. The
       Cloud Archive is a package repository supported by Canonical that allows
       you to upgrade to future OpenStack releases while remaining on Ubuntu
       12.04.</para>
@@ -325,7 +325,7 @@
       (keystone)</emphasis> over others, such as LDAP. This backend is simple
       to install and is robust. The authors acknowledge that many
       installations want to bind with existing directory services and caution
-      careful understanding of the <link xlink:href="http://opsgui.de/1eLCZJr"
+      careful understanding of the <link xlink:href="http://docs.openstack.org/havana/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend"
       xlink:title="LDAP config options">array of options
       available</link>.</para>
 
@@ -382,7 +382,7 @@
         </indexterm></para>
 
       <tip>
-        <para><link xlink:href="http://opsgui.de/NPHqbu">Multi-host</link> is
+        <para><link xlink:href="http://docs.openstack.org/havana/install-guide/install/apt/content/nova-network.html">Multi-host</link> is
         a high-availability option for the network configuration, where the
         <literal>nova-network</literal> service is run on every compute node
         instead of running on only a single node.</para>
