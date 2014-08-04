@@ -519,19 +519,19 @@
         flavors or images.</para>
 
         <para>The general case for this is setting key-value pairs in the
-        aggregate metadata and matching key-value pairs in instance type extra
-        specs. The <parameter>AggregateInstanceExtraSpecsFilter</parameter> in
+        aggregate metadata and matching key-value pairs in flavor's <parameter>extra_specs</parameter>
+        metadata. The <parameter>AggregateInstanceExtraSpecsFilter</parameter> in
         the filter scheduler will enforce that instances be scheduled only on
         hosts in aggregates that define the same key to the same value.</para>
 
         <para>An advanced use of this general concept allows different
-        instance types to run with different CPU and RAM allocation rations so
+        flavor types to run with different CPU and RAM allocation ratios so
         that high-intensity computing loads and low-intensity development and
         testing systems can share the same cloud without either starving the
         high-use systems or wasting resources on low-utilization systems. This
         works by setting <parameter>metadata</parameter> in your host
         aggregates and matching <parameter>extra_specs</parameter> in your
-        instance types.</para>
+        flavor types.</para>
 
         <para>The first step is setting the aggregate metadata keys
         <parameter>cpu_allocation_ratio</parameter> and
@@ -547,11 +547,11 @@
         different values for the same <phrase
         role="keep-together">resource</phrase>.</para>
 
-        <para>This is the first half of the equation. To get instance types
+        <para>This is the first half of the equation. To get flavor types
         that are guaranteed a particular ratio, you must set the
-        <parameter>extra_specs</parameter> in the instance type to the
+        <parameter>extra_specs</parameter> in the flavor type to the
         key-value pair you want to match in the aggregate. For example, if you
-        define <parameter>extra specs</parameter>
+        define <parameter>extra_specs</parameter>
         <parameter>cpu_allocation_ratio</parameter> to "1.0", then instances
         of that type will run in aggregates only where the metadata key
         <parameter>cpu_allocation_ratio</parameter> is also defined as "1.0."
@@ -562,7 +562,7 @@
         abstraction. For example, by defining a key
         <parameter>overcommit</parameter> and setting a value of "high,"
         "medium," or "low," you could then tune the numeric allocation ratios
-        in the aggregates without also needing to change all instance types
+        in the aggregates without also needing to change all flavor types
         relating to them.</para>
 
         <note>
