@@ -1322,6 +1322,50 @@ rabbit_password = <replaceable>RABBIT_PASS</replaceable></programlisting>
         </listitem>
         <listitem>
           <para>OpenStack Networking:</para>
+          <para>Before upgrading the Networking database, you must
+            convert the character set for each table to UTF-8.</para>
+          <para>Use the MySQL client to execute the following
+            commands:</para>
+          <screen><prompt>#</prompt> <userinput>mysql -u root -p</userinput>
+<prompt>mysql></prompt> <userinput>USE database neutron;</userinput>
+<prompt>mysql></prompt> <userinput>SET foreign_key_checks = 0;</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE agents CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE alembic_version CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE allowedaddresspairs CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE dnsnameservers CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE externalnetworks CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE extradhcpopts CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE floatingips CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ipallocationpools CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ipallocations CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ipavailabilityranges CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE networkdhcpagentbindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE networks CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_network_bindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_tunnel_allocations CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_tunnel_endpoints CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_vlan_allocations CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE portbindingports CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ports CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE quotas CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE routerl3agentbindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE routerroutes CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE routers CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE securitygroupportbindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE securitygrouprules CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE securitygroups CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE servicedefinitions CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE servicetypes CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE subnetroutes CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE subnets CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>SET foreign_key_checks = 1;</userinput>
+<prompt>mysql></prompt> <userinput>exit</userinput></screen>
+          <note>
+            <para>Your environment might use a different database name.
+              Also, it might contain different or additional tables that
+              you must also convert to UTF-8 by using similar
+              commands.</para>
+          </note>
           <para>Populate the
               <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>
             file with the equivalent configuration for your
@@ -1706,6 +1750,50 @@ qpid_hostname = <replaceable>controller</replaceable></programlisting>
         </listitem>
         <listitem>
           <para>OpenStack Networking:</para>
+          <para>Before upgrading the Networking database, you must
+            convert the character set for each table to UTF-8.</para>
+          <para>Use the MySQL client to execute the following
+            commands:</para>
+          <screen><prompt>#</prompt> <userinput>mysql -u root -p</userinput>
+<prompt>mysql></prompt> <userinput>USE database neutron;</userinput>
+<prompt>mysql></prompt> <userinput>SET foreign_key_checks = 0;</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE agents CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE alembic_version CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE allowedaddresspairs CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE dnsnameservers CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE externalnetworks CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE extradhcpopts CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE floatingips CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ipallocationpools CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ipallocations CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ipavailabilityranges CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE networkdhcpagentbindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE networks CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_network_bindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_tunnel_allocations CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_tunnel_endpoints CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ovs_vlan_allocations CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE portbindingports CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE ports CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE quotas CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE routerl3agentbindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE routerroutes CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE routers CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE securitygroupportbindings CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE securitygrouprules CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE securitygroups CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE servicedefinitions CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE servicetypes CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE subnetroutes CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>ALTER TABLE subnets CONVERT TO CHARACTER SET 'utf8';</userinput>
+<prompt>mysql></prompt> <userinput>SET foreign_key_checks = 1;</userinput>
+<prompt>mysql></prompt> <userinput>exit</userinput></screen>
+          <note>
+            <para>Your environment might use a different database name.
+              Also, it might contain different or additional tables that
+              you must also convert to UTF-8 by using similar
+              commands.</para>
+          </note>
           <para>Install the ML2 plug-in package:</para>
           <screen><prompt>#</prompt> <userinput>yum install openstack-neutron-ml2</userinput></screen>
           <para>Populate the
