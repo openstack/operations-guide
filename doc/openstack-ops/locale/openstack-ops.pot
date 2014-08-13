@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-08 06:01+0000\n"
+"POT-Creation-Date: 2014-08-13 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -328,15 +328,15 @@ msgid "Feature requests typically start their life in Etherpad, a collaborative 
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:346(para)
-msgid "Therefore, the fastest way to get your feature request up for consideration is to create an Etherpad with your ideas and propose a session to the design summit. If the design summit has already passed, you may also create a blueprint directly. Read this <link href=\"http://opsgui.de/NPFy2x\">blog post about how to work with blueprints</link> the perspective of Victoria Martínez, a developer intern."
+msgid "Therefore, the fastest way to get your feature request up for consideration is to create an Etherpad with your ideas and propose a session to the design summit. If the design summit has already passed, you may also create a blueprint directly. Read this <link href=\"http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/\">blog post about how to work with blueprints</link> the perspective of Victoria Martínez, a developer intern."
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:354(para)
-msgid "The roadmap for the next release as it is developed can be seen at <link href=\"http://opsgui.de/1eLA7wg\">Releases</link>."
+msgid "The roadmap for the next release as it is developed can be seen at <link href=\"http://status.openstack.org/release/\">Releases</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:357(para)
-msgid "To determine the potential features going in to future releases, or to look at features implemented previously, take a look at the existing blueprints such as <link href=\"http://opsgui.de/NPFxf5\">OpenStack Compute (nova) Blueprints</link>, <link href=\"http://opsgui.de/1eLA8An\">OpenStack Identity (keystone) Blueprints</link>, and release notes."
+msgid "To determine the potential features going in to future releases, or to look at features implemented previously, take a look at the existing blueprints such as <link href=\"https://blueprints.launchpad.net/nova\">OpenStack Compute (nova) Blueprints</link>, <link href=\"https://blueprints.launchpad.net/keystone\">OpenStack Identity (keystone) Blueprints</link>, and release notes."
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:364(para)
@@ -412,7 +412,7 @@ msgid "Compute V3 API"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:497(para)
-msgid "The third version of the Compute API was broadly discussed and worked on during the Havana and Icehouse release cycles. Current discussions indicate that the V2 API will remain for many releases, but this is a great time to evaluate the Compute API and provide comments while it is being defined. Of particular note is the decision that the V3 API will not support XML messages—being JSON only. This was based on the poor testing of existing XML responses in the V2 API and the lack of effort to continue to develop and maintain an entire second response type. Feedback on this and any such change is welcome by responding to the <link href=\"http://opsgui.de/1eLAaba\">user survey</link>.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>Compute V3 API</secondary></indexterm>"
+msgid "The third version of the Compute API was broadly discussed and worked on during the Havana and Icehouse release cycles. Current discussions indicate that the V2 API will remain for many releases, but this is a great time to evaluate the Compute API and provide comments while it is being defined. Of particular note is the decision that the V3 API will not support XML messages—being JSON only. This was based on the poor testing of existing XML responses in the V2 API and the lack of effort to continue to develop and maintain an entire second response type. Feedback on this and any such change is welcome by responding to the <link href=\"https://www.openstack.org/user-survey/Login\">user survey</link>.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>Compute V3 API</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:515(title)
@@ -436,7 +436,7 @@ msgid "Bare-Metal Deployment (Ironic)"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:531(para)
-msgid "Though bare-metal deployment has been widely lauded, and development continues, the project to replace the Compute bare-metal driver will not graduate in Icehouse. A particular blueprint to follow is <link href=\"http://opsgui.de/NPFBex\"> Migration Path from Nova's BM Driver</link>, which tracks the ability to move to the new project from an existing bare-metal deployment.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>Compute bare-metal deployment</secondary></indexterm>"
+msgid "Though bare-metal deployment has been widely lauded, and development continues, the project to replace the Compute bare-metal driver will not graduate in Icehouse. A particular blueprint to follow is <link href=\"https://blueprints.launchpad.net/ironic/+spec/migration-from-nova\"> Migration Path from Nova's BM Driver</link>, which tracks the ability to move to the new project from an existing bare-metal deployment.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>Compute bare-metal deployment</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:544(title)
@@ -476,7 +476,7 @@ msgid "Toward a Python SDK"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:592(para)
-msgid "Though many successfully use the various python-*client code as an effective SDK for interacting with OpenStack, consistency between the projects and documentation availability waxes and wanes. To combat this, an <link href=\"http://opsgui.de/1eLAaYU\">effort to improve the experience</link> has started. Cross-project development efforts in OpenStack have a checkered history, such as the <link href=\"http://opsgui.de/NPFBLH\"> unified client project</link> having several false starts. However, the early signs for the SDK project are promising, and we expect to see results during the Juno cycle.<indexterm class=\"endofrange\" startref=\"OSaspect\"/>"
+msgid "Though many successfully use the various python-*client code as an effective SDK for interacting with OpenStack, consistency between the projects and documentation availability waxes and wanes. To combat this, an <link href=\"https://wiki.openstack.org/wiki/PythonOpenStackSDK\">effort to improve the experience</link> has started. Cross-project development efforts in OpenStack have a checkered history, such as the <link href=\"https://wiki.openstack.org/wiki/OpenStackClient\"> unified client project</link> having several false starts. However, the early signs for the SDK project are promising, and we expect to see results during the Juno cycle.<indexterm class=\"endofrange\" startref=\"OSaspect\"/>"
 msgstr ""
 
 #: ./doc/openstack-ops/bk_ops_guide.xml:16(title)
@@ -512,7 +512,7 @@ msgid "Operations"
 msgstr ""
 
 #: ./doc/openstack-ops/part_operations.xml:12(para)
-msgid "Congratulations! By now, you should have a solid design for your cloud. We now recommend that you turn to the OpenStack Installation Guide (<link href=\"http://opsgui.de/1eLCvD8\"/> for Ubuntu, for example), which contains a step-by-step guide on how to manually install the OpenStack packages and dependencies on your cloud."
+msgid "Congratulations! By now, you should have a solid design for your cloud. We now recommend that you turn to the OpenStack Installation Guide (<link href=\"http://docs.openstack.org/havana/install-guide/install/apt/\"/> for Ubuntu, for example), which contains a step-by-step guide on how to manually install the OpenStack packages and dependencies on your cloud."
 msgstr ""
 
 #: ./doc/openstack-ops/part_operations.xml:18(para)
@@ -620,7 +620,7 @@ msgid "The OpenStack Networking Service, neutron, has many more degrees of freed
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:159(para)
-msgid "The networking chapter of the OpenStack <link href=\"http://opsgui.de/1eLBD1f\" title=\"Cloud Administrator Guide\">Cloud Administrator Guide</link> shows a variety of networking scenarios and their connection paths. The purpose of this section is to give you the tools to troubleshoot the various components involved however they are plumbed together in your environment."
+msgid "The networking chapter of the OpenStack <link href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html\" title=\"Cloud Administrator Guide\">Cloud Administrator Guide</link> shows a variety of networking scenarios and their connection paths. The purpose of this section is to give you the tools to troubleshoot the various components involved however they are plumbed together in your environment."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:167(para)
@@ -820,7 +820,7 @@ msgid "tcpdump"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:611(para)
-msgid "One great, although very in-depth, way of troubleshooting network issues is to use <literal>tcpdump</literal>. We recommended using <literal>tcpdump</literal> at several points along the network path to correlate where a problem might be. If you prefer working with a GUI, either live or by using a <literal>tcpdump</literal> capture, do also check out <link href=\"http://opsgui.de/NPGrIm\" title=\"Wireshark\">Wireshark</link>.<indexterm class=\"singular\"><primary>tcpdump</primary></indexterm>"
+msgid "One great, although very in-depth, way of troubleshooting network issues is to use <literal>tcpdump</literal>. We recommended using <literal>tcpdump</literal> at several points along the network path to correlate where a problem might be. If you prefer working with a GUI, either live or by using a <literal>tcpdump</literal> capture, do also check out <link href=\"http://www.wireshark.org/\" title=\"Wireshark\">Wireshark</link>.<indexterm class=\"singular\"><primary>tcpdump</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:621(para)
@@ -1064,7 +1064,7 @@ msgid "Troubleshooting Open vSwitch"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1084(para)
-msgid "Open vSwitch as used in the previous OpenStack Networking Service examples is a full-featured multilayer virtual switch licensed under the open source Apache 2.0 license. Full documentation can be found at <link href=\"http://opsgui.de/1eLBFGA\">the project's website</link>. In practice, given the preceding configuration, the most common issues are being sure that the required bridges (<code>br-int</code>, <code>br-tun</code>, <code>br-ex</code>, etc.) exist and have the proper ports connected to them.<indexterm class=\"singular\"><primary>Open vSwitch</primary><secondary>troubleshooting</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>Open vSwitch</secondary></indexterm>"
+msgid "Open vSwitch as used in the previous OpenStack Networking Service examples is a full-featured multilayer virtual switch licensed under the open source Apache 2.0 license. Full documentation can be found at <link href=\"http://openvswitch.org/\">the project's website</link>. In practice, given the preceding configuration, the most common issues are being sure that the required bridges (<code>br-int</code>, <code>br-tun</code>, <code>br-ex</code>, etc.) exist and have the proper ports connected to them.<indexterm class=\"singular\"><primary>Open vSwitch</primary><secondary>troubleshooting</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>Open vSwitch</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1101(para)
@@ -1608,7 +1608,7 @@ msgid "OpenStack package repository"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:95(para)
-msgid "<link href=\"http://opsgui.de/NPHp7s\">Ubuntu Cloud Archive</link> or <link href=\"http://opsgui.de/1eLCZcm\">RDO</link>*"
+msgid "<link href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud Archive</link> or <link href=\"http://openstack.redhat.com/Frequently_Asked_Questions\">RDO</link>*"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:101(para) ./doc/openstack-ops/section_arch_example-neutron.xml:70(para)
@@ -1740,7 +1740,7 @@ msgid "You must first choose the operating system that runs on all of the physic
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:269(para)
-msgid "We recommend that you do not use the default Ubuntu OpenStack install packages and instead use the <link href=\"http://opsgui.de/NPHp7s\">Ubuntu Cloud Archive</link>. The Cloud Archive is a package repository supported by Canonical that allows you to upgrade to future OpenStack releases while remaining on Ubuntu 12.04."
+msgid "We recommend that you do not use the default Ubuntu OpenStack install packages and instead use the <link href=\"https://wiki.ubuntu.com/ServerTeam/CloudArchive\">Ubuntu Cloud Archive</link>. The Cloud Archive is a package repository supported by Canonical that allows you to upgrade to future OpenStack releases while remaining on Ubuntu 12.04."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:276(para)
@@ -1768,7 +1768,7 @@ msgid "Acknowledging that many small-scale deployments see running Object Storag
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:324(para)
-msgid "We chose the <emphasis>SQL backend for Identity Service (keystone)</emphasis> over others, such as LDAP. This backend is simple to install and is robust. The authors acknowledge that many installations want to bind with existing directory services and caution careful understanding of the <link href=\"http://opsgui.de/1eLCZJr\" title=\"LDAP config options\">array of options available</link>."
+msgid "We chose the <emphasis>SQL backend for Identity Service (keystone)</emphasis> over others, such as LDAP. This backend is simple to install and is robust. The authors acknowledge that many installations want to bind with existing directory services and caution careful understanding of the <link href=\"http://docs.openstack.org/havana/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend\" title=\"LDAP config options\">array of options available</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:332(para)
@@ -1796,7 +1796,7 @@ msgid "In a default OpenStack deployment, there is a single <code>nova-network</
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:385(para)
-msgid "<link href=\"http://opsgui.de/NPHqbu\">Multi-host</link> is a high-availability option for the network configuration, where the <literal>nova-network</literal> service is run on every compute node instead of running on only a single node."
+msgid "<link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/nova-network.html\">Multi-host</link> is a high-availability option for the network configuration, where the <literal>nova-network</literal> service is run on every compute node instead of running on only a single node."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:394(title) ./doc/openstack-ops/section_arch_example-neutron.xml:228(title)
@@ -2304,7 +2304,7 @@ msgid "Use Cases"
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:12(para)
-msgid "This appendix contains a small selection of use cases from the community, with more technical detail than usual. Further examples can be found on the <link href=\"http://opsgui.de/1eLAdUw\" title=\"OpenStack User Stories Website\">OpenStack website</link>."
+msgid "This appendix contains a small selection of use cases from the community, with more technical detail than usual. Further examples can be found on the <link href=\"https://www.openstack.org/user-stories/\" title=\"OpenStack User Stories Website\">OpenStack website</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:19(title)
@@ -2368,7 +2368,7 @@ msgid "We initially deployed on Ubuntu 12.04 with the Essex release of OpenStack
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:125(para)
-msgid "The software stack is still Ubuntu 12.04 LTS, but now with OpenStack Havana from the Ubuntu Cloud Archive. KVM is the hypervisor, deployed using <link href=\"http://opsgui.de/1eLAhUr\">FAI</link> and Puppet for configuration management. The FAI and Puppet combination is used lab-wide, not only for OpenStack. There is a single cloud controller node, which also acts as network controller, with the remainder of the server hardware dedicated to compute nodes."
+msgid "The software stack is still Ubuntu 12.04 LTS, but now with OpenStack Havana from the Ubuntu Cloud Archive. KVM is the hypervisor, deployed using <link href=\"http://fai-project.org/\">FAI</link> and Puppet for configuration management. The FAI and Puppet combination is used lab-wide, not only for OpenStack. There is a single cloud controller node, which also acts as network controller, with the remainder of the server hardware dedicated to compute nodes."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:133(para)
@@ -2460,7 +2460,7 @@ msgid "OpenStack might not do everything you need it to do out of the box. To ad
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:22(para)
-msgid "To take the first path, you can modify the OpenStack code directly. Learn <link href=\"http://opsgui.de/NPG68B\">how to contribute</link>, follow the <link href=\"http://opsgui.de/1eLB2ww\">code review workflow</link>, make your changes, and contribute them back to the upstream OpenStack project. This path is recommended if the feature you need requires deep integration with an existing project. The community is always open to contributions and welcomes new functionality that follows the feature-development guidelines. This path still requires you to use DevStack for testing your feature additions, so this chapter walks you through the DevStack environment.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>customization and</secondary></indexterm>"
+msgid "To take the first path, you can modify the OpenStack code directly. Learn <link href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">how to contribute</link>, follow the <link href=\"https://wiki.openstack.org/wiki/GerritWorkflow\">code review workflow</link>, make your changes, and contribute them back to the upstream OpenStack project. This path is recommended if the feature you need requires deep integration with an existing project. The community is always open to contributions and welcomes new functionality that follows the feature-development guidelines. This path still requires you to use DevStack for testing your feature additions, so this chapter walks you through the DevStack environment.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>customization and</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:37(para)
@@ -2480,7 +2480,7 @@ msgid "To create a development environment, you can use DevStack. DevStack is es
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:71(para)
-msgid "You can find all of the documentation at the <link href=\"http://opsgui.de/NPG9kK\">DevStack</link> website."
+msgid "You can find all of the documentation at the <link href=\"http://devstack.org/\">DevStack</link> website."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:75(title)
@@ -2580,11 +2580,11 @@ msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> follow
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:214(para)
-msgid "The <code>stack.sh</code> script takes a while to run. Perhaps you can take this opportunity to <link href=\"http://opsgui.de/1eLB5bJ\">join the OpenStack Foundation</link>."
+msgid "The <code>stack.sh</code> script takes a while to run. Perhaps you can take this opportunity to <link href=\"https://www.openstack.org/join/\">join the OpenStack Foundation</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:221(para)
-msgid "<literal>Screen</literal> is a useful program for viewing many related services at once. For more information, see the <link href=\"http://opsgui.de/NPG9Bi\">GNU screen quick reference</link>."
+msgid "<literal>Screen</literal> is a useful program for viewing many related services at once. For more information, see the <link href=\"http://aperiodic.net/screen/quick_reference\">GNU screen quick reference</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:229(para)
@@ -2600,7 +2600,7 @@ msgid "Customizing Object Storage (Swift) Middleware"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:284(para)
-msgid "OpenStack Object Storage, known as swift when reading the code, is based on the Python <link href=\"http://opsgui.de/1eLB8Ew\">Paste</link> framework. The best introduction to its architecture is <link href=\"http://opsgui.de/NPG8xl\">A Do-It-Yourself Framework</link>. Because of the swift project's use of this framework, you are able to add features to a project by placing some custom code in a project's pipeline without having to change any of the core code.<indexterm class=\"singular\"><primary>Paste framework</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>swift</primary><secondary>swift middleware</secondary></indexterm><indexterm class=\"singular\"><primary>Object Storage</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>Object Storage</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing Object Storage (swift)</secondary></indexterm>"
+msgid "OpenStack Object Storage, known as swift when reading the code, is based on the Python <link href=\"http://pythonpaste.org/\">Paste</link> framework. The best introduction to its architecture is <link href=\"http://pythonpaste.org/do-it-yourself-framework.html\">A Do-It-Yourself Framework</link>. Because of the swift project's use of this framework, you are able to add features to a project by placing some custom code in a project's pipeline without having to change any of the core code.<indexterm class=\"singular\"><primary>Paste framework</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>swift</primary><secondary>swift middleware</secondary></indexterm><indexterm class=\"singular\"><primary>Object Storage</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>Object Storage</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing Object Storage (swift)</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:313(para)
@@ -2796,7 +2796,7 @@ msgid "You can follow a similar pattern in other projects that use the Python Pa
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:739(para)
-msgid "When your middleware is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official swift <link href=\"http://opsgui.de/1eLB87p\">middleware</link>."
+msgid "When your middleware is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official swift <link href=\"https://github.com/openstack/swift/tree/master/swift/common/middleware\">middleware</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:748(title)
@@ -2804,7 +2804,7 @@ msgid "Customizing the OpenStack Compute (nova) Scheduler"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:750(para)
-msgid "Many OpenStack projects allow for customization of specific features using a driver architecture. You can write a driver that conforms to a particular interface and plug it in through configuration. For example, you can easily plug in a new scheduler for Compute. The existing schedulers for Compute are feature full and well documented at <link href=\"http://opsgui.de/NPGaFk\">Scheduling</link>. However, depending on your user's use cases, the existing schedulers might not meet your requirements. You might need to create a new scheduler.<indexterm class=\"singular\"><primary>customization</primary><secondary>OpenStack Compute (nova) Scheduler</secondary></indexterm><indexterm class=\"singular\"><primary>schedulers</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing OpenStack Compute (nova) scheduler</secondary></indexterm>"
+msgid "Many OpenStack projects allow for customization of specific features using a driver architecture. You can write a driver that conforms to a particular interface and plug it in through configuration. For example, you can easily plug in a new scheduler for Compute. The existing schedulers for Compute are feature full and well documented at <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html\">Scheduling</link>. However, depending on your user's use cases, the existing schedulers might not meet your requirements. You might need to create a new scheduler.<indexterm class=\"singular\"><primary>customization</primary><secondary>OpenStack Compute (nova) Scheduler</secondary></indexterm><indexterm class=\"singular\"><primary>schedulers</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing OpenStack Compute (nova) scheduler</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:772(para)
@@ -2944,7 +2944,7 @@ msgid "A similar pattern can be followed in other projects that use the driver a
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:1154(para)
-msgid "When your scheduler is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official Compute <link href=\"http://opsgui.de/1eLBbA1\">schedulers</link>."
+msgid "When your scheduler is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official Compute <link href=\"https://github.com/openstack/nova/tree/master/nova/scheduler\">schedulers</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:1163(title)
@@ -2952,7 +2952,7 @@ msgid "Customizing the Dashboard (Horizon)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:1165(para)
-msgid "The dashboard is based on the Python <link href=\"http://opsgui.de/NPGbZX\">Django</link> web application framework. The best guide to customizing it has already been written and can be found at <link href=\"http://opsgui.de/1eLBcnE\">Building on Horizon</link>.<indexterm class=\"singular\"><primary>Django</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>dashboard</secondary></indexterm>"
+msgid "The dashboard is based on the Python <link href=\"https://www.djangoproject.com/\">Django</link> web application framework. The best guide to customizing it has already been written and can be found at <link href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Building on Horizon</link>.<indexterm class=\"singular\"><primary>Django</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>dashboard</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:1187(title) ./doc/openstack-ops/ch_arch_storage.xml:774(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title)
@@ -2984,7 +2984,7 @@ msgid "Your first port of call should be the official OpenStack documentation, f
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:49(para)
-msgid "<link href=\"http://opsgui.de/NPGELC\">Mailing lists</link> are also a great place to get help. The wiki page has more information about the various lists. As an operator, the main lists you should be aware of are:"
+msgid "<link href=\"https://wiki.openstack.org/wiki/Mailing_Lists\">Mailing lists</link> are also a great place to get help. The wiki page has more information about the various lists. As an operator, the main lists you should be aware of are:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:56(link)
@@ -3016,7 +3016,7 @@ msgid "We recommend that you subscribe to the general list and the operator list
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:96(para)
-msgid "<link href=\"http://opsgui.de/NPGIuU\">Multiple IRC channels</link> are available for general questions and developer discussions. The general discussion channel is #openstack on <emphasis>irc.freenode.net</emphasis>."
+msgid "<link href=\"https://wiki.openstack.org/wiki/IRC\">Multiple IRC channels</link> are available for general questions and developer discussions. The general discussion channel is #openstack on <emphasis>irc.freenode.net</emphasis>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:103(title)
@@ -3028,7 +3028,7 @@ msgid "As an operator, you are in a very good position to report unexpected beha
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:121(para)
-msgid "All OpenStack projects use <link href=\"http://opsgui.de/1eLC2ku\">Launchpad</link> for bug tracking. You'll need to create an account on Launchpad before you can submit a bug report."
+msgid "All OpenStack projects use <link href=\"https://launchpad.net/\">Launchpad</link> for bug tracking. You'll need to create an account on Launchpad before you can submit a bug report."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:126(para)
@@ -3036,63 +3036,63 @@ msgid "Once you have a Launchpad account, reporting a bug is as simple as identi
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:134(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/NPGLa0\">nova</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/nova/+filebug/+login\">nova</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:139(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/1eLC3Vv\">python-novaclient</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/python-novaclient/+filebug/+login\">python-novaclient</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:144(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/NPGMea\">swift</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/swift/+filebug/+login\">swift</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:149(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/1eLC4Zu\">python-swiftclient</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/python-swiftclient/+filebug/+login\">python-swiftclient</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:154(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/NPGOmf\">glance</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/glance/+filebug/+login\">glance</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:159(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/1eLC8bQ\">python-glanceclient</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/python-glanceclient/+filebug/+login\">python-glanceclient</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:164(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/NPGRhX\">keystone</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/keystone/+filebug/+login\">keystone</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:169(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/1eLC8Z6\">python-keystoneclient</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/python-keystoneclient/+filebug/+login\">python-keystoneclient</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:174(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/NPGSm2\">neutron</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/neutron/+filebug/+login\">neutron</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:179(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/1eLC9ME\">python-neutronclient</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/python-neutronclient/+filebug/+login\">python-neutronclient</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:184(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/NPGTGy\">cinder</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/cinder/+filebug/+login\">cinder</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:189(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/1eLCcs7\">python-cinderclient</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/python-cinderclient/+filebug/+login\">python-cinderclient</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:194(para)
-msgid "Report a bug in <link href=\"http://opsgui.de/NPGUdz\">horizon</link>."
+msgid "Report a bug in <link href=\"https://bugs.launchpad.net/horizon/+filebug/+login\">horizon</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:199(para)
-msgid "Report a bug with the <link href=\"http://opsgui.de/1eLCcZ8\">documentation</link>."
+msgid "Report a bug with the <link href=\"https://bugs.launchpad.net/openstack-manuals/+filebug/+login\">documentation</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:204(para)
-msgid "Report a bug with the <link href=\"http://opsgui.de/NPGUKx\">API documentation</link>."
+msgid "Report a bug with the <link href=\"https://bugs.launchpad.net/openstack-api-site/+filebug/+login\">API documentation</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:209(para)
@@ -3236,7 +3236,7 @@ msgid "Join the OpenStack Community"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:374(para)
-msgid "Since you've made it this far in the book, you should consider becoming an official individual member of the community and <link href=\"http://opsgui.de/1eLCejs\">join the OpenStack Foundation</link>. The OpenStack Foundation is an independent body providing shared resources to help achieve the OpenStack mission by protecting, empowering, and promoting OpenStack software and the community around it, including users, developers, and the entire ecosystem. We all share the responsibility to make this community the best it can possibly be, and signing up to be a member is the first step to participating. Like the software, individual membership within the OpenStack Foundation is free and accessible to anyone.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>joining</secondary></indexterm>"
+msgid "Since you've made it this far in the book, you should consider becoming an official individual member of the community and <link href=\"https://www.openstack.org/join/\">join the OpenStack Foundation</link>. The OpenStack Foundation is an independent body providing shared resources to help achieve the OpenStack mission by protecting, empowering, and promoting OpenStack software and the community around it, including users, developers, and the entire ecosystem. We all share the responsibility to make this community the best it can possibly be, and signing up to be a member is the first step to participating. Like the software, individual membership within the OpenStack Foundation is free and accessible to anyone.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>joining</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:392(title)
@@ -3252,15 +3252,15 @@ msgid "The genesis of this book was an in-person event, but now that the book is
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:406(para)
-msgid "Just like the code, <link href=\"http://docs.openstack.org\"/> is updated constantly using the Gerrit review system, with source stored in GitHub in the <link href=\"http://opsgui.de/1eLCf75\">openstack-manuals repository</link> and the <link href=\"http://opsgui.de/NPGYda\">api-site repository</link>, in DocBook format."
+msgid "Just like the code, <link href=\"http://docs.openstack.org\"/> is updated constantly using the Gerrit review system, with source stored in GitHub in the <link href=\"https://github.com/openstack/openstack-manuals/\">openstack-manuals repository</link> and the <link href=\"https://github.com/openstack/api-site/\">api-site repository</link>, in DocBook format."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:413(para)
-msgid "To review the documentation before it's published, go to the OpenStack Gerrit server at <link href=\"http://review.openstack.org\"/> and search for <link href=\"http://opsgui.de/NPGXpV\">project:openstack/openstack-manuals</link> or <link href=\"http://opsgui.de/1eLClM1\">project:openstack/api-site</link>."
+msgid "To review the documentation before it's published, go to the OpenStack Gerrit server at <link href=\"http://review.openstack.org\"/> and search for <link href=\"https://review.openstack.org/#/q/status:open+project:openstack/openstack-manuals,n,z\">project:openstack/openstack-manuals</link> or <link href=\"https://review.openstack.org/#/q/status:open+project:openstack/api-site,n,z\">project:openstack/api-site</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:420(para)
-msgid "See the <link href=\"http://opsgui.de/NPG68B\">How To Contribute page on the wiki</link> for more information on the steps you need to take to submit your first documentation review or change."
+msgid "See the <link href=\"https://wiki.openstack.org/wiki/How_To_Contribute\">How To Contribute page on the wiki</link> for more information on the steps you need to take to submit your first documentation review or change."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:426(title)
@@ -3304,11 +3304,11 @@ msgid "Open a bug in Launchpad and mark it as a \"security bug.\" This makes the
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:492(para)
-msgid "If the issue is extremely sensitive, send an encrypted email to one of the team's members. Find their GPG keys at <link href=\"http://opsgui.de/1eLCkaQ\">OpenStack Security</link>."
+msgid "If the issue is extremely sensitive, send an encrypted email to one of the team's members. Find their GPG keys at <link href=\"http://www.openstack.org/projects/openstack-security/\">OpenStack Security</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:499(para)
-msgid "You can find the full list of security-oriented teams you can join at <link href=\"http://opsgui.de/NPGZxO\">Security Teams</link>. The vulnerability management process is fully documented at <link href=\"http://opsgui.de/1eLCkYk\">Vulnerability Management</link>."
+msgid "You can find the full list of security-oriented teams you can join at <link href=\"https://wiki.openstack.org/wiki/SecurityTeams\">Security Teams</link>. The vulnerability management process is fully documented at <link href=\"https://wiki.openstack.org/wiki/VulnerabilityManagement\">Vulnerability Management</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:507(title)
@@ -3316,7 +3316,7 @@ msgid "Finding Additional Information"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:509(para)
-msgid "In addition to this book, there are many other sources of information about OpenStack. The <link href=\"http://opsgui.de/NPGZOt\">OpenStack website</link> is a good starting point, with <link href=\"http://opsgui.de/NPFTC8\">OpenStack Docs</link> and <link href=\"http://opsgui.de/1eLAlDq\">OpenStack API Docs</link> providing technical documentation about OpenStack. The <link href=\"http://opsgui.de/1eLCrDo\">OpenStack wiki</link> contains a lot of general information that cuts across the OpenStack projects, including a list of <link href=\"http://opsgui.de/NPH3hd\">recommended tools</link>. Finally, there are a number of blogs aggregated at <link href=\"http://opsgui.de/1eLCsXY\">Planet OpenStack</link>.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>additional information</secondary></indexterm>"
+msgid "In addition to this book, there are many other sources of information about OpenStack. The <link href=\"http://www.openstack.org/\">OpenStack website</link> is a good starting point, with <link href=\"http://docs.openstack.org/\">OpenStack Docs</link> and <link href=\"http://developer.openstack.org/\">OpenStack API Docs</link> providing technical documentation about OpenStack. The <link href=\"https://wiki.openstack.org/wiki/Main_Page\">OpenStack wiki</link> contains a lot of general information that cuts across the OpenStack projects, including a list of <link href=\"https://wiki.openstack.org/wiki/OperationsTools\">recommended tools</link>. Finally, there are a number of blogs aggregated at <link href=\"http://planet.openstack.org/\">Planet OpenStack</link>.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>additional information</secondary></indexterm>"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
@@ -3370,7 +3370,7 @@ msgid "As shown, end users can interact through the dashboard, CLIs, and APIs. A
 msgstr ""
 
 #: ./doc/openstack-ops/part_architecture.xml:78(title)
-msgid "OpenStack Havana Logical Architecture (<link href=\"http://opsgui.de/1kYnyy1\"/>)"
+msgid "OpenStack Havana Logical Architecture (<link href=\"http://docs.openstack.org/openstack-ops/content/figures/2/figures/osog_0001.png\"/>)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_resources.xml:17(link) ./doc/openstack-ops/preface_ops.xml:171(link)
@@ -3498,7 +3498,7 @@ msgid "Parting Thoughts on Architectures"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_examples.xml:43(para)
-msgid "With so many considerations and options available, our hope is to provide a few clearly-marked and tested paths for your OpenStack exploration. If you're looking for additional ideas, check out <xref linkend=\"use-cases\"/>, the <link href=\"http://opsgui.de/NPFTC8\">OpenStack Installation Guides</link>, or the <link href=\"http://opsgui.de/1eLAAhX\">OpenStack User Stories page</link>."
+msgid "With so many considerations and options available, our hope is to provide a few clearly-marked and tested paths for your OpenStack exploration. If you're looking for additional ideas, check out <xref linkend=\"use-cases\"/>, the <link href=\"http://docs.openstack.org/\">OpenStack Installation Guides</link>, or the <link href=\"http://www.openstack.org/user-stories/\">OpenStack User Stories page</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:10(title)
@@ -3594,7 +3594,7 @@ msgid "A full set of options can be found using:<indexterm class=\"singular\"><p
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:154(para)
-msgid "or the <link href=\"http://opsgui.de/NPH3Od\">OpenStack Image Service CLI Guide</link>."
+msgid "or the <link href=\"http://docs.openstack.org/cli-reference/content/glanceclient_commands.html\">Command-Line Interface Reference </link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:159(title)
@@ -3998,7 +3998,7 @@ msgid "Instance user data"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:901(para)
-msgid "The <code>user-data</code> key is a special key in the metadata service that holds a file that cloud-aware applications within the guest instance can access. For example, <link href=\"http://opsgui.de/1eLCtLs\" title=\"OpenStack Image Service\">cloudinit</link> is an open source package from Ubuntu, but available in most distributions, that handles early initialization of a cloud instance that makes use of this user data.<indexterm class=\"singular\"><primary>user data</primary></indexterm>"
+msgid "The <code>user-data</code> key is a special key in the metadata service that holds a file that cloud-aware applications within the guest instance can access. For example, <link href=\"https://help.ubuntu.com/community/CloudInit\" title=\"OpenStack Image Service\">cloudinit</link> is an open source package from Ubuntu, but available in most distributions, that handles early initialization of a cloud instance that makes use of this user data.<indexterm class=\"singular\"><primary>user data</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:912(para)
@@ -4134,11 +4134,11 @@ msgid "If you have previously prepared block storage with a bootable file system
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1125(para)
-msgid "Read more detailed instructions for launching an instance from a bootable volume in the <link href=\"http://opsgui.de/NPH30v\">OpenStack End User Guide</link>."
+msgid "Read more detailed instructions for launching an instance from a bootable volume in the <link href=\"http://docs.openstack.org/user-guide/content/boot_from_volume.html\">OpenStack End User Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1130(para)
-msgid "To boot normally from an image and attach block storage, map to a device other than vda. You can find instructions for launching an instance and attaching a volume to the instance and for copying the image to the attached volume in the <link href=\"http://opsgui.de/1eLCwHb\">OpenStack End User Guide</link>."
+msgid "To boot normally from an image and attach block storage, map to a device other than vda. You can find instructions for launching an instance and attaching a volume to the instance and for copying the image to the attached volume in the <link href=\"http://docs.openstack.org/user-guide/content/dashboard_launch_instances_from_image.html\">OpenStack End User Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1141(title)
@@ -4210,7 +4210,7 @@ msgid "Ensuring Snapshots Are Consistent"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1235(para)
-msgid "The following section is from Sébastien Han's <link href=\"http://opsgui.de/NPH5Wn\" title=\"OpenStack Image Service\">“OpenStack: Perform Consistent Snapshots” blog entry</link>."
+msgid "The following section is from Sébastien Han's <link href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/\" title=\"OpenStack Image Service\">“OpenStack: Perform Consistent Snapshots” blog entry</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1240(para)
@@ -4358,7 +4358,7 @@ msgid "Good Luck!"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1451(para)
-msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://opsgui.de/1eLBkDJ\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://opsgui.de/1eLBL0N\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
+msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:10(title) ./doc/openstack-ops/ch_ops_upgrades.xml:160(title)
@@ -4562,7 +4562,7 @@ msgid "How to Perform an Upgrade from Grizzly to Havana—Ubuntu"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:316(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://opsgui.de/NPGunp\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Ubuntu 12.04 LTS. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPubuntu\"><primary>upgrading</primary><secondary>Grizzly to Havana (Ubuntu)</secondary></indexterm>"
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Ubuntu 12.04 LTS. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPubuntu\"><primary>upgrading</primary><secondary>Grizzly to Havana (Ubuntu)</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:331(title) ./doc/openstack-ops/ch_ops_upgrades.xml:716(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1095(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1533(title)
@@ -4578,7 +4578,7 @@ msgid "Upgrade Considerations"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:342(para) ./doc/openstack-ops/ch_ops_upgrades.xml:727(para)
-msgid "Always review the <link href=\"http://opsgui.de/1eLzHFY\">release notes</link> before performing an upgrade to learn about newly available features that you might want to enable and deprecated features that you should disable."
+msgid "Always review the <link href=\"https://wiki.openstack.org/wiki/ReleaseNotes/Havana\">release notes</link> before performing an upgrade to learn about newly available features that you might want to enable and deprecated features that you should disable."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:350(title) ./doc/openstack-ops/ch_ops_upgrades.xml:735(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1112(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1550(title)
@@ -4782,7 +4782,7 @@ msgid "How to Perform an Upgrade from Grizzly to Havana—Red Hat Enterprise Lin
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:700(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://opsgui.de/NPGvrs\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Red Hat Enterprise Linux 6.4 or compatible derivatives. Newer minor releases should also work. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPredhat\"><primary>upgrading</primary><secondary>Grizzly to Havana (Red Hat)</secondary></indexterm>"
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Red Hat Enterprise Linux 6.4 or compatible derivatives. Newer minor releases should also work. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPredhat\"><primary>upgrading</primary><secondary>Grizzly to Havana (Red Hat)</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:737(para)
@@ -4794,7 +4794,7 @@ msgid "Next, back up all databases on the controller:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:770(para)
-msgid "Consider checking for newer versions of the <link href=\"http://opsgui.de/1eLBXNB\">Havana repository</link>."
+msgid "Consider checking for newer versions of the <link href=\"https://repos.fedorapeople.org/repos/openstack/openstack-havana/\">Havana repository</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:814(para)
@@ -5420,7 +5420,7 @@ msgid "Alternatively, if you want someone to help guide you through the decision
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:97(para)
-msgid "If your preference is to build your own OpenStack expertise internally, a good way to kick-start that might be to attend or arrange a training session. The OpenStack Foundation recently launched a <link href=\"http://opsgui.de/NPH6JZ\">Training Marketplace</link> where you can look for nearby events. Also, the OpenStack community is <link href=\"http://opsgui.de/1eLCyio\">working to produce</link> open source training materials."
+msgid "If your preference is to build your own OpenStack expertise internally, a good way to kick-start that might be to attend or arrange a training session. The OpenStack Foundation recently launched a <link href=\"http://www.openstack.org/marketplace/training\">Training Marketplace</link> where you can look for nearby events. Also, the OpenStack community is <link href=\"https://wiki.openstack.org/wiki/Training-manuals\">working to produce</link> open source training materials."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:107(title)
@@ -5668,7 +5668,7 @@ msgid "We wrote this book to help you:<placeholder-1/>"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:576(para)
-msgid "We wrote this book in a book sprint, which is a facilitated, rapid development production method for books. For more information, see the <link href=\"http://opsgui.de/1eLCIpY\">BookSprints site</link>. Your authors cobbled this book together in five days during February 2013, fueled by caffeine and the best takeout food that Austin, Texas, could <phrase role=\"keep-together\">offer</phrase>."
+msgid "We wrote this book in a book sprint, which is a facilitated, rapid development production method for books. For more information, see the <link href=\"http://www.booksprints.net/\">BookSprints site</link>. Your authors cobbled this book together in five days during February 2013, fueled by caffeine and the best takeout food that Austin, Texas, could <phrase role=\"keep-together\">offer</phrase>."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:584(para)
@@ -5768,11 +5768,11 @@ msgid "The genesis of this book was an in-person event, but now that the book is
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:759(para)
-msgid "Learn more about how to contribute to the OpenStack docs at <link href=\"http://opsgui.de/1eLCK10\">Documentation How To</link>."
+msgid "Learn more about how to contribute to the OpenStack docs at <link href=\"https://wiki.openstack.org/wiki/Documentation/HowTo\">Documentation How To</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:763(para)
-msgid "If you find a bug and can't fix it or aren't sure it's really a doc bug, log a bug at <link href=\"http://opsgui.de/NPHdoC\">OpenStack Manuals</link>. Tag the bug under <guilabel>Extra</guilabel> options with the <literal>ops-guide</literal> tag to indicate that the bug is in this guide. You can assign the bug to yourself if you know how to fix it. Also, a member of the OpenStack doc-core team can triage the doc bug."
+msgid "If you find a bug and can't fix it or aren't sure it's really a doc bug, log a bug at <link href=\"https://bugs.launchpad.net/openstack-manuals\">OpenStack Manuals</link>. Tag the bug under <guilabel>Extra</guilabel> options with the <literal>ops-guide</literal> tag to indicate that the bug is in this guide. You can assign the bug to yourself if you know how to fix it. Also, a member of the OpenStack doc-core team can triage the doc bug."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:776(title)
@@ -6020,7 +6020,7 @@ msgid "Recall that a cloud controller node runs several different services. You 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:265(para)
-msgid "You should load balance user-facing services such as dashboard, <code>nova-api</code>, or the Object Storage proxy. Use any standard HTTP load-balancing method (DNS round robin, hardware load balancer, or software such as Pound or HAProxy). One caveat with dashboard is the VNC proxy, which uses the WebSocket protocol—something that an L7 load balancer might struggle with. See also <link href=\"http://opsgui.de/1eLAOFE\" title=\"Horizon session storage\">Horizon session storage</link>."
+msgid "You should load balance user-facing services such as dashboard, <code>nova-api</code>, or the Object Storage proxy. Use any standard HTTP load-balancing method (DNS round robin, hardware load balancer, or software such as Pound or HAProxy). One caveat with dashboard is the VNC proxy, which uses the WebSocket protocol—something that an L7 load balancer might struggle with. See also <link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#session-storage\" title=\"Horizon session storage\">Horizon session storage</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:275(para)
@@ -6366,7 +6366,7 @@ msgid "OpenStack Object Storage provides a highly scalable, highly available sto
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:95(para)
-msgid "A good document describing the Object Storage architecture is found within <link href=\"http://opsgui.de/NPG0xO\" title=\"OpenStack wiki\">the developer documentation</link>—read this first. Once you understand the architecture, you should know what a proxy server does and how zones work. However, some important points are often missed at first glance."
+msgid "A good document describing the Object Storage architecture is found within <link href=\"http://docs.openstack.org/developer/swift/overview_architecture.html\" title=\"OpenStack wiki\">the developer documentation</link>—read this first. Once you understand the architecture, you should know what a proxy server does and how zones work. However, some important points are often missed at first glance."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:102(para)
@@ -6686,7 +6686,7 @@ msgid "SolidFire"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:590(para)
-msgid "You can find a matrix of the functionality provided by all of the supported Block Storage drivers on the <link href=\"http://opsgui.de/1eLAQxg\" title=\"OpenStack wiki\">OpenStack wiki</link>."
+msgid "You can find a matrix of the functionality provided by all of the supported Block Storage drivers on the <link href=\"https://wiki.openstack.org/wiki/CinderSupportMatrix\" title=\"OpenStack wiki\">OpenStack wiki</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:596(para)
@@ -6734,7 +6734,7 @@ msgid "This can be useful when booting from volume because a new volume can be p
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:677(para)
-msgid "Ceph's advantages are that it gives the administrator more fine-grained control over data distribution and replication strategies, enables you to consolidate your object and block storage, enables very fast provisioning of boot-from-volume instances using thin provisioning, and supports a distributed file-system interface, though this interface is <link href=\"http://opsgui.de/NPG1BD\" title=\"OpenStack wiki\">not yet recommended</link> for use in production deployment by the Ceph project."
+msgid "Ceph's advantages are that it gives the administrator more fine-grained control over data distribution and replication strategies, enables you to consolidate your object and block storage, enables very fast provisioning of boot-from-volume instances using thin provisioning, and supports a distributed file-system interface, though this interface is <link href=\"http://ceph.com/docs/master/cephfs/\" title=\"OpenStack wiki\">not yet recommended</link> for use in production deployment by the Ceph project."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:687(para)
@@ -7494,7 +7494,7 @@ msgid "The type of CPU in your compute node is a very important choice. First, e
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:36(para)
-msgid "Consult the vendor documentation to check for virtualization support. For Intel, read <link href=\"http://opsgui.de/1eLAoiC\" title=\"Intel VT-x\"> “Does my processor support Intel® Virtualization Technology?”</link>. For AMD, read <link href=\"http://opsgui.de/NPFI9Z\" title=\"AMD-v\"> AMD Virtualization</link>. Note that your CPU may support virtualization but it may be disabled. Consult your BIOS documentation for how to enable CPU features.<indexterm class=\"singular\"><primary>virtualization technology</primary></indexterm><indexterm class=\"singular\"><primary>AMD Virtualization</primary></indexterm><indexterm class=\"singular\"><primary>Intel Virtualization Technology</primary></indexterm>"
+msgid "Consult the vendor documentation to check for virtualization support. For Intel, read <link href=\"http://www.intel.com/support/processors/sb/cs-030729.htm\" title=\"Intel VT-x\"> “Does my processor support Intel® Virtualization Technology?”</link>. For AMD, read <link href=\"http://sites.amd.com/us/business/it-solutions/virtualization/Pages/client-side-virtualization.aspx\" title=\"AMD-v\"> AMD Virtualization</link>. Note that your CPU may support virtualization but it may be disabled. Consult your BIOS documentation for how to enable CPU features.<indexterm class=\"singular\"><primary>virtualization technology</primary></indexterm><indexterm class=\"singular\"><primary>AMD Virtualization</primary></indexterm><indexterm class=\"singular\"><primary>Intel Virtualization Technology</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:52(para)
@@ -7554,7 +7554,7 @@ msgid "For example, KVM is the most widely adopted hypervisor in the OpenStack c
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:169(para)
-msgid "The best information available to support your choice is found on the <link href=\"http://opsgui.de/NPFQ9w\" title=\"reference manual\">Hypervisor Support Matrix</link> and in the <link href=\"http://opsgui.de/1eLAwP2\" title=\"configuration reference\">configuration reference</link>."
+msgid "The best information available to support your choice is found on the <link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\" title=\"reference manual\">Hypervisor Support Matrix</link> and in the <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html\" title=\"configuration reference\">configuration reference</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:177(para)
@@ -7862,7 +7862,7 @@ msgid "Using the OpenStack Dashboard for Administration"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:20(para)
-msgid "As a cloud administrative user, you can use the OpenStack dashboard to create and manage projects, users, images, and flavors. Users are allowed to create and manage images within specified projects and to share images, depending on the Image Service configuration. Typically, the policy configuration allows admin users only to set quotas and create and manage services. The dashboard provides an <guilabel>Admin</guilabel> tab with a <guilabel>System Panel</guilabel> and <guilabel>Identity Panel</guilabel>. These interfaces give you access to system information and usage as well as to settings for configuring what end users can do. Refer to the <link href=\"http://opsgui.de/NPGcgz\">OpenStack Admin User Guide</link> for detailed how-to information about using the dashboard as an admin user.<indexterm class=\"singular\"><primary>working environment</primary><secondary>dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm>"
+msgid "As a cloud administrative user, you can use the OpenStack dashboard to create and manage projects, users, images, and flavors. Users are allowed to create and manage images within specified projects and to share images, depending on the Image Service configuration. Typically, the policy configuration allows admin users only to set quotas and create and manage services. The dashboard provides an <guilabel>Admin</guilabel> tab with a <guilabel>System Panel</guilabel> and <guilabel>Identity Panel</guilabel>. These interfaces give you access to system information and usage as well as to settings for configuring what end users can do. Refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/ch_dashboard.html\">OpenStack Admin User Guide</link> for detailed how-to information about using the dashboard as an admin user.<indexterm class=\"singular\"><primary>working environment</primary><secondary>dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:41(title)
@@ -7874,7 +7874,7 @@ msgid "We recommend using a combination of the OpenStack command-line interface 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:53(para)
-msgid "We strongly suggest that you install the command-line clients from the <link href=\"http://opsgui.de/1eLBdb8\">Python Package Index</link> (PyPI) instead of from the distribution packages. The clients are under heavy development, and it is very likely at any given time that the version of the packages distributed by your operating-system vendor are out of date.<indexterm class=\"singular\"><primary>command-line tools</primary><secondary>Python Package Index (PyPI)</secondary></indexterm><indexterm class=\"singular\"><primary>pip utility</primary></indexterm><indexterm class=\"singular\"><primary>Python Package Index (PyPI)</primary></indexterm>"
+msgid "We strongly suggest that you install the command-line clients from the <link href=\"https://pypi.python.org/pypi\">Python Package Index</link> (PyPI) instead of from the distribution packages. The clients are under heavy development, and it is very likely at any given time that the version of the packages distributed by your operating-system vendor are out of date.<indexterm class=\"singular\"><primary>command-line tools</primary><secondary>Python Package Index (PyPI)</secondary></indexterm><indexterm class=\"singular\"><primary>pip utility</primary></indexterm><indexterm class=\"singular\"><primary>Python Package Index (PyPI)</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:68(para)
@@ -7994,7 +7994,7 @@ msgid "This example shows the HTTP requests from the client and the responses fr
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:350(para)
-msgid "<link href=\"http://opsgui.de/NPGeVy\">Keyring Support</link> enables you to securely save your OpenStack password in an encrypted file.<indexterm class=\"singular\"><primary>Keyring Support</primary></indexterm>"
+msgid "<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">Keyring Support</link> enables you to securely save your OpenStack password in an encrypted file.<indexterm class=\"singular\"><primary>Keyring Support</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:356(para)
@@ -8010,7 +8010,7 @@ msgid "Using cURL for further inspection"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:370(para)
-msgid "Underlying the use of the command-line tools is the OpenStack API, which is a RESTful API that runs over HTTP. There may be cases where you want to interact with the API directly or need to use it because of a suspected bug in one of the CLI tools. The best way to do this is to use a combination of <link href=\"http://opsgui.de/1eLBfQy\">cURL</link> and another tool, such as <link href=\"http://opsgui.de/NPGdB5\">jq</link>, to parse the JSON from the responses.<indexterm class=\"singular\"><primary>authentication tokens</primary></indexterm><indexterm class=\"singular\"><primary>cURL</primary></indexterm>"
+msgid "Underlying the use of the command-line tools is the OpenStack API, which is a RESTful API that runs over HTTP. There may be cases where you want to interact with the API directly or need to use it because of a suspected bug in one of the CLI tools. The best way to do this is to use a combination of <link href=\"http://curl.haxx.se/\">cURL</link> and another tool, such as <link href=\"http://stedolan.github.io/jq/\">jq</link>, to parse the JSON from the responses.<indexterm class=\"singular\"><primary>authentication tokens</primary></indexterm><indexterm class=\"singular\"><primary>cURL</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:383(para)
@@ -8042,7 +8042,7 @@ msgid "Pick a service endpoint from your service catalog, such as compute. Try a
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:441(para)
-msgid "To discover how API requests should be structured, read the <link href=\"http://opsgui.de/1eLBhrz\">OpenStack API Reference</link>. To chew through the responses using jq, see the <link href=\"http://opsgui.de/NPGeoH\">jq Manual</link>."
+msgid "To discover how API requests should be structured, read the <link href=\"http://developer.openstack.org/api-ref.html\">OpenStack API Reference</link>. To chew through the responses using jq, see the <link href=\"http://stedolan.github.io/jq/manual/\">jq Manual</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:446(para)
@@ -8166,7 +8166,7 @@ msgid "This output shows that an instance named <placeholder-1/> was created fro
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:825(para)
-msgid "We hope you have enjoyed this quick tour of your working environment, including how to interact with your cloud and extract useful information. From here, you can use the <emphasis><link href=\"http://opsgui.de/1eLBkDJ\">Admin User Guide</link></emphasis> as your reference for all of the command-line functionality in your cloud."
+msgid "We hope you have enjoyed this quick tour of your working environment, including how to interact with your cloud and extract useful information. From here, you can use the <emphasis><link href=\"http://docs.openstack.org/user-guide-admin/content/\">Admin User Guide</link></emphasis> as your reference for all of the command-line functionality in your cloud."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:12(title)
@@ -8178,7 +8178,7 @@ msgid "OpenStack is intended to work well across a variety of installation flavo
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:29(para)
-msgid "At the time of writing, OpenStack has more than 1,500 configuration options. You can see them documented at <link href=\"http://opsgui.de/1eLATt4\">the OpenStack configuration reference guide</link>. This chapter cannot hope to document all of these, but we do try to introduce the important concepts so that you know where to go digging for more information."
+msgid "At the time of writing, OpenStack has more than 1,500 configuration options. You can see them documented at <link href=\"http://docs.openstack.org/trunk/config-reference/content/config_overview.html\">the OpenStack configuration reference guide</link>. This chapter cannot hope to document all of these, but we do try to introduce the important concepts so that you know where to go digging for more information."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:37(title)
@@ -8190,7 +8190,7 @@ msgid "Many OpenStack projects implement a driver layer, and each of these drive
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:55(para)
-msgid "The currently implemented hypervisors are listed on <link href=\"http://opsgui.de/1eLAwP2\">the OpenStack documentation website</link>. You can see a matrix of the various features in OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at <link href=\"http://opsgui.de/NPFQ9w\">the Hypervisor support matrix page</link>."
+msgid "The currently implemented hypervisors are listed on <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html\">the OpenStack documentation website</link>. You can see a matrix of the various features in OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at <link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">the Hypervisor support matrix page</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:63(para)
@@ -8282,7 +8282,7 @@ msgid "Security Configuration for Compute, Networking, and Storage"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:179(para)
-msgid "The <emphasis><link href=\"http://opsgui.de/NPG4NW\">OpenStack Security Guide</link></emphasis> provides a deep dive into securing an OpenStack cloud, including SSL/TLS, key management, PKI and certificate management, data transport and privacy concerns, and compliance.<indexterm class=\"singular\"><primary>security issues</primary><secondary>configuration options</secondary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>security</secondary></indexterm>"
+msgid "The <emphasis><link href=\"http://docs.openstack.org/sec/\">OpenStack Security Guide</link></emphasis> provides a deep dive into securing an OpenStack cloud, including SSL/TLS, key management, PKI and certificate management, data transport and privacy concerns, and compliance.<indexterm class=\"singular\"><primary>security issues</primary><secondary>configuration options</secondary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>security</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:195(title)
@@ -8290,7 +8290,7 @@ msgid "High Availability"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:197(para)
-msgid "The <emphasis><link href=\"http://opsgui.de/1eLAYwS\">OpenStack High Availability Guide</link></emphasis> offers suggestions for elimination of a single point of failure that could cause system downtime. While it is not a completely prescriptive document, it offers methods and techniques for avoiding downtime and data loss.<indexterm class=\"singular\"><primary>high availability</primary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>high availability</secondary></indexterm>"
+msgid "The <emphasis><link href=\"http://docs.openstack.org/high-availability-guide/content/\">OpenStack High Availability Guide</link></emphasis> offers suggestions for elimination of a single point of failure that could cause system downtime. While it is not a completely prescriptive document, it offers methods and techniques for avoiding downtime and data loss.<indexterm class=\"singular\"><primary>high availability</primary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>high availability</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:212(title)
@@ -8298,11 +8298,11 @@ msgid "Enabling IPv6 Support"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:214(para)
-msgid "The Havana release with OpenStack Networking (neutron) does not offer complete support of IPv6. Better support is planned for the Icehouse release. You can follow along the progress being made by watching the <link href=\"http://opsgui.de/NPG5kQ\">neutron IPv6 Subteam at work</link>.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>IPv6 support</secondary></indexterm><indexterm class=\"singular\"><primary>IPv6, enabling support for</primary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>IPv6 support</secondary></indexterm>"
+msgid "The Havana release with OpenStack Networking (neutron) does not offer complete support of IPv6. Better support is planned for the Icehouse release. You can follow along the progress being made by watching the <link href=\"https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam\">neutron IPv6 Subteam at work</link>.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>IPv6 support</secondary></indexterm><indexterm class=\"singular\"><primary>IPv6, enabling support for</primary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>IPv6 support</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:230(para)
-msgid "By modifying your configuration setup, you can set up IPv6 when using <literal>nova-network</literal> for networking, and a tested setup is documented for FlatDHCP and a multi-host configuration. The key is to make <literal>nova-network</literal> think a <literal>radvd</literal> command ran successfully. The entire configuration is detailed in a Cybera blog post, <link href=\"http://opsgui.de/1eLB0F2\">“An IPv6 enabled cloud”</link>."
+msgid "By modifying your configuration setup, you can set up IPv6 when using <literal>nova-network</literal> for networking, and a tested setup is documented for FlatDHCP and a multi-host configuration. The key is to make <literal>nova-network</literal> think a <literal>radvd</literal> command ran successfully. The entire configuration is detailed in a Cybera blog post, <link href=\"http://www.cybera.ca/news-and-events/tech-radar/an-ipv6-enabled-cloud/\">“An IPv6 enabled cloud”</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:240(title)
@@ -8318,7 +8318,7 @@ msgid "Geographical Considerations for Object Storage"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:260(para)
-msgid "Enhanced support for global clustering of object storage servers continues to be added since the Grizzly (1.8.0) release, when regions were introduced. You would implement these global clusters to ensure replication across geographic areas in case of a natural disaster and also to ensure that users can write or access their objects more quickly based on the closest data center. You configure a default region with one zone for each cluster, but be sure your network (WAN) can handle the additional request and response load between zones as you add more zones and build a ring that handles more zones. Refer to <link href=\"http://opsgui.de/NPG6FJ\">Geographically Distributed Clusters</link> in the documentation for additional information.<indexterm class=\"singular\"><primary>Object Storage</primary><secondary>geographical considerations</secondary></indexterm><indexterm class=\"singular\"><primary>storage</primary><secondary>geographical considerations</secondary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>geographical storage considerations</secondary></indexterm>"
+msgid "Enhanced support for global clustering of object storage servers continues to be added since the Grizzly (1.8.0) release, when regions were introduced. You would implement these global clusters to ensure replication across geographic areas in case of a natural disaster and also to ensure that users can write or access their objects more quickly based on the closest data center. You configure a default region with one zone for each cluster, but be sure your network (WAN) can handle the additional request and response load between zones as you add more zones and build a ring that handles more zones. Refer to <link href=\"http://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters\">Geographically Distributed Clusters</link> in the documentation for additional information.<indexterm class=\"singular\"><primary>Object Storage</primary><secondary>geographical considerations</secondary></indexterm><indexterm class=\"singular\"><primary>storage</primary><secondary>geographical considerations</secondary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>geographical storage considerations</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml:12(title)
@@ -8630,7 +8630,7 @@ msgid "Time synchronization is a critical element to ensure continued operation 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml:502(para)
-msgid "All servers running OpenStack components should be able to access an appropriate NTP server. You may decide to set up one locally or use the public pools available from the <link href=\"http://opsgui.de/NPFRua\"> Network Time Protocol project</link>."
+msgid "All servers running OpenStack components should be able to access an appropriate NTP server. You may decide to set up one locally or use the public pools available from the <link href=\"http://www.pool.ntp.org/en/\"> Network Time Protocol project</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml:510(title)
@@ -8642,7 +8642,7 @@ msgid "OpenStack does not currently provide DNS services, aside from the dnsmasq
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml:528(para)
-msgid "Armed with your IP address layout and numbers and knowledge about the topologies and services you can use, it's now time to prepare the network for your installation. Be sure to also check out the <link href=\"http://opsgui.de/NPG4NW\" title=\"OpenStack Security Guide\"><emphasis>OpenStack Security Guide</emphasis></link> for tips on securing your network. We wish you a good relationship with your networking team!"
+msgid "Armed with your IP address layout and numbers and knowledge about the topologies and services you can use, it's now time to prepare the network for your installation. Be sure to also check out the <link href=\"http://docs.openstack.org/sec/\" title=\"OpenStack Security Guide\"><emphasis>OpenStack Security Guide</emphasis></link> for tips on securing your network. We wish you a good relationship with your networking team!"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml:12(title)
@@ -8654,7 +8654,7 @@ msgid "Standard backup best practices apply when creating your OpenStack backup 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml:24(para)
-msgid "If you cannot have any data loss at all, you should also focus on a highly available deployment. The <emphasis><link href=\"http://opsgui.de/1eLAYwS\">OpenStack High Availability Guide</link></emphasis> offers suggestions for elimination of a single point of failure that could cause system downtime. While it is not a completely prescriptive document, it offers methods and techniques for avoiding downtime and data loss.<indexterm class=\"singular\"><primary>data</primary><secondary>preventing loss of</secondary></indexterm>"
+msgid "If you cannot have any data loss at all, you should also focus on a highly available deployment. The <emphasis><link href=\"http://docs.openstack.org/high-availability-guide/content/\">OpenStack High Availability Guide</link></emphasis> offers suggestions for elimination of a single point of failure that could cause system downtime. While it is not a completely prescriptive document, it offers methods and techniques for avoiding downtime and data loss.<indexterm class=\"singular\"><primary>data</primary><secondary>preventing loss of</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml:37(para)
@@ -8866,7 +8866,7 @@ msgid "The cloud controller could completely fail if, for example, its motherboa
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:144(para)
-msgid "To avoid this situation, create a highly available cloud controller cluster. This is outside the scope of this document, but you can read more in the draft <link href=\"http://opsgui.de/NPGlAo\">OpenStack High Availability Guide</link>."
+msgid "To avoid this situation, create a highly available cloud controller cluster. This is outside the scope of this document, but you can read more in the draft <link href=\"http://docs.openstack.org/high-availability-guide/content/ch-intro.html\">OpenStack High Availability Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:150(para)
@@ -9306,7 +9306,7 @@ msgid "Maintaining an OpenStack cloud requires that you manage multiple physical
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:881(para)
-msgid "Several configuration-management tools are available, and this guide does not recommend a specific one. The two most popular ones in the OpenStack community are <link href=\"http://opsgui.de/1eLBsD7\">Puppet</link>, with available <link href=\"http://opsgui.de/NPGmnU\">OpenStack Puppet modules</link>; and <link href=\"http://opsgui.de/1eLBtqO\">Chef</link>, with available <link href=\"http://opsgui.de/NPGnID\">OpenStack Chef recipes</link>. Other newer configuration tools include <link href=\"http://opsgui.de/1eLBxqm\">Juju</link>, <link href=\"http://opsgui.de/NPGpQQ\">Ansible</link>, and <link href=\"http://opsgui.de/1eLBACD\">Salt</link>; and more mature configuration management tools include <link href=\"http://opsgui.de/NPGoMP\">CFEngine</link> and <link href=\"http://opsgui.de/1eLBB9M\">Bcfg2</link>."
+msgid "Several configuration-management tools are available, and this guide does not recommend a specific one. The two most popular ones in the OpenStack community are <link href=\"https://puppetlabs.com/\">Puppet</link>, with available <link href=\"https://github.com/puppetlabs/puppetlabs-openstack\">OpenStack Puppet modules</link>; and <link href=\"http://www.getchef.com/chef/\">Chef</link>, with available <link href=\"https://github.com/opscode/openstack-chef-repo\">OpenStack Chef recipes</link>. Other newer configuration tools include <link href=\"https://juju.ubuntu.com/\">Juju</link>, <link href=\"http://www.ansible.com/home\">Ansible</link>, and <link href=\"http://www.saltstack.com/\">Salt</link>; and more mature configuration management tools include <link href=\"http://cfengine.com/\">CFEngine</link> and <link href=\"http://bcfg2.org/\">Bcfg2</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:902(title)
@@ -9386,7 +9386,7 @@ msgid "Performance and Optimizing"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:1055(para)
-msgid "As your cloud grows, MySQL is utilized more and more. If you suspect that MySQL might be becoming a bottleneck, you should start researching MySQL optimization. The MySQL manual has an entire section dedicated to this topic: <link href=\"http://opsgui.de/NPGqUV\">Optimization Overview</link>."
+msgid "As your cloud grows, MySQL is utilized more and more. If you suspect that MySQL might be becoming a bottleneck, you should start researching MySQL optimization. The MySQL manual has an entire section dedicated to this topic: <link href=\"http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html\">Optimization Overview</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:1067(title)
@@ -9812,7 +9812,7 @@ msgid "The purpose of automatic configuration management is to establish and mai
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:277(para)
-msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet, a configuration management tool, even provides official modules for OpenStack in an OpenStack infrastructure system known as <link href=\"http://opsgui.de/NPFUpL\">Stackforge</link>. Chef configuration management is provided within <link role=\"orm:hideurl:ital\" href=\"https://github.com/stackforge/openstack-chef-repo\"/>. Additional configuration management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection.<indexterm class=\"singular\"><primary>Stackforge</primary></indexterm>"
+msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet, a configuration management tool, even provides official modules for OpenStack in an OpenStack infrastructure system known as <link href=\"https://github.com/stackforge/puppet-openstack\">Stackforge</link>. Chef configuration management is provided within <link role=\"orm:hideurl:ital\" href=\"https://github.com/stackforge/openstack-chef-repo\"/>. Additional configuration management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection.<indexterm class=\"singular\"><primary>Stackforge</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:293(para)
@@ -9848,7 +9848,7 @@ msgid "You can save resources by looking at the best fit for the hardware you ha
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:350(para)
-msgid "For further research about OpenStack deployment, investigate the supported and documented preconfigured, prepackaged installers for OpenStack from companies such as <link href=\"http://opsgui.de/NPFSy7\">Canonical</link>, <link href=\"http://opsgui.de/1gwRmlS\">Cisco</link>, <link href=\"http://opsgui.de/1eLAFSL\">Cloudscaling</link>, <link href=\"http://opsgui.de/NPFYG3\">IBM</link>, <link href=\"http://opsgui.de/1eLAGWE\">Metacloud</link>, <link href=\"http://opsgui.de/NPFWOy\">Mirantis</link>, <link href=\"http://opsgui.de/1eLAHKd\">Piston</link>, <link href=\"http://opsgui.de/1gwRm58\">Rackspace</link>, <link href=\"http://opsgui.de/NPFXlq\">Red Hat</link>, <link href=\"http://opsgui.de/1eLALK5\">SUSE</link>, and <link href=\"http://opsgui.de/NPG0hb\">SwiftStack</link>."
+msgid "For further research about OpenStack deployment, investigate the supported and documented preconfigured, prepackaged installers for OpenStack from companies such as <link href=\"http://www.ubuntu.com/cloud/ubuntu-openstack\">Canonical</link>, <link href=\"http://www.cisco.com/web/solutions/openstack/index.html\">Cisco</link>, <link href=\"http://www.cloudscaling.com/\">Cloudscaling</link>, <link href=\"http://www-03.ibm.com/software/products/en/smartcloud-orchestrator/\">IBM</link>, <link href=\"http://www.metacloud.com/\">Metacloud</link>, <link href=\"http://www.mirantis.com/\">Mirantis</link>, <link href=\"http://www.pistoncloud.com/\">Piston</link>, <link href=\"http://www.rackspace.com/cloud/private/\">Rackspace</link>, <link href=\"http://www.redhat.com/openstack/\">Red Hat</link>, <link href=\"https://www.suse.com/products/suse-cloud/\">SUSE</link>, and <link href=\"https://www.swiftstack.com/\">SwiftStack</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:370(para)
@@ -10164,7 +10164,7 @@ msgid "Extensions"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:528(para)
-msgid "The <link href=\"http://opsgui.de/NPFK1H\" title=\"API Specifications\">API Specifications</link> define the core actions, capabilities, and mediatypes of the OpenStack API. A client can always depend on the availability of this core API, and implementers are always required to support it in its <phrase role=\"keep-together\">entirety</phrase>. Requiring strict adherence to the core API allows clients to rely upon a minimal level of functionality when interacting with multiple implementations of the same API.<indexterm class=\"singular\"><primary>extensions</primary><secondary>design considerations</secondary></indexterm><indexterm class=\"singular\"><primary>design considerations</primary><secondary>extensions</secondary></indexterm>"
+msgid "The <link href=\"http://docs.openstack.org/api/api-specs.html\" title=\"API Specifications\">API Specifications</link> define the core actions, capabilities, and mediatypes of the OpenStack API. A client can always depend on the availability of this core API, and implementers are always required to support it in its <phrase role=\"keep-together\">entirety</phrase>. Requiring strict adherence to the core API allows clients to rely upon a minimal level of functionality when interacting with multiple implementations of the same API.<indexterm class=\"singular\"><primary>extensions</primary><secondary>design considerations</secondary></indexterm><indexterm class=\"singular\"><primary>design considerations</primary><secondary>extensions</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:546(para)
@@ -10440,7 +10440,7 @@ msgid "Keystone is handled a little differently. To modify the logging level, ed
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:163(para)
-msgid "<phrase role=\"keep-together\">Logging for horizon is configured in <filename>/etc/openstack_dashboard/local_</filename></phrase><filename>settings.py</filename>. Because horizon is a Django web application, it follows the <link href=\"http://opsgui.de/NPGgww\" title=\"Django Logging\">Django Logging framework conventions</link>."
+msgid "<phrase role=\"keep-together\">Logging for horizon is configured in <filename>/etc/openstack_dashboard/local_</filename></phrase><filename>settings.py</filename>. Because horizon is a Django web application, it follows the <link href=\"https://docs.djangoproject.com/en/dev/topics/logging/\" title=\"Django Logging\">Django Logging framework conventions</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:169(para)
@@ -10508,7 +10508,7 @@ msgid "You may notice that all the existing logging messages are preceded by an 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:299(para)
-msgid "This formatting is used to support translation of logging messages into different languages using the <link href=\"http://opsgui.de/1eLBlHT\">gettext</link> internationalization library. You don't need to do this for your own custom log messages. However, if you want to contribute the code back to the OpenStack project that includes logging statements, you must surround your log messages with underscores and parentheses."
+msgid "This formatting is used to support translation of logging messages into different languages using the <link href=\"https://docs.python.org/2/library/gettext.html\">gettext</link> internationalization library. You don't need to do this for your own custom log messages. However, if you want to contribute the code back to the OpenStack project that includes logging statements, you must surround your log messages with underscores and parentheses."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:309(title)
@@ -10622,7 +10622,7 @@ msgid "StackTach"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:483(para)
-msgid "StackTach is a tool created by Rackspace to collect and report the notifications sent by <code>nova</code>. Notifications are essentially the same as logs but can be much more detailed. A good overview of notifications can be found at <link href=\"http://opsgui.de/NPGh3H\" title=\"StackTach GitHub repo\">System Usage Data</link>.<indexterm class=\"singular\"><primary>StackTach</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>StackTack tool</secondary></indexterm>"
+msgid "StackTach is a tool created by Rackspace to collect and report the notifications sent by <code>nova</code>. Notifications are essentially the same as logs but can be much more detailed. A good overview of notifications can be found at <link href=\"https://wiki.openstack.org/wiki/SystemUsageData\" title=\"StackTach GitHub repo\">System Usage Data</link>.<indexterm class=\"singular\"><primary>StackTach</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>StackTack tool</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:496(para)
@@ -10630,7 +10630,7 @@ msgid "To enable <code>nova</code> to send notifications, add the following to <
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:502(para)
-msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link href=\"http://opsgui.de/1eLBpqQ\">StackTach GitHub repo</link> for instructions as well as a demo video."
+msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link href=\"https://github.com/rackerlabs/stacktach\">StackTach GitHub repo</link> for instructions as well as a demo video."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:510(title)
@@ -10750,7 +10750,7 @@ msgid "By comparing a tenant's hard limit with their current resource usage, you
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:790(para)
-msgid "The preceding information was generated by using a custom script that can be found on <link href=\"http://opsgui.de/NPGjbX\">GitHub</link>."
+msgid "The preceding information was generated by using a custom script that can be found on <link href=\"https://github.com/cybera/novac/blob/dev/libexec/novac-quota-report\">GitHub</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:795(para)
@@ -10866,7 +10866,7 @@ msgid "By running this command periodically and keeping a record of the result, 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:987(para)
-msgid "A tool such as collectd can be used to store this information. While collectd is out of the scope of this book, a good starting point would be to use collectd to store the result as a COUNTER data type. More information can be found in <link href=\"http://opsgui.de/1eLBriA\">collectd's documentation</link>."
+msgid "A tool such as collectd can be used to store this information. While collectd is out of the scope of this book, a good starting point would be to use collectd to store the result as a COUNTER data type. More information can be found in <link href=\"https://collectd.org/wiki/index.php/Data_source\">collectd's documentation</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:999(para)
