@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-13 06:01+0000\n"
+"POT-Creation-Date: 2014-08-15 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3321,8 +3321,8 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/part_architecture.xml:83(None)
-msgid "@@image: 'figures/osog_0001.png'; md5=c9f3718b9a5ec35ab62dd8d725d26b98"
+#: ./doc/openstack-ops/part_architecture.xml:82(None)
+msgid "@@image: 'figures/osog_0001.png'; md5=a7205423d6b8a8fb47e7f8387b65a87e"
 msgstr ""
 
 #: ./doc/openstack-ops/part_architecture.xml:10(title)
@@ -3366,11 +3366,11 @@ msgid "Enables users to submit API calls to OpenStack services through commands.
 msgstr ""
 
 #: ./doc/openstack-ops/part_architecture.xml:70(para)
-msgid "As shown, end users can interact through the dashboard, CLIs, and APIs. All services authenticate through a common Identity Service, and individual services interact with each other through public APIs, except where privileged administrator commands are necessary. <xref linkend=\"openstack-havana-diagram\"/> shows the most common, but not the only logical architecture for an OpenStack cloud."
+msgid "As shown, end users can interact through the dashboard, CLIs, and APIs. All services authenticate through a common Identity Service, and individual services interact with each other through public APIs, except where privileged administrator commands are necessary. <xref linkend=\"openstack-diagram\"/> shows the most common, but not the only logical architecture for an OpenStack cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/part_architecture.xml:78(title)
-msgid "OpenStack Havana Logical Architecture (<link href=\"http://docs.openstack.org/openstack-ops/content/figures/2/figures/osog_0001.png\"/>)"
+#: ./doc/openstack-ops/part_architecture.xml:77(title)
+msgid "OpenStack Logical Architecture (<link href=\"http://docs.openstack.org/openstack-ops/content/figures/2/figures/osog_0001.png\"/>)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_resources.xml:17(link) ./doc/openstack-ops/preface_ops.xml:171(link)
