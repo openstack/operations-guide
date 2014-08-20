@@ -1327,7 +1327,7 @@ rabbit_password = <replaceable>RABBIT_PASS</replaceable></programlisting>
           <para>Use the MySQL client to execute the following
             commands:</para>
           <screen><prompt>#</prompt> <userinput>mysql -u root -p</userinput>
-<prompt>mysql></prompt> <userinput>USE database neutron;</userinput>
+<prompt>mysql></prompt> <userinput>USE neutron;</userinput>
 <prompt>mysql></prompt> <userinput>SET foreign_key_checks = 0;</userinput>
 <prompt>mysql></prompt> <userinput>ALTER TABLE agents CONVERT TO CHARACTER SET 'utf8';</userinput>
 <prompt>mysql></prompt> <userinput>ALTER TABLE alembic_version CONVERT TO CHARACTER SET 'utf8';</userinput>
@@ -1755,7 +1755,7 @@ qpid_hostname = <replaceable>controller</replaceable></programlisting>
           <para>Use the MySQL client to execute the following
             commands:</para>
           <screen><prompt>#</prompt> <userinput>mysql -u root -p</userinput>
-<prompt>mysql></prompt> <userinput>USE database neutron;</userinput>
+<prompt>mysql></prompt> <userinput>USE neutron;</userinput>
 <prompt>mysql></prompt> <userinput>SET foreign_key_checks = 0;</userinput>
 <prompt>mysql></prompt> <userinput>ALTER TABLE agents CONVERT TO CHARACTER SET 'utf8';</userinput>
 <prompt>mysql></prompt> <userinput>ALTER TABLE alembic_version CONVERT TO CHARACTER SET 'utf8';</userinput>
