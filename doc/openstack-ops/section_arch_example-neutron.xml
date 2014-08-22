@@ -894,7 +894,8 @@
             detects if the software fails and routes requests around the
             failing instance.</para> <para>OpenStack Networking's
             <literal>ovs-agent</literal>,
-            <literal>l3-agent-dhcp-agent</literal>, and
+            <literal>l3-agent</literal>,
+            <literal>dhcp-agent</literal>, and
             <literal>metadata-agent</literal> services run on the network
             nodes, as <literal>lsb</literal> resources inside of Pacemaker.
             This means that in the case of network node failure, services are
