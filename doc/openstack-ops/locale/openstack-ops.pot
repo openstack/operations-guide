@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-17 06:01+0000\n"
+"POT-Creation-Date: 2014-08-23 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2292,7 +2292,7 @@ msgid "The OpenStack Networking service is run on all controller nodes, ensuring
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:895(para)
-msgid "OpenStack Networking's <literal>ovs-agent</literal>, <literal>l3-agent-dhcp-agent</literal>, and <literal>metadata-agent</literal> services run on the network nodes, as <literal>lsb</literal> resources inside of Pacemaker. This means that in the case of network node failure, services are kept running on another node. Finally, the <literal>ovs-agent</literal> service is also run on all compute nodes, and in case of compute node failure, the other nodes will continue to function using the copy of the service running on them."
+msgid "OpenStack Networking's <literal>ovs-agent</literal>, <literal>l3-agent</literal>, <literal>dhcp-agent</literal>, and <literal>metadata-agent</literal> services run on the network nodes, as <literal>lsb</literal> resources inside of Pacemaker. This means that in the case of network node failure, services are kept running on another node. Finally, the <literal>ovs-agent</literal> service is also run on all compute nodes, and in case of compute node failure, the other nodes will continue to function using the copy of the service running on them."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:572(para)
