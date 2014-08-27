@@ -85,7 +85,7 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/osog_1201.png"></imagedata>
+          <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_1201.png"></imagedata>
         </imageobject>
       </mediaobject>
     </figure>
@@ -204,7 +204,7 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/osog_1202.png"></imagedata>
+          <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_1202.png"></imagedata>
         </imageobject>
       </mediaobject>
     </figure>

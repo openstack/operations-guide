@@ -408,7 +408,7 @@
     <informalfigure>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/osog_01in01.png"></imagedata>
+          <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_01in01.png"></imagedata>
         </imageobject>
       </mediaobject>
     </informalfigure>
@@ -447,7 +447,7 @@
     <informalfigure>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/osog_01in02.png"></imagedata>
+          <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_01in02.png"></imagedata>
         </imageobject>
       </mediaobject>
     </informalfigure>

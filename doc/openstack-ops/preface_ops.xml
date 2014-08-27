@@ -586,7 +586,7 @@
       architect and operate clouds:<informalfigure>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/osog_00in01.png"/>
+            <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_00in01.png"/>
           </imageobject>
         </mediaobject>
       </informalfigure></para>

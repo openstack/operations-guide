@@ -435,7 +435,7 @@
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
@@ -452,7 +452,7 @@
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
@@ -465,14 +465,14 @@
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
@@ -485,21 +485,21 @@
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
 
           <td><para><inlinemediaobject>
             <imageobject>
-              <imagedata fileref="figures/Check_mark_23x20_02.png"
+              <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                 format="PNG"></imagedata>
             </imageobject>
           </inlinemediaobject></para></td>
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
@@ -512,14 +512,14 @@
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
@@ -532,7 +532,7 @@
 
           <td><para><inlinemediaobject>
               <imageobject>
-                <imagedata fileref="figures/Check_mark_23x20_02.png"
+                <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                            format="PNG"></imagedata>
               </imageobject>
             </inlinemediaobject></para></td>
@@ -543,13 +543,13 @@
           <td><para>Sheepdog</para></td>
           <td><para><inlinemediaobject>
             <imageobject>
-              <imagedata fileref="figures/Check_mark_23x20_02.png"
+              <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                 format="PNG"></imagedata>
             </imageobject>
           </inlinemediaobject></para></td>
           <td><para><inlinemediaobject>
             <imageobject>
-              <imagedata fileref="figures/Check_mark_23x20_02.png"
+              <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png"
                 format="PNG"></imagedata>
             </imageobject>
           </inlinemediaobject></para></td>

@@ -79,7 +79,7 @@
         />)</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/osog_0001.png"/>
+          <imagedata fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0001.png"/>
         </imageobject>
       </mediaobject>
     </figure>

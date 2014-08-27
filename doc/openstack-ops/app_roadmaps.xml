@@ -42,7 +42,7 @@
 
     <mediaobject>
       <imageobject>
-        <imagedata width="6in" fileref="figures/osog_ac01.png"></imagedata>
+        <imagedata width="6in" fileref="http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_ac01.png"></imagedata>
       </imageobject>
     </mediaobject>
   </figure>
