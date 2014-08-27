@@ -1734,7 +1734,7 @@ qpid_hostname = <replaceable>controller</replaceable></programlisting>
             statement.</para>
           <para>Stop services, upgrade the database, and start
             services.</para>
-          <screen><prompt>#</prompt> <userinput>service openstacknova-api stop</userinput>
+          <screen><prompt>#</prompt> <userinput>service openstack-nova-api stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-scheduler stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-conductor stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-cert stop</userinput>
