@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-23 06:00+0000\n"
+"POT-Creation-Date: 2014-08-28 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,7 +12,7 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/app_roadmaps.xml:45(None)
-msgid "@@image: 'figures/osog_ac01.png'; md5=cb103a79471d287a1320c41d5cf968f1"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_ac01.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:10(title)
@@ -530,13 +530,13 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:88(None)
-msgid "@@image: 'figures/osog_1201.png'; md5=ab91ada366e818d08bd53d038cc31561"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_1201.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:207(None)
-msgid "@@image: 'figures/osog_1202.png'; md5=bd4de8da204c68cd2d59ab881f5d42e8"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_1202.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:12(title)
@@ -1554,13 +1554,13 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-nova.xml:411(None)
-msgid "@@image: 'figures/osog_01in01.png'; md5=dbf9b33e7274d6d38577c5789090f60b"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_01in01.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-nova.xml:450(None)
-msgid "@@image: 'figures/osog_01in02.png'; md5=1025584cd84296c6d6e60cb3e735196e"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_01in02.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:12(title)
@@ -1842,37 +1842,37 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:486(None)
-msgid "@@image: 'figures/osog_0101.png'; md5=7f9145fa1935d021f4294cc392c2d23e"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0101.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:510(None)
-msgid "@@image: 'figures/osog_0102.png'; md5=0b77dd118a3d8faa89c6bf5fdd952ae8"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0102.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:532(None)
-msgid "@@image: 'figures/osog_0103.png'; md5=ff67549b6d23bc0f4fde39249ae4aaac"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0103.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:542(None)
-msgid "@@image: 'figures/osog_0104.png'; md5=6dd2cf2764ba176e1209ba83745b8a65"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0104.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:552(None)
-msgid "@@image: 'figures/osog_0105.png'; md5=db7741fed3423a31f592102739d0720e"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0105.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:562(None)
-msgid "@@image: 'figures/osog_0106.png'; md5=800e9b943e1867b81bf34858a3de4437"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0106.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:12(title)
@@ -3322,7 +3322,7 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/part_architecture.xml:82(None)
-msgid "@@image: 'figures/osog_0001.png'; md5=a7205423d6b8a8fb47e7f8387b65a87e"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0001.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/part_architecture.xml:10(title)
@@ -5364,7 +5364,7 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/preface_ops.xml:589(None)
-msgid "@@image: 'figures/osog_00in01.png'; md5=b236686f713773e259756b91ba5e4ac7"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_00in01.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:12(title)
@@ -6322,7 +6322,7 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/ch_arch_storage.xml:439(None) ./doc/openstack-ops/ch_arch_storage.xml:456(None) ./doc/openstack-ops/ch_arch_storage.xml:469(None) ./doc/openstack-ops/ch_arch_storage.xml:476(None) ./doc/openstack-ops/ch_arch_storage.xml:489(None) ./doc/openstack-ops/ch_arch_storage.xml:496(None) ./doc/openstack-ops/ch_arch_storage.xml:503(None) ./doc/openstack-ops/ch_arch_storage.xml:516(None) ./doc/openstack-ops/ch_arch_storage.xml:523(None) ./doc/openstack-ops/ch_arch_storage.xml:536(None) ./doc/openstack-ops/ch_arch_storage.xml:547(None) ./doc/openstack-ops/ch_arch_storage.xml:553(None)
-msgid "@@image: 'figures/Check_mark_23x20_02.png'; md5=f92951b5b67d72755de4eb0b5f2e000a"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:12(title)
@@ -6792,13 +6792,13 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:110(None)
-msgid "@@image: 'figures/osog_0901.png'; md5=a74a5cdfc444ba8e4dbde45974c8b124"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0901.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:866(None)
-msgid "@@image: 'figures/osog_0902.png'; md5=d042efe7311a5dcee43e5aaf4ce7ca52"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0902.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:12(title)
@@ -9652,7 +9652,7 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./doc/openstack-ops/ch_arch_provision.xml:156(None)
-msgid "@@image: 'figures/osog_0201.png'; md5=996fd01e2340a8206194b874c814ea1e"
+msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0201.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:12(title)
