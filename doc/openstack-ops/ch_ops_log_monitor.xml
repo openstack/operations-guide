@@ -497,7 +497,7 @@ local0.* ?NovaAll
     to <filename>nova.conf</filename>:</para>
 
     <programlisting language="ini"><?db-font-size 75%?>notification_topics=monitor
-notification_driver=nova.openstack.common.notifier.rabbit_notifier</programlisting>
+notification_driver=nova.openstack.common.notifier.rpc_notifier</programlisting>
 
     <para>Once <code>nova</code> is sending notifications, install and
     configure StackTach. Since StackTach is relatively new and constantly
