@@ -108,35 +108,35 @@
 
         <substeps>
           <step>
-            <para>Log in to the instance:</para>
+            <para>Log in to the instance:
 
-            <screen><prompt>$</prompt> <userinput>ssh <replaceable>username</replaceable>@<replaceable>my.instance.ip.address</replaceable></userinput></screen>
+            <screen><prompt>$</prompt> <userinput>ssh <replaceable>username</replaceable>@<replaceable>my.instance.ip.address</replaceable></userinput></screen></para>
           </step>
 
           <step>
-            <para>Update the virtual machine's operating system:</para>
+            <para>Update the virtual machine's operating system:
 
-            <screen><prompt>#</prompt> <userinput>apt-get -y update</userinput></screen>
+            <screen><prompt>#</prompt> <userinput>apt-get -y update</userinput></screen></para>
           </step>
 
           <step>
-            <para>Install git:</para>
+            <para>Install git:
 
-            <screen><prompt>#</prompt> <userinput>apt-get -y install git</userinput></screen>
+            <screen><prompt>#</prompt> <userinput>apt-get -y install git</userinput></screen></para>
           </step>
 
           <step>
             <para>Clone the stable/havana branch of the
-            <literal>devstack</literal> repository:</para>
+            <literal>devstack</literal> repository:
 
             <screen><prompt>$</prompt> <userinput>git clone https://github.com/openstack-dev/devstack.git -b
-stable/havana devstack/</userinput></screen>
+stable/havana devstack/</userinput></screen></para>
           </step>
 
           <step>
-            <para>Change to the <literal>devstack</literal> repository:</para>
+            <para>Change to the <literal>devstack</literal> repository:
 
-            <screen><prompt>$</prompt> <userinput>cd devstack</userinput></screen>
+            <screen><prompt>$</prompt> <userinput>cd devstack</userinput></screen></para>
           </step>
         </substeps>
       </step>
@@ -186,16 +186,16 @@ stable/havana devstack/</userinput></screen>
       </step>
 
       <step>
-        <para>Run the stack script that will install OpenStack:</para>
+        <para>Run the stack script that will install OpenStack:
 
-        <screen><prompt>$</prompt> <userinput>./stack.sh</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>./stack.sh</userinput></screen></para>
       </step>
 
       <step>
         <para>When the stack script is done, you can open the screen session
-        it started to view all of the running OpenStack services:</para>
+        it started to view all of the running OpenStack services:
 
-        <screen><prompt>$</prompt> <userinput>screen -r stack</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>screen -r stack</userinput></screen></para>
       </step>
 
       <step>
