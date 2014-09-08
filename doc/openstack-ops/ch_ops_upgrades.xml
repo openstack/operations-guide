@@ -467,20 +467,6 @@ dhcp_lease_time = 86400
       <para>Update the Cinder configuration on the controller and
         storage nodes for compatibility with Havana.</para>
 
-      <para>Add the <literal>[database]</literal> section and
-        associated key to the
-          <filename>/etc/cinder/cinder.conf</filename> file:</para>
-
-      <programlisting language="ini">[database]
-connection = mysql://cinder:CINDER_DBPASS@controller/cinder</programlisting>
-
-      <para>Remove defunct configuration from the
-          <literal>[DEFAULT]</literal> section in the
-          <filename>/etc/cinder/cinder.conf</filename> file:</para>
-
-      <programlisting language="ini">[DEFAULT]
-sql_connection = mysql://cinder:CINDER_DBPASS@controller/cinder</programlisting>
-
       <para>Add or modify the following key in the
           <filename>/etc/cinder/cinder.conf</filename> file:</para>
 
