@@ -501,30 +501,32 @@ output:52,output:51,output:50,output:55,output:33
 
       <listitem>
         <para>The packet is then received on the network node. Note that any
-        traffic to the l3-agent or dhcp-agent will be visible only within
-        their network namespace. Watching any interfaces outside those
-        namespaces, even those that carry the network traffic, will only show
-        broadcast packets like Address Resolution Protocols (ARPs), but
-        unicast traffic to the router or DHCP address will not be seen. See
-        <xref linkend="dealing_with_netns" /> for detail on how to run
-        commands within these namespaces.</para>
+          traffic to the l3-agent or dhcp-agent will be visible only within
+          their network namespace. Watching any interfaces outside those
+          namespaces, even those that carry the network traffic, will only show
+          broadcast packets like Address Resolution Protocols (ARPs), but
+          unicast traffic to the router or DHCP address will not be seen. See
+            <link
+            xlink:href="http://docs.openstack.org/openstack-ops/content/network_troubleshooting.html#dealing_with_netns"
+            >Dealing with Network Namespaces</link> for detail on how to run
+          commands within these namespaces.</para>
 
-        <para>Alternatively, it is possible to configure VLAN-based networks
-        to use external routers rather than the l3-agent shown here, so long
-        as the external router is on the same VLAN:</para>
+        <para>Alternatively, it is possible to configure VLAN-based networks to
+          use external routers rather than the l3-agent shown here, so long as
+          the external router is on the same VLAN:</para>
 
         <orderedlist>
           <listitem>
             <para>VLAN-based networks are received as tagged packets on a
-            physical network interface, <code>eth1</code> in this example.
-            Just as on the compute node, this interface is a member of the
-            <code>br-eth1</code> bridge.</para>
+              physical network interface, <code>eth1</code> in this example.
+              Just as on the compute node, this interface is a member of the
+                <code>br-eth1</code> bridge.</para>
           </listitem>
 
           <listitem>
             <para>GRE-based networks will be passed to the tunnel bridge
-            <code>br-tun</code>, which behaves just like the GRE interfaces on
-            the compute node.</para>
+                <code>br-tun</code>, which behaves just like the GRE interfaces
+              on the compute node.</para>
           </listitem>
         </orderedlist>
       </listitem>
