@@ -459,9 +459,9 @@ actions=mod_vlan_vid:2113,NORMAL</computeroutput></screen>
           <step>
             <para>Grep for 0x&lt;<code>provider:segmentation_id</code>&gt;,
             0x3 in this case, in the output of <literal>ovs-ofctl dump-flows
-            br-int</literal>:</para>
+            br-tun</literal>:</para>
 
-            <screen><prompt>#</prompt> <userinput>ovs-ofctl dump-flows br-int|grep 0x3</userinput>
+            <screen><prompt>#</prompt> <userinput>ovs-ofctl dump-flows br-tun|grep 0x3</userinput>
 <computeroutput>cookie=0x0, duration=380575.724s, table=2, n_packets=1800, \
 n_bytes=286104, priority=1,tun_id=0x3 \
 actions=mod_vlan_vid:1,resubmit(,10)
