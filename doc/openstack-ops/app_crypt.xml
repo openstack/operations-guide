@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE appendix [
-        <!-- Some useful entities borrowed from HTML -->
-        <!ENTITY ndash  "&#x2013;">
-        <!ENTITY mdash  "&#x2014;">
-        <!ENTITY hellip "&#x2026;">
-        <!ENTITY plusmn "&#xB1;">
-
+<!ENTITY % openstack SYSTEM "openstack.ent">
+%openstack;
 ]>
 <appendix xmlns="http://docbook.org/ns/docbook"
     xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -33,10 +29,9 @@
         <para>Thinking it was just a one-off issue, I terminated the
             instance and launched a new one. By then, the conference
             call ended and I was off to the data center.</para>
-        <para>At the data center, I was finishing up some tasks and
-            remembered the lock-up. I logged into the new instance and
-            ran <command>ps aux</command> again. It worked. Phew. I decided
-            to run it one
+        <para>At the data center, I was finishing up some tasks and remembered
+            the lock-up. I logged into the new instance and ran <command>ps
+                aux</command> again. It worked. Phew. I decided to run it one
             more time. It locked up. WTF.</para>
         <para>After reproducing the problem several times, I came to
             the unfortunate conclusion that this cloud did indeed have
@@ -44,8 +39,8 @@
             to return back to Calgary.</para>
         <para>Where do you even begin troubleshooting something like
             this? An instance just randomly locks when a command is
-            issued. Is it the image? Nope — it happens on all images.
-            Is it the compute node? Nope — all nodes. Is the instance
+            issued. Is it the image? Nope&mdash;it happens on all images.
+            Is it the compute node? Nope&mdash;all nodes. Is the instance
             locked up? No! New SSH connections work just fine!</para>
         <para>We reached out for help. A networking engineer suggested
             it was an MTU issue. Great! MTU! Something to go on!
@@ -53,8 +48,8 @@
         <para>MTU is maximum transmission unit. It specifies the
             maximum number of bytes that the interface accepts for
             each packet. If two interfaces have two different MTUs,
-            bytes might get chopped off and weird things happen --
-            such as random session lockups.</para>
+            bytes might get chopped off and weird things happen&mdash;such
+            as random session lockups.</para>
         <note>
             <para>Not all packets have a size of 1500. Running the <command>ls</command>
                 command over SSH might only create a single packets
@@ -295,7 +290,7 @@
             was reporting, so no inconsistency there.</para>
         <para>I checked Glance and noticed that this image was a
             snapshot that the user created. At least that was good
-            news — this user would have been the only user
+            news&mdash;this user would have been the only user
             affected.</para>
         <para>Finally, I checked StackTach and reviewed the user's events. They
             had created and deleted several snapshots&mdash;most likely
@@ -372,8 +367,7 @@
             have the opportunity to use "Valentine's Day Massacre"
             again in a title.</para>
         <para>This past Valentine's Day, I received an alert that a
-            compute node was no longer available in the cloud
-            — meaning,
+            compute node was no longer available in the cloud&mdash;meaning,
         <screen><prompt>$</prompt><userinput>nova-manage service list</userinput></screen>
             showed this particular node with a status of
                 <code>XXX</code>.</para>
@@ -449,23 +443,23 @@ Feb 15 01:40:19 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ether
             packet, that instance has effectively DDOS'd the other 99
             instances.</para>
         <para>This is an ongoing and hot topic in networking circles
-            — especially with the raise of virtualization and virtual
+           &mdash;especially with the raise of virtualization and virtual
             switches.</para>
     </section>
     <section xml:id="rabbithole">
         <title>Down the Rabbit Hole</title>
         <para>Users being able to retrieve console logs from running
-            instances is a boon for support — many times they can
+            instances is a boon for support&mdash;many times they can
             figure out what's going on inside their instance and fix
             what's going on without bothering you. Unfortunately,
             sometimes overzealous logging of failures can cause
             problems of its own.</para>
         <para>A report came in: VMs were launching slowly, or not at
-            all. Cue the standard checks — nothing on the nagios, but
+            all. Cue the standard checks&mdash;nothing on the nagios, but
             there was a spike in network towards the current master of
             our RabbitMQ cluster. Investigation started, but soon the
             other parts of the queue cluster were leaking memory like
-            a sieve. Then the alert came in — the master rabbit server
+            a sieve. Then the alert came in&mdash;the master rabbit server
             went down. Connections failed over to the slave.</para>
         <para>At that time, our control services were hosted by
             another team and we didn't have much debugging information
@@ -514,8 +508,8 @@ adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
         <para>Felix Lee of Academia Sinica Grid Computing Centre in Taiwan
             contributed this story.</para>
         <para>I just upgraded OpenStack from Grizzly to Havana 2013.2-2 using
-            the RDO repository and everything was running pretty well
-            -- except the EC2 API.</para>
+            the RDO repository and everything was running pretty
+            well&mdash;except the EC2 API.</para>
         <para>I noticed that the API would suffer from a heavy load and
             respond slowly to particular EC2 requests such as
             <literal>RunInstances</literal>.</para>
@@ -543,7 +537,7 @@ HTTP/1.1" status: 200 len: 931 time: 3.9426181
         <para>While monitoring system resources, I noticed
             a significant increase in memory consumption while the EC2 API
             processed this request. I thought it wasn't handling memory
-            properly -- possibly not releasing memory. If the API received
+            properly&mdash;possibly not releasing memory. If the API received
             several of these requests, memory consumption quickly grew until
             the system ran out of RAM and began using swap. Each node has
             48 GB of RAM and the "nova-api" process would consume all of it
@@ -565,9 +559,9 @@ HTTP/1.1" status: 200 len: 931 time: 3.9426181
             context, search_filts=[{'key': ['EC2_client_token']},
                                    {'value': [client_token]}])
 </programlisting>
-        <para>Since my database contained many records -- over 1 million
+        <para>Since my database contained many records&mdash;over 1 million
             metadata records and over 300,000 instance records in "deleted"
-            or "errored" states -- each search took ages. I decided to clean
+            or "errored" states&mdash;each search took ages. I decided to clean
             up the database by first archiving a copy for backup and then
             performing some deletions using the MySQL client. For example, I
             ran the following SQL command to remove rows of instances deleted
@@ -577,5 +571,3 @@ HTTP/1.1" status: 200 len: 931 time: 3.9426181
             my new deployment continues to behave well.</para>
     </section>
 </appendix>
-<!-- FIXME: Add more stories, especially more up-to-date ones -->
-<!-- STAUS: OK for Havana -->

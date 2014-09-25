@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % openstack SYSTEM "openstack.ent">
+%openstack;
+]>
 <section version="5.0" xml:id="example_architecture-neutron"
          xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -296,9 +300,9 @@
                 </itemizedlist>
               </para>
               <para>See <xref linkend="node_controller-diagram"/>.</para></td>
-            <td><para>Model: Dell R620</para> <para>CPU: 2 x Intel® Xeon® CPU
+            <td><para>Model: Dell R620</para> <para>CPU: 2x Intel® Xeon® CPU
             E5-2620 0 @ 2.00 GHz</para> <para>Memory: 32 GB</para> <para>Disk:
-            2 x 300 GB 10000 RPM SAS Disks</para> <para>Network: 2 x 10G
+            two 300 GB 10000 RPM SAS Disks</para> <para>Network: two 10G
             network ports</para></td>
           </tr>
           <tr>
@@ -322,8 +326,8 @@
               </para></td>
             <td><para>Model: Dell R620</para> <para>CPU: 2x Intel® Xeon® CPU
             E5-2650 0 @ 2.00 GHz</para> <para>Memory: 128 GB</para>
-            <para>Disk: 2 x 600 GB 10000 RPM SAS Disks</para> <para>Network: 4
-            x 10G network ports (For future proofing expansion)</para></td>
+            <para>Disk: two 600 GB 10000 RPM SAS Disks</para> <para>Network:
+              four 10G network ports (For future proofing expansion)</para></td>
           </tr>
           <tr>
             <td>Storage</td>
@@ -334,11 +338,11 @@
             highly available and scalable.</para>
               <para>See <xref
             linkend="node_storage-diagram"/>.</para></td>
-            <td><para>Model: Dell R720xd</para> <para>CPU: 2 x Intel® Xeon®
+            <td><para>Model: Dell R720xd</para> <para>CPU: 2x Intel® Xeon®
             CPU E5-2620 0 @ 2.00 GHz</para> <para>Memory: 64 GB</para>
-            <para>Disk: 2 x 500 GB 7200 RPM SAS Disks + 24 x 600 GB 10000 RPM
+            <para>Disk: two 500 GB 7200 RPM SAS Disks and twenty-four 600 GB 10000 RPM
             SAS Disks</para> <para>Raid Controller: PERC H710P Integrated RAID
-            Controller, 1 GB NV Cache</para> <para>Network: 2 x 10G network
+            Controller, 1 GB NV Cache</para> <para>Network: two 10G network
             ports</para></td>
           </tr>
           <tr>
@@ -362,9 +366,9 @@
               </para>
               <para>See <xref
             linkend="node_network-diagram"/>.</para></td>
-            <td><para>Model: Dell R620</para> <para>CPU: 1 x Intel® Xeon® CPU
+            <td><para>Model: Dell R620</para> <para>CPU: 1x Intel® Xeon® CPU
             E5-2620 0 @ 2.00 GHz</para> <para>Memory: 32 GB</para> <para>Disk:
-            2 x 300 GB 10000 RPM SAS Disks</para> <para>Network: 5 x 10G
+            two 300 GB 10000 RPM SAS Disks</para> <para>Network: five 10G
             network ports</para></td>
           </tr>
           <tr>
@@ -379,7 +383,7 @@
             up.</para></td>
             <td><para>Model: Dell R620</para> <para>CPU: 2x Intel® Xeon® CPU
             E5-2620 0 @ 2.00 GHz</para> <para>Memory: 32 GB</para> <para>Disk:
-            2 x 500 GB 7200 RPM SAS Disks</para> <para>Network: 2 x 10G
+            two 500 GB 7200 RPM SAS Disks</para> <para>Network: two 10G
             network ports</para></td>
           </tr>
         </tbody>
@@ -474,7 +478,7 @@
         <para>Initially, the connection setup should revolve around keeping
         the connectivity simple and straightforward in order to minimize
         deployment complexity and time to deploy. The deployment shown in
-        <xref linkend="fig1-1" /> aims to have 1 x 10G connectivity available
+        <xref linkend="fig1-1" /> aims to have 1 &times; 10G connectivity available
         to all compute nodes, while still leveraging bonding on appropriate
         nodes for maximum performance.</para>
 
@@ -493,7 +497,7 @@
         <title>Connectivity for maximum performance</title>
 
         <para>If the networking performance of the basic layout is not enough,
-        you can move to <xref linkend="fig1-2" />, which provides 2 x 10G
+        you can move to <xref linkend="fig1-2" />, which provides 2 &times; 10G
         network links to all instances in the environment as well as providing
         more network bandwidth to the storage layer.<indexterm
             class="singular">
