@@ -556,14 +556,14 @@ output:52,output:51,output:50,output:55,output:33
       <listitem>
         <para>The <code>qg-&lt;n&gt;</code> interface in the l3-agent router
         namespace sends the packet on to its next hop through device
-        <code>eth0</code> on the external bridge <code>br-ex</code>. This
+        <code>eth2</code> on the external bridge <code>br-ex</code>. This
         bridge is constructed similarly to <code>br-eth1</code> and may be
         inspected in the same way.</para>
       </listitem>
 
       <listitem>
         <para>This external bridge also includes a physical network interface,
-        <code>eth0</code> in this example, which finally lands the packet on
+        <code>eth2</code> in this example, which finally lands the packet on
         the external network destined for an external router or
         destination.</para>
       </listitem>
