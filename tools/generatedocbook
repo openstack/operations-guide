@@ -1,11 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-'''
-Created on 2012-7-3
-
-@author: daisy
-'''
 import os, sys
 import tempfile
 import shutil
