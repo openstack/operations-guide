@@ -1201,7 +1201,7 @@ qrouter-8a4ce760-ab55-4f2f-8ec5-a2e858ce0d39
     This output shows a network node with four networks running dhcp-agents,
     one of which is also running an l3-agent router. It's important to know
     which network you need to be working in. A list of existing networks and
-    their UUIDs can be obtained buy running <literal>neutron
+    their UUIDs can be obtained by running <literal>neutron
     net-list</literal> with administrative credentials.</para>
 
     <para>Once you've determined which namespace you need to work in, you can
