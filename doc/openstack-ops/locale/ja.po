@@ -2,6 +2,7 @@
 # Translators:
 # Akihiro Motoki <amotoki@gmail.com>, 2013
 # Akira Yoshiyama <akirayoshiyama@gmail.com>, 2013
+# Andreas Jaeger <jaegerandi@gmail.com>, 2014
 # Ying Chun Guo <daisy.ycguo@gmail.com>, 2013
 # doki701 <tokidokidokidoki@gmail.com>, 2013
 # yfukuda <fukuda.yuko@jp.fujitsu.com>, 2014
@@ -28,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-20 06:51+0000\n"
-"PO-Revision-Date: 2014-10-22 23:50+0000\n"
+"POT-Creation-Date: 2014-10-23 07:38+0000\n"
+"PO-Revision-Date: 2014-10-24 03:50+0000\n"
 "Last-Translator: myamamot <myamamot@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -11324,7 +11325,7 @@ msgid ""
 "of</secondary></indexterm><indexterm "
 "class=\"singular\"><primary>projects</primary><secondary>definition "
 "of</secondary></indexterm>"
-msgstr ""
+msgstr "OpenStack ユーザーインターフェースとドキュメントでは、ユーザーのグループは <glossterm>プロジェクト</glossterm> または <glossterm>テナント</glossterm> と呼ばれます。これらの用語は同義です。<indexterm class=\"singular\"><primary>ユーザー管理</primary><secondary>用語</secondary></indexterm><indexterm class=\"singular\"><primary>テナント</primary><secondary>定義</secondary></indexterm><indexterm class=\"singular\"><primary>プロジェクト</primary><secondary>定義</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml49(para)
 msgid ""
@@ -11352,7 +11353,7 @@ msgid ""
 "to many. Therefore, you should add at least one project before adding "
 "users.<indexterm class=\"singular\"><primary>user "
 "management</primary><secondary>adding projects</secondary></indexterm>"
-msgstr ""
+msgstr "ユーザーは、多数のプロジェクトに所属することは可能ですが、最低でも 1 つのプロジェクトと関連付ける必要があります。そのため、ユーザー追加の前にプロジェクトを 1 つ追加しておく必要があります。<indexterm class=\"singular\"><primary>ユーザー管理</primary><secondary>プロジェクトの追加</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml76(title)
 msgid "Adding Projects"
@@ -11360,7 +11361,7 @@ msgstr "プロジェクトの追加"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml78(para)
 msgid "To create a project through the OpenStack dashboard:"
-msgstr ""
+msgstr "OpenStack Dashboard でプロジェクトを作成します。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml82(para)
 msgid "Log in as an administrative user."
@@ -11368,15 +11369,15 @@ msgstr "管理ユーザーとしてログインします。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml86(para)
 msgid "Select the <guilabel>Admin</guilabel> tab in the left navigation bar."
-msgstr ""
+msgstr "左側にあるナビゲーションバーの <guilabel>管理</guilabel> タブを選択します。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml91(para)
 msgid "Under Identity Panel, click <guilabel>Projects</guilabel>."
-msgstr ""
+msgstr "認証パネルの <guilabel>プロジェクト</guilabel> をクリックします。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml96(para)
 msgid "Click the <guibutton>Create Project</guibutton> button."
-msgstr ""
+msgstr "<guibutton>プロジェクトの作成</guibutton> ボタンをクリックします。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml100(para)
 msgid ""
@@ -11384,11 +11385,11 @@ msgid ""
 "description. Select the checkbox at the bottom of the form to enable this "
 "project. By default, it is enabled, as shown in <xref linkend=\"horizon-add-"
 "project\"/>."
-msgstr ""
+msgstr "プロジェクト名および任意の説明 (推奨) が要求されます。フォームの一番下のチェックボックスを選択してこのプロジェクトを有効にします。<xref linkend=\"horizon-add-project\"/>のように、デフォルトでは、有効になっています。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml106(title)
 msgid "Dashboard's Create Project form"
-msgstr ""
+msgstr "Dashboard のプロジェクトの作成フォーム"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml115(para)
 msgid ""
