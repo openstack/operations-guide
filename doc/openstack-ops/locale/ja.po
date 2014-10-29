@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-23 07:38+0000\n"
-"PO-Revision-Date: 2014-10-24 03:50+0000\n"
+"POT-Creation-Date: 2014-10-28 07:46+0000\n"
+"PO-Revision-Date: 2014-10-29 04:50+0000\n"
 "Last-Translator: myamamot <myamamot@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -11396,14 +11396,14 @@ msgid ""
 "It is also possible to add project members and adjust the project quotas. "
 "We'll discuss those actions later, but in practice, it can be quite "
 "convenient to deal with all these operations at one time."
-msgstr ""
+msgstr "プロジェクトメンバーの追加やプロジェクトのクォータの調節も可能です。このようなアクションについては後ほど説明しますが、実際にこれらの操作を扱うと非常に便利です。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml119(para)
 msgid ""
 "To add a project through the command line, you must use the keystone "
 "utility, which uses <literal>tenant</literal> in place of "
 "<literal>project</literal>:"
-msgstr ""
+msgstr "コマンドラインでプロジェクトを追加するには、<literal>project</literal> の代わりに <literal>tenant</literal> を使用する keystone ユーティリティを使用する必要があります。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml125(para)
 msgid ""
@@ -13074,7 +13074,7 @@ msgid ""
 "class=\"singular\"><primary>authentication</primary></indexterm><indexterm "
 "class=\"singular\"><primary>command-line tools</primary><secondary>getting "
 "credentials</secondary></indexterm>"
-msgstr "コマンドラインツールを使用して OpenStack クラウドに対してクエリーを実行するには、適切な認証情報が必要です。コマンドラインクライアントで使用する<glossterm>認証</glossterm>のクレデンシャルを取得する最も簡単な方法は、OpenStack ダッシュボードを使用する方法です。画面右上のナビレーションバーから <guimenuitem>プロジェクト</guimenuitem> を選択し、<guimenuitem>アクセスとセキュリティ</guimenuitem> をクリックしてから, <guimenuitem>API アクセス</guimenuitem> のタブを開き、ユーザー設定のページにアクセスします。このページでは、ダッシュボードで表示される言語とタイムゾーンを設定することができます。この操作では、<guilabel>OpenStack RC ファイルのダウンロード</guilabel> と <guilabel>EC2 認証情報のダウンロード</guilabel> の 2 つのボタンが表示されます。これらのボタンにより、コマンドラインツールがサービスエンドポイントと認証情報の場所を知るために必要な環境変数を読み込むために、シェルで元データとして使用することのできるファイルを生成することができます。ダッシュボードにログインしたユーザーによって、openrc ファイルのファイル名が決定します (例: <filename>demo-openrc.sh</filename>)。admin としてログインした場合には、ファイル名は <filename>admin-openrc.sh</filename> となります。<indexterm class=\"singular\"><primary>認証情報</primary></indexterm><indexterm class=\"singular\"><primary>認証</primary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>認証情報の取得</secondary></indexterm>"
+msgstr "コマンドラインツールを使用して OpenStack クラウドに対してクエリーを実行するには、適切な認証情報が必要です。コマンドラインクライアントで使用する<glossterm>認証</glossterm>のクレデンシャルを取得する最も簡単な方法は、OpenStack ダッシュボードを使用する方法です。画面右上のナビレーションバーから <guimenuitem>プロジェクト</guimenuitem> を選択し、<guimenuitem>アクセスとセキュリティ</guimenuitem> をクリックしてから, <guimenuitem>API アクセス</guimenuitem> のタブを開き、ユーザー設定のページにアクセスします。このページでは、ダッシュボードで表示される言語とタイムゾーンを設定することができます。この操作では、<guilabel>OpenStack RC ファイルのダウンロード</guilabel> と <guilabel>EC2 認証情報のダウンロード</guilabel> の 2 つのボタンが表示されます。これらのボタンにより、コマンドラインツールがサービスエンドポイントと認証情報の場所を知るのに必要な環境変数を読み込むために、シェルで元データとして使用することのできるファイルを生成することができます。ダッシュボードにログインしたユーザーによって、openrc ファイルのファイル名が決定します (例: <filename>demo-openrc.sh</filename>)。admin としてログインした場合には、ファイル名は <filename>admin-openrc.sh</filename> となります。<indexterm class=\"singular\"><primary>認証情報</primary></indexterm><indexterm class=\"singular\"><primary>認証</primary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>認証情報の取得</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml244(para)
 msgid "The generated file looks something like this:"
@@ -13092,7 +13092,7 @@ msgid ""
 "class=\"singular\"><primary>passwords</primary></indexterm><indexterm "
 "class=\"singular\"><primary>security "
 "issues</primary><secondary>passwords</secondary></indexterm>"
-msgstr ""
+msgstr "この場合には、パスワードがプレーンテキスト形式で保存されないのがこの方法の利点となりますが、このスクリプトを元データとして使用したり、実行したりする際には、パスワードが要求され、その回答は環境変数 <code>OS_PASSWORD</code> に保存されます。この操作は対話的に実行される必要がある点は、注意すべき重要なポイントです。 操作を非対話的に行う必要がある場合には、値をスクリプトに直接に保存することも可能ですが、その場合にはこのファイルのセキュリティとアクセス権を極めて慎重に管理する必要があります。, <indexterm class=\"singular\"><primary>パスワード</primary></indexterm><indexterm class=\"singular\"><primary>セキュリティ上の問題</primary><secondary>パスワード</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml288(para)
 msgid ""
