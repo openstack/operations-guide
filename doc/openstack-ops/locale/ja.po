@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-28 07:46+0000\n"
-"PO-Revision-Date: 2014-10-29 04:50+0000\n"
+"POT-Creation-Date: 2014-10-30 08:05+0000\n"
+"PO-Revision-Date: 2014-10-31 04:50+0000\n"
 "Last-Translator: myamamot <myamamot@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -11412,7 +11412,7 @@ msgid ""
 "description</replaceable></code>, which can be very useful. You can also "
 "create a group in a disabled state by appending <code>--enabled false</code>"
 " to the command. By default, projects are created in an enabled state."
-msgstr ""
+msgstr "このコマンドは、demo という名前のプロジェクトを作成します。オプションで、<code>--description <replaceable>tenant-description</replaceable></code> を追加することで、説明の文字列を追加することができ、非常に便利です。また、コマンドに <code>--enabled false</code> を追加して、グループを無効な状態で作成することもできます。デフォルトでは、有効化された状態でプロジェクトが作成されます。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml135(title)
 msgid "Quotas"
@@ -11429,7 +11429,7 @@ msgid ""
 "xml:id=\"quotas9\"><primary>quotas</primary></indexterm><indexterm "
 "class=\"singular\"><primary>user "
 "management</primary><secondary>quotas</secondary></indexterm>"
-msgstr ""
+msgstr "システムの容量が通知なしに完全に消費されないように、<glossterm baseform=\"quota\">クォータ</glossterm> を設定することができます。クォータとは、運用上の制限値です。たとえば、各テナントに許容される容量 (GB) を制御して、単一のテナントで全ディスク容量すべてが消費されないようにします。現在、ユーザーレベルではなく、テナント (またはプロジェクト) レベルで、クォータを有効にすることができます。<indexterm class=\"startofrange\" xml:id=\"quotas9\"><primary>クォータ</primary></indexterm><indexterm class=\"singular\"><primary>ユーザー管理</primary><secondary>クォータ</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml152(para)
 msgid ""
@@ -11437,7 +11437,7 @@ msgid ""
 "available resources, default quotas are shipped with OpenStack. You should "
 "pay attention to which quota settings make sense for your hardware "
 "capabilities."
-msgstr ""
+msgstr "妥当なクォータがないと、単一のテナントが利用可能なリソースをすべて使用してしまう可能性があるため、デフォルトのクォータが OpenStack には含まれています。お使いのハードウェア機能には、どのクォータ設定が適切か注意してください。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml158(para)
 msgid ""
@@ -11450,7 +11450,7 @@ msgid ""
 "Typically, default values are changed because a tenant requires more than "
 "the OpenStack default of 10 volumes per tenant, or more than the OpenStack "
 "default of 1 TB of disk space on a compute node."
-msgstr ""
+msgstr "テナントには、10 個を超える Block Storage ボリュームまたはコンピュートノードで 1 TB 以上が必要であるため、通常クラウドのオペレーターはデフォルト値を変更します。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml166(para)
 msgid "To view all tenants, run: <placeholder-1/>"
@@ -11458,7 +11458,7 @@ msgstr "全てのテナントを表示するには、以下のコマンドを実
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml180(title)
 msgid "Set Image Quotas"
-msgstr ""
+msgstr "イメージクォータの設定"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml182(para)
 msgid ""
@@ -11475,11 +11475,11 @@ msgstr ""
 msgid ""
 "To enable this feature, edit the <filename>/etc/glance/glance-"
 "api.conf</filename> file, and under the [DEFAULT] section, add:"
-msgstr ""
+msgstr "この機能を有効にするには、<filename>/etc/glance/glance-api.conf</filename> ファイルを編集して [DEFAULT] セクションに以下を追加します。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml199(para)
 msgid "For example, to restrict a project's image storage to 5 GB, do this:"
-msgstr ""
+msgstr "たとえば、プロジェクトのイメージストレージを 5GB に制限するには、以下を実行します。"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml205(para)
 msgid ""
@@ -11541,7 +11541,7 @@ msgstr "floating-ips"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml268(para)
 msgid "Injected file content bytes"
-msgstr ""
+msgstr "注入ファイルのコンテンツ (バイト)"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml270(para)
 msgid "Number of content bytes allowed per injected file."
@@ -11553,7 +11553,7 @@ msgstr "injected-file-content-bytes"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml278(para)
 msgid "Injected file path bytes"
-msgstr ""
+msgstr "注入ファイルのパス (バイト)"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml280(para)
 msgid "Number of bytes allowed per injected file path."
@@ -11565,7 +11565,7 @@ msgstr "injected-file-path-bytes"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml288(para)
 msgid "Injected files"
-msgstr ""
+msgstr "注入ファイル"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml290(para)
 msgid "Number of injected files allowed per tenant."
@@ -11581,7 +11581,7 @@ msgstr "テナントごとの最大インスタンス数"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml304(para)
 msgid "Key pairs"
-msgstr ""
+msgstr "キーペア"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml306(para)
 msgid "Number of key pairs allowed per user."
@@ -11593,7 +11593,7 @@ msgstr "key-pairs"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml312(para)
 msgid "Metadata items"
-msgstr ""
+msgstr "メタデータ項目"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml314(para)
 msgid "Number of metadata items allowed per instance."
@@ -11649,7 +11649,7 @@ msgstr "cores"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml357(title)
 msgid "View and update compute quotas for a tenant (project)"
-msgstr ""
+msgstr "テナント (プロジェクト) のコンピュートクォータの表示/更新"
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml359(para)
 msgid ""
