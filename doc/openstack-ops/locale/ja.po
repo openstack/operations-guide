@@ -29,9 +29,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-30 08:05+0000\n"
-"PO-Revision-Date: 2014-10-31 04:50+0000\n"
-"Last-Translator: myamamot <myamamot@redhat.com>\n"
+"POT-Creation-Date: 2014-10-31 08:56+0000\n"
+"PO-Revision-Date: 2014-11-01 08:10+0000\n"
+"Last-Translator: ykatabam <ykatabam@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13109,17 +13109,17 @@ msgid ""
 "<filename>pk.pem</filename>. The <filename>ec2rc.sh</filename> is similar to"
 " this:<indexterm class=\"singular\"><primary>access "
 "key</primary></indexterm>"
-msgstr ""
+msgstr "EC2 互換のクレデンシャルをダウンロードするには、<guimenuitem>プロジェクト</guimenuitem>、<guimenuitem>アクセスとセキュリティ</guimenuitem>、<guimenuitem>API アクセス</guimenuitem> の順に選択し、<guilabel>EC2 認証情報のダウンロード</guilabel> ボタンを表示します。このボタンをクリックすると、 サーバーの x509 証明書とシェルスクリプトフラグメントが含まれた ZIP が生成されます。これらのファイルは、デフォルトの <code>user-openrc</code> とは異なり、クラウドのアイデンティティへのアクセスに必要なすべての認証情報を含む有効なクレデンシャルなので、セキュリティ保護された場所に新規ディレクトリを作成して、そこで ZIP ファイルを展開します。<filename>cacert.pem</filename>、<filename>cert.pem</filename>、<filename>ec2rc.sh</filename>、および <filename>pk.pem</filename> が含まれているはずです。<filename>ec2rc.sh</filename> には、以下と似たような内容が記述されています:<indexterm class=\"singular\"><primary>access key</primary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml324(para)
 msgid ""
 "To put the EC2 credentials into your environment, source the "
 "<code>ec2rc.sh</code> file."
-msgstr ""
+msgstr "EC2 認証情報を環境に適用するには、<code>ec2rc.sh</code> ファイルを元データとします。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml329(title)
 msgid "Inspecting API Calls"
-msgstr ""
+msgstr "API コールの検査"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml331(para)
 msgid ""
