@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-31 08:56+0000\n"
-"PO-Revision-Date: 2014-11-01 08:10+0000\n"
+"POT-Creation-Date: 2014-11-08 12:56+0000\n"
+"PO-Revision-Date: 2014-11-09 13:14+0000\n"
 "Last-Translator: ykatabam <ykatabam@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -13130,7 +13130,7 @@ msgid ""
 "inspecting</secondary></indexterm><indexterm class=\"singular\"><primary"
 ">command-line tools</primary><secondary>inspecting API "
 "calls</secondary></indexterm> For example:"
-msgstr ""
+msgstr "コマンドラインツールに <code>--debug</code> フラグを渡すことにより、実行する  OpenStack API  を表示することができます。<indexterm class=\"singular\"><primary>API (Application Programming Interface)</primary><secondary>API コール、確認</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>API コールの検査</secondary></indexterm> 例えば、以下のようになります。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml345(para)
 msgid ""
@@ -13145,7 +13145,7 @@ msgid ""
 "Support</link> enables you to securely save your OpenStack password in an "
 "encrypted file.<indexterm class=\"singular\"><primary>Keyring "
 "Support</primary></indexterm>"
-msgstr ""
+msgstr "<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">キーリングのサポート</link> により、暗号化されたファイルに OpenStack のパスワードをセキュアに保存することができます。<indexterm class=\"singular\"><primary>キーリングのサポート</primary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml356(para)
 msgid ""
