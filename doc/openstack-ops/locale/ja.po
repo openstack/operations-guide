@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-08 12:56+0000\n"
-"PO-Revision-Date: 2014-11-09 13:14+0000\n"
+"POT-Creation-Date: 2014-11-11 02:24+0000\n"
+"PO-Revision-Date: 2014-11-10 13:45+0000\n"
 "Last-Translator: ykatabam <ykatabam@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -13151,7 +13151,7 @@ msgstr "<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">キーリ�
 msgid ""
 "This feature is disabled by default. To enable it, add the <code>--os-"
 "cache</code> flag or set the environment variable <code>OS_CACHE=1</code>."
-msgstr ""
+msgstr "この機能は、デフォルトでは無効になっています。有効にするには、<code>--os-cache</code> フラグを追加するか、環境変数 <code>OS_CACHE=1</code> を設定してください。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml360(para)
 msgid ""
@@ -13159,11 +13159,11 @@ msgid ""
 "authenticate on each and every interaction with the cloud. This can assist "
 "with working around this scenario. However, it increases the time taken to "
 "run commands and also the load on the server."
-msgstr ""
+msgstr "<literal>OS_CACHE</literal> を設定すると、クラウドと対話する度にコマンドラインツールが認証を行うようになります。この方法は、このシナリオの次善策として役立ちますが、コマンドの実行時間が長くなり、サーバーに対する負荷も増大します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml368(title)
 msgid "Using cURL for further inspection"
-msgstr ""
+msgstr "cURL を使用したさらなる検査"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml370(para)
 msgid ""
@@ -13176,7 +13176,7 @@ msgid ""
 "from the responses.<indexterm class=\"singular\"><primary>authentication "
 "tokens</primary></indexterm><indexterm "
 "class=\"singular\"><primary>cURL</primary></indexterm>"
-msgstr ""
+msgstr "コマンドラインツールの使用の根底にあるのは、HTTP を介して実行する RESTful API である OpenStack API です。API と直接対話を行いたい場合や、CLI ツールにバグがあることが疑われるために使用する必要がある場合があります。この場合の最善の対処方法は、 <link href=\"http://curl.haxx.se/\">cURL</link> と <link href=\"http://stedolan.github.io/jq/\">jq</link> などの他のツールを組み合わせて使用し、その応答から JSON を解析することです。<indexterm class=\"singular\"><primary>認証トークン</primary></indexterm><indexterm class=\"singular\"><primary>cURL</primary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml383(para)
 msgid ""
