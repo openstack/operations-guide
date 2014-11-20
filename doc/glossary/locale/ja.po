@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-17 23:24+0000\n"
-"PO-Revision-Date: 2014-11-18 04:00+0000\n"
+"POT-Creation-Date: 2014-11-19 17:12+0000\n"
+"PO-Revision-Date: 2014-11-20 05:46+0000\n"
 "Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -254,7 +254,7 @@ msgid ""
 "In a high-availability setup with an active/passive configuration, systems "
 "are set up to bring additional resources online to replace those that have "
 "failed."
-msgstr ""
+msgstr "アクティブ/パッシブ設定を用いた高可用性セットアップでは、故障したシステムを置き換えるために、システムが追加リソースをオンラインにするようセットアップされる。"
 
 #: ./doc/glossary/glossary-terms.xml245(glossterm)
 #: ./doc/glossary/glossary-terms.xml247(primary)
@@ -684,11 +684,11 @@ msgstr "論理ポートへのインターフェースIDの紐付け。インタ�
 #: ./doc/glossary/glossary-terms.xml678(glossterm)
 #: ./doc/glossary/glossary-terms.xml680(primary)
 msgid "auditing"
-msgstr ""
+msgstr "監査"
 
 #: ./doc/glossary/glossary-terms.xml684(para)
 msgid "Provided in Compute through the system usage data facility."
-msgstr ""
+msgstr "システム使用状況データ機能経由で Compute において提供される。"
 
 #: ./doc/glossary/glossary-terms.xml690(glossterm)
 #: ./doc/glossary/glossary-terms.xml692(primary)
@@ -924,7 +924,7 @@ msgstr "bare, 定義"
 msgid ""
 "An Image Service container format that indicates that no container exists "
 "for the VM image."
-msgstr ""
+msgstr "仮想マシンイメージ用のコンテナーが存在しないことを意味する、Image Service のコンテナー形式。"
 
 #: ./doc/glossary/glossary-terms.xml947(glossterm)
 #: ./doc/glossary/glossary-terms.xml949(primary)
@@ -991,7 +991,7 @@ msgstr "ビット, 定義"
 msgid ""
 "A bit is a single digit number that is in base of 2 (either a zero or one). "
 "Bandwidth usage is measured in bits per second."
-msgstr ""
+msgstr "ビットは、2 を基数とする単一のデジタル数値 (0 または 1)。帯域使用量は、ビット毎秒 (bps) で測定される。"
 
 #: ./doc/glossary/glossary-terms.xml1016(glossterm)
 #: ./doc/glossary/glossary-terms.xml1018(primary)
@@ -1198,7 +1198,7 @@ msgstr "cache pruner"
 
 #: ./doc/glossary/glossary-terms.xml1230(primary)
 msgid "cache pruners"
-msgstr ""
+msgstr "cache pruner"
 
 #: ./doc/glossary/glossary-terms.xml1234(para)
 msgid ""
@@ -2482,7 +2482,7 @@ msgstr "分散仮想ルーター (DVR)"
 msgid ""
 "Mechanism for highly-available multi-host routing when using OpenStack "
 "Networking (neutron)."
-msgstr ""
+msgstr "OpenStack Networking (neutron) の使用時、高可用なマルチホストルーティングのための機構。"
 
 #: ./doc/glossary/glossary-terms.xml2597(glossterm)
 #: ./doc/glossary/glossary-terms.xml2599(primary)
@@ -2812,7 +2812,7 @@ msgstr "カプセル化"
 msgid ""
 "The practice of placing one packet type within another for the purposes of "
 "abstracting or securing data. Examples include GRE, MPLS, or IPsec."
-msgstr ""
+msgstr "データを抽象化やセキュア化する目的で、あるパケット形式を別の形式の中に入れるための方法。例えば、GRE、MPLS、IPsec などがある。"
 
 #: ./doc/glossary/glossary-terms.xml2935(glossterm)
 msgid "endpoint template"
@@ -5477,7 +5477,7 @@ msgstr "オブジェクトバージョニング"
 msgid ""
 "Allows a user to set a flag on an Object Storage container so that all "
 "objects within the container are versioned."
-msgstr ""
+msgstr "コンテナー内のすべてのオブジェクトがバージョンを付けられるように、ユーザーが Object Storage のコンテナーにフラグを設定できる。"
 
 #: ./doc/glossary/glossary-terms.xml5889(glossterm)
 #: ./doc/glossary/glossary-terms.xml5891(primary)
@@ -5488,7 +5488,7 @@ msgstr "Oldie"
 msgid ""
 "Term for an Object Storage process that runs for a long time. Can indicate a"
 " hung process."
-msgstr ""
+msgstr "長時間動作している  Object Storage のプロセスを指す用語。ハングしたプロセスを意味する可能性もある。"
 
 #: ./doc/glossary/glossary-terms.xml5901(glossterm)
 #: ./doc/glossary/glossary-terms.xml5904(primary)
@@ -5499,7 +5499,7 @@ msgstr "Open Cloud Computing Interface (OCCI)"
 msgid ""
 "A standardized interface for managing compute, data, and network resources, "
 "currently unsupported in OpenStack."
-msgstr ""
+msgstr "コンピュート、データ、ネットワークのリソースを管理するための標準的なインターフェース。現在 OpenStack でサポートされない。"
 
 #: ./doc/glossary/glossary-terms.xml5914(glossterm)
 #: ./doc/glossary/glossary-terms.xml5916(primary)
@@ -5534,7 +5534,7 @@ msgstr "Open vSwitch (OVS) エージェント"
 msgid ""
 "Provides an interface to the underlying Open vSwitch service for the "
 "Networking plug-in."
-msgstr ""
+msgstr "Networking のプラグインに対して、バックエンドの Open vSwitch サービスへのインターフェースを提供する。"
 
 #: ./doc/glossary/glossary-terms.xml5957(glossterm)
 msgid "Open vSwitch neutron plug-in"
@@ -5626,7 +5626,7 @@ msgstr "orphan"
 msgid ""
 "In the context of Object Storage, this is a process that is not terminated "
 "after an upgrade, restart, or reload of the service."
-msgstr ""
+msgstr "Object Storage の文脈において、サービスの更新、再起動、再読み込みの後に終了しないプロセス。"
 
 #: ./doc/glossary/glossary-terms.xml6072(title)
 msgid "P"
@@ -5662,7 +5662,7 @@ msgstr "パーティション"
 msgid ""
 "A unit of storage within Object Storage used to store objects. It exists on "
 "top of devices and is replicated for fault tolerance."
-msgstr ""
+msgstr "オブジェクトを保存するために使用される、Object Storage 内の保存単位。デバイスの上位に存在し、耐障害のために複製される。"
 
 #: ./doc/glossary/glossary-terms.xml6108(glossterm)
 #: ./doc/glossary/glossary-terms.xml6112(secondary)
@@ -5672,7 +5672,7 @@ msgstr "パーティションインデックス"
 #: ./doc/glossary/glossary-terms.xml6116(para)
 msgid ""
 "Contains the locations of all Object Storage partitions within the ring."
-msgstr ""
+msgstr "リング内にあるすべての Object Storage のパーティションの場所を含む。"
 
 #: ./doc/glossary/glossary-terms.xml6122(glossterm)
 msgid "partition shift value"
@@ -5701,13 +5701,13 @@ msgstr "エンド間の MTU を検出し、パケットサイズを適切に調�
 #: ./doc/glossary/glossary-terms.xml6148(glossterm)
 #: ./doc/glossary/glossary-terms.xml6150(primary)
 msgid "pause"
-msgstr "ポーズ"
+msgstr "一時停止"
 
 #: ./doc/glossary/glossary-terms.xml6154(para)
 msgid ""
 "A VM state where no changes occur (no changes in memory, network "
 "communications stop, etc); the VM is frozen but not shut down."
-msgstr ""
+msgstr "変更が発生しない (メモリーの変更なし、ネットワーク通信の停止など)、仮想マシンの状態。仮想マシンは停止するが、シャットダウンしない。"
 
 #: ./doc/glossary/glossary-terms.xml6160(glossterm)
 #: ./doc/glossary/glossary-terms.xml6162(primary)
@@ -5718,7 +5718,7 @@ msgstr "PCI パススルー"
 msgid ""
 "Gives guest VMs exclusive access to a PCI device. Currently supported in "
 "OpenStack Havana and later releases."
-msgstr ""
+msgstr "ゲスト仮想マシンが PCI デバイスに排他的にアクセスされる。OpenStack Havana 以降でサポートされる。"
 
 #: ./doc/glossary/glossary-terms.xml6172(glossterm)
 msgid "persistent message"
@@ -6273,7 +6273,7 @@ msgstr "リビルド"
 
 #: ./doc/glossary/glossary-terms.xml6796(primary)
 msgid "rebuilding"
-msgstr ""
+msgstr "リビルド"
 
 #: ./doc/glossary/glossary-terms.xml6800(para)
 msgid ""
@@ -6597,7 +6597,7 @@ msgstr "ラウンドロビン"
 msgid ""
 "Type of Compute scheduler that evenly distributes instances among available "
 "hosts."
-msgstr ""
+msgstr "利用可能なホスト間でインスタンスを平等に分散させる、Compute のスケジューラーの一種。"
 
 #: ./doc/glossary/glossary-terms.xml7145(glossterm)
 #: ./doc/glossary/glossary-terms.xml7147(primary)
@@ -6716,7 +6716,7 @@ msgstr "sahara"
 msgid ""
 "OpenStack project that provides a scalable data-processing stack and "
 "associated management interfaces."
-msgstr ""
+msgstr "スケールアウト可能なデータ処理基盤と関連する管理インターフェースを提供する、OpenStack のプロジェクト。"
 
 #: ./doc/glossary/glossary-terms.xml7263(glossterm)
 #: ./doc/glossary/glossary-terms.xml7265(primary)
@@ -6727,7 +6727,7 @@ msgstr "SAML アサーション"
 msgid ""
 "Contains information about a user as provided by the identity provider. It "
 "is an indication that a user has been authenticated."
-msgstr ""
+msgstr "認証プロバイダーにより提供されたとおり、ユーザーに関する情報を含む。ユーザーが認証済みであることを意味する。"
 
 #: ./doc/glossary/glossary-terms.xml7275(glossterm)
 #: ./doc/glossary/glossary-terms.xml7277(primary)
@@ -6841,7 +6841,7 @@ msgstr "サーバー"
 msgid ""
 "Computer that provides explicit services to the client software running on "
 "that system, often managing a variety of computer operations."
-msgstr ""
+msgstr "そのシステムにおいて動作しているクライアントソフトウェアに具体的なサービスを提供するコンピューター。さまざまなコンピューター処理を管理することもある。"
 
 #: ./doc/glossary/glossary-terms.xml7391(para)
 msgid ""
@@ -7231,7 +7231,7 @@ msgid ""
 "An Object Storage node that provides container services, account services, "
 "and object services; controls the account databases, container databases, "
 "and object storage."
-msgstr ""
+msgstr "コンテナーサービス、アカウントサービス、オブジェクトサービスを提供する Object Storage のノード。アカウントデータベース、コンテナーデータベース、オブジェクトデータベースを制御する。"
 
 #: ./doc/glossary/glossary-terms.xml7838(glossterm)
 #: ./doc/glossary/glossary-terms.xml7842(secondary)
@@ -7338,7 +7338,7 @@ msgstr "スワップ, 定義"
 msgid ""
 "Disk-based virtual memory used by operating systems to provide more memory "
 "than is actually available on the system."
-msgstr ""
+msgstr "システムにおいて実際に利用可能なメモリーより多くのメモリーをオペレーティングシステムにより使用されるディスクベースの仮想メモリー。"
 
 #: ./doc/glossary/glossary-terms.xml7953(glossterm)
 #: ./doc/glossary/glossary-terms.xml7955(primary)
@@ -7350,7 +7350,7 @@ msgid ""
 "An authentication and authorization service for Object Storage, implemented "
 "through WSGI middleware; uses Object Storage itself as the persistent "
 "backing store."
-msgstr ""
+msgstr "Object Storage の認証と認可のサービス。WSGI ミドルウェア経由で実装される。バックエンドの永続的なデータストアとして、Object Storage 自身を使用する。"
 
 #: ./doc/glossary/glossary-terms.xml7969(para)
 msgid "An OpenStack core project that provides object storage services."
@@ -7462,7 +7462,7 @@ msgid ""
 "An authentication facility within Object Storage that enables Object Storage"
 " itself to perform authentication and authorization. Frequently used in "
 "testing and development."
-msgstr ""
+msgstr "Object Storage 自身が認証と認可を実行できるようになる、Object Storage 内の認証機能。テストや開発によく使用される。"
 
 #: ./doc/glossary/glossary-terms.xml8109(glossterm)
 #: ./doc/glossary/glossary-terms.xml8111(primary)
@@ -7564,7 +7564,7 @@ msgstr "tombstone"
 msgid ""
 "Used to mark Object Storage objects that have been deleted; ensures that the"
 " object is not updated on another node after it has been deleted."
-msgstr ""
+msgstr "Object Storage のオブジェクトが削除済みであることを示す印をつけるために使用される。オブジェクトの削除後、他のノードにおいて更新されないことを保証する。"
 
 #: ./doc/glossary/glossary-terms.xml8225(glossterm)
 #: ./doc/glossary/glossary-terms.xml8227(primary)
