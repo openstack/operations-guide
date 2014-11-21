@@ -781,12 +781,12 @@ proto ICMP (1), length 84)
     never directly related to an instance; it must always go through a fixed
     IP.</para>
 
-    <section xml:id="deassociate_floating_ip">
-      <title>Manually Deassociating a Floating IP</title>
+    <section xml:id="dissasociate_floating_ip">
+      <title>Manually Dissaociating a Floating IP</title>
 
       <para>Sometimes an instance is terminated but the floating IP was not
       correctly de-associated from that instance. Because the database is in
-      an inconsistent state, the usual tools to deassociate the IP no longer
+      an inconsistent state, the usual tools to dissaociate the IP no longer
       work. To fix this, you must manually update the database.<indexterm
           class="singular">
           <primary>IP addresses</primary>
@@ -808,7 +808,7 @@ proto ICMP (1), length 84)
 
       <screen><prompt>mysql&gt;</prompt> <userinput>select * from floating_ips where fixed_ip_id = '&lt;fixed_ip_id&gt;';</userinput></screen>
 
-      <para>And finally, you can deassociate the floating IP:</para>
+      <para>And finally, you can disassociate the floating IP:</para>
 
       <screen><prompt>mysql&gt;</prompt> <userinput>update floating_ips set fixed_ip_id = NULL, host = NULL where
        fixed_ip_id = '&lt;fixed_ip_id&gt;';</userinput></screen>
