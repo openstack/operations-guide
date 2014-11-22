@@ -29,9 +29,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-11 02:24+0000\n"
-"PO-Revision-Date: 2014-11-10 13:45+0000\n"
-"Last-Translator: ykatabam <ykatabam@redhat.com>\n"
+"POT-Creation-Date: 2014-11-21 18:35+0000\n"
+"PO-Revision-Date: 2014-11-21 18:35+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1463,14 +1463,14 @@ msgid ""
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml785(title)
-msgid "Manually Deassociating a Floating IP"
+msgid "Manually Dissaociating a Floating IP"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml787(para)
 msgid ""
 "Sometimes an instance is terminated but the floating IP was not correctly "
 "de-associated from that instance. Because the database is in an inconsistent"
-" state, the usual tools to deassociate the IP no longer work. To fix this, "
+" state, the usual tools to dissaociate the IP no longer work. To fix this, "
 "you must manually update the database.<indexterm "
 "class=\"singular\"><primary>IP "
 "addresses</primary><secondary>floating</secondary></indexterm><indexterm "
@@ -1490,7 +1490,7 @@ msgid "You can now get the related floating IP entry:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml811(para)
-msgid "And finally, you can deassociate the floating IP:"
+msgid "And finally, you can disassociate the floating IP:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml816(para)

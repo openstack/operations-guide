@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-23 06:01+0000\n"
+"POT-Creation-Date: 2014-11-22 13:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -920,11 +920,11 @@ msgid "From these tables, you can see that a floating IP is technically never di
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:785(title)
-msgid "Manually Deassociating a Floating IP"
+msgid "Manually Dissaociating a Floating IP"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:787(para)
-msgid "Sometimes an instance is terminated but the floating IP was not correctly de-associated from that instance. Because the database is in an inconsistent state, the usual tools to deassociate the IP no longer work. To fix this, you must manually update the database.<indexterm class=\"singular\"><primary>IP addresses</primary><secondary>floating</secondary></indexterm><indexterm class=\"singular\"><primary>floating IP address</primary></indexterm>"
+msgid "Sometimes an instance is terminated but the floating IP was not correctly de-associated from that instance. Because the database is in an inconsistent state, the usual tools to dissaociate the IP no longer work. To fix this, you must manually update the database.<indexterm class=\"singular\"><primary>IP addresses</primary><secondary>floating</secondary></indexterm><indexterm class=\"singular\"><primary>floating IP address</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:799(para)
@@ -940,7 +940,7 @@ msgid "You can now get the related floating IP entry:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:811(para)
-msgid "And finally, you can deassociate the floating IP:"
+msgid "And finally, you can disassociate the floating IP:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:816(para)
