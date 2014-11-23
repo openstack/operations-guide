@@ -447,17 +447,14 @@
       <code>nova-scheduler</code> selection of hosts, provides greater
       flexibility to control where virtual machines are run.</para>
 
-      <para>Contrast this with regions. Regions have a separate API endpoint
+      <para>Unlike having a single API endpoint, regions have a separate API endpoint
       per installation, allowing for a more discrete separation. Users wanting
       to run instances across sites have to explicitly select a region.
       However, the additional complexity of a running a new service is not
       required.</para>
 
-      <para>The OpenStack dashboard (horizon) currently uses only a single
-      region, so one dashboard service should be run per region. Regions are a
-      robust way to share some infrastructure between OpenStack Compute
-      installations, while allowing for a high degree of failure
-      tolerance.</para>
+      <para>The OpenStack dashboard (horizon) can be configured to use multiple
+      regions. This can be configured through the <option>AVAILABLE_REGIONS</option> parameter.</para>
     </section>
 
     <section xml:id="availability_zones">
@@ -691,8 +688,8 @@
     <section xml:id="burin_testing">
       <title>Burn-in Testing</title>
 
-      <para>Server hardware's chance of failure is high at the start and the
-      end of its life. As a result, much effort in dealing with hardware
+      <para>The chances of failure for the server’s hardware are high at the start and the
+      end of its life. As a result, dealing with hardware
       failures while in production can be avoided by appropriate burn-in
       testing to attempt to trigger the early-stage failures. The general
       principle is to stress the hardware to its limits. Examples of burn-in
