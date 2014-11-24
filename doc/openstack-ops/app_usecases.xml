@@ -55,11 +55,10 @@
       <para>Compute nodes have 24 to 48 cores, with at least 4 GB of RAM per
       core and approximately 40 GB of ephemeral storage per core.</para>
 
-      <para>All sites are based on Ubuntu 12.04, with KVM as the hypervisor.
+      <para>All sites are based on Ubuntu 14.04, with KVM as the hypervisor.
       The OpenStack version in use is typically the current stable version,
       with 5 to 10 percent back-ported code from trunk and modifications.
-      Migration to Ubuntu 14.04 is planned as part of the Havana to Icehouse
-      upgrade.<indexterm class="singular">
+      <indexterm class="singular">
           <primary>Icehouse</primary>
 
           <secondary>migration to Ubuntu</secondary>
@@ -232,7 +231,7 @@
 
       <itemizedlist>
         <listitem>
-          <para><link xlink:href="http://www.canarie.ca/en/dair-program/about">DAIR
+          <para><link xlink:href="http://www.canarie.ca/cloud/">DAIR
           homepage</link></para>
         </listitem>
       </itemizedlist>
