@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-22 13:06+0000\n"
+"POT-Creation-Date: 2014-11-24 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6164,151 +6164,151 @@ msgid "This allows for a single API server being used to control access to multi
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:450(para)
-msgid "Contrast this with regions. Regions have a separate API endpoint per installation, allowing for a more discrete separation. Users wanting to run instances across sites have to explicitly select a region. However, the additional complexity of a running a new service is not required."
+msgid "Unlike having a single API endpoint, regions have a separate API endpoint per installation, allowing for a more discrete separation. Users wanting to run instances across sites have to explicitly select a region. However, the additional complexity of a running a new service is not required."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:456(para)
-msgid "The OpenStack dashboard (horizon) currently uses only a single region, so one dashboard service should be run per region. Regions are a robust way to share some infrastructure between OpenStack Compute installations, while allowing for a high degree of failure tolerance."
+msgid "The OpenStack dashboard (horizon) can be configured to use multiple regions. This can be configured through the <option>AVAILABLE_REGIONS</option> parameter."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:464(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:461(title)
 msgid "Availability Zones and Host Aggregates"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:466(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:463(para)
 msgid "You can use availability zones, host aggregates, or both to partition a nova deployment.<indexterm class=\"singular\"><primary>scaling</primary><secondary>availability zones</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:473(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:470(para)
 msgid "Availability zones are implemented through and configured in a similar way to host aggregates."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:476(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:473(para)
 msgid "However, you use them for different reasons."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:479(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:476(title)
 msgid "Availability zone"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:481(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:478(para)
 msgid "This enables you to arrange OpenStack compute hosts into logical groups and provides a form of physical isolation and redundancy from other availability zones, such as by using a separate power supply or network equipment.<indexterm class=\"singular\"><primary>availability zone</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:488(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:485(para)
 msgid "You define the availability zone in which a specified compute host resides locally on each server. An availability zone is commonly used to identify a set of servers that have a common attribute. For instance, if some of the racks in your data center are on a separate power source, you can put servers in those racks in their own availability zone. Availability zones can also help separate different classes of hardware."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:496(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:493(para)
 msgid "When users provision resources, they can specify from which availability zone they want their instance to be built. This allows cloud consumers to ensure that their application resources are spread across disparate machines to achieve high availability in the event of hardware failure."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:504(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:501(title)
 msgid "Host aggregates zone"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:506(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:503(para)
 msgid "This enables you to partition OpenStack Compute deployments into logical groups for load balancing and instance distribution. You can use host aggregates to further partition an availability zone. For example, you might use host aggregates to partition an availability zone into groups of hosts that either share common resources, such as storage and network, or have a special property, such as trusted computing hardware.<indexterm class=\"singular\"><primary>scaling</primary><secondary>host aggregate</secondary></indexterm><indexterm class=\"singular\"><primary>host aggregate</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:520(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:517(para)
 msgid "A common use of host aggregates is to provide information for use with the <literal>nova-scheduler</literal>. For example, you might use a host aggregate to group a set of hosts that share specific flavors or images."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:525(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:522(para)
 msgid "The general case for this is setting key-value pairs in the aggregate metadata and matching key-value pairs in flavor's <parameter>extra_specs</parameter> metadata. The <parameter>AggregateInstanceExtraSpecsFilter</parameter> in the filter scheduler will enforce that instances be scheduled only on hosts in aggregates that define the same key to the same value."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:531(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:528(para)
 msgid "An advanced use of this general concept allows different flavor types to run with different CPU and RAM allocation ratios so that high-intensity computing loads and low-intensity development and testing systems can share the same cloud without either starving the high-use systems or wasting resources on low-utilization systems. This works by setting <parameter>metadata</parameter> in your host aggregates and matching <parameter>extra_specs</parameter> in your flavor types."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:540(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:537(para)
 msgid "The first step is setting the aggregate metadata keys <parameter>cpu_allocation_ratio</parameter> and <parameter>ram_allocation_ratio</parameter> to a floating-point value. The filter schedulers <parameter>AggregateCoreFilter</parameter> and <parameter>AggregateRamFilter</parameter> will use those values rather than the global defaults in <filename>nova.conf</filename> when scheduling to hosts in the aggregate. It is important to be cautious when using this feature, since each host can be in multiple aggregates but should have only one allocation ratio for each resources. It is up to you to avoid putting a host in multiple aggregates that define different values for the same <phrase role=\"keep-together\">resource</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:554(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:551(para)
 msgid "This is the first half of the equation. To get flavor types that are guaranteed a particular ratio, you must set the <parameter>extra_specs</parameter> in the flavor type to the key-value pair you want to match in the aggregate. For example, if you define <parameter>extra_specs</parameter><parameter>cpu_allocation_ratio</parameter> to \"1.0\", then instances of that type will run in aggregates only where the metadata key <parameter>cpu_allocation_ratio</parameter> is also defined as \"1.0.\" In practice, it is better to define an additional key-value pair in the aggregate metadata to match on rather than match directly on <parameter>cpu_allocation_ratio</parameter> or <parameter>core_allocation_ratio</parameter>. This allows better abstraction. For example, by defining a key <parameter>overcommit</parameter> and setting a value of \"high,\" \"medium,\" or \"low,\" you could then tune the numeric allocation ratios in the aggregates without also needing to change all flavor types relating to them."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:573(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:570(para)
 msgid "Previously, all services had an availability zone. Currently, only the <literal>nova-compute</literal> service has its own availability zone. Services such as <literal>nova-scheduler</literal>, <literal>nova-network</literal>, and <literal>nova-conductor</literal> have always spanned all availability zones."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:584(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:581(para)
 msgid "nova host-list (os-hosts)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:588(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:585(para)
 msgid "euca-describe-availability-zones verbose"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:592(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:589(para)
 msgid "<literal>nova-manage</literal> service list"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:580(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:577(para)
 msgid "When you run any of the following operations, the services appear in their own internal availability zone (CONF.internal_service_availability_zone): <placeholder-1/>The internal availability zone is hidden in euca-describe-availability_zones (nonverbose)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:597(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:594(para)
 msgid "CONF.node_availability_zone has been renamed to CONF.default_availability_zone and is used only by the <literal>nova-api</literal> and <literal>nova-scheduler</literal> services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:602(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:599(para)
 msgid "CONF.node_availability_zone still works but is deprecated."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:610(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:607(title)
 msgid "Scalable Hardware"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:612(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:609(para)
 msgid "While several resources already exist to help with deploying and installing OpenStack, it's very important to make sure that you have your deployment planned out ahead of time. This guide presumes that you have at least set aside a rack for the OpenStack cloud but also offers suggestions for when and what to scale."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:619(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:616(title)
 msgid "Hardware Procurement"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:621(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:618(para)
 msgid "“The Cloud” has been described as a volatile environment where servers can be created and terminated at will. While this may be true, it does not mean that your servers must be volatile. Ensuring that your cloud’s hardware is stable and configured correctly means that your cloud environment remains up and running. Basically, put effort into creating a stable hardware environment so that you can host a cloud that users may treat as unstable and volatile.<indexterm class=\"singular\"><primary>servers</primary><secondary>avoiding volatility in</secondary></indexterm><indexterm class=\"singular\"><primary>hardware</primary><secondary>scalability planning</secondary></indexterm><indexterm class=\"singular\"><primary>scaling</primary><secondary>hardware procurement</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:641(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:638(para)
 msgid "OpenStack can be deployed on any hardware supported by an OpenStack-compatible Linux distribution."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:644(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:641(para)
 msgid "Hardware does not have to be consistent, but it should at least have the same type of CPU to support instance migration."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:647(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:644(para)
 msgid "The typical hardware recommended for use with OpenStack is the standard value-for-money offerings that most hardware vendors stock. It should be straightforward to divide your procurement into building blocks such as \"compute,\" \"object storage,\" and \"cloud controller,\" and request as many of these as you need. Alternatively, should you be unable to spend more, if you have existing servers—provided they meet your performance requirements and virtualization technology—they are quite likely to be able to support OpenStack."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:658(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:655(title)
 msgid "Capacity Planning"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:660(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:657(para)
 msgid "OpenStack is designed to increase in size in a straightforward manner. Taking into account the considerations that we've mentioned in this chapter—particularly on the sizing of the cloud controller—it should be possible to procure additional compute or object storage nodes as needed. New nodes do not need to be the same specification, or even vendor, as existing nodes.<indexterm class=\"singular\"><primary>capability</primary><secondary>scaling and</secondary></indexterm><indexterm class=\"singular\"><primary>weight</primary></indexterm><indexterm class=\"singular\"><primary>capacity planning</primary></indexterm><indexterm class=\"singular\"><primary>scaling</primary><secondary>capacity planning</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:679(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:676(para)
 msgid "For compute nodes, <code>nova-scheduler</code> will take care of differences in sizing having to do with core count and RAM amounts; however, you should consider that the user experience changes with differing CPU speeds. When adding object storage nodes, a <glossterm>weight</glossterm> should be specified that reflects the <glossterm>capability</glossterm> of the node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:686(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:683(para)
 msgid "Monitoring the resource usage and user growth will enable you to know when to procure. <xref linkend=\"logging_monitoring\"/> details some useful metrics."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:692(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml:689(title)
 msgid "Burn-in Testing"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml:694(para)
-msgid "Server hardware's chance of failure is high at the start and the end of its life. As a result, much effort in dealing with hardware failures while in production can be avoided by appropriate burn-in testing to attempt to trigger the early-stage failures. The general principle is to stress the hardware to its limits. Examples of burn-in tests include running a CPU or disk benchmark for several days.<indexterm class=\"singular\"><primary>testing</primary><secondary>burn-in testing</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>burn-in testing</secondary></indexterm><indexterm class=\"singular\"><primary>burn-in testing</primary></indexterm><indexterm class=\"singular\"><primary>scaling</primary><secondary>burn-in testing</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_arch_scaling.xml:691(para)
+msgid "The chances of failure for the server’s hardware are high at the start and the end of its life. As a result, dealing with hardware failures while in production can be avoided by appropriate burn-in testing to attempt to trigger the early-stage failures. The general principle is to stress the hardware to its limits. Examples of burn-in tests include running a CPU or disk benchmark for several days.<indexterm class=\"singular\"><primary>testing</primary><secondary>burn-in testing</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>burn-in testing</secondary></indexterm><indexterm class=\"singular\"><primary>burn-in testing</primary></indexterm><indexterm class=\"singular\"><primary>scaling</primary><secondary>burn-in testing</secondary></indexterm>"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.

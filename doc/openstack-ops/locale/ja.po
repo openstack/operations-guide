@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-21 18:35+0000\n"
-"PO-Revision-Date: 2014-11-21 18:35+0000\n"
+"POT-Creation-Date: 2014-11-23 09:10+0000\n"
+"PO-Revision-Date: 2014-11-23 09:10+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -10204,25 +10204,24 @@ msgstr "これによって、複数のクラウドシステムに対するアク
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml450(para)
 msgid ""
-"Contrast this with regions. Regions have a separate API endpoint per "
-"installation, allowing for a more discrete separation. Users wanting to run "
-"instances across sites have to explicitly select a region. However, the "
+"Unlike having a single API endpoint, regions have a separate API endpoint "
+"per installation, allowing for a more discrete separation. Users wanting to "
+"run instances across sites have to explicitly select a region. However, the "
 "additional complexity of a running a new service is not required."
-msgstr "セルをリージョンと比較してみましょう。リージョンは、クラウドごとに別々のAPIエンドポイントを持ち、より細かい分離を実現できます。複数の拠点にまたがってインスタンスを実行するユーザーは、明示的にリージョンを指定しなければなりません。しかし、新規サービスを実行するなど、複雑化しなくて済みます。"
+msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml456(para)
 msgid ""
-"The OpenStack dashboard (horizon) currently uses only a single region, so "
-"one dashboard service should be run per region. Regions are a robust way to "
-"share some infrastructure between OpenStack Compute installations, while "
-"allowing for a high degree of failure tolerance."
-msgstr "現在のところ、OpenStack ダッシュボード (Horizon)　は１つのリージョンだけを操作対象とします。したがって、リージョンごとにダッシュボードサービスを実行するべきです。リージョンは、高度な故障耐性を実現しつつ、複数の OpenStack Compute のシステム間でインフラストラクチャーの一部を共有するための堅牢な方法です。"
+"The OpenStack dashboard (horizon) can be configured to use multiple regions."
+" This can be configured through the <option>AVAILABLE_REGIONS</option> "
+"parameter."
+msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml464(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml461(title)
 msgid "Availability Zones and Host Aggregates"
 msgstr "アベイラビリティゾーンとホストアグリゲート"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml466(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml463(para)
 msgid ""
 "You can use availability zones, host aggregates, or both to partition a nova"
 " deployment.<indexterm "
@@ -10230,21 +10229,21 @@ msgid ""
 "zones</secondary></indexterm>"
 msgstr "アベイラビリティゾーン、ホストアグリゲート、または両方を使用して、nova デプロイメントを分割することができます。<indexterm class=\"singular\"><primary>スケーリング</primary><secondary>アベイラビリティゾーン</secondary></indexterm>"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml473(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml470(para)
 msgid ""
 "Availability zones are implemented through and configured in a similar way "
 "to host aggregates."
 msgstr "アベイラビリティゾーンは、ホストアグリゲートを利用して実装されており、ホストアグリゲートと同様の方法で設定します。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml476(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml473(para)
 msgid "However, you use them for different reasons."
 msgstr "しかし、アベイラビリティゾーンとホストアグリゲートは別の用途で使用します。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml479(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml476(title)
 msgid "Availability zone"
 msgstr "アベイラビリティゾーン"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml481(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml478(para)
 msgid ""
 "This enables you to arrange OpenStack compute hosts into logical groups and "
 "provides a form of physical isolation and redundancy from other availability"
@@ -10253,7 +10252,7 @@ msgid ""
 "zone</primary></indexterm>"
 msgstr "アベイラビリティゾーンにより、OpenStack Compute ホストを論理グループにまとめて、（独立した電源系統やネットワーク装置を使うことなどで）他のアベイラビリティゾーンとの物理的な分離や冗長性を実現できます。<indexterm class=\"singular\"><primary>アベイラビリティゾーン</primary></indexterm>"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml488(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml485(para)
 msgid ""
 "You define the availability zone in which a specified compute host resides "
 "locally on each server. An availability zone is commonly used to identify a "
@@ -10263,7 +10262,7 @@ msgid ""
 "can also help separate different classes of hardware."
 msgstr "指定したコンピュートホストがローカルでサーバー毎に所属するアベイラビリティゾーンを定義します。アベイラビリティゾーンは一般的に、共通の属性を持つサーバーを識別するために使用されます。例えば、データセンターのラックの一部が別の電源を仕様している場合、このラックのサーバーを独自のアベイラビリティゾーンに入れることができます。アベイラビリティゾーンは、異なるハードウェアクラスを分割することもできます。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml496(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml493(para)
 msgid ""
 "When users provision resources, they can specify from which availability "
 "zone they want their instance to be built. This allows cloud consumers to "
@@ -10271,11 +10270,11 @@ msgid ""
 " to achieve high availability in the event of hardware failure."
 msgstr "リソースのプロビジョニングの際には、インスタンスを作成するアベイラビリティゾーンを指定することができます。これによって、クラウドの利用者は、アプリケーションのリソースが異なるマシンに分散して配置され、ハードウェア故障が発生した場合でも高可用性を達成することができます。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml504(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml501(title)
 msgid "Host aggregates zone"
 msgstr "ホストアグリゲートゾーン"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml506(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml503(para)
 msgid ""
 "This enables you to partition OpenStack Compute deployments into logical "
 "groups for load balancing and instance distribution. You can use host "
@@ -10288,14 +10287,14 @@ msgid ""
 " aggregate</primary></indexterm>"
 msgstr "これにより、OpenStack コンピュートデプロイメントを負荷分散やインスタンスディストリビューション用の論理グループに分割することができます。ホストアグリゲートをシヨ空いて、アベイラビリティゾーンをさらに分割することができます。例えば、ホストアグリゲートを使用してアベイラビリティゾーンをストレージやネットワークなどの共通のリソースを共有するか、信頼済みのコンピューティングハードウェアなどの特別なプロパティを持つホストグループに分割することができます。<indexterm class=\"singular\"><primary>スケーリング</primary><secondary>ホストアグリゲート</secondary></indexterm><indexterm class=\"singular\"><primary>ホストアグリゲート</primary></indexterm>"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml520(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml517(para)
 msgid ""
 "A common use of host aggregates is to provide information for use with the "
 "<literal>nova-scheduler</literal>. For example, you might use a host "
 "aggregate to group a set of hosts that share specific flavors or images."
 msgstr "ホストアグリゲートの一般的な用途は <literal>nova-scheduler</literal> で使用する情報を提供することです。例えば、ホストアグリゲートを使って、特定のフレーバーやイメージを共有するホストの集合を作成することができます。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml525(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml522(para)
 msgid ""
 "The general case for this is setting key-value pairs in the aggregate "
 "metadata and matching key-value pairs in flavor's "
@@ -10305,7 +10304,7 @@ msgid ""
 "aggregates that define the same key to the same value."
 msgstr "この一般的なケースは、アグリゲートメタデータで key-value ペアを設定して、フレーバーの <parameter>extra_specs</parameter> メタデータで key-value ペアを一致させます。フィルタースケジューラーの <parameter>AggregateInstanceExtraSpecsFilter</parameter> は、強制的にインスタンスが、同じ値に同じキーが定義されているアグリゲートのホストに対してのみスケジューリングするようにします。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml531(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml528(para)
 msgid ""
 "An advanced use of this general concept allows different flavor types to run"
 " with different CPU and RAM allocation ratios so that high-intensity "
@@ -10316,7 +10315,7 @@ msgid ""
 "<parameter>extra_specs</parameter> in your flavor types."
 msgstr "この一般的なコンセプトを高度なレベルで使用すると、集中度の高いコンピュートロードや負荷の低い開発やテストシステムが使用量の多いシステムのリソースが不足したり、使用量の低いシステムでリソースを無駄にしたりしないで、同じクラウドを共有できるように、異なるフレーバーの種別が、異なる CPU および RAM 割当の比率で実行できるようになります。 これは、ホストアグリゲートに  <parameter>metadata</parameter> を設定して、フレーバー種別の<parameter>extra_specs</parameter> と一致させると機能します。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml540(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml537(para)
 msgid ""
 "The first step is setting the aggregate metadata keys "
 "<parameter>cpu_allocation_ratio</parameter> and "
@@ -10331,7 +10330,7 @@ msgid ""
 "<phrase role=\"keep-together\">resource</phrase>."
 msgstr "最初のステップは、<parameter>cpu_allocation_ratio</parameter> と <parameter>ram_allocation_ratio</parameter> のアグリゲートメタデータキーを浮動小数点の値に設定します。<parameter>AggregateCoreFilter</parameter> と <parameter>AggregateRamFilter</parameter> のフィルタースケジューラーは、アグリゲートのホストにスケジューリングしている場合、<filename>nova.conf</filename> のグローバルの初期値を仕様するのではなく、この値を使用します。各ホストは複数のアグリゲートに含まれていますがリソースごとに 1 つの割当比率しか指定されていないため、この機能の使用時は、注意が必要です。同じ <phrase role=\"keep-together\">リソース</phrase> に対して別の値が定義されている複数のアグリゲートにホストを設置しないように注意してください。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml554(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml551(para)
 msgid ""
 "This is the first half of the equation. To get flavor types that are "
 "guaranteed a particular ratio, you must set the "
@@ -10351,7 +10350,7 @@ msgid ""
 "them."
 msgstr "これは前半部分です。特定の比率を保証するフレーバー種別を取得するには、フレーバー種別の <parameter>extra_specs</parameter> をアグリゲートでマッチする key-value ペアに設定する必要があります。たとえば、<parameter>extra_specs</parameter><parameter>cpu_allocation_ratio</parameter> を 1.0 に定義すると、その種別のインスタンスは、メタデータキー <parameter>cpu_allocation_ratio</parameter> も 1.0 と定義されているアグリゲートのみで実行されます。実際は、 <parameter>cpu_allocation_ratio</parameter> または <parameter>core_allocation_ratio</parameter> で直接マッチさせるのではなく、マッチするアグリゲートメタデータに追加の key-value ペアを定義すると良いでしょう。これにより抽象化が改善されます。たとえば、<parameter>overcommit</parameter> キーを定義して、高、中、低の値を設定することで、関連するフレーバー種別をすべて変更する必要なしに、アグリゲートの割合比を調節することができます。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml573(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml570(para)
 msgid ""
 "Previously, all services had an availability zone. Currently, only the "
 "<literal>nova-compute</literal> service has its own availability zone. "
@@ -10360,19 +10359,19 @@ msgid ""
 " all availability zones."
 msgstr "以前のバージョンでは、全サービスにアベイラビリティゾーンがありました。現在は、<literal>nova-compute</literal> サービスには独自のアベイラビリティゾーンがあります。 <literal>nova-scheduler</literal>、 <literal>nova-network</literal>、<literal>nova-conductor</literal> などのサービスは、常にすべてのアベイラビリティゾーンに対応します。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml584(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml581(para)
 msgid "nova host-list (os-hosts)"
 msgstr "nova host-list (os-hosts)"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml588(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml585(para)
 msgid "euca-describe-availability-zones verbose"
 msgstr "euca-describe-availability-zones verbose"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml592(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml589(para)
 msgid "<literal>nova-manage</literal> service list"
 msgstr "<literal>nova-manage</literal> サービス一覧"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml580(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml577(para)
 msgid ""
 "When you run any of the following operations, the services appear in their "
 "own internal availability zone (CONF.internal_service_availability_zone): "
@@ -10380,22 +10379,22 @@ msgid ""
 "availability_zones (nonverbose)."
 msgstr "以下の操作のいずれかを実行する場合、サービスは独自の内部アベイラビリティゾーン(CONF.internal_service_availability_zone) に表示されます。<placeholder-1/>内部のアベイラビリティゾーンは、euca-describe-availability_zones (nonverbose) に隠し設定されています。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml597(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml594(para)
 msgid ""
 "CONF.node_availability_zone has been renamed to "
 "CONF.default_availability_zone and is used only by the <literal>nova-"
 "api</literal> and <literal>nova-scheduler</literal> services."
 msgstr "CONF.node_availability_zone は、CONF.default_availability_zone に名前が変更され、<literal>nova-api</literal> および <literal>nova-scheduler</literal> サービスのみで使用されます。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml602(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml599(para)
 msgid "CONF.node_availability_zone still works but is deprecated."
 msgstr "CONF.node_availability_zone は今も機能しますが、非推奨扱いです。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml610(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml607(title)
 msgid "Scalable Hardware"
 msgstr "スケーラブルハードウェア"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml612(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml609(para)
 msgid ""
 "While several resources already exist to help with deploying and installing "
 "OpenStack, it's very important to make sure that you have your deployment "
@@ -10404,11 +10403,11 @@ msgid ""
 "and what to scale."
 msgstr "OpenStack のデプロイやインストールの助けとなるリソースがすでに複数存在している場合でも、時間に余裕を持ってデプロイメントの系っ買うを立てることは非常に重要です。本書は、OpenStack クラウド用のラックを少なくとも 1 つ用意しているとの前提で、何を度のタイミングでスケールするかの提案をしていきます。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml619(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml616(title)
 msgid "Hardware Procurement"
 msgstr "ハードウェア調達"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml621(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml618(para)
 msgid ""
 "“The Cloud” has been described as a volatile environment where servers can "
 "be created and terminated at will. While this may be true, it does not mean "
@@ -10425,19 +10424,19 @@ msgid ""
 "procurement</secondary></indexterm>"
 msgstr "「クラウド」とは、サーバーを自由に作成、終了でき、不安定な環境と説明されてきました。これは真実ですが、サーバー自体が不安定なわけではありません。クラウドのハードウェアは、安定して正しく設定されているようにすることで、クラウド環境は稼動状態を保ちます。基本的に、安定したハードウェア環境を構築するように努めることで、ユーザーが不安定かつ変化しやすいものとして処理を行う可能性のあるクラウドをホストすることができます。<indexterm class=\"singular\"><primary>servers</primary><secondary>不安定性の回避</secondary></indexterm><indexterm class=\"singular\"><primary>ハードウェア</primary><secondary>拡張性プランニング</secondary></indexterm><indexterm class=\"singular\"><primary>スケーリング</primary><secondary>ハードウェア調達</secondary></indexterm>"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml641(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml638(para)
 msgid ""
 "OpenStack can be deployed on any hardware supported by an OpenStack-"
 "compatible Linux distribution."
 msgstr "OpenStack は、OpenStack と互換性のある Linux ディストリビューションによりサポートされているハードウェアにデプロイすることができます。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml644(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml641(para)
 msgid ""
 "Hardware does not have to be consistent, but it should at least have the "
 "same type of CPU to support instance migration."
 msgstr "ハードウェアに一貫性を持たせる必要はありませんが、インスタンスのマイグレーションをサポートできるように、最低限、CPU の種類は同じにする必要があります。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml647(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml644(para)
 msgid ""
 "The typical hardware recommended for use with OpenStack is the standard "
 "value-for-money offerings that most hardware vendors stock. It should be "
@@ -10449,11 +10448,11 @@ msgid ""
 "to support OpenStack."
 msgstr "OpenStack での使用に推奨しているハードウェアは一般的に、多くのハードウェアベンダーが提供している、コストパフォーマンスの高い標準オファリングです。調達すべきものをコンピュート、オブジェクトストレージ、クラウドコントローラなどのビルディングブロックに分類し、必要に応じ依頼していくと分かりやすいでしょう。また、投資額をこれ以上かけられない場合、既存サーバーがありパフォーマンス要件や仮想化技術に対応しているのであれば、高い確率で OpenStack をサポートしているはずです。"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml658(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml655(title)
 msgid "Capacity Planning"
 msgstr "キャパシティプランニング"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml660(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml657(para)
 msgid ""
 "OpenStack is designed to increase in size in a straightforward manner. "
 "Taking into account the considerations that we've mentioned in this "
@@ -10470,7 +10469,7 @@ msgid ""
 "planning</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml679(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml676(para)
 msgid ""
 "For compute nodes, <code>nova-scheduler</code> will take care of differences"
 " in sizing having to do with core count and RAM amounts; however, you should"
@@ -10479,21 +10478,21 @@ msgid ""
 "specified that reflects the <glossterm>capability</glossterm> of the node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml686(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml683(para)
 msgid ""
 "Monitoring the resource usage and user growth will enable you to know when "
 "to procure. <xref linkend=\"logging_monitoring\"/> details some useful "
 "metrics."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml692(title)
+#: ./doc/openstack-ops/ch_arch_scaling.xml689(title)
 msgid "Burn-in Testing"
 msgstr "エージング試験"
 
-#: ./doc/openstack-ops/ch_arch_scaling.xml694(para)
+#: ./doc/openstack-ops/ch_arch_scaling.xml691(para)
 msgid ""
-"Server hardware's chance of failure is high at the start and the end of its "
-"life. As a result, much effort in dealing with hardware failures while in "
+"The chances of failure for the server’s hardware are high at the start and "
+"the end of its life. As a result, dealing with hardware failures while in "
 "production can be avoided by appropriate burn-in testing to attempt to "
 "trigger the early-stage failures. The general principle is to stress the "
 "hardware to its limits. Examples of burn-in tests include running a CPU or "
@@ -13194,7 +13193,7 @@ msgid ""
 "with a 401 (Unauthorized) response and you can request another <phrase role"
 "=\"keep-together\">token</phrase>.<indexterm "
 "class=\"singular\"><primary>catalog</primary></indexterm>"
-msgstr ""
+msgstr "認証情報はユーザー名、パスワード、テナント (プロジェクト) の組み合わせです。これらの値は、前述の  <code>openrc.sh</code> から抽出することができます。トークンにより、要求ごとに再認証する必要なく他のエンドポイントとの対話を行うことができます。トークンは通常 24 時間有効です。期限が切れると、401 (Unauthorized) の応答で警告され、<phrase role=\"keep-together\">トークン</phrase> をもう 1 つ要求することができます。<indexterm class=\"singular\"><primary>カタログ</primary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml400(para)
 msgid "Look at your OpenStack service <glossterm>catalog</glossterm>:"
