@@ -420,12 +420,12 @@
     <section xml:id="multi_nic">
       <title>Multi-NIC Provisioning</title>
 
-      <para>OpenStack Compute has the ability to assign multiple NICs to
-      instances on a per-project basis. This is generally an advanced feature
-      and not an everyday request. This can easily be done on a per-request
-      basis, though. However, be aware that a second NIC uses up an entire
-      subnet or VLAN. This decrements your total number of supported projects
-      by one.<indexterm class="singular">
+      <para>OpenStack Networking with <literal>neutron</literal> and
+        OpenStack Compute with nova-network have the ability to assign
+        multiple NICs to instances. For nova-network this can be done
+        on a per-request basis, with each additional NIC using up an
+        entire subnet or VLAN, reducing the total number of supported
+        projects.<indexterm class="singular">
           <primary>MultiNic</primary>
         </indexterm><indexterm class="singular">
           <primary>network design</primary>
