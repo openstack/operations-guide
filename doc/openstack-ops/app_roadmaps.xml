@@ -13,8 +13,8 @@
   to providing information about what's coming up. The bad news: each release
   moves very quickly. The purpose of this appendix is to highlight some of the
   useful pages to track, and take an educated guess at what is coming up in
-  the Icehouse release and perhaps further afield.<indexterm class="singular">
-      <primary>Icehouse</primary>
+  the Kilo release and perhaps further afield.<indexterm class="singular">
+      <primary>Kilo</primary>
 
       <secondary>upcoming release of</secondary>
     </indexterm><indexterm class="singular">
@@ -78,33 +78,64 @@
 
       <tbody>
         <tr>
-          <td><para>Juno</para></td>
+          <td><para>Kilo</para></td>
 
-          <td><para>Under
-            development</para></td>
+          <td><para><link xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Under Development</link> </para>
+            </td>
 
           <td><para><link
-            xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse">2014.1</link></para></td>
+            xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo">2015.1</link></para></td>
 
-          <td><para>Apr 17, 2014</para></td>
+          <td><para>Apr 30, 2015</para></td>
+        </tr>
+        <tr>
+          <td><para>Juno</para></td>
+
+          <td><para><link xlink:href="https://wiki.openstack.org/wiki/Juno_Release_Schedule">Current stable release, security-supported</link> </para>
+            </td>
+
+          <td><para><link
+            xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Juno">2014.2</link></para></td>
+
+          <td><para>Oct 16, 2014</para></td>
         </tr>
 
         <tr>
-          <td><para>Icehouse</para></td>
+          <td rowspan="4"><para>Icehouse</para></td>
 
-          <td><para><link xlink:href="https://wiki.openstack.org/wiki/Icehouse_Release_Schedule">Current stable release, security-supported</link> </para></td>
+          <td rowspan="4"><para><link xlink:href="https://wiki.openstack.org/wiki/Icehouse_Release_Schedule">Security-supported</link> </para></td>
 
           <td><para><link
           xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse">2014.1</link></para></td>
 
           <td><para>Apr 17, 2014</para></td>
         </tr>
+        <tr>
+
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.1">2014.1.1</link> </para></td>
+
+          <td><para>Jun 9, 2014</para></td>
+        </tr>
+        <tr>
+
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.2">2014.1.2</link> </para></td>
+
+          <td><para>Aug 8, 2014</para></td>
+        </tr>
+        <tr>
+
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.3">2014.1.3</link> </para></td>
+
+          <td><para>Oct 2, 2014</para></td>
+        </tr>
 
         <tr>
-          <td rowspan="2"><para>Havana</para></td>
+          <td rowspan="6"><para>Havana</para></td>
 
-          <td rowspan="2"><para>Security-supported
-          </para></td>
+          <td rowspan="6"><para>End-of-life</para></td>
 
           <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana">2013.2</link>
           </para></td>
@@ -119,11 +150,38 @@
 
           <td><para>Dec 16, 2013</para></td>
         </tr>
-
         <tr>
-          <td rowspan="5"><para>Grizzly</para></td>
 
-          <td rowspan="5"><para>EOL</para></td>
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.2">2013.2.2</link> </para></td>
+
+          <td><para>Feb 13, 2014</para></td>
+        </tr>
+        <tr>
+
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.3">2013.2.3</link> </para></td>
+
+          <td><para>Apr 3, 2014</para></td>
+        </tr>
+        <tr>
+
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.4">2013.2.4</link> </para></td>
+
+          <td><para>Sep 22, 2014</para></td>
+        </tr>
+        <tr>
+
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1">2013.2.1</link> </para></td>
+
+          <td><para>Dec 16, 2013</para></td>
+        </tr>
+        <tr>
+          <td rowspan="6"><para>Grizzly</para></td>
+
+          <td rowspan="6"><para>End-of-life</para></td>
 
           <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly">2013.1</link>
           </para></td>
@@ -162,11 +220,17 @@
 
           <td><para>Oct 17, 2013</para></td>
         </tr>
+        <tr>
 
+          <td><para> <link
+          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.5">2013.1.5</link> </para></td>
+
+          <td><para>Mar 20, 2015</para></td>
+        </tr>
         <tr>
           <td rowspan="5"><para>Folsom</para></td>
 
-          <td rowspan="5"><para>Community-supported</para></td>
+          <td rowspan="5"><para>End-of-life</para></td>
 
           <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Folsom">2012.2</link>
           </para></td>
@@ -209,7 +273,7 @@
         <tr>
           <td rowspan="4"><para>Essex</para></td>
 
-          <td rowspan="4"><para>Community-supported</para></td>
+          <td rowspan="4"><para>End-of-life</para></td>
 
           <td><para> <link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Essex">2012.1</link>
           </para></td>
@@ -310,7 +374,7 @@
       </listitem>
 
       <listitem>
-        <para><link xlink:href="https://wiki.openstack.org/wiki/Summit/Icehouse/Etherpads">Rough-draft design
+        <para><link xlink:href="https://wiki.openstack.org/wiki/Summit/Kilo/Etherpads">Rough-draft design
         discussions ("etherpads") from the last design summit</link></para>
       </listitem>
 
@@ -402,20 +466,20 @@
       <para>One of the most requested features since OpenStack began (for
       components other than Object Storage, which tends to "just work"):
       easier upgrades. From Grizzly onward (and significantly improved in
-      Havana), internal messaging communication is versioned, meaning services
+      Havana and Icehouse), internal messaging communication is versioned, meaning services
       can theoretically drop back to backward-compatible behavior. This allows
       you to run later versions of some components, while keeping older
       versions of others.</para>
 
-      <para>In addition, a lot of focus has been placed on database
+      <para>In addition, in Icehouse, a lot of focus has been placed on database
       migrations. These are now better managed, including the use of the Turbo
       Hipster tool, which tests database migration performance on copies of
       real-world user databases.</para>
 
       <para>These changes have facilitated the first proper OpenStack upgrade
       guide, found in <xref linkend="ch_ops_upgrades" />, and will continue to
-      improve in Icehouse.<indexterm class="singular">
-          <primary>Icehouse</primary>
+      improve in Kilo.<indexterm class="singular">
+          <primary>Kilo</primary>
 
           <secondary>upgrades in</secondary>
         </indexterm></para>
@@ -443,25 +507,25 @@
       path between versions, insufficient testing, and simplicity when used
       for the more straightforward use cases <literal>nova-network</literal>
       traditionally supported. Though significant effort has been made to
-      address these concerns, <literal>nova-network</literal> will not be
-      deprecated in the Icehouse release. In addition, the Program Technical
-      Lead of the Compute project has indicated that, to a limited degree,
-      patches to <literal>nova-network</literal> will now again begin to be
-      accepted.<indexterm class="singular">
-          <primary>Icehouse</primary>
+      address these concerns, <literal>nova-network</literal> was not be
+      deprecated in the Juno release. In addition, to a limited degree,
+      patches to <literal>nova-network</literal> have again begin to be
+      accepted, such as adding a per-network settings feature and SR-IOV
+      support in Juno.<indexterm class="singular">
+          <primary>Juno</primary>
 
           <secondary>nova network deprecation</secondary>
         </indexterm></para>
 
       <para>This leaves you with an important point of decision when designing
       your cloud. OpenStack Networking is robust enough to use with a small
-      number of limitations (IPv6 support, performance issues in some
-      scenarios) and provides many more features than
+      number of limitations (performance issues in some scenarios, only basic
+      high availability of layer 3 systems) and provides many more features than
       <literal>nova-network</literal>. However, if you do not have the more
       complex use cases that can benefit from fuller software-defined
       networking capabilities, or are uncomfortable with the new concepts
       introduced, <literal>nova-network</literal> may continue to be a viable
-      option for the next 12 to 18 months.</para>
+      option for the next 12 months.</para>
 
       <para>Similarly, if you have an existing cloud and are looking to
       upgrade from <literal>nova-network</literal> to OpenStack Networking,
@@ -474,10 +538,27 @@
       <para>As mentioned, there's currently no way to cleanly migrate from
       <literal>nova-network</literal> to neutron. We recommend that you keep a
       migration in mind and what that process might involve for when a proper
-      migration path is released. If you must upgrade, please be aware that
-      both service and instance downtime is likely unavoidable.</para>
+      migration path is released. Current thinking is that upgrades without
+      instance downtime will be available in the Kilo release.</para>
     </section>
   </section>
+
+  <section xml:id="roadmap-DVR">
+    <title>Distributed Virtual Router</title>
+
+    <para>One of the long-time complaints surrounding OpenStack Networking was
+    the lack of high availability for the layer 3 components. The Juno release
+    introduced Distributed Virtual Router (DVR), which aims to solve this
+    problem.</para>
+    <para>Early indications are that it does do this well for a base set of
+    scenarios, such as using the ML2 plug-in with Open vSwitch, one flat
+    external network and VXLAN tenant networks. However, it does appear that
+    there are problems with the use of VLANs, IPv6, Floating IPs, high
+    north-south traffic scenarios and large numbers of compute nodes. It is
+    expected these will improve significantly with the Kilo release, but
+    bug reports on specific issues are highly desirable.</para>
+  </section>
+
 
   <section xml:id="roadmap-ML2">
     <title>Replacement of Open vSwitch Plug-in with <phrase
@@ -491,21 +572,20 @@
     those L2 agents.</para>
   </section>
 
-  <section xml:id="roadmap-nova-v3-api">
-    <title>Compute V3 API</title>
+  <section xml:id="roadmap-new-api">
+    <title>New API Versions</title>
 
     <para>The third version of the Compute API was broadly discussed and
     worked on during the Havana and Icehouse release cycles. Current
-    discussions indicate that the V2 API will remain for many releases, but
-    this is a great time to evaluate the Compute API and provide comments
-    while it is being defined. Of particular note is the decision that the V3
-    API will not support XML messages—being JSON only. This was based on the
-    poor testing of existing XML responses in the V2 API and the lack of
-    effort to continue to develop and maintain an entire second response type.
-    Feedback on this and any such change is welcome by responding to the <link
-    xlink:href="https://www.openstack.org/user-survey/Login">user survey</link>.<indexterm
-        class="singular">
-        <primary>Icehouse</primary>
+    discussions indicate that the V2 API will remain for many releases, and
+    the next iteration of the API will be denoted v2.1 and have similar
+    properties to the existing v2.0, rather than an entirely new v3 API.
+    This is a great time to evaluate all API and provide comments
+    while the next generation APIs are being defined. A new working group was
+    formed specifically to
+    <link xlink:href="https://wiki.openstack.org/wiki/API_Working_Group">improve
+   OpenStack APIs</link> and create design guidelines, which you are welcome to join.
+  <indexterm class="singular"><primary>Kilo</primary>
 
         <secondary>Compute V3 API</secondary>
       </indexterm></para>
@@ -515,7 +595,9 @@
     <title>OpenStack on OpenStack (TripleO)</title>
 
     <para>This project continues to improve and you may consider using it for
-    greenfield <phrase role="keep-together">deployments</phrase>.</para>
+    greenfield <phrase role="keep-together">deployments</phrase>, though
+    according to the latest user survey results it remains to see widespread
+    uptake.</para>
   </section>
 
   <section xml:id="roadmap-savanna">
@@ -528,13 +610,14 @@
   <section xml:id="roadmap-baremetal">
     <title>Bare-Metal Deployment (Ironic)</title>
 
-    <para>Though bare-metal deployment has been widely lauded, and development
-    continues, the project to replace the Compute bare-metal driver will not
-    graduate in Icehouse. A particular blueprint to follow is <link
-    xlink:href="https://blueprints.launchpad.net/ironic/+spec/migration-from-nova"> Migration Path from Nova's BM
-    Driver</link>, which tracks the ability to move to the new project from an
-    existing bare-metal deployment.<indexterm class="singular">
-        <primary>Icehouse</primary>
+    <para>The bare-metal deployment has been widely lauded, and development
+    continues. The Juno release brought the Ironic drive into the Compute
+    project, and it is aimed to deprecate the existing bare-metal driver in
+    Kilo.
+    If you are a current user of the bare metal driver, a particular blueprint to follow is <link
+    xlink:href="https://blueprints.launchpad.net/nova/+spec/deprecate-baremetal-driver">
+    Deprecate the Baremetal driver</link>.<indexterm class="singular">
+        <primary>Kilo</primary>
 
         <secondary>Compute bare-metal deployment</secondary>
       </indexterm></para>
@@ -544,36 +627,50 @@
     <title>Database as a Service (Trove)</title>
 
     <para>The OpenStack community has had a database-as-a-service tool in
-    development for some time, and we will finally see the first integrated
-    release of it in Icehouse. Initially, it will only support MySQL, with
-    further options available in Juno onward, but it should be able to deploy
-    database servers out of the box in a highly available way from this
-    release.<indexterm class="singular">
-        <primary>Icehouse</primary>
+    development for some time, and we saw the first integrated
+    release of it in Icehouse. From release it was able to deploy database
+    servers out of the box in a highly available way, initially supporting only
+    MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and
+    Couchbase, in addition to replication functionality for MySQL. In Kilo,
+    more advanced clustering capability is expected, in addition to better
+    integration with other OpenStack components such as networking.
+    <indexterm class="singular">
+        <primary>Juno</primary>
 
         <secondary>database-as-a-service tool</secondary>
       </indexterm></para>
   </section>
 
-  <section xml:id="roadmap-marconi">
-    <title>Messaging as a Service (Marconi)</title>
+  <section xml:id="roadmap-zaqar">
+    <title>Messaging as a Service (Zaqar)</title>
 
     <para>A service to provide queues of messages and notifications has
     entered “incubation,” meaning if the upcoming development cycles are
     successful, it will be released in <phrase
-    role="keep-together">Juno</phrase>.</para>
+    role="keep-together">Kilo</phrase>.</para>
   </section>
 
+  <section xml:id="roadmap-designate">
+    <title>DNS as a Service (Designate)</title>
+
+    <para>A long requested service, to provide the ability to manipulate DNS
+    entries associated with OpenStack resources has gathered a following. The
+    Designate project has entered “incubation,” meaning if the upcoming
+    development cycles are successful, it could be released in <phrase
+    role="keep-together">Kilo</phrase>.</para>
+  </section>
   <section xml:id="roadmap-scheduling">
     <title>Scheduler Improvements</title>
 
     <para>Both Compute and Block Storage rely on schedulers to determine where
     to place virtual machines or volumes. In Havana, the Compute scheduler
-    underwent significant improvement, while in Icehouse the scheduler in
-    Block Storage is slated for a boost. Further down the track, an effort
+    underwent significant improvement, while in Icehouse it was the scheduler in
+    Block Storage that received a boost. Further down the track, an effort
     started this cycle that aims to create a holistic scheduler covering both
-    will come to fruition.<indexterm class="singular">
-        <primary>Icehouse</primary>
+    will come to fruition. Some of this work for Kilo can be found under the
+<link xlink:href="https://wiki.openstack.org/wiki/Gantt/kilo">Gantt
+project</link>.<indexterm class="singular">
+        <primary>Kilo</primary>
 
         <secondary>scheduler improvements</secondary>
       </indexterm></para>
@@ -581,9 +678,11 @@
     <section xml:id="roadmap-volumes">
       <title>Block Storage Improvements</title>
 
-      <para>The team discussed many areas of work at the Icehouse summit,
-      including volume migration support, Ceph integration, and access control
-      for volumes.</para>
+      <para>Block Storage is now considered a stable project, with wide uptake
+      and a long track record of quality drivers. The team
+      still discussed many areas of work at the Kilo summit,
+      including better error reporting, automated dicovery, and thin
+      provisioning features.</para>
     </section>
 
     <section xml:id="roadmap-python-sdk">
