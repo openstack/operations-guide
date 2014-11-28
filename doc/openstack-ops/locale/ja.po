@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-23 09:10+0000\n"
-"PO-Revision-Date: 2014-11-23 09:10+0000\n"
+"POT-Creation-Date: 2014-11-27 21:26+0000\n"
+"PO-Revision-Date: 2014-11-27 21:26+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -58,8 +58,8 @@ msgid ""
 "providing information about what's coming up. The bad news: each release "
 "moves very quickly. The purpose of this appendix is to highlight some of the"
 " useful pages to track, and take an educated guess at what is coming up in "
-"the Icehouse release and perhaps further afield.<indexterm "
-"class=\"singular\"><primary>Icehouse</primary><secondary>upcoming release "
+"the Kilo release and perhaps further afield.<indexterm "
+"class=\"singular\"><primary>Kilo</primary><secondary>upcoming release "
 "of</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack "
 "community</primary><secondary>working with "
 "roadmaps</secondary><tertiary>release cycle</tertiary></indexterm>"
@@ -119,277 +119,351 @@ msgid "Date"
 msgstr "リリース日"
 
 #: ./doc/openstack-ops/app_roadmaps.xml81(para)
-msgid "Juno"
-msgstr "Juno"
+msgid "Kilo"
+msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml83(para)
-msgid "Under development"
+#: ./doc/openstack-ops/app_roadmaps.xml83(link)
+msgid "Under Development"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml87(link)
-#: ./doc/openstack-ops/app_roadmaps.xml98(link)
-msgid "2014.1"
+msgid "2015.1"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml89(para)
-#: ./doc/openstack-ops/app_roadmaps.xml100(para)
-msgid "Apr 17, 2014"
+msgid "Apr 30, 2015"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml93(para)
-msgid "Icehouse"
-msgstr "Icehouse"
+#: ./doc/openstack-ops/app_roadmaps.xml92(para)
+msgid "Juno"
+msgstr "Juno"
 
-#: ./doc/openstack-ops/app_roadmaps.xml95(link)
+#: ./doc/openstack-ops/app_roadmaps.xml94(link)
 msgid "Current stable release, security-supported"
 msgstr "現在の安定版リリース、セキュリティアップデート対象"
 
+#: ./doc/openstack-ops/app_roadmaps.xml98(link)
+msgid "2014.2"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml100(para)
+msgid "Oct 16, 2014"
+msgstr ""
+
 #: ./doc/openstack-ops/app_roadmaps.xml104(para)
+msgid "Icehouse"
+msgstr "Icehouse"
+
+#: ./doc/openstack-ops/app_roadmaps.xml106(link)
+msgid "Security-supported"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml109(link)
+msgid "2014.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml111(para)
+msgid "Apr 17, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml116(link)
+msgid "2014.1.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml118(para)
+msgid "Jun 9, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml123(link)
+msgid "2014.1.2"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml125(para)
+msgid "Aug 8, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml130(link)
+msgid "2014.1.3"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml132(para)
+msgid "Oct 2, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml136(para)
 #: ./doc/openstack-ops/section_arch_example-nova.xml81(para)
 #: ./doc/openstack-ops/section_arch_example-neutron.xml57(para)
 msgid "Havana"
 msgstr "Havana"
 
-#: ./doc/openstack-ops/app_roadmaps.xml106(para)
-msgid "Security-supported"
+#: ./doc/openstack-ops/app_roadmaps.xml138(para)
+#: ./doc/openstack-ops/app_roadmaps.xml184(para)
+#: ./doc/openstack-ops/app_roadmaps.xml233(para)
+#: ./doc/openstack-ops/app_roadmaps.xml276(para)
+msgid "End-of-life"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml109(link)
+#: ./doc/openstack-ops/app_roadmaps.xml140(link)
 msgid "2013.2"
 msgstr "2013.2"
 
-#: ./doc/openstack-ops/app_roadmaps.xml112(para)
-#: ./doc/openstack-ops/app_roadmaps.xml131(para)
+#: ./doc/openstack-ops/app_roadmaps.xml143(para)
+#: ./doc/openstack-ops/app_roadmaps.xml189(para)
 msgid "Apr 4, 2013"
 msgstr "2013年4月4日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml118(link)
+#: ./doc/openstack-ops/app_roadmaps.xml149(link)
+#: ./doc/openstack-ops/app_roadmaps.xml177(link)
 msgid "2013.2.1"
 msgstr "2013.2.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml120(para)
+#: ./doc/openstack-ops/app_roadmaps.xml151(para)
+#: ./doc/openstack-ops/app_roadmaps.xml179(para)
 msgid "Dec 16, 2013"
 msgstr "2013年12月16日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml124(para)
+#: ./doc/openstack-ops/app_roadmaps.xml156(link)
+msgid "2013.2.2"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml158(para)
+msgid "Feb 13, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml163(link)
+msgid "2013.2.3"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml165(para)
+msgid "Apr 3, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml170(link)
+msgid "2013.2.4"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml172(para)
+msgid "Sep 22, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml182(para)
 msgid "Grizzly"
 msgstr "Grizzly"
 
-#: ./doc/openstack-ops/app_roadmaps.xml126(para)
-msgid "EOL"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml128(link)
+#: ./doc/openstack-ops/app_roadmaps.xml186(link)
 msgid "2013.1"
 msgstr "2013.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml137(link)
+#: ./doc/openstack-ops/app_roadmaps.xml195(link)
 msgid "2013.1.1"
 msgstr "2013.1.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml139(para)
+#: ./doc/openstack-ops/app_roadmaps.xml197(para)
 msgid "May 9, 2013"
 msgstr "2013年5月9日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml145(link)
+#: ./doc/openstack-ops/app_roadmaps.xml203(link)
 msgid "2013.1.2"
 msgstr "2013.1.2"
 
-#: ./doc/openstack-ops/app_roadmaps.xml147(para)
+#: ./doc/openstack-ops/app_roadmaps.xml205(para)
 msgid "Jun 6, 2013"
 msgstr "2013年6月6日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml153(link)
+#: ./doc/openstack-ops/app_roadmaps.xml211(link)
 msgid "2013.1.3"
 msgstr "2013.1.3"
 
-#: ./doc/openstack-ops/app_roadmaps.xml155(para)
+#: ./doc/openstack-ops/app_roadmaps.xml213(para)
 msgid "Aug 8, 2013"
 msgstr "2013年8月8日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml161(link)
+#: ./doc/openstack-ops/app_roadmaps.xml219(link)
 msgid "2013.1.4"
 msgstr "2013.1.4"
 
-#: ./doc/openstack-ops/app_roadmaps.xml163(para)
+#: ./doc/openstack-ops/app_roadmaps.xml221(para)
 msgid "Oct 17, 2013"
 msgstr "2013年10月17日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml167(para)
+#: ./doc/openstack-ops/app_roadmaps.xml226(link)
+msgid "2013.1.5"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml228(para)
+msgid "Mar 20, 2015"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml231(para)
 msgid "Folsom"
 msgstr "Folsom"
 
-#: ./doc/openstack-ops/app_roadmaps.xml169(para)
-#: ./doc/openstack-ops/app_roadmaps.xml212(para)
-msgid "Community-supported"
-msgstr "コミュニティによるサポートが行われている"
-
-#: ./doc/openstack-ops/app_roadmaps.xml171(link)
+#: ./doc/openstack-ops/app_roadmaps.xml235(link)
 msgid "2012.2"
 msgstr "2012.2"
 
-#: ./doc/openstack-ops/app_roadmaps.xml174(para)
+#: ./doc/openstack-ops/app_roadmaps.xml238(para)
 msgid "Sep 27, 2012"
 msgstr "2012年9月27日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml180(link)
+#: ./doc/openstack-ops/app_roadmaps.xml244(link)
 msgid "2012.2.1"
 msgstr "2012.2.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml182(para)
+#: ./doc/openstack-ops/app_roadmaps.xml246(para)
 msgid "Nov 29, 2012"
 msgstr "2012年11月29日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml188(link)
+#: ./doc/openstack-ops/app_roadmaps.xml252(link)
 msgid "2012.2.2"
 msgstr "2012.2.2"
 
-#: ./doc/openstack-ops/app_roadmaps.xml190(para)
+#: ./doc/openstack-ops/app_roadmaps.xml254(para)
 msgid "Dec 13, 2012"
 msgstr "2012年12月13日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml196(link)
+#: ./doc/openstack-ops/app_roadmaps.xml260(link)
 msgid "2012.2.3"
 msgstr "2012.2.3"
 
-#: ./doc/openstack-ops/app_roadmaps.xml198(para)
+#: ./doc/openstack-ops/app_roadmaps.xml262(para)
 msgid "Jan 31, 2013"
 msgstr "2013年1月31日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml204(link)
+#: ./doc/openstack-ops/app_roadmaps.xml268(link)
 msgid "2012.2.4"
 msgstr "2012.2.4"
 
-#: ./doc/openstack-ops/app_roadmaps.xml206(para)
+#: ./doc/openstack-ops/app_roadmaps.xml270(para)
 msgid "Apr 11, 2013"
 msgstr "2013年4月11日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml210(para)
+#: ./doc/openstack-ops/app_roadmaps.xml274(para)
 msgid "Essex"
 msgstr "Essex"
 
-#: ./doc/openstack-ops/app_roadmaps.xml214(link)
+#: ./doc/openstack-ops/app_roadmaps.xml278(link)
 msgid "2012.1"
 msgstr "2012.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml217(para)
+#: ./doc/openstack-ops/app_roadmaps.xml281(para)
 msgid "Apr 5, 2012"
 msgstr "2012年4月5日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml223(link)
+#: ./doc/openstack-ops/app_roadmaps.xml287(link)
 msgid "2012.1.1"
 msgstr "2012.1.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml225(para)
+#: ./doc/openstack-ops/app_roadmaps.xml289(para)
 msgid "Jun 22, 2012"
 msgstr "2012年6月22日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml231(link)
+#: ./doc/openstack-ops/app_roadmaps.xml295(link)
 msgid "2012.1.2"
 msgstr "2012.1.2"
 
-#: ./doc/openstack-ops/app_roadmaps.xml233(para)
+#: ./doc/openstack-ops/app_roadmaps.xml297(para)
 msgid "Aug 10, 2012"
 msgstr "2012年8月10日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml239(link)
+#: ./doc/openstack-ops/app_roadmaps.xml303(link)
 msgid "2012.1.3"
 msgstr "2012.1.3"
 
-#: ./doc/openstack-ops/app_roadmaps.xml241(para)
+#: ./doc/openstack-ops/app_roadmaps.xml305(para)
 msgid "Oct 12, 2012"
 msgstr "2012年10月12日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml245(para)
+#: ./doc/openstack-ops/app_roadmaps.xml309(para)
 msgid "Diablo"
 msgstr "Diablo"
 
-#: ./doc/openstack-ops/app_roadmaps.xml247(para)
-#: ./doc/openstack-ops/app_roadmaps.xml266(para)
-#: ./doc/openstack-ops/app_roadmaps.xml277(para)
-#: ./doc/openstack-ops/app_roadmaps.xml288(para)
+#: ./doc/openstack-ops/app_roadmaps.xml311(para)
+#: ./doc/openstack-ops/app_roadmaps.xml330(para)
+#: ./doc/openstack-ops/app_roadmaps.xml341(para)
+#: ./doc/openstack-ops/app_roadmaps.xml352(para)
 msgid "Deprecated"
 msgstr "非推奨"
 
-#: ./doc/openstack-ops/app_roadmaps.xml249(link)
+#: ./doc/openstack-ops/app_roadmaps.xml313(link)
 msgid "2011.3"
 msgstr "2011.3"
 
-#: ./doc/openstack-ops/app_roadmaps.xml252(para)
+#: ./doc/openstack-ops/app_roadmaps.xml316(para)
 msgid "Sep 22, 2011"
 msgstr "2011年9月22日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml258(link)
+#: ./doc/openstack-ops/app_roadmaps.xml322(link)
 msgid "2011.3.1"
 msgstr "2011.3.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml260(para)
+#: ./doc/openstack-ops/app_roadmaps.xml324(para)
 msgid "Jan 19, 2012"
 msgstr "2012年1月19日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml264(para)
+#: ./doc/openstack-ops/app_roadmaps.xml328(para)
 msgid "Cactus"
 msgstr "Cactus"
 
-#: ./doc/openstack-ops/app_roadmaps.xml268(link)
+#: ./doc/openstack-ops/app_roadmaps.xml332(link)
 msgid "2011.2"
 msgstr "2011.2"
 
-#: ./doc/openstack-ops/app_roadmaps.xml271(para)
+#: ./doc/openstack-ops/app_roadmaps.xml335(para)
 msgid "Apr 15, 2011"
 msgstr "2011年4月15日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml275(para)
+#: ./doc/openstack-ops/app_roadmaps.xml339(para)
 msgid "Bexar"
 msgstr "Bexar"
 
-#: ./doc/openstack-ops/app_roadmaps.xml279(link)
+#: ./doc/openstack-ops/app_roadmaps.xml343(link)
 msgid "2011.1"
 msgstr "2011.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml282(para)
+#: ./doc/openstack-ops/app_roadmaps.xml346(para)
 msgid "Feb 3, 2011"
 msgstr "2011年2月3日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml286(para)
+#: ./doc/openstack-ops/app_roadmaps.xml350(para)
 msgid "Austin"
 msgstr "Austin"
 
-#: ./doc/openstack-ops/app_roadmaps.xml290(link)
+#: ./doc/openstack-ops/app_roadmaps.xml354(link)
 msgid "2010.1"
 msgstr "2010.1"
 
-#: ./doc/openstack-ops/app_roadmaps.xml293(para)
+#: ./doc/openstack-ops/app_roadmaps.xml357(para)
 msgid "Oct 21, 2010"
 msgstr "2010年10月21日"
 
-#: ./doc/openstack-ops/app_roadmaps.xml298(para)
+#: ./doc/openstack-ops/app_roadmaps.xml362(para)
 msgid "Here are some other resources:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml302(link)
+#: ./doc/openstack-ops/app_roadmaps.xml366(link)
 msgid ""
 "A breakdown of current features under development, with their target "
 "milestone"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml308(link)
+#: ./doc/openstack-ops/app_roadmaps.xml372(link)
 msgid "A list of all features, including those not yet under development"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml313(link)
+#: ./doc/openstack-ops/app_roadmaps.xml377(link)
 msgid "Rough-draft design discussions (\"etherpads\") from the last design summit"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml318(link)
+#: ./doc/openstack-ops/app_roadmaps.xml382(link)
 msgid "List of individual code changes under review"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml325(title)
+#: ./doc/openstack-ops/app_roadmaps.xml389(title)
 msgid "Influencing the Roadmap"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml327(para)
+#: ./doc/openstack-ops/app_roadmaps.xml391(para)
 msgid ""
 "OpenStack truly welcomes your ideas (and contributions) and highly values "
 "feedback from real-world users of the software. By learning a little about "
@@ -399,7 +473,7 @@ msgid ""
 "with roadmaps</secondary><tertiary>influencing</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml339(para)
+#: ./doc/openstack-ops/app_roadmaps.xml403(para)
 msgid ""
 "Feature requests typically start their life in Etherpad, a collaborative "
 "editing tool, which is used to take coordinating notes at a design summit "
@@ -409,7 +483,7 @@ msgid ""
 " team members, and development can begin."
 msgstr "機能追加リクエストは、通常 Etherpad で始まります。Etherpad は共同編集ツールで、デザインサミットのその機能に関するセッションで議論を整理するのに使われます。続けて、プロジェクトの Launchpad サイトに blueprint が作成され、blueprint を使ってよりきちんとした形で機能が規定されていきます。 この後、blueprint はプロジェクトメンバーによって承認され、開発が始まります。"
 
-#: ./doc/openstack-ops/app_roadmaps.xml346(para)
+#: ./doc/openstack-ops/app_roadmaps.xml410(para)
 msgid ""
 "Therefore, the fastest way to get your feature request up for consideration "
 "is to create an Etherpad with your ideas and propose a session to the design"
@@ -420,13 +494,13 @@ msgid ""
 "developer intern."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml354(para)
+#: ./doc/openstack-ops/app_roadmaps.xml418(para)
 msgid ""
 "The roadmap for the next release as it is developed can be seen at <link "
 "href=\"http://status.openstack.org/release/\">Releases</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml357(para)
+#: ./doc/openstack-ops/app_roadmaps.xml421(para)
 msgid ""
 "To determine the potential features going in to future releases, or to look "
 "at features implemented previously, take a look at the existing blueprints "
@@ -436,7 +510,7 @@ msgid ""
 "(keystone) Blueprints</link>, and release notes."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml364(para)
+#: ./doc/openstack-ops/app_roadmaps.xml428(para)
 msgid ""
 "Aside from the direct-to-blueprint pathway, there is another very well-"
 "regarded mechanism to influence the development roadmap: the user survey. "
@@ -447,11 +521,11 @@ msgid ""
 "technical leads of the projects."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml375(title)
+#: ./doc/openstack-ops/app_roadmaps.xml439(title)
 msgid "Aspects to Watch"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml377(para)
+#: ./doc/openstack-ops/app_roadmaps.xml441(para)
 msgid ""
 "You want to keep an eye on the areas improving within OpenStack. The best "
 "way to \"watch\" roadmaps for each project is to look at the blueprints that"
@@ -462,11 +536,11 @@ msgid ""
 "roadmaps</secondary><tertiary>aspects to watch</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml390(title)
+#: ./doc/openstack-ops/app_roadmaps.xml454(title)
 msgid "Driver Quality Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml392(para)
+#: ./doc/openstack-ops/app_roadmaps.xml456(para)
 msgid ""
 "A major quality push has occurred across drivers and plug-ins in Block "
 "Storage, Compute, and Networking. Particularly, developers of Compute and "
@@ -475,41 +549,43 @@ msgid ""
 "development process."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml400(title)
+#: ./doc/openstack-ops/app_roadmaps.xml464(title)
 msgid "Easier Upgrades"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml402(para)
+#: ./doc/openstack-ops/app_roadmaps.xml466(para)
 msgid ""
 "One of the most requested features since OpenStack began (for components "
 "other than Object Storage, which tends to \"just work\"): easier upgrades. "
-"From Grizzly onward (and significantly improved in Havana), internal "
-"messaging communication is versioned, meaning services can theoretically "
-"drop back to backward-compatible behavior. This allows you to run later "
-"versions of some components, while keeping older versions of others."
+"From Grizzly onward (and significantly improved in Havana and Icehouse), "
+"internal messaging communication is versioned, meaning services can "
+"theoretically drop back to backward-compatible behavior. This allows you to "
+"run later versions of some components, while keeping older versions of "
+"others."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml410(para)
+#: ./doc/openstack-ops/app_roadmaps.xml474(para)
 msgid ""
-"In addition, a lot of focus has been placed on database migrations. These "
-"are now better managed, including the use of the Turbo Hipster tool, which "
-"tests database migration performance on copies of real-world user databases."
+"In addition, in Icehouse, a lot of focus has been placed on database "
+"migrations. These are now better managed, including the use of the Turbo "
+"Hipster tool, which tests database migration performance on copies of real-"
+"world user databases."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml415(para)
+#: ./doc/openstack-ops/app_roadmaps.xml479(para)
 msgid ""
 "These changes have facilitated the first proper OpenStack upgrade guide, "
 "found in <xref linkend=\"ch_ops_upgrades\"/>, and will continue to improve "
-"in Icehouse.<indexterm "
-"class=\"singular\"><primary>Icehouse</primary><secondary>upgrades "
+"in Kilo.<indexterm "
+"class=\"singular\"><primary>Kilo</primary><secondary>upgrades "
 "in</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml425(title)
+#: ./doc/openstack-ops/app_roadmaps.xml489(title)
 msgid "Deprecation of Nova Network"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml427(para)
+#: ./doc/openstack-ops/app_roadmaps.xml491(para)
 msgid ""
 "With the introduction of the full software-defined networking stack provided"
 " by OpenStack Networking (neutron) in the Folsom release, development effort"
@@ -521,7 +597,7 @@ msgid ""
 "of</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml439(para)
+#: ./doc/openstack-ops/app_roadmaps.xml503(para)
 msgid ""
 "An attempt was made to deprecate <literal>nova-network</literal> during the "
 "Havana release, which was aborted due to the lack of equivalent "
@@ -530,27 +606,28 @@ msgid ""
 "insufficient testing, and simplicity when used for the more straightforward "
 "use cases <literal>nova-network</literal> traditionally supported. Though "
 "significant effort has been made to address these concerns, <literal>nova-"
-"network</literal> will not be deprecated in the Icehouse release. In "
-"addition, the Program Technical Lead of the Compute project has indicated "
-"that, to a limited degree, patches to <literal>nova-network</literal> will "
-"now again begin to be accepted.<indexterm "
-"class=\"singular\"><primary>Icehouse</primary><secondary>nova network "
+"network</literal> was not be deprecated in the Juno release. In addition, to"
+" a limited degree, patches to <literal>nova-network</literal> have again "
+"begin to be accepted, such as adding a per-network settings feature and SR-"
+"IOV support in Juno.<indexterm "
+"class=\"singular\"><primary>Juno</primary><secondary>nova network "
 "deprecation</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml456(para)
+#: ./doc/openstack-ops/app_roadmaps.xml520(para)
 msgid ""
 "This leaves you with an important point of decision when designing your "
 "cloud. OpenStack Networking is robust enough to use with a small number of "
-"limitations (IPv6 support, performance issues in some scenarios) and "
-"provides many more features than <literal>nova-network</literal>. However, "
-"if you do not have the more complex use cases that can benefit from fuller "
-"software-defined networking capabilities, or are uncomfortable with the new "
-"concepts introduced, <literal>nova-network</literal> may continue to be a "
-"viable option for the next 12 to 18 months."
+"limitations (performance issues in some scenarios, only basic high "
+"availability of layer 3 systems) and provides many more features than "
+"<literal>nova-network</literal>. However, if you do not have the more "
+"complex use cases that can benefit from fuller software-defined networking "
+"capabilities, or are uncomfortable with the new concepts introduced, "
+"<literal>nova-network</literal> may continue to be a viable option for the "
+"next 12 months."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml466(para)
+#: ./doc/openstack-ops/app_roadmaps.xml530(para)
 msgid ""
 "Similarly, if you have an existing cloud and are looking to upgrade from "
 "<literal>nova-network</literal> to OpenStack Networking, you should have the"
@@ -560,22 +637,45 @@ msgid ""
 "upgrade within a reasonable timeframe of each release."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml474(para)
+#: ./doc/openstack-ops/app_roadmaps.xml538(para)
 msgid ""
 "As mentioned, there's currently no way to cleanly migrate from <literal"
 ">nova-network</literal> to neutron. We recommend that you keep a migration "
 "in mind and what that process might involve for when a proper migration path"
-" is released. If you must upgrade, please be aware that both service and "
-"instance downtime is likely unavoidable."
+" is released. Current thinking is that upgrades without instance downtime "
+"will be available in the Kilo release."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml483(title)
+#: ./doc/openstack-ops/app_roadmaps.xml547(title)
+msgid "Distributed Virtual Router"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml549(para)
+msgid ""
+"One of the long-time complaints surrounding OpenStack Networking was the "
+"lack of high availability for the layer 3 components. The Juno release "
+"introduced Distributed Virtual Router (DVR), which aims to solve this "
+"problem."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml553(para)
+msgid ""
+"Early indications are that it does do this well for a base set of scenarios,"
+" such as using the ML2 plug-in with Open vSwitch, one flat external network "
+"and VXLAN tenant networks. However, it does appear that there are problems "
+"with the use of VLANs, IPv6, Floating IPs, high north-south traffic "
+"scenarios and large numbers of compute nodes. It is expected these will "
+"improve significantly with the Kilo release, but bug reports on specific "
+"issues are highly desirable."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml564(title)
 msgid ""
 "Replacement of Open vSwitch Plug-in with <phrase role=\"keep-"
 "together\">Modular Layer 2</phrase>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml486(para)
+#: ./doc/openstack-ops/app_roadmaps.xml567(para)
 msgid ""
 "The Modular Layer 2 plug-in is a framework allowing OpenStack Networking to "
 "simultaneously utilize the variety of layer-2 networking technologies found "
@@ -584,120 +684,140 @@ msgid ""
 " and deprecate the monolithic plug-ins associated with those L2 agents."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml495(title)
-msgid "Compute V3 API"
+#: ./doc/openstack-ops/app_roadmaps.xml576(title)
+msgid "New API Versions"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml497(para)
+#: ./doc/openstack-ops/app_roadmaps.xml578(para)
 msgid ""
 "The third version of the Compute API was broadly discussed and worked on "
 "during the Havana and Icehouse release cycles. Current discussions indicate "
-"that the V2 API will remain for many releases, but this is a great time to "
-"evaluate the Compute API and provide comments while it is being defined. Of "
-"particular note is the decision that the V3 API will not support XML "
-"messages—being JSON only. This was based on the poor testing of existing XML"
-" responses in the V2 API and the lack of effort to continue to develop and "
-"maintain an entire second response type. Feedback on this and any such "
-"change is welcome by responding to the <link "
-"href=\"https://www.openstack.org/user-survey/Login\">user "
-"survey</link>.<indexterm "
-"class=\"singular\"><primary>Icehouse</primary><secondary>Compute V3 "
+"that the V2 API will remain for many releases, and the next iteration of the"
+" API will be denoted v2.1 and have similar properties to the existing v2.0, "
+"rather than an entirely new v3 API. This is a great time to evaluate all API"
+" and provide comments while the next generation APIs are being defined. A "
+"new working group was formed specifically to <link "
+"href=\"https://wiki.openstack.org/wiki/API_Working_Group\">improve OpenStack"
+" APIs</link> and create design guidelines, which you are welcome to join. "
+"<indexterm class=\"singular\"><primary>Kilo</primary><secondary>Compute V3 "
 "API</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml515(title)
+#: ./doc/openstack-ops/app_roadmaps.xml595(title)
 msgid "OpenStack on OpenStack (TripleO)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml517(para)
+#: ./doc/openstack-ops/app_roadmaps.xml597(para)
 msgid ""
 "This project continues to improve and you may consider using it for "
-"greenfield <phrase role=\"keep-together\">deployments</phrase>."
+"greenfield <phrase role=\"keep-together\">deployments</phrase>, though "
+"according to the latest user survey results it remains to see widespread "
+"uptake."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml522(title)
+#: ./doc/openstack-ops/app_roadmaps.xml604(title)
 msgid "Data Processing (Sahara)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml524(para)
+#: ./doc/openstack-ops/app_roadmaps.xml606(para)
 msgid ""
 "A much-requested answer to big data problems, a dedicated team has been "
 "making solid progress on a Hadoop-as-a-Service project."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml529(title)
+#: ./doc/openstack-ops/app_roadmaps.xml611(title)
 msgid "Bare-Metal Deployment (Ironic)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml531(para)
+#: ./doc/openstack-ops/app_roadmaps.xml613(para)
 msgid ""
-"Though bare-metal deployment has been widely lauded, and development "
-"continues, the project to replace the Compute bare-metal driver will not "
-"graduate in Icehouse. A particular blueprint to follow is <link "
-"href=\"https://blueprints.launchpad.net/ironic/+spec/migration-from-nova\"> "
-"Migration Path from Nova's BM Driver</link>, which tracks the ability to "
-"move to the new project from an existing bare-metal deployment.<indexterm "
-"class=\"singular\"><primary>Icehouse</primary><secondary>Compute bare-metal "
+"The bare-metal deployment has been widely lauded, and development continues."
+" The Juno release brought the Ironic drive into the Compute project, and it "
+"is aimed to deprecate the existing bare-metal driver in Kilo. If you are a "
+"current user of the bare metal driver, a particular blueprint to follow is "
+"<link href=\"https://blueprints.launchpad.net/nova/+spec/deprecate-"
+"baremetal-driver\"> Deprecate the Baremetal driver</link>.<indexterm "
+"class=\"singular\"><primary>Kilo</primary><secondary>Compute bare-metal "
 "deployment</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml544(title)
+#: ./doc/openstack-ops/app_roadmaps.xml627(title)
 msgid "Database as a Service (Trove)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml546(para)
+#: ./doc/openstack-ops/app_roadmaps.xml629(para)
 msgid ""
 "The OpenStack community has had a database-as-a-service tool in development "
-"for some time, and we will finally see the first integrated release of it in"
-" Icehouse. Initially, it will only support MySQL, with further options "
-"available in Juno onward, but it should be able to deploy database servers "
-"out of the box in a highly available way from this release.<indexterm "
-"class=\"singular\"><primary>Icehouse</primary><secondary>database-"
-"as-a-service tool</secondary></indexterm>"
+"for some time, and we saw the first integrated release of it in Icehouse. "
+"From release it was able to deploy database servers out of the box in a "
+"highly available way, initially supporting only MySQL. Juno introduced "
+"support for Mongo (including clustering), PostgreSQL and Couchbase, in "
+"addition to replication functionality for MySQL. In Kilo, more advanced "
+"clustering capability is expected, in addition to better integration with "
+"other OpenStack components such as networking. <indexterm "
+"class=\"singular\"><primary>Juno</primary><secondary>database-as-a-service "
+"tool</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml559(title)
-msgid "Messaging as a Service (Marconi)"
+#: ./doc/openstack-ops/app_roadmaps.xml645(title)
+msgid "Messaging as a Service (Zaqar)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml561(para)
+#: ./doc/openstack-ops/app_roadmaps.xml647(para)
 msgid ""
 "A service to provide queues of messages and notifications has entered "
 "“incubation,” meaning if the upcoming development cycles are successful, it "
-"will be released in <phrase role=\"keep-together\">Juno</phrase>."
+"will be released in <phrase role=\"keep-together\">Kilo</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml568(title)
+#: ./doc/openstack-ops/app_roadmaps.xml654(title)
+msgid "DNS as a Service (Designate)"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml656(para)
+msgid ""
+"A long requested service, to provide the ability to manipulate DNS entries "
+"associated with OpenStack resources has gathered a following. The Designate "
+"project has entered “incubation,” meaning if the upcoming development cycles"
+" are successful, it could be released in <phrase role=\"keep-"
+"together\">Kilo</phrase>."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml663(title)
 msgid "Scheduler Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml570(para)
+#: ./doc/openstack-ops/app_roadmaps.xml665(para)
 msgid ""
 "Both Compute and Block Storage rely on schedulers to determine where to "
 "place virtual machines or volumes. In Havana, the Compute scheduler "
-"underwent significant improvement, while in Icehouse the scheduler in Block "
-"Storage is slated for a boost. Further down the track, an effort started "
-"this cycle that aims to create a holistic scheduler covering both will come "
-"to fruition.<indexterm "
-"class=\"singular\"><primary>Icehouse</primary><secondary>scheduler "
+"underwent significant improvement, while in Icehouse it was the scheduler in"
+" Block Storage that received a boost. Further down the track, an effort "
+"started this cycle that aims to create a holistic scheduler covering both "
+"will come to fruition. Some of this work for Kilo can be found under the "
+"<link href=\"https://wiki.openstack.org/wiki/Gantt/kilo\">Gantt "
+"project</link>.<indexterm "
+"class=\"singular\"><primary>Kilo</primary><secondary>scheduler "
 "improvements</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml582(title)
+#: ./doc/openstack-ops/app_roadmaps.xml679(title)
 msgid "Block Storage Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml584(para)
+#: ./doc/openstack-ops/app_roadmaps.xml681(para)
 msgid ""
-"The team discussed many areas of work at the Icehouse summit, including "
-"volume migration support, Ceph integration, and access control for volumes."
+"Block Storage is now considered a stable project, with wide uptake and a "
+"long track record of quality drivers. The team still discussed many areas of"
+" work at the Kilo summit, including better error reporting, automated "
+"dicovery, and thin provisioning features."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml590(title)
+#: ./doc/openstack-ops/app_roadmaps.xml689(title)
 msgid "Toward a Python SDK"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml592(para)
+#: ./doc/openstack-ops/app_roadmaps.xml691(para)
 msgid ""
 "Though many successfully use the various python-*client code as an effective"
 " SDK for interacting with OpenStack, consistency between the projects and "
@@ -3966,9 +4086,9 @@ msgid ""
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml40(title)
-#: ./doc/openstack-ops/app_usecases.xml114(title)
-#: ./doc/openstack-ops/app_usecases.xml206(title)
-#: ./doc/openstack-ops/app_usecases.xml262(title)
+#: ./doc/openstack-ops/app_usecases.xml113(title)
+#: ./doc/openstack-ops/app_usecases.xml205(title)
+#: ./doc/openstack-ops/app_usecases.xml261(title)
 msgid "Deployment"
 msgstr "デプロイ"
 
@@ -3999,39 +4119,38 @@ msgstr "コンピュートノードは 24～48コアがあり、１コアあた�
 
 #: ./doc/openstack-ops/app_usecases.xml58(para)
 msgid ""
-"All sites are based on Ubuntu 12.04, with KVM as the hypervisor. The "
+"All sites are based on Ubuntu 14.04, with KVM as the hypervisor. The "
 "OpenStack version in use is typically the current stable version, with 5 to "
-"10 percent back-ported code from trunk and modifications. Migration to "
-"Ubuntu 14.04 is planned as part of the Havana to Icehouse upgrade.<indexterm"
-" class=\"singular\"><primary>Icehouse</primary><secondary>migration to "
+"10 percent back-ported code from trunk and modifications. <indexterm "
+"class=\"singular\"><primary>Icehouse</primary><secondary>migration to "
 "Ubuntu</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml70(title)
-#: ./doc/openstack-ops/app_usecases.xml170(title)
-#: ./doc/openstack-ops/app_usecases.xml231(title)
-#: ./doc/openstack-ops/app_usecases.xml285(title)
+#: ./doc/openstack-ops/app_usecases.xml69(title)
+#: ./doc/openstack-ops/app_usecases.xml169(title)
+#: ./doc/openstack-ops/app_usecases.xml230(title)
+#: ./doc/openstack-ops/app_usecases.xml284(title)
 #: ./doc/openstack-ops/ch_ops_resources.xml11(title)
 msgid "Resources"
 msgstr "情報源"
 
-#: ./doc/openstack-ops/app_usecases.xml74(link)
+#: ./doc/openstack-ops/app_usecases.xml73(link)
 msgid "OpenStack.org case study"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml79(link)
+#: ./doc/openstack-ops/app_usecases.xml78(link)
 msgid "NeCTAR-RC GitHub"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml84(link)
+#: ./doc/openstack-ops/app_usecases.xml83(link)
 msgid "NeCTAR website"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml92(title)
+#: ./doc/openstack-ops/app_usecases.xml91(title)
 msgid "MIT CSAIL"
 msgstr "MIT CSAIL"
 
-#: ./doc/openstack-ops/app_usecases.xml94(para)
+#: ./doc/openstack-ops/app_usecases.xml93(para)
 msgid ""
 "Who uses it: researchers from the MIT Computer Science and Artificial "
 "Intelligence Lab.<indexterm class=\"singular\"><primary>CSAIL (Computer "
@@ -4044,7 +4163,7 @@ msgid ""
 "cases</secondary><tertiary>MIT CSAIL</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml116(para)
+#: ./doc/openstack-ops/app_usecases.xml115(para)
 msgid ""
 "The CSAIL cloud is currently 64 physical nodes with a total of 768 physical "
 "cores and 3,456 GB of RAM. Persistent data storage is largely outside the "
@@ -4053,13 +4172,13 @@ msgid ""
 "vCPUs in 300 to 400 instances."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml122(para)
+#: ./doc/openstack-ops/app_usecases.xml121(para)
 msgid ""
 "We initially deployed on Ubuntu 12.04 with the Essex release of OpenStack "
 "using FlatDHCP multi-host networking."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml125(para)
+#: ./doc/openstack-ops/app_usecases.xml124(para)
 msgid ""
 "The software stack is still Ubuntu 12.04 LTS, but now with OpenStack Havana "
 "from the Ubuntu Cloud Archive. KVM is the hypervisor, deployed using <link "
@@ -4070,7 +4189,7 @@ msgid ""
 "compute nodes."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml133(para)
+#: ./doc/openstack-ops/app_usecases.xml132(para)
 msgid ""
 "Host aggregates and instance-type extra specs are used to provide two "
 "different resource allocation ratios. The default resource allocation ratios"
@@ -4081,7 +4200,7 @@ msgid ""
 "provides one vCPU per CPU thread, or two vCPUs per physical core."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml142(para)
+#: ./doc/openstack-ops/app_usecases.xml141(para)
 msgid ""
 "With our upgrade to Grizzly in August 2013, we moved to OpenStack Networking"
 " Service, neutron (quantum at the time). Compute nodes have two-gigabit "
@@ -4096,7 +4215,7 @@ msgid ""
 "and metadata-proxy."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml155(para)
+#: ./doc/openstack-ops/app_usecases.xml154(para)
 msgid ""
 "We approximate the older <literal>nova-network</literal> multi-host HA setup"
 " by using \"provider vlan networks\" that connect instances directly to "
@@ -4111,15 +4230,15 @@ msgid ""
 "create their own private GRE based networks."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml174(link)
+#: ./doc/openstack-ops/app_usecases.xml173(link)
 msgid "CSAIL homepage"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml182(title)
+#: ./doc/openstack-ops/app_usecases.xml181(title)
 msgid "DAIR"
 msgstr "DAIR"
 
-#: ./doc/openstack-ops/app_usecases.xml184(para)
+#: ./doc/openstack-ops/app_usecases.xml183(para)
 msgid ""
 "Who uses it: DAIR is an integrated virtual environment that leverages the "
 "CANARIE network to develop and test new information communication technology"
@@ -4135,7 +4254,7 @@ msgid ""
 "cases</secondary><tertiary>DAIR</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml208(para)
+#: ./doc/openstack-ops/app_usecases.xml207(para)
 msgid ""
 "DAIR is hosted at two different data centers across Canada: one in Alberta "
 "and the other in Quebec. It consists of a cloud controller at each location,"
@@ -4144,11 +4263,11 @@ msgid ""
 "light modifications to OpenStack. DAIR is currently running Grizzly."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml215(para)
+#: ./doc/openstack-ops/app_usecases.xml214(para)
 msgid "For Object Storage, each region has a swift environment."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml217(para)
+#: ./doc/openstack-ops/app_usecases.xml216(para)
 msgid ""
 "A NetApp appliance is used in each region for both block storage and "
 "instance storage. There are future plans to move the instances off the "
@@ -4156,7 +4275,7 @@ msgid ""
 "<glossterm>Ceph</glossterm> or GlusterFS."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml222(para)
+#: ./doc/openstack-ops/app_usecases.xml221(para)
 msgid ""
 "VlanManager is used extensively for network management. All servers have two"
 " bonded 10GbE NICs that are connected to two redundant switches. DAIR is set"
@@ -4165,15 +4284,15 @@ msgid ""
 "example, storage traffic) does not go through the cloud controller."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml235(link)
+#: ./doc/openstack-ops/app_usecases.xml234(link)
 msgid "DAIR homepage"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml243(title)
+#: ./doc/openstack-ops/app_usecases.xml242(title)
 msgid "CERN"
 msgstr "CERN"
 
-#: ./doc/openstack-ops/app_usecases.xml245(para)
+#: ./doc/openstack-ops/app_usecases.xml244(para)
 msgid ""
 "Who uses it: researchers at CERN (European Organization for Nuclear "
 "Research) conducting high-energy physics research.<indexterm "
@@ -4184,14 +4303,14 @@ msgid ""
 "cases</secondary><tertiary>CERN</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml264(para)
+#: ./doc/openstack-ops/app_usecases.xml263(para)
 msgid ""
 "The environment is largely based on Scientific Linux 6, which is Red Hat "
 "compatible. We use KVM as our primary hypervisor, although tests are ongoing"
 " with Hyper-V on Windows Server 2008."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml268(para)
+#: ./doc/openstack-ops/app_usecases.xml267(para)
 msgid ""
 "We use the Puppet Labs OpenStack modules to configure Compute, Image "
 "Service, Identity, and dashboard. Puppet is used widely for instance "
@@ -4199,29 +4318,29 @@ msgid ""
 "provisioning."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml273(para)
+#: ./doc/openstack-ops/app_usecases.xml272(para)
 msgid ""
 "Users and groups are managed through Active Directory and imported into the "
 "Identity Service using LDAP. CLIs are available for nova and Euca2ools to do"
 " this."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml277(para)
+#: ./doc/openstack-ops/app_usecases.xml276(para)
 msgid ""
 "There are three clouds currently running at CERN, totaling about 3,400 "
 "compute nodes, with approximately 60,000 cores. The CERN IT cloud aims to "
 "expand to 300,000 cores by 2015."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml289(link)
+#: ./doc/openstack-ops/app_usecases.xml288(link)
 msgid "“OpenStack in Production: A tale of 3 OpenStack Clouds”"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml294(link)
+#: ./doc/openstack-ops/app_usecases.xml293(link)
 msgid "“Review of CERN Data Centre Infrastructure”"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml299(link)
+#: ./doc/openstack-ops/app_usecases.xml298(link)
 msgid "“CERN Cloud Infrastructure User Guide”"
 msgstr ""
 
@@ -14011,12 +14130,12 @@ msgstr "neutronプロジェクトを使用したOpenStackネットワークの�
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml284(para)
 msgid ""
-"<xref linkend=\"network_deployment_options\"/> discusses the networking "
+"<xref linkend=\"network_deployment_options\"/> describes the networking "
 "deployment options for both legacy <literal>nova-network</literal> options "
 "and an equivalent neutron configuration.<indexterm "
 "class=\"singular\"><primary>provisioning/deployment</primary><secondary>network"
 " deployment options</secondary></indexterm>"
-msgstr "<xref linkend=\"network_deployment_options\"/> レガシーな <literal>nova-network</literal>おオプションとそれと同等なneutron構成オプションについて述べます。<indexterm class=\"singular\"><primary>プロビジョニング/デプロイメント</primary><secondary>ネットワークでプロ忌めんとオプション</secondary></indexterm>"
+msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml294(caption)
 msgid "Networking deployment options"

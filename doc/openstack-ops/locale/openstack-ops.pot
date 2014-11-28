@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-24 06:01+0000\n"
+"POT-Creation-Date: 2014-11-28 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgid "Working with Roadmaps"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:12(para)
-msgid "The good news: OpenStack has unprecedented transparency when it comes to providing information about what's coming up. The bad news: each release moves very quickly. The purpose of this appendix is to highlight some of the useful pages to track, and take an educated guess at what is coming up in the Icehouse release and perhaps further afield.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>upcoming release of</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>release cycle</tertiary></indexterm>"
+msgid "The good news: OpenStack has unprecedented transparency when it comes to providing information about what's coming up. The bad news: each release moves very quickly. The purpose of this appendix is to highlight some of the useful pages to track, and take an educated guess at what is coming up in the Kilo release and perhaps further afield.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>upcoming release of</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>release cycle</tertiary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:28(para)
@@ -60,422 +60,514 @@ msgid "Date"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:81(para)
+msgid "Kilo"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:83(link)
+msgid "Under Development"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:87(link)
+msgid "2015.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:89(para)
+msgid "Apr 30, 2015"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:92(para)
 msgid "Juno"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:83(para)
-msgid "Under development"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:87(link) ./doc/openstack-ops/app_roadmaps.xml:98(link)
-msgid "2014.1"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:89(para) ./doc/openstack-ops/app_roadmaps.xml:100(para)
-msgid "Apr 17, 2014"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:93(para)
-msgid "Icehouse"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:95(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:94(link)
 msgid "Current stable release, security-supported"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:104(para) ./doc/openstack-ops/section_arch_example-nova.xml:81(para) ./doc/openstack-ops/section_arch_example-neutron.xml:57(para)
-msgid "Havana"
+#: ./doc/openstack-ops/app_roadmaps.xml:98(link)
+msgid "2014.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:106(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:100(para)
+msgid "Oct 16, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:104(para)
+msgid "Icehouse"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:106(link)
 msgid "Security-supported"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:109(link)
+msgid "2014.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:111(para)
+msgid "Apr 17, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:116(link)
+msgid "2014.1.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:118(para)
+msgid "Jun 9, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:123(link)
+msgid "2014.1.2"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:125(para)
+msgid "Aug 8, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:130(link)
+msgid "2014.1.3"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:132(para)
+msgid "Oct 2, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:136(para) ./doc/openstack-ops/section_arch_example-nova.xml:81(para) ./doc/openstack-ops/section_arch_example-neutron.xml:57(para)
+msgid "Havana"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:138(para) ./doc/openstack-ops/app_roadmaps.xml:184(para) ./doc/openstack-ops/app_roadmaps.xml:233(para) ./doc/openstack-ops/app_roadmaps.xml:276(para)
+msgid "End-of-life"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:140(link)
 msgid "2013.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:112(para) ./doc/openstack-ops/app_roadmaps.xml:131(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:143(para) ./doc/openstack-ops/app_roadmaps.xml:189(para)
 msgid "Apr 4, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:118(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:149(link) ./doc/openstack-ops/app_roadmaps.xml:177(link)
 msgid "2013.2.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:120(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:151(para) ./doc/openstack-ops/app_roadmaps.xml:179(para)
 msgid "Dec 16, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:124(para)
-msgid "Grizzly"
+#: ./doc/openstack-ops/app_roadmaps.xml:156(link)
+msgid "2013.2.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:126(para)
-msgid "EOL"
+#: ./doc/openstack-ops/app_roadmaps.xml:158(para)
+msgid "Feb 13, 2014"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:128(link)
-msgid "2013.1"
+#: ./doc/openstack-ops/app_roadmaps.xml:163(link)
+msgid "2013.2.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:137(link)
-msgid "2013.1.1"
+#: ./doc/openstack-ops/app_roadmaps.xml:165(para)
+msgid "Apr 3, 2014"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:139(para)
-msgid "May 9, 2013"
+#: ./doc/openstack-ops/app_roadmaps.xml:170(link)
+msgid "2013.2.4"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:145(link)
-msgid "2013.1.2"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:147(para)
-msgid "Jun 6, 2013"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:153(link)
-msgid "2013.1.3"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:155(para)
-msgid "Aug 8, 2013"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:161(link)
-msgid "2013.1.4"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:163(para)
-msgid "Oct 17, 2013"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:167(para)
-msgid "Folsom"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:169(para) ./doc/openstack-ops/app_roadmaps.xml:212(para)
-msgid "Community-supported"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:171(link)
-msgid "2012.2"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:174(para)
-msgid "Sep 27, 2012"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:180(link)
-msgid "2012.2.1"
+#: ./doc/openstack-ops/app_roadmaps.xml:172(para)
+msgid "Sep 22, 2014"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:182(para)
+msgid "Grizzly"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:186(link)
+msgid "2013.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:195(link)
+msgid "2013.1.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:197(para)
+msgid "May 9, 2013"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:203(link)
+msgid "2013.1.2"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:205(para)
+msgid "Jun 6, 2013"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:211(link)
+msgid "2013.1.3"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:213(para)
+msgid "Aug 8, 2013"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:219(link)
+msgid "2013.1.4"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:221(para)
+msgid "Oct 17, 2013"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:226(link)
+msgid "2013.1.5"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:228(para)
+msgid "Mar 20, 2015"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:231(para)
+msgid "Folsom"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:235(link)
+msgid "2012.2"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:238(para)
+msgid "Sep 27, 2012"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:244(link)
+msgid "2012.2.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:246(para)
 msgid "Nov 29, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:188(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:252(link)
 msgid "2012.2.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:190(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:254(para)
 msgid "Dec 13, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:196(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:260(link)
 msgid "2012.2.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:198(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:262(para)
 msgid "Jan 31, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:204(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:268(link)
 msgid "2012.2.4"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:206(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:270(para)
 msgid "Apr 11, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:210(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:274(para)
 msgid "Essex"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:214(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:278(link)
 msgid "2012.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:217(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:281(para)
 msgid "Apr 5, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:223(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:287(link)
 msgid "2012.1.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:225(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:289(para)
 msgid "Jun 22, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:231(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:295(link)
 msgid "2012.1.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:233(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:297(para)
 msgid "Aug 10, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:239(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:303(link)
 msgid "2012.1.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:241(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:305(para)
 msgid "Oct 12, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:245(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:309(para)
 msgid "Diablo"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:247(para) ./doc/openstack-ops/app_roadmaps.xml:266(para) ./doc/openstack-ops/app_roadmaps.xml:277(para) ./doc/openstack-ops/app_roadmaps.xml:288(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:311(para) ./doc/openstack-ops/app_roadmaps.xml:330(para) ./doc/openstack-ops/app_roadmaps.xml:341(para) ./doc/openstack-ops/app_roadmaps.xml:352(para)
 msgid "Deprecated"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:249(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:313(link)
 msgid "2011.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:252(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:316(para)
 msgid "Sep 22, 2011"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:258(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:322(link)
 msgid "2011.3.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:260(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:324(para)
 msgid "Jan 19, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:264(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:328(para)
 msgid "Cactus"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:268(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:332(link)
 msgid "2011.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:271(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:335(para)
 msgid "Apr 15, 2011"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:275(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:339(para)
 msgid "Bexar"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:279(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:343(link)
 msgid "2011.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:282(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:346(para)
 msgid "Feb 3, 2011"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:286(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:350(para)
 msgid "Austin"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:290(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:354(link)
 msgid "2010.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:293(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:357(para)
 msgid "Oct 21, 2010"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:298(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:362(para)
 msgid "Here are some other resources:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:302(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:366(link)
 msgid "A breakdown of current features under development, with their target milestone"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:308(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:372(link)
 msgid "A list of all features, including those not yet under development"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:313(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:377(link)
 msgid "Rough-draft design discussions (\"etherpads\") from the last design summit"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:318(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:382(link)
 msgid "List of individual code changes under review"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:325(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:389(title)
 msgid "Influencing the Roadmap"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:327(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:391(para)
 msgid "OpenStack truly welcomes your ideas (and contributions) and highly values feedback from real-world users of the software. By learning a little about the process that drives feature development, you can participate and perhaps get the additions you desire.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>influencing</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:339(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:403(para)
 msgid "Feature requests typically start their life in Etherpad, a collaborative editing tool, which is used to take coordinating notes at a design summit session specific to the feature. This then leads to the creation of a blueprint on the Launchpad site for the particular project, which is used to describe the feature more formally. Blueprints are then approved by project team members, and development can begin."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:346(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:410(para)
 msgid "Therefore, the fastest way to get your feature request up for consideration is to create an Etherpad with your ideas and propose a session to the design summit. If the design summit has already passed, you may also create a blueprint directly. Read this <link href=\"http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/\">blog post about how to work with blueprints</link> the perspective of Victoria Martínez, a developer intern."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:354(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:418(para)
 msgid "The roadmap for the next release as it is developed can be seen at <link href=\"http://status.openstack.org/release/\">Releases</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:357(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:421(para)
 msgid "To determine the potential features going in to future releases, or to look at features implemented previously, take a look at the existing blueprints such as <link href=\"https://blueprints.launchpad.net/nova\">OpenStack Compute (nova) Blueprints</link>, <link href=\"https://blueprints.launchpad.net/keystone\">OpenStack Identity (keystone) Blueprints</link>, and release notes."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:364(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:428(para)
 msgid "Aside from the direct-to-blueprint pathway, there is another very well-regarded mechanism to influence the development roadmap: the user survey. Found at <link href=\"http://openstack.org/user-survey\"/>, it allows you to provide details of your deployments and needs, anonymously by default. Each cycle, the user committee analyzes the results and produces a report, including providing specific information to the technical committee and technical leads of the projects."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:375(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:439(title)
 msgid "Aspects to Watch"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:377(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:441(para)
 msgid "You want to keep an eye on the areas improving within OpenStack. The best way to \"watch\" roadmaps for each project is to look at the blueprints that are being approved for work on milestone releases. You can also learn from PTL webinars that follow the OpenStack summits twice a year.<indexterm class=\"startofrange\" xml:id=\"OSaspect\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>aspects to watch</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:390(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:454(title)
 msgid "Driver Quality Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:392(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:456(para)
 msgid "A major quality push has occurred across drivers and plug-ins in Block Storage, Compute, and Networking. Particularly, developers of Compute and Networking drivers that require proprietary or hardware products are now required to provide an automated external testing system for use during the development process."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:400(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:464(title)
 msgid "Easier Upgrades"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:402(para)
-msgid "One of the most requested features since OpenStack began (for components other than Object Storage, which tends to \"just work\"): easier upgrades. From Grizzly onward (and significantly improved in Havana), internal messaging communication is versioned, meaning services can theoretically drop back to backward-compatible behavior. This allows you to run later versions of some components, while keeping older versions of others."
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:410(para)
-msgid "In addition, a lot of focus has been placed on database migrations. These are now better managed, including the use of the Turbo Hipster tool, which tests database migration performance on copies of real-world user databases."
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:415(para)
-msgid "These changes have facilitated the first proper OpenStack upgrade guide, found in <xref linkend=\"ch_ops_upgrades\"/>, and will continue to improve in Icehouse.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>upgrades in</secondary></indexterm>"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:425(title)
-msgid "Deprecation of Nova Network"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:427(para)
-msgid "With the introduction of the full software-defined networking stack provided by OpenStack Networking (neutron) in the Folsom release, development effort on the initial networking code that remains part of the Compute component has gradually lessened. While many still use <literal>nova-network</literal> in production, there has been a long-term plan to remove the code in favor of the more flexible and full-featured OpenStack Networking.<indexterm class=\"singular\"><primary>nova</primary><secondary>deprecation of</secondary></indexterm>"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:439(para)
-msgid "An attempt was made to deprecate <literal>nova-network</literal> during the Havana release, which was aborted due to the lack of equivalent functionality (such as the FlatDHCP multi-host high-availability mode mentioned in this guide), lack of a migration path between versions, insufficient testing, and simplicity when used for the more straightforward use cases <literal>nova-network</literal> traditionally supported. Though significant effort has been made to address these concerns, <literal>nova-network</literal> will not be deprecated in the Icehouse release. In addition, the Program Technical Lead of the Compute project has indicated that, to a limited degree, patches to <literal>nova-network</literal> will now again begin to be accepted.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>nova network deprecation</secondary></indexterm>"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:456(para)
-msgid "This leaves you with an important point of decision when designing your cloud. OpenStack Networking is robust enough to use with a small number of limitations (IPv6 support, performance issues in some scenarios) and provides many more features than <literal>nova-network</literal>. However, if you do not have the more complex use cases that can benefit from fuller software-defined networking capabilities, or are uncomfortable with the new concepts introduced, <literal>nova-network</literal> may continue to be a viable option for the next 12 to 18 months."
-msgstr ""
-
 #: ./doc/openstack-ops/app_roadmaps.xml:466(para)
-msgid "Similarly, if you have an existing cloud and are looking to upgrade from <literal>nova-network</literal> to OpenStack Networking, you should have the option to delay the upgrade for this period of time. However, each release of OpenStack brings significant new innovation, and regardless of your use of networking methodology, it is likely best to begin planning for an upgrade within a reasonable timeframe of each release."
+msgid "One of the most requested features since OpenStack began (for components other than Object Storage, which tends to \"just work\"): easier upgrades. From Grizzly onward (and significantly improved in Havana and Icehouse), internal messaging communication is versioned, meaning services can theoretically drop back to backward-compatible behavior. This allows you to run later versions of some components, while keeping older versions of others."
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:474(para)
-msgid "As mentioned, there's currently no way to cleanly migrate from <literal>nova-network</literal> to neutron. We recommend that you keep a migration in mind and what that process might involve for when a proper migration path is released. If you must upgrade, please be aware that both service and instance downtime is likely unavoidable."
+msgid "In addition, in Icehouse, a lot of focus has been placed on database migrations. These are now better managed, including the use of the Turbo Hipster tool, which tests database migration performance on copies of real-world user databases."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:483(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:479(para)
+msgid "These changes have facilitated the first proper OpenStack upgrade guide, found in <xref linkend=\"ch_ops_upgrades\"/>, and will continue to improve in Kilo.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>upgrades in</secondary></indexterm>"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:489(title)
+msgid "Deprecation of Nova Network"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:491(para)
+msgid "With the introduction of the full software-defined networking stack provided by OpenStack Networking (neutron) in the Folsom release, development effort on the initial networking code that remains part of the Compute component has gradually lessened. While many still use <literal>nova-network</literal> in production, there has been a long-term plan to remove the code in favor of the more flexible and full-featured OpenStack Networking.<indexterm class=\"singular\"><primary>nova</primary><secondary>deprecation of</secondary></indexterm>"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:503(para)
+msgid "An attempt was made to deprecate <literal>nova-network</literal> during the Havana release, which was aborted due to the lack of equivalent functionality (such as the FlatDHCP multi-host high-availability mode mentioned in this guide), lack of a migration path between versions, insufficient testing, and simplicity when used for the more straightforward use cases <literal>nova-network</literal> traditionally supported. Though significant effort has been made to address these concerns, <literal>nova-network</literal> was not be deprecated in the Juno release. In addition, to a limited degree, patches to <literal>nova-network</literal> have again begin to be accepted, such as adding a per-network settings feature and SR-IOV support in Juno.<indexterm class=\"singular\"><primary>Juno</primary><secondary>nova network deprecation</secondary></indexterm>"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:520(para)
+msgid "This leaves you with an important point of decision when designing your cloud. OpenStack Networking is robust enough to use with a small number of limitations (performance issues in some scenarios, only basic high availability of layer 3 systems) and provides many more features than <literal>nova-network</literal>. However, if you do not have the more complex use cases that can benefit from fuller software-defined networking capabilities, or are uncomfortable with the new concepts introduced, <literal>nova-network</literal> may continue to be a viable option for the next 12 months."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:530(para)
+msgid "Similarly, if you have an existing cloud and are looking to upgrade from <literal>nova-network</literal> to OpenStack Networking, you should have the option to delay the upgrade for this period of time. However, each release of OpenStack brings significant new innovation, and regardless of your use of networking methodology, it is likely best to begin planning for an upgrade within a reasonable timeframe of each release."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:538(para)
+msgid "As mentioned, there's currently no way to cleanly migrate from <literal>nova-network</literal> to neutron. We recommend that you keep a migration in mind and what that process might involve for when a proper migration path is released. Current thinking is that upgrades without instance downtime will be available in the Kilo release."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:547(title)
+msgid "Distributed Virtual Router"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:549(para)
+msgid "One of the long-time complaints surrounding OpenStack Networking was the lack of high availability for the layer 3 components. The Juno release introduced Distributed Virtual Router (DVR), which aims to solve this problem."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:553(para)
+msgid "Early indications are that it does do this well for a base set of scenarios, such as using the ML2 plug-in with Open vSwitch, one flat external network and VXLAN tenant networks. However, it does appear that there are problems with the use of VLANs, IPv6, Floating IPs, high north-south traffic scenarios and large numbers of compute nodes. It is expected these will improve significantly with the Kilo release, but bug reports on specific issues are highly desirable."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:564(title)
 msgid "Replacement of Open vSwitch Plug-in with <phrase role=\"keep-together\">Modular Layer 2</phrase>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:486(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:567(para)
 msgid "The Modular Layer 2 plug-in is a framework allowing OpenStack Networking to simultaneously utilize the variety of layer-2 networking technologies found in complex real-world data centers. It currently works with the existing Open vSwitch, Linux Bridge, and Hyper-V L2 agents and is intended to replace and deprecate the monolithic plug-ins associated with those L2 agents."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:495(title)
-msgid "Compute V3 API"
+#: ./doc/openstack-ops/app_roadmaps.xml:576(title)
+msgid "New API Versions"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:497(para)
-msgid "The third version of the Compute API was broadly discussed and worked on during the Havana and Icehouse release cycles. Current discussions indicate that the V2 API will remain for many releases, but this is a great time to evaluate the Compute API and provide comments while it is being defined. Of particular note is the decision that the V3 API will not support XML messages—being JSON only. This was based on the poor testing of existing XML responses in the V2 API and the lack of effort to continue to develop and maintain an entire second response type. Feedback on this and any such change is welcome by responding to the <link href=\"https://www.openstack.org/user-survey/Login\">user survey</link>.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>Compute V3 API</secondary></indexterm>"
+#: ./doc/openstack-ops/app_roadmaps.xml:578(para)
+msgid "The third version of the Compute API was broadly discussed and worked on during the Havana and Icehouse release cycles. Current discussions indicate that the V2 API will remain for many releases, and the next iteration of the API will be denoted v2.1 and have similar properties to the existing v2.0, rather than an entirely new v3 API. This is a great time to evaluate all API and provide comments while the next generation APIs are being defined. A new working group was formed specifically to <link href=\"https://wiki.openstack.org/wiki/API_Working_Group\">improve OpenStack APIs</link> and create design guidelines, which you are welcome to join. <indexterm class=\"singular\"><primary>Kilo</primary><secondary>Compute V3 API</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:515(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:595(title)
 msgid "OpenStack on OpenStack (TripleO)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:517(para)
-msgid "This project continues to improve and you may consider using it for greenfield <phrase role=\"keep-together\">deployments</phrase>."
+#: ./doc/openstack-ops/app_roadmaps.xml:597(para)
+msgid "This project continues to improve and you may consider using it for greenfield <phrase role=\"keep-together\">deployments</phrase>, though according to the latest user survey results it remains to see widespread uptake."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:522(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:604(title)
 msgid "Data Processing (Sahara)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:524(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:606(para)
 msgid "A much-requested answer to big data problems, a dedicated team has been making solid progress on a Hadoop-as-a-Service project."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:529(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:611(title)
 msgid "Bare-Metal Deployment (Ironic)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:531(para)
-msgid "Though bare-metal deployment has been widely lauded, and development continues, the project to replace the Compute bare-metal driver will not graduate in Icehouse. A particular blueprint to follow is <link href=\"https://blueprints.launchpad.net/ironic/+spec/migration-from-nova\"> Migration Path from Nova's BM Driver</link>, which tracks the ability to move to the new project from an existing bare-metal deployment.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>Compute bare-metal deployment</secondary></indexterm>"
+#: ./doc/openstack-ops/app_roadmaps.xml:613(para)
+msgid "The bare-metal deployment has been widely lauded, and development continues. The Juno release brought the Ironic drive into the Compute project, and it is aimed to deprecate the existing bare-metal driver in Kilo. If you are a current user of the bare metal driver, a particular blueprint to follow is <link href=\"https://blueprints.launchpad.net/nova/+spec/deprecate-baremetal-driver\"> Deprecate the Baremetal driver</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>Compute bare-metal deployment</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:544(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:627(title)
 msgid "Database as a Service (Trove)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:546(para)
-msgid "The OpenStack community has had a database-as-a-service tool in development for some time, and we will finally see the first integrated release of it in Icehouse. Initially, it will only support MySQL, with further options available in Juno onward, but it should be able to deploy database servers out of the box in a highly available way from this release.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>database-as-a-service tool</secondary></indexterm>"
+#: ./doc/openstack-ops/app_roadmaps.xml:629(para)
+msgid "The OpenStack community has had a database-as-a-service tool in development for some time, and we saw the first integrated release of it in Icehouse. From release it was able to deploy database servers out of the box in a highly available way, initially supporting only MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and Couchbase, in addition to replication functionality for MySQL. In Kilo, more advanced clustering capability is expected, in addition to better integration with other OpenStack components such as networking. <indexterm class=\"singular\"><primary>Juno</primary><secondary>database-as-a-service tool</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:559(title)
-msgid "Messaging as a Service (Marconi)"
+#: ./doc/openstack-ops/app_roadmaps.xml:645(title)
+msgid "Messaging as a Service (Zaqar)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:561(para)
-msgid "A service to provide queues of messages and notifications has entered “incubation,” meaning if the upcoming development cycles are successful, it will be released in <phrase role=\"keep-together\">Juno</phrase>."
+#: ./doc/openstack-ops/app_roadmaps.xml:647(para)
+msgid "A service to provide queues of messages and notifications has entered “incubation,” meaning if the upcoming development cycles are successful, it will be released in <phrase role=\"keep-together\">Kilo</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:568(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:654(title)
+msgid "DNS as a Service (Designate)"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:656(para)
+msgid "A long requested service, to provide the ability to manipulate DNS entries associated with OpenStack resources has gathered a following. The Designate project has entered “incubation,” meaning if the upcoming development cycles are successful, it could be released in <phrase role=\"keep-together\">Kilo</phrase>."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:663(title)
 msgid "Scheduler Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:570(para)
-msgid "Both Compute and Block Storage rely on schedulers to determine where to place virtual machines or volumes. In Havana, the Compute scheduler underwent significant improvement, while in Icehouse the scheduler in Block Storage is slated for a boost. Further down the track, an effort started this cycle that aims to create a holistic scheduler covering both will come to fruition.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>scheduler improvements</secondary></indexterm>"
+#: ./doc/openstack-ops/app_roadmaps.xml:665(para)
+msgid "Both Compute and Block Storage rely on schedulers to determine where to place virtual machines or volumes. In Havana, the Compute scheduler underwent significant improvement, while in Icehouse it was the scheduler in Block Storage that received a boost. Further down the track, an effort started this cycle that aims to create a holistic scheduler covering both will come to fruition. Some of this work for Kilo can be found under the <link href=\"https://wiki.openstack.org/wiki/Gantt/kilo\">Gantt project</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>scheduler improvements</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:582(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:679(title)
 msgid "Block Storage Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:584(para)
-msgid "The team discussed many areas of work at the Icehouse summit, including volume migration support, Ceph integration, and access control for volumes."
+#: ./doc/openstack-ops/app_roadmaps.xml:681(para)
+msgid "Block Storage is now considered a stable project, with wide uptake and a long track record of quality drivers. The team still discussed many areas of work at the Kilo summit, including better error reporting, automated dicovery, and thin provisioning features."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:590(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:689(title)
 msgid "Toward a Python SDK"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:592(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:691(para)
 msgid "Though many successfully use the various python-*client code as an effective SDK for interacting with OpenStack, consistency between the projects and documentation availability waxes and wanes. To combat this, an <link href=\"https://wiki.openstack.org/wiki/PythonOpenStackSDK\">effort to improve the experience</link> has started. Cross-project development efforts in OpenStack have a checkered history, such as the <link href=\"https://wiki.openstack.org/wiki/OpenStackClient\"> unified client project</link> having several false starts. However, the early signs for the SDK project are promising, and we expect to see results during the Juno cycle.<indexterm class=\"endofrange\" startref=\"OSaspect\"/>"
 msgstr ""
 
@@ -2311,7 +2403,7 @@ msgstr ""
 msgid "Who uses it: researchers from the Australian publicly funded research sector. Use is across a wide variety of disciplines, with the purpose of instances ranging from running simple web servers to using hundreds of cores for high-throughput computing.<indexterm class=\"singular\"><primary>NeCTAR Research Cloud</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>NeCTAR</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>NeCTAR</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:40(title) ./doc/openstack-ops/app_usecases.xml:114(title) ./doc/openstack-ops/app_usecases.xml:206(title) ./doc/openstack-ops/app_usecases.xml:262(title)
+#: ./doc/openstack-ops/app_usecases.xml:40(title) ./doc/openstack-ops/app_usecases.xml:113(title) ./doc/openstack-ops/app_usecases.xml:205(title) ./doc/openstack-ops/app_usecases.xml:261(title)
 msgid "Deployment"
 msgstr ""
 
@@ -2328,122 +2420,122 @@ msgid "Compute nodes have 24 to 48 cores, with at least 4 GB of RAM per core and
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:58(para)
-msgid "All sites are based on Ubuntu 12.04, with KVM as the hypervisor. The OpenStack version in use is typically the current stable version, with 5 to 10 percent back-ported code from trunk and modifications. Migration to Ubuntu 14.04 is planned as part of the Havana to Icehouse upgrade.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>migration to Ubuntu</secondary></indexterm>"
+msgid "All sites are based on Ubuntu 14.04, with KVM as the hypervisor. The OpenStack version in use is typically the current stable version, with 5 to 10 percent back-ported code from trunk and modifications. <indexterm class=\"singular\"><primary>Icehouse</primary><secondary>migration to Ubuntu</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:70(title) ./doc/openstack-ops/app_usecases.xml:170(title) ./doc/openstack-ops/app_usecases.xml:231(title) ./doc/openstack-ops/app_usecases.xml:285(title) ./doc/openstack-ops/ch_ops_resources.xml:11(title)
+#: ./doc/openstack-ops/app_usecases.xml:69(title) ./doc/openstack-ops/app_usecases.xml:169(title) ./doc/openstack-ops/app_usecases.xml:230(title) ./doc/openstack-ops/app_usecases.xml:284(title) ./doc/openstack-ops/ch_ops_resources.xml:11(title)
 msgid "Resources"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:74(link)
+#: ./doc/openstack-ops/app_usecases.xml:73(link)
 msgid "OpenStack.org case study"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:79(link)
+#: ./doc/openstack-ops/app_usecases.xml:78(link)
 msgid "NeCTAR-RC GitHub"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:84(link)
+#: ./doc/openstack-ops/app_usecases.xml:83(link)
 msgid "NeCTAR website"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:92(title)
+#: ./doc/openstack-ops/app_usecases.xml:91(title)
 msgid "MIT CSAIL"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:94(para)
+#: ./doc/openstack-ops/app_usecases.xml:93(para)
 msgid "Who uses it: researchers from the MIT Computer Science and Artificial Intelligence Lab.<indexterm class=\"singular\"><primary>CSAIL (Computer Science and Artificial Intelligence Lab)</primary></indexterm><indexterm class=\"singular\"><primary>MIT CSAIL (Computer Science and Artificial Intelligence Lab)</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>MIT CSAIL</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>MIT CSAIL</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:116(para)
+#: ./doc/openstack-ops/app_usecases.xml:115(para)
 msgid "The CSAIL cloud is currently 64 physical nodes with a total of 768 physical cores and 3,456 GB of RAM. Persistent data storage is largely outside the cloud on NFS, with cloud resources focused on compute resources. There are more than 130 users in more than 40 projects, typically running 2,000–2,500 vCPUs in 300 to 400 instances."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:122(para)
+#: ./doc/openstack-ops/app_usecases.xml:121(para)
 msgid "We initially deployed on Ubuntu 12.04 with the Essex release of OpenStack using FlatDHCP multi-host networking."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:125(para)
+#: ./doc/openstack-ops/app_usecases.xml:124(para)
 msgid "The software stack is still Ubuntu 12.04 LTS, but now with OpenStack Havana from the Ubuntu Cloud Archive. KVM is the hypervisor, deployed using <link href=\"http://fai-project.org/\">FAI</link> and Puppet for configuration management. The FAI and Puppet combination is used lab-wide, not only for OpenStack. There is a single cloud controller node, which also acts as network controller, with the remainder of the server hardware dedicated to compute nodes."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:133(para)
+#: ./doc/openstack-ops/app_usecases.xml:132(para)
 msgid "Host aggregates and instance-type extra specs are used to provide two different resource allocation ratios. The default resource allocation ratios we use are 4:1 CPU and 1.5:1 RAM. Compute-intensive workloads use instance types that require non-oversubscribed hosts where <literal>cpu_ratio</literal> and <literal>ram_ratio</literal> are both set to 1.0. Since we have hyperthreading enabled on our compute nodes, this provides one vCPU per CPU thread, or two vCPUs per physical core."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:142(para)
+#: ./doc/openstack-ops/app_usecases.xml:141(para)
 msgid "With our upgrade to Grizzly in August 2013, we moved to OpenStack Networking Service, neutron (quantum at the time). Compute nodes have two-gigabit network interfaces and a separate management card for IPMI management. One network interface is used for node-to-node communications. The other is used as a trunk port for OpenStack managed VLANs. The controller node uses two bonded 10g network interfaces for its public IP communications. Big pipes are used here because images are served over this port, and it is also used to connect to iSCSI storage, backending the image storage and database. The controller node also has a gigabit interface that is used in trunk mode for OpenStack managed VLAN traffic. This port handles traffic to the dhcp-agent and metadata-proxy."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:155(para)
+#: ./doc/openstack-ops/app_usecases.xml:154(para)
 msgid "We approximate the older <literal>nova-network</literal> multi-host HA setup by using \"provider vlan networks\" that connect instances directly to existing publicly addressable networks and use existing physical routers as their default gateway. This means that if our network controller goes down, running instances still have their network available, and no single Linux host becomes a traffic bottleneck. We are able to do this because we have a sufficient supply of IPv4 addresses to cover all of our instances and thus don't need NAT and don't use floating IP addresses. We provide a single generic public network to all projects and additional existing VLANs on a project-by-project basis as needed. Individual projects are also allowed to create their own private GRE based networks."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:174(link)
+#: ./doc/openstack-ops/app_usecases.xml:173(link)
 msgid "CSAIL homepage"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:182(title)
+#: ./doc/openstack-ops/app_usecases.xml:181(title)
 msgid "DAIR"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:184(para)
+#: ./doc/openstack-ops/app_usecases.xml:183(para)
 msgid "Who uses it: DAIR is an integrated virtual environment that leverages the CANARIE network to develop and test new information communication technology (ICT) and other digital technologies. It combines such digital infrastructure as advanced networking and cloud computing and storage to create an environment for developing and testing innovative ICT applications, protocols, and services; performing at-scale experimentation for deployment; and facilitating a faster time to market.<indexterm class=\"singular\"><primary>DAIR</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>DAIR</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>DAIR</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:208(para)
+#: ./doc/openstack-ops/app_usecases.xml:207(para)
 msgid "DAIR is hosted at two different data centers across Canada: one in Alberta and the other in Quebec. It consists of a cloud controller at each location, although, one is designated the \"master\" controller that is in charge of central authentication and quotas. This is done through custom scripts and light modifications to OpenStack. DAIR is currently running Grizzly."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:215(para)
+#: ./doc/openstack-ops/app_usecases.xml:214(para)
 msgid "For Object Storage, each region has a swift environment."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:217(para)
+#: ./doc/openstack-ops/app_usecases.xml:216(para)
 msgid "A NetApp appliance is used in each region for both block storage and instance storage. There are future plans to move the instances off the NetApp appliance and onto a distributed file system such as <glossterm>Ceph</glossterm> or GlusterFS."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:222(para)
+#: ./doc/openstack-ops/app_usecases.xml:221(para)
 msgid "VlanManager is used extensively for network management. All servers have two bonded 10GbE NICs that are connected to two redundant switches. DAIR is set up to use single-node networking where the cloud controller is the gateway for all instances on all compute nodes. Internal OpenStack traffic (for example, storage traffic) does not go through the cloud controller."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:235(link)
+#: ./doc/openstack-ops/app_usecases.xml:234(link)
 msgid "DAIR homepage"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:243(title)
+#: ./doc/openstack-ops/app_usecases.xml:242(title)
 msgid "CERN"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:245(para)
+#: ./doc/openstack-ops/app_usecases.xml:244(para)
 msgid "Who uses it: researchers at CERN (European Organization for Nuclear Research) conducting high-energy physics research.<indexterm class=\"singular\"><primary>CERN (European Organization for Nuclear Research)</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>CERN</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>CERN</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:264(para)
+#: ./doc/openstack-ops/app_usecases.xml:263(para)
 msgid "The environment is largely based on Scientific Linux 6, which is Red Hat compatible. We use KVM as our primary hypervisor, although tests are ongoing with Hyper-V on Windows Server 2008."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:268(para)
+#: ./doc/openstack-ops/app_usecases.xml:267(para)
 msgid "We use the Puppet Labs OpenStack modules to configure Compute, Image Service, Identity, and dashboard. Puppet is used widely for instance configuration, and Foreman is used as a GUI for reporting and instance provisioning."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:273(para)
+#: ./doc/openstack-ops/app_usecases.xml:272(para)
 msgid "Users and groups are managed through Active Directory and imported into the Identity Service using LDAP. CLIs are available for nova and Euca2ools to do this."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:277(para)
+#: ./doc/openstack-ops/app_usecases.xml:276(para)
 msgid "There are three clouds currently running at CERN, totaling about 3,400 compute nodes, with approximately 60,000 cores. The CERN IT cloud aims to expand to 300,000 cores by 2015."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:289(link)
+#: ./doc/openstack-ops/app_usecases.xml:288(link)
 msgid "“OpenStack in Production: A tale of 3 OpenStack Clouds”"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:294(link)
+#: ./doc/openstack-ops/app_usecases.xml:293(link)
 msgid "“Review of CERN Data Centre Infrastructure”"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:299(link)
+#: ./doc/openstack-ops/app_usecases.xml:298(link)
 msgid "“CERN Cloud Infrastructure User Guide”"
 msgstr ""
 
@@ -8450,7 +8542,7 @@ msgid "For OpenStack Networking with the neutron project, typical configurations
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml:284(para)
-msgid "<xref linkend=\"network_deployment_options\"/> discusses the networking deployment options for both legacy <literal>nova-network</literal> options and an equivalent neutron configuration.<indexterm class=\"singular\"><primary>provisioning/deployment</primary><secondary>network deployment options</secondary></indexterm>"
+msgid "<xref linkend=\"network_deployment_options\"/> describes the networking deployment options for both legacy <literal>nova-network</literal> options and an equivalent neutron configuration.<indexterm class=\"singular\"><primary>provisioning/deployment</primary><secondary>network deployment options</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_network_design.xml:294(caption)
