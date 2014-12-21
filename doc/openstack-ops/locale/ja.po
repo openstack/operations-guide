@@ -29,9 +29,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-12-18 01:41+0000\n"
-"PO-Revision-Date: 2014-12-17 23:31+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2014-12-19 06:54+0000\n"
+"PO-Revision-Date: 2014-12-21 05:50+0000\n"
+"Last-Translator: ykatabam <ykatabam@redhat.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13440,19 +13440,19 @@ msgstr "JSONレスポンスを読むことで、カタログを把握するこ�
 msgid ""
 "To make working with subsequent requests easier, store the token in an "
 "environment variable:"
-msgstr ""
+msgstr "後に続く要求への対応を容易にするには、環境変数にトークンを保管します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml425(para)
 msgid ""
 "Now you can refer to your token on the command line as "
 "<literal>$TOKEN</literal>."
-msgstr ""
+msgstr "これで、コマンドラインでトークンを <literal>$TOKEN</literal> として参照できるようになりました。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml430(para)
 msgid ""
 "Pick a service endpoint from your service catalog, such as compute. Try a "
 "request, for example, listing instances (servers):"
-msgstr ""
+msgstr "サービスカタログから、サービスエンドポイント (例: コンピュート) を選択します。要求を試します。例えば、インスタンス (サーバー) の一覧表示を行います。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml441(para)
 msgid ""
@@ -13460,7 +13460,7 @@ msgid ""
 "href=\"http://developer.openstack.org/api-ref.html\">OpenStack API "
 "Reference</link>. To chew through the responses using jq, see the <link "
 "href=\"http://stedolan.github.io/jq/manual/\">jq Manual</link>."
-msgstr ""
+msgstr "API 要求の構成方法については、<link href=\"http://developer.openstack.org/api-ref.html\">OpenStack API Reference</link> を参照してください。jq を使用した応答についての詳しい説明は <link href=\"http://stedolan.github.io/jq/manual/\">jq Manual</link> を参照してください。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml446(para)
 msgid ""
@@ -13470,7 +13470,7 @@ msgid ""
 " commands, you can include the <code>-v</code> flag to show you the verbose "
 "output. There are many more extremely useful features in cURL; refer to the "
 "man page for all the options."
-msgstr ""
+msgstr "上記の  cURL コマンドで使用している <code>-s flag</code> は、進行状況メーターが表示されないようにするために使用します。cURL コマンドの実行で問題が生じた場合には、このオプションを削除してください。また、cURL コマンドのトラブるシューティングを行う場合には、<code>-v</code> フラグを指定してより詳細な出力を表示すると役立ちます。cURL には他にも多数の役立つ機能があります。全オプションは、man ページで参照してください。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml457(title)
 msgid "Servers and Services"
@@ -13490,7 +13490,7 @@ msgid ""
 "overview</secondary></indexterm><indexterm class=\"singular\"><primary"
 ">command-line tools</primary><secondary>servers and "
 "services</secondary></indexterm>"
-msgstr ""
+msgstr "管理者は、利用可能な OpenStack を使用して、OpenStack クラウドの全容を確認する方法がいくつかあります。本項では、クラウドの概要、形態、サイズ、現在の状態を確認する方法について説明します。<indexterm class=\"singular\"><primary>サービス</primary><secondary>概要の取得</secondary></indexterm><indexterm class=\"singular\"><primary>サーバー</primary><secondary概要の取得</secondary></indexterm><indexterm class=\"singular\"><primary>クラウドコンピューティング</primary><secondary>クラウドの概観</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>サーバーとサービス</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml481(para)
 msgid ""
@@ -13509,12 +13509,12 @@ msgid ""
 "services are up and running. If a service is no longer available, the "
 "<code>:-)</code> symbol changes to <code>XXX</code>. This is an indication "
 "that you should troubleshoot why the service is down."
-msgstr ""
+msgstr "出力には、5 つのコンピュートノードと 1 つのクラウドコントローラーが表示されています。スマイリーフェイス (<code>:-)</code> など)が見えます。これはサービスが稼働中であることを示しています。サービスがりようできなくなると、<code>:-)</code> のシンボルが <code>XXX</code> に変わります。これは、サービスが停止している理由をトラブルシューティングする必要があることを示しています。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml507(para)
 msgid ""
 "If you are using cinder, run the following command to see a similar listing:"
-msgstr ""
+msgstr "cinder を使用している場合は、次のコマンドを実行して同様の一覧を表示します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml520(para)
 msgid ""
@@ -13529,13 +13529,13 @@ msgid ""
 "the services.<indexterm class=\"singular\"><primary>Identity "
 "Service</primary><secondary>displaying services and endpoints "
 "with</secondary></indexterm>"
-msgstr ""
+msgstr "また、Identity Service (keystone) を使用してクラウドで利用可能なサービスと、サービス用に設定済みのエンドポイントを確認することもできます。<indexterm class=\"singular\"><primary>Identity Service</primary><secondary>サービスおよびエンドポイントの表示</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml531(para)
 msgid ""
 "The following command requires you to have your shell environment configured"
 " with the proper administrative variables:"
-msgstr ""
+msgstr "以下のコマンドを実行するには、正しい管理用の変数を設定済みのシェル環境が必要です。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml558(para)
 msgid ""
@@ -13545,18 +13545,18 @@ msgid ""
 "Different endpoint domains per type are not required, but this can be done "
 "for different reasons, such as endpoint privacy or network traffic "
 "segregation."
-msgstr ""
+msgstr "上記の出力は、2 つのサービスのみを表示するように、カットされています。クラウドが提供するサービスごとにサービスブロックが 1 つ表示されているのがわかります。エンドポイントタイプによってエンドポイントドメインが異なる点に注意してください。タイプによってエンドポイントドメインを別にする必要ありませんが、エンドポイントのプライバシーやネットワークトラフィックの分離などの異なる理由で分けることができます。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml565(para)
 msgid ""
 "You can find the version of the Compute installation by using the <literal"
 ">nova-manage</literal><phrase role=\"keep-together\">command</phrase>: "
 "<placeholder-1/>"
-msgstr ""
+msgstr "インストールされている Compute のバージョンを確認するには、<literal>nova-manage</literal><phrase role=\"keep-together\">command</phrase> を使用することができます: <placeholder-1/>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml571(title)
 msgid "Diagnose Your Compute Nodes"
-msgstr ""
+msgstr "コンピュートノードの診断"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml573(para)
 msgid ""
@@ -13567,7 +13567,7 @@ msgid ""
 "nodes</primary><secondary>diagnosing</secondary></indexterm><indexterm "
 "class=\"singular\"><primary>command-line tools</primary><secondary>compute "
 "node diagnostics</secondary></indexterm> a server ID:"
-msgstr ""
+msgstr "実行中の仮想マシンの CPU 使用状況、メモリー、ディスク I/O、ネットワーク I/O などの追加情報を取得するには、<literal>nova diagnostics</literal> コマンドに<indexterm class=\"singular\"><primary>コンピュートノード</primary><secondary>診断</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>コンピュートノードの診断</secondary></indexterm> サーバー ID を指定して実行します:"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml588(para)
 msgid ""
@@ -13580,11 +13580,11 @@ msgid ""
 "with any hypervisor that is controlled through libvirt (e.g., KVM, QEMU, or "
 "LXC), it has been tested only with KVM. Here is example output when the "
 "hypervisor is KVM:"
-msgstr ""
+msgstr "ハイパーバイザーによってサポートする属性が異なるため、コマンドの出力はハイパーバイザーによって異なります。<indexterm class=\"singular\"><primary>ハイパーバイザー</primary><secondary>コンピュートノードの診断</secondary></indexterm> 以下の実例は、最もよく使用されている 2 つのハイパーバイザーの間で出力がどのように異なるかを示しています。ハイパーバイザーが Xen の場合の例は以下のようになります: <placeholder-1/>このコマンドは、libvirt によって管理されている任意のハイパーバイザー  (例: KVM、QEMU、LXC) で機能しますが、KVM でのみテスト済みです。ハイパーバイザーが KVM の場合の例は以下のようになります"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml638(title)
 msgid "Network Inspection"
-msgstr ""
+msgstr "ネットワークの検査"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml640(para)
 msgid ""
@@ -13594,12 +13594,12 @@ msgid ""
 "of</secondary></indexterm><indexterm class=\"singular\"><primary>working "
 "environment</primary><secondary>network "
 "inspection</secondary></indexterm><placeholder-1/>"
-msgstr ""
+msgstr "クラウドでどの Fixed IP ネットワークが設定されているかを確認するには、 <literal>nova</literal> コマンドラインクライアントを使用して IP アドレスの範囲を取得することができます:<indexterm class=\"singular\"><primary>ネットワーク</primary><secondary>検査</secondary></indexterm><indexterm class=\"singular\"><primary>作業環境</primary><secondary>ネットワークの検査</secondary></indexterm><placeholder-1/>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml658(para)
 msgid ""
 "The <literal>nova-manage</literal> tool can provide some additional details:"
-msgstr ""
+msgstr "<literal>nova-manage</literal> ツールは、追加の情報を提供することが可能です:"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml666(para)
 msgid ""
@@ -13608,17 +13608,17 @@ msgid ""
 "project, while the second network is still open for assignment. You can "
 "assign this network manually; otherwise, it is automatically assigned when a"
 " project launches its first instance."
-msgstr ""
+msgstr "この出力は、2 つのネットワークが設定されており、各ネットワークには 255 の IP アドレス ( /24 サブネットが 1 つ) が含まれていることを示しています。1 番目のネットワークは、特定のプロジェクトに割り当てられていますが、2 番目のネットワークはまだ割り当てができる状態です。このネットワークは手動で割り当てることができます。割り当てられていない場合には、プロジェクトで最初のインスタンスが起動されたときに自動で割り当てられます。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml672(para)
 msgid "To find out whether any floating IPs are available in your cloud, run:"
-msgstr ""
+msgstr "クラウドに利用可能な Floating IP アドレスがあるかどうかを確認するには、以下のコマンドを実行します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml680(para)
 msgid ""
 "Here, two floating IPs are available. The first has been allocated to a "
 "project, while the other is unallocated."
-msgstr ""
+msgstr "この場合は、2 つの Floating IP アドレスが利用可能です。最初の IP アドレスはプロジェクトに確保されていますが、もう一方は確保されていません。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml685(title)
 msgid "Users and Projects"
@@ -13633,7 +13633,7 @@ msgid ""
 "users</secondary></indexterm><indexterm class=\"singular\"><primary>working "
 "environment</primary><secondary>users and projects</secondary></indexterm> "
 "run:"
-msgstr ""
+msgstr "クラウドに追加されたプロジェクトの一覧を確認するには、<indexterm class=\"singular\"><primary>プロジェクト</primary><secondary>現在の一覧の取得</secondary></indexterm><indexterm class=\"singular\"><primary>ユーザー管理</primary><secondary>ユーザーの一覧表示</secondary></indexterm><indexterm class=\"singular\"><primary>作業環境</primary><secondary>users and projects</secondary></indexterm> 以下のコマンドを実行します:"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml720(para)
 msgid "To see a list of users, run:"
@@ -13644,7 +13644,7 @@ msgid ""
 "Sometimes a user and a group have a one-to-one mapping. This happens for "
 "standard system accounts, such as cinder, glance, nova, and swift, or when "
 "only one user is part of a group."
-msgstr ""
+msgstr "ユーザーおよびグループは、一対一でマッピングされる場合があります。このような状況は cinder、glance、nova、swift などの標準システムアカウントやグループにユーザーが 1 人しかいない場合に発生します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml750(title)
 msgid "Running Instances"
@@ -13657,7 +13657,7 @@ msgid ""
 "running</secondary></indexterm><indexterm "
 "class=\"singular\"><primary>working environment</primary><secondary>running "
 "instances</secondary></indexterm> run:"
-msgstr ""
+msgstr "実行中のインスタンスを確認するには、<indexterm class=\"singular\"><primary>instances</primary><secondary>実行中のリスト</secondary></indexterm><indexterm class=\"singular\"><primary>作業環境</primary><secondary>実行中のインスタンス</secondary></indexterm> 以下のコマンドを実行します:"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml776(para)
 msgid ""
