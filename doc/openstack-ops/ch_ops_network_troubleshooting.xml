@@ -782,7 +782,7 @@ proto ICMP (1), length 84)
     IP.</para>
 
     <section xml:id="dissasociate_floating_ip">
-      <title>Manually Dissaociating a Floating IP</title>
+      <title>Manually Disassociating a Floating IP</title>
 
       <para>Sometimes an instance is terminated but the floating IP was not
       correctly de-associated from that instance. Because the database is in
