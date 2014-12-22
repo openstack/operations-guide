@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-18 06:00+0000\n"
+"POT-Creation-Date: 2014-12-22 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1012,7 +1012,7 @@ msgid "From these tables, you can see that a floating IP is technically never di
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:785(title)
-msgid "Manually Dissaociating a Floating IP"
+msgid "Manually Disassociating a Floating IP"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:787(para)

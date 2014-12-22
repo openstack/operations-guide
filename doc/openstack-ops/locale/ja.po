@@ -29,9 +29,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-12-19 06:54+0000\n"
-"PO-Revision-Date: 2014-12-21 05:50+0000\n"
-"Last-Translator: ykatabam <ykatabam@redhat.com>\n"
+"POT-Creation-Date: 2014-12-22 01:02+0000\n"
+"PO-Revision-Date: 2014-12-22 01:02+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1583,7 +1583,7 @@ msgid ""
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml785(title)
-msgid "Manually Dissaociating a Floating IP"
+msgid "Manually Disassociating a Floating IP"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml787(para)
@@ -4054,7 +4054,7 @@ msgid ""
 "handle the workload. Scalability of the <literal>ovs-agent</literal> running"
 " on compute nodes is achieved by adding in more compute nodes as "
 "necessary.</td></tr></tbody></table>"
-msgstr "<xref linkend=\"thirdparty-table\"/> および <xref linkend=\"openstack-config-table\"/> には、サードパーティーおよび OpenStack の両方のコンポーネントの設定例および考慮事項を記載しています<indexterm class=\"singular\"><primary>OpenStack Networking (neutron)</primary><secondary>サードパーティーコンポーネントの設定</secondary></indexterm>: <table rules=\"all\" xml:id=\"thirdparty-table\"><caption>Third-party component configuration</caption><col width=\"10%\"/><col width=\"30%\"/><col width=\"30%\"/><col width=\"30%\"/><thead><tr><th>コンポーネント</th><th>チューニング</th><th>可用性</th><th>拡張性</th></tr></thead><tbody><tr><td>MySQL</td><td><literal>binlog-format = row</literal></td><td>マスター/マスターレプリケーション。ただし、両ノードは同時には使用されません。レプリケーションにより、全ノードは可能な限り最新に近い状態で維持されます (ただし、非同期レプリケーションの性質により、完全な一貫性を確保することは不可能です)。データベースへの接続は、Pacemaker の仮想 IP を使用してのみ行い、マスター/マスターレプリケーションで発生する大半の問題を回避することができるようにします。</td><td>大きくは考慮されません。MySQL サーバーの負荷が十分に高くなったら、拡張性を検討する必要があり、マスターを複数またはマスター/スレーブ設定を 1 つ使用することができます。</td></tr><tr><td>Qpid</td><td><literal>max-connections=1000</literal><literal>worker-threads=20</literal><literal>connection-backlog=10</literal>、SASL-BASIC 認証で sasl セキュリティを有効化</td><td>Qpid は、配置先のコントローラーノードで実行されるPacemaker ソフトウェアにリソースとして追加されます。これにより、1 回に実行される Qpid インスタンスは 1 つのみとなり、Pacemaker の仮想 IP が割り当てられているノードが、常に Qpid を実行するノードとなります。</td><td>大きくは考慮されません。ただし、拡張性と可用性を目的として、Qpid を全コントローラーノードで実行するように変更し、Pacemaker から削除することが可能です。</td></tr><tr><td>HAProxy</td><td><literal>maxconn 3000</literal></td><td>HAProxy は、クラスター化されたすべての OpenStack API コンポーネントのフロントドアに使用して、すべての SSL 終了を実行するソフトウェア L7 ロードバランサーです。HAProxy は、配置先のコントローラーノードで実行される Pacemaker ソフトウェアにリソースとして追加することができます。これにより、1 回に実行されるHAProxy インスタンスは 1 つのみとなり、Pacemaker の仮想 IP が割り当てられているノードが、常に HAProxy  を実行するノードとなります。</td><td>考慮されません。HAProxy はパフォーマンスオーバーヘッドが十分小さいので、1 つのインスタンスで。このレベルのワークロードには十分に拡張できるはずです。さらなる拡張性が要求される場合には、<literal>keepalived</literal> またはその他の L4 ロードバランシングを HAProxy の複数コピーの前に配置することができます。</td></tr><tr><td>Memcached</td><td><literal>MAXCONN=\"8192\" CACHESIZE=\"30457\"</literal></td><td>Memcached は、OpenStack コンポーネントがデータのキャッシュとパフォーマンス向上のために使用する高速のインメモリーキー値キャッシュソフトウェアです。Memcached は、全コントローラーノード上で実行して、いずれかが停止した場合には、別の Memcached インスタンスが利用できるようにします。</td><td>考慮されません。単一の Memcached インスタンスで必要なワークロードに拡張可能なはずです。拡張性が要求される場合には、HAProxy を Memcached の前に (raw <literal>tcp</literal> モードで) 配置して、複数の Memcached インスタンスを活用することで拡張性を実現することができます。ただし、これにより、キャッシュの一貫性に問題が生じる可能性があります。</td></tr><tr><td>Pacemaker</td><td><phrase role=\"keep-together\"><literal>corosync</literal> および </phrase><literal>cman</literal> をクラスター通信スタック/クォーラムマネージャーおよび 2 ノード構成のクラスターとして使用するように設定。</td><placeholder-1/><td>それよりも多い数のノードをクラスターに認識させる必要がある場合には、Pacemaker は 64 ノードまで拡張が可能です。</td></tr><tr><td>GlusterFS</td><td><literal>glusterfs</literal> パフォーマンスプロファイル \"virt\" を全ボリュームで有効化。ボリュームは 2 ノードレプリケーションに設定。</td><td>Glusterfs は、環境内で永続的な拡張性のあるデータストレージを提供するためにストレージノード上で実行するクラスター化したファイルシステムです。gluster への接続にはすべて <literal>gluster</literal> ネイティブのマウントポイントを使用するので、<literal>gluster</literal> インスタンス自体が可用性とフェイルオーバー機能を提供します。</td><td>GlusterFS ストレージの拡張性は、ストレージボリュームを追加することによって実現することができます。</td></tr></tbody></table><table rules=\"all\" xml:id=\"openstack-config-table\"><caption>OpenStack コンポーネントの設定</caption><col width=\"8%\"/><col width=\"8%\"/><col width=\"25%\"/><col width=\"29%\"/><col width=\"30%\"/><thead><tr><th>コンポーネント</th><th>ノードタイプ</th><th>チューニング</th><th>可用性</th><th>拡張性</th></tr></thead><tbody><tr><td>Dashboard (horizon)</td><td>コントローラー</td><td>セッションストアとして Memcached を使用するように設定、 <literal>neutron</literal> サポートの有効化、 <literal>can_set_mount_point = False</literal></td><td>ダッシュボードは、全コントローラーノード上で実行され、ノードに障害が発生した場合には、少なくとも 1 インスタンスが利用可能な状態となるようにします。また、ソフトウェアの障害発生時に検出し、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。</td><td>ダッシュボードは全コントローラー上で実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴うダッシュボードの拡張性を可能にします。</td></tr><tr><td>Identity (keystone)</td><td>コントローラー</td><td>キャッシングとトークン用の PKI に Memcached を使用するように設定。</td><td>Identity は全ノードで実行され、ノードに障害が発生した場合には少なくとも 1 インスタンスが利用可能な状態となるようにします。Identity も、ソフトウェアの障害発生時に検出し、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。</td><td>Identity は全コントローラーノード上で実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Identity の拡張性を可能にします。</td></tr><tr><td>Image Service (glance)</td><td>Controller</td><td><literal>/var/lib/glance/images</literal> は ストレージレイヤー外のGluster ボリュームへの GlusterFS ネイティブマウントです。</td><td>Image Service は、全コントローラーノードで実行され、ノードの障害が発生した場合には少なくとも 1 インスタンスが利用できるようにします。これも、ソフトウェアの障害発生時に検出し、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。</td><td>Image Service は全コントローラーノードで実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Image Service の拡張性を可能にします。</td></tr><tr><td>Compute (nova)</td><td>コントローラー、コンピュート</td><placeholder-2/><placeholder-3/><td>nova API、scheduler、objectstore、cert,、consoleauth、conductor および  vncproxy サービスは、全コントローラーノードで実行されるため、追加のコントラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Compute の拡張性を可能にします。コンピュートノードで実行されるサービス (compute、conductor) の拡張性は、コンピュートノードをさらに追加することによって直線的に実現されます。</td></tr><tr><td>Block Storage (cinder)</td><td>コントローラー</td><td>Qpid を使用するように設定<phrase role=\"keep-together\"><literal>qpid_heartbeat = </literal><phrase role=\"keep-together\"><literal>10</literal>、</phrase></phrase>Gluster ネイティブクライアントを使用して、ストレージ層から Block Storage のバックエンドとして<phrase role=\"keep-together\"> Gluster ボリュームを使用するように設定</phrase></td><td>Block Storage API、scheduler、および volume サービスは、全コントローラーノードで実行され、ノードに障害が発生した場合には、少なくとも 1 インスタンスが利用可能な状態となるようにします。Block Storage も、ソフトウェアの障害発生時に検出して、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。.</td><td>Block Storage API、scheduler、および  volume サービスは、全コントローラーノードで実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Block Storage の拡張性を可能にします。</td></tr><tr><td>OpenStack Networking (neutron)</td><td>Controller、Compute、Network</td><td>QPID を使用するように設定<phrase role=\"keep-together\"><literal>qpid_heartbeat = 10</literal></phrase>、カーネル名前空間のサポートの有効化、<literal>tenant_network_type = vlan</literal>、<literal>allow_overlapping_ips = true</literal>、<literal>tenant_network_type = vlan</literal>、<literal>bridge_uplinks = br-ex:em2</literal>、<literal>bridge_mappings = physnet1:br-ex</literal></td><placeholder-4/><td>OpenStack Networking サーバーサービスは、全コントローラーノードで実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う OpenStack Networking の拡張性を可能にします。OpenStack Networking では、ネットワークノード上で実行されるサービスの拡張性は現在サポートされていないため、考慮されていません。各サービスのコピーを 1 つでワークロードの処理に十分なはずです。コンピュートノードで実行される <literal>ovs-agent</literal> の拡張性は、必要に応じてコンピュートノードをさらに追加することによって実現されます。</td></tr></tbody></table>"
+msgstr "<xref linkend=\"thirdparty-table\"/> および <xref linkend=\"openstack-config-table\"/> には、サードパーティーおよび OpenStack の両方のコンポーネントの設定例および考慮事項を記載しています<indexterm class=\"singular\"><primary>OpenStack Networking (neutron)</primary><secondary>サードパーティーコンポーネントの設定</secondary></indexterm>: <table rules=\"all\" xml:id=\"thirdparty-table\"><caption>Third-party component configuration</caption><col width=\"10%\"/><col width=\"30%\"/><col width=\"30%\"/><col width=\"30%\"/><thead><tr><th>コンポーネント</th><th>チューニング</th><th>可用性</th><th>拡張性</th></tr></thead><tbody><tr><td>MySQL</td><td><literal>binlog-format = row</literal></td><td>マスター/マスターレプリケーション。ただし、両ノードは同時には使用されません。レプリケーションにより、全ノードは可能な限り最新に近い状態で維持されます (ただし、非同期レプリケーションの性質により、完全な一貫性を確保することは不可能です)。データベースへの接続は、Pacemaker の仮想 IP を使用してのみ行い、マスター/マスターレプリケーションで発生する大半の問題を回避することができるようにします。</td><td>大きくは考慮されません。MySQL サーバーの負荷が十分に高くなったら、拡張性を検討する必要があり、マスターを複数またはマスター/スレーブ設定を 1 つ使用することができます。</td></tr><tr><td>Qpid</td><td><literal>max-connections=1000</literal><literal>worker-threads=20</literal><literal>connection-backlog=10</literal>、SASL-BASIC 認証で sasl セキュリティを有効化</td><td>Qpid は、配置先のコントローラーノードで実行されるPacemaker ソフトウェアにリソースとして追加されます。これにより、1 回に実行される Qpid インスタンスは 1 つのみとなり、Pacemaker の仮想 IP が割り当てられているノードが、常に Qpid を実行するノードとなります。</td><td>大きくは考慮されません。ただし、拡張性と可用性を目的として、Qpid を全コントローラーノードで実行するように変更し、Pacemaker から削除することが可能です。</td></tr><tr><td>HAProxy</td><td><literal>maxconn 3000</literal></td><td>HAProxy は、クラスター化されたすべての OpenStack API コンポーネントのフロントドアに使用して、すべての SSL 終了を実行するソフトウェア L7 ロードバランサーです。HAProxy は、配置先のコントローラーノードで実行される Pacemaker ソフトウェアにリソースとして追加することができます。これにより、1 回に実行されるHAProxy インスタンスは 1 つのみとなり、Pacemaker の仮想 IP が割り当てられているノードが、常に HAProxy  を実行するノードとなります。</td><td>考慮されません。HAProxy はパフォーマンスオーバーヘッドが十分小さいので、1 つのインスタンスで。このレベルのワークロードには十分に拡張できるはずです。さらなる拡張性が要求される場合には、<literal>keepalived</literal> またはその他の L4 ロードバランシングを HAProxy の複数コピーの前に配置することができます。</td></tr><tr><td>Memcached</td><td><literal>MAXCONN=\"8192\" CACHESIZE=\"30457\"</literal></td><td>Memcached は、OpenStack コンポーネントがデータのキャッシュとパフォーマンス向上のために使用する高速のインメモリーキー値キャッシュソフトウェアです。Memcached は、全コントローラーノード上で実行して、いずれかが停止した場合には、別の Memcached インスタンスが利用できるようにします。</td><td>考慮されません。単一の Memcached インスタンスで必要なワークロードに拡張可能なはずです。拡張性が要求される場合には、HAProxy を Memcached の前に (raw <literal>tcp</literal> モードで) 配置して、複数の Memcached インスタンスを活用することで拡張性を実現することができます。ただし、これにより、キャッシュの一貫性に問題が生じる可能性があります。</td></tr><tr><td>Pacemaker</td><td><phrase role=\"keep-together\"><literal>corosync</literal> および </phrase><literal>cman</literal> をクラスター通信スタック/クォーラムマネージャーおよび 2 ノード構成のクラスターとして使用するように設定。</td><placeholder-1/><td>それよりも多い数のノードをクラスターに認識させる必要がある場合には、Pacemaker は 64 ノードまで拡張が可能です。</td></tr><tr><td>GlusterFS</td><td><literal>glusterfs</literal> パフォーマンスプロファイル \"virt\" を全ボリュームで有効化。ボリュームは 2 ノードレプリケーションに設定。</td><td>Glusterfs は、環境内で永続的な拡張性のあるデータストレージを提供するためにストレージノード上で実行するクラスター化したファイルシステムです。gluster への接続にはすべて <literal>gluster</literal> ネイティブのマウントポイントを使用するので、<literal>gluster</literal> インスタンス自体が可用性とフェイルオーバー機能を提供します。</td><td>GlusterFS ストレージの拡張性は、ストレージボリュームを追加することによって実現することができます。</td></tr></tbody></table><table rules=\"all\" xml:id=\"openstack-config-table\"><caption>OpenStack コンポーネントの設定</caption><col width=\"8%\"/><col width=\"8%\"/><col width=\"25%\"/><col width=\"29%\"/><col width=\"30%\"/><thead><tr><th>コンポーネント</th><th>ノードタイプ</th><th>チューニング</th><th>可用性</th><th>拡張性</th></tr></thead><tbody><tr><td>Dashboard (horizon)</td><td>コントローラー</td><td>セッションストアとして Memcached を使用するように設定、 <literal>neutron</literal> サポートの有効化、 <literal>can_set_mount_point = False</literal></td><td>ダッシュボードは、全コントローラーノード上で実行され、ノードに障害が発生した場合には、少なくとも 1 インスタンスが利用可能な状態となるようにします。また、ソフトウェアの障害発生時に検出し、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。</td><td>ダッシュボードは全コントローラー上で実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴うダッシュボードの拡張性を可能にします。</td></tr><tr><td>Identity (keystone)</td><td>コントローラー</td><td>キャッシングとトークン用の PKI に Memcached を使用するように設定。</td><td>Identity は全ノードで実行され、ノードに障害が発生した場合には少なくとも 1 インスタンスが利用可能な状態となるようにします。Identity も、ソフトウェアの障害発生時に検出し、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。</td><td>Identity は全コントローラーノード上で実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Identity の拡張性を可能にします。</td></tr><tr><td>Image Service (glance)</td><td>コントローラー</td><td><literal>/var/lib/glance/images</literal> は ストレージレイヤー外のGluster ボリュームへの GlusterFS ネイティブマウントです。</td><td>Image Service は、全コントローラーノードで実行され、ノードの障害が発生した場合には少なくとも 1 インスタンスが利用できるようにします。これも、ソフトウェアの障害発生時に検出し、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。</td><td>Image Service は全コントローラーノードで実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Image Service の拡張性を可能にします。</td></tr><tr><td>Compute (nova)</td><td>コントローラー、コンピュート</td><placeholder-2/><placeholder-3/><td>nova API、scheduler、objectstore、cert,、consoleauth、conductor および  vncproxy サービスは、全コントローラーノードで実行されるため、追加のコントラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Compute の拡張性を可能にします。コンピュートノードで実行されるサービス (compute、conductor) の拡張性は、コンピュートノードをさらに追加することによって直線的に実現されます。</td></tr><tr><td>Block Storage (cinder)</td><td>コントローラー</td><td>Qpid を使用するように設定<phrase role=\"keep-together\"><literal>qpid_heartbeat = </literal><phrase role=\"keep-together\"><literal>10</literal>、</phrase></phrase>Gluster ネイティブクライアントを使用して、ストレージ層から Block Storage のバックエンドとして<phrase role=\"keep-together\"> Gluster ボリュームを使用するように設定</phrase></td><td>Block Storage API、scheduler、および volume サービスは、全コントローラーノードで実行され、ノードに障害が発生した場合には、少なくとも 1 インスタンスが利用可能な状態となるようにします。Block Storage も、ソフトウェアの障害発生時に検出して、障害が発生したインスタンスを迂回してルーティングする HAProxy の背後に配置されます。.</td><td>Block Storage API、scheduler、および  volume サービスは、全コントローラーノードで実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う Block Storage の拡張性を可能にします。</td></tr><tr><td>OpenStack Networking (neutron)</td><td>コントローラー、コンピュート、ネットワーク</td><td>QPID を使用するように設定<phrase role=\"keep-together\"><literal>qpid_heartbeat = 10</literal></phrase>、カーネル名前空間のサポートの有効化、<literal>tenant_network_type = vlan</literal>、<literal>allow_overlapping_ips = true</literal>、<literal>tenant_network_type = vlan</literal>、<literal>bridge_uplinks = br-ex:em2</literal>、<literal>bridge_mappings = physnet1:br-ex</literal></td><placeholder-4/><td>OpenStack Networking サーバーサービスは、全コントローラーノードで実行されるため、追加のコントローラーノードで拡張性を実現することができます。HAProxy は、ノードの追加に伴う OpenStack Networking の拡張性を可能にします。OpenStack Networking では、ネットワークノード上で実行されるサービスの拡張性は現在サポートされていないため、考慮されていません。各サービスのコピーを 1 つでワークロードの処理に十分なはずです。コンピュートノードで実行される <literal>ovs-agent</literal> の拡張性は、必要に応じてコンピュートノードをさらに追加することによって実現されます。</td></tr></tbody></table>"
 
 #: ./doc/openstack-ops/app_usecases.xml10(title)
 msgid "Use Cases"
@@ -13095,7 +13095,7 @@ msgstr "環境の把握"
 msgid ""
 "This chapter helps you set up your working environment and use it to take a "
 "look around your cloud."
-msgstr "本章の内容は、作業環境を設定し、クラウドの考察に使用するのに役立ちます。"
+msgstr "本章では、作業環境を設定し、クラウドの全体像を概観するのに役立つ内容を記載します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml18(title)
 msgid "Using the OpenStack Dashboard for Administration"
@@ -13165,7 +13165,7 @@ msgid ""
 "glanceclient</secondary></indexterm><indexterm "
 "class=\"singular\"><primary>nova</primary><secondary>python-"
 "novaclient</secondary></indexterm> packages:"
-msgstr "pip ユーティリティは、PyPI  アーカイブからのパッケージインストールの管理に使用するツールで、大半の Linux ディストリビューションの python-pip パッケージに含まれています。各 OpenStack プロジェクトはそれぞれ独自のクライアントがあります。サイトで実行するサービスに応じて、以下のパッケージの一部またはすべてをインストールしてください。<indexterm class=\"singular\"><primary>neutron</primary><secondary>python-neutronclient</secondary></indexterm><indexterm class=\"singular\"><primary>swift</primary><secondary>python-swiftclient</secondary></indexterm><indexterm class=\"singular\"><primary>cinder</primary></indexterm><indexterm class=\"singular\"><primary>keystone</primary></indexterm><indexterm class=\"singular\"><primary>glance</primary><secondary>python-glanceclient</secondary></indexterm><indexterm class=\"singular\"><primary>nova</primary><secondary>python-novaclient</secondary></indexterm>"
+msgstr "pip ユーティリティは、PyPI  アーカイブからのパッケージインストールの管理に使用するツールで、大半の Linux ディストリビューションの python-pip パッケージに含まれています。各 OpenStack プロジェクトにはそれぞれ独自のクライアントがあります。サイトで実行するサービスに応じて、以下のパッケージの一部またはすべてをインストールしてください。<indexterm class=\"singular\"><primary>neutron</primary><secondary>python-neutronclient</secondary></indexterm><indexterm class=\"singular\"><primary>swift</primary><secondary>python-swiftclient</secondary></indexterm><indexterm class=\"singular\"><primary>cinder</primary></indexterm><indexterm class=\"singular\"><primary>keystone</primary></indexterm><indexterm class=\"singular\"><primary>glance</primary><secondary>python-glanceclient</secondary></indexterm><indexterm class=\"singular\"><primary>nova</primary><secondary>python-novaclient</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml96(para)
 msgid "python-novaclient (<glossterm>nova</glossterm> CLI)"
@@ -13200,7 +13200,7 @@ msgid ""
 "To install (or upgrade) a package from the PyPI archive with pip, <indexterm"
 " class=\"singular\"><primary>command-line "
 "tools</primary><secondary>installing</secondary></indexterm>as root:"
-msgstr "pip を使用して PyPI  アーカイブからパッケージをインストール (またはアップグレード) するには、<indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>インストール</secondary></indexterm> root として以下のコマンドを実行します。"
+msgstr "pip を使用して PyPI  アーカイブからパッケージをインストール (またはアップグレード) するには、<indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>インストール</secondary></indexterm>root として以下のコマンドを実行します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml133(para)
 msgid "To remove the package:"
@@ -13219,7 +13219,7 @@ msgid ""
 "euca2ools package or some other EC2 API tool so that you can get the same "
 "view your users have. Using EC2 API-based tools is mostly out of the scope "
 "of this guide, though we discuss getting credentials for use with it."
-msgstr "クラウド上で EC2 API をサポートする場合には、ユーザーと同じビューを表示できるように、euca2ools パッケージまたはその他の EC2 API ツールもインストールする必要があります。EC2 API ベースのツールの使用に関する内容の大半は本ガイドの適用範囲外となりますが、このツールで使用する認証情報の取得方法についての説明は記載しています。"
+msgstr "クラウド上で EC2 API をサポートする場合には、ユーザーと同じビューを表示できるように、euca2ools パッケージまたはその他の EC2 API ツールもインストールする必要があります。EC2 API ベースのツールの使用に関する内容の大半は本ガイドの対象範囲外となりますが、このツールで使用する認証情報の取得方法についての説明は記載しています。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml153(title)
 msgid "Administrative Command-Line Tools"
@@ -13233,7 +13233,7 @@ msgid ""
 "command-line tools</primary></indexterm><indexterm "
 "class=\"singular\"><primary>command-line "
 "tools</primary><secondary>administrative</secondary></indexterm> separately:"
-msgstr "また、<literal>*-manage</literal> のコマンドラインツールも複数あります。これらは、プロジェクトのサービスとともにクラウドコントローラーにインストールされるので、別途インストールする必要はありません。 <indexterm class=\"singular\"><primary>*-manage コマンドラインツール</primary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>管理系</secondary></indexterm>"
+msgstr "<literal>*-manage</literal> のコマンドラインツールも複数あります。これらは、プロジェクトのサービスとともにクラウドコントローラーにインストールされるので、別途インストールする必要はありません。 <indexterm class=\"singular\"><primary>*-manage コマンドラインツール</primary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>管理系</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml167(literal)
 msgid "nova-manage"
@@ -13276,7 +13276,7 @@ msgid ""
 "together\">*-manage</code> tools</phrase>.<indexterm "
 "class=\"singular\"><primary>cloud controller nodes</primary><secondary"
 ">command-line tools and</secondary></indexterm>"
-msgstr "<code>*-manage</code> ツールが存在するのは、レガシーの問題です。OpenStack プロジェクトでは、最終的には <code>*-manage</code> ツールの残りの機能をすべて API ベースのツールに移行することを目標としています。移行が完了するまで、<phrase role=\"keep-together\"><code role=\"keep-together\">*-manage</code> ツール</phrase> を必要とするメンテナンス操作は、<glossterm>cloud controller node</glossterm> に SSH 接続して実行する必要があります。<indexterm class=\"singular\"><primary>クラウドコントローラーノード</primary><secondary>コマンドラインツール</secondary></indexterm>"
+msgstr "<code>*-manage</code> ツールの存在は、レガシーの問題です。OpenStack プロジェクトでは、最終的には <code>*-manage</code> ツールの残りの機能をすべて API ベースのツールに移行することを目標としています。移行が完了するまで、<phrase role=\"keep-together\"><code role=\"keep-together\">*-manage</code> ツール</phrase> を必要とするメンテナンス操作は、<glossterm>クラウドコントローラーノード</glossterm> に SSH 接続して実行する必要があります。<indexterm class=\"singular\"><primary>クラウドコントローラーノード</primary><secondary>コマンドラインツール</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml215(title)
 msgid "Getting Credentials"
@@ -13339,7 +13339,7 @@ msgid ""
 "<filename>pk.pem</filename>. The <filename>ec2rc.sh</filename> is similar to"
 " this:<indexterm class=\"singular\"><primary>access "
 "key</primary></indexterm>"
-msgstr "EC2 互換のクレデンシャルをダウンロードするには、<guimenuitem>プロジェクト</guimenuitem>、<guimenuitem>アクセスとセキュリティ</guimenuitem>、<guimenuitem>API アクセス</guimenuitem> の順に選択し、<guilabel>EC2 認証情報のダウンロード</guilabel> ボタンを表示します。このボタンをクリックすると、 サーバーの x509 証明書とシェルスクリプトフラグメントが含まれた ZIP が生成されます。これらのファイルは、デフォルトの <code>user-openrc</code> とは異なり、クラウドのアイデンティティへのアクセスに必要なすべての認証情報を含む有効なクレデンシャルなので、セキュリティ保護された場所に新規ディレクトリを作成して、そこで ZIP ファイルを展開します。<filename>cacert.pem</filename>、<filename>cert.pem</filename>、<filename>ec2rc.sh</filename>、および <filename>pk.pem</filename> が含まれているはずです。<filename>ec2rc.sh</filename> には、以下と似たような内容が記述されています:<indexterm class=\"singular\"><primary>access key</primary></indexterm>"
+msgstr "EC2 互換のクレデンシャルをダウンロードするには、<guimenuitem>プロジェクト</guimenuitem>、<guimenuitem>アクセスとセキュリティ</guimenuitem>、<guimenuitem>API アクセス</guimenuitem> の順に選択し、<guilabel>EC2 認証情報のダウンロード</guilabel> ボタンを表示します。このボタンをクリックすると、 サーバーの x509 証明書とシェルスクリプトフラグメントが含まれた ZIP が生成されます。これらのファイルは、デフォルトの <code>user-openrc</code> とは異なり、クラウドのアイデンティティへのアクセスに必要なすべての認証情報を含む有効なクレデンシャルなので、セキュリティ保護された場所に新規ディレクトリを作成して、そこで ZIP ファイルを展開します。<filename>cacert.pem</filename>、<filename>cert.pem</filename>、<filename>ec2rc.sh</filename>、および <filename>pk.pem</filename> が含まれているはずです。<filename>ec2rc.sh</filename> には、以下と似たような内容が記述されています:<indexterm class=\"singular\"><primary>アクセスキー</primary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml324(para)
 msgid ""
@@ -13360,7 +13360,7 @@ msgid ""
 "inspecting</secondary></indexterm><indexterm class=\"singular\"><primary"
 ">command-line tools</primary><secondary>inspecting API "
 "calls</secondary></indexterm> For example:"
-msgstr "コマンドラインツールに <code>--debug</code> フラグを渡すことにより、実行する  OpenStack API  を表示することができます。<indexterm class=\"singular\"><primary>API (Application Programming Interface)</primary><secondary>API コール、確認</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>API コールの検査</secondary></indexterm> 例えば、以下のようになります。"
+msgstr "コマンドラインツールに <code>--debug</code> フラグを渡すことにより、実行する  OpenStack API  コールを表示することができます。<indexterm class=\"singular\"><primary>API (Application Programming Interface)</primary><secondary>API コール、検査</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>API コールの検査</secondary></indexterm> 例えば、以下のようになります。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml345(para)
 msgid ""
@@ -13375,7 +13375,7 @@ msgid ""
 "Support</link> enables you to securely save your OpenStack password in an "
 "encrypted file.<indexterm class=\"singular\"><primary>Keyring "
 "Support</primary></indexterm>"
-msgstr "<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">キーリングのサポート</link> により、暗号化されたファイルに OpenStack のパスワードをセキュアに保存することができます。<indexterm class=\"singular\"><primary>キーリングのサポート</primary></indexterm>"
+msgstr "<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">キーリングのサポート</link>により、暗号化されたファイルに OpenStack のパスワードをセキュアに保存することができます。<indexterm class=\"singular\"><primary>キーリングのサポート</primary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml356(para)
 msgid ""
@@ -13440,7 +13440,7 @@ msgstr "JSONレスポンスを読むことで、カタログを把握するこ�
 msgid ""
 "To make working with subsequent requests easier, store the token in an "
 "environment variable:"
-msgstr "後に続く要求への対応を容易にするには、環境変数にトークンを保管します。"
+msgstr "次の要求での作業をより簡単に行うには、環境変数にトークンを保管します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml425(para)
 msgid ""
@@ -13470,7 +13470,7 @@ msgid ""
 " commands, you can include the <code>-v</code> flag to show you the verbose "
 "output. There are many more extremely useful features in cURL; refer to the "
 "man page for all the options."
-msgstr "上記の  cURL コマンドで使用している <code>-s flag</code> は、進行状況メーターが表示されないようにするために使用します。cURL コマンドの実行で問題が生じた場合には、このオプションを削除してください。また、cURL コマンドのトラブるシューティングを行う場合には、<code>-v</code> フラグを指定してより詳細な出力を表示すると役立ちます。cURL には他にも多数の役立つ機能があります。全オプションは、man ページで参照してください。"
+msgstr "上記の  cURL コマンドで使用している <code>-s flag</code> は、進行状況メーターが表示されないようにするために使用します。cURL コマンドの実行で問題が生じた場合には、このオプションを削除してください。また、cURL コマンドのトラブルシューティングを行う場合には、<code>-v</code> フラグを指定してより詳細な出力を表示すると役立ちます。cURL には他にも多数の役立つ機能があります。全オプションは、man ページで参照してください。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml457(title)
 msgid "Servers and Services"
@@ -13490,7 +13490,7 @@ msgid ""
 "overview</secondary></indexterm><indexterm class=\"singular\"><primary"
 ">command-line tools</primary><secondary>servers and "
 "services</secondary></indexterm>"
-msgstr "管理者は、利用可能な OpenStack を使用して、OpenStack クラウドの全容を確認する方法がいくつかあります。本項では、クラウドの概要、形態、サイズ、現在の状態を確認する方法について説明します。<indexterm class=\"singular\"><primary>サービス</primary><secondary>概要の取得</secondary></indexterm><indexterm class=\"singular\"><primary>サーバー</primary><secondary概要の取得</secondary></indexterm><indexterm class=\"singular\"><primary>クラウドコンピューティング</primary><secondary>クラウドの概観</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>サーバーとサービス</secondary></indexterm>"
+msgstr "管理者は、利用可能な OpenStack ツールを使用して、OpenStack クラウドが全体像を確認する方法がいくつかあります。本項では、クラウドの概要、形態、サイズ、現在の状態についての情報を取得する方法について説明します。<indexterm class=\"singular\"><primary>サービス</primary><secondary>概観の取得</secondary></indexterm><indexterm class=\"singular\"><primary>サーバー</primary><secondary概要の取得</secondary></indexterm><indexterm class=\"singular\"><primary>クラウドコンピューティング</primary><secondary>クラウドの全体像</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>サーバーとサービス</secondary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml481(para)
 msgid ""
@@ -13509,7 +13509,7 @@ msgid ""
 "services are up and running. If a service is no longer available, the "
 "<code>:-)</code> symbol changes to <code>XXX</code>. This is an indication "
 "that you should troubleshoot why the service is down."
-msgstr "出力には、5 つのコンピュートノードと 1 つのクラウドコントローラーが表示されています。スマイリーフェイス (<code>:-)</code> など)が見えます。これはサービスが稼働中であることを示しています。サービスがりようできなくなると、<code>:-)</code> のシンボルが <code>XXX</code> に変わります。これは、サービスが停止している理由をトラブルシューティングする必要があることを示しています。"
+msgstr "出力には、5 つのコンピュートノードと 1 つのクラウドコントローラーが表示されています。スマイリーフェイス <code>:-)</code> が見えます。これはサービスが稼働中であることを示しています。サービスが利用できなくなると、<code>:-)</code> のシンボルが <code>XXX</code> に変わります。これは、サービスが停止している理由をトラブルシューティングする必要があることを示しています。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml507(para)
 msgid ""
@@ -13535,7 +13535,7 @@ msgstr "また、Identity Service (keystone) を使用してクラウドで利�
 msgid ""
 "The following command requires you to have your shell environment configured"
 " with the proper administrative variables:"
-msgstr "以下のコマンドを実行するには、正しい管理用の変数を設定済みのシェル環境が必要です。"
+msgstr "以下のコマンドを実行するには、管理系の変数を正しく設定したシェル環境が必要です。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml558(para)
 msgid ""
@@ -13545,7 +13545,7 @@ msgid ""
 "Different endpoint domains per type are not required, but this can be done "
 "for different reasons, such as endpoint privacy or network traffic "
 "segregation."
-msgstr "上記の出力は、2 つのサービスのみを表示するように、カットされています。クラウドが提供するサービスごとにサービスブロックが 1 つ表示されているのがわかります。エンドポイントタイプによってエンドポイントドメインが異なる点に注意してください。タイプによってエンドポイントドメインを別にする必要ありませんが、エンドポイントのプライバシーやネットワークトラフィックの分離などの異なる理由で分けることができます。"
+msgstr "上記の出力は、2 つのサービスのみを表示するようにカットされています。クラウドが提供するサービスごとにサービスブロックが 1 つ表示されているのがわかります。エンドポイントタイプによってエンドポイントドメインが異なる場合がある点に注意してください。タイプによってエンドポイントドメインを別にする必要はありませんが、エンドポイントのプライバシーやネットワークトラフィックの分離などの異なる理由で分けることができます。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml565(para)
 msgid ""
@@ -13567,7 +13567,7 @@ msgid ""
 "nodes</primary><secondary>diagnosing</secondary></indexterm><indexterm "
 "class=\"singular\"><primary>command-line tools</primary><secondary>compute "
 "node diagnostics</secondary></indexterm> a server ID:"
-msgstr "実行中の仮想マシンの CPU 使用状況、メモリー、ディスク I/O、ネットワーク I/O などの追加情報を取得するには、<literal>nova diagnostics</literal> コマンドに<indexterm class=\"singular\"><primary>コンピュートノード</primary><secondary>診断</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>コンピュートノードの診断</secondary></indexterm> サーバー ID を指定して実行します:"
+msgstr "実行中の仮想マシンの CPU 使用状況、メモリー、ディスク I/O、ネットワーク I/O などの追加情報を取得するには、<literal>nova diagnostics</literal> コマンドに<indexterm class=\"singular\"><primary>コンピュートノード</primary><secondary>診断</secondary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</primary><secondary>コンピュートノードの診断</secondary></indexterm>サーバー ID を指定して実行します:"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml588(para)
 msgid ""
@@ -13580,7 +13580,7 @@ msgid ""
 "with any hypervisor that is controlled through libvirt (e.g., KVM, QEMU, or "
 "LXC), it has been tested only with KVM. Here is example output when the "
 "hypervisor is KVM:"
-msgstr "ハイパーバイザーによってサポートする属性が異なるため、コマンドの出力はハイパーバイザーによって異なります。<indexterm class=\"singular\"><primary>ハイパーバイザー</primary><secondary>コンピュートノードの診断</secondary></indexterm> 以下の実例は、最もよく使用されている 2 つのハイパーバイザーの間で出力がどのように異なるかを示しています。ハイパーバイザーが Xen の場合の例は以下のようになります: <placeholder-1/>このコマンドは、libvirt によって管理されている任意のハイパーバイザー  (例: KVM、QEMU、LXC) で機能しますが、KVM でのみテスト済みです。ハイパーバイザーが KVM の場合の例は以下のようになります"
+msgstr "ハイパーバイザーによってサポートする属性が異なるため、コマンドの出力はハイパーバイザーによって異なります。<indexterm class=\"singular\"><primary>ハイパーバイザー</primary><secondary>コンピュートノードの診断</secondary></indexterm> 以下の実例は、最もよく使用されている 2 つのハイパーバイザーの間で出力がどのように異なるかを示しています。ハイパーバイザーが Xen の場合の例は以下のようになります: <placeholder-1/>このコマンドは、libvirt によって管理されている任意のハイパーバイザー  (例: KVM、QEMU、LXC) で機能するはずですが、KVM でのみテスト済みです。ハイパーバイザーが KVM の場合の例は以下のようになります"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml638(title)
 msgid "Network Inspection"
@@ -13608,7 +13608,7 @@ msgid ""
 "project, while the second network is still open for assignment. You can "
 "assign this network manually; otherwise, it is automatically assigned when a"
 " project launches its first instance."
-msgstr "この出力は、2 つのネットワークが設定されており、各ネットワークには 255 の IP アドレス ( /24 サブネットが 1 つ) が含まれていることを示しています。1 番目のネットワークは、特定のプロジェクトに割り当てられていますが、2 番目のネットワークはまだ割り当てができる状態です。このネットワークは手動で割り当てることができます。割り当てられていない場合には、プロジェクトで最初のインスタンスが起動されたときに自動で割り当てられます。"
+msgstr "この出力は、2 つのネットワークが設定されており、各ネットワークには 255 の IP アドレス (/24 サブネットが 1 つ) が含まれていることを示しています。1 番目のネットワークは、特定のプロジェクトに割り当て済みですが、2 番目のネットワークはまだ割り当てができる状態です。このネットワークは手動で割り当てることができます。手動での割り当てを行わなかった場合には、プロジェクトで最初のインスタンスが起動されたときに自動で割り当てられます。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml672(para)
 msgid "To find out whether any floating IPs are available in your cloud, run:"
@@ -13633,7 +13633,7 @@ msgid ""
 "users</secondary></indexterm><indexterm class=\"singular\"><primary>working "
 "environment</primary><secondary>users and projects</secondary></indexterm> "
 "run:"
-msgstr "クラウドに追加されたプロジェクトの一覧を確認するには、<indexterm class=\"singular\"><primary>プロジェクト</primary><secondary>現在の一覧の取得</secondary></indexterm><indexterm class=\"singular\"><primary>ユーザー管理</primary><secondary>ユーザーの一覧表示</secondary></indexterm><indexterm class=\"singular\"><primary>作業環境</primary><secondary>users and projects</secondary></indexterm> 以下のコマンドを実行します:"
+msgstr "クラウドに追加されたプロジェクトの一覧を確認するには、<indexterm class=\"singular\"><primary>プロジェクト</primary><secondary>現在の一覧の取得</secondary></indexterm><indexterm class=\"singular\"><primary>ユーザー管理</primary><secondary>ユーザーの一覧表示</secondary></indexterm><indexterm class=\"singular\"><primary>作業環境</primary><secondary>users and projects</secondary></indexterm>以下のコマンドを実行します:"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml720(para)
 msgid "To see a list of users, run:"
@@ -13644,7 +13644,7 @@ msgid ""
 "Sometimes a user and a group have a one-to-one mapping. This happens for "
 "standard system accounts, such as cinder, glance, nova, and swift, or when "
 "only one user is part of a group."
-msgstr "ユーザーおよびグループは、一対一でマッピングされる場合があります。このような状況は cinder、glance、nova、swift などの標準システムアカウントやグループにユーザーが 1 人しかいない場合に発生します。"
+msgstr "ユーザーとグループは、一対一でマッピングされる場合があります。このようなマッピングは cinder、glance、nova、swift などの標準システムアカウントや、グループにユーザーが 1 人しかいない場合に発生します。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml750(title)
 msgid "Running Instances"
@@ -13657,7 +13657,7 @@ msgid ""
 "running</secondary></indexterm><indexterm "
 "class=\"singular\"><primary>working environment</primary><secondary>running "
 "instances</secondary></indexterm> run:"
-msgstr "実行中のインスタンスを確認するには、<indexterm class=\"singular\"><primary>instances</primary><secondary>実行中のリスト</secondary></indexterm><indexterm class=\"singular\"><primary>作業環境</primary><secondary>実行中のインスタンス</secondary></indexterm> 以下のコマンドを実行します:"
+msgstr "実行中のインスタンスを確認するには、<indexterm class=\"singular\"><primary>instances</primary><secondary>実行中の一覧</secondary></indexterm><indexterm class=\"singular\"><primary>作業環境</primary><secondary>実行中のインスタンス</secondary></indexterm>以下のコマンドを実行します:"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml776(para)
 msgid ""
@@ -13667,7 +13667,7 @@ msgid ""
 " on. You can use the following command to view details about individual "
 "instances:<indexterm class=\"singular\"><primary>config "
 "drive</primary></indexterm>"
-msgstr ""
+msgstr "残念ながら、このコマンドは、インスタンスを実行しているコンピュートノードやインスタンスのフレーバーなどのような、実行中の<phrase role=\"keep-together\">インスタンス</phrase>についての多様な情報は提供しません。個別のインスタンスについての詳しい情報を確認するには以下のコマンドを使用してください:<indexterm class=\"singular\"><primary>コンフィグドライブ</primary></indexterm>"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml786(para)
 msgid "For example: <placeholder-1/><placeholder-2/>"
@@ -13678,7 +13678,7 @@ msgid ""
 "This output shows that an instance named <placeholder-1/> was created from "
 "an Ubuntu 12.04 image using a flavor of <literal>m1.small</literal> and is "
 "hosted on the compute node <literal>c02.example.com</literal>."
-msgstr ""
+msgstr "この出力は、<placeholder-1/> という名前のインスタンスが Ubuntu 12.04 イメージから <literal>m1.small</literal> のフレーバーで作成され、コンピュートノード <literal>c02.example.com</literal> でホストされていることを示しています。"
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml825(para)
 msgid ""
@@ -13687,7 +13687,7 @@ msgid ""
 "From here, you can use the <emphasis><link href=\"http://docs.openstack.org"
 "/user-guide-admin/content/\">Admin User Guide</link></emphasis> as your "
 "reference for all of the command-line functionality in your cloud."
-msgstr ""
+msgstr "クラウドとの対話や有用な情報の抽出の方法など、作業環境の概観を確認する手順を簡単にご紹介しました。役立てていただければ幸いです。ここで説明した内容よりもさらに詳しい情報は、クラウドの全コマンドライン機能についての参考資料として<emphasis><link href=\"http://docs.openstack.org/user-guide-admin/content/\">管理ユーザーガイド</link></emphasis>を参照してください。"
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml12(title)
 msgid "Advanced Configuration"
