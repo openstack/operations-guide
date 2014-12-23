@@ -1279,6 +1279,12 @@ Optional snapshot description. (Default=None)</programlisting>
         running on Ubuntu, install the util-linux package to get
         <literal>fsfreeze</literal>:</para>
 
+        <note>
+        <para>In the very common case where the underlying snapshot is
+        done via LVM, the filesystem freeze is automatically handled by LVM.
+        </para>
+        </note>
+
         <screen><prompt>#</prompt> <userinput>apt-get install util-linux</userinput></screen>
 
         <para>If your operating system doesn't have a version of
@@ -1350,7 +1356,11 @@ Optional snapshot description. (Default=None)</programlisting>
         run the preceding command because it will freeze the prompt. Instead,
         run the following one-liner, as root, inside the instance:</para>
 
-        <screen><prompt>#</prompt> <userinput>fsfreeze -f / &amp;&amp; sleep 30 &amp;&amp; fsfreeze -u /</userinput></screen>
+        <screen><prompt>#</prompt> <userinput>fsfreeze -f / &amp;&amp; read x; fsfreeze -u /</userinput>
+        </screen>
+        <para>After this command it is common practice to call <command>nova image-create</command> from your
+          workstation, and once done press enter in your instance shell to unfreeze it.
+          Obviously you could automate this, but at least it will let you properly synchronize.</para>
       </sidebar>
     </section>
   </section>
