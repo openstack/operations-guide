@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-22 06:00+0000\n"
+"POT-Creation-Date: 2014-12-27 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4329,123 +4329,131 @@ msgstr ""
 msgid "Just running <code>sync</code> is not enough to ensure that the file system is consistent. We recommend that you use the <code>fsfreeze</code> tool, which halts new access to the file system, and create a stable image on disk that is suitable for snapshotting. The <code>fsfreeze</code> tool supports several file systems, including ext3, ext4, and XFS. If your virtual machine instance is running on Ubuntu, install the util-linux package to get <literal>fsfreeze</literal>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1284(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1283(para)
+msgid "In the very common case where the underlying snapshot is done via LVM, the filesystem freeze is automatically handled by LVM."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1290(para)
 msgid "If your operating system doesn't have a version of <literal>fsfreeze</literal> available, you can use <literal>xfs_freeze</literal> instead, which is available on Ubuntu in the xfsprogs package. Despite the \"xfs\" in the name, xfs_freeze also works on ext3 and ext4 if you are using a Linux kernel version 2.6.29 or greater, since it works at the virtual file system (VFS) level starting at 2.6.29. The xfs_freeze version supports the same command-line arguments as <literal>fsfreeze</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1293(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1299(para)
 msgid "Consider the example where you want to take a snapshot of a persistent block storage volume, detected by the guest operating system as <literal>/dev/vdb</literal> and mounted on <literal>/mnt</literal>. The fsfreeze command accepts two arguments:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1301(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1307(term)
 msgid "-f"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1304(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1310(para)
 msgid "Freeze the system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1309(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1315(term)
 msgid "-u"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1312(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1318(para)
 msgid "Thaw (unfreeze) the system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1317(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1323(para)
 msgid "To freeze the volume in preparation for snapshotting, you would do the following, as root, inside the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1322(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1328(para)
 msgid "You <emphasis>must mount the file system</emphasis> before you run the <literal>fsfreeze</literal> command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1325(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1331(para)
 msgid "When the <literal>fsfreeze -f</literal> command is issued, all ongoing transactions in the file system are allowed to complete, new write system calls are halted, and other calls that modify the file system are halted. Most importantly, all dirty data, metadata, and log information are written to disk."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1331(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1337(para)
 msgid "Once the volume has been frozen, do not attempt to read from or write to the volume, as these operations hang. The operating system stops every I/O operation and any I/O attempts are delayed until the file system has been unfrozen."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1336(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1342(para)
 msgid "Once you have issued the <literal>fsfreeze</literal> command, it is safe to perform the snapshot. For example, if your instance was named <literal>mon-instance</literal> and you wanted to snapshot it to an image named <literal>mon-snapshot</literal>, you could now run the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1344(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1350(para)
 msgid "When the snapshot is done, you can thaw the file system with the following command, as root, inside of the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1349(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1355(para)
 msgid "If you want to back up the root file system, you can't simply run the preceding command because it will freeze the prompt. Instead, run the following one-liner, as root, inside the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1361(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1361(para)
+msgid "After this command it is common practice to call <placeholder-1/> from your workstation, and once done press enter in your instance shell to unfreeze it. Obviously you could automate this, but at least it will let you properly synchronize."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1371(title)
 msgid "Instances in the Database"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1363(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1373(para)
 msgid "While instance information is stored in a number of database tables, the table you most likely need to look at in relation to user instances is the instances table.<indexterm class=\"singular\"><primary>instances</primary><secondary>database information</secondary></indexterm><indexterm class=\"singular\"><primary>databases</primary><secondary>instance information in</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>instances</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1379(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1389(para)
 msgid "The instances table carries most of the information related to both running and deleted instances. It has a bewildering array of fields; for an exhaustive list, look at the database. These are the most useful fields for operators looking to form queries:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1386(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1396(para)
 msgid "The <literal>deleted</literal> field is set to <literal>1</literal> if the instance has been deleted and <literal>NULL</literal> if it has not been deleted. This field is important for excluding deleted instances from your queries."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1393(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1403(para)
 msgid "The <literal>uuid</literal> field is the UUID of the instance and is used throughout other tables in the database as a foreign key. This ID is also reported in logs, the dashboard, and command-line tools to uniquely identify an instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1400(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1410(para)
 msgid "A collection of foreign keys are available to find relations to the instance. The most useful of these—<literal>user_id</literal> and <literal>project_id</literal>—are the UUIDs of the user who launched the instance and the project it was launched in."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1407(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1417(para)
 msgid "The <literal>host</literal> field tells which compute node is hosting the instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1412(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1422(para)
 msgid "The <literal>hostname</literal> field holds the name of the instance when it is launched. The display-name is initially the same as hostname but can be reset using the nova rename command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1418(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1428(para)
 msgid "A number of time-related fields are useful for tracking when state changes happened on an instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1423(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1433(literal)
 msgid "created_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1427(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1437(literal)
 msgid "updated_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1431(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1441(literal)
 msgid "deleted_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1435(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1445(literal)
 msgid "scheduled_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1439(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1449(literal)
 msgid "launched_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1443(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1453(literal)
 msgid "terminated_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1449(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1459(title)
 msgid "Good Luck!"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1451(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1461(para)
 msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 
