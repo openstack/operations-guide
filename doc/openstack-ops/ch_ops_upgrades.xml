@@ -1984,6 +1984,753 @@ service_plugins = router</programlisting>
       <screen><prompt>#</prompt> <userinput>service openstack-cinder-volume restart</userinput></screen>
     </section>
   </section>
+
+  <section xml:id="upgrade-icehouse-juno">
+    <title>How to Perform an Upgrade from Icehouse to Juno</title>
+    <?dbhtml stop-chunking?>
+    <para>Use this procedure to upgrade a basic operational deployment of
+      the following services: Identity (keystone), Image Service (glance),
+      Compute (nova), Networking (neutron), dashboard (horizon), Block
+      Storage (cinder), Orchestration (heat), and Telemetry (ceilometer).
+      This procedure references the basic three-node architecture in the
+      <link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/"
+      ><citetitle>OpenStack Installation Guide</citetitle></link>. All nodes
+      must run a supported distribution of Linux with a recent kernel and
+      latest Icehouse packages.</para>
+    <section xml:id="upgrade-icehouse-juno-considerations">
+      <title>Before you begin</title>
+      <itemizedlist>
+        <listitem>
+          <para>The upgrade process interrupts management of your environment
+            including the dashboard. If you properly prepare for the upgrade,
+            existing instances, networking, and storage should continue to
+            operate. However, instances might experience intermittent network
+            interruptions.</para>
+        </listitem>
+        <listitem>
+          <para>Review the
+            <link xlink:href="http://wiki.openstack.org/wiki/ReleaseNotes/Juno"
+            >release notes</link> before upgrading to learn about new, updated,
+            and deprecated features.</para>
+        </listitem>
+        <listitem>
+          <para>Consider adopting structure and options from Juno service
+            configuration files and merging them with existing configuration
+            files. The
+            <link xlink:href="http://docs.openstack.org/juno/config-reference/content/"
+            ><citetitle>OpenStack Configuration Reference</citetitle></link>
+            contains new, updated, and deprecated options for most
+            services.</para>
+        </listitem>
+        <listitem>
+          <para>For environments using the OpenStack Networking (neutron)
+            service, verify the Icehouse version of the database:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf \
+  --config-file /etc/neutron/plugins/ml2/ml2_conf.ini current" neutron</userinput>
+<computeroutput>INFO  [alembic.migration] Context impl MySQLImpl.
+INFO  [alembic.migration] Will assume non-transactional DDL.
+Current revision for mysql://neutron:XXXXX@controller/neutron: 5ac1c354a051 -> icehouse (head), icehouse</computeroutput></screen>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section xml:id="upgrade-icehouse-juno-backup">
+      <title>Perform a backup</title>
+      <procedure>
+        <step>
+          <para>Save the configuration files on all nodes:</para>
+          <screen><prompt>#</prompt> <userinput>for i in keystone glance nova neutron openstack-dashboard cinder heat ceilometer; \
+  do mkdir $i-icehouse; \
+  done</userinput>
+<prompt>#</prompt> <userinput>for i in keystone glance nova neutron openstack-dashboard cinder heat ceilometer; \
+  do cp -r /etc/$i/* $i-icehouse/; \
+  done</userinput></screen>
+          <note>
+            <para>You can modify this example script on each node to
+              handle different services.</para>
+          </note>
+        </step>
+        <step>
+          <para>Back up all databases on the controller:</para>
+          <screen><prompt>#</prompt> <userinput>mysqldump -u root -p --opt --add-drop-database --all-databases &gt; icehouse-db-backup.sql</userinput></screen>
+          <note>
+            <para>Consider updating your SQL server configuration as
+              described in the
+              <link xlink:href="http://docs.openstack.org/juno/install-guide/install/apt/content/"
+              >OpenStack Installation Guide</link>.</para>
+          </note>
+        </step>
+      </procedure>
+    </section>
+    <section xml:id="upgrade-icehouse-juno-repos">
+      <title>Manage repositories</title>
+      <procedure>
+        <para>Complete the following steps on all nodes.</para>
+        <step>
+          <para>Remove the repository for Icehouse packages.</para>
+        </step>
+        <step>
+          <para>On Ubuntu, follow these steps:</para>
+          <substeps>
+            <step>
+              <para>Add the repository for Juno packages:</para>
+              <screen><prompt>#</prompt> <userinput>echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu" \
+  "trusty-updates/juno main" > /etc/apt/sources.list.d/cloudarchive-juno.list</userinput></screen>
+              <note>
+                <para>Remove any Ubuntu Cloud archive repositories for Icehouse
+                  packages. You might also need to install or update the
+                  <literal>ubuntu-cloud-keyring</literal> package.</para>
+              </note>
+            </step>
+            <step>
+              <para>Update the repository database.</para>
+            </step>
+          </substeps>
+        </step>
+        <step>
+          <para>On Red Hat Enterprise Linux (RHEL), CentOS, and Fedora,
+            follow these steps:</para>
+          <substeps>
+            <step>
+              <para>Remove the repository for Icehouse packages:</para>
+              <screen><prompt>#</prompt> <userinput>yum erase rdo-release-icehouse</userinput></screen>
+            </step>
+            <step>
+              <para>Add the repository for Juno packages:</para>
+              <screen><prompt>#</prompt> <userinput>yum install http://rdo.fedorapeople.org/openstack-juno/rdo-release-juno.rpm</userinput></screen>
+            </step>
+            <step>
+              <para>Update the repository database.</para>
+            </step>
+          </substeps>
+        </step>
+      </procedure>
+    </section>
+    <section xml:id="upgrade-icehouse-juno-controller">
+      <title>Controller nodes</title>
+      <section xml:id="upgrade-icehouse-juno-controller-packages">
+        <title>Upgrade packages to Juno</title>
+        <para>Depending on your specific configuration, upgrading all
+          packages might restart or break services supplemental to your
+          OpenStack environment. For example, if you use the TGT iSCSI
+          framework for Block Storage volumes and the upgrade includes
+          new packages for it, the package manager might restart the
+          TGT iSCSI services and impact connectivity to volumes.</para>
+        <para>If the package manager prompts you to update configuration
+          files, reject the changes. The package manager appends a
+          suffix to newer versions of configuration files. Consider
+          reviewing and adopting content from these files.</para>
+      </section>
+      <section xml:id="upgrade-icehouse-juno-controller-services">
+        <title>Update services</title>
+        <para>To update a service, you generally modify one or more
+          configuration files, stop the service, synchronize the
+          database schema, and start the service. Some services require
+          different steps. We recommend verifying operation of each
+          service before proceeding to the next service.</para>
+        <procedure>
+          <title>All services</title>
+          <para>These configuration changes apply to all services.</para>
+          <step>
+            <para>In any file containing the
+              <literal>[keystone_authtoken]</literal> section, modify Identity
+              service access to use the <option>identity_uri</option>
+              option:</para>
+            <programlisting language="ini">[keystone_authtoken]
+...
+identity_uri = http://<replaceable>controller</replaceable>:35357</programlisting>
+            <para>Comment out any <literal>auth_host</literal>,
+              <literal>auth_port</literal>, and
+              <literal>auth_protocol</literal> options because the
+              <literal>identity_uri</literal> option replaces them.</para>
+          </step>
+          <step>
+            <para>In any file containing the <option>auth_uri</option> option,
+              modify it to explicitly use version 2.0:</para>
+            <programlisting language="ini">auth_uri = http://<replaceable>controller</replaceable>:5000/v2.0</programlisting>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Identity service</title>
+          <step>
+            <para>Edit the <filename>/etc/keystone/keystone.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[token]</literal> section, configure the
+                  UUID token provider and SQL driver:</para>
+                <programlisting language="ini">[token]
+...
+provider = keystone.token.providers.uuid.Provider
+driver = keystone.token.persistence.backends.sql.Token</programlisting>
+              </step>
+            </substeps>
+          </step>
+          <step>
+            <para>Stop the service.</para>
+          </step>
+          <step>
+            <para>Clear expired tokens:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "keystone-manage token_flush" keystone</userinput></screen>
+          </step>
+          <step>
+            <para>Synchronize the database schema:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "keystone-manage db_sync" keystone</userinput></screen>
+          </step>
+          <step>
+            <para>Start the service.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Image Service</title>
+          <step>
+            <para>Edit the <filename>/etc/glance/glance-api.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>Move the following options from the
+                  <literal>[DEFAULT]</literal> section to the
+                  <literal>[glance_store]</literal> section:</para>
+                <itemizedlist>
+                  <listitem>
+                    <para><option>default_store</option></para>
+                  </listitem>
+                  <listitem>
+                    <para><option>filesystem_store_datadir</option></para>
+                  </listitem>
+                </itemizedlist>
+                <note>
+                  <para>These options must contain values.</para>
+                </note>
+              </step>
+            </substeps>
+          </step>
+          <step>
+            <para>Stop the services.</para>
+          </step>
+          <step>
+            <para>Synchronize the database schema:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "glance-manage db_sync" glance</userinput></screen>
+          </step>
+          <step>
+            <para>Start the services.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Compute service</title>
+          <step>
+            <para>Edit the <filename>/etc/nova/nova.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, rename
+                 the <option>glance_host</option> option to
+                 <option>host</option> and move it to the
+                 <literal>[glance]</literal> section.</para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, rename
+                  the following options and move them to the
+                  <literal>[neutron]</literal> section:</para>
+                <informaltable rules="all">
+                  <thead>
+                    <tr>
+                      <th>Old options</th>
+                      <th>New options</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><option>neutron_url</option></td>
+                      <td><option>url</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_auth_strategy</option></td>
+                      <td><option>auth_strategy</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_tenant_name</option></td>
+                      <td><option>admin_tenant_name</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_username</option></td>
+                      <td><option>admin_username</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_password</option></td>
+                      <td><option>admin_password</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_auth_url</option></td>
+                      <td><option>admin_auth_url</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>service_neutron_metadata_proxy</option></td>
+                      <td><option>service_metadata_proxy</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_metadata_proxy_shared_secret</option></td>
+                      <td><option>metadata_proxy_shared_secret</option></td>
+                    </tr>
+                  </tbody>
+                </informaltable>
+              </step>
+            </substeps>
+          </step>
+          <step>
+            <para>Stop the services.</para>
+          </step>
+          <step>
+            <para>Synchronize the database schema:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "nova-manage db sync" nova</userinput></screen>
+          </step>
+          <step>
+            <para>Start the services.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Networking service</title>
+          <step>
+            <para>Edit the <filename>/etc/neutron/neutron.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value of the <option>rpc_backend</option> option:</para>
+                <para>
+                  <literal>neutron.openstack.common.rpc.impl_kombu</literal>
+                  becomes <literal>rabbit</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value of the <option>core_plugin</option> option:</para>
+                <para>
+                  <literal>neutron.plugins.ml2.plugin.Ml2Plugin</literal>
+                  becomes <literal>ml2</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value or values of the <option>service_plugins</option>
+                  option to use short names. For example:</para>
+                <para>
+                  <literal>neutron.services.l3_router.l3_router_plugin.L3RouterPlugin</literal>
+                  becomes <literal>router</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, explicitly
+                  define a value for the <option>nova_region_name</option>
+                  option. For example:</para>
+                <programlisting language="ini">[DEFAULT]
+...
+nova_region_name = regionOne</programlisting>
+             </step>
+           </substeps>
+          </step>
+          <step>
+            <para>Stop the services.</para>
+          </step>
+          <step>
+            <para>Synchronize the database schema:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf \
+  --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade juno" neutron</userinput></screen>
+          </step>
+          <step>
+            <para>Start the services.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Dashboard</title>
+          <para>In typical environments, updating the dashboard only requires
+            restarting the services.</para>
+          <step>
+            <para>Restart the services.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Block Storage service</title>
+          <step>
+            <para>Edit the <filename>/etc/cinder/cinder.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, add
+                  the following option:</para>
+                <programlisting language="ini">my_ip = <replaceable>controller</replaceable></programlisting>
+              </step>
+            </substeps>
+          </step>
+          <step>
+            <para>Stop the services.</para>
+          </step>
+          <step>
+            <para>Synchronize the database schema:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "cinder-manage db sync" cinder</userinput></screen>
+          </step>
+          <step>
+            <para>Start the services.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Orchestration service</title>
+          <step>
+            <para>Create the <literal>heat_stack_owner</literal> role if it
+              does not exist:</para>
+            <screen><prompt>#</prompt> <userinput>keystone role-create --name heat_stack_owner</userinput></screen>
+          </step>
+          <step>
+            <para>Edit the <filename>/etc/heat/heat.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value of the <option>rpc_backend</option> option:</para>
+                <para>
+                  <literal>heat.openstack.common.rpc.impl_kombu</literal>
+                  becomes <literal>rabbit</literal></para>
+              </step>
+            </substeps>
+          </step>
+          <step>
+            <para>Stop the services.</para>
+          </step>
+          <step>
+            <para>Synchronize the database schema:</para>
+            <screen><prompt>#</prompt> <userinput>su -s /bin/sh -c "heat-manage db_sync" heat</userinput></screen>
+          </step>
+          <step>
+            <para>Start the services.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Telemetry service</title>
+          <para>In typical environments, updating the Telemetry service
+            only requires restarting the services.</para>
+          <step>
+            <para>Restart the services.</para>
+          </step>
+        </procedure>
+      </section>
+    </section>
+    <section xml:id="upgrade-icehouse-juno-network">
+      <title>Network nodes</title>
+      <section xml:id="upgrade-icehouse-juno-network-packages">
+        <title>Upgrade packages to Juno</title>
+        <para>Explicitly install the <literal>ipset</literal> package
+          if your distribution does not install it as a
+          dependency.</para>
+        <para>Depending on your specific configuration, upgrading all
+          packages might restart or break services supplemental to your
+          OpenStack environment. For example, if you use the TGT iSCSI
+          framework for Block Storage volumes and the upgrade includes
+          new packages for it, the package manager might restart the
+          TGT iSCSI services and impact access to volumes.</para>
+        <para>If the package manager prompts you to update configuration
+          files, reject the changes. The package manager appends a
+          suffix to newer versions of configuration files. Consider
+          reviewing and adopting content from these files.</para>
+      </section>
+      <section xml:id="upgrade-icehouse-juno-network-services">
+        <title>Update services</title>
+        <para>To update a service, you generally modify one or more
+          configuration files, stop the service, synchronize the
+          database schema, and start the service. Some services require
+          different steps. We recommend verifying operation of each
+          service before proceeding to the next service.</para>
+        <procedure>
+          <title>All services</title>
+          <para>These configuration changes apply to all services.</para>
+          <step>
+            <para>In any file containing the
+              <literal>[keystone_authtoken]</literal> section, modify Identity
+              service access to use the <option>identity_uri</option>
+              option:</para>
+            <programlisting language="ini">[keystone_authtoken]
+...
+identity_uri = http://<replaceable>controller</replaceable>:35357</programlisting>
+            <para>Comment out any <literal>auth_host</literal>,
+              <literal>auth_port</literal>, and
+              <literal>auth_protocol</literal> options because the
+              <literal>identity_uri</literal> option replaces them.</para>
+          </step>
+          <step>
+            <para>In any file containing the <option>auth_uri</option> option,
+              modify it to explicitly use version 2.0:</para>
+            <programlisting language="ini">auth_uri = http://<replaceable>controller</replaceable>:5000/v2.0</programlisting>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Networking service</title>
+          <step>
+            <para>Edit the <filename>/etc/neutron/neutron.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value of the <option>rpc_backend</option> option:</para>
+                <para>
+                  <literal>neutron.openstack.common.rpc.impl_kombu</literal>
+                  becomes <literal>rabbit</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value of the <option>core_plugin</option> option:</para>
+                <para>
+                  <literal>neutron.plugins.ml2.plugin.Ml2Plugin</literal>
+                  becomes <literal>ml2</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value or values of the <option>service_plugins</option>
+                  option to use short names. For example:</para>
+                <para>
+                  <literal>neutron.services.l3_router.l3_router_plugin.L3RouterPlugin</literal>
+                  becomes <literal>router</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, explicitly
+                  define a value for the <option>nova_region_name</option>
+                  option. For example:</para>
+                <programlisting language="ini">[DEFAULT]
+...
+nova_region_name = regionOne</programlisting>
+             </step>
+             <step>
+               <para>In the <literal>[database]</literal> section, remove any
+                 <option>connection</option> options because the Networking
+                 service uses the message queue instead of direct access to
+                 the database.</para>
+             </step>
+           </substeps>
+          </step>
+          <step>
+            <para>Restart the services.</para>
+          </step>
+        </procedure>
+      </section>
+    </section>
+    <section xml:id="upgrade-icehouse-juno-compute">
+      <title>Compute nodes</title>
+      <section xml:id="upgrade-icehouse-juno-compute-packages">
+        <title>Upgrade packages to Juno</title>
+        <para>Explicitly install the <literal>ipset</literal> package
+          if your distribution does not install it as a
+          dependency.</para>
+        <para>Depending on your specific configuration, upgrading all
+          packages might restart or break services supplemental to your
+          OpenStack environment. For example, if you use the TGT iSCSI
+          framework for Block Storage volumes and the upgrade includes
+          new packages for it, the package manager might restart the
+          TGT iSCSI services and impact access to volumes.</para>
+        <para>If the package manager prompts you to update configuration
+          files, reject the changes. The package manager appends a
+          suffix to newer versions of configuration files. Consider
+          reviewing and adopting content from these files.</para>
+      </section>
+      <section xml:id="upgrade-icehouse-juno-compute-services">
+        <title>Update services</title>
+        <para>To update a service, you generally modify one or more
+          configuration files, stop the service, synchronize the
+          database schema, and start the service. Some services require
+          different steps. We recommend verifying operation of each
+          service before proceeding to the next service.</para>
+        <procedure>
+          <title>All services</title>
+          <para>These configuration changes apply to all services.</para>
+          <step>
+            <para>In any file containing the
+              <literal>[keystone_authtoken]</literal> section, modify Identity
+              service access to use the <option>identity_uri</option>
+              option:</para>
+            <programlisting language="ini">[keystone_authtoken]
+...
+identity_uri = http://<replaceable>controller</replaceable>:35357</programlisting>
+            <para>Comment out any <literal>auth_host</literal>,
+              <literal>auth_port</literal>, and
+              <literal>auth_protocol</literal> options because the
+              <literal>identity_uri</literal> option replaces them.</para>
+          </step>
+          <step>
+            <para>In any file containing the <option>auth_uri</option> option,
+              modify it to explicitly use version 2.0:</para>
+            <programlisting language="ini">auth_uri = http://<replaceable>controller</replaceable>:5000/v2.0</programlisting>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Compute service</title>
+          <step>
+            <para>Edit the <filename>/etc/nova/nova.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, rename
+                 the <option>glance_host</option> option to
+                 <option>host</option> and move it to the
+                 <literal>[glance]</literal> section.</para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, rename
+                  the following options and move them to the
+                  <literal>[neutron]</literal> section:</para>
+                <informaltable rules="all">
+                  <thead>
+                    <tr>
+                      <th>Old options</th>
+                      <th>New options</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><option>neutron_url</option></td>
+                      <td><option>url</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_auth_strategy</option></td>
+                      <td><option>auth_strategy</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_tenant_name</option></td>
+                      <td><option>admin_tenant_name</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_username</option></td>
+                      <td><option>admin_username</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_password</option></td>
+                      <td><option>admin_password</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_admin_auth_url</option></td>
+                      <td><option>admin_auth_url</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>service_neutron_metadata_proxy</option></td>
+                      <td><option>service_metadata_proxy</option></td>
+                    </tr>
+                    <tr>
+                      <td><option>neutron_metadata_proxy_shared_secret</option></td>
+                      <td><option>metadata_proxy_shared_secret</option></td>
+                    </tr>
+                  </tbody>
+                </informaltable>
+              </step>
+              <step>
+                <para>In the <literal>[database]</literal> section, remove any
+                  <option>connection</option> options because the Compute
+                  service uses the message queue instead of direct access to
+                  the database.</para>
+              </step>
+            </substeps>
+          </step>
+          <step>
+            <para>Restart the services.</para>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Networking service</title>
+          <step>
+            <para>Edit the <filename>/etc/neutron/neutron.conf</filename>
+              file:</para>
+            <substeps>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value of the <option>rpc_backend</option> option:</para>
+                <para>
+                  <literal>neutron.openstack.common.rpc.impl_kombu</literal>
+                  becomes <literal>rabbit</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value of the <option>core_plugin</option> option:</para>
+                <para>
+                  <literal>neutron.plugins.ml2.plugin.Ml2Plugin</literal>
+                  becomes <literal>ml2</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, change
+                  the value or values of the <option>service_plugins</option>
+                  option to use short names. For example:</para>
+                <para>
+                  <literal>neutron.services.l3_router.l3_router_plugin.L3RouterPlugin</literal>
+                  becomes <literal>router</literal></para>
+              </step>
+              <step>
+                <para>In the <literal>[DEFAULT]</literal> section, explicitly
+                  define a value for the <option>nova_region_name</option>
+                  option. For example:</para>
+                <programlisting language="ini">[DEFAULT]
+...
+nova_region_name = regionOne</programlisting>
+             </step>
+             <step>
+               <para>In the <literal>[database]</literal> section, remove any
+                 <option>connection</option> options because the Networking
+                 service uses the message queue instead of direct access to
+                 the database.</para>
+             </step>
+           </substeps>
+          </step>
+          <step>
+            <para>Restart the services.</para>
+          </step>
+        </procedure>
+      </section>
+    </section>
+    <section xml:id="upgrade-icehouse-juno-storage">
+      <title>Storage nodes</title>
+      <section xml:id="upgrade-icehouse-juno-storage-packages">
+        <title>Upgrade packages to Juno</title>
+        <para>Depending on your specific configuration, upgrading all
+          packages might restart or break services supplemental to your
+          OpenStack environment. For example, if you use the TGT iSCSI
+          framework for Block Storage volumes and the upgrade includes
+          new packages for it, the package manager might restart the
+          TGT iSCSI services and impact access to volumes.</para>
+        <para>If the package manager prompts you to update configuration
+          files, reject the changes. The package manager appends a
+          suffix to newer versions of configuration files. Consider
+          reviewing and adopting content from these files.</para>
+      </section>
+      <section xml:id="upgrade-icehouse-juno-storage-services">
+        <title>Update services</title>
+        <para>To update a service, you generally modify one or more
+          configuration files, stop the service, synchronize the
+          database schema, and start the service. Some services require
+          different steps. We recommend verifying operation of each
+          service before proceeding to the next service.</para>
+        <procedure>
+          <title>All services</title>
+          <para>These configuration changes apply to all services.</para>
+          <step>
+            <para>In any file containing the
+              <literal>[keystone_authtoken]</literal> section, modify Identity
+              service access to use the <option>identity_uri</option>
+              option:</para>
+            <programlisting language="ini">[keystone_authtoken]
+...
+identity_uri = http://<replaceable>controller</replaceable>:35357</programlisting>
+            <para>Comment out any <literal>auth_host</literal>,
+              <literal>auth_port</literal>, and
+              <literal>auth_protocol</literal> options because the
+              <literal>identity_uri</literal> option replaces them.</para>
+          </step>
+          <step>
+            <para>In any file containing the <option>auth_uri</option> option,
+              modify it to explicitly use version 2.0:</para>
+            <programlisting language="ini">auth_uri = http://<replaceable>controller</replaceable>:5000/v2.0</programlisting>
+          </step>
+        </procedure>
+        <procedure>
+          <title>Block Storage service</title>
+          <para>In typical environments, updating the Block Storage service
+            only requires restarting the services.</para>
+          <step>
+            <para>Restart the services.</para>
+          </step>
+        </procedure>
+      </section>
+    </section>
+  </section>
+
   <section xml:id="ops_upgrades-final-steps">
     <title>Cleaning Up and Final Configuration File Updates</title>
 
