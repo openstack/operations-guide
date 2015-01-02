@@ -1395,8 +1395,8 @@ rabbit_password = <replaceable>RABBIT_PASS</replaceable></programlisting>
           <step><para>Upgrade the database:</para>
             <screen><prompt>#</prompt> <userinput>neutron-db-manage --config-file /etc/neutron/neutron.conf \
               --config-file /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini stamp havana</userinput>
-            <prompt>#</prompt> <userinput>neutron-db-manage --config-file /etc/neutron/neutron.conf \
-              --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade icehouse</userinput></screen>
+<prompt>#</prompt> <userinput>neutron-db-manage --config-file /etc/neutron/neutron.conf \
+--config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade icehouse</userinput></screen>
           </step>
           <step><para>Perform the conversion from OVS to ML2:</para>
             <screen><prompt>#</prompt> <userinput>python -m neutron.db.migration.migrate_to_ml2 openvswitch \</userinput></screen>
@@ -1541,8 +1541,8 @@ service_plugins = router</programlisting>
       <screen><prompt>#</prompt> <userinput>service cinder-volume restart</userinput></screen>
     </step>
    </procedure>
-    </section>
   </section>
+</section>
 
   <section xml:id="upgrades_havana-icehouse-rhel">
     <title>How to Perform an Upgrade from Havana to Icehouse—Red Hat
@@ -1573,19 +1573,60 @@ service_plugins = router</programlisting>
     </section>
     <section xml:id="upgrade_icehouse-rhel-considerations">
       <title>Upgrade Considerations</title>
-      <para>Always review the <link
-          xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse"
-          >release notes</link> before performing an upgrade to learn
-        about newly available features that you might want to enable
-        and deprecated features that you should disable.</para>
+      <itemizedlist>
+        <listitem>
+          <para>Review the <link
+              xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse"
+              >Icehouse Release Notes</link> before you upgrade to learn
+            about new features that you might want to enable and
+            deprecated features that you should disable.</para>
+        </listitem>
+        <listitem>
+          <para>Consider adopting conventions associated with newer
+            configuration files and merging them with your existing
+            configuration files after completing the upgrade process.
+            You can find newer versions of existing configuration files
+            with the following command:</para>
+        <screen><prompt>#</prompt> <userinput>find /etc -name *.rpmnew</userinput></screen>
+        </listitem>
+        <listitem>
+          <para>Icehouse disables file injection by default per the
+            <link
+              xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse"
+              >Icehouse Release Notes</link>.</para>
+          <para>If you plan to deploy Icehouse in stages, you must
+            disable file injection on all compute nodes that remain on
+            Havana. This is done by editing the <filename>/etc/nova/nova-compute.conf</filename>
+            file:</para>
+          <programlisting language="ini">[libvirt]
+            ...
+            libvirt_inject_partition = -2</programlisting>
+        </listitem>
+        <listitem>
+          <para>You must convert the configuration for your
+            environment contained in the
+            <filename>/etc/neutron/neutron.conf</filename> and
+            <filename>/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini</filename>
+            files from OVS to ML2. For example, the <link
+              xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/"
+              ><citetitle>OpenStack Installation
+                Guide</citetitle></link> covers <link
+              xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/section_neutron-networking-ml2.html"
+              >ML2 plug-in configuration</link> using GRE
+            tunnels.</para>
+          <para>Keep the OVS plug-in packages and configuration files
+            until you verify the upgrade.</para>
+        </listitem>
+      </itemizedlist>
     </section>
     <section xml:id="upgrade_icehouse-rhel-backup">
       <title>Perform a Backup</title>
-      <para>Save the configuration files on all nodes, as shown
-        here:</para>
-      <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard; \
-  do mkdir $i-havana; \
-  done</userinput>
+      <procedure>
+        <step>
+          <para>Save the configuration files on all nodes:</para>
+          <screen><prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard; \
+do mkdir $i-havana; \
+done</userinput>
 <prompt>#</prompt> <userinput>for i in keystone glance nova cinder neutron openstack-dashboard; \
   do cp -r /etc/$i/* $i-havana/; \
   done</userinput></screen>
@@ -1593,6 +1634,8 @@ service_plugins = router</programlisting>
         <para>You can modify this example script on each node to
           handle different services.</para>
       </note>
+       </step>
+       <step>
       <para>Back up all databases on the controller:</para>
       <screen><prompt>#</prompt> <userinput>mysqldump -u root -p --opt --add-drop-database --all-databases &gt; havana-db-backup.sql</userinput></screen>
       <note>
@@ -1604,108 +1647,82 @@ service_plugins = router</programlisting>
               ><citetitle>OpenStack Installation
             Guide</citetitle></link>.</para>
       </note>
+      </step>
+    </procedure>
     </section>
     <section xml:id="upgrade_icehouse-rhel-manage-repos">
       <title>Manage Repositories</title>
-      <para>On all nodes, remove the repository for Havana packages
-        and add the repository for Icehouse packages:</para>
-      <screen><prompt>#</prompt> <userinput>yum erase rdo-release-havana</userinput>
-<prompt>#</prompt> <userinput>yum install http://repos.fedorapeople.org/repos/openstack/openstack-icehouse/ \
+      <procedure>
+      <para>Complete the following actions on all nodes.</para>
+      <step>
+        <para>Remove the repository for Havana packages:</para>
+        <screen><prompt>#</prompt> <userinput>yum erase rdo-release-havana</userinput></screen>
+      </step>
+      <step>
+        <para>Add the repository for Icehouse packages:</para>
+        <screen><prompt>#</prompt> <userinput>yum install http://repos.fedorapeople.org/repos/openstack/openstack-icehouse/ \
   rdo-release-icehouse-3.noarch.rpm</userinput></screen>
-      <warning>
+      </step>
+      <step>
         <para>Disable any automatic package updates.</para>
-      </warning>
       <note>
-        <para>Consider checking for newer versions of the <link
+        <para>You should check for newer versions of the <link
             xlink:href="http://repos.fedorapeople.org/repos/openstack/openstack-icehouse/"
             >Icehouse repository</link>.</para>
       </note>
-    </section>
-    <section xml:id="upgrade_icehouse-rhel-notes">
-      <title>Upgrade Notes</title>
-      <itemizedlist>
-        <listitem>
-          <para>Disable Compute file injection:</para>
-          <para>Icehouse disables file injection by default per the
-              <link
-              xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse"
-              >release notes</link>.</para>
-          <para>If you plan to deploy Icehouse in stages, you must
-            disable file injection on all compute nodes that will
-            remain on Havana.</para>
-          <para>Edit the
-              <filename>/etc/nova/nova-compute.conf</filename>
-            file:</para>
-          <programlisting language="ini">[libvirt]
-...
-libvirt_inject_partition = -2</programlisting>
-        </listitem>
-        <listitem>
-          <para>Convert from OVS to ML2 plug-in:</para>
-          <para>You must convert the configuration for your
-            environment contained in the
-              <filename>/etc/neutron/neutron.conf</filename> and
-              <filename>/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini</filename>
-            files from OVS to ML2. For example, the <link
-              xlink:href="http://docs.openstack.org/icehouse/install-guide/install/yum/content/"
-                ><citetitle>OpenStack Installation
-              Guide</citetitle></link> covers <link
-              xlink:href="http://docs.openstack.org/icehouse/install-guide/install/yum/content/section_neutron-networking-ml2.html"
-              >ML2 plug-in configuration</link> using GRE
-            tunnels.</para>
-          <para>We recommend keeping the OVS plug-in packages and
-            configuration files until you verify the upgrade.</para>
-        </listitem>
-      </itemizedlist>
+    </step>
+  </procedure>
     </section>
     <section xml:id="upgrade_icehouse-rhel-controller-node">
       <title>Upgrade the Controller Node</title>
-      <para>Upgrade packages on the controller node to Icehouse, as
-        follows:</para>
+      <procedure>
+        <step>
+          <para>Upgrade packages on the controller node to Icehouse:</para>
       <screen><prompt>#</prompt> <userinput>yum upgrade</userinput></screen>
       <note>
         <para>The package manager appends <filename>.rpmnew</filename>
           to the end of newer versions of existing configuration
-          files. You should consider adopting conventions associated
-          with the newer configuration files and merging them with
-          your existing configuration files after completing the
-          upgrade process. You can find newer versions of existing
-          configuration files with the following command:</para>
-        <screen><prompt>#</prompt> <userinput>find /etc -name *.rpmnew</userinput></screen>
+          files.</para>
       </note>
+      </step>
+    </procedure>
     </section>
     <section xml:id="upgrade_icehouse-rhel-services">
       <title>Upgrade Each Service</title>
       <para>The upgrade procedure for each service typically requires
         that you stop the service, run the database synchronization
         command to update the associated database, and start the
-        service to apply the new configuration. You need administrator
-        privileges for these procedures. Some services require
+        service to apply the new configuration. You will need administrator
+        privileges for these procedures. Some services will require
         additional steps.</para>
-      <itemizedlist>
-        <listitem>
-          <para>OpenStack Identity:</para>
-          <para>Update the configuration file for compatibility with
-            Icehouse.</para>
-          <para>Edit the
-              <filename>/etc/keystone/keystone.conf</filename>
-            file:</para>
-          <para>Add the <literal>[database]</literal> section.</para>
-          <para>Move the <option>connection</option> key from the
-              <literal>[sql]</literal> section to the
-              <literal>[database]</literal> section.</para>
-          <para>Stop services, upgrade the database, and start
-            services.</para>
-          <screen><prompt>#</prompt> <userinput>service openstack-keystone stop</userinput>
-<prompt>#</prompt> <userinput>keystone-manage token_flush</userinput>
-<prompt>#</prompt> <userinput>keystone-manage db_sync</userinput>
-<prompt>#</prompt> <userinput>service openstack-keystone start</userinput></screen>
-        </listitem>
-        <listitem>
-          <para>OpenStack Image Service:</para>
-          <para>Before you upgrade the Image Service database, convert
+      <procedure>
+        <title>Upgrade OpenStack Identity</title>
+        <step>
+          <para>Edit the <filename>/etc/keystone/keystone.conf</filename>
+            file for compatibility for Icehouse:</para>
+          <substeps>
+            <step><para>Add the <literal>[database]</literal> section.</para></step>
+            <step><para>Move the <option>connection</option> key from
+                the<literal>[sql]</literal> section to the
+                <literal>[database]</literal> section.</para></step>
+          </substeps>
+        </step>
+        <step><para>Stop the services:</para>
+          <screen><prompt>#</prompt> <userinput>service openstack-keystone stop</userinput></screen>
+          <screen><prompt>#</prompt> <userinput>keystone-manage token_flush</userinput></screen>
+        </step>
+        <step><para>Upgrade the database:</para>
+          <screen><prompt>#</prompt> <userinput>keystone-manage db_sync</userinput></screen>
+        </step>
+        <step><para>Start the services:</para>
+          <screen><prompt>#</prompt> <userinput>service openstack-keystone start</userinput></screen>
+        </step>
+      </procedure>
+        <procedure>
+          <title>OpenStack Image Service:</title>
+          <para>Before upgrading the Image Service database, you must convert
             the character set for each table to UTF-8.</para>
-          <para>Use the MySQL client to run the following
+          <step><para>Use the MySQL client to run the following
             commands:</para>
           <screen><prompt>#</prompt> <userinput>mysql -u root -p</userinput>
 <prompt>mysql></prompt> <userinput>SET foreign_key_checks = 0;</userinput>
@@ -1722,70 +1739,80 @@ libvirt_inject_partition = -2</programlisting>
               additional tables that you must convert to UTF-8 by
               using similar commands.</para>
           </note>
-          <para>Update the configuration for compatibility with
-            Icehouse.</para>
-          <para>Edit the
-              <filename>/etc/glance/glance-api.conf</filename> and
-              <filename>/etc/glance/glance-registry.conf</filename>
-            files:</para>
-          <para>Add the <literal>[database]</literal> section.</para>
-          <para>Rename the <option>sql_connection</option> key to
+        </step>
+        <step>
+          <para>Edit the <filename>/etc/glance/glance-api.conf</filename>
+            and <filename>/etc/glance/glance-registry.conf</filename>
+            files for compatibility with Icehouse:</para>
+          <substeps>
+            <step><para>Add the <literal>[database]</literal> section.
+                </para></step>
+            <step><para>Rename the <option>sql_connection</option> key to
               <option>connection</option> and move it to the
-              <literal>[database]</literal> section.</para>
+              <literal>[database]</literal> section.</para></step>
+        </substeps>
+       </step>
+        <step>
           <para>Edit the
               <filename>/etc/glance/glance-api.conf</filename>
-            file:</para>
-          <para>Add Qpid message broker keys to the
-              <literal>[DEFAULT]</literal> section.</para>
+            file, and add the Qpid message broker keys to the
+              <literal>[DEFAULT]</literal> section:</para>
           <programlisting language="ini">[DEFAULT]
 ...
 rpc_backend = qpid
 qpid_hostname = <replaceable>controller</replaceable></programlisting>
+        </step>
+        <step><para>Stop the services:</para>
           <para>Stop services, upgrade the database, and start
             services:</para>
           <screen><prompt>#</prompt> <userinput>service openstack-glance-api stop</userinput>
-<prompt>#</prompt> <userinput>service openstack-glance-registry stop</userinput>
-<prompt>#</prompt> <userinput>glance-manage db_sync</userinput>
-<prompt>#</prompt> <userinput>service openstack-glance-api start</userinput>
+<prompt>#</prompt> <userinput>service openstack-glance-registry stop</userinput></screen>
+          </step>
+          <step><para>Upgrade the database:</para>
+            <screen><prompt>#</prompt> <userinput>glance-manage db_sync</userinput></screen>
+          </step>
+          <step><para>Start the services:</para>
+            <screen><prompt>#</prompt> <userinput>service openstack-glance-api start</userinput>
 <prompt>#</prompt> <userinput>service openstack-glance-registry start</userinput></screen>
-        </listitem>
-        <listitem>
-          <para>OpenStack Compute:</para>
-          <para>Update the configuration for compatibility with
-            Icehouse.</para>
-          <para>Edit the <filename>/etc/nova/nova.conf</filename>
-            file:</para>
-          <para>Change the <option>rpc_backend</option> key from
+        </step>
+      </procedure>
+      <procedure>
+          <title>Upgrading OpenStack Compute:</title>
+          <step><para>Edit the <filename>/etc/nova/nova.conf</filename>
+            file and change the <option>rpc_backend</option> key from
               <literal>nova.openstack.common.rpc.impl_qpid</literal>
-            to <literal>qpid</literal>.</para>
-          <para>Edit the <filename>/etc/nova/api-paste.ini</filename>
-            file:</para>
-          <para>Comment out or remove any keys in the
-              <literal>[filter:authtoken]</literal> section beneath
+              to <literal>qpid</literal>.</para></step>
+          <step><para>Edit the <filename>/etc/nova/api-paste.ini</filename>
+            file and comment out or remove any keys in the
+            <literal>[filter:authtoken]</literal> section beneath
             the <literal>paste.filter_factory =
-              keystoneclient.middleware.auth_token:filter_factory</literal>
-            statement.</para>
-          <para>Stop services, upgrade the database, and start
-            services.</para>
+            keystoneclient.middleware.auth_token:filter_factory</literal>
+            statement.</para></step>
+        <step><para>Stop the services:</para>
           <screen><prompt>#</prompt> <userinput>service openstack-nova-api stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-scheduler stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-conductor stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-cert stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-consoleauth stop</userinput>
-<prompt>#</prompt> <userinput>service openstack-nova-novncproxy stop</userinput>
-<prompt>#</prompt> <userinput>nova-manage db sync</userinput>
-<prompt>#</prompt> <userinput>service openstack-nova-api start</userinput>
+<prompt>#</prompt> <userinput>service openstack-nova-novncproxy stop</userinput></screen>
+        </step>
+        <step><para>Upgrade the database:</para>
+          <screen><prompt>#</prompt> <userinput>nova-manage db sync</userinput></screen>
+        </step>
+        <step><para>Start the services:</para>
+          <screen><prompt>#</prompt> <userinput>service openstack-nova-api start</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-scheduler start</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-conductor start</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-cert start</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-consoleauth start</userinput>
 <prompt>#</prompt> <userinput>service openstack-nova-novncproxy start</userinput></screen>
-        </listitem>
-        <listitem>
-          <para>OpenStack Networking:</para>
+        </step>
+        </procedure>
+        <procedure>
+          <title>Upgrade OpenStack Networking</title>
           <para>Before upgrading the Networking database, you must
             convert the character set for each table to UTF-8.</para>
-          <para>Use the MySQL client to execute the following
+          <step><para>Use the MySQL client to execute the following
             commands:</para>
           <screen><prompt>#</prompt> <userinput>mysql -u root -p</userinput>
 <prompt>mysql></prompt> <userinput>USE neutron;</userinput>
@@ -1827,43 +1854,58 @@ qpid_hostname = <replaceable>controller</replaceable></programlisting>
               you must also convert to UTF-8 by using similar
               commands.</para>
           </note>
-          <para>Install the ML2 plug-in package:</para>
-          <screen><prompt>#</prompt> <userinput>yum install openstack-neutron-ml2</userinput></screen>
-          <para>Populate the
+          </step>
+          <step><para>Install the ML2 plug-in package:</para>
+          <screen><prompt>#</prompt> <userinput>yum install openstack-
+              neutron-ml2</userinput></screen></step>
+          <step><para>Populate the
               <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>
             file with the equivalent configuration for your
-            environment. Do not edit the
-              <filename>/etc/neutron/neutron.conf</filename> file
-            until after the conversion steps.</para>
-          <para>Change the
-              <filename>/etc/neutron/plugin.ini</filename> symbolic
-            link to reference
-              <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>.</para>
-          <para>Stop services, upgrade the database, and perform the
-            conversion from OVS to ML2.</para>
-          <para>Replace <replaceable>NEUTRON_DBPASS</replaceable> with
-            the password you chose for the database.</para>
-          <warning>
-            <para>We highly recommend that you perform a database
-              backup prior to executing the following commands as the
-              conversion script cannot roll back.</para>
-          </warning>
-          <screen><prompt>#</prompt> <userinput>service neutron-server stop</userinput>
+            environment.</para>
+          <note><para>Do not edit the <filename>/etc/neutron/neutron.conf</filename>
+              file until after the conversion steps.</para></note>
+          </step>
+          <step><para>Change the <filename>/etc/neutron/plugin.ini</filename>
+              symbolic link to reference
+            <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>.</para></step>
+        <step><para>Stop services:</para>
+          <screen><prompt>#</prompt> <userinput>service neutron-server stop</userinput></screen>
+          </step>
+          <step><para>Upgrade the database:</para>
+          <screen><prompt>#</prompt> <userinput>neutron-db-manage --config-file /etc/neutron/neutron.conf \
+              --config-file /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini stamp havana</userinput>
 <prompt>#</prompt> <userinput>neutron-db-manage --config-file /etc/neutron/neutron.conf \
+--config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade icehouse</userinput></screen></step>
+          <step><para>Perform the conversion from OVS to ML2:</para>
+            <screen><prompt>#</prompt> <userinput>python -m neutron.db.migration.migrate_to_ml2 openvswitch \</userinput></screen>
+          </step>
+          <step><para>Replace <replaceable>NEUTRON_DBPASS</replaceable> with
+              the password you chose for the database.</para>
+            <screen><userinput>mysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
+          </step>
+          <step>
+          <warning>
+            <para>Because the conversion script cannot roll back,
+              you must perform a database backup prior to executing
+              the following commands.</para>
+          </warning>
+          <para>Stop the service:</para>
+          <screen><prompt>#</prompt> <userinput>service neutron-server stop</userinput></screen>
+        </step>
+        <step><para>Upgrade the database:</para>
+          <screen><prompt>#</prompt> <userinput>neutron-db-manage --config-file /etc/neutron/neutron.conf \
   --config-file /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini stamp havana</userinput>
 <prompt>#</prompt> <userinput>neutron-db-manage --config-file /etc/neutron/neutron.conf \
-  --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade icehouse</userinput>
-<prompt>#</prompt> <userinput>python -m neutron.db.migration.migrate_to_ml2 openvswitch \
+  --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade icehouse</userinput></screen>
+        </step>
+        <step><para>Perform the conversion from OVS to ML2:</para>
+  <screen><prompt>#</prompt> <userinput>python -m neutron.db.migration.migrate_to_ml2 openvswitch \
   mysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
-          <para>Edit the
+        </step>
+        <step><para>Edit the
               <filename>/etc/neutron/neutron.conf</filename> file to
             use the ML2 plug-in and enable network change
             notifications:</para>
-          <para>Replace <replaceable>SERVICE_TENANT_ID</replaceable>
-            with the service tenant identifier (id) in the Identity
-            service and <replaceable>NOVA_PASS</replaceable> with the
-            password you chose for the <literal>nova</literal> user in
-            the Identity service.</para>
           <programlisting language="ini">[DEFAULT]
 ...
 core_plugin = ml2
@@ -1877,141 +1919,165 @@ nova_admin_tenant_id = <replaceable>SERVICE_TENANT_ID</replaceable>
 nova_admin_password = <replaceable>NOVA_PASS</replaceable>
 nova_admin_auth_url = http://<replaceable>controller</replaceable>:35357/v2.0
 </programlisting>
-          <para>Start Networking services.</para>
+              <para>Replace <replaceable>SERVICE_TENANT_ID</replaceable>
+                with the service tenant identifier (id) in the Identity
+                service and <replaceable>NOVA_PASS</replaceable> with the
+                password you chose for the <literal>nova</literal> user in
+                the Identity service.</para>
+              </step>
+              <step><para>Start Networking services.</para>
           <screen><prompt>#</prompt> <userinput>service neutron-server start</userinput></screen>
-        </listitem>
-        <listitem>
-          <para>OpenStack Block Storage:</para>
-          <para>Stop services, upgrade the database, and start
-            services.</para>
+        </step>
+      </procedure>
+        <procedure>
+          <title>Upgrade OpenStack Block Storage</title>
+          <step><para>Stop services:</para>
           <screen><prompt>#</prompt> <userinput>service openstack-cinder-api stop</userinput>
 <prompt>#</prompt> <userinput>service openstack-cinder-volume stop</userinput>
-<prompt>#</prompt> <userinput>service openstack-cinder-scheduler stop</userinput>
-<prompt>#</prompt> <userinput>cinder-manage db sync</userinput>
-<prompt>#</prompt> <userinput>service openstack-cinder-api start</userinput>
+<prompt>#</prompt> <userinput>service openstack-cinder-scheduler stop</userinput></screen>
+          </step>
+          <step><para>Upgrade the database:</para>
+<screen><prompt>#</prompt> <userinput>cinder-manage db sync</userinput></screen>
+          </step>
+          <step><para>Start services:</para>
+            <screen><prompt>#</prompt> <userinput>service openstack-cinder-api start</userinput>
 <prompt>#</prompt> <userinput>service openstack-cinder-volume start</userinput>
 <prompt>#</prompt> <userinput>service openstack-cinder-scheduler start</userinput></screen>
-        </listitem>
-        <listitem>
-          <para>Dashboard:</para>
-          <para>Update the configuration for compatibility with
-            Icehouse.</para>
-          <para>Edit the
-              <filename>/etc/openstack-dashboard/local_settings</filename>
-            file:</para>
-          <para>Change the
-              <option>OPENSTACK_KEYSTONE_DEFAULT_ROLE</option> key
-            from <literal>"Member"</literal> to
-              <literal>"_member_"</literal>.</para>
-          <para>Restart Dashboard services.</para>
+        </step>
+      </procedure>
+      <procedure>
+          <title>Update Dashboard</title>
+          <step><para>Edit the <filename>/etc/openstack-dashboard/local_settings</filename>
+            file and change the <option>OPENSTACK_KEYSTONE_DEFAULT_ROLE</option>
+            key from <literal>"Member"</literal> to <literal>"_member_"</literal>
+            .</para></step>
+        <step><para>Restart Dashboard services:</para>
           <screen><prompt>#</prompt> <userinput>service httpd restart</userinput></screen>
-        </listitem>
-      </itemizedlist>
+        </step>
+      </procedure>
       <para>The controller node update is complete. Now you can
         upgrade the remaining nodes.</para>
     </section>
     <section xml:id="upgrade_icehouse-rhel-network-node">
       <title>Upgrade the Network Node</title>
-      <para>Upgrade packages on the network node to Icehouse:</para>
+      <procedure>
+      <step><para>Upgrade packages on the network node to Icehouse:</para>
       <note>
         <para>Make sure you have removed the repository for Havana
           packages and added the repository for Icehouse
           packages.</para>
       </note>
       <screen><prompt>#</prompt> <userinput>yum upgrade</userinput></screen>
-      <para>Install the ML2 plug-in package:</para>
+      </step>
+      <step><para>Install the ML2 plug-in package:</para>
       <screen><prompt>#</prompt> <userinput>yum install openstack-neutron-ml2</userinput></screen>
-      <para>Edit the <filename>/etc/neutron/neutron.conf</filename>
+      </step>
+      <step><para>Edit the <filename>/etc/neutron/neutron.conf</filename>
         file to use the ML2 plug-in:</para>
       <programlisting language="ini">[DEFAULT]
 core_plugin = ml2
 service_plugins = router</programlisting>
-      <para>Populate the
+      </step>
+      <step><para>Populate the
           <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>
         file with the equivalent configuration for your
-        environment.</para>
-      <para>Change the <filename>/etc/neutron/plugin.ini</filename>
+        environment.</para></step>
+      <step><para>Change the <filename>/etc/neutron/plugin.ini</filename>
         symbolic link to reference
-          <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>.</para>
-      <para>Clean the active OVS configuration:</para>
+          <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>
+          .</para></step>
+      <step><para>Clean the active OVS configuration:</para>
       <screen><prompt>#</prompt> <userinput>service neutron-ovs-cleanup restart</userinput></screen>
-      <para>Restart Networking services:</para>
+      </step>
+      <step><para>Restart Networking services:</para>
       <screen><prompt>#</prompt> <userinput>service neutron-dhcp-agent restart</userinput>
 <prompt>#</prompt> <userinput>service neutron-l3-agent restart</userinput>
 <prompt>#</prompt> <userinput>service neutron-metadata-agent restart</userinput>
 <prompt>#</prompt> <userinput>service neutron-openvswitch-agent restart</userinput></screen>
+      </step>
+    </procedure>
     </section>
     <section xml:id="upgrade_icehouse-rhel-compute-nodes">
       <title>Upgrade the Compute Nodes</title>
-      <para>Upgrade packages on the compute nodes to Icehouse:</para>
+      <procedure>
+      <step><para>Upgrade packages on the compute nodes to Icehouse:</para>
       <note>
         <para>Make sure you have removed the repository for Havana
           packages and added the repository for Icehouse
           packages.</para>
       </note>
       <screen><prompt>#</prompt> <userinput>yum upgrade</userinput></screen>
-      <para>Install the ML2 plug-in package:</para>
+      </step>
+      <step><para>Install the ML2 plug-in package:</para>
       <screen><prompt>#</prompt> <userinput>yum install openstack-neutron-ml2</userinput></screen>
-      <para>Edit the <filename>/etc/neutron/neutron.conf</filename>
+      </step>
+      <step><para>Edit the <filename>/etc/neutron/neutron.conf</filename>
         file to use the ML2 plug-in:</para>
       <programlisting language="ini">[DEFAULT]
 core_plugin = ml2
 service_plugins = router</programlisting>
-      <para>Populate the
+      </step>
+      <step><para>Populate the
           <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>
         file with the equivalent configuration for your
         environment.</para>
-      <para>Change the <filename>/etc/neutron/plugin.ini</filename>
+      </step>
+      <step><para>Change the <filename>/etc/neutron/plugin.ini</filename>
         symbolic link to reference
           <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>.</para>
-      <para>Clean the active OVS configuration:</para>
+      </step>
+      <step><para>Clean the active OVS configuration:</para>
       <screen><prompt>#</prompt> <userinput>service neutron-ovs-cleanup restart</userinput></screen>
-      <para>Restart Networking services:</para>
+      </step>
+      <step><para>Restart Networking services:</para>
       <screen><prompt>#</prompt> <userinput>service neutron-openvswitch-agent restart</userinput></screen>
-      <para>Restart Compute services:</para>
+      </step>
+      <step><para>Restart Compute services:</para>
       <screen><prompt>#</prompt> <userinput>service openstack-nova-compute restart</userinput></screen>
+    </step>
+  </procedure>
     </section>
     <section xml:id="upgrade_icehouse-rhel-storage-nodes">
       <title>Upgrade the Storage Nodes</title>
-      <para>Upgrade packages on the storage nodes to Icehouse:</para>
+      <procedure>
+        <step><para>Upgrade packages on the storage nodes to Icehouse:</para>
       <note>
         <para>Make sure you have removed the repository for Havana
           packages and added the repository for Icehouse
           packages.</para>
       </note>
       <screen><prompt>#</prompt> <userinput>yum upgrade</userinput></screen>
-      <para>Restart Block Storage services.</para>
+    </step>
+    <step><para>Restart Block Storage service:</para>
       <screen><prompt>#</prompt> <userinput>service openstack-cinder-volume restart</userinput></screen>
-    </section>
+    </step>
+  </procedure>
+  </section>
   </section>
   <section xml:id="ops_upgrades-final-steps">
     <title>Cleaning Up and Final Configuration File Updates</title>
-
     <para>On all distributions, you must perform some final tasks to
       complete the upgrade process.<indexterm class="singular">
         <primary>upgrading</primary>
         <secondary>final steps</secondary>
       </indexterm></para>
-
-    <para>Decrease DHCP timeouts by modifying
+  <procedure>
+    <step><para>Decrease DHCP timeouts by modifying
         <filename>/etc/nova/nova.conf</filename> on the compute nodes
-      back to the original value for your environment.</para>
-
-    <para>Update all <filename>.ini</filename> files to match
+        back to the original value for your environment.</para></step>
+    <step><para>Update all <filename>.ini</filename> files to match
       passwords and pipelines as required for Havana in your
-      environment.</para>
-
-    <para>After a migration, your users see different results from
+      environment.</para></step>
+    <step><para>After migration, users see different results from
         <command>nova image-list</command> and <command>glance
-        image-list</command> unless you match policies for access to
-      private images. To do so, edit the
-        <filename>/etc/glance/policy.json</filename> and
-        <filename>/etc/nova/policy.json</filename> files to contain
+        image-list</command>. To ensure users see the same images in
+        the list commands, edit the <filename>/etc/glance/policy.json</filename>
+        and <filename>/etc/nova/policy.json</filename> files to contain
         <code>"context_is_admin": "role:admin"</code>, which limits
-      access to private images for projects.</para>
-
-    <para>Thoroughly test the environment. Then, let your users know
-      that their cloud is running normally again.</para>
+        access to private images for projects.</para></step>
+    <step><para>Thoroughly test the environment. Then, let your users
+        know that their cloud is running normally again.</para></step>
+  </procedure>
   </section>
 
   <section xml:id="ops_upgrades-roll-back">
