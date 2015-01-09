@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-01-02 16:31+0000\n"
-"PO-Revision-Date: 2015-01-02 16:31+0000\n"
+"POT-Creation-Date: 2015-01-08 15:02+0000\n"
+"PO-Revision-Date: 2015-01-08 15:31+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2866,6 +2866,9 @@ msgstr "Ubuntu には RabbitMQ、Red Hat Enterprise Linux には Qpid、 およ�
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml120(para)
 #: ./doc/openstack-ops/section_arch_example-neutron.xml92(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2361(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2531(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2699(title)
 msgid "Networking service"
 msgstr "ネットワークサービス"
 
@@ -7786,6 +7789,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_upgrades.xml731(para)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1146(para)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1634(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2118(para)
 msgid ""
 "You can modify this example script on each node to handle different "
 "services."
@@ -7794,6 +7798,7 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_upgrades.xml365(para)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1151(para)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1639(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2123(para)
 msgid "Back up all databases on the controller:"
 msgstr ""
 
@@ -8300,6 +8305,7 @@ msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1138(para)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1626(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2110(para)
 msgid "Save the configuration files on all nodes:"
 msgstr ""
 
@@ -8417,6 +8423,11 @@ msgid "Upgrade the database:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1238(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2285(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2357(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2407(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2439(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2470(para)
 msgid "Start the services."
 msgstr ""
 
@@ -8470,6 +8481,15 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1763(replaceable)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1916(replaceable)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml1920(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2210(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2219(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2427(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2518(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2527(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2615(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2624(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2780(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2789(replaceable)
 msgid "controller"
 msgstr "controller"
 
@@ -8861,11 +8881,477 @@ msgstr ""
 msgid "Restart Block Storage service:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2058(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2059(title)
+msgid "How to Perform an Upgrade from Icehouse to Juno"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2061(para)
+msgid ""
+"Use this procedure to upgrade a basic operational deployment of the "
+"following services: Identity (keystone), Image Service (glance), Compute "
+"(nova), Networking (neutron), dashboard (horizon), Block Storage (cinder), "
+"Orchestration (heat), and Telemetry (ceilometer). This procedure references "
+"the basic three-node architecture in the <link "
+"href=\"http://docs.openstack.org/icehouse/install-"
+"guide/install/apt/content/\"><citetitle>OpenStack Installation "
+"Guide</citetitle></link>. All nodes must run a supported distribution of "
+"Linux with a recent kernel and latest Icehouse packages."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2071(title)
+msgid "Before you begin"
+msgstr "始める前に"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2074(para)
+msgid ""
+"The upgrade process interrupts management of your environment including the "
+"dashboard. If you properly prepare for the upgrade, existing instances, "
+"networking, and storage should continue to operate. However, instances might"
+" experience intermittent network interruptions."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2081(para)
+msgid ""
+"Review the <link "
+"href=\"http://wiki.openstack.org/wiki/ReleaseNotes/Juno\">release "
+"notes</link> before upgrading to learn about new, updated, and deprecated "
+"features."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2087(para)
+msgid ""
+"Consider adopting structure and options from Juno service configuration "
+"files and merging them with existing configuration files. The <link "
+"href=\"http://docs.openstack.org/juno/config-"
+"reference/content/\"><citetitle>OpenStack Configuration "
+"Reference</citetitle></link> contains new, updated, and deprecated options "
+"for most services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2096(para)
+msgid ""
+"For environments using the OpenStack Networking (neutron) service, verify "
+"the Icehouse version of the database:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2107(title)
+msgid "Perform a backup"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2126(para)
+msgid ""
+"Consider updating your SQL server configuration as described in the <link "
+"href=\"http://docs.openstack.org/juno/install-"
+"guide/install/apt/content/\">OpenStack Installation Guide</link>."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2135(title)
+msgid "Manage repositories"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2137(para)
+msgid "Complete the following steps on all nodes."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2139(para)
+msgid "Remove the repository for Icehouse packages."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2142(para)
+msgid "On Ubuntu, follow these steps:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2145(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2168(para)
+msgid "Add the repository for Juno packages:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2149(para)
+msgid ""
+"Remove any Ubuntu Cloud archive repositories for Icehouse packages. You "
+"might also need to install or update the <literal>ubuntu-cloud-"
+"keyring</literal> package."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2155(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2172(para)
+msgid "Update the repository database."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2160(para)
+msgid ""
+"On Red Hat Enterprise Linux (RHEL), CentOS, and Fedora, follow these steps:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2164(para)
+msgid "Remove the repository for Icehouse packages:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2179(title)
+msgid "Controller nodes"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2181(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2486(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2583(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2751(title)
+msgid "Upgrade packages to Juno"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2182(para)
+msgid ""
+"Depending on your specific configuration, upgrading all packages might "
+"restart or break services supplemental to your OpenStack environment. For "
+"example, if you use the TGT iSCSI framework for Block Storage volumes and "
+"the upgrade includes new packages for it, the package manager might restart "
+"the TGT iSCSI services and impact connectivity to volumes."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2188(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2496(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2593(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2758(para)
+msgid ""
+"If the package manager prompts you to update configuration files, reject the"
+" changes. The package manager appends a suffix to newer versions of "
+"configuration files. Consider reviewing and adopting content from these "
+"files."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2194(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2502(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2599(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2764(title)
+msgid "Update services"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2195(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2503(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2600(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2765(para)
+msgid ""
+"To update a service, you generally modify one or more configuration files, "
+"stop the service, synchronize the database schema, and start the service. "
+"Some services require different steps. We recommend verifying operation of "
+"each service before proceeding to the next service."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2201(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2509(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2606(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2771(title)
+msgid "All services"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2202(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2510(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2607(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2772(para)
+msgid "These configuration changes apply to all services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2204(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2512(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2609(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2774(para)
+msgid ""
+"In any file containing the <literal>[keystone_authtoken]</literal> section, "
+"modify Identity service access to use the <placeholder-1/> option:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2211(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2519(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2616(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2781(para)
+msgid ""
+"Comment out any <literal>auth_host</literal>, <literal>auth_port</literal>, "
+"and <literal>auth_protocol</literal> options because the "
+"<literal>identity_uri</literal> option replaces them."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2217(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2525(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2622(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2787(para)
+msgid ""
+"In any file containing the <placeholder-1/> option, modify it to explicitly "
+"use version 2.0:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2223(title)
+msgid "Identity service"
+msgstr "Identity"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2225(para)
+msgid "Edit the <filename>/etc/keystone/keystone.conf</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2229(para)
+msgid ""
+"In the <literal>[token]</literal> section, configure the UUID token provider"
+" and SQL driver:"
+msgstr "<literal>[token]</literal> セクションに、UUID トークンプロバイダーと SQL ドライバーを設定します。"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2239(para)
+msgid "Stop the service."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2242(para)
+msgid "Clear expired tokens:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2246(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2281(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2353(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2402(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2435(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2466(para)
+msgid "Synchronize the database schema:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2250(para)
+msgid "Start the service."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2254(title)
+msgid "Image Service"
+msgstr "Image Service"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2256(para)
+msgid "Edit the <filename>/etc/glance/glance-api.conf</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2260(para)
+msgid ""
+"Move the following options from the <literal>[DEFAULT]</literal> section to "
+"the <literal>[glance_store]</literal> section:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2272(para)
+msgid "These options must contain values."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2278(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2350(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2399(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2432(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2463(para)
+msgid "Stop the services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2289(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2628(title)
+msgid "Compute service"
+msgstr "Compute サービス"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2291(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2630(para)
+msgid "Edit the <filename>/etc/nova/nova.conf</filename> file:"
+msgstr "<filename>/etc/nova/nova.conf</filename> ファイルを編集します。"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2295(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2634(para)
+msgid ""
+"In the <literal>[DEFAULT]</literal> section, rename the <placeholder-1/> "
+"option to <placeholder-2/> and move it to the <literal>[glance]</literal> "
+"section."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2301(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2640(para)
+msgid ""
+"In the <literal>[DEFAULT]</literal> section, rename the following options "
+"and move them to the <literal>[neutron]</literal> section:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2307(th)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2646(th)
+msgid "Old options"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2308(th)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2647(th)
+msgid "New options"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2363(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2533(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2701(para)
+msgid "Edit the <filename>/etc/neutron/neutron.conf</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2367(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2374(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2454(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2537(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2544(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2705(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2712(para)
+msgid ""
+"In the <literal>[DEFAULT]</literal> section, change the value of the "
+"<placeholder-1/> option:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2369(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2539(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2707(para)
+msgid ""
+"<literal>neutron.openstack.common.rpc.impl_kombu</literal> becomes "
+"<literal>rabbit</literal>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2376(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2546(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2714(para)
+msgid ""
+"<literal>neutron.plugins.ml2.plugin.Ml2Plugin</literal> becomes "
+"<literal>ml2</literal>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2381(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2551(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2719(para)
+msgid ""
+"In the <literal>[DEFAULT]</literal> section, change the value or values of "
+"the <placeholder-1/> option to use short names. For example:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2384(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2554(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2722(para)
+msgid ""
+"<literal>neutron.services.l3_router.l3_router_plugin.L3RouterPlugin</literal>"
+" becomes <literal>router</literal>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2389(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2559(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2727(para)
+msgid ""
+"In the <literal>[DEFAULT]</literal> section, explicitly define a value for "
+"the <placeholder-1/> option. For example:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2411(title)
+#: ./doc/openstack-ops/ch_arch_cloud_controller.xml660(title)
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2412(para)
+msgid ""
+"In typical environments, updating the dashboard only requires restarting the"
+" services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2415(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2478(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2575(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2695(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2743(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2797(para)
+msgid "Restart the services."
+msgstr "サービスを再起動します。"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2419(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2793(title)
+msgid "Block Storage service"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2421(para)
+msgid "Edit the <filename>/etc/cinder/cinder.conf</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2425(para)
+msgid "In the <literal>[DEFAULT]</literal> section, add the following option:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2443(title)
+msgid "Orchestration service"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2445(para)
+msgid ""
+"Create the <literal>heat_stack_owner</literal> role if it does not exist:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2450(para)
+msgid "Edit the <filename>/etc/heat/heat.conf</filename> file:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2456(para)
+msgid ""
+"<literal>heat.openstack.common.rpc.impl_kombu</literal> becomes "
+"<literal>rabbit</literal>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2474(title)
+msgid "Telemetry service"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2475(para)
+msgid ""
+"In typical environments, updating the Telemetry service only requires "
+"restarting the services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2484(title)
+msgid "Network nodes"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2487(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2584(para)
+msgid ""
+"Explicitly install the <literal>ipset</literal> package if your distribution"
+" does not install it as a dependency."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2490(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2587(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2752(para)
+msgid ""
+"Depending on your specific configuration, upgrading all packages might "
+"restart or break services supplemental to your OpenStack environment. For "
+"example, if you use the TGT iSCSI framework for Block Storage volumes and "
+"the upgrade includes new packages for it, the package manager might restart "
+"the TGT iSCSI services and impact access to volumes."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2567(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2735(para)
+msgid ""
+"In the <literal>[database]</literal> section, remove any <placeholder-1/> "
+"options because the Networking service uses the message queue instead of "
+"direct access to the database."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2581(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml109(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml117(para)
+msgid "Compute nodes"
+msgstr "コンピュートノード"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2687(para)
+msgid ""
+"In the <literal>[database]</literal> section, remove any <placeholder-1/> "
+"options because the Compute service uses the message queue instead of direct"
+" access to the database."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2749(title)
+msgid "Storage nodes"
+msgstr "ストレージノード"
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2794(para)
+msgid ""
+"In typical environments, updating the Block Storage service only requires "
+"restarting the services."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2805(title)
 msgid "Cleaning Up and Final Configuration File Updates"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2059(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2806(para)
 msgid ""
 "On all distributions, you must perform some final tasks to complete the "
 "upgrade process.<indexterm "
@@ -8873,19 +9359,19 @@ msgid ""
 "steps</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2065(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2812(para)
 msgid ""
 "Decrease DHCP timeouts by modifying <filename>/etc/nova/nova.conf</filename>"
 " on the compute nodes back to the original value for your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2068(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2815(para)
 msgid ""
 "Update all <filename>.ini</filename> files to match passwords and pipelines "
 "as required for Havana in your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2071(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2818(para)
 msgid ""
 "After migration, users see different results from <placeholder-1/> and "
 "<placeholder-2/>. To ensure users see the same images in the list commands, "
@@ -8895,17 +9381,17 @@ msgid ""
 "private images for projects."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2078(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2825(para)
 msgid ""
 "Thoroughly test the environment. Then, let your users know that their cloud "
 "is running normally again."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2084(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2831(title)
 msgid "Rolling Back a Failed Upgrade"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2086(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2833(para)
 msgid ""
 "Upgrades involve complex operations and can fail. This section provides "
 "guidance for rolling back to a previous release of OpenStack. Although only "
@@ -8917,7 +9403,7 @@ msgid ""
 "failures</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2098(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2845(para)
 msgid ""
 "In this section, we consider only the most immediate case: you have taken "
 "down production management services in preparation for an upgrade, completed"
@@ -8928,25 +9414,25 @@ msgid ""
 "storage volumes, and so on."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2107(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2854(para)
 msgid ""
 "Within this scope, you must complete these steps to successfully roll back "
 "your environment:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2112(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2859(para)
 msgid "Roll back configuration files."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2116(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2863(para)
 msgid "Roll back databases."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2120(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2867(para)
 msgid "Roll back packages."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2124(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2871(para)
 msgid ""
 "The upgrade instructions provided in earlier sections ensure that you have "
 "proper backups of your databases and configuration files. Read through this "
@@ -8959,35 +9445,35 @@ msgid ""
 "back as the very last option."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2136(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2883(para)
 msgid ""
 "The following steps described for Ubuntu have worked on at least one "
 "production environment, but they might not work for all environments."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2141(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2888(title)
 msgid "To perform the rollback from Havana to Grizzly"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2144(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2891(para)
 msgid "Stop all OpenStack services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2148(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2895(para)
 msgid ""
 "Copy contents of configuration backup directories "
 "<filename>/etc/&lt;service&gt;.grizzly</filename> that you created during "
 "the upgrade process back to <filename>/etc/&lt;service&gt;</filename>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2155(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2902(para)
 msgid ""
 "Restore databases from the <filename>grizzly-db-backup.sql</filename> backup"
 " file that you created with the <placeholder-1/> command during the upgrade "
 "process:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2162(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2909(para)
 msgid ""
 "If you created this backup by using the <placeholder-1/> flag as instructed,"
 " you can proceed to the next step. If you omitted this flag, MySQL reverts "
@@ -8997,17 +9483,17 @@ msgid ""
 "next upgrade <phrase role=\"keep-together\">attempt</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2174(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2921(para)
 msgid "Downgrade OpenStack packages."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2177(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2924(para)
 msgid ""
 "Downgrading packages is by far the most complicated step; it is highly "
 "dependent on the distribution and the overall administration of the system."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2184(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2931(para)
 msgid ""
 "Determine which OpenStack packages are installed on your system. Use the "
 "<placeholder-1/> command. Filter for OpenStack packages, filter again to "
@@ -9016,20 +9502,20 @@ msgid ""
 " controller node with keystone, glance, nova, neutron, and cinder:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2232(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2979(para)
 msgid ""
 "Depending on the type of server, the contents and order of your package list"
 " might vary from this example."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2239(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml2986(para)
 msgid ""
 "You can determine the package versions available for reversion by using the "
 "<placeholder-1/> command. If you removed the Grizzly repositories, you must "
 "first reinstall them and run <placeholder-2/>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2270(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml3017(para)
 msgid ""
 "This tells us the currently installed version of the package, newest "
 "candidate version, and all versions along with the repository that contains "
@@ -9040,13 +9526,13 @@ msgid ""
 "process:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2322(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml3069(para)
 msgid ""
 "If you decide to continue this step manually, don't forget to change "
 "<code>neutron</code> to <code>quantum</code> where applicable."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2329(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml3076(para)
 msgid ""
 "Use the <placeholder-1/> command to install specific versions of each "
 "package by specifying <code>&lt;package-name&gt;=&lt;version&gt;</code>. The"
@@ -9054,7 +9540,7 @@ msgid ""
 "<code>package=version</code> pairs for you:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml2338(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml3085(para)
 msgid ""
 "This step completes the rollback procedure. You should remove the Havana "
 "repository and run <placeholder-1/> to prevent accidental upgrades until you"
@@ -17071,10 +17557,6 @@ msgid ""
 "upload new images through OpenStack."
 msgstr "OpenStack Storageサービスがある場合は、イメージを保存するためにスケーラブルな場所を利用する事を推奨します。また、OpenStackをとおして新しいイメージをアップロードする必要がない場合を除いて、十分な性能を備えたファイルシステムかAmazon S3を使用する事もできます。"
 
-#: ./doc/openstack-ops/ch_arch_cloud_controller.xml660(title)
-msgid "Dashboard"
-msgstr "ダッシュボード"
-
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml662(para)
 msgid ""
 "The OpenStack dashboard (horizon) provides a web-based user interface to the"
@@ -17312,11 +17794,6 @@ msgstr ""
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml105(code)
 msgid "/var/log/syslog"
 msgstr "/var/log/syslog"
-
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml109(para)
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml117(para)
-msgid "Compute nodes"
-msgstr "コンピュートノード"
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml111(para)
 msgid "libvirt"
