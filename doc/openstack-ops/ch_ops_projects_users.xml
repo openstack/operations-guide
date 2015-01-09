@@ -533,7 +533,7 @@
       file:</para>
 
       <programlisting language="ini">[pipeline:main]
-pipeline = healthcheck [...] container_quotas account_quotas proxy-server
+pipeline = catch_errors [...] slo dlo account_quotas proxy-server
 
 [filter:account_quotas]
 use = egg:swift#account_quotas
