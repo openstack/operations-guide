@@ -1230,7 +1230,7 @@ Optional snapshot description. (Default=None)</programlisting>
         </indexterm></para>
 
       <sidebar>
-        <title>Ensuring Snapshots Are Consistent</title>
+        <title>Ensuring Snapshots of Linux Guests Are Consistent</title>
 
         <para>The following section is from Sébastien Han's <link
         xlink:href="http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/"
@@ -1361,6 +1361,64 @@ Optional snapshot description. (Default=None)</programlisting>
         <para>After this command it is common practice to call <command>nova image-create</command> from your
           workstation, and once done press enter in your instance shell to unfreeze it.
           Obviously you could automate this, but at least it will let you properly synchronize.</para>
+      </sidebar>
+
+      <sidebar>
+        <title>Ensuring Snapshots of Windows Guests Are Consistent</title>
+
+        <para>Obtaining consistent snapshots of Windows VMs is conceptually
+        similar to obtaining consistent snapshots of Linux VMs, although it
+        requires additional utilities to coordinate with a Windows-only
+        subsystem designed to facilitate consistent backups.</para>
+
+        <para>Windows XP and later releases include a Volume Shadow Copy
+        Service (VSS) which provides a framework so that compliant
+        applications can be consistently backed up on a live filesystem. To
+        use this framework, a VSS requestor is run that signals to the VSS
+        service that a consistent backup is needed. The VSS service notifies
+        compliant applications (called VSS writers) to quiesce their data
+        activity.  The VSS service then tells the copy provider to create
+        a snapshot.  Once the snapshot has been made, the VSS service
+        unfreezes VSS writers and normal I/O activity resumes.</para>
+
+        <para>QEMU provides a guest agent that can be run in guests running
+        on KVM hypervisors. This guest agent, on Windows VMs, coordinates with
+        the Windows VSS service to facilitate a workflow which ensures
+        consistent snapshots. This feature requires at least QEMU 1.7. The
+        relevant guest agent commands are:</para>
+
+        <variablelist>
+          <varlistentry>
+            <term>guest-file-flush</term>
+            <listitem>
+              <para>Write out "dirty" buffers to disk, similar to the
+              Linux <literal>sync</literal> operation.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>guest-fsfreeze</term>
+            <listitem>
+              <para>Suspend I/O to the disks, similar to the Linux
+              <literal>fsfreeze -f</literal> operation.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>guest-fsfreeze-thaw</term>
+            <listitem>
+              <para>Resume I/O to the disks, similar to the Linux
+              <literal>fsfreeze -u</literal> operation.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+        <para>To obtain snapshots of a Windows VM these commands can be
+        scripted in sequence: flush the filesystems, freeze the filesystems,
+        snapshot the filesystems, then unfreeze the filesystems. As with
+        scripting similar workflows against Linux VMs, care must be used
+        when writing such a script to ensure error handling is thorough and
+        filesystems will not be left in a frozen state.</para>
       </sidebar>
     </section>
   </section>
