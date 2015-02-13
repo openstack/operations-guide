@@ -913,7 +913,7 @@ Optional snapshot description. (Default=None)</programlisting>
         then passed in at instance creation with the flag <code>--user-data
         &lt;user-data-file&gt;</code>. For example:</para>
 
-        <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file mydatainstance</userinput></screen>
 
         <para>To understand the difference between user data and metadata,
         realize that user data is created before an instance is started. User
@@ -939,7 +939,7 @@ Optional snapshot description. (Default=None)</programlisting>
         case, you can use the following command:</para>
 
         <screen><prompt>$</prompt> <userinput>nova boot --image ubuntu-cloudimage --flavor 1  \
-  --file /root/.ssh/authorized_keys=special_authorized_keysfile</userinput></screen>
+  --file /root/.ssh/authorized_keys=special_authorized_keysfile authkeyinstance</userinput></screen>
       </section>
     </section>
   </section>
