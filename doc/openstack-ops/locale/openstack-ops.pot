@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-01-09 06:00+0000\n"
+"POT-Creation-Date: 2015-02-23 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4294,7 +4294,7 @@ msgid "Live snapshots is a feature that allows users to snapshot the running vir
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1233(title)
-msgid "Ensuring Snapshots Are Consistent"
+msgid "Ensuring Snapshots of Linux Guests Are Consistent"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1235(para)
@@ -4389,71 +4389,115 @@ msgstr ""
 msgid "After this command it is common practice to call <placeholder-1/> from your workstation, and once done press enter in your instance shell to unfreeze it. Obviously you could automate this, but at least it will let you properly synchronize."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1371(title)
-msgid "Instances in the Database"
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1367(title)
+msgid "Ensuring Snapshots of Windows Guests Are Consistent"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1373(para)
-msgid "While instance information is stored in a number of database tables, the table you most likely need to look at in relation to user instances is the instances table.<indexterm class=\"singular\"><primary>instances</primary><secondary>database information</secondary></indexterm><indexterm class=\"singular\"><primary>databases</primary><secondary>instance information in</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>instances</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1369(para)
+msgid "Obtaining consistent snapshots of Windows VMs is conceptually similar to obtaining consistent snapshots of Linux VMs, although it requires additional utilities to coordinate with a Windows-only subsystem designed to facilitate consistent backups."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1389(para)
-msgid "The instances table carries most of the information related to both running and deleted instances. It has a bewildering array of fields; for an exhaustive list, look at the database. These are the most useful fields for operators looking to form queries:"
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1374(para)
+msgid "Windows XP and later releases include a Volume Shadow Copy Service (VSS) which provides a framework so that compliant applications can be consistently backed up on a live filesystem. To use this framework, a VSS requestor is run that signals to the VSS service that a consistent backup is needed. The VSS service notifies compliant applications (called VSS writers) to quiesce their data activity. The VSS service then tells the copy provider to create a snapshot. Once the snapshot has been made, the VSS service unfreezes VSS writers and normal I/O activity resumes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1396(para)
-msgid "The <literal>deleted</literal> field is set to <literal>1</literal> if the instance has been deleted and <literal>NULL</literal> if it has not been deleted. This field is important for excluding deleted instances from your queries."
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1384(para)
+msgid "QEMU provides a guest agent that can be run in guests running on KVM hypervisors. This guest agent, on Windows VMs, coordinates with the Windows VSS service to facilitate a workflow which ensures consistent snapshots. This feature requires at least QEMU 1.7. The relevant guest agent commands are:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1403(para)
-msgid "The <literal>uuid</literal> field is the UUID of the instance and is used throughout other tables in the database as a foreign key. This ID is also reported in logs, the dashboard, and command-line tools to uniquely identify an instance."
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1392(term)
+msgid "guest-file-flush"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1394(para)
+msgid "Write out \"dirty\" buffers to disk, similar to the Linux <literal>sync</literal> operation."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1400(term)
+msgid "guest-fsfreeze"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1402(para)
+msgid "Suspend I/O to the disks, similar to the Linux <literal>fsfreeze -f</literal> operation."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1408(term)
+msgid "guest-fsfreeze-thaw"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1410(para)
-msgid "A collection of foreign keys are available to find relations to the instance. The most useful of these—<literal>user_id</literal> and <literal>project_id</literal>—are the UUIDs of the user who launched the instance and the project it was launched in."
+msgid "Resume I/O to the disks, similar to the Linux <literal>fsfreeze -u</literal> operation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1417(para)
-msgid "The <literal>host</literal> field tells which compute node is hosting the instance."
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1416(para)
+msgid "To obtain snapshots of a Windows VM these commands can be scripted in sequence: flush the filesystems, freeze the filesystems, snapshot the filesystems, then unfreeze the filesystems. As with scripting similar workflows against Linux VMs, care must be used when writing such a script to ensure error handling is thorough and filesystems will not be left in a frozen state."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1422(para)
-msgid "The <literal>hostname</literal> field holds the name of the instance when it is launched. The display-name is initially the same as hostname but can be reset using the nova rename command."
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1429(title)
+msgid "Instances in the Database"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1428(para)
-msgid "A number of time-related fields are useful for tracking when state changes happened on an instance:"
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1431(para)
+msgid "While instance information is stored in a number of database tables, the table you most likely need to look at in relation to user instances is the instances table.<indexterm class=\"singular\"><primary>instances</primary><secondary>database information</secondary></indexterm><indexterm class=\"singular\"><primary>databases</primary><secondary>instance information in</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>instances</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1433(literal)
-msgid "created_at"
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1447(para)
+msgid "The instances table carries most of the information related to both running and deleted instances. It has a bewildering array of fields; for an exhaustive list, look at the database. These are the most useful fields for operators looking to form queries:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1437(literal)
-msgid "updated_at"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1441(literal)
-msgid "deleted_at"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1445(literal)
-msgid "scheduled_at"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1449(literal)
-msgid "launched_at"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1453(literal)
-msgid "terminated_at"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1459(title)
-msgid "Good Luck!"
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1454(para)
+msgid "The <literal>deleted</literal> field is set to <literal>1</literal> if the instance has been deleted and <literal>NULL</literal> if it has not been deleted. This field is important for excluding deleted instances from your queries."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1461(para)
+msgid "The <literal>uuid</literal> field is the UUID of the instance and is used throughout other tables in the database as a foreign key. This ID is also reported in logs, the dashboard, and command-line tools to uniquely identify an instance."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1468(para)
+msgid "A collection of foreign keys are available to find relations to the instance. The most useful of these—<literal>user_id</literal> and <literal>project_id</literal>—are the UUIDs of the user who launched the instance and the project it was launched in."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1475(para)
+msgid "The <literal>host</literal> field tells which compute node is hosting the instance."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1480(para)
+msgid "The <literal>hostname</literal> field holds the name of the instance when it is launched. The display-name is initially the same as hostname but can be reset using the nova rename command."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1486(para)
+msgid "A number of time-related fields are useful for tracking when state changes happened on an instance:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1491(literal)
+msgid "created_at"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1495(literal)
+msgid "updated_at"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1499(literal)
+msgid "deleted_at"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1503(literal)
+msgid "scheduled_at"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1507(literal)
+msgid "launched_at"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1511(literal)
+msgid "terminated_at"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1517(title)
+msgid "Good Luck!"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1519(para)
 msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 

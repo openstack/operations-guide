@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-01-08 15:02+0000\n"
-"PO-Revision-Date: 2015-01-08 15:31+0000\n"
+"POT-Creation-Date: 2015-02-22 07:37+0000\n"
+"PO-Revision-Date: 2015-02-22 07:37+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -7143,7 +7143,7 @@ msgid ""
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml1233(title)
-msgid "Ensuring Snapshots Are Consistent"
+msgid "Ensuring Snapshots of Linux Guests Are Consistent"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml1235(para)
@@ -7304,11 +7304,84 @@ msgid ""
 " synchronize."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1371(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1367(title)
+msgid "Ensuring Snapshots of Windows Guests Are Consistent"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1369(para)
+msgid ""
+"Obtaining consistent snapshots of Windows VMs is conceptually similar to "
+"obtaining consistent snapshots of Linux VMs, although it requires additional"
+" utilities to coordinate with a Windows-only subsystem designed to "
+"facilitate consistent backups."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1374(para)
+msgid ""
+"Windows XP and later releases include a Volume Shadow Copy Service (VSS) "
+"which provides a framework so that compliant applications can be "
+"consistently backed up on a live filesystem. To use this framework, a VSS "
+"requestor is run that signals to the VSS service that a consistent backup is"
+" needed. The VSS service notifies compliant applications (called VSS "
+"writers) to quiesce their data activity. The VSS service then tells the copy"
+" provider to create a snapshot. Once the snapshot has been made, the VSS "
+"service unfreezes VSS writers and normal I/O activity resumes."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1384(para)
+msgid ""
+"QEMU provides a guest agent that can be run in guests running on KVM "
+"hypervisors. This guest agent, on Windows VMs, coordinates with the Windows "
+"VSS service to facilitate a workflow which ensures consistent snapshots. "
+"This feature requires at least QEMU 1.7. The relevant guest agent commands "
+"are:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1392(term)
+msgid "guest-file-flush"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1394(para)
+msgid ""
+"Write out \"dirty\" buffers to disk, similar to the Linux "
+"<literal>sync</literal> operation."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1400(term)
+msgid "guest-fsfreeze"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1402(para)
+msgid ""
+"Suspend I/O to the disks, similar to the Linux <literal>fsfreeze "
+"-f</literal> operation."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1408(term)
+msgid "guest-fsfreeze-thaw"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1410(para)
+msgid ""
+"Resume I/O to the disks, similar to the Linux <literal>fsfreeze -u</literal>"
+" operation."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1416(para)
+msgid ""
+"To obtain snapshots of a Windows VM these commands can be scripted in "
+"sequence: flush the filesystems, freeze the filesystems, snapshot the "
+"filesystems, then unfreeze the filesystems. As with scripting similar "
+"workflows against Linux VMs, care must be used when writing such a script to"
+" ensure error handling is thorough and filesystems will not be left in a "
+"frozen state."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1429(title)
 msgid "Instances in the Database"
 msgstr "データベースにあるインスタンス"
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1373(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1431(para)
 msgid ""
 "While instance information is stored in a number of database tables, the "
 "table you most likely need to look at in relation to user instances is the "
@@ -7321,7 +7394,7 @@ msgid ""
 "training</primary><secondary>instances</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1389(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1447(para)
 msgid ""
 "The instances table carries most of the information related to both running "
 "and deleted instances. It has a bewildering array of fields; for an "
@@ -7329,7 +7402,7 @@ msgid ""
 "operators looking to form queries:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1396(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1454(para)
 msgid ""
 "The <literal>deleted</literal> field is set to <literal>1</literal> if the "
 "instance has been deleted and <literal>NULL</literal> if it has not been "
@@ -7337,7 +7410,7 @@ msgid ""
 "queries."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1403(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1461(para)
 msgid ""
 "The <literal>uuid</literal> field is the UUID of the instance and is used "
 "throughout other tables in the database as a foreign key. This ID is also "
@@ -7345,7 +7418,7 @@ msgid ""
 " an instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1410(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1468(para)
 msgid ""
 "A collection of foreign keys are available to find relations to the "
 "instance. The most useful of these—<literal>user_id</literal> and "
@@ -7353,54 +7426,54 @@ msgid ""
 "instance and the project it was launched in."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1417(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1475(para)
 msgid ""
 "The <literal>host</literal> field tells which compute node is hosting the "
 "instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1422(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1480(para)
 msgid ""
 "The <literal>hostname</literal> field holds the name of the instance when it"
 " is launched. The display-name is initially the same as hostname but can be "
 "reset using the nova rename command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1428(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1486(para)
 msgid ""
 "A number of time-related fields are useful for tracking when state changes "
 "happened on an instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1433(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1491(literal)
 msgid "created_at"
 msgstr "created_at"
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1437(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1495(literal)
 msgid "updated_at"
 msgstr "updated_at"
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1441(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1499(literal)
 msgid "deleted_at"
 msgstr "deleted_at"
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1445(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1503(literal)
 msgid "scheduled_at"
 msgstr "scheduled_at"
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1449(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1507(literal)
 msgid "launched_at"
 msgstr "launched_at"
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1453(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1511(literal)
 msgid "terminated_at"
 msgstr "terminated_at"
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1459(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1517(title)
 msgid "Good Luck!"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml1461(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml1519(para)
 msgid ""
 "This section was intended as a brief introduction to some of the most useful"
 " of many OpenStack commands. For an exhaustive list, please refer to the "
