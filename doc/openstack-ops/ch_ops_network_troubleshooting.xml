@@ -705,16 +705,66 @@ proto ICMP (1), length 84)
   <section xml:id="iptables">
     <title>iptables</title>
 
-    <para>Through <literal>nova-network</literal>, OpenStack Compute
-    automatically manages iptables, including forwarding packets to and from
-    instances on a compute node, forwarding floating IP traffic, and managing
-    security group rules.<indexterm class="singular">
+    <para>Through <literal>nova-network</literal>
+    or <literal>neutron</literal>, OpenStack Compute automatically manages
+    iptables, including forwarding packets to and from instances on a compute
+    node, forwarding floating IP traffic, and managing security group rules.
+    In addition to managing the rules, comments (if supported) will be
+    inserted in the rules to help indicate the purpose
+    of the rule.  <indexterm class="singular">
         <primary>iptables</primary>
       </indexterm><indexterm class="singular">
         <primary>troubleshooting</primary>
 
         <secondary>iptables</secondary>
       </indexterm></para>
+
+    <para>The following comments are added to the rule set as
+    appropriate:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Perform source NAT on outgoing traffic.</para>
+      </listitem>
+      <listitem>
+        <para>Default drop rule for unmatched traffic.</para>
+      </listitem>
+      <listitem>
+        <para>Direct traffic from the VM interface to the security group
+        chain.</para>
+      </listitem>
+      <listitem>
+        <para>Jump to the VM specific chain.</para>
+      </listitem>
+      <listitem>
+        <para>Direct incoming traffic from VM to the security group
+        chain.</para>
+      </listitem>
+      <listitem>
+        <para>Allow traffic from defined IP/MAC pairs.</para>
+      </listitem>
+      <listitem>
+        <para>Drop traffic without an IP/MAC allow rule.</para>
+      </listitem>
+      <listitem>
+        <para>Allow DHCP client traffic.</para>
+      </listitem>
+      <listitem>
+        <para>Prevent DHCP Spoofing by VM.</para>
+       </listitem>
+      <listitem>
+        <para>Send unmatched traffic to the fallback chain.</para>
+      </listitem>
+      <listitem>
+        <para>Drop packets that are not associated with a state.</para>
+      </listitem>
+      <listitem>
+        <para>Direct packets associated with a known session to the
+        RETURN chain.</para>
+      </listitem>
+      <listitem>
+        <para>Allow IPv6 ICMP traffic to allow RA packets.</para>
+      </listitem>
+    </itemizedlist>
 
     <para>Run the following command to view the current iptables
     configuration:</para>
@@ -723,7 +773,8 @@ proto ICMP (1), length 84)
 
     <note>
       <para>If you modify the configuration, it reverts the next time you
-      restart <literal>nova-network</literal>. You must use OpenStack to
+      restart <literal>nova-network</literal> or
+      <literal>neutron-server</literal>. You must use OpenStack to
       manage iptables.</para>
     </note>
   </section>
