@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-23 06:00+0000\n"
+"POT-Creation-Date: 2015-02-24 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -964,254 +964,310 @@ msgid "iptables"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:708(para)
-msgid "Through <literal>nova-network</literal>, OpenStack Compute automatically manages iptables, including forwarding packets to and from instances on a compute node, forwarding floating IP traffic, and managing security group rules.<indexterm class=\"singular\"><primary>iptables</primary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>iptables</secondary></indexterm>"
+msgid "Through <literal>nova-network</literal> or <literal>neutron</literal>, OpenStack Compute automatically manages iptables, including forwarding packets to and from instances on a compute node, forwarding floating IP traffic, and managing security group rules. In addition to managing the rules, comments (if supported) will be inserted in the rules to help indicate the purpose of the rule. <indexterm class=\"singular\"><primary>iptables</primary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>iptables</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:719(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:722(para)
+msgid "The following comments are added to the rule set as appropriate:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:726(para)
+msgid "Perform source NAT on outgoing traffic."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:729(para)
+msgid "Default drop rule for unmatched traffic."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:732(para)
+msgid "Direct traffic from the VM interface to the security group chain."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:736(para)
+msgid "Jump to the VM specific chain."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:739(para)
+msgid "Direct incoming traffic from VM to the security group chain."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:743(para)
+msgid "Allow traffic from defined IP/MAC pairs."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:746(para)
+msgid "Drop traffic without an IP/MAC allow rule."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:749(para)
+msgid "Allow DHCP client traffic."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:752(para)
+msgid "Prevent DHCP Spoofing by VM."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:755(para)
+msgid "Send unmatched traffic to the fallback chain."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:758(para)
+msgid "Drop packets that are not associated with a state."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:761(para)
+msgid "Direct packets associated with a known session to the RETURN chain."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:765(para)
+msgid "Allow IPv6 ICMP traffic to allow RA packets."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:769(para)
 msgid "Run the following command to view the current iptables configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:725(para)
-msgid "If you modify the configuration, it reverts the next time you restart <literal>nova-network</literal>. You must use OpenStack to manage iptables."
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:775(para)
+msgid "If you modify the configuration, it reverts the next time you restart <literal>nova-network</literal> or <literal>neutron-server</literal>. You must use OpenStack to manage iptables."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:732(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:783(title)
 msgid "Network Configuration in the Database for nova-network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:734(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:785(para)
 msgid "With <literal>nova-network</literal>, the nova database table contains a few tables with networking information:<indexterm class=\"singular\"><primary>databases</primary><secondary>nova-network troubleshooting</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>nova-network database</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:748(literal)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:799(literal)
 msgid "fixed_ips"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:751(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:802(para)
 msgid "Contains each possible IP address for the subnet(s) added to Compute. This table is related to the <literal>instances</literal> table by way of the <literal>fixed_ips.instance_uuid</literal> column."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:759(literal)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:810(literal)
 msgid "floating_ips"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:762(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:813(para)
 msgid "Contains each floating IP address that was added to Compute. This table is related to the <literal>fixed_ips</literal> table by way of the <literal>floating_ips.fixed_ip_id</literal> column."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:770(literal) ./doc/openstack-ops/ch_ops_projects_users.xml:300(systemitem)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:821(literal) ./doc/openstack-ops/ch_ops_projects_users.xml:300(systemitem)
 msgid "instances"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:773(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:824(para)
 msgid "Not entirely network specific, but it contains information about the instance that is utilizing the <literal>fixed_ip</literal> and optional <literal>floating_ip</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:780(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:831(para)
 msgid "From these tables, you can see that a floating IP is technically never directly related to an instance; it must always go through a fixed IP."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:785(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:836(title)
 msgid "Manually Disassociating a Floating IP"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:787(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:838(para)
 msgid "Sometimes an instance is terminated but the floating IP was not correctly de-associated from that instance. Because the database is in an inconsistent state, the usual tools to dissaociate the IP no longer work. To fix this, you must manually update the database.<indexterm class=\"singular\"><primary>IP addresses</primary><secondary>floating</secondary></indexterm><indexterm class=\"singular\"><primary>floating IP address</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:799(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:850(para)
 msgid "First, find the UUID of the instance in question:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:803(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:854(para)
 msgid "Next, find the fixed IP entry for that UUID:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:807(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:858(para)
 msgid "You can now get the related floating IP entry:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:811(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:862(para)
 msgid "And finally, you can disassociate the floating IP:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:816(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:867(para)
 msgid "You can optionally also deallocate the IP from the user's pool:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:825(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:876(title)
 msgid "Debugging DHCP Issues with nova-network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:827(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:878(para)
 msgid "One common networking problem is that an instance boots successfully but is not reachable because it failed to obtain an IP address from dnsmasq, which is the DHCP server that is launched by the <literal>nova-network</literal> service.<indexterm class=\"singular\"><primary>DHCP (Dynamic Host Configuration Protocol)</primary><secondary>debugging</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>nova-network DHCP</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:840(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:891(para)
 msgid "The simplest way to identify that this is the problem with your instance is to look at the console output of your instance. If DHCP failed, you can retrieve the console log by doing:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:846(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:897(para)
 msgid "If your instance failed to obtain an IP through DHCP, some messages should appear in the console. For example, for the Cirros image, you see output that looks like the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:860(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:911(para)
 msgid "After you establish that the instance booted properly, the task is to figure out where the failure is."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:863(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:914(para)
 msgid "A DHCP problem might be caused by a misbehaving dnsmasq process. First, debug by checking logs and then restart the dnsmasq processes only for that project (tenant). In VLAN mode, there is a dnsmasq process for each tenant. Once you have restarted targeted dnsmasq processes, the simplest way to rule out dnsmasq causes is to kill all of the dnsmasq processes on the machine and restart <literal>nova-network</literal>. As a last resort, do this as root:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:875(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:926(para)
 msgid "Use <literal>openstack-nova-network</literal> on RHEL/CentOS/Fedora but <literal>nova-network</literal> on Ubuntu/Debian."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:880(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:931(para)
 msgid "Several minutes after <literal>nova-network</literal> is restarted, you should see new dnsmasq processes running:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:904(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:955(para)
 msgid "If your instances are still not able to obtain IP addresses, the next thing to check is whether dnsmasq is seeing the DHCP requests from the instance. On the machine that is running the dnsmasq process, which is the compute host if running in multi-host mode, look at <literal>/var/log/syslog</literal> to see the dnsmasq output. If dnsmasq is seeing the request properly and handing out an IP, the output looks like this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:920(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:971(para)
 msgid "If you do not see the <literal>DHCPDISCOVER</literal>, a problem exists with the packet getting from the instance to the machine running dnsmasq. If you see all of the preceding output and your instances are still not able to obtain IP addresses, then the packet is able to get from the instance to the host running dnsmasq, but it is not able to make the return trip."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:927(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:978(para)
 msgid "You might also see a message such as this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:932(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:983(para)
 msgid "This may be a dnsmasq and/or <literal>nova-network</literal> related issue. (For the preceding example, the problem happened to be that dnsmasq did not have any more IP addresses to give away because there were no more fixed IPs available in the OpenStack Compute database.)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:937(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:988(para)
 msgid "If there's a suspicious-looking dnsmasq log message, take a look at the command-line arguments to the dnsmasq processes to see if they look correct:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:943(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:994(para)
 msgid "The output looks something like the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:972(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1023(para)
 msgid "The output shows three different dnsmasq processes. The dnsmasq process that has the DHCP subnet range of 192.168.122.0 belongs to libvirt and can be ignored. The other two dnsmasq processes belong to <literal>nova-network</literal>. The two processes are actually related—one is simply the parent process of the other. The arguments of the dnsmasq processes should correspond to the details you configured <literal>nova-network</literal> with."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:980(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1031(para)
 msgid "If the problem does not seem to be related to dnsmasq itself, at this point use <code>tcpdump</code> on the interfaces to determine where the packets are getting lost."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:984(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1035(para)
 msgid "DHCP traffic uses UDP. The client sends from port 68 to port 67 on the server. Try to boot a new instance and then systematically listen on the NICs until you identify the one that isn't seeing the traffic. To use <code>tcpdump</code> to listen to ports 67 and 68 on br100, you would do:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:992(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1043(para)
 msgid "You should be doing sanity checks on the interfaces using command such as <code>ip a</code> and <code>brctl show</code> to ensure that the interfaces are actually up and configured the way that you think that they are."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:999(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1050(title)
 msgid "Debugging DNS Issues"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1001(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1052(para)
 msgid "If you are able to use SSH to log into an instance, but it takes a very long time (on the order of a minute) to get a prompt, then you might have a DNS issue. The reason a DNS issue can cause this problem is that the SSH server does a reverse DNS lookup on the IP address that you are connecting from. If DNS lookup isn't working on your instances, then you must wait for the DNS reverse lookup timeout to occur for the SSH login process to complete.<indexterm class=\"singular\"><primary>DNS (Domain Name Server, Service or System)</primary><secondary>debugging</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>DNS issues</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1017(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1068(para)
 msgid "When debugging DNS issues, start by making sure that the host where the dnsmasq process for that instance runs is able to correctly resolve. If the host cannot resolve, then the instances won't be able to either."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1022(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1073(para)
 msgid "A quick way to check whether DNS is working is to resolve a hostname inside your instance by using the <code>host</code> command. If DNS is working, you should see:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1031(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1082(para)
 msgid "If you're running the Cirros image, it doesn't have the \"host\" program installed, in which case you can use ping to try to access a machine by hostname to see whether it resolves. If DNS is working, the first line of ping would be:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1039(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1090(para)
 msgid "If the instance fails to resolve the hostname, you have a DNS problem. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1045(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1096(para)
 msgid "In an OpenStack cloud, the dnsmasq process acts as the DNS server for the instances in addition to acting as the DHCP server. A misbehaving dnsmasq process may be the source of DNS-related issues inside the instance. As mentioned in the previous section, the simplest way to rule out a misbehaving dnsmasq process is to kill all the dnsmasq processes on the machine and restart <literal>nova-network</literal>. However, be aware that this command affects everyone running instances on this node, including tenants that have not seen the issue. As a last resort, as root:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1058(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1109(para)
 msgid "After the dnsmasq processes start again, check whether DNS is working."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1061(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1112(para)
 msgid "If restarting the dnsmasq process doesn't fix the issue, you might need to use <code>tcpdump</code> to look at the packets to trace where the failure is. The DNS server listens on UDP port 53. You should see the DNS request on the bridge (such as, br100) of your compute node. Let's say you start listening with <code>tcpdump</code> on the compute node:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1071(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1122(para)
 msgid "Then, if you use SSH to log into your instance and try <code>ping openstack.org</code>, you should see something like:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1084(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1135(title)
 msgid "Troubleshooting Open vSwitch"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1086(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1137(para)
 msgid "Open vSwitch as used in the previous OpenStack Networking Service examples is a full-featured multilayer virtual switch licensed under the open source Apache 2.0 license. Full documentation can be found at <link href=\"http://openvswitch.org/\">the project's website</link>. In practice, given the preceding configuration, the most common issues are being sure that the required bridges (<code>br-int</code>, <code>br-tun</code>, <code>br-ex</code>, etc.) exist and have the proper ports connected to them.<indexterm class=\"singular\"><primary>Open vSwitch</primary><secondary>troubleshooting</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>Open vSwitch</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1103(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1154(para)
 msgid "The Open vSwitch driver should and usually does manage this automatically, but it is useful to know how to do this by hand with the <literal>ovs-vsctl</literal> command. This command has many more subcommands than we will use here; see the man page or use <literal>ovs-vsctl --help</literal> for the full listing."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1109(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1160(para)
 msgid "To list the bridges on a system, use <literal>ovs-vsctl list-br</literal>. This example shows a compute node that has an internal bridge and a tunnel bridge. VLAN networks are trunked through the <code>eth1</code> network interface:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1120(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1171(para)
 msgid "Working from the physical interface inwards, we can see the chain of ports and bridges. First, the bridge <code>eth1-br</code>, which contains the physical network interface <literal>eth1</literal> and the virtual interface <code>phy-eth1-br</code>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1130(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1181(para)
 msgid "Next, the internal bridge, <code>br-int</code>, contains <code>int-eth1-br</code>, which pairs with <code>phy-eth1-br</code> to connect to the physical network shown in the previous bridge, <code>patch-tun</code>, which is used to connect to the GRE tunnel bridge and the TAP devices that connect to the instances currently running on the system:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1145(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1196(para)
 msgid "The tunnel bridge, <code>br-tun</code>, contains the <code>patch-int</code> interface and <code>gre-&lt;N&gt;</code> interfaces for each peer it connects to via GRE, one for each compute and network node in your cluster:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1159(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1210(para)
 msgid "If any of these links is missing or incorrect, it suggests a configuration error. Bridges can be added with <literal>ovs-vsctl add-br</literal>, and ports can be added to bridges with <literal>ovs-vsctl add-port</literal>. While running these by hand can be useful debugging, it is imperative that manual changes that you intend to keep be reflected back into your configuration files."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1168(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1219(title)
 msgid "Dealing with Network Namespaces"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1170(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1221(para)
 msgid "Linux network namespaces are a kernel feature the networking service uses to support multiple isolated layer-2 networks with overlapping IP address ranges. The support may be disabled, but it is on by default. If it is enabled in your environment, your network nodes will run their dhcp-agents and l3-agents in isolated namespaces. Network interfaces and traffic on those interfaces will not be visible in the default namespace.<indexterm class=\"singular\"><primary>network namespaces, troubleshooting</primary></indexterm><indexterm class=\"singular\"><primary>namespaces, troubleshooting</primary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>network namespaces</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1186(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1237(para)
 msgid "To see whether you are using namespaces, run <literal>ip netns</literal>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1197(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1248(para)
 msgid "L3-agent router namespaces are named <literal>qrouter-<replaceable>&lt;router_uuid&gt;</replaceable></literal>, and dhcp-agent name spaces are named <literal>qdhcp-</literal><literal><replaceable>&lt;net_uuid&gt;</replaceable></literal>. This output shows a network node with four networks running dhcp-agents, one of which is also running an l3-agent router. It's important to know which network you need to be working in. A list of existing networks and their UUIDs can be obtained by running <literal>neutron net-list</literal> with administrative credentials."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1207(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1258(para)
 msgid "Once you've determined which namespace you need to work in, you can use any of the debugging tools mention earlier by prefixing the command with <literal>ip netns exec &lt;namespace&gt;</literal>. For example, to see what network interfaces exist in the first qdhcp namespace returned above, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1227(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1278(para)
 msgid "From this you see that the DHCP server on that network is using the tape6256f7d-31 device and has an IP address of 10.0.1.100. Seeing the address 169.254.169.254, you can also see that the dhcp-agent is running a metadata-proxy service. Any of the commands mentioned previously in this chapter can be run in the same way. It is also possible to run a shell, such as <literal>bash</literal>, and have an interactive session within the namespace. In the latter case, exiting the shell returns you to the top-level default namespace."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1238(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1097(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:823(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:997(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1097(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:823(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:997(title)
 msgid "Summary"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1240(para)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1291(para)
 msgid "The authors have spent too much time looking at packet dumps in order to distill this information for you. We trust that, following the methods outlined in this chapter, you will have an easier time! Aside from working with the tools and steps above, don't forget that sometimes an extra pair of eyes goes a long way to assist."
 msgstr ""
 
