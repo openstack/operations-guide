@@ -474,38 +474,6 @@ local0.* ?NovaAll
     </section>
   </section>
 
-  <section xml:id="stacktach">
-    <!-- FIXME This section needs updating, especially with the advent of
-         ceilometer -->
-
-    <title>StackTach</title>
-
-    <para>StackTach is a tool created by Rackspace to collect and report the
-    notifications sent by <code>nova</code>. Notifications are essentially the
-    same as logs but can be much more detailed. A good overview of
-    notifications can be found at <link xlink:href="https://wiki.openstack.org/wiki/SystemUsageData"
-    xlink:title="StackTach GitHub repo">System Usage Data</link>.<indexterm
-        class="singular">
-        <primary>StackTach</primary>
-      </indexterm><indexterm class="singular">
-        <primary>logging/monitoring</primary>
-
-        <secondary>StackTack tool</secondary>
-      </indexterm></para>
-
-    <para>To enable <code>nova</code> to send notifications, add the following
-    to <filename>nova.conf</filename>:</para>
-
-    <programlisting language="ini"><?db-font-size 75%?>notification_topics=monitor
-notification_driver=nova.openstack.common.notifier.rpc_notifier</programlisting>
-
-    <para>Once <code>nova</code> is sending notifications, install and
-    configure StackTach. Since StackTach is relatively new and constantly
-    changing, installation instructions would quickly become outdated. Please
-    refer to the <link xlink:href="https://github.com/rackerlabs/stacktach">StackTach GitHub
-    repo</link> for instructions as well as a demo video.</para>
-  </section>
-
   <section xml:id="monitoring">
     <title>Monitoring</title>
 
@@ -659,21 +627,53 @@ $ARG2$ -e</programlisting>
       is 80 percent full and CRITICAL when 90 percent is full.</para>
     </section>
 
+    <section xml:id="stacktach">
+      <title>StackTach</title>
+
+      <para>StackTach is a tool created by Rackspace to collect and report the
+      notifications sent by <code>nova</code>. Notifications are essentially the
+      same as logs but can be much more detailed. A good overview of
+      notifications can be found at <link xlink:href="https://wiki.openstack.org/wiki/SystemUsageData"
+      xlink:title="System Usage Data">System Usage Data</link>.<indexterm
+          class="singular">
+          <primary>StackTach</primary>
+        </indexterm><indexterm class="singular">
+          <primary>logging/monitoring</primary>
+
+          <secondary>StackTack tool</secondary>
+        </indexterm></para>
+
+      <para>To enable <code>nova</code> to send notifications, add the following
+      to <filename>nova.conf</filename>:</para>
+
+      <programlisting language="ini"><?db-font-size 75%?>notification_topics=monitor
+notification_driver=messagingv2</programlisting>
+
+      <para>Once <code>nova</code> is sending notifications, install and
+      configure StackTach. Since StackTach is relatively new and constantly
+      changing, installation instructions would quickly become outdated. Please
+      refer to the <link xlink:href="https://github.com/stackforge/stacktach">StackTach GitHub
+      repo</link> for instructions as well as a demo video. Additional details on the latest
+      developments can be discovered at the
+      <link xlink:href="http://stacktach.com/">official page</link></para>
+    </section>
+
     <section xml:id="metering_telemetry">
-      <title>Metering and Telemetry with Ceilometer</title>
+      <title>OpenStack Telemetry</title>
 
       <para>An integrated OpenStack project (code-named ceilometer) collects
-      metering data and provides alerts for Compute, Storage, and Networking.
-      Data collected by the metering system could be used for billing.
-      Depending on deployment configuration, metered data may be accessible to
+      metering and event data relating to OpenStack services.
+      Data collected by the Telemetry module could be used for billing.
+      Depending on deployment configuration, collected data may be accessible to
       users based on the deployment configuration. The Telemetry service
       provides a REST API documented at <link
       xlink:href="http://developer.openstack.org/api-ref-telemetry-v2.html"></link>.
-      You can read more about the project at <link
-      xlink:href="http://docs.openstack.org/developer/ceilometer"></link>.<indexterm
+      You can read more about the module in the
+      <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/ch_admin-openstack-telemetry.html">
+      OpenStack Cloud Administrator Guide</link> or in the <link
+      xlink:href="http://docs.openstack.org/developer/ceilometer">developer documentation</link>.<indexterm
           class="singular">
           <primary>monitoring</primary>
-
           <secondary>metering and telemetry</secondary>
         </indexterm><indexterm class="singular">
           <primary>telemetry/metering</primary>
@@ -683,7 +683,6 @@ $ARG2$ -e</programlisting>
           <primary>ceilometer</primary>
         </indexterm><indexterm class="singular">
           <primary>logging/monitoring</primary>
-
           <secondary>ceilometer project</secondary>
         </indexterm></para>
     </section>
