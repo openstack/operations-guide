@@ -766,6 +766,24 @@
             experience is primarily with Linux-based systems.</para>
           </listitem>
         </varlistentry>
+
+        <varlistentry>
+        <term>Sheepdog<indexterm class="singular">
+            <primary>Sheepdog</primary>
+          </indexterm></term>
+
+        <listitem>
+        <para>Sheepdog is a userspace distributed storage system. Sheepdog scales
+        to several hundred nodes, and has powerful virtual disk management features
+        like snapshot, cloning, rollback, thin provisioning.</para>
+
+        <para>It is essentially an object storage system that manages disks and aggregates
+        the space and performance of disks linearly in hyper scale on commodity hardware in
+        a smart way. On top of its object store, Sheepdog provides elastic volume service
+        and http service. Sheepdog does not assume anything about kernel version and can
+        work nicely with xattr-supported file systems.</para>
+        </listitem>
+        </varlistentry>
       </variablelist>
     </section>
   </section>
