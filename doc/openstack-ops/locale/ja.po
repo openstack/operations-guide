@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-24 05:21+0000\n"
-"PO-Revision-Date: 2015-02-24 05:21+0000\n"
+"POT-Creation-Date: 2015-03-06 18:53+0000\n"
+"PO-Revision-Date: 2015-03-11 02:00+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -9199,7 +9199,7 @@ msgid ""
 "Comment out any <literal>auth_host</literal>, <literal>auth_port</literal>, "
 "and <literal>auth_protocol</literal> options because the "
 "<literal>identity_uri</literal> option replaces them."
-msgstr ""
+msgstr "<literal>identity_uri</literal> オプションにより置き換えられるので、<literal>auth_host</literal>、<literal>auth_port</literal>、<literal>auth_protocol</literal> オプションをコメントアウトします。"
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml2217(para)
 #: ./doc/openstack-ops/ch_ops_upgrades.xml2525(para)
