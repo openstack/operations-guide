@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-24 06:00+0000\n"
+"POT-Creation-Date: 2015-03-14 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1263,7 +1263,7 @@ msgstr ""
 msgid "From this you see that the DHCP server on that network is using the tape6256f7d-31 device and has an IP address of 10.0.1.100. Seeing the address 169.254.169.254, you can also see that the dhcp-agent is running a metadata-proxy service. Any of the commands mentioned previously in this chapter can be run in the same way. It is also possible to run a shell, such as <literal>bash</literal>, and have an interactive session within the namespace. In the latter case, exiting the shell returns you to the top-level default namespace."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1097(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:823(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:997(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1097(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:823(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:996(title)
 msgid "Summary"
 msgstr ""
 
@@ -11095,261 +11095,259 @@ msgstr ""
 msgid "You have an individual log file for each compute node as well as an aggregated log that contains nova logs from all nodes."
 msgstr ""
 
-#. FIXME This section needs updating, especially with the advent of
-#.          ceilometer
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:481(title)
-msgid "StackTach"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:483(para)
-msgid "StackTach is a tool created by Rackspace to collect and report the notifications sent by <code>nova</code>. Notifications are essentially the same as logs but can be much more detailed. A good overview of notifications can be found at <link href=\"https://wiki.openstack.org/wiki/SystemUsageData\" title=\"StackTach GitHub repo\">System Usage Data</link>.<indexterm class=\"singular\"><primary>StackTach</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>StackTack tool</secondary></indexterm>"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:496(para)
-msgid "To enable <code>nova</code> to send notifications, add the following to <filename>nova.conf</filename>:"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:502(para)
-msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link href=\"https://github.com/rackerlabs/stacktach\">StackTach GitHub repo</link> for instructions as well as a demo video."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:510(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:478(title)
 msgid "Monitoring"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:512(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:480(para)
 msgid "There are two types of monitoring: watching for problems and watching usage trends. The former ensures that all services are up and running, creating a functional cloud. The latter involves monitoring resource usage over time in order to make informed decisions about potential bottlenecks and upgrades.<indexterm class=\"singular\"><primary>cloud controllers</primary><secondary>process monitoring and</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:525(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:493(title)
 msgid "Nagios"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:527(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:495(para)
 msgid "Nagios is an open source monitoring service. It's capable of executing arbitrary commands to check the status of server and network services, remotely executing arbitrary commands directly on servers, and allowing servers to push notifications back in the form of passive monitoring. Nagios has been around since 1999. Although newer monitoring services are available, Nagios is a tried-and-true systems administration staple.<indexterm class=\"singular\"><primary>Nagios</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:539(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:507(title)
 msgid "Process Monitoring"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:541(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:509(para)
 msgid "A basic type of alert monitoring is to simply check and see whether a required process is running.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>process monitoring</secondary></indexterm><indexterm class=\"singular\"><primary>process monitoring</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>process monitoring</secondary></indexterm> For example, ensure that the <code>nova-api</code> service is running on the cloud controller:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:568(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:536(para)
 msgid "You can create automated alerts for critical processes by using Nagios and NRPE. For example, to ensure that the <code>nova-compute</code> process is running on compute nodes, create an alert on your Nagios server that looks like this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:582(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:550(para)
 msgid "Then on the actual compute node, create the following NRPE configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:588(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:556(para)
 msgid "Nagios checks that at least one <literal>nova-compute</literal> service is running at all times."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:593(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:561(title)
 msgid "Resource Alerting"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:595(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:563(para)
 msgid "Resource alerting provides notifications when one or more resources are critically low. While the monitoring thresholds should be tuned to your specific OpenStack environment, monitoring resource usage is not specific to OpenStack at all—any generic type of alert will work fine.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>resource alerting</secondary></indexterm><indexterm class=\"singular\"><primary>alerts</primary><secondary>resource</secondary></indexterm><indexterm class=\"singular\"><primary>resources</primary><secondary>resource alerting</secondary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>resource alerting</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:617(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:585(para)
 msgid "Some of the resources that you want to monitor include:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:621(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:589(para)
 msgid "Disk usage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:625(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:593(para)
 msgid "Server load"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:629(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:597(para)
 msgid "Memory usage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:633(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:601(para)
 msgid "Network I/O"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:637(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:605(para)
 msgid "Available vCPUs"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:641(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:609(para)
 msgid "For example, to monitor disk capacity on a compute node with Nagios, add the following to your Nagios configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:652(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:620(para)
 msgid "On the compute node, add the following to your NRPE configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:658(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:626(para)
 msgid "Nagios alerts you with a WARNING when any disk on the compute node is 80 percent full and CRITICAL when 90 percent is full."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:663(title)
-msgid "Metering and Telemetry with Ceilometer"
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:631(title)
+msgid "StackTach"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:665(para)
-msgid "An integrated OpenStack project (code-named ceilometer) collects metering data and provides alerts for Compute, Storage, and Networking. Data collected by the metering system could be used for billing. Depending on deployment configuration, metered data may be accessible to users based on the deployment configuration. The Telemetry service provides a REST API documented at <link href=\"http://developer.openstack.org/api-ref-telemetry-v2.html\"/>. You can read more about the project at <link href=\"http://docs.openstack.org/developer/ceilometer\"/>.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>metering and telemetry</secondary></indexterm><indexterm class=\"singular\"><primary>telemetry/metering</primary></indexterm><indexterm class=\"singular\"><primary>metering/telemetry</primary></indexterm><indexterm class=\"singular\"><primary>ceilometer</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>ceilometer project</secondary></indexterm>"
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:633(para)
+msgid "StackTach is a tool created by Rackspace to collect and report the notifications sent by <code>nova</code>. Notifications are essentially the same as logs but can be much more detailed. A good overview of notifications can be found at <link href=\"https://wiki.openstack.org/wiki/SystemUsageData\" title=\"System Usage Data\">System Usage Data</link>.<indexterm class=\"singular\"><primary>StackTach</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>StackTack tool</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:692(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:646(para)
+msgid "To enable <code>nova</code> to send notifications, add the following to <filename>nova.conf</filename>:"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:652(para)
+msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link href=\"https://github.com/stackforge/stacktach\">StackTach GitHub repo</link> for instructions as well as a demo video. Additional details on the latest developments can be discovered at the <link href=\"http://stacktach.com/\">official page</link>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:662(title)
+msgid "OpenStack Telemetry"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:664(para)
+msgid "An integrated OpenStack project (code-named ceilometer) collects metering and event data relating to OpenStack services. Data collected by the Telemetry module could be used for billing. Depending on deployment configuration, collected data may be accessible to users based on the deployment configuration. The Telemetry service provides a REST API documented at <link href=\"http://developer.openstack.org/api-ref-telemetry-v2.html\"/>. You can read more about the module in the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_admin-openstack-telemetry.html\"> OpenStack Cloud Administrator Guide</link> or in the <link href=\"http://docs.openstack.org/developer/ceilometer\">developer documentation</link>.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>metering and telemetry</secondary></indexterm><indexterm class=\"singular\"><primary>telemetry/metering</primary></indexterm><indexterm class=\"singular\"><primary>metering/telemetry</primary></indexterm><indexterm class=\"singular\"><primary>ceilometer</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>ceilometer project</secondary></indexterm>"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:691(title)
 msgid "OpenStack-Specific Resources"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:694(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:693(para)
 msgid "Resources such as memory, disk, and CPU are generic resources that all servers (even non-OpenStack servers) have and are important to the overall health of the server. When dealing with OpenStack specifically, these resources are important for a second reason: ensuring that enough are available to launch instances. There are a few ways you can see OpenStack resource usage.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>OpenStack-specific resources</secondary></indexterm><indexterm class=\"singular\"><primary>resources</primary><secondary>generic vs. OpenStack-specific</secondary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>OpenStack-specific resources</secondary></indexterm> The first is through the <code>nova</code> command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:716(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:715(para)
 msgid "This command displays a list of how many instances a tenant has running and some light usage statistics about the combined instances. This command is useful for a quick overview of your cloud, but it doesn't really get into a lot of details."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:721(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:720(para)
 msgid "Next, the <code>nova</code> database contains three tables that store usage information."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:724(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:723(para)
 msgid "The <code>nova.quotas</code> and <code>nova.quota_usages</code> tables store quota information. If a tenant's quota is different from the default quota settings, its quota is stored in the <phrase role=\"keep-together\"><code>nova.quotas</code></phrase> table. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:745(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:744(para)
 msgid "The <code>nova.quota_usages</code> table keeps track of how many resources the tenant currently has in use:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:761(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:760(para)
 msgid "By comparing a tenant's hard limit with their current resource usage, you can see their usage percentage. For example, if this tenant is using 1 floating IP out of 10, then they are using 10 percent of their floating IP quota. Rather than doing the calculation manually, you can use SQL or the scripting language of your choice and create a formatted report:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:790(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:789(para)
 msgid "The preceding information was generated by using a custom script that can be found on <link href=\"https://github.com/cybera/novac/blob/dev/libexec/novac-quota-report\">GitHub</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:795(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:794(para)
 msgid "This script is specific to a certain OpenStack installation and must be modified to fit your environment. However, the logic should easily be transferable."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:802(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:801(title)
 msgid "Intelligent Alerting"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:804(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:803(para)
 msgid "Intelligent alerting can be thought of as a form of continuous integration for operations. For example, you can easily check to see whether the Image Service is up and running by ensuring that the <code>glance-api</code> and <code>glance-registry</code> processes are running or by seeing whether <code>glace-api</code> is responding on port 9292.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>intelligent alerting</secondary></indexterm><indexterm class=\"singular\"><primary>alerts</primary><secondary>intelligent</secondary><seealso>logging/monitoring</seealso></indexterm><indexterm class=\"singular\"><primary>intelligent alerting</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>intelligent alerting</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:827(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:826(para)
 msgid "But how can you tell whether images are being successfully uploaded to the Image Service? Maybe the disk that Image Service is storing the images on is full or the S3 backend is down. You could naturally check this by doing a quick image upload:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:847(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:846(para)
 msgid "By taking this script and rolling it into an alert for your monitoring system (such as Nagios), you now have an automated way of ensuring that image uploads to the Image Catalog are working."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:852(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:851(para)
 msgid "You must remove the image after each test. Even better, test whether you can successfully delete an image from the Image Service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:857(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:856(para)
 msgid "Intelligent alerting takes considerably more time to plan and implement than the other alerts described in this chapter. A good outline to implement intelligent alerting is:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:863(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:862(para)
 msgid "Review common actions in your cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:867(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:866(para)
 msgid "Create ways to automatically test these actions."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:871(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:870(para)
 msgid "Roll these tests into an alerting system."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:875(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:874(para)
 msgid "Some other examples for Intelligent Alerting include:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:879(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:878(para)
 msgid "Can instances launch and be destroyed?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:883(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:882(para)
 msgid "Can users be created?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:887(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:886(para)
 msgid "Can objects be stored and deleted?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:891(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:890(para)
 msgid "Can volumes be created and destroyed?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:897(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:896(title)
 msgid "Trending"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:899(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:898(para)
 msgid "Trending can give you great insight into how your cloud is performing day to day. You can learn, for example, if a busy day was simply a rare occurrence or if you should start adding new compute nodes.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>trending</secondary><seealso>logging/monitoring</seealso></indexterm><indexterm class=\"singular\"><primary>trending</primary><secondary>monitoring cloud performance with</secondary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>trending</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:918(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:917(para)
 msgid "Trending takes a slightly different approach than alerting. While alerting is interested in a binary result (whether a check succeeds or fails), trending records the current state of something at a certain point in time. Once enough points in time have been recorded, you can see how the value has changed over time.<indexterm class=\"singular\"><primary>trending</primary><secondary>vs. alerts</secondary></indexterm><indexterm class=\"singular\"><primary>binary</primary><secondary>binary results in trending</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:932(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:931(para)
 msgid "All of the alert types mentioned earlier can also be used for trend reporting. Some other trend examples include:<indexterm class=\"singular\"><primary>trending</primary><secondary>report examples</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:942(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:941(para)
 msgid "The number of instances on each compute node"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:946(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:945(para)
 msgid "The types of flavors in use"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:950(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:949(para)
 msgid "The number of volumes in use"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:954(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:953(para)
 msgid "The number of Object Storage requests each hour"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:958(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:957(para)
 msgid "The number of <literal>nova-api</literal> requests each hour"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:963(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:962(para)
 msgid "The I/O statistics of your storage services"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:967(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:966(para)
 msgid "As an example, recording <code>nova-api</code> usage can allow you to track the need to scale your cloud controller. By keeping an eye on <code>nova-api</code> requests, you can determine whether you need to spawn more <literal>nova-api</literal> processes or go as far as introducing an entirely new server to run <code>nova-api</code>. To get an approximate count of the requests, look for standard INFO messages in <code>/var/log/nova/nova-api.log</code>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:977(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:976(para)
 msgid "You can obtain further statistics by looking for the number of successful requests:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:982(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:981(para)
 msgid "By running this command periodically and keeping a record of the result, you can create a trending report over time that shows whether your <code>nova-api</code> usage is increasing, decreasing, or keeping steady."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:987(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:986(para)
 msgid "A tool such as collectd can be used to store this information. While collectd is out of the scope of this book, a good starting point would be to use collectd to store the result as a COUNTER data type. More information can be found in <link href=\"https://collectd.org/wiki/index.php/Data_source\">collectd's documentation</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:999(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:998(para)
 msgid "For stable operations, you want to detect failure promptly and determine causes efficiently. With a distributed system, it's even more important to track the right items to meet a service-level target. Learning where these logs are located in the file system or API gives you an advantage. This chapter also showed how to read, interpret, and manipulate information from OpenStack services so that you can monitor effectively."
 msgstr ""
 
