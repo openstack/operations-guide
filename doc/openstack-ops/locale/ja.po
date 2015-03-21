@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-13 08:37+0000\n"
-"PO-Revision-Date: 2015-03-13 10:33+0000\n"
+"POT-Creation-Date: 2015-03-20 20:15+0000\n"
+"PO-Revision-Date: 2015-03-20 20:44+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -5195,7 +5195,7 @@ msgid ""
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml1187(title)
-#: ./doc/openstack-ops/ch_arch_storage.xml774(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml792(title)
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml610(title)
 #: ./doc/openstack-ops/ch_arch_network_design.xml526(title)
 #: ./doc/openstack-ops/ch_arch_provision.xml368(title)
@@ -12007,7 +12007,29 @@ msgid ""
 "Linux-based systems."
 msgstr "本書は、Linux ベースシステムを主に使用するユーザーを想定しており、Block Storage の ZFS バックエンドには Solaris ベースのオペレーティングシステムが必要であるため、ZFS でのデプロイ経験がない場合は、ZFS は推奨していません。"
 
+#: ./doc/openstack-ops/ch_arch_storage.xml771(term)
+msgid ""
+"Sheepdog<indexterm "
+"class=\"singular\"><primary>Sheepdog</primary></indexterm>"
+msgstr ""
+
 #: ./doc/openstack-ops/ch_arch_storage.xml776(para)
+msgid ""
+"Sheepdog is a userspace distributed storage system. Sheepdog scales to "
+"several hundred nodes, and has powerful virtual disk management features "
+"like snapshot, cloning, rollback, thin provisioning."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml780(para)
+msgid ""
+"It is essentially an object storage system that manages disks and aggregates"
+" the space and performance of disks linearly in hyper scale on commodity "
+"hardware in a smart way. On top of its object store, Sheepdog provides "
+"elastic volume service and http service. Sheepdog does not assume anything "
+"about kernel version and can work nicely with xattr-supported file systems."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml794(para)
 msgid ""
 "We hope that you now have some considerations in mind and questions to ask "
 "your future cloud users about their storage use cases. As you can see, your "

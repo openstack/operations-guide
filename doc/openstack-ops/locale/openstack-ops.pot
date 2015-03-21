@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-14 06:00+0000\n"
+"POT-Creation-Date: 2015-03-21 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3099,7 +3099,7 @@ msgstr ""
 msgid "The dashboard is based on the Python <link href=\"https://www.djangoproject.com/\">Django</link> web application framework. The best guide to customizing it has already been written and can be found at <link href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Building on Horizon</link>.<indexterm class=\"singular\"><primary>Django</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>dashboard</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1187(title) ./doc/openstack-ops/ch_arch_storage.xml:774(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1187(title) ./doc/openstack-ops/ch_arch_storage.xml:792(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title)
 msgid "Conclusion"
 msgstr ""
 
@@ -7273,7 +7273,19 @@ msgstr ""
 msgid "We don't recommend ZFS unless you have previous experience with deploying it, since the ZFS backend for Block Storage requires a Solaris-based operating system, and we assume that your experience is primarily with Linux-based systems."
 msgstr ""
 
+#: ./doc/openstack-ops/ch_arch_storage.xml:771(term)
+msgid "Sheepdog<indexterm class=\"singular\"><primary>Sheepdog</primary></indexterm>"
+msgstr ""
+
 #: ./doc/openstack-ops/ch_arch_storage.xml:776(para)
+msgid "Sheepdog is a userspace distributed storage system. Sheepdog scales to several hundred nodes, and has powerful virtual disk management features like snapshot, cloning, rollback, thin provisioning."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml:780(para)
+msgid "It is essentially an object storage system that manages disks and aggregates the space and performance of disks linearly in hyper scale on commodity hardware in a smart way. On top of its object store, Sheepdog provides elastic volume service and http service. Sheepdog does not assume anything about kernel version and can work nicely with xattr-supported file systems."
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml:794(para)
 msgid "We hope that you now have some considerations in mind and questions to ask your future cloud users about their storage use cases. As you can see, your storage decisions will also influence your network design for performance and security needs. Continue with us to make more informed decisions about your OpenStack cloud <phrase role=\"keep-together\">design</phrase>."
 msgstr ""
 
