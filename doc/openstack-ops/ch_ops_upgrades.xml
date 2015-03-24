@@ -127,6 +127,12 @@
       where database migrations encountered a bug (later fixed!)
       because of slight table differences between fresh Grizzly
       installs and those that migrated from Folsom to Grizzly.</para>
+    <para>If possible, we highly recommended that you dump your
+      production database tables and test the upgrade in your development
+      environment using this data. As stated above, several MySQL
+      bugs have been uncovered during database migrations that will
+      only be hit on large real datasets. You do not want to find this
+      out in the middle of a production outage.</para>
 
     <para>Artificial scale testing can go only so far. After your
       cloud is upgraded, you must pay careful attention to the
@@ -181,6 +187,13 @@
         <para>Develop an upgrade procedure and assess it thoroughly by
           using a test environment similar to your production
           environment.</para>
+      </listitem>
+
+      <listitem>
+        <para>Make a full database backup of your production data. As of
+          Kilo, database downgrades are not supported, and the only method
+          available to get back to a prior database version will be to restore
+          from backup.</para>
       </listitem>
 
       <listitem>
@@ -745,7 +758,8 @@ auth_uri = http://controller:5000</programlisting>
         and add the repository for Havana packages:</para>
 
       <screen><prompt>#</prompt> <userinput>yum erase rdo-release-grizzly</userinput>
-<prompt>#</prompt> <userinput>yum install http://repos.fedorapeople.org/repos/openstack/openstack-havana/ \
+          <prompt>#</prompt> <userinput>yum install \
+              https://repos.fedorapeople.org/repos/openstack/EOL/openstack-havana/ \
   rdo-release-havana-7.noarch.rpm</userinput></screen>
 
       <warning>
@@ -754,7 +768,7 @@ auth_uri = http://controller:5000</programlisting>
 
       <note>
         <para>Consider checking for newer versions of the <link
-            xlink:href="https://repos.fedorapeople.org/repos/openstack/openstack-havana/">Havana
+            xlink:href="https://repos.fedorapeople.org/repos/openstack/EOL/openstack-havana/">Havana
             repository</link>.</para>
       </note>
     </section>
@@ -2830,9 +2844,14 @@ identity_uri = http://<replaceable>controller</replaceable>:35357</programlistin
   <section xml:id="ops_upgrades-roll-back">
     <title>Rolling Back a Failed Upgrade</title>
 
-    <para>Upgrades involve complex operations and can fail. This
-      section provides guidance for rolling back to a previous release
-      of OpenStack. Although only tested on Ubuntu, other
+    <para>Upgrades involve complex operations and can fail. Before
+        attempting any upgrade, you should make a full database backup
+        of your production data. As of Kilo, database downgrades are
+        not supported, and the only method available to get back to a
+        prior database version will be to restore from backup.</para>
+
+    <para>This section provides guidance for rolling back to a previous
+       release of OpenStack. Although only tested on Ubuntu, other
       distributions follow a similar <phrase role="keep-together"
         >procedure</phrase>.<indexterm class="singular">
         <primary>rollbacks</primary>
@@ -2849,7 +2868,9 @@ identity_uri = http://<replaceable>controller</replaceable>:35357</programlistin
       testing, and you must roll back your environment to the original
       "known good" state. Make sure that you did not make any state
       changes after attempting the upgrade process: no new instances,
-      networks, storage volumes, and so on.</para>
+      networks, storage volumes, and so on. Any of these new resources
+      will be in a zombie state after the databases are restored from
+      backup.</para>
 
     <para>Within this scope, you must complete these steps to
       successfully roll back your environment:</para>
@@ -2860,7 +2881,7 @@ identity_uri = http://<replaceable>controller</replaceable>:35357</programlistin
       </listitem>
 
       <listitem>
-        <para>Roll back databases.</para>
+        <para>Restore databases from backup.</para>
       </listitem>
 
       <listitem>
