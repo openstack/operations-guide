@@ -607,8 +607,8 @@ Service: identity
 | vif_1_tx       | 0.0             |
 +----------------+-----------------+</computeroutput></screen>While the
       command should work with any hypervisor that is controlled through
-      libvirt (e.g., KVM, QEMU, or LXC), it has been tested only with KVM.
-      Here is example output when the hypervisor is KVM:</para>
+      libvirt (KVM, QEMU, or LXC), it has been tested only with KVM.
+      Here is the example output when the hypervisor is KVM:</para>
 
       <?hard-pagebreak ?>
 
