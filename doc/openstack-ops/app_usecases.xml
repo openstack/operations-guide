@@ -42,15 +42,15 @@
       <para>Using OpenStack Compute cells, the NeCTAR Research Cloud spans
       eight sites with approximately 4,000 cores per site.</para>
 
-      <para>Each site runs a different configuration, as resource
+      <para>Each site runs a different configuration, as a resource
       <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some
       sites span multiple data centers, some use off compute node storage with
       a shared file system, and some use on compute node storage with a
-      nonshared file system. Each site deploys the Image Service with an
-      Object Storage backend. A central Identity Service, dashboard, and
+      non-shared file system. Each site deploys the Image Service with an
+      Object Storage back end. A central Identity Service, dashboard, and
       Compute API service are used. A login to the dashboard triggers a SAML
       login with Shibboleth, which creates an <glossterm>account</glossterm>
-      in the Identity Service with an SQL backend.</para>
+      in the Identity Service with a SQL back end.</para>
 
       <para>Compute nodes have 24 to 48 cores, with at least 4 GB of RAM per
       core and approximately 40 GB of ephemeral storage per core.</para>
@@ -134,7 +134,7 @@
       allocation ratios we use are 4:1 CPU and 1.5:1 RAM. Compute-intensive
       workloads use instance types that require non-oversubscribed hosts where
       <literal>cpu_ratio</literal> and <literal>ram_ratio</literal> are both
-      set to 1.0. Since we have hyperthreading enabled on our compute nodes,
+      set to 1.0. Since we have hyper-threading enabled on our compute nodes,
       this provides one vCPU per CPU thread, or two vCPUs per physical
       core.</para>
 
@@ -146,13 +146,13 @@
       VLANs. The controller node uses two bonded 10g network interfaces for
       its public IP communications. Big pipes are used here because images are
       served over this port, and it is also used to connect to iSCSI storage,
-      backending the image storage and database. The controller node also has
+      back-ending the image storage and database. The controller node also has
       a gigabit interface that is used in trunk mode for OpenStack managed
       VLAN traffic. This port handles traffic to the dhcp-agent and
       metadata-proxy.</para>
 
       <para>We approximate the older <literal>nova-network</literal>
-      multi-host HA setup by using "provider vlan networks" that connect
+      multi-host HA setup by using "provider VLAN networks" that connect
       instances directly to existing publicly addressable networks and use
       existing physical routers as their default gateway. This means that if
       our network controller goes down, running instances still have their
