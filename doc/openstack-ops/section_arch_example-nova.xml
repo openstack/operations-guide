@@ -136,7 +136,7 @@
           </tr>
 
           <tr>
-            <td><para>Image Service (glance) backend</para></td>
+            <td><para>Image Service (glance) back end</para></td>
 
             <td><para>file</para></td>
           </tr>
@@ -148,13 +148,13 @@
           </tr>
 
           <tr>
-            <td><para>Block Storage Service (cinder) backend</para></td>
+            <td><para>Block Storage Service (cinder) back end</para></td>
 
             <td><para>LVM/iSCSI</para></td>
           </tr>
 
           <tr>
-            <td><para>Live Migration backend</para></td>
+            <td><para>Live Migration back end</para></td>
 
             <td><para>Shared storage using NFS*</para></td>
           </tr>
@@ -317,12 +317,12 @@
 
       <para>Acknowledging that many small-scale deployments see running Object
       Storage just for the storage of virtual machine images as too costly, we
-      opted for the file backend in the OpenStack Image Service (Glance). If
+      opted for the file back end in the OpenStack Image Service (Glance). If
       your cloud will include Object Storage, you can easily add it as a
-      backend.</para>
+      back end.</para>
 
-      <para>We chose the <emphasis>SQL backend for Identity Service
-      (keystone)</emphasis> over others, such as LDAP. This backend is simple
+      <para>We chose the <emphasis>SQL back end for the Identity Service
+      (keystone)</emphasis> over others, such as LDAP. This back end is simple
       to install and is robust. The authors acknowledge that many
       installations want to bind with existing directory services and caution
       careful understanding of the <link xlink:href="http://docs.openstack.org/havana/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend"
