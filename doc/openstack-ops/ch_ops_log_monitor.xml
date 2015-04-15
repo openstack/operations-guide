@@ -802,7 +802,7 @@ notification_driver=messagingv2</programlisting>
 
       <para>Intelligent alerting can be thought of as a form of continuous
       integration for operations. For example, you can easily check to see
-      whether the Image Service is up and running by ensuring that
+      whether the Image service is up and running by ensuring that
       the&#160;<code>glance-api</code> and <code>glance-registry</code>
       processes are running or by seeing whether <code>glace-api</code> is
       responding on port 9292.<indexterm class="singular">
@@ -824,7 +824,7 @@ notification_driver=messagingv2</programlisting>
         </indexterm></para>
 
       <para>But how can you tell whether images are being successfully
-      uploaded to the Image Service? Maybe the disk that Image Service is
+      uploaded to the Image service? Maybe the disk that Image service is
       storing the images on is full or the S3 backend is down. You could
       naturally check this by doing a quick image upload:</para>
 

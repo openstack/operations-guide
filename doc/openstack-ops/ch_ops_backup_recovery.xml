@@ -159,7 +159,7 @@ find $backup_dir -ctime +7 -type f -delete</programlisting>
 
       <para><code>/etc/glance</code> and <code>/var/log/glance</code> follow
       the same rules as their nova counterparts.<indexterm class="singular">
-          <primary>Image Service</primary>
+          <primary>Image service</primary>
 
           <secondary>backup/recovery of</secondary>
         </indexterm></para>

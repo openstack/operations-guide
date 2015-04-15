@@ -35,7 +35,7 @@
       <title>Adding Images</title>
 
       <para>Several premade images exist and can easily be imported into the
-      Image Service. A common image to add is the CirrOS image, which is very
+      Image service. A common image to add is the CirrOS image, which is very
       small and used for testing purposes.<indexterm class="singular">
           <primary>images</primary>
 
@@ -55,9 +55,9 @@
       <screen><prompt>$</prompt> <userinput>glance help image-create</userinput></screen>
 
       <para>The <code>location</code> option is important to note. It does not
-      copy the entire image into the Image Service, but references an original
+      copy the entire image into the Image service, but references an original
       location where the image can be found. Upon launching an instance of
-      that image, the Image Service accesses the image from the location
+      that image, the Image service accesses the image from the location
       specified.</para>
 
       <para>The <code>copy-from</code> option copies the image from the
@@ -156,16 +156,16 @@
     </section>
 
     <section xml:id="image_service_and_database">
-      <title>The Image Service and the Database</title>
+      <title>The Image service and the Database</title>
 
-      <para>The only thing that the Image Service does not store in a database
-      is the image itself. The Image Service database has two main
+      <para>The only thing that the Image service does not store in a database
+      is the image itself. The Image service database has two main
       tables:<indexterm class="singular">
           <primary>databases</primary>
 
-          <secondary>Image Service</secondary>
+          <secondary>Image service</secondary>
         </indexterm><indexterm class="singular">
-          <primary>Image Service</primary>
+          <primary>Image service</primary>
 
           <secondary>database tables</secondary>
         </indexterm></para>
@@ -187,12 +187,12 @@
     </section>
 
     <section xml:id="sample_image_database">
-      <title>Example Image Service Database Queries</title>
+      <title>Example Image service Database Queries</title>
 
       <para>One interesting example is modifying the table of images and the
       owner of that image. This can be easily done if you simply display the
       unique ID of the owner. <indexterm class="singular">
-          <primary>Image Service</primary>
+          <primary>Image service</primary>
 
           <secondary>database queries</secondary>
         </indexterm>This example goes one step further and displays the
@@ -902,7 +902,7 @@ Optional snapshot description. (Default=None)</programlisting>
         service that holds a file that cloud-aware applications within the
         guest instance can access. For example, <link
         xlink:href="https://help.ubuntu.com/community/CloudInit"
-        xlink:title="OpenStack Image Service">cloudinit</link> is an open
+        xlink:title="OpenStack Image service">cloudinit</link> is an open
         source package from Ubuntu, but available in most distributions, that
         handles early initialization of a cloud instance that makes use of
         this user data.<indexterm class="singular">
@@ -1234,7 +1234,7 @@ Optional snapshot description. (Default=None)</programlisting>
 
         <para>The following section is from Sébastien Han's <link
         xlink:href="http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/"
-        xlink:title="OpenStack Image Service">“OpenStack: Perform Consistent
+        xlink:title="OpenStack Image service">“OpenStack: Perform Consistent
         Snapshots” blog entry</link>.</para>
 
         <para>A snapshot captures the state of the file system, but not the

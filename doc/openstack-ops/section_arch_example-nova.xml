@@ -136,7 +136,7 @@
           </tr>
 
           <tr>
-            <td><para>Image Service (glance) back end</para></td>
+            <td><para>Image service (glance) back end</para></td>
 
             <td><para>file</para></td>
           </tr>
@@ -317,7 +317,7 @@
 
       <para>Acknowledging that many small-scale deployments see running Object
       Storage just for the storage of virtual machine images as too costly, we
-      opted for the file back end in the OpenStack Image Service (Glance). If
+      opted for the file back end in the OpenStack Image service (Glance). If
       your cloud will include Object Storage, you can easily add it as a
       back end.</para>
 

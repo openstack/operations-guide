@@ -221,7 +221,7 @@
       </listitem>
 
       <listitem>
-        <para>Upgrade the OpenStack Image Service (glance).</para>
+        <para>Upgrade the OpenStack Image service (glance).</para>
       </listitem>
 
       <listitem>
@@ -332,7 +332,7 @@ scheduler=havana</programlisting>
           Installation Guide</citetitle></link> and upgrading to the
       same architecture for Havana. All nodes should run Ubuntu 12.04
       LTS. This section primarily addresses upgrading core OpenStack
-      services, such as the Identity Service (keystone), Image Service
+      services, such as the Identity Service (keystone), Image service
       (glance), Compute (nova) including networking, Block Storage
       (cinder), and the dashboard.<indexterm class="startofrange"
         xml:id="UPubuntu">
@@ -566,7 +566,7 @@ auth_uri = http://controller:5000</programlisting>
         </varlistentry>
 
         <varlistentry>
-          <term>OpenStack Image Service</term>
+          <term>OpenStack Image service</term>
 
           <listitem>
             <screen><prompt>#</prompt> <userinput>service glance-api stop</userinput>
@@ -704,7 +704,7 @@ auth_uri = http://controller:5000</programlisting>
       Enterprise Linux 6.4 or compatible derivatives. Newer minor
       releases should also work. This section primarily addresses
       upgrading core OpenStack services, such as the Identity Service
-      (keystone), Image Service (glance), Compute (nova) including
+      (keystone), Image service (glance), Compute (nova) including
       networking, Block Storage (cinder), and the dashboard.<indexterm
         class="startofrange" xml:id="UPredhat">
         <primary>upgrading</primary>
@@ -974,7 +974,7 @@ flavor = keystone</programlisting>
         </varlistentry>
 
         <varlistentry>
-          <term>OpenStack Image Service</term>
+          <term>OpenStack Image service</term>
 
           <listitem>
             <screen><prompt>#</prompt> <userinput>service openstack-glance-api stop</userinput>
@@ -1085,7 +1085,7 @@ flavor = keystone</programlisting>
       should run Ubuntu 12.04 LTS with Linux kernel 3.11 and the
       latest Havana packages installed and operational. This section
       primarily addresses upgrading core OpenStack services such as
-      Identity (keystone), Image Service (glance), Compute (nova),
+      Identity (keystone), Image service (glance), Compute (nova),
       Networking (neutron), Block Storage (cinder), and the dashboard.
       The Networking upgrade includes conversion from the Open vSwitch
       (OVS) plug-in to the Modular Layer 2 (M2) plug-in. This section
@@ -1254,8 +1254,8 @@ done</userinput></screen>
         </step>
       </procedure>
       <procedure>
-        <title>Upgrade OpenStack Image Service</title>
-        <para>Before upgrading the Image Service database, you must
+        <title>Upgrade OpenStack Image service</title>
+        <para>Before upgrading the Image service database, you must
             convert the character set for each table to UTF-8.</para>
           <step><para>Use the MySQL client to execute the following
             commands:</para>
@@ -1571,7 +1571,7 @@ service_plugins = router</programlisting>
       derivatives such as CentOS and Scientific Linux with the latest
       Havana packages installed and operational. This section
       primarily addresses upgrading core OpenStack services such as
-      Identity (keystone), Image Service (glance), Compute (nova),
+      Identity (keystone), Image service (glance), Compute (nova),
       Networking (neutron), Block Storage (cinder), and the dashboard.
       The Networking upgrade procedure includes conversion from the
       Open vSwitch (OVS) plug-in to the Modular Layer 2 (ML2)
@@ -1733,8 +1733,8 @@ done</userinput>
         </step>
       </procedure>
         <procedure>
-          <title>OpenStack Image Service:</title>
-          <para>Before upgrading the Image Service database, you must convert
+          <title>OpenStack Image service:</title>
+          <para>Before upgrading the Image service database, you must convert
             the character set for each table to UTF-8.</para>
           <step><para>Use the MySQL client to run the following
             commands:</para>
@@ -2073,7 +2073,7 @@ service_plugins = router</programlisting>
     <title>How to Perform an Upgrade from Icehouse to Juno</title>
     <?dbhtml stop-chunking?>
     <para>Use this procedure to upgrade a basic operational deployment of
-      the following services: Identity (keystone), Image Service (glance),
+      the following services: Identity (keystone), Image service (glance),
       Compute (nova), Networking (neutron), dashboard (horizon), Block
       Storage (cinder), Orchestration (heat), and Telemetry (ceilometer).
       This procedure references the basic three-node architecture in the
@@ -2265,7 +2265,7 @@ driver = keystone.token.persistence.backends.sql.Token</programlisting>
           </step>
         </procedure>
         <procedure>
-          <title>Image Service</title>
+          <title>Image service</title>
           <step>
             <para>Edit the <filename>/etc/glance/glance-api.conf</filename>
               file:</para>

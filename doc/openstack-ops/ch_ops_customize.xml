@@ -229,7 +229,7 @@ stable/havana devstack/</userinput></screen></para>
     <para>Now that you have an OpenStack development environment, you're free
     to hack around without worrying about damaging your production deployment.
     <xref linkend="localrc" /> provides a working environment for running
-    OpenStack Identity, Compute, Block Storage, Image Service, the OpenStack
+    OpenStack Identity, Compute, Block Storage, Image service, the OpenStack
     dashboard, and Object Storage with the stable/havana branches as the
     starting point.</para>
 
@@ -252,7 +252,7 @@ NOVA_BRANCH=stable/havana
 # OpenStack Block Storage branch
 CINDER_BRANCH=stable/havana
 
-# OpenStack Image Service branch
+# OpenStack Image service branch
 GLANCE_BRANCH=stable/havana
 
 # OpenStack Dashboard branch
