@@ -1134,13 +1134,13 @@ proto UDP (17), length 75)
   <section xml:id="trouble_shooting_ovs">
     <title>Troubleshooting Open vSwitch</title>
 
-    <para>Open vSwitch as used in the previous OpenStack Networking Service
+    <para>Open vSwitch, as used in the previous OpenStack Networking Service
     examples is a full-featured multilayer virtual switch licensed under the
     open source Apache 2.0 license. Full documentation can be found at <link
     xlink:href="http://openvswitch.org/">the project's website</link>. In
     practice, given the preceding configuration, the most common issues are
     being sure that the required bridges (<code>br-int</code>,
-    <code>br-tun</code>, <code>br-ex</code>, etc.) exist and have the proper
+    <code>br-tun</code>, and <code>br-ex</code>) exist and have the proper
     ports connected to them.<indexterm class="singular">
         <primary>Open vSwitch</primary>
 
