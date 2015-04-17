@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-26 06:01+0000\n"
+"POT-Creation-Date: 2015-04-17 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1212,7 +1212,7 @@ msgid "Troubleshooting Open vSwitch"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1137(para)
-msgid "Open vSwitch as used in the previous OpenStack Networking Service examples is a full-featured multilayer virtual switch licensed under the open source Apache 2.0 license. Full documentation can be found at <link href=\"http://openvswitch.org/\">the project's website</link>. In practice, given the preceding configuration, the most common issues are being sure that the required bridges (<code>br-int</code>, <code>br-tun</code>, <code>br-ex</code>, etc.) exist and have the proper ports connected to them.<indexterm class=\"singular\"><primary>Open vSwitch</primary><secondary>troubleshooting</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>Open vSwitch</secondary></indexterm>"
+msgid "Open vSwitch, as used in the previous OpenStack Networking Service examples is a full-featured multilayer virtual switch licensed under the open source Apache 2.0 license. Full documentation can be found at <link href=\"http://openvswitch.org/\">the project's website</link>. In practice, given the preceding configuration, the most common issues are being sure that the required bridges (<code>br-int</code>, <code>br-tun</code>, and <code>br-ex</code>) exist and have the proper ports connected to them.<indexterm class=\"singular\"><primary>Open vSwitch</primary><secondary>troubleshooting</secondary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>Open vSwitch</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1154(para)
@@ -2468,7 +2468,7 @@ msgid "Using OpenStack Compute cells, the NeCTAR Research Cloud spans eight site
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:45(para)
-msgid "Each site runs a different configuration, as resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a nonshared file system. Each site deploys the Image Service with an Object Storage backend. A central Identity Service, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity Service with an SQL backend."
+msgid "Each site runs a different configuration, as a resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a non-shared file system. Each site deploys the Image Service with an Object Storage back end. A central Identity Service, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity Service with a SQL back end."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:55(para)
@@ -2516,15 +2516,15 @@ msgid "The software stack is still Ubuntu 12.04 LTS, but now with OpenStack Hava
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:132(para)
-msgid "Host aggregates and instance-type extra specs are used to provide two different resource allocation ratios. The default resource allocation ratios we use are 4:1 CPU and 1.5:1 RAM. Compute-intensive workloads use instance types that require non-oversubscribed hosts where <literal>cpu_ratio</literal> and <literal>ram_ratio</literal> are both set to 1.0. Since we have hyperthreading enabled on our compute nodes, this provides one vCPU per CPU thread, or two vCPUs per physical core."
+msgid "Host aggregates and instance-type extra specs are used to provide two different resource allocation ratios. The default resource allocation ratios we use are 4:1 CPU and 1.5:1 RAM. Compute-intensive workloads use instance types that require non-oversubscribed hosts where <literal>cpu_ratio</literal> and <literal>ram_ratio</literal> are both set to 1.0. Since we have hyper-threading enabled on our compute nodes, this provides one vCPU per CPU thread, or two vCPUs per physical core."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:141(para)
-msgid "With our upgrade to Grizzly in August 2013, we moved to OpenStack Networking Service, neutron (quantum at the time). Compute nodes have two-gigabit network interfaces and a separate management card for IPMI management. One network interface is used for node-to-node communications. The other is used as a trunk port for OpenStack managed VLANs. The controller node uses two bonded 10g network interfaces for its public IP communications. Big pipes are used here because images are served over this port, and it is also used to connect to iSCSI storage, backending the image storage and database. The controller node also has a gigabit interface that is used in trunk mode for OpenStack managed VLAN traffic. This port handles traffic to the dhcp-agent and metadata-proxy."
+msgid "With our upgrade to Grizzly in August 2013, we moved to OpenStack Networking Service, neutron (quantum at the time). Compute nodes have two-gigabit network interfaces and a separate management card for IPMI management. One network interface is used for node-to-node communications. The other is used as a trunk port for OpenStack managed VLANs. The controller node uses two bonded 10g network interfaces for its public IP communications. Big pipes are used here because images are served over this port, and it is also used to connect to iSCSI storage, back-ending the image storage and database. The controller node also has a gigabit interface that is used in trunk mode for OpenStack managed VLAN traffic. This port handles traffic to the dhcp-agent and metadata-proxy."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:154(para)
-msgid "We approximate the older <literal>nova-network</literal> multi-host HA setup by using \"provider vlan networks\" that connect instances directly to existing publicly addressable networks and use existing physical routers as their default gateway. This means that if our network controller goes down, running instances still have their network available, and no single Linux host becomes a traffic bottleneck. We are able to do this because we have a sufficient supply of IPv4 addresses to cover all of our instances and thus don't need NAT and don't use floating IP addresses. We provide a single generic public network to all projects and additional existing VLANs on a project-by-project basis as needed. Individual projects are also allowed to create their own private GRE based networks."
+msgid "We approximate the older <literal>nova-network</literal> multi-host HA setup by using \"provider VLAN networks\" that connect instances directly to existing publicly addressable networks and use existing physical routers as their default gateway. This means that if our network controller goes down, running instances still have their network available, and no single Linux host becomes a traffic bottleneck. We are able to do this because we have a sufficient supply of IPv4 addresses to cover all of our instances and thus don't need NAT and don't use floating IP addresses. We provide a single generic public network to all projects and additional existing VLANs on a project-by-project basis as needed. Individual projects are also allowed to create their own private GRE based networks."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:173(link)
