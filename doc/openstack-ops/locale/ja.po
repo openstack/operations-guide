@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-16 14:31+0000\n"
-"PO-Revision-Date: 2015-04-16 14:31+0000\n"
+"POT-Creation-Date: 2015-04-17 12:37+0000\n"
+"PO-Revision-Date: 2015-04-18 11:26+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2953,9 +2953,8 @@ msgid "multi-host*"
 msgstr "マルチホスト*"
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml139(para)
-#: ./doc/openstack-ops/section_arch_example-neutron.xml104(para)
-msgid "Image Service (glance) backend"
-msgstr "Image Service (glance) バックエンド"
+msgid "Image Service (glance) back end"
+msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml141(para)
 msgid "file"
@@ -2972,17 +2971,16 @@ msgid "SQL"
 msgstr "SQL"
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml151(para)
-#: ./doc/openstack-ops/section_arch_example-neutron.xml116(para)
-msgid "Block Storage Service (cinder) backend"
-msgstr "Block Storage Service (cinder) バックエンド"
+msgid "Block Storage Service (cinder) back end"
+msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml153(para)
 msgid "LVM/iSCSI"
 msgstr "LVM/iSCSI"
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml157(para)
-msgid "Live Migration backend"
-msgstr "ライブマイグレーションバックエンド"
+msgid "Live Migration back end"
+msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml159(para)
 msgid "Shared storage using NFS*"
@@ -3155,21 +3153,21 @@ msgstr "<emphasis>ライブマイグレーション</emphasis> は、共有ス�
 msgid ""
 "Acknowledging that many small-scale deployments see running Object Storage "
 "just for the storage of virtual machine images as too costly, we opted for "
-"the file backend in the OpenStack Image Service (Glance). If your cloud will"
-" include Object Storage, you can easily add it as a backend."
-msgstr "多くの小規模なデプロイメントでは、 Object Storage を仮想マシンイメージのストレージのみに使用するとコストがかかり過ぎることが分かっているため、OpenStack Image Service (Glance) 内のファイルバックエンドを選択しました。設計対象のクラウド環境に Object Storage が含まれる場合には、バックエンドとして容易に追加できます。"
+"the file back end in the OpenStack Image Service (Glance). If your cloud "
+"will include Object Storage, you can easily add it as a back end."
+msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml324(para)
 msgid ""
-"We chose the <emphasis>SQL backend for Identity Service "
-"(keystone)</emphasis> over others, such as LDAP. This backend is simple to "
+"We chose the <emphasis>SQL back end for the Identity Service "
+"(keystone)</emphasis> over others, such as LDAP. This back end is simple to "
 "install and is robust. The authors acknowledge that many installations want "
 "to bind with existing directory services and caution careful understanding "
 "of the <link href=\"http://docs.openstack.org/havana/config-"
 "reference/content/ch_configuring-openstack-identity.html#configuring-"
 "keystone-for-ldap-backend\" title=\"LDAP config options\">array of options "
 "available</link>."
-msgstr "<emphasis>Identity Service (keystone) には SQL バックエンド</emphasis> を他のバックエンド (例: LDAP など) よりも優先して選択しました。このバックエンドは、インストールが簡単な上、頑強です。本ガイドの執筆者は、多くのインストールで既存のディレクトリサービスをバインディングする必要があることを認識しており、<link href=\"http://docs.openstack.org/havana/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend\" title=\"LDAP config options\">利用可能な数々の選択肢</link> に記載の内容を慎重に理解するように警告しています。"
+msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml332(para)
 msgid ""
@@ -3423,12 +3421,20 @@ msgstr "テナントネットワークの分離"
 msgid "VLAN"
 msgstr "VLAN"
 
+#: ./doc/openstack-ops/section_arch_example-neutron.xml104(para)
+msgid "Image Service (glance) backend"
+msgstr "Image Service (glance) バックエンド"
+
 #: ./doc/openstack-ops/section_arch_example-neutron.xml106(para)
 #: ./doc/openstack-ops/section_arch_example-neutron.xml118(para)
 #: ./doc/openstack-ops/section_arch_example-neutron.xml218(term)
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml476(para)
 msgid "GlusterFS"
 msgstr "GlusterFS"
+
+#: ./doc/openstack-ops/section_arch_example-neutron.xml116(para)
+msgid "Block Storage Service (cinder) backend"
+msgstr "Block Storage Service (cinder) バックエンド"
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml127(para)
 msgid ""
@@ -14138,10 +14144,10 @@ msgid ""
 "diagnosis and</secondary></indexterm> The following demonstrates the "
 "difference between the two most popular hypervisors. Here is example output "
 "when the hypervisor is Xen: <placeholder-1/>While the command should work "
-"with any hypervisor that is controlled through libvirt (e.g., KVM, QEMU, or "
-"LXC), it has been tested only with KVM. Here is example output when the "
+"with any hypervisor that is controlled through libvirt (KVM, QEMU, or LXC), "
+"it has been tested only with KVM. Here is the example output when the "
 "hypervisor is KVM:"
-msgstr "ハイパーバイザーによってサポートする属性が異なるため、コマンドの出力はハイパーバイザーによって異なります。<indexterm class=\"singular\"><primary>ハイパーバイザー</primary><secondary>コンピュートノードの診断</secondary></indexterm> 以下の実例は、最もよく使用されている 2 つのハイパーバイザーの間で出力がどのように異なるかを示しています。ハイパーバイザーが Xen の場合の例は以下のようになります: <placeholder-1/>このコマンドは、libvirt によって管理されている任意のハイパーバイザー  (例: KVM、QEMU、LXC) で機能するはずですが、KVM でのみテスト済みです。ハイパーバイザーが KVM の場合の例は以下のようになります"
+msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml638(title)
 msgid "Network Inspection"
