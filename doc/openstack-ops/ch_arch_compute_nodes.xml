@@ -37,7 +37,7 @@
       support. For Intel, read <link xlink:href="http://www.intel.com/support/processors/sb/cs-030729.htm"
       xlink:title="Intel VT-x"> “Does my processor support Intel®
       Virtualization Technology?”</link>. For AMD, read <link
-      xlink:href="http://sites.amd.com/us/business/it-solutions/virtualization/Pages/client-side-virtualization.aspx" xlink:title="AMD-v"> AMD
+        xlink:href=" http://www.amd.com/en-us/innovations/software-technologies/server-solution/virtualization" xlink:title="AMD-v"> AMD
       Virtualization</link>. Note that your CPU may support virtualization but
       it may be disabled. Consult your BIOS documentation for how to enable
       CPU features.<indexterm class="singular">
@@ -167,9 +167,9 @@
     OpenStack is out of date.</para>
 
     <para>The best information available to support your choice is found on
-    the <link xlink:href="https://wiki.openstack.org/wiki/HypervisorSupportMatrix"
+      the <link xlink:href="http://docs.openstack.org/developer/nova/support-matrix.html"
     xlink:title="reference manual">Hypervisor Support Matrix</link> and in the
-    <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html"
+    <link xlink:href="http://docs.openstack.org/juno/config-reference/content/section_compute-hypervisors.html"
     xlink:title="configuration reference">configuration
     reference</link>.</para>
 
