@@ -185,7 +185,7 @@
       were to set an Image quota limit of 5 GB, then all projects in your
       cloud will be able to store only 5 GB of images and snapshots.<indexterm
           class="singular">
-          <primary>Image Service</primary>
+          <primary>Image service</primary>
 
           <secondary>quota setting</secondary>
         </indexterm></para>

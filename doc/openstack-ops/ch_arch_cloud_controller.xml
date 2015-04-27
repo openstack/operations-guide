@@ -156,7 +156,7 @@
     </listitem>
 
     <listitem>
-      <para>Image Service for the image management</para>
+      <para>Image service for the image management</para>
     </listitem>
   </itemizedlist>
 
@@ -584,7 +584,7 @@
   <section xml:id="images">
     <title>Images</title>
 
-    <para>The OpenStack Image Service consists of two parts:
+    <para>The OpenStack Image service consists of two parts:
     <code>glance-api</code> and <code>glance-registry</code>. The former is
     responsible for the delivery of images; the compute node uses it to
     download images from the backend. The latter maintains the metadata
@@ -600,9 +600,9 @@
       </indexterm><indexterm class="singular">
         <primary>metadata</primary>
 
-        <secondary>OpenStack Image Service and</secondary>
+        <secondary>OpenStack Image service and</secondary>
       </indexterm><indexterm class="singular">
-        <primary>Image Service</primary>
+        <primary>Image service</primary>
 
         <secondary>design considerations</secondary>
       </indexterm><indexterm class="singular">

@@ -46,7 +46,7 @@
       <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some
       sites span multiple data centers, some use off compute node storage with
       a shared file system, and some use on compute node storage with a
-      non-shared file system. Each site deploys the Image Service with an
+      non-shared file system. Each site deploys the Image service with an
       Object Storage back end. A central Identity Service, dashboard, and
       Compute API service are used. A login to the dashboard triggers a SAML
       login with Shibboleth, which creates an <glossterm>account</glossterm>
@@ -265,7 +265,7 @@
       are ongoing with Hyper-V on Windows Server 2008.</para>
 
       <para>We use the Puppet Labs OpenStack modules to configure Compute,
-      Image Service, Identity, and dashboard. Puppet is used widely for
+      Image service, Identity, and dashboard. Puppet is used widely for
       instance configuration, and Foreman is used as a GUI for reporting and
       instance provisioning.</para>
 

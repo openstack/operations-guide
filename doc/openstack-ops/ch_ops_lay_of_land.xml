@@ -20,7 +20,7 @@
     <para>As a cloud administrative user, you can use the OpenStack dashboard
     to create and manage projects, users, images, and flavors. Users are
     allowed to create and manage images within specified projects and to share
-    images, depending on the Image Service configuration. Typically, the
+    images, depending on the Image service configuration. Typically, the
     policy configuration allows admin users only to set quotas and create and
     manage services. The dashboard provides an <guilabel>Admin</guilabel> tab
     with a <guilabel>System Panel</guilabel> and <guilabel>Identity

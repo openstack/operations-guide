@@ -101,7 +101,7 @@
           </tr>
 
           <tr>
-            <td><para>Image Service (glance) backend</para></td>
+            <td><para>Image service (glance) backend</para></td>
 
             <td><para>GlusterFS</para></td>
           </tr>
@@ -332,7 +332,7 @@
           <tr>
             <td>Storage</td>
             <td><para>Storage nodes store all the data required for the
-            environment, including disk images in the Image Service library,
+            environment, including disk images in the Image service library,
             and the persistent storage volumes created by the Block Storage
             service. Storage nodes use GlusterFS technology to keep the data
             highly available and scalable.</para>
@@ -799,21 +799,21 @@
           </tr>
 
           <tr>
-            <td>Image Service (glance)</td>
+            <td>Image service (glance)</td>
 
             <td>Controller</td>
 
             <td><literal>/var/lib/glance/images</literal> is a GlusterFS
             native mount to a Gluster volume off the storage layer.</td>
 
-            <td>The Image Service is run on all controller nodes, ensuring at
+            <td>The Image service is run on all controller nodes, ensuring at
               least one instance will be available in case of node failure. It
               also sits behind HAProxy, which detects when the software fails
               and routes requests around the failing instance.</td>
 
-            <td>The Image Service is run on all controller nodes, so
+            <td>The Image service is run on all controller nodes, so
             scalability can be achieved with additional controller nodes.
-            HAProxy allows scalability for the Image Service as more nodes are
+            HAProxy allows scalability for the Image service as more nodes are
             added.</td>
           </tr>
 
