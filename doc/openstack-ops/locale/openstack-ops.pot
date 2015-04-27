@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-19 06:00+0000\n"
+"POT-Creation-Date: 2015-04-27 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1808,7 +1808,7 @@ msgid "multi-host*"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:139(para)
-msgid "Image Service (glance) back end"
+msgid "Image service (glance) back end"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:141(para)
@@ -1912,7 +1912,7 @@ msgid "<emphasis>Live Migration</emphasis> is supported by way of shared storage
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:318(para)
-msgid "Acknowledging that many small-scale deployments see running Object Storage just for the storage of virtual machine images as too costly, we opted for the file back end in the OpenStack Image Service (Glance). If your cloud will include Object Storage, you can easily add it as a back end."
+msgid "Acknowledging that many small-scale deployments see running Object Storage just for the storage of virtual machine images as too costly, we opted for the file back end in the OpenStack Image service (Glance). If your cloud will include Object Storage, you can easily add it as a back end."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:324(para)
@@ -2064,7 +2064,7 @@ msgid "VLAN"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:104(para)
-msgid "Image Service (glance) backend"
+msgid "Image service (glance) backend"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:106(para) ./doc/openstack-ops/section_arch_example-neutron.xml:118(para) ./doc/openstack-ops/section_arch_example-neutron.xml:218(term) ./doc/openstack-ops/ch_arch_compute_nodes.xml:476(para)
@@ -2232,7 +2232,7 @@ msgid "Storage"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:334(para)
-msgid "Storage nodes store all the data required for the environment, including disk images in the Image Service library, and the persistent storage volumes created by the Block Storage service. Storage nodes use GlusterFS technology to keep the data highly available and scalable."
+msgid "Storage nodes store all the data required for the environment, including disk images in the Image service library, and the persistent storage volumes created by the Block Storage service. Storage nodes use GlusterFS technology to keep the data highly available and scalable."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:339(para)
@@ -2448,7 +2448,7 @@ msgid "OpenStack Networking's <literal>ovs-agent</literal>, <literal>l3-agent</l
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:576(para)
-msgid "<xref linkend=\"thirdparty-table\"/> and <xref linkend=\"openstack-config-table\"/> include example configuration and considerations for both third-party and OpenStack<indexterm class=\"singular\"><primary>OpenStack Networking (neutron)</primary><secondary>third-party component configuration</secondary></indexterm> components: <table rules=\"all\" xml:id=\"thirdparty-table\"><caption>Third-party component configuration</caption><col width=\"10%\"/><col width=\"30%\"/><col width=\"30%\"/><col width=\"30%\"/><thead><tr><th>Component</th><th>Tuning</th><th>Availability</th><th>Scalability</th></tr></thead><tbody><tr><td>MySQL</td><td><literal>binlog-format = row</literal></td><td>Master/master replication. However, both nodes are not used at the same time. Replication keeps all nodes as close to being up to date as possible (although the asynchronous nature of the replication means a fully consistent state is not possible). Connections to the database only happen through a Pacemaker virtual IP, ensuring that most problems that occur with master-master replication can be avoided.</td><td>Not heavily considered. Once load on the MySQL server increases enough that scalability needs to be considered, multiple masters or a master/slave setup can be used.</td></tr><tr><td>Qpid</td><td><literal>max-connections=1000</literal><literal>worker-threads=20</literal><literal>connection-backlog=10</literal>, sasl security enabled with SASL-BASIC authentication</td><td>Qpid is added as a resource to the Pacemaker software that runs on Controller nodes where Qpid is situated. This ensures only one Qpid instance is running at one time, and the node with the Pacemaker virtual IP will always be the node running Qpid.</td><td>Not heavily considered. However, Qpid can be changed to run on all controller nodes for scalability and availability purposes, and removed from Pacemaker.</td></tr><tr><td>HAProxy</td><td><literal>maxconn 3000</literal></td><td>HAProxy is a software layer-7 load balancer used to front door all clustered OpenStack API components and do SSL termination. HAProxy can be added as a resource to the Pacemaker software that runs on the Controller nodes where HAProxy is situated. This ensures that only one HAProxy instance is running at one time, and the node with the Pacemaker virtual IP will always be the node running HAProxy.</td><td>Not considered. HAProxy has small enough performance overheads that a single instance should scale enough for this level of workload. If extra scalability is needed, <literal>keepalived</literal> or other Layer-4 load balancing can be introduced to be placed in front of multiple copies of HAProxy.</td></tr><tr><td>Memcached</td><td><literal>MAXCONN=\"8192\" CACHESIZE=\"30457\"</literal></td><td>Memcached is a fast in-memory key-value cache software that is used by OpenStack components for caching data and increasing performance. Memcached runs on all controller nodes, ensuring that should one go down, another instance of Memcached is available.</td><td>Not considered. A single instance of Memcached should be able to scale to the desired workloads. If scalability is desired, HAProxy can be placed in front of Memcached (in raw <literal>tcp</literal> mode) to utilize multiple Memcached instances for scalability. However, this might cause cache consistency issues.</td></tr><tr><td>Pacemaker</td><td>Configured to use <phrase role=\"keep-together\"><literal>corosync</literal> and</phrase><literal>cman</literal> as a cluster communication stack/quorum manager, and as a two-node cluster.</td><placeholder-1/><td>If more nodes need to be made cluster aware, Pacemaker can scale to 64 nodes.</td></tr><tr><td>GlusterFS</td><td><literal>glusterfs</literal> performance profile \"virt\" enabled on all volumes. Volumes are setup in two-node replication.</td><td>Glusterfs is a clustered file system that is run on the storage nodes to provide persistent scalable data storage in the environment. Because all connections to gluster use the <literal>gluster</literal> native mount points, the <literal>gluster</literal> instances themselves provide availability and failover functionality.</td><td>The scalability of GlusterFS storage can be achieved by adding in more storage volumes.</td></tr></tbody></table><table rules=\"all\" xml:id=\"openstack-config-table\"><caption>OpenStack component configuration</caption><col width=\"8%\"/><col width=\"8%\"/><col width=\"25%\"/><col width=\"29%\"/><col width=\"30%\"/><thead><tr><th>Component</th><th>Node type</th><th>Tuning</th><th>Availability</th><th>Scalability</th></tr></thead><tbody><tr><td>Dashboard (horizon)</td><td>Controller</td><td>Configured to use Memcached as a session store, <literal>neutron</literal> support is enabled, <literal>can_set_mount_point = False</literal></td><td>The dashboard is run on all controller nodes, ensuring at least one instance will be available in case of node failure. It also sits behind HAProxy, which detects when the software fails and routes requests around the failing instance.</td><td>The dashboard is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for the dashboard as more nodes are added.</td></tr><tr><td>Identity (keystone)</td><td>Controller</td><td>Configured to use Memcached for caching and PKI for tokens.</td><td>Identity is run on all controller nodes, ensuring at least one instance will be available in case of node failure. Identity also sits behind HAProxy, which detects when the software fails and routes requests around the failing instance.</td><td>Identity is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for Identity as more nodes are added.</td></tr><tr><td>Image Service (glance)</td><td>Controller</td><td><literal>/var/lib/glance/images</literal> is a GlusterFS native mount to a Gluster volume off the storage layer.</td><td>The Image Service is run on all controller nodes, ensuring at least one instance will be available in case of node failure. It also sits behind HAProxy, which detects when the software fails and routes requests around the failing instance.</td><td>The Image Service is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for the Image Service as more nodes are added.</td></tr><tr><td>Compute (nova)</td><td>Controller, Compute</td><placeholder-2/><placeholder-3/><td>The nova API, scheduler, objectstore, cert, consoleauth, conductor, and vncproxy services are run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for Compute as more nodes are added. The scalability of services running on the compute nodes (compute, conductor) is achieved linearly by adding in more compute nodes.</td></tr><tr><td>Block Storage (cinder)</td><td>Controller</td><td>Configured to use Qpid, <phrase role=\"keep-together\"><literal>qpid_heartbeat = </literal><phrase role=\"keep-together\"><literal>10</literal>,</phrase></phrase><phrase role=\"keep-together\"> configured to use a Gluster</phrase> volume from the storage layer as the backend for Block Storage, using the Gluster native client.</td><td>Block Storage API, scheduler, and volume services are run on all controller nodes, ensuring at least one instance will be available in case of node failure. Block Storage also sits behind HAProxy, which detects if the software fails and routes requests around the failing instance.</td><td>Block Storage API, scheduler and volume services are run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for Block Storage as more nodes are added.</td></tr><tr><td>OpenStack Networking (neutron)</td><td>Controller, Compute, Network</td><td>Configured to use QPID, <phrase role=\"keep-together\"><literal>qpid_heartbeat = 10</literal></phrase>, kernel namespace support enabled, <literal>tenant_network_type = vlan</literal>, <literal>allow_overlapping_ips = true</literal>, <literal>tenant_network_type = vlan</literal>, <literal>bridge_uplinks = br-ex:em2</literal>, <literal>bridge_mappings = physnet1:br-ex</literal></td><placeholder-4/><td>The OpenStack Networking server service is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for OpenStack Networking as more nodes are added. Scalability of services running on the network nodes is not currently supported by OpenStack Networking, so they are not be considered. One copy of the services should be sufficient to handle the workload. Scalability of the <literal>ovs-agent</literal> running on compute nodes is achieved by adding in more compute nodes as necessary.</td></tr></tbody></table>"
+msgid "<xref linkend=\"thirdparty-table\"/> and <xref linkend=\"openstack-config-table\"/> include example configuration and considerations for both third-party and OpenStack<indexterm class=\"singular\"><primary>OpenStack Networking (neutron)</primary><secondary>third-party component configuration</secondary></indexterm> components: <table rules=\"all\" xml:id=\"thirdparty-table\"><caption>Third-party component configuration</caption><col width=\"10%\"/><col width=\"30%\"/><col width=\"30%\"/><col width=\"30%\"/><thead><tr><th>Component</th><th>Tuning</th><th>Availability</th><th>Scalability</th></tr></thead><tbody><tr><td>MySQL</td><td><literal>binlog-format = row</literal></td><td>Master/master replication. However, both nodes are not used at the same time. Replication keeps all nodes as close to being up to date as possible (although the asynchronous nature of the replication means a fully consistent state is not possible). Connections to the database only happen through a Pacemaker virtual IP, ensuring that most problems that occur with master-master replication can be avoided.</td><td>Not heavily considered. Once load on the MySQL server increases enough that scalability needs to be considered, multiple masters or a master/slave setup can be used.</td></tr><tr><td>Qpid</td><td><literal>max-connections=1000</literal><literal>worker-threads=20</literal><literal>connection-backlog=10</literal>, sasl security enabled with SASL-BASIC authentication</td><td>Qpid is added as a resource to the Pacemaker software that runs on Controller nodes where Qpid is situated. This ensures only one Qpid instance is running at one time, and the node with the Pacemaker virtual IP will always be the node running Qpid.</td><td>Not heavily considered. However, Qpid can be changed to run on all controller nodes for scalability and availability purposes, and removed from Pacemaker.</td></tr><tr><td>HAProxy</td><td><literal>maxconn 3000</literal></td><td>HAProxy is a software layer-7 load balancer used to front door all clustered OpenStack API components and do SSL termination. HAProxy can be added as a resource to the Pacemaker software that runs on the Controller nodes where HAProxy is situated. This ensures that only one HAProxy instance is running at one time, and the node with the Pacemaker virtual IP will always be the node running HAProxy.</td><td>Not considered. HAProxy has small enough performance overheads that a single instance should scale enough for this level of workload. If extra scalability is needed, <literal>keepalived</literal> or other Layer-4 load balancing can be introduced to be placed in front of multiple copies of HAProxy.</td></tr><tr><td>Memcached</td><td><literal>MAXCONN=\"8192\" CACHESIZE=\"30457\"</literal></td><td>Memcached is a fast in-memory key-value cache software that is used by OpenStack components for caching data and increasing performance. Memcached runs on all controller nodes, ensuring that should one go down, another instance of Memcached is available.</td><td>Not considered. A single instance of Memcached should be able to scale to the desired workloads. If scalability is desired, HAProxy can be placed in front of Memcached (in raw <literal>tcp</literal> mode) to utilize multiple Memcached instances for scalability. However, this might cause cache consistency issues.</td></tr><tr><td>Pacemaker</td><td>Configured to use <phrase role=\"keep-together\"><literal>corosync</literal> and</phrase><literal>cman</literal> as a cluster communication stack/quorum manager, and as a two-node cluster.</td><placeholder-1/><td>If more nodes need to be made cluster aware, Pacemaker can scale to 64 nodes.</td></tr><tr><td>GlusterFS</td><td><literal>glusterfs</literal> performance profile \"virt\" enabled on all volumes. Volumes are setup in two-node replication.</td><td>Glusterfs is a clustered file system that is run on the storage nodes to provide persistent scalable data storage in the environment. Because all connections to gluster use the <literal>gluster</literal> native mount points, the <literal>gluster</literal> instances themselves provide availability and failover functionality.</td><td>The scalability of GlusterFS storage can be achieved by adding in more storage volumes.</td></tr></tbody></table><table rules=\"all\" xml:id=\"openstack-config-table\"><caption>OpenStack component configuration</caption><col width=\"8%\"/><col width=\"8%\"/><col width=\"25%\"/><col width=\"29%\"/><col width=\"30%\"/><thead><tr><th>Component</th><th>Node type</th><th>Tuning</th><th>Availability</th><th>Scalability</th></tr></thead><tbody><tr><td>Dashboard (horizon)</td><td>Controller</td><td>Configured to use Memcached as a session store, <literal>neutron</literal> support is enabled, <literal>can_set_mount_point = False</literal></td><td>The dashboard is run on all controller nodes, ensuring at least one instance will be available in case of node failure. It also sits behind HAProxy, which detects when the software fails and routes requests around the failing instance.</td><td>The dashboard is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for the dashboard as more nodes are added.</td></tr><tr><td>Identity (keystone)</td><td>Controller</td><td>Configured to use Memcached for caching and PKI for tokens.</td><td>Identity is run on all controller nodes, ensuring at least one instance will be available in case of node failure. Identity also sits behind HAProxy, which detects when the software fails and routes requests around the failing instance.</td><td>Identity is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for Identity as more nodes are added.</td></tr><tr><td>Image service (glance)</td><td>Controller</td><td><literal>/var/lib/glance/images</literal> is a GlusterFS native mount to a Gluster volume off the storage layer.</td><td>The Image service is run on all controller nodes, ensuring at least one instance will be available in case of node failure. It also sits behind HAProxy, which detects when the software fails and routes requests around the failing instance.</td><td>The Image service is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for the Image service as more nodes are added.</td></tr><tr><td>Compute (nova)</td><td>Controller, Compute</td><placeholder-2/><placeholder-3/><td>The nova API, scheduler, objectstore, cert, consoleauth, conductor, and vncproxy services are run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for Compute as more nodes are added. The scalability of services running on the compute nodes (compute, conductor) is achieved linearly by adding in more compute nodes.</td></tr><tr><td>Block Storage (cinder)</td><td>Controller</td><td>Configured to use Qpid, <phrase role=\"keep-together\"><literal>qpid_heartbeat = </literal><phrase role=\"keep-together\"><literal>10</literal>,</phrase></phrase><phrase role=\"keep-together\"> configured to use a Gluster</phrase> volume from the storage layer as the backend for Block Storage, using the Gluster native client.</td><td>Block Storage API, scheduler, and volume services are run on all controller nodes, ensuring at least one instance will be available in case of node failure. Block Storage also sits behind HAProxy, which detects if the software fails and routes requests around the failing instance.</td><td>Block Storage API, scheduler and volume services are run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for Block Storage as more nodes are added.</td></tr><tr><td>OpenStack Networking (neutron)</td><td>Controller, Compute, Network</td><td>Configured to use QPID, <phrase role=\"keep-together\"><literal>qpid_heartbeat = 10</literal></phrase>, kernel namespace support enabled, <literal>tenant_network_type = vlan</literal>, <literal>allow_overlapping_ips = true</literal>, <literal>tenant_network_type = vlan</literal>, <literal>bridge_uplinks = br-ex:em2</literal>, <literal>bridge_mappings = physnet1:br-ex</literal></td><placeholder-4/><td>The OpenStack Networking server service is run on all controller nodes, so scalability can be achieved with additional controller nodes. HAProxy allows scalability for OpenStack Networking as more nodes are added. Scalability of services running on the network nodes is not currently supported by OpenStack Networking, so they are not be considered. One copy of the services should be sufficient to handle the workload. Scalability of the <literal>ovs-agent</literal> running on compute nodes is achieved by adding in more compute nodes as necessary.</td></tr></tbody></table>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:10(title)
@@ -2476,7 +2476,7 @@ msgid "Using OpenStack Compute cells, the NeCTAR Research Cloud spans eight site
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:45(para)
-msgid "Each site runs a different configuration, as a resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a non-shared file system. Each site deploys the Image Service with an Object Storage back end. A central Identity Service, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity Service with a SQL back end."
+msgid "Each site runs a different configuration, as a resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a non-shared file system. Each site deploys the Image service with an Object Storage back end. A central Identity Service, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity Service with a SQL back end."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:55(para)
@@ -2580,7 +2580,7 @@ msgid "The environment is largely based on Scientific Linux 6, which is Red Hat 
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:267(para)
-msgid "We use the Puppet Labs OpenStack modules to configure Compute, Image Service, Identity, and dashboard. Puppet is used widely for instance configuration, and Foreman is used as a GUI for reporting and instance provisioning."
+msgid "We use the Puppet Labs OpenStack modules to configure Compute, Image service, Identity, and dashboard. Puppet is used widely for instance configuration, and Foreman is used as a GUI for reporting and instance provisioning."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:272(para)
@@ -2740,7 +2740,7 @@ msgid "<literal>Screen</literal> is a useful program for viewing many related se
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:229(para)
-msgid "Now that you have an OpenStack development environment, you're free to hack around without worrying about damaging your production deployment. <xref linkend=\"localrc\"/> provides a working environment for running OpenStack Identity, Compute, Block Storage, Image Service, the OpenStack dashboard, and Object Storage with the stable/havana branches as the starting point."
+msgid "Now that you have an OpenStack development environment, you're free to hack around without worrying about damaging your production deployment. <xref linkend=\"localrc\"/> provides a working environment for running OpenStack Identity, Compute, Block Storage, Image service, the OpenStack dashboard, and Object Storage with the stable/havana branches as the starting point."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:237(title)
@@ -2956,7 +2956,7 @@ msgid "Customizing the OpenStack Compute (nova) Scheduler"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:750(para)
-msgid "Many OpenStack projects allow for customization of specific features using a driver architecture. You can write a driver that conforms to a particular interface and plug it in through configuration. For example, you can easily plug in a new scheduler for Compute. The existing schedulers for Compute are feature full and well documented at <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html\">Scheduling</link>. However, depending on your user's use cases, the existing schedulers might not meet your requirements. You might need to create a new scheduler.<indexterm class=\"singular\"><primary>customization</primary><secondary>OpenStack Compute (nova) Scheduler</secondary></indexterm><indexterm class=\"singular\"><primary>schedulers</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing OpenStack Compute (nova) scheduler</secondary></indexterm>"
+msgid "Many OpenStack projects allow for customization of specific features using a driver architecture. You can write a driver that conforms to a particular interface and plug it in through configuration. For example, you can easily plug in a new scheduler for Compute. The existing schedulers for Compute are feature full and well documented at <link href=\"http://docs.openstack.org/juno/config-reference/content/section_compute-scheduler.html\">Scheduling</link>. However, depending on your user's use cases, the existing schedulers might not meet your requirements. You might need to create a new scheduler.<indexterm class=\"singular\"><primary>customization</primary><secondary>OpenStack Compute (nova) Scheduler</secondary></indexterm><indexterm class=\"singular\"><primary>schedulers</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing OpenStack Compute (nova) scheduler</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:772(para)
@@ -3674,7 +3674,7 @@ msgid "Adding Images"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:37(para)
-msgid "Several premade images exist and can easily be imported into the Image Service. A common image to add is the CirrOS image, which is very small and used for testing purposes.<indexterm class=\"singular\"><primary>images</primary><secondary>adding</secondary></indexterm> To add this image, simply do:"
+msgid "Several premade images exist and can easily be imported into the Image service. A common image to add is the CirrOS image, which is very small and used for testing purposes.<indexterm class=\"singular\"><primary>images</primary><secondary>adding</secondary></indexterm> To add this image, simply do:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:49(para)
@@ -3682,7 +3682,7 @@ msgid "The <code>glance image-create</code> command provides a large set of opti
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:57(para)
-msgid "The <code>location</code> option is important to note. It does not copy the entire image into the Image Service, but references an original location where the image can be found. Upon launching an instance of that image, the Image Service accesses the image from the location specified."
+msgid "The <code>location</code> option is important to note. It does not copy the entire image into the Image service, but references an original location where the image can be found. Upon launching an instance of that image, the Image service accesses the image from the location specified."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:63(para)
@@ -3750,11 +3750,11 @@ msgid "or the <link href=\"http://docs.openstack.org/cli-reference/content/glanc
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:159(title)
-msgid "The Image Service and the Database"
+msgid "The Image service and the Database"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:161(para)
-msgid "The only thing that the Image Service does not store in a database is the image itself. The Image Service database has two main tables:<indexterm class=\"singular\"><primary>databases</primary><secondary>Image Service</secondary></indexterm><indexterm class=\"singular\"><primary>Image Service</primary><secondary>database tables</secondary></indexterm>"
+msgid "The only thing that the Image service does not store in a database is the image itself. The Image service database has two main tables:<indexterm class=\"singular\"><primary>databases</primary><secondary>Image service</secondary></indexterm><indexterm class=\"singular\"><primary>Image service</primary><secondary>database tables</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:175(literal)
@@ -3770,11 +3770,11 @@ msgid "Working directly with the database and SQL queries can provide you with c
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:190(title)
-msgid "Example Image Service Database Queries"
+msgid "Example Image service Database Queries"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:192(para)
-msgid "One interesting example is modifying the table of images and the owner of that image. This can be easily done if you simply display the unique ID of the owner. <indexterm class=\"singular\"><primary>Image Service</primary><secondary>database queries</secondary></indexterm>This example goes one step further and displays the readable name of the owner:"
+msgid "One interesting example is modifying the table of images and the owner of that image. This can be easily done if you simply display the unique ID of the owner. <indexterm class=\"singular\"><primary>Image service</primary><secondary>database queries</secondary></indexterm>This example goes one step further and displays the readable name of the owner:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:206(para)
@@ -4150,7 +4150,7 @@ msgid "Instance user data"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:901(para)
-msgid "The <code>user-data</code> key is a special key in the metadata service that holds a file that cloud-aware applications within the guest instance can access. For example, <link href=\"https://help.ubuntu.com/community/CloudInit\" title=\"OpenStack Image Service\">cloudinit</link> is an open source package from Ubuntu, but available in most distributions, that handles early initialization of a cloud instance that makes use of this user data.<indexterm class=\"singular\"><primary>user data</primary></indexterm>"
+msgid "The <code>user-data</code> key is a special key in the metadata service that holds a file that cloud-aware applications within the guest instance can access. For example, <link href=\"https://help.ubuntu.com/community/CloudInit\" title=\"OpenStack Image service\">cloudinit</link> is an open source package from Ubuntu, but available in most distributions, that handles early initialization of a cloud instance that makes use of this user data.<indexterm class=\"singular\"><primary>user data</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:912(para)
@@ -4362,7 +4362,7 @@ msgid "Ensuring Snapshots of Linux Guests Are Consistent"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1235(para)
-msgid "The following section is from Sébastien Han's <link href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/\" title=\"OpenStack Image Service\">“OpenStack: Perform Consistent Snapshots” blog entry</link>."
+msgid "The following section is from Sébastien Han's <link href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/\" title=\"OpenStack Image service\">“OpenStack: Perform Consistent Snapshots” blog entry</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1240(para)
@@ -4702,7 +4702,7 @@ msgid "Upgrade the OpenStack Identity Service (keystone)."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:224(para)
-msgid "Upgrade the OpenStack Image Service (glance)."
+msgid "Upgrade the OpenStack Image service (glance)."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:228(para)
@@ -4774,7 +4774,7 @@ msgid "How to Perform an Upgrade from Grizzly to Havana—Ubuntu"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:329(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Ubuntu 12.04 LTS. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPubuntu\"><primary>upgrading</primary><secondary>Grizzly to Havana (Ubuntu)</secondary></indexterm>"
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Ubuntu 12.04 LTS. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPubuntu\"><primary>upgrading</primary><secondary>Grizzly to Havana (Ubuntu)</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:344(title) ./doc/openstack-ops/ch_ops_upgrades.xml:715(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1095(title) ./doc/openstack-ops/ch_ops_upgrades.xml:1580(title)
@@ -4922,7 +4922,7 @@ msgid "OpenStack Identity"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:569(term) ./doc/openstack-ops/ch_ops_upgrades.xml:977(term)
-msgid "OpenStack Image Service"
+msgid "OpenStack Image service"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:581(term) ./doc/openstack-ops/ch_ops_upgrades.xml:989(term)
@@ -4986,7 +4986,7 @@ msgid "How to Perform an Upgrade from Grizzly to Havana—Red Hat Enterprise Lin
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:699(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Red Hat Enterprise Linux 6.4 or compatible derivatives. Newer minor releases should also work. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image Service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPredhat\"><primary>upgrading</primary><secondary>Grizzly to Havana (Red Hat)</secondary></indexterm>"
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Havana. All nodes should run Red Hat Enterprise Linux 6.4 or compatible derivatives. Newer minor releases should also work. This section primarily addresses upgrading core OpenStack services, such as the Identity Service (keystone), Image service (glance), Compute (nova) including networking, Block Storage (cinder), and the dashboard.<indexterm class=\"startofrange\" xml:id=\"UPredhat\"><primary>upgrading</primary><secondary>Grizzly to Havana (Red Hat)</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:736(para)
@@ -5074,7 +5074,7 @@ msgid "How to Perform an Upgrade from Havana to Icehouse—Ubuntu"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1080(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the <link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Icehouse. All nodes should run Ubuntu 12.04 LTS with Linux kernel 3.11 and the latest Havana packages installed and operational. This section primarily addresses upgrading core OpenStack services such as Identity (keystone), Image Service (glance), Compute (nova), Networking (neutron), Block Storage (cinder), and the dashboard. The Networking upgrade includes conversion from the Open vSwitch (OVS) plug-in to the Modular Layer 2 (M2) plug-in. This section does not cover the upgrade process from Ubuntu 12.04 LTS to Ubuntu 14.04 LTS."
+msgid "For this section, we assume that you are starting with the architecture provided in the <link href=\"http://docs.openstack.org/havana/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Icehouse. All nodes should run Ubuntu 12.04 LTS with Linux kernel 3.11 and the latest Havana packages installed and operational. This section primarily addresses upgrading core OpenStack services such as Identity (keystone), Image service (glance), Compute (nova), Networking (neutron), Block Storage (cinder), and the dashboard. The Networking upgrade includes conversion from the Open vSwitch (OVS) plug-in to the Modular Layer 2 (M2) plug-in. This section does not cover the upgrade process from Ubuntu 12.04 LTS to Ubuntu 14.04 LTS."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1096(para)
@@ -5178,11 +5178,11 @@ msgid "Start the services."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1257(title)
-msgid "Upgrade OpenStack Image Service"
+msgid "Upgrade OpenStack Image service"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1258(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1737(para)
-msgid "Before upgrading the Image Service database, you must convert the character set for each table to UTF-8."
+msgid "Before upgrading the Image service database, you must convert the character set for each table to UTF-8."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1260(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1351(para) ./doc/openstack-ops/ch_ops_upgrades.xml:1829(para)
@@ -5366,7 +5366,7 @@ msgid "How to Perform an Upgrade from Havana to Icehouse—Red Hat Enterprise Li
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1565(para)
-msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Icehouse. All nodes should run Red Hat Enterprise Linux 6.5 or compatible derivatives such as CentOS and Scientific Linux with the latest Havana packages installed and operational. This section primarily addresses upgrading core OpenStack services such as Identity (keystone), Image Service (glance), Compute (nova), Networking (neutron), Block Storage (cinder), and the dashboard. The Networking upgrade procedure includes conversion from the Open vSwitch (OVS) plug-in to the Modular Layer 2 (ML2) plug-in."
+msgid "For this section, we assume that you are starting with the architecture provided in the OpenStack <link href=\"http://docs.openstack.org/havana/install-guide/install/yum/content/\"><citetitle>OpenStack Installation Guide</citetitle></link> and upgrading to the same architecture for Icehouse. All nodes should run Red Hat Enterprise Linux 6.5 or compatible derivatives such as CentOS and Scientific Linux with the latest Havana packages installed and operational. This section primarily addresses upgrading core OpenStack services such as Identity (keystone), Image service (glance), Compute (nova), Networking (neutron), Block Storage (cinder), and the dashboard. The Networking upgrade procedure includes conversion from the Open vSwitch (OVS) plug-in to the Modular Layer 2 (ML2) plug-in."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1581(para)
@@ -5398,7 +5398,7 @@ msgid "The upgrade procedure for each service typically requires that you stop t
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1736(title)
-msgid "OpenStack Image Service:"
+msgid "OpenStack Image service:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:1739(para)
@@ -5458,7 +5458,7 @@ msgid "How to Perform an Upgrade from Icehouse to Juno"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:2075(para)
-msgid "Use this procedure to upgrade a basic operational deployment of the following services: Identity (keystone), Image Service (glance), Compute (nova), Networking (neutron), dashboard (horizon), Block Storage (cinder), Orchestration (heat), and Telemetry (ceilometer). This procedure references the basic three-node architecture in the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link>. All nodes must run a supported distribution of Linux with a recent kernel and latest Icehouse packages."
+msgid "Use this procedure to upgrade a basic operational deployment of the following services: Identity (keystone), Image service (glance), Compute (nova), Networking (neutron), dashboard (horizon), Block Storage (cinder), Orchestration (heat), and Telemetry (ceilometer). This procedure references the basic three-node architecture in the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link>. All nodes must run a supported distribution of Linux with a recent kernel and latest Icehouse packages."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:2085(title)
@@ -5598,7 +5598,7 @@ msgid "Start the service."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:2268(title)
-msgid "Image Service"
+msgid "Image service"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:2270(para)
@@ -7430,7 +7430,7 @@ msgid "Set Image Quotas"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:182(para)
-msgid "OpenStack Havana introduced a basic quota feature for the Image service, so you can now restrict a project's image storage by total number of bytes. Currently, this quota is applied cloud-wide, so if you were to set an Image quota limit of 5 GB, then all projects in your cloud will be able to store only 5 GB of images and snapshots.<indexterm class=\"singular\"><primary>Image Service</primary><secondary>quota setting</secondary></indexterm>"
+msgid "OpenStack Havana introduced a basic quota feature for the Image service, so you can now restrict a project's image storage by total number of bytes. Currently, this quota is applied cloud-wide, so if you were to set an Image quota limit of 5 GB, then all projects in your cloud will be able to store only 5 GB of images and snapshots.<indexterm class=\"singular\"><primary>Image service</primary><secondary>quota setting</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:193(para)
@@ -8014,7 +8014,7 @@ msgid "The type of CPU in your compute node is a very important choice. First, e
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:36(para)
-msgid "Consult the vendor documentation to check for virtualization support. For Intel, read <link href=\"http://www.intel.com/support/processors/sb/cs-030729.htm\" title=\"Intel VT-x\"> “Does my processor support Intel® Virtualization Technology?”</link>. For AMD, read <link href=\"http://sites.amd.com/us/business/it-solutions/virtualization/Pages/client-side-virtualization.aspx\" title=\"AMD-v\"> AMD Virtualization</link>. Note that your CPU may support virtualization but it may be disabled. Consult your BIOS documentation for how to enable CPU features.<indexterm class=\"singular\"><primary>virtualization technology</primary></indexterm><indexterm class=\"singular\"><primary>AMD Virtualization</primary></indexterm><indexterm class=\"singular\"><primary>Intel Virtualization Technology</primary></indexterm>"
+msgid "Consult the vendor documentation to check for virtualization support. For Intel, read <link href=\"http://www.intel.com/support/processors/sb/cs-030729.htm\" title=\"Intel VT-x\"> “Does my processor support Intel® Virtualization Technology?”</link>. For AMD, read <link href=\" http://www.amd.com/en-us/innovations/software-technologies/server-solution/virtualization\" title=\"AMD-v\"> AMD Virtualization</link>. Note that your CPU may support virtualization but it may be disabled. Consult your BIOS documentation for how to enable CPU features.<indexterm class=\"singular\"><primary>virtualization technology</primary></indexterm><indexterm class=\"singular\"><primary>AMD Virtualization</primary></indexterm><indexterm class=\"singular\"><primary>Intel Virtualization Technology</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:52(para)
@@ -8074,7 +8074,7 @@ msgid "For example, KVM is the most widely adopted hypervisor in the OpenStack c
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:169(para)
-msgid "The best information available to support your choice is found on the <link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\" title=\"reference manual\">Hypervisor Support Matrix</link> and in the <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html\" title=\"configuration reference\">configuration reference</link>."
+msgid "The best information available to support your choice is found on the <link href=\"http://docs.openstack.org/developer/nova/support-matrix.html\" title=\"reference manual\">Hypervisor Support Matrix</link> and in the <link href=\"http://docs.openstack.org/juno/config-reference/content/section_compute-hypervisors.html\" title=\"configuration reference\">configuration reference</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:177(para)
@@ -8382,7 +8382,7 @@ msgid "Using the OpenStack Dashboard for Administration"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:20(para)
-msgid "As a cloud administrative user, you can use the OpenStack dashboard to create and manage projects, users, images, and flavors. Users are allowed to create and manage images within specified projects and to share images, depending on the Image Service configuration. Typically, the policy configuration allows admin users only to set quotas and create and manage services. The dashboard provides an <guilabel>Admin</guilabel> tab with a <guilabel>System Panel</guilabel> and <guilabel>Identity Panel</guilabel>. These interfaces give you access to system information and usage as well as to settings for configuring what end users can do. Refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/ch_dashboard.html\">OpenStack Admin User Guide</link> for detailed how-to information about using the dashboard as an admin user.<indexterm class=\"singular\"><primary>working environment</primary><secondary>dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm>"
+msgid "As a cloud administrative user, you can use the OpenStack dashboard to create and manage projects, users, images, and flavors. Users are allowed to create and manage images within specified projects and to share images, depending on the Image service configuration. Typically, the policy configuration allows admin users only to set quotas and create and manage services. The dashboard provides an <guilabel>Admin</guilabel> tab with a <guilabel>System Panel</guilabel> and <guilabel>Identity Panel</guilabel>. These interfaces give you access to system information and usage as well as to settings for configuring what end users can do. Refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/ch_dashboard.html\">OpenStack Admin User Guide</link> for detailed how-to information about using the dashboard as an admin user.<indexterm class=\"singular\"><primary>working environment</primary><secondary>dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:41(title)
@@ -8698,7 +8698,7 @@ msgid "OpenStack is intended to work well across a variety of installation flavo
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:29(para)
-msgid "At the time of writing, OpenStack has more than 1,500 configuration options. You can see them documented at <link href=\"http://docs.openstack.org/trunk/config-reference/content/config_overview.html\">the OpenStack configuration reference guide</link>. This chapter cannot hope to document all of these, but we do try to introduce the important concepts so that you know where to go digging for more information."
+msgid "At the time of writing, OpenStack has more than 1,500 configuration options. You can see them documented at <link href=\"http://docs.openstack.org/juno/config-reference/content/config_overview.html\">the OpenStack configuration reference guide</link>. This chapter cannot hope to document all of these, but we do try to introduce the important concepts so that you know where to go digging for more information."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:37(title)
@@ -8710,7 +8710,7 @@ msgid "Many OpenStack projects implement a driver layer, and each of these drive
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:55(para)
-msgid "The currently implemented hypervisors are listed on <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-hypervisors.html\">the OpenStack documentation website</link>. You can see a matrix of the various features in OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at <link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">the Hypervisor support matrix page</link>."
+msgid "The currently implemented hypervisors are listed on <link href=\"http://docs.openstack.org/juno/config-reference/content/section_compute-hypervisors.html\">the OpenStack documentation website</link>. You can see a matrix of the various features in OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at <link href=\"http://docs.openstack.org/developer/nova/support-matrix.html\">the Hypervisor support matrix page</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:63(para)
@@ -9258,7 +9258,7 @@ msgid "Image Catalog and Delivery"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml:160(para)
-msgid "<code>/etc/glance</code> and <code>/var/log/glance</code> follow the same rules as their nova counterparts.<indexterm class=\"singular\"><primary>Image Service</primary><secondary>backup/recovery of</secondary></indexterm>"
+msgid "<code>/etc/glance</code> and <code>/var/log/glance</code> follow the same rules as their nova counterparts.<indexterm class=\"singular\"><primary>Image service</primary><secondary>backup/recovery of</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_backup_recovery.xml:167(para)
@@ -10472,7 +10472,7 @@ msgid "Database and message queue server (such as MySQL, RabbitMQ)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:159(para)
-msgid "Image Service for the image management"
+msgid "Image service for the image management"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:163(para)
@@ -10704,7 +10704,7 @@ msgid "There are currently two schedulers: <literal>nova-scheduler</literal> for
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:587(para)
-msgid "The OpenStack Image Service consists of two parts: <code>glance-api</code> and <code>glance-registry</code>. The former is responsible for the delivery of images; the compute node uses it to download images from the backend. The latter maintains the metadata information associated with virtual machine images and requires a database.<indexterm class=\"singular\"><primary>glance</primary><secondary>glance registry</secondary></indexterm><indexterm class=\"singular\"><primary>glance</primary><secondary>glance API server</secondary></indexterm><indexterm class=\"singular\"><primary>metadata</primary><secondary>OpenStack Image Service and</secondary></indexterm><indexterm class=\"singular\"><primary>Image Service</primary><secondary>design considerations</secondary></indexterm><indexterm class=\"singular\"><primary>design considerations</primary><secondary>images</secondary></indexterm>"
+msgid "The OpenStack Image service consists of two parts: <code>glance-api</code> and <code>glance-registry</code>. The former is responsible for the delivery of images; the compute node uses it to download images from the backend. The latter maintains the metadata information associated with virtual machine images and requires a database.<indexterm class=\"singular\"><primary>glance</primary><secondary>glance registry</secondary></indexterm><indexterm class=\"singular\"><primary>glance</primary><secondary>glance API server</secondary></indexterm><indexterm class=\"singular\"><primary>metadata</primary><secondary>OpenStack Image service and</secondary></indexterm><indexterm class=\"singular\"><primary>Image service</primary><secondary>design considerations</secondary></indexterm><indexterm class=\"singular\"><primary>design considerations</primary><secondary>images</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:614(para)
@@ -11272,11 +11272,11 @@ msgid "Intelligent Alerting"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:803(para)
-msgid "Intelligent alerting can be thought of as a form of continuous integration for operations. For example, you can easily check to see whether the Image Service is up and running by ensuring that the <code>glance-api</code> and <code>glance-registry</code> processes are running or by seeing whether <code>glace-api</code> is responding on port 9292.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>intelligent alerting</secondary></indexterm><indexterm class=\"singular\"><primary>alerts</primary><secondary>intelligent</secondary><seealso>logging/monitoring</seealso></indexterm><indexterm class=\"singular\"><primary>intelligent alerting</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>intelligent alerting</secondary></indexterm>"
+msgid "Intelligent alerting can be thought of as a form of continuous integration for operations. For example, you can easily check to see whether the Image service is up and running by ensuring that the <code>glance-api</code> and <code>glance-registry</code> processes are running or by seeing whether <code>glace-api</code> is responding on port 9292.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>intelligent alerting</secondary></indexterm><indexterm class=\"singular\"><primary>alerts</primary><secondary>intelligent</secondary><seealso>logging/monitoring</seealso></indexterm><indexterm class=\"singular\"><primary>intelligent alerting</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>intelligent alerting</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:826(para)
-msgid "But how can you tell whether images are being successfully uploaded to the Image Service? Maybe the disk that Image Service is storing the images on is full or the S3 backend is down. You could naturally check this by doing a quick image upload:"
+msgid "But how can you tell whether images are being successfully uploaded to the Image service? Maybe the disk that Image service is storing the images on is full or the S3 backend is down. You could naturally check this by doing a quick image upload:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:846(para)
