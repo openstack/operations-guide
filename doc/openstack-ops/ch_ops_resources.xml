@@ -13,23 +13,19 @@
     <title>OpenStack</title>
     <itemizedlist>
         <listitem>
-            <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt-debian/content/"
-                >Installation Guide for Debian 7.0</link></para>
+            <para><link xlink:href="http://docs.openstack.org/kilo/install-guide/install/zypper/content/">Installation
+                Guide for openSUSE 13.2 and SUSE Linux Enterprise
+                Server 12</link></para>
         </listitem>
         <listitem>
-            <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/zypper/content/">Installation
-                Guide for openSUSE and SUSE Linux Enterprise
-                Server</link></para>
-        </listitem>
-        <listitem>
-            <para><link xlink:href="http://docs.openstack.org/icehouse/install-guide/install/yum/content/">Installation
-                Guide for Red Hat Enterprise Linux, CentOS, and
-                Fedora</link></para>
+            <para><link xlink:href="http://docs.openstack.org/kilo/install-guide/install/yum/content/">Installation
+                Guide for Red Hat Enterprise Linux 7, CentOS 7, and
+                Fedora 21</link></para>
         </listitem>
         <listitem>
             <para><link
-                xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/">Installation
-                Guide for Ubuntu 12.04/14.04 (LTS) Server</link></para>
+                xlink:href="http://docs.openstack.org/kilo/install-guide/install/apt/content/">Installation
+                Guide for Ubuntu 14.04 (LTS) Server</link></para>
         </listitem>
       <listitem>
         <para><link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">OpenStack Cloud

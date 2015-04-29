@@ -50,7 +50,8 @@
       Object Storage back end. A central Identity Service, dashboard, and
       Compute API service are used. A login to the dashboard triggers a SAML
       login with Shibboleth, which creates an <glossterm>account</glossterm>
-      in the Identity Service with a SQL back end.</para>
+      in the Identity Service with a SQL back end. An Object Storage Global
+      Cluster is used across several sites.</para>
 
       <para>Compute nodes have 24 to 48 cores, with at least 4 GB of RAM per
       core and approximately 40 GB of ephemeral storage per core.</para>
@@ -58,11 +59,7 @@
       <para>All sites are based on Ubuntu 14.04, with KVM as the hypervisor.
       The OpenStack version in use is typically the current stable version,
       with 5 to 10 percent back-ported code from trunk and modifications.
-      <indexterm class="singular">
-          <primary>Icehouse</primary>
-
-          <secondary>migration to Ubuntu</secondary>
-        </indexterm></para>
+      </para>
     </section>
 
     <section xml:id="nectar_resources">
@@ -209,7 +206,7 @@
       each location, although, one is designated the "master" controller that
       is in charge of central authentication and quotas. This is done through
       custom scripts and light modifications to OpenStack. DAIR is currently
-      running Grizzly.</para>
+      running Havana.</para>
 
       <para>For Object Storage, each region has a swift environment.</para>
 
@@ -274,10 +271,9 @@
       and Euca2ools to do this.</para>
 
       <para>There are three clouds currently running at CERN, totaling about
-      3,400 compute nodes, with approximately 60,000 cores. The CERN IT cloud
+      4,700 compute nodes, with approximately 120,000 cores. The CERN IT cloud
       aims to expand to 300,000 cores by 2015.</para>
 
-      <!--FIXME - update numbers and release information for 2014 -->
     </section>
 
     <section xml:id="cern_resources">

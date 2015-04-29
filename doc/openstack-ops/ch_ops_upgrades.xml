@@ -125,8 +125,8 @@
       historical use of the system and differences in user interaction
       can affect the success of upgrades, too. We've seen experiences
       where database migrations encountered a bug (later fixed!)
-      because of slight table differences between fresh Grizzly
-      installs and those that migrated from Folsom to Grizzly.</para>
+      because of slight table differences between fresh
+      installs and those that migrated from one version to another.</para>
     <para>If possible, we highly recommended that you dump your
       production database tables and test the upgrade in your development
       environment using this data. As stated above, several MySQL

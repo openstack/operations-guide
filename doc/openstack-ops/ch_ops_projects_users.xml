@@ -775,14 +775,11 @@ Accept-Ranges: bytes</computeroutput></screen>
     </itemizedlist>
 
     <para>Username and email address are self-explanatory, though your site
-    may have local conventions you should observe. Setting and changing
-    passwords in the Identity service requires administrative privileges. As
-    of the Folsom release, users cannot change their own passwords. This is a
-    large driver for creating local custom tools, and must be kept in mind
-    when assigning and distributing passwords. The primary project is simply
-    the first project the user is associated with and must exist prior to
-    creating the user. Role is almost always going to be "member." Out of the
-    box, OpenStack comes with two roles defined:</para>
+    may have local conventions you should observe.
+    The primary project is simply the first project the user is associated
+    with and must exist prior to creating the user. Role is almost always
+    going to be "member." Out of the box, OpenStack comes with two roles
+    defined:</para>
 
     <?hard-pagebreak ?>
 

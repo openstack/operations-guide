@@ -199,12 +199,9 @@
 
       <para>Most block storage drivers allow the instance to have direct
       access to the underlying storage hardware's block device. This helps
-      increase the overall read/write IO.</para>
-
-      <para>Experimental support for utilizing files as volumes began in the
-      Folsom release. This initially started as a reference driver for using
-      NFS with cinder. By Grizzly's release, this has expanded into a full NFS
-      driver as well as a GlusterFS driver.</para>
+      increase the overall read/write IO. However, support for utilizing files
+      as volumes is also well established, with full support for NFS,
+      GlusterFS and others.</para>
 
       <para>These drivers work a little differently than a traditional "block"
       storage driver. On an NFS or GlusterFS file system, a single file is

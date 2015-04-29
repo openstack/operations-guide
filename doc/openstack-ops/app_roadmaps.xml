@@ -78,9 +78,22 @@
 
       <tbody>
         <tr>
+          <td><para>Liberty</para></td>
+
+          <td><para><link
+xlink:href="https://wiki.openstack.org/wiki/Liberty_Release_Schedule">Under Development</link> </para>
+            </td>
+
+          <td><para>2015.2</para></td>
+
+          <td><para>Oct, 2015</para></td>
+        </tr>
+
+        <tr>
           <td><para>Kilo</para></td>
 
-          <td><para><link xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Under Development</link> </para>
+          <td><para><link
+xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stable release, security-supported</link> </para>
             </td>
 
           <td><para><link
@@ -91,7 +104,7 @@
         <tr>
           <td><para>Juno</para></td>
 
-          <td><para><link xlink:href="https://wiki.openstack.org/wiki/Juno_Release_Schedule">Current stable release, security-supported</link> </para>
+          <td><para><link xlink:href="https://wiki.openstack.org/wiki/Juno_Release_Schedule">Security-supported</link> </para>
             </td>
 
           <td><para><link
@@ -103,7 +116,7 @@
         <tr>
           <td rowspan="4"><para>Icehouse</para></td>
 
-          <td rowspan="4"><para><link xlink:href="https://wiki.openstack.org/wiki/Icehouse_Release_Schedule">Security-supported</link> </para></td>
+          <td rowspan="4"><para><link xlink:href="https://wiki.openstack.org/wiki/Icehouse_Release_Schedule">End-of-life</link> </para></td>
 
           <td><para><link
           xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse">2014.1</link></para></td>
@@ -465,15 +478,13 @@
 
       <para>One of the most requested features since OpenStack began (for
       components other than Object Storage, which tends to "just work"):
-      easier upgrades. From Grizzly onward (and significantly improved in
-      Havana and Icehouse), internal messaging communication is versioned, meaning services
-      can theoretically drop back to backward-compatible behavior. This allows
-      you to run later versions of some components, while keeping older
-      versions of others.</para>
+      easier upgrades. In all recent releases internal messaging communication
+      is versioned, meaning services can theoretically drop back to
+      backward-compatible behavior. This allows you to run later versions of
+      some components, while keeping older versions of others.</para>
 
-      <para>In addition, in Icehouse, a lot of focus has been placed on database
-      migrations. These are now better managed, including the use of the Turbo
-      Hipster tool, which tests database migration performance on copies of
+      <para>In addition, database migrations are now tested with the Turbo
+      Hipster tool. This tool tests database migration performance on copies of
       real-world user databases.</para>
 
       <para>These changes have facilitated the first proper OpenStack upgrade
@@ -632,7 +643,7 @@
     servers out of the box in a highly available way, initially supporting only
     MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and
     Couchbase, in addition to replication functionality for MySQL. In Kilo,
-    more advanced clustering capability is expected, in addition to better
+    more advanced clustering capability was delivered, in addition to better
     integration with other OpenStack components such as networking.
     <indexterm class="singular">
         <primary>Juno</primary>
@@ -667,7 +678,7 @@
     underwent significant improvement, while in Icehouse it was the scheduler in
     Block Storage that received a boost. Further down the track, an effort
     started this cycle that aims to create a holistic scheduler covering both
-    will come to fruition. Some of this work for Kilo can be found under the
+    will come to fruition. Some of this work done in Kilo can be found under the
 <link xlink:href="https://wiki.openstack.org/wiki/Gantt/kilo">Gantt
 project</link>.<indexterm class="singular">
         <primary>Kilo</primary>
