@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-27 01:19+0000\n"
-"PO-Revision-Date: 2015-04-27 01:21+0000\n"
+"POT-Creation-Date: 2015-04-29 14:05+0000\n"
+"PO-Revision-Date: 2015-04-29 14:24+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -62,14 +62,17 @@ msgstr "リリース番号"
 msgid "Date"
 msgstr "リリース日"
 
+msgid "Liberty"
+msgstr "Liberty"
+
 msgid "Kilo"
 msgstr "Kilo"
 
-msgid "Juno"
-msgstr "Juno"
-
 msgid "Current stable release, security-supported"
 msgstr "現在の安定版リリース、セキュリティアップデート対象"
+
+msgid "Juno"
+msgstr "Juno"
 
 msgid "Icehouse"
 msgstr "Icehouse"
@@ -2699,18 +2702,6 @@ msgstr ""
 "OpenStack の論理アーキテクチャ (<link href=\"http://docs.openstack.org/"
 "openstack-ops/content/figures/2/figures/osog_0001.png\"/>)"
 
-msgid "Installation Guide for Debian 7.0"
-msgstr "インストールガイド Debian 7.0 版"
-
-msgid "Installation Guide for openSUSE and SUSE Linux Enterprise Server"
-msgstr "インストールガイド openSUSE、SUSE Linux Enterprise Server 版"
-
-msgid "Installation Guide for Red Hat Enterprise Linux, CentOS, and Fedora"
-msgstr "インストールガイド Red Hat Enterprise Linux、CentOS、Fedora 版"
-
-msgid "Installation Guide for Ubuntu 12.04/14.04 (LTS) Server"
-msgstr "インストールガイド Ubuntu 12.04/14.04 (LTS) Server 版"
-
 msgid "OpenStack Cloud Administrator Guide"
 msgstr "OpenStack クラウド管理者ガイド"
 
@@ -4375,26 +4366,6 @@ msgstr ""
 "Storage (Cinder) プロジェクトで OpenStack に実装されています。お使いのスト"
 "レージバックエンドは、Block Storage ドライバーでサポートされている必要があり"
 "ます。"
-
-msgid ""
-"Most block storage drivers allow the instance to have direct access to the "
-"underlying storage hardware's block device. This helps increase the overall "
-"read/write IO."
-msgstr ""
-"多くのストレージドライバはインスタンスが直接ストレージハードウェアのブロック"
-"デバイスへアクセスできるようにします。これは リード/ライト I/O 性能の向上に役"
-"立ちます。"
-
-msgid ""
-"Experimental support for utilizing files as volumes began in the Folsom "
-"release. This initially started as a reference driver for using NFS with "
-"cinder. By Grizzly's release, this has expanded into a full NFS driver as "
-"well as a GlusterFS driver."
-msgstr ""
-"ファイルをボリュームとして活用するサポートは、Folsom リリースで試験的に開始さ"
-"れました。これは、Cinder で NFS を使用する参照ドライバーとして始まりました。"
-"Grizzly のリリースまでには、完全な NFS ドライバーおよび GlusterFS ドライバー"
-"まで展開されました。"
 
 msgid ""
 "These drivers work a little differently than a traditional \"block\" storage "

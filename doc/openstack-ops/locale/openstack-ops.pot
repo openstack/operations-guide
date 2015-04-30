@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-27 06:00+0000\n"
+"POT-Creation-Date: 2015-04-30 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,514 +60,526 @@ msgid "Date"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:81(para)
-msgid "Kilo"
+msgid "Liberty"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:83(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:84(link)
 msgid "Under Development"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:87(link)
-msgid "2015.1"
+#: ./doc/openstack-ops/app_roadmaps.xml:87(para)
+msgid "2015.2"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:89(para)
-msgid "Apr 30, 2015"
+msgid "Oct, 2015"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:92(para)
-msgid "Juno"
+#: ./doc/openstack-ops/app_roadmaps.xml:93(para)
+msgid "Kilo"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:94(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:96(link)
 msgid "Current stable release, security-supported"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:98(link)
-msgid "2014.2"
+#: ./doc/openstack-ops/app_roadmaps.xml:100(link)
+msgid "2015.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:100(para)
-msgid "Oct 16, 2014"
+#: ./doc/openstack-ops/app_roadmaps.xml:102(para)
+msgid "Apr 30, 2015"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:104(para)
-msgid "Icehouse"
+#: ./doc/openstack-ops/app_roadmaps.xml:105(para)
+msgid "Juno"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:106(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:107(link)
 msgid "Security-supported"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:109(link)
-msgid "2014.1"
+#: ./doc/openstack-ops/app_roadmaps.xml:111(link)
+msgid "2014.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:111(para)
-msgid "Apr 17, 2014"
+#: ./doc/openstack-ops/app_roadmaps.xml:113(para)
+msgid "Oct 16, 2014"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:116(link)
-msgid "2014.1.1"
+#: ./doc/openstack-ops/app_roadmaps.xml:117(para)
+msgid "Icehouse"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:118(para)
-msgid "Jun 9, 2014"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:123(link)
-msgid "2014.1.2"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:125(para)
-msgid "Aug 8, 2014"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:130(link)
-msgid "2014.1.3"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:132(para)
-msgid "Oct 2, 2014"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:136(para) ./doc/openstack-ops/section_arch_example-nova.xml:81(para) ./doc/openstack-ops/section_arch_example-neutron.xml:57(para)
-msgid "Havana"
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:138(para) ./doc/openstack-ops/app_roadmaps.xml:184(para) ./doc/openstack-ops/app_roadmaps.xml:233(para) ./doc/openstack-ops/app_roadmaps.xml:276(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:119(link) ./doc/openstack-ops/app_roadmaps.xml:151(para) ./doc/openstack-ops/app_roadmaps.xml:197(para) ./doc/openstack-ops/app_roadmaps.xml:246(para) ./doc/openstack-ops/app_roadmaps.xml:289(para)
 msgid "End-of-life"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:140(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:122(link)
+msgid "2014.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:124(para)
+msgid "Apr 17, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:129(link)
+msgid "2014.1.1"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:131(para)
+msgid "Jun 9, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:136(link)
+msgid "2014.1.2"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:138(para)
+msgid "Aug 8, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:143(link)
+msgid "2014.1.3"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:145(para)
+msgid "Oct 2, 2014"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:149(para) ./doc/openstack-ops/section_arch_example-nova.xml:81(para) ./doc/openstack-ops/section_arch_example-neutron.xml:57(para)
+msgid "Havana"
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:153(link)
 msgid "2013.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:143(para) ./doc/openstack-ops/app_roadmaps.xml:189(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:156(para) ./doc/openstack-ops/app_roadmaps.xml:202(para)
 msgid "Apr 4, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:149(link) ./doc/openstack-ops/app_roadmaps.xml:177(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:162(link) ./doc/openstack-ops/app_roadmaps.xml:190(link)
 msgid "2013.2.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:151(para) ./doc/openstack-ops/app_roadmaps.xml:179(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:164(para) ./doc/openstack-ops/app_roadmaps.xml:192(para)
 msgid "Dec 16, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:156(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:169(link)
 msgid "2013.2.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:158(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:171(para)
 msgid "Feb 13, 2014"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:163(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:176(link)
 msgid "2013.2.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:165(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:178(para)
 msgid "Apr 3, 2014"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:170(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:183(link)
 msgid "2013.2.4"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:172(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:185(para)
 msgid "Sep 22, 2014"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:182(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:195(para)
 msgid "Grizzly"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:186(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:199(link)
 msgid "2013.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:195(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:208(link)
 msgid "2013.1.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:197(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:210(para)
 msgid "May 9, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:203(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:216(link)
 msgid "2013.1.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:205(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:218(para)
 msgid "Jun 6, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:211(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:224(link)
 msgid "2013.1.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:213(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:226(para)
 msgid "Aug 8, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:219(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:232(link)
 msgid "2013.1.4"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:221(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:234(para)
 msgid "Oct 17, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:226(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:239(link)
 msgid "2013.1.5"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:228(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:241(para)
 msgid "Mar 20, 2015"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:231(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:244(para)
 msgid "Folsom"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:235(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:248(link)
 msgid "2012.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:238(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:251(para)
 msgid "Sep 27, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:244(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:257(link)
 msgid "2012.2.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:246(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:259(para)
 msgid "Nov 29, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:252(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:265(link)
 msgid "2012.2.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:254(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:267(para)
 msgid "Dec 13, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:260(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:273(link)
 msgid "2012.2.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:262(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:275(para)
 msgid "Jan 31, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:268(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:281(link)
 msgid "2012.2.4"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:270(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:283(para)
 msgid "Apr 11, 2013"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:274(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:287(para)
 msgid "Essex"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:278(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:291(link)
 msgid "2012.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:281(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:294(para)
 msgid "Apr 5, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:287(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:300(link)
 msgid "2012.1.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:289(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:302(para)
 msgid "Jun 22, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:295(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:308(link)
 msgid "2012.1.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:297(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:310(para)
 msgid "Aug 10, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:303(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:316(link)
 msgid "2012.1.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:305(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:318(para)
 msgid "Oct 12, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:309(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:322(para)
 msgid "Diablo"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:311(para) ./doc/openstack-ops/app_roadmaps.xml:330(para) ./doc/openstack-ops/app_roadmaps.xml:341(para) ./doc/openstack-ops/app_roadmaps.xml:352(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:324(para) ./doc/openstack-ops/app_roadmaps.xml:343(para) ./doc/openstack-ops/app_roadmaps.xml:354(para) ./doc/openstack-ops/app_roadmaps.xml:365(para)
 msgid "Deprecated"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:313(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:326(link)
 msgid "2011.3"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:316(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:329(para)
 msgid "Sep 22, 2011"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:322(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:335(link)
 msgid "2011.3.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:324(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:337(para)
 msgid "Jan 19, 2012"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:328(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:341(para)
 msgid "Cactus"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:332(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:345(link)
 msgid "2011.2"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:335(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:348(para)
 msgid "Apr 15, 2011"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:339(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:352(para)
 msgid "Bexar"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:343(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:356(link)
 msgid "2011.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:346(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:359(para)
 msgid "Feb 3, 2011"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:350(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:363(para)
 msgid "Austin"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:354(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:367(link)
 msgid "2010.1"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:357(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:370(para)
 msgid "Oct 21, 2010"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:362(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:375(para)
 msgid "Here are some other resources:"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:366(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:379(link)
 msgid "A breakdown of current features under development, with their target milestone"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:372(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:385(link)
 msgid "A list of all features, including those not yet under development"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:377(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:390(link)
 msgid "Rough-draft design discussions (\"etherpads\") from the last design summit"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:382(link)
+#: ./doc/openstack-ops/app_roadmaps.xml:395(link)
 msgid "List of individual code changes under review"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:389(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:402(title)
 msgid "Influencing the Roadmap"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:391(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:404(para)
 msgid "OpenStack truly welcomes your ideas (and contributions) and highly values feedback from real-world users of the software. By learning a little about the process that drives feature development, you can participate and perhaps get the additions you desire.<indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>influencing</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:403(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:416(para)
 msgid "Feature requests typically start their life in Etherpad, a collaborative editing tool, which is used to take coordinating notes at a design summit session specific to the feature. This then leads to the creation of a blueprint on the Launchpad site for the particular project, which is used to describe the feature more formally. Blueprints are then approved by project team members, and development can begin."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:410(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:423(para)
 msgid "Therefore, the fastest way to get your feature request up for consideration is to create an Etherpad with your ideas and propose a session to the design summit. If the design summit has already passed, you may also create a blueprint directly. Read this <link href=\"http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/\">blog post about how to work with blueprints</link> the perspective of Victoria Martínez, a developer intern."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:418(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:431(para)
 msgid "The roadmap for the next release as it is developed can be seen at <link href=\"http://status.openstack.org/release/\">Releases</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:421(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:434(para)
 msgid "To determine the potential features going in to future releases, or to look at features implemented previously, take a look at the existing blueprints such as <link href=\"https://blueprints.launchpad.net/nova\">OpenStack Compute (nova) Blueprints</link>, <link href=\"https://blueprints.launchpad.net/keystone\">OpenStack Identity (keystone) Blueprints</link>, and release notes."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:428(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:441(para)
 msgid "Aside from the direct-to-blueprint pathway, there is another very well-regarded mechanism to influence the development roadmap: the user survey. Found at <link href=\"http://openstack.org/user-survey\"/>, it allows you to provide details of your deployments and needs, anonymously by default. Each cycle, the user committee analyzes the results and produces a report, including providing specific information to the technical committee and technical leads of the projects."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:439(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:452(title)
 msgid "Aspects to Watch"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:441(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:454(para)
 msgid "You want to keep an eye on the areas improving within OpenStack. The best way to \"watch\" roadmaps for each project is to look at the blueprints that are being approved for work on milestone releases. You can also learn from PTL webinars that follow the OpenStack summits twice a year.<indexterm class=\"startofrange\" xml:id=\"OSaspect\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>aspects to watch</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:454(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:467(title)
 msgid "Driver Quality Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:456(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:469(para)
 msgid "A major quality push has occurred across drivers and plug-ins in Block Storage, Compute, and Networking. Particularly, developers of Compute and Networking drivers that require proprietary or hardware products are now required to provide an automated external testing system for use during the development process."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:464(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:477(title)
 msgid "Easier Upgrades"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:466(para)
-msgid "One of the most requested features since OpenStack began (for components other than Object Storage, which tends to \"just work\"): easier upgrades. From Grizzly onward (and significantly improved in Havana and Icehouse), internal messaging communication is versioned, meaning services can theoretically drop back to backward-compatible behavior. This allows you to run later versions of some components, while keeping older versions of others."
-msgstr ""
-
-#: ./doc/openstack-ops/app_roadmaps.xml:474(para)
-msgid "In addition, in Icehouse, a lot of focus has been placed on database migrations. These are now better managed, including the use of the Turbo Hipster tool, which tests database migration performance on copies of real-world user databases."
-msgstr ""
-
 #: ./doc/openstack-ops/app_roadmaps.xml:479(para)
+msgid "One of the most requested features since OpenStack began (for components other than Object Storage, which tends to \"just work\"): easier upgrades. In all recent releases internal messaging communication is versioned, meaning services can theoretically drop back to backward-compatible behavior. This allows you to run later versions of some components, while keeping older versions of others."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:486(para)
+msgid "In addition, database migrations are now tested with the Turbo Hipster tool. This tool tests database migration performance on copies of real-world user databases."
+msgstr ""
+
+#: ./doc/openstack-ops/app_roadmaps.xml:490(para)
 msgid "These changes have facilitated the first proper OpenStack upgrade guide, found in <xref linkend=\"ch_ops_upgrades\"/>, and will continue to improve in Kilo.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>upgrades in</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:489(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:500(title)
 msgid "Deprecation of Nova Network"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:491(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:502(para)
 msgid "With the introduction of the full software-defined networking stack provided by OpenStack Networking (neutron) in the Folsom release, development effort on the initial networking code that remains part of the Compute component has gradually lessened. While many still use <literal>nova-network</literal> in production, there has been a long-term plan to remove the code in favor of the more flexible and full-featured OpenStack Networking.<indexterm class=\"singular\"><primary>nova</primary><secondary>deprecation of</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:503(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:514(para)
 msgid "An attempt was made to deprecate <literal>nova-network</literal> during the Havana release, which was aborted due to the lack of equivalent functionality (such as the FlatDHCP multi-host high-availability mode mentioned in this guide), lack of a migration path between versions, insufficient testing, and simplicity when used for the more straightforward use cases <literal>nova-network</literal> traditionally supported. Though significant effort has been made to address these concerns, <literal>nova-network</literal> was not be deprecated in the Juno release. In addition, to a limited degree, patches to <literal>nova-network</literal> have again begin to be accepted, such as adding a per-network settings feature and SR-IOV support in Juno.<indexterm class=\"singular\"><primary>Juno</primary><secondary>nova network deprecation</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:520(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:531(para)
 msgid "This leaves you with an important point of decision when designing your cloud. OpenStack Networking is robust enough to use with a small number of limitations (performance issues in some scenarios, only basic high availability of layer 3 systems) and provides many more features than <literal>nova-network</literal>. However, if you do not have the more complex use cases that can benefit from fuller software-defined networking capabilities, or are uncomfortable with the new concepts introduced, <literal>nova-network</literal> may continue to be a viable option for the next 12 months."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:530(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:541(para)
 msgid "Similarly, if you have an existing cloud and are looking to upgrade from <literal>nova-network</literal> to OpenStack Networking, you should have the option to delay the upgrade for this period of time. However, each release of OpenStack brings significant new innovation, and regardless of your use of networking methodology, it is likely best to begin planning for an upgrade within a reasonable timeframe of each release."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:538(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:549(para)
 msgid "As mentioned, there's currently no way to cleanly migrate from <literal>nova-network</literal> to neutron. We recommend that you keep a migration in mind and what that process might involve for when a proper migration path is released. Current thinking is that upgrades without instance downtime will be available in the Kilo release."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:547(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:558(title)
 msgid "Distributed Virtual Router"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:549(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:560(para)
 msgid "One of the long-time complaints surrounding OpenStack Networking was the lack of high availability for the layer 3 components. The Juno release introduced Distributed Virtual Router (DVR), which aims to solve this problem."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:553(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:564(para)
 msgid "Early indications are that it does do this well for a base set of scenarios, such as using the ML2 plug-in with Open vSwitch, one flat external network and VXLAN tenant networks. However, it does appear that there are problems with the use of VLANs, IPv6, Floating IPs, high north-south traffic scenarios and large numbers of compute nodes. It is expected these will improve significantly with the Kilo release, but bug reports on specific issues are highly desirable."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:564(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:575(title)
 msgid "Replacement of Open vSwitch Plug-in with <phrase role=\"keep-together\">Modular Layer 2</phrase>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:567(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:578(para)
 msgid "The Modular Layer 2 plug-in is a framework allowing OpenStack Networking to simultaneously utilize the variety of layer-2 networking technologies found in complex real-world data centers. It currently works with the existing Open vSwitch, Linux Bridge, and Hyper-V L2 agents and is intended to replace and deprecate the monolithic plug-ins associated with those L2 agents."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:576(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:587(title)
 msgid "New API Versions"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:578(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:589(para)
 msgid "The third version of the Compute API was broadly discussed and worked on during the Havana and Icehouse release cycles. Current discussions indicate that the V2 API will remain for many releases, and the next iteration of the API will be denoted v2.1 and have similar properties to the existing v2.0, rather than an entirely new v3 API. This is a great time to evaluate all API and provide comments while the next generation APIs are being defined. A new working group was formed specifically to <link href=\"https://wiki.openstack.org/wiki/API_Working_Group\">improve OpenStack APIs</link> and create design guidelines, which you are welcome to join. <indexterm class=\"singular\"><primary>Kilo</primary><secondary>Compute V3 API</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:595(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:606(title)
 msgid "OpenStack on OpenStack (TripleO)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:597(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:608(para)
 msgid "This project continues to improve and you may consider using it for greenfield <phrase role=\"keep-together\">deployments</phrase>, though according to the latest user survey results it remains to see widespread uptake."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:604(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:615(title)
 msgid "Data Processing (Sahara)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:606(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:617(para)
 msgid "A much-requested answer to big data problems, a dedicated team has been making solid progress on a Hadoop-as-a-Service project."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:611(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:622(title)
 msgid "Bare-Metal Deployment (Ironic)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:613(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:624(para)
 msgid "The bare-metal deployment has been widely lauded, and development continues. The Juno release brought the Ironic drive into the Compute project, and it is aimed to deprecate the existing bare-metal driver in Kilo. If you are a current user of the bare metal driver, a particular blueprint to follow is <link href=\"https://blueprints.launchpad.net/nova/+spec/deprecate-baremetal-driver\"> Deprecate the Baremetal driver</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>Compute bare-metal deployment</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:627(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:638(title)
 msgid "Database as a Service (Trove)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:629(para)
-msgid "The OpenStack community has had a database-as-a-service tool in development for some time, and we saw the first integrated release of it in Icehouse. From release it was able to deploy database servers out of the box in a highly available way, initially supporting only MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and Couchbase, in addition to replication functionality for MySQL. In Kilo, more advanced clustering capability is expected, in addition to better integration with other OpenStack components such as networking. <indexterm class=\"singular\"><primary>Juno</primary><secondary>database-as-a-service tool</secondary></indexterm>"
+#: ./doc/openstack-ops/app_roadmaps.xml:640(para)
+msgid "The OpenStack community has had a database-as-a-service tool in development for some time, and we saw the first integrated release of it in Icehouse. From release it was able to deploy database servers out of the box in a highly available way, initially supporting only MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and Couchbase, in addition to replication functionality for MySQL. In Kilo, more advanced clustering capability was delivered, in addition to better integration with other OpenStack components such as networking. <indexterm class=\"singular\"><primary>Juno</primary><secondary>database-as-a-service tool</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:645(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:656(title)
 msgid "Messaging as a Service (Zaqar)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:647(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:658(para)
 msgid "A service to provide queues of messages and notifications has entered “incubation,” meaning if the upcoming development cycles are successful, it will be released in <phrase role=\"keep-together\">Kilo</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:654(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:665(title)
 msgid "DNS as a Service (Designate)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:656(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:667(para)
 msgid "A long requested service, to provide the ability to manipulate DNS entries associated with OpenStack resources has gathered a following. The Designate project has entered “incubation,” meaning if the upcoming development cycles are successful, it could be released in <phrase role=\"keep-together\">Kilo</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:663(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:674(title)
 msgid "Scheduler Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:665(para)
-msgid "Both Compute and Block Storage rely on schedulers to determine where to place virtual machines or volumes. In Havana, the Compute scheduler underwent significant improvement, while in Icehouse it was the scheduler in Block Storage that received a boost. Further down the track, an effort started this cycle that aims to create a holistic scheduler covering both will come to fruition. Some of this work for Kilo can be found under the <link href=\"https://wiki.openstack.org/wiki/Gantt/kilo\">Gantt project</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>scheduler improvements</secondary></indexterm>"
+#: ./doc/openstack-ops/app_roadmaps.xml:676(para)
+msgid "Both Compute and Block Storage rely on schedulers to determine where to place virtual machines or volumes. In Havana, the Compute scheduler underwent significant improvement, while in Icehouse it was the scheduler in Block Storage that received a boost. Further down the track, an effort started this cycle that aims to create a holistic scheduler covering both will come to fruition. Some of this work done in Kilo can be found under the <link href=\"https://wiki.openstack.org/wiki/Gantt/kilo\">Gantt project</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>scheduler improvements</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:679(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:690(title)
 msgid "Block Storage Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:681(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:692(para)
 msgid "Block Storage is now considered a stable project, with wide uptake and a long track record of quality drivers. The team still discussed many areas of work at the Kilo summit, including better error reporting, automated dicovery, and thin provisioning features."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:689(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:700(title)
 msgid "Toward a Python SDK"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:691(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:702(para)
 msgid "Though many successfully use the various python-*client code as an effective SDK for interacting with OpenStack, consistency between the projects and documentation availability waxes and wanes. To combat this, an <link href=\"https://wiki.openstack.org/wiki/PythonOpenStackSDK\">effort to improve the experience</link> has started. Cross-project development efforts in OpenStack have a checkered history, such as the <link href=\"https://wiki.openstack.org/wiki/OpenStackClient\"> unified client project</link> having several false starts. However, the early signs for the SDK project are promising, and we expect to see results during the Juno cycle.<indexterm class=\"endofrange\" startref=\"OSaspect\"/>"
 msgstr ""
 
@@ -907,7 +919,7 @@ msgstr ""
 msgid "One last test is to launch a second instance and see whether the two instances can ping each other. If they can, the issue might be related to the firewall on the compute node.<indexterm class=\"singular\"><primary>path failures</primary></indexterm><indexterm class=\"singular\"><primary>troubleshooting</primary><secondary>detecting path failures</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:611(title) ./doc/openstack-ops/ch_ops_resources.xml:76(code)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:611(title) ./doc/openstack-ops/ch_ops_resources.xml:72(code)
 msgid "tcpdump"
 msgstr ""
 
@@ -1263,7 +1275,7 @@ msgstr ""
 msgid "From this you see that the DHCP server on that network is using the tape6256f7d-31 device and has an IP address of 10.0.1.100. Seeing the address 169.254.169.254, you can also see that the dhcp-agent is running a metadata-proxy service. Any of the commands mentioned previously in this chapter can be run in the same way. It is also possible to run a shell, such as <literal>bash</literal>, and have an interactive session within the namespace. In the latter case, exiting the shell returns you to the top-level default namespace."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1097(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:823(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:996(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1094(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:823(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:996(title)
 msgid "Summary"
 msgstr ""
 
@@ -1839,11 +1851,11 @@ msgstr ""
 msgid "Shared storage using NFS*"
 msgstr ""
 
-#: ./doc/openstack-ops/section_arch_example-nova.xml:163(para) ./doc/openstack-ops/ch_arch_storage.xml:241(th)
+#: ./doc/openstack-ops/section_arch_example-nova.xml:163(para) ./doc/openstack-ops/ch_arch_storage.xml:238(th)
 msgid "Object storage"
 msgstr ""
 
-#: ./doc/openstack-ops/section_arch_example-nova.xml:165(para) ./doc/openstack-ops/ch_arch_storage.xml:285(para) ./doc/openstack-ops/ch_arch_storage.xml:625(term)
+#: ./doc/openstack-ops/section_arch_example-nova.xml:165(para) ./doc/openstack-ops/ch_arch_storage.xml:282(para) ./doc/openstack-ops/ch_arch_storage.xml:622(term)
 msgid "OpenStack Object Storage (swift)"
 msgstr ""
 
@@ -2467,7 +2479,7 @@ msgstr ""
 msgid "Who uses it: researchers from the Australian publicly funded research sector. Use is across a wide variety of disciplines, with the purpose of instances ranging from running simple web servers to using hundreds of cores for high-throughput computing.<indexterm class=\"singular\"><primary>NeCTAR Research Cloud</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>NeCTAR</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>NeCTAR</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:40(title) ./doc/openstack-ops/app_usecases.xml:113(title) ./doc/openstack-ops/app_usecases.xml:205(title) ./doc/openstack-ops/app_usecases.xml:261(title)
+#: ./doc/openstack-ops/app_usecases.xml:40(title) ./doc/openstack-ops/app_usecases.xml:110(title) ./doc/openstack-ops/app_usecases.xml:202(title) ./doc/openstack-ops/app_usecases.xml:258(title)
 msgid "Deployment"
 msgstr ""
 
@@ -2476,130 +2488,130 @@ msgid "Using OpenStack Compute cells, the NeCTAR Research Cloud spans eight site
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:45(para)
-msgid "Each site runs a different configuration, as a resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a non-shared file system. Each site deploys the Image service with an Object Storage back end. A central Identity Service, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity Service with a SQL back end."
+msgid "Each site runs a different configuration, as a resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a non-shared file system. Each site deploys the Image service with an Object Storage back end. A central Identity Service, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity Service with a SQL back end. An Object Storage Global Cluster is used across several sites."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:55(para)
+#: ./doc/openstack-ops/app_usecases.xml:56(para)
 msgid "Compute nodes have 24 to 48 cores, with at least 4 GB of RAM per core and approximately 40 GB of ephemeral storage per core."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:58(para)
-msgid "All sites are based on Ubuntu 14.04, with KVM as the hypervisor. The OpenStack version in use is typically the current stable version, with 5 to 10 percent back-ported code from trunk and modifications. <indexterm class=\"singular\"><primary>Icehouse</primary><secondary>migration to Ubuntu</secondary></indexterm>"
+#: ./doc/openstack-ops/app_usecases.xml:59(para)
+msgid "All sites are based on Ubuntu 14.04, with KVM as the hypervisor. The OpenStack version in use is typically the current stable version, with 5 to 10 percent back-ported code from trunk and modifications."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:69(title) ./doc/openstack-ops/app_usecases.xml:169(title) ./doc/openstack-ops/app_usecases.xml:230(title) ./doc/openstack-ops/app_usecases.xml:284(title) ./doc/openstack-ops/ch_ops_resources.xml:11(title)
+#: ./doc/openstack-ops/app_usecases.xml:66(title) ./doc/openstack-ops/app_usecases.xml:166(title) ./doc/openstack-ops/app_usecases.xml:227(title) ./doc/openstack-ops/app_usecases.xml:280(title) ./doc/openstack-ops/ch_ops_resources.xml:11(title)
 msgid "Resources"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:73(link)
+#: ./doc/openstack-ops/app_usecases.xml:70(link)
 msgid "OpenStack.org case study"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:78(link)
+#: ./doc/openstack-ops/app_usecases.xml:75(link)
 msgid "NeCTAR-RC GitHub"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:83(link)
+#: ./doc/openstack-ops/app_usecases.xml:80(link)
 msgid "NeCTAR website"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:91(title)
+#: ./doc/openstack-ops/app_usecases.xml:88(title)
 msgid "MIT CSAIL"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:93(para)
+#: ./doc/openstack-ops/app_usecases.xml:90(para)
 msgid "Who uses it: researchers from the MIT Computer Science and Artificial Intelligence Lab.<indexterm class=\"singular\"><primary>CSAIL (Computer Science and Artificial Intelligence Lab)</primary></indexterm><indexterm class=\"singular\"><primary>MIT CSAIL (Computer Science and Artificial Intelligence Lab)</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>MIT CSAIL</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>MIT CSAIL</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:115(para)
+#: ./doc/openstack-ops/app_usecases.xml:112(para)
 msgid "The CSAIL cloud is currently 64 physical nodes with a total of 768 physical cores and 3,456 GB of RAM. Persistent data storage is largely outside the cloud on NFS, with cloud resources focused on compute resources. There are more than 130 users in more than 40 projects, typically running 2,000–2,500 vCPUs in 300 to 400 instances."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:121(para)
+#: ./doc/openstack-ops/app_usecases.xml:118(para)
 msgid "We initially deployed on Ubuntu 12.04 with the Essex release of OpenStack using FlatDHCP multi-host networking."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:124(para)
+#: ./doc/openstack-ops/app_usecases.xml:121(para)
 msgid "The software stack is still Ubuntu 12.04 LTS, but now with OpenStack Havana from the Ubuntu Cloud Archive. KVM is the hypervisor, deployed using <link href=\"http://fai-project.org/\">FAI</link> and Puppet for configuration management. The FAI and Puppet combination is used lab-wide, not only for OpenStack. There is a single cloud controller node, which also acts as network controller, with the remainder of the server hardware dedicated to compute nodes."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:132(para)
+#: ./doc/openstack-ops/app_usecases.xml:129(para)
 msgid "Host aggregates and instance-type extra specs are used to provide two different resource allocation ratios. The default resource allocation ratios we use are 4:1 CPU and 1.5:1 RAM. Compute-intensive workloads use instance types that require non-oversubscribed hosts where <literal>cpu_ratio</literal> and <literal>ram_ratio</literal> are both set to 1.0. Since we have hyper-threading enabled on our compute nodes, this provides one vCPU per CPU thread, or two vCPUs per physical core."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:141(para)
+#: ./doc/openstack-ops/app_usecases.xml:138(para)
 msgid "With our upgrade to Grizzly in August 2013, we moved to OpenStack Networking Service, neutron (quantum at the time). Compute nodes have two-gigabit network interfaces and a separate management card for IPMI management. One network interface is used for node-to-node communications. The other is used as a trunk port for OpenStack managed VLANs. The controller node uses two bonded 10g network interfaces for its public IP communications. Big pipes are used here because images are served over this port, and it is also used to connect to iSCSI storage, back-ending the image storage and database. The controller node also has a gigabit interface that is used in trunk mode for OpenStack managed VLAN traffic. This port handles traffic to the dhcp-agent and metadata-proxy."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:154(para)
+#: ./doc/openstack-ops/app_usecases.xml:151(para)
 msgid "We approximate the older <literal>nova-network</literal> multi-host HA setup by using \"provider VLAN networks\" that connect instances directly to existing publicly addressable networks and use existing physical routers as their default gateway. This means that if our network controller goes down, running instances still have their network available, and no single Linux host becomes a traffic bottleneck. We are able to do this because we have a sufficient supply of IPv4 addresses to cover all of our instances and thus don't need NAT and don't use floating IP addresses. We provide a single generic public network to all projects and additional existing VLANs on a project-by-project basis as needed. Individual projects are also allowed to create their own private GRE based networks."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:173(link)
+#: ./doc/openstack-ops/app_usecases.xml:170(link)
 msgid "CSAIL homepage"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:181(title)
+#: ./doc/openstack-ops/app_usecases.xml:178(title)
 msgid "DAIR"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:183(para)
+#: ./doc/openstack-ops/app_usecases.xml:180(para)
 msgid "Who uses it: DAIR is an integrated virtual environment that leverages the CANARIE network to develop and test new information communication technology (ICT) and other digital technologies. It combines such digital infrastructure as advanced networking and cloud computing and storage to create an environment for developing and testing innovative ICT applications, protocols, and services; performing at-scale experimentation for deployment; and facilitating a faster time to market.<indexterm class=\"singular\"><primary>DAIR</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>DAIR</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>DAIR</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:207(para)
-msgid "DAIR is hosted at two different data centers across Canada: one in Alberta and the other in Quebec. It consists of a cloud controller at each location, although, one is designated the \"master\" controller that is in charge of central authentication and quotas. This is done through custom scripts and light modifications to OpenStack. DAIR is currently running Grizzly."
+#: ./doc/openstack-ops/app_usecases.xml:204(para)
+msgid "DAIR is hosted at two different data centers across Canada: one in Alberta and the other in Quebec. It consists of a cloud controller at each location, although, one is designated the \"master\" controller that is in charge of central authentication and quotas. This is done through custom scripts and light modifications to OpenStack. DAIR is currently running Havana."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:214(para)
+#: ./doc/openstack-ops/app_usecases.xml:211(para)
 msgid "For Object Storage, each region has a swift environment."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:216(para)
+#: ./doc/openstack-ops/app_usecases.xml:213(para)
 msgid "A NetApp appliance is used in each region for both block storage and instance storage. There are future plans to move the instances off the NetApp appliance and onto a distributed file system such as <glossterm>Ceph</glossterm> or GlusterFS."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:221(para)
+#: ./doc/openstack-ops/app_usecases.xml:218(para)
 msgid "VlanManager is used extensively for network management. All servers have two bonded 10GbE NICs that are connected to two redundant switches. DAIR is set up to use single-node networking where the cloud controller is the gateway for all instances on all compute nodes. Internal OpenStack traffic (for example, storage traffic) does not go through the cloud controller."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:234(link)
+#: ./doc/openstack-ops/app_usecases.xml:231(link)
 msgid "DAIR homepage"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:242(title)
+#: ./doc/openstack-ops/app_usecases.xml:239(title)
 msgid "CERN"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:244(para)
+#: ./doc/openstack-ops/app_usecases.xml:241(para)
 msgid "Who uses it: researchers at CERN (European Organization for Nuclear Research) conducting high-energy physics research.<indexterm class=\"singular\"><primary>CERN (European Organization for Nuclear Research)</primary></indexterm><indexterm class=\"singular\"><primary>use cases</primary><secondary>CERN</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>use cases</secondary><tertiary>CERN</tertiary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:263(para)
+#: ./doc/openstack-ops/app_usecases.xml:260(para)
 msgid "The environment is largely based on Scientific Linux 6, which is Red Hat compatible. We use KVM as our primary hypervisor, although tests are ongoing with Hyper-V on Windows Server 2008."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:267(para)
+#: ./doc/openstack-ops/app_usecases.xml:264(para)
 msgid "We use the Puppet Labs OpenStack modules to configure Compute, Image service, Identity, and dashboard. Puppet is used widely for instance configuration, and Foreman is used as a GUI for reporting and instance provisioning."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:272(para)
+#: ./doc/openstack-ops/app_usecases.xml:269(para)
 msgid "Users and groups are managed through Active Directory and imported into the Identity Service using LDAP. CLIs are available for nova and Euca2ools to do this."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:276(para)
-msgid "There are three clouds currently running at CERN, totaling about 3,400 compute nodes, with approximately 60,000 cores. The CERN IT cloud aims to expand to 300,000 cores by 2015."
+#: ./doc/openstack-ops/app_usecases.xml:273(para)
+msgid "There are three clouds currently running at CERN, totaling about 4,700 compute nodes, with approximately 120,000 cores. The CERN IT cloud aims to expand to 300,000 cores by 2015."
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:288(link)
+#: ./doc/openstack-ops/app_usecases.xml:284(link)
 msgid "“OpenStack in Production: A tale of 3 OpenStack Clouds”"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:293(link)
+#: ./doc/openstack-ops/app_usecases.xml:289(link)
 msgid "“Review of CERN Data Centre Infrastructure”"
 msgstr ""
 
-#: ./doc/openstack-ops/app_usecases.xml:298(link)
+#: ./doc/openstack-ops/app_usecases.xml:294(link)
 msgid "“CERN Cloud Infrastructure User Guide”"
 msgstr ""
 
@@ -2956,7 +2968,7 @@ msgid "Customizing the OpenStack Compute (nova) Scheduler"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:750(para)
-msgid "Many OpenStack projects allow for customization of specific features using a driver architecture. You can write a driver that conforms to a particular interface and plug it in through configuration. For example, you can easily plug in a new scheduler for Compute. The existing schedulers for Compute are feature full and well documented at <link href=\"http://docs.openstack.org/juno/config-reference/content/section_compute-scheduler.html\">Scheduling</link>. However, depending on your user's use cases, the existing schedulers might not meet your requirements. You might need to create a new scheduler.<indexterm class=\"singular\"><primary>customization</primary><secondary>OpenStack Compute (nova) Scheduler</secondary></indexterm><indexterm class=\"singular\"><primary>schedulers</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing OpenStack Compute (nova) scheduler</secondary></indexterm>"
+msgid "Many OpenStack projects allow for customization of specific features using a driver architecture. You can write a driver that conforms to a particular interface and plug it in through configuration. For example, you can easily plug in a new scheduler for Compute. The existing schedulers for Compute are feature full and well documented at <link href=\"http://docs.openstack.org/kilo/config-reference/content/section_compute-scheduler.html\">Scheduling</link>. However, depending on your user's use cases, the existing schedulers might not meet your requirements. You might need to create a new scheduler.<indexterm class=\"singular\"><primary>customization</primary><secondary>OpenStack Compute (nova) Scheduler</secondary></indexterm><indexterm class=\"singular\"><primary>schedulers</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing OpenStack Compute (nova) scheduler</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:772(para)
@@ -3107,7 +3119,7 @@ msgstr ""
 msgid "The dashboard is based on the Python <link href=\"https://www.djangoproject.com/\">Django</link> web application framework. The best guide to customizing it has already been written and can be found at <link href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Building on Horizon</link>.<indexterm class=\"singular\"><primary>Django</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>dashboard</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1187(title) ./doc/openstack-ops/ch_arch_storage.xml:792(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1187(title) ./doc/openstack-ops/ch_arch_storage.xml:789(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title)
 msgid "Conclusion"
 msgstr ""
 
@@ -3525,107 +3537,103 @@ msgstr ""
 msgid "OpenStack Logical Architecture (<link href=\"http://docs.openstack.org/openstack-ops/content/figures/2/figures/osog_0001.png\"/>)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:17(link) ./doc/openstack-ops/preface_ops.xml:171(link)
-msgid "Installation Guide for Debian 7.0"
+#: ./doc/openstack-ops/ch_ops_resources.xml:16(link) ./doc/openstack-ops/preface_ops.xml:171(link)
+msgid "Installation Guide for openSUSE 13.2 and SUSE Linux Enterprise Server 12"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:20(link) ./doc/openstack-ops/preface_ops.xml:176(link)
-msgid "Installation Guide for openSUSE and SUSE Linux Enterprise Server"
+#: ./doc/openstack-ops/ch_ops_resources.xml:21(link) ./doc/openstack-ops/preface_ops.xml:177(link)
+msgid "Installation Guide for Red Hat Enterprise Linux 7, CentOS 7, and Fedora 21"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:25(link) ./doc/openstack-ops/preface_ops.xml:182(link)
-msgid "Installation Guide for Red Hat Enterprise Linux, CentOS, and Fedora"
+#: ./doc/openstack-ops/ch_ops_resources.xml:27(link) ./doc/openstack-ops/preface_ops.xml:183(link)
+msgid "Installation Guide for Ubuntu 14.04 (LTS) Server"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:31(link) ./doc/openstack-ops/preface_ops.xml:188(link)
-msgid "Installation Guide for Ubuntu 12.04/14.04 (LTS) Server"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_resources.xml:35(link) ./doc/openstack-ops/preface_ops.xml:207(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:31(link) ./doc/openstack-ops/preface_ops.xml:202(link)
 msgid "OpenStack Cloud Administrator Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:39(emphasis)
+#: ./doc/openstack-ops/ch_ops_resources.xml:35(emphasis)
 msgid "OpenStack Cloud Computing Cookbook"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:39(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:35(link)
 msgid "<placeholder-1/> (Packt Publishing)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:45(title)
+#: ./doc/openstack-ops/ch_ops_resources.xml:41(title)
 msgid "Cloud (General)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:48(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:44(link)
 msgid "“The NIST Definition of Cloud Computing”"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:54(title)
+#: ./doc/openstack-ops/ch_ops_resources.xml:50(title)
 msgid "Python"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:57(emphasis)
+#: ./doc/openstack-ops/ch_ops_resources.xml:53(emphasis)
 msgid "Dive Into Python"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:57(link) ./doc/openstack-ops/ch_ops_resources.xml:107(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:53(link) ./doc/openstack-ops/ch_ops_resources.xml:103(link)
 msgid "<placeholder-1/> (Apress)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:63(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:599(title)
+#: ./doc/openstack-ops/ch_ops_resources.xml:59(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:599(title)
 msgid "Networking"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:66(emphasis)
+#: ./doc/openstack-ops/ch_ops_resources.xml:62(emphasis)
 msgid "TCP/IP Illustrated, Volume 1: The Protocols, 2/E"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:66(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:62(link)
 msgid "<placeholder-1/> (Pearson)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:71(emphasis)
+#: ./doc/openstack-ops/ch_ops_resources.xml:67(emphasis)
 msgid "The TCP/IP Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:71(link) ./doc/openstack-ops/ch_ops_resources.xml:94(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:67(link) ./doc/openstack-ops/ch_ops_resources.xml:90(link)
 msgid "<placeholder-1/> (No Starch Press)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:75(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:71(link)
 msgid "“A <placeholder-1/> Tutorial and Primer”"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:81(title)
+#: ./doc/openstack-ops/ch_ops_resources.xml:77(title)
 msgid "Systems Administration"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:84(emphasis)
+#: ./doc/openstack-ops/ch_ops_resources.xml:80(emphasis)
 msgid "UNIX and Linux Systems Administration Handbook"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:84(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:80(link)
 msgid "<placeholder-1/> (Prentice Hall)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:91(title)
+#: ./doc/openstack-ops/ch_ops_resources.xml:87(title)
 msgid "Virtualization"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:94(emphasis)
+#: ./doc/openstack-ops/ch_ops_resources.xml:90(emphasis)
 msgid "The Book of Xen"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:100(title) ./doc/openstack-ops/ch_ops_maintenance.xml:859(title)
+#: ./doc/openstack-ops/ch_ops_resources.xml:96(title) ./doc/openstack-ops/ch_ops_maintenance.xml:859(title)
 msgid "Configuration Management"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:103(link)
+#: ./doc/openstack-ops/ch_ops_resources.xml:99(link)
 msgid "Puppet Labs Documentation"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_resources.xml:107(emphasis)
+#: ./doc/openstack-ops/ch_ops_resources.xml:103(emphasis)
 msgid "Pro Puppet"
 msgstr ""
 
@@ -4642,7 +4650,7 @@ msgid "Either approach is valid. Use the approach that matches your experience."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:123(para)
-msgid "An upgrade pre-testing system is excellent for getting the configuration to work; however, it is important to note that the historical use of the system and differences in user interaction can affect the success of upgrades, too. We've seen experiences where database migrations encountered a bug (later fixed!) because of slight table differences between fresh Grizzly installs and those that migrated from Folsom to Grizzly."
+msgid "An upgrade pre-testing system is excellent for getting the configuration to work; however, it is important to note that the historical use of the system and differences in user interaction can affect the success of upgrades, too. We've seen experiences where database migrations encountered a bug (later fixed!) because of slight table differences between fresh installs and those that migrated from one version to another."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:130(para)
@@ -5871,7 +5879,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/preface_ops.xml:589(None)
+#: ./doc/openstack-ops/preface_ops.xml:584(None)
 msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_00in01.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
@@ -5983,363 +5991,363 @@ msgstr ""
 msgid "Describes a manual installation process, as in, by hand, without automation, for multiple distributions based on a packaging system:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:196(link)
+#: ./doc/openstack-ops/preface_ops.xml:191(link)
 msgid "OpenStack Configuration Reference"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:200(para)
+#: ./doc/openstack-ops/preface_ops.xml:195(para)
 msgid "Contains a reference listing of all configuration options for core and integrated OpenStack services by release version"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:211(para)
+#: ./doc/openstack-ops/preface_ops.xml:206(para)
 msgid "Contains how-to information for managing an OpenStack cloud as needed for your use cases, such as storage, computing, or software-defined-networking"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:219(link)
+#: ./doc/openstack-ops/preface_ops.xml:214(link)
 msgid "OpenStack High Availability Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:223(para)
+#: ./doc/openstack-ops/preface_ops.xml:218(para)
 msgid "Describes potential strategies for making your OpenStack services and related controllers and data stores highly available"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:230(link)
+#: ./doc/openstack-ops/preface_ops.xml:225(link)
 msgid "OpenStack Security Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:234(para)
+#: ./doc/openstack-ops/preface_ops.xml:229(para)
 msgid "Provides best practices and conceptual information about securing an OpenStack cloud"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:240(link)
+#: ./doc/openstack-ops/preface_ops.xml:235(link)
 msgid "Virtual Machine Image Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:244(para)
+#: ./doc/openstack-ops/preface_ops.xml:239(para)
 msgid "Shows you how to obtain, create, and modify virtual machine images that are compatible with OpenStack"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:250(link)
+#: ./doc/openstack-ops/preface_ops.xml:245(link)
 msgid "OpenStack End User Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:254(para)
+#: ./doc/openstack-ops/preface_ops.xml:249(para)
 msgid "Shows OpenStack end users how to create and manage resources in an OpenStack cloud with the OpenStack dashboard and OpenStack client commands"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:261(link)
+#: ./doc/openstack-ops/preface_ops.xml:256(link)
 msgid "OpenStack Admin User Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:265(para)
+#: ./doc/openstack-ops/preface_ops.xml:260(para)
 msgid "Shows OpenStack administrators how to create and manage resources in an OpenStack cloud with the OpenStack dashboard and OpenStack client <phrase role=\"keep-together\">commands</phrase>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:273(link)
+#: ./doc/openstack-ops/preface_ops.xml:268(link)
 msgid "OpenStack API Quick Start"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:277(para)
+#: ./doc/openstack-ops/preface_ops.xml:272(para)
 msgid "A brief overview of how to send REST API requests to endpoints for OpenStack services"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:286(title)
+#: ./doc/openstack-ops/preface_ops.xml:281(title)
 msgid "How This Book Is Organized"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:288(para)
+#: ./doc/openstack-ops/preface_ops.xml:283(para)
 msgid "This book is organized in two parts: the architecture decisions for designing OpenStack clouds and the repeated operations for running OpenStack clouds."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:292(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:287(emphasis)
 msgid "Part I:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:299(para)
+#: ./doc/openstack-ops/preface_ops.xml:294(para)
 msgid "Because of all the decisions the other chapters discuss, this chapter describes the decisions made for this particular book and much of the justification for the example architecture."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:310(para)
+#: ./doc/openstack-ops/preface_ops.xml:305(para)
 msgid "While this book doesn't describe installation, we do recommend automation for deployment and configuration, discussed in this chapter."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:320(para)
+#: ./doc/openstack-ops/preface_ops.xml:315(para)
 msgid "The cloud controller is an invention for the sake of consolidating and describing which services run on which nodes. This chapter discusses hardware and network considerations as well as how to design the cloud controller for performance and separation of services."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:333(para)
+#: ./doc/openstack-ops/preface_ops.xml:328(para)
 msgid "This chapter describes the compute nodes, which are dedicated to running virtual machines. Some hardware choices come into play here, as well as logging and networking descriptions."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:344(para)
+#: ./doc/openstack-ops/preface_ops.xml:339(para)
 msgid "This chapter discusses the growth of your cloud resources through scaling and segregation considerations."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:354(para)
+#: ./doc/openstack-ops/preface_ops.xml:349(para)
 msgid "As with other architecture decisions, storage concepts within OpenStack take a lot of consideration, and this chapter lays out the choices for you."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:364(para)
+#: ./doc/openstack-ops/preface_ops.xml:359(para)
 msgid "Your OpenStack cloud networking needs to fit into your existing networks while also enabling the best design for your users and administrators, and this chapter gives you in-depth information about networking decisions."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:372(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:367(emphasis)
 msgid "Part II:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:379(para)
+#: ./doc/openstack-ops/preface_ops.xml:374(para)
 msgid "This chapter is written to let you get your hands wrapped around your OpenStack cloud through command-line tools and understanding what is already set up in your cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:390(para)
+#: ./doc/openstack-ops/preface_ops.xml:385(para)
 msgid "This chapter walks through user-enabling processes that all admins must face to manage users, give them quotas to parcel out resources, and so on."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:400(para)
+#: ./doc/openstack-ops/preface_ops.xml:395(para)
 msgid "This chapter shows you how to use OpenStack cloud resources and train your users as well."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:409(para)
+#: ./doc/openstack-ops/preface_ops.xml:404(para)
 msgid "This chapter goes into the common failures that the authors have seen while running clouds in production, including troubleshooting."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:419(para)
+#: ./doc/openstack-ops/preface_ops.xml:414(para)
 msgid "Because network troubleshooting is especially difficult with virtual resources, this chapter is chock-full of helpful tips and tricks for tracing network traffic, finding the root cause of networking failures, and debugging related services, such as DHCP and DNS."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:432(para)
+#: ./doc/openstack-ops/preface_ops.xml:427(para)
 msgid "This chapter shows you where OpenStack places logs and how to best read and manage logs for monitoring purposes."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:442(para)
+#: ./doc/openstack-ops/preface_ops.xml:437(para)
 msgid "This chapter describes what you need to back up within OpenStack as well as best practices for recovering backups."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:452(para)
+#: ./doc/openstack-ops/preface_ops.xml:447(para)
 msgid "For readers who need to get a specialized feature into OpenStack, this chapter describes how to use DevStack to write custom middleware or a custom scheduler to rebalance your resources."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:463(para)
+#: ./doc/openstack-ops/preface_ops.xml:458(para)
 msgid "Because OpenStack is so, well, open, this chapter is dedicated to helping you navigate the community and find out where you can help and where you can get help."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:473(para)
+#: ./doc/openstack-ops/preface_ops.xml:468(para)
 msgid "Much of OpenStack is driver-oriented, so you can plug in different solutions to the base set of services. This chapter describes some advanced configuration <phrase role=\"keep-together\">topics</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:484(para)
+#: ./doc/openstack-ops/preface_ops.xml:479(para)
 msgid "This chapter provides upgrade information based on the architectures used in this book."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:492(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:487(emphasis)
 msgid "Back matter:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:499(para)
+#: ./doc/openstack-ops/preface_ops.xml:494(para)
 msgid "You can read a small selection of use cases from the OpenStack community with some technical details and further resources."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:509(para)
+#: ./doc/openstack-ops/preface_ops.xml:504(para)
 msgid "These are shared legendary tales of image disappearances, VM massacres, and crazy troubleshooting techniques to share those hard-learned lessons and <phrase role=\"keep-together\">wisdom</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:520(para)
+#: ./doc/openstack-ops/preface_ops.xml:515(para)
 msgid "Read about how to track the OpenStack roadmap through the open and transparent development processes."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:529(para)
+#: ./doc/openstack-ops/preface_ops.xml:524(para)
 msgid "So many OpenStack resources are available online because of the fast-moving nature of the project, but there are also resources listed here that the authors found helpful while learning themselves."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:540(para)
+#: ./doc/openstack-ops/preface_ops.xml:535(para)
 msgid "A list of terms used in this book is included, which is a subset of the larger OpenStack glossary available online."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:549(title)
+#: ./doc/openstack-ops/preface_ops.xml:544(title)
 msgid "Why and How We Wrote This Book"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:551(para)
+#: ./doc/openstack-ops/preface_ops.xml:546(para)
 msgid "We wrote this book because we have deployed and maintained OpenStack clouds for at least a year, and wanted to be able to distribute this knowledge to others. After months of being the point people for an OpenStack cloud, we also wanted to have a document to hand to our system administrators so that they'd know how to operate the cloud on a daily basis—both reactively and pro-actively. We wanted to provide more detailed technical information about the decisions that deployers make along the way."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:563(para)
+#: ./doc/openstack-ops/preface_ops.xml:558(para)
 msgid "Design and create an architecture for your first nontrivial OpenStack cloud. After you read this guide, you'll know which questions to ask and how to organize your compute, networking, and storage resources and the associated software packages."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:571(para)
+#: ./doc/openstack-ops/preface_ops.xml:566(para)
 msgid "Perform the day-to-day tasks required to administer a cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:561(para)
+#: ./doc/openstack-ops/preface_ops.xml:556(para)
 msgid "We wrote this book to help you:<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:576(para)
+#: ./doc/openstack-ops/preface_ops.xml:571(para)
 msgid "We wrote this book in a book sprint, which is a facilitated, rapid development production method for books. For more information, see the <link href=\"http://www.booksprints.net/\">BookSprints site</link>. Your authors cobbled this book together in five days during February 2013, fueled by caffeine and the best takeout food that Austin, Texas, could <phrase role=\"keep-together\">offer</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:584(para)
+#: ./doc/openstack-ops/preface_ops.xml:579(para)
 msgid "On the first day, we filled white boards with colorful sticky notes to start to shape this nebulous book about how to architect and operate clouds:<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:594(para)
+#: ./doc/openstack-ops/preface_ops.xml:589(para)
 msgid "We wrote furiously from our own experiences and bounced ideas between each other. At regular intervals we reviewed the shape and organization of the book and further molded it, leading to what you see today."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:599(para)
+#: ./doc/openstack-ops/preface_ops.xml:594(para)
 msgid "The team includes:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:603(term)
+#: ./doc/openstack-ops/preface_ops.xml:598(term)
 msgid "Tom Fifield"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:606(para)
+#: ./doc/openstack-ops/preface_ops.xml:601(para)
 msgid "After learning about scalability in computing from particle physics experiments, such as ATLAS at the Large Hadron Collider (LHC) at CERN, Tom worked on OpenStack clouds in production to support the Australian public research sector. Tom currently serves as an OpenStack community manager and works on OpenStack documentation in his spare time."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:617(term)
+#: ./doc/openstack-ops/preface_ops.xml:612(term)
 msgid "Diane Fleming"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:620(para)
+#: ./doc/openstack-ops/preface_ops.xml:615(para)
 msgid "Diane works on the OpenStack API documentation tirelessly. She helped out wherever she could on this project."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:627(term)
+#: ./doc/openstack-ops/preface_ops.xml:622(term)
 msgid "Anne Gentle"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:630(para)
+#: ./doc/openstack-ops/preface_ops.xml:625(para)
 msgid "Anne is the documentation coordinator for OpenStack and also served as an individual contributor to the Google Documentation Summit in 2011, working with the Open Street Maps team. She has worked on book sprints in the past, with FLOSS Manuals’ Adam Hyde facilitating. Anne lives in Austin, Texas."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:640(term)
+#: ./doc/openstack-ops/preface_ops.xml:635(term)
 msgid "Lorin Hochstein"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:643(para)
+#: ./doc/openstack-ops/preface_ops.xml:638(para)
 msgid "An academic turned software-developer-slash-operator, Lorin worked as the lead architect for Cloud Services at Nimbis Services, where he deploys OpenStack for technical computing applications. He has been working with OpenStack since the Cactus release. Previously, he worked on high-performance computing extensions for OpenStack at University of Southern California's Information Sciences Institute (USC-ISI)."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:655(term)
+#: ./doc/openstack-ops/preface_ops.xml:650(term)
 msgid "Adam Hyde"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:658(para)
+#: ./doc/openstack-ops/preface_ops.xml:653(para)
 msgid "Adam facilitated this book sprint. He also founded the books sprint methodology and is the most experienced book-sprint facilitator around. See <link href=\"http://www.booksprints.net\"/> for more information. Adam founded FLOSS Manuals—a community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:671(term)
+#: ./doc/openstack-ops/preface_ops.xml:666(term)
 msgid "Jonathan Proulx"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:674(para)
+#: ./doc/openstack-ops/preface_ops.xml:669(para)
 msgid "Jon has been piloting an OpenStack cloud as a senior technical architect at the MIT Computer Science and Artificial Intelligence Lab for his researchers to have as much computing power as they need. He started contributing to OpenStack documentation and reviewing the documentation so that he could accelerate his learning."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:684(term)
+#: ./doc/openstack-ops/preface_ops.xml:679(term)
 msgid "Everett Toews"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:687(para)
+#: ./doc/openstack-ops/preface_ops.xml:682(para)
 msgid "Everett is a developer advocate at Rackspace making OpenStack and the Rackspace Cloud easy to use. Sometimes developer, sometimes advocate, and sometimes operator, he's built web applications, taught workshops, given presentations around the world, and deployed OpenStack for production use by academia and business."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:697(term)
+#: ./doc/openstack-ops/preface_ops.xml:692(term)
 msgid "Joe Topjian"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:700(para)
+#: ./doc/openstack-ops/preface_ops.xml:695(para)
 msgid "Joe has designed and deployed several clouds at Cybera, a nonprofit where they are building e-infrastructure to support entrepreneurs and local researchers in Alberta, Canada. He also actively maintains and operates these clouds as a systems architect, and his experiences have generated a wealth of troubleshooting skills for cloud environments."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:711(term)
+#: ./doc/openstack-ops/preface_ops.xml:706(term)
 msgid "OpenStack community members"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:714(para)
+#: ./doc/openstack-ops/preface_ops.xml:709(para)
 msgid "Many individual efforts keep a community book alive. Our community members updated content for this book year-round. Also, a year after the first sprint, Jon Proulx hosted a second two-day mini-sprint at MIT with the goal of updating the book for the latest release. Since the book's inception, more than 30 contributors have supported this book. We have a tool chain for reviews, continuous builds, and translations. Writers and developers continuously review patches, enter doc bugs, edit content, and fix doc bugs. We want to recognize their efforts!"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:726(para)
+#: ./doc/openstack-ops/preface_ops.xml:721(para)
 msgid "The following people have contributed to this book: Akihiro Motoki, Alejandro Avella, Alexandra Settle, Andreas Jaeger, Andy McCallum, Benjamin Stassart, Chandan Kumar, Chris Ricker, David Cramer, David Wittman, Denny Zhang, Emilien Macchi, Gauvain Pocentek, Ignacio Barrio, James E. Blair, Jay Clark, Jeff White, Jeremy Stanley, K Jonathan Harker, KATO Tomoyuki, Lana Brindley, Laura Alves, Lee Li, Lukasz Jernas, Mario B. Codeniera, Matthew Kassawara, Michael Still, Monty Taylor, Nermina Miller, Nigel Williams, Phil Hopkins, Russell Bryant, Sahid Orentino Ferdjaoui, Sandy Walsh, Sascha Peilicke, Sean M. Collins, Sergey Lukjanov, Shilla Saebi, Stephen Gordon, Summer Long, Uwe Stuehler, Vaibhav Bhatkar, Veronica Musso, Ying Chun \"Daisy\" Guo, Zhengguang Ou, and ZhiQiang Fan."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:747(title)
+#: ./doc/openstack-ops/preface_ops.xml:742(title)
 msgid "How to Contribute to This Book"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:749(para)
+#: ./doc/openstack-ops/preface_ops.xml:744(para)
 msgid "The genesis of this book was an in-person event, but now that the book is in your hands, we want you to contribute to it. OpenStack documentation follows the coding principles of iterative work, with bug logging, investigating, and fixing. We also store the source content on GitHub and invite collaborators through the OpenStack Gerrit installation, which offers reviews. For the O'Reilly edition of this book, we are using the company's Atlas system, which also stores source content on GitHub and enables collaboration among contributors."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:759(para)
+#: ./doc/openstack-ops/preface_ops.xml:754(para)
 msgid "Learn more about how to contribute to the OpenStack docs at <link href=\"https://wiki.openstack.org/wiki/Documentation/HowTo\">Documentation How To</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:763(para)
+#: ./doc/openstack-ops/preface_ops.xml:758(para)
 msgid "If you find a bug and can't fix it or aren't sure it's really a doc bug, log a bug at <link href=\"https://bugs.launchpad.net/openstack-manuals\">OpenStack Manuals</link>. Tag the bug under <guilabel>Extra</guilabel> options with the <literal>ops-guide</literal> tag to indicate that the bug is in this guide. You can assign the bug to yourself if you know how to fix it. Also, a member of the OpenStack doc-core team can triage the doc bug."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:776(title)
+#: ./doc/openstack-ops/preface_ops.xml:771(title)
 msgid "Conventions Used in This Book"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:778(para)
+#: ./doc/openstack-ops/preface_ops.xml:773(para)
 msgid "The following typographical conventions are used in this book:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:783(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:778(emphasis)
 msgid "Italic"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:786(para)
+#: ./doc/openstack-ops/preface_ops.xml:781(para)
 msgid "Indicates new terms, URLs, email addresses, filenames, and file extensions."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:792(literal)
+#: ./doc/openstack-ops/preface_ops.xml:787(literal)
 msgid "Constant width"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:795(para)
+#: ./doc/openstack-ops/preface_ops.xml:790(para)
 msgid "Used for program listings, as well as within paragraphs to refer to program elements such as variable or function names, databases, data types, environment variables, statements, and keywords."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:806(para)
+#: ./doc/openstack-ops/preface_ops.xml:801(para)
 msgid "Shows commands or other text that should be typed literally by the user."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:812(replaceable)
+#: ./doc/openstack-ops/preface_ops.xml:807(replaceable)
 msgid "Constant width italic"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:815(para)
+#: ./doc/openstack-ops/preface_ops.xml:810(para)
 msgid "Shows text that should be replaced with user-supplied values or by values determined by context."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:821(term)
+#: ./doc/openstack-ops/preface_ops.xml:816(term)
 msgid "Command prompts"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:824(para)
+#: ./doc/openstack-ops/preface_ops.xml:819(para)
 msgid "Commands prefixed with the <literal>#</literal> prompt should be executed by the <literal>root</literal> user. These examples can also be executed using the <literal>sudo</literal> command, if available."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:829(para)
+#: ./doc/openstack-ops/preface_ops.xml:824(para)
 msgid "Commands prefixed with the <literal>$</literal> prompt can be executed by any user, including <literal>root</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:837(para)
+#: ./doc/openstack-ops/preface_ops.xml:832(para)
 msgid "This element signifies a tip or suggestion."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:841(para)
+#: ./doc/openstack-ops/preface_ops.xml:836(para)
 msgid "This element signifies a general note."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:845(para)
+#: ./doc/openstack-ops/preface_ops.xml:840(para)
 msgid "This element indicates a warning or caution."
 msgstr ""
 
@@ -6829,7 +6837,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/ch_arch_storage.xml:439(None) ./doc/openstack-ops/ch_arch_storage.xml:456(None) ./doc/openstack-ops/ch_arch_storage.xml:469(None) ./doc/openstack-ops/ch_arch_storage.xml:476(None) ./doc/openstack-ops/ch_arch_storage.xml:489(None) ./doc/openstack-ops/ch_arch_storage.xml:496(None) ./doc/openstack-ops/ch_arch_storage.xml:503(None) ./doc/openstack-ops/ch_arch_storage.xml:516(None) ./doc/openstack-ops/ch_arch_storage.xml:523(None) ./doc/openstack-ops/ch_arch_storage.xml:536(None) ./doc/openstack-ops/ch_arch_storage.xml:547(None) ./doc/openstack-ops/ch_arch_storage.xml:553(None)
+#: ./doc/openstack-ops/ch_arch_storage.xml:436(None) ./doc/openstack-ops/ch_arch_storage.xml:453(None) ./doc/openstack-ops/ch_arch_storage.xml:466(None) ./doc/openstack-ops/ch_arch_storage.xml:473(None) ./doc/openstack-ops/ch_arch_storage.xml:486(None) ./doc/openstack-ops/ch_arch_storage.xml:493(None) ./doc/openstack-ops/ch_arch_storage.xml:500(None) ./doc/openstack-ops/ch_arch_storage.xml:513(None) ./doc/openstack-ops/ch_arch_storage.xml:520(None) ./doc/openstack-ops/ch_arch_storage.xml:533(None) ./doc/openstack-ops/ch_arch_storage.xml:544(None) ./doc/openstack-ops/ch_arch_storage.xml:550(None)
 msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
@@ -6926,386 +6934,382 @@ msgid "These volumes are persistent: they can be detached from one instance and 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:200(para)
-msgid "Most block storage drivers allow the instance to have direct access to the underlying storage hardware's block device. This helps increase the overall read/write IO."
+msgid "Most block storage drivers allow the instance to have direct access to the underlying storage hardware's block device. This helps increase the overall read/write IO. However, support for utilizing files as volumes is also well established, with full support for NFS, GlusterFS and others."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:204(para)
-msgid "Experimental support for utilizing files as volumes began in the Folsom release. This initially started as a reference driver for using NFS with cinder. By Grizzly's release, this has expanded into a full NFS driver as well as a GlusterFS driver."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_arch_storage.xml:209(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:206(para)
 msgid "These drivers work a little differently than a traditional \"block\" storage driver. On an NFS or GlusterFS file system, a single file is created and then mapped as a \"virtual\" volume into the instance. This mapping/translation is similar to how OpenStack utilizes QEMU's file-based virtual machines stored in <code>/var/lib/nova/instances</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:219(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:216(title)
 msgid "OpenStack Storage Concepts"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:221(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:218(para)
 msgid "<xref linkend=\"openstack_storage\"/> explains the different storage concepts provided by OpenStack.<indexterm class=\"singular\"><primary>block device</primary></indexterm><indexterm class=\"singular\"><primary>storage</primary><secondary>overview of concepts</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:231(caption)
+#: ./doc/openstack-ops/ch_arch_storage.xml:228(caption)
 msgid "OpenStack storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:237(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:234(th)
 msgid "Ephemeral storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:239(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:236(th)
 msgid "Block storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:247(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:244(para)
 msgid "Used to…"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:249(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:246(para)
 msgid "Run operating system and scratch space"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:251(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:248(para)
 msgid "Add additional persistent storage to a virtual machine (VM)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:254(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:251(para)
 msgid "Store data, including VM images"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:258(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:255(para)
 msgid "Accessed through…"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:260(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:257(para)
 msgid "A file system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:262(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:259(para)
 msgid "A <glossterm>block device</glossterm> that can be partitioned, formatted, and mounted (such as, /dev/vdc)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:265(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:262(para)
 msgid "The REST API"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:269(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:266(para)
 msgid "Accessible from…"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:271(para) ./doc/openstack-ops/ch_arch_storage.xml:273(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:268(para) ./doc/openstack-ops/ch_arch_storage.xml:270(para)
 msgid "Within a VM"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:275(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:272(para)
 msgid "Anywhere"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:279(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:276(para)
 msgid "Managed by…"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:281(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:278(para)
 msgid "OpenStack Compute (nova)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:283(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:280(para)
 msgid "OpenStack Block Storage (cinder)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:289(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:286(para)
 msgid "Persists until…"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:291(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:288(para)
 msgid "VM is terminated"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:293(para) ./doc/openstack-ops/ch_arch_storage.xml:295(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:290(para) ./doc/openstack-ops/ch_arch_storage.xml:292(para)
 msgid "Deleted by user"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:299(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:296(para)
 msgid "Sizing determined by…"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:301(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:298(para)
 msgid "Administrator configuration of size settings, known as <emphasis>flavors</emphasis>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:304(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:301(para)
 msgid "User specification in initial request"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:306(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:303(para)
 msgid "Amount of available physical storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:310(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:307(para)
 msgid "Example of typical usage…"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:312(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:309(para)
 msgid "10 GB first disk, 30 GB second disk"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:314(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:311(para)
 msgid "1 TB disk"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:316(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:313(para)
 msgid "10s of TBs of dataset storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:322(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:319(title)
 msgid "File-level Storage (for Live Migration)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:324(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:321(para)
 msgid "With file-level storage, users access stored data using the operating system's file system interface. Most users, if they have used a network storage solution before, have encountered this form of networked storage. In the Unix world, the most common form of this is NFS. In the Windows world, the most common form is called CIFS (previously, SMB).<indexterm class=\"singular\"><primary>migration</primary></indexterm><indexterm class=\"singular\"><primary>live migration</primary></indexterm><indexterm class=\"singular\"><primary>storage</primary><secondary>file-level</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:339(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:336(para)
 msgid "OpenStack clouds do not present file-level storage to end users. However, it is important to consider file-level storage for storing instances under <code>/var/lib/nova/instances</code> when designing your cloud, since you must have a shared file system if you want to support live migration."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:348(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:345(title)
 msgid "Choosing Storage Backends"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:350(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:347(para)
 msgid "Users will indicate different needs for their cloud use cases. Some may need fast access to many objects that do not change often, or want to set a time-to-live (TTL) value on a file. Others may access only storage that is mounted with the file system itself, but want it to be replicated instantly when starting a new instance. For other systems, ephemeral storage—storage that is released when a VM attached to it is shut down— is the preferred way. When you select <glossterm>storage backend</glossterm>s, <indexterm class=\"singular\"><primary>storage</primary><secondary>choosing backends</secondary></indexterm><indexterm class=\"singular\"><primary>storage backend</primary></indexterm><indexterm class=\"singular\"><primary>backend interactions</primary><secondary>store</secondary></indexterm>ask the following questions on behalf of your users:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:371(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:368(para)
 msgid "Do my users need block storage?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:375(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:372(para)
 msgid "Do my users need object storage?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:379(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:376(para)
 msgid "Do I need to support live migration?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:383(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:380(para)
 msgid "Should my persistent storage drives be contained in my compute nodes, or should I use external storage?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:388(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:385(para)
 msgid "What is the platter count I can achieve? Do more spindles result in better I/O despite network access?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:393(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:390(para)
 msgid "Which one results in the best cost-performance scenario I'm aiming for?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:398(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:395(para)
 msgid "How do I manage the storage operationally?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:402(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:399(para)
 msgid "How redundant and distributed is the storage? What happens if a storage node fails? To what extent can it mitigate my data-loss disaster scenarios?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:408(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:405(para)
 msgid "To deploy your storage by using only commodity hardware, you can use a number of open-source packages, as shown in <xref linkend=\"storage_solutions\"/>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:413(caption)
+#: ./doc/openstack-ops/ch_arch_storage.xml:410(caption)
 msgid "Persistent file-based storage support"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:417(th) ./doc/openstack-ops/ch_arch_storage.xml:445(para) ./doc/openstack-ops/ch_arch_storage.xml:451(para) ./doc/openstack-ops/ch_arch_storage.xml:460(para) ./doc/openstack-ops/ch_arch_storage.xml:531(para) ./doc/openstack-ops/ch_arch_storage.xml:540(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:414(th) ./doc/openstack-ops/ch_arch_storage.xml:442(para) ./doc/openstack-ops/ch_arch_storage.xml:448(para) ./doc/openstack-ops/ch_arch_storage.xml:457(para) ./doc/openstack-ops/ch_arch_storage.xml:528(para) ./doc/openstack-ops/ch_arch_storage.xml:537(para)
 msgid " "
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:419(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:416(th)
 msgid "Object"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:421(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:418(th)
 msgid "Block"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:424(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:421(para)
 msgid "This list of open source file-level shared storage solutions is not exhaustive; other open source solutions exist (MooseFS). Your organization may already have deployed a file-level shared storage solution that you can use."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:423(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:420(th)
 msgid "File-level<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:434(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:431(para)
 msgid "Swift"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:449(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:446(para)
 msgid "LVM"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:464(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:461(para)
 msgid "Ceph"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:480(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:477(para)
 msgid "Experimental"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:484(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:481(para)
 msgid "Gluster"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:509(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:506(para)
 msgid "NFS"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:529(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:526(para)
 msgid "ZFS"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:543(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:540(para)
 msgid "Sheepdog"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:562(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:559(title)
 msgid "Storage Driver Support"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:564(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:561(para)
 msgid "In addition to the open source technologies, there are a number of proprietary solutions that are officially supported by OpenStack Block Storage.<indexterm class=\"singular\"><primary>storage</primary><secondary>storage driver support</secondary></indexterm> They are offered by the following vendors:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:574(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:571(para)
 msgid "IBM (Storwize family/SVC, XIV)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:578(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:575(para)
 msgid "NetApp"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:582(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:579(para)
 msgid "Nexenta"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:586(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:583(para)
 msgid "SolidFire"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:590(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:587(para)
 msgid "You can find a matrix of the functionality provided by all of the supported Block Storage drivers on the <link href=\"https://wiki.openstack.org/wiki/CinderSupportMatrix\" title=\"OpenStack wiki\">OpenStack wiki</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:596(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:593(para)
 msgid "Also, you need to decide whether you want to support object storage in your cloud. The two common use cases for providing object storage in a compute cloud are:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:602(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:599(para)
 msgid "To provide users with a persistent storage mechanism"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:606(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:603(para)
 msgid "As a scalable, reliable data store for virtual machine images"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:612(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:609(title)
 msgid "Commodity Storage Backend Technologies"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:614(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:611(para)
 msgid "This section provides a high-level overview of the differences among the different commodity storage backend technologies. Depending on your cloud user's needs, you can implement one or many of these technologies in different combinations:<indexterm class=\"singular\"><primary>storage</primary><secondary>commodity storage</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:628(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:625(para)
 msgid "The official OpenStack Object Store implementation. It is a mature technology that has been used for several years in production by Rackspace as the technology behind Rackspace Cloud Files. As it is highly scalable, it is well-suited to managing petabytes of storage. OpenStack Object Storage's advantages are better <phrase role=\"keep-together\">integration</phrase> with OpenStack (integrates with OpenStack Identity, works with the OpenStack dashboard interface) and better support for multiple data center deployment through support of asynchronous eventual consistency replication."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:639(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:636(para)
 msgid "Therefore, if you eventually plan on distributing your storage cluster across multiple data centers, if you need unified accounts for your users for both compute and object storage, or if you want to control your object storage with the OpenStack dashboard, you should consider OpenStack Object Storage. More detail can be found about OpenStack Object Storage in the section below.<indexterm class=\"singular\"><primary>accounts</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:652(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:649(term)
 msgid "Ceph<indexterm class=\"singular\"><primary>Ceph</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:657(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:654(para)
 msgid "A scalable storage solution that replicates data across commodity storage nodes. Ceph was originally developed by one of the founders of DreamHost and is currently used in production there."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:662(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:659(para)
 msgid "Ceph was designed to expose different types of storage interfaces to the end user: it supports object storage, block storage, and file-system interfaces, although the file-system interface is not yet considered production-ready. Ceph supports the same API as swift for object storage and can be used as a backend for cinder block storage as well as backend storage for glance images. Ceph supports \"thin provisioning,\" implemented using copy-on-write."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:671(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:668(para)
 msgid "This can be useful when booting from volume because a new volume can be provisioned very quickly. Ceph also supports keystone-based authentication (as of version 0.56), so it can be a seamless swap in for the default OpenStack swift implementation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:677(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:674(para)
 msgid "Ceph's advantages are that it gives the administrator more fine-grained control over data distribution and replication strategies, enables you to consolidate your object and block storage, enables very fast provisioning of boot-from-volume instances using thin provisioning, and supports a distributed file-system interface, though this interface is <link href=\"http://ceph.com/docs/master/cephfs/\" title=\"OpenStack wiki\">not yet recommended</link> for use in production deployment by the Ceph project."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:687(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:684(para)
 msgid "If you want to manage your object and block storage within a single system, or if you want to support fast boot-from-volume, you should consider Ceph."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:694(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:691(term)
 msgid "Gluster<indexterm class=\"singular\"><primary>GlusterFS</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:699(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:696(para)
 msgid "A distributed, shared file system. As of Gluster version 3.3, you can use Gluster to consolidate your object storage and file storage into one unified file and object storage solution, which is called Gluster For OpenStack (GFO). GFO uses a customized version of swift that enables Gluster to be used as the backend storage."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:706(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:703(para)
 msgid "The main reason to use GFO rather than regular swift is if you also want to support a distributed file system, either to support shared storage live migration or to provide it as a separate service to your end users. If you want to manage your object and file storage within a single system, you should consider GFO."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:716(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:713(term)
 msgid "LVM<indexterm class=\"singular\"><primary>LVM (Logical Volume Manager)</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:721(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:718(para)
 msgid "The Logical Volume Manager is a Linux-based system that provides an abstraction layer on top of physical disks to expose logical volumes to the operating system. The LVM backend implements block storage as LVM logical partitions."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:726(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:723(para)
 msgid "On each host that will house block storage, an administrator must initially create a volume group dedicated to Block Storage volumes. Blocks are created from LVM logical volumes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:731(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:728(para)
 msgid "LVM does <emphasis>not</emphasis> provide any replication. Typically, administrators configure RAID on nodes that use LVM as block storage to protect against failures of individual hard drives. However, RAID does not protect against a failure of the entire host."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:741(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:738(term)
 msgid "ZFS<indexterm class=\"singular\"><primary>ZFS</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:746(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:743(para)
 msgid "The Solaris iSCSI driver for OpenStack Block Storage implements blocks as ZFS entities. ZFS is a file system that also has the functionality of a volume manager. This is unlike on a Linux system, where there is a separation of volume manager (LVM) and file system (such as, ext3, ext4, xfs, and btrfs). ZFS has a number of advantages over ext4, including improved data-integrity checking."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:754(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:751(para)
 msgid "The ZFS backend for OpenStack Block Storage supports only Solaris-based systems, such as Illumos. While there is a Linux port of ZFS, it is not included in any of the standard Linux distributions, and it has not been tested with OpenStack Block Storage. As with LVM, ZFS does not provide replication across hosts on its own; you need to add a replication solution on top of ZFS if your cloud needs to be able to handle storage-node failures."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:763(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:760(para)
 msgid "We don't recommend ZFS unless you have previous experience with deploying it, since the ZFS backend for Block Storage requires a Solaris-based operating system, and we assume that your experience is primarily with Linux-based systems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:771(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:768(term)
 msgid "Sheepdog<indexterm class=\"singular\"><primary>Sheepdog</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:776(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:773(para)
 msgid "Sheepdog is a userspace distributed storage system. Sheepdog scales to several hundred nodes, and has powerful virtual disk management features like snapshot, cloning, rollback, thin provisioning."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:780(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:777(para)
 msgid "It is essentially an object storage system that manages disks and aggregates the space and performance of disks linearly in hyper scale on commodity hardware in a smart way. On top of its object store, Sheepdog provides elastic volume service and http service. Sheepdog does not assume anything about kernel version and can work nicely with xattr-supported file systems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:794(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:791(para)
 msgid "We hope that you now have some considerations in mind and questions to ask your future cloud users about their storage use cases. As you can see, your storage decisions will also influence your network design for performance and security needs. Continue with us to make more informed decisions about your OpenStack cloud <phrase role=\"keep-together\">design</phrase>."
 msgstr ""
 
@@ -7317,7 +7321,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:866(None)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:863(None)
 msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0902.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
@@ -7818,182 +7822,182 @@ msgid "Role"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:777(para)
-msgid "Username and email address are self-explanatory, though your site may have local conventions you should observe. Setting and changing passwords in the Identity service requires administrative privileges. As of the Folsom release, users cannot change their own passwords. This is a large driver for creating local custom tools, and must be kept in mind when assigning and distributing passwords. The primary project is simply the first project the user is associated with and must exist prior to creating the user. Role is almost always going to be \"member.\" Out of the box, OpenStack comes with two roles defined:"
+msgid "Username and email address are self-explanatory, though your site may have local conventions you should observe. The primary project is simply the first project the user is associated with and must exist prior to creating the user. Role is almost always going to be \"member.\" Out of the box, OpenStack comes with two roles defined:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:791(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:788(term)
 msgid "member"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:794(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:791(para)
 msgid "A typical user"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:799(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:796(term)
 msgid "admin"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:802(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:799(para)
 msgid "An administrative super user, which has full permissions across all projects and should be used with great care"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:808(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:805(para)
 msgid "It is possible to define other roles, but doing so is uncommon."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:811(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:808(para)
 msgid "Once you've gathered this information, creating the user in the dashboard is just another web form similar to what we've seen before and can be found by clicking the Users link in the Admin navigation bar and then clicking the Create User button at the top right."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:816(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:813(para)
 msgid "Modifying users is also done from this Users page. If you have a large number of users, this page can get quite crowded. The Filter search box at the top of the page can be used to limit the users listing. A form very similar to the user creation dialog can be pulled up by selecting Edit from the actions dropdown menu at the end of the line for the user you are modifying."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:825(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:822(title)
 msgid "Associating Users with Projects"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:827(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:824(para)
 msgid "Many sites run with users being associated with only one project. This is a more conservative and simpler choice both for administration and for users. Administratively, if a user reports a problem with an instance or quota, it is obvious which project this relates to. Users needn't worry about what project they are acting in if they are only in one project. However, note that, by default, any user can affect the resources of any other user within their project. It is also possible to associate users with multiple projects if that makes sense for your organization.<indexterm class=\"singular\"><primary>Project Members tab</primary></indexterm><indexterm class=\"singular\"><primary>user management</primary><secondary>associating users with projects</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:843(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:840(para)
 msgid "Associating existing users with an additional project or removing them from an older project is done from the Projects page of the dashboard by selecting Modify Users from the Actions column, as shown in <xref linkend=\"horizon-edit-project\"/>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:848(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:845(para)
 msgid "From this view, you can do a number of useful things, as well as a few dangerous ones."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:851(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:848(para)
 msgid "The first column of this form, named All Users, includes a list of all the users in your cloud who are not already associated with this project. The second column shows all the users who are. These lists can be quite long, but they can be limited by typing a substring of the username you are looking for in the filter field at the top of the <phrase role=\"keep-together\">column</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:858(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:855(para)
 msgid "From here, click the <guiicon>+</guiicon> icon to add users to the project. Click the <guiicon>-</guiicon> to remove them."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:862(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:859(title)
 msgid "<guilabel>Edit Project Members</guilabel> tab"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:871(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:868(para)
 msgid "The dangerous possibility comes with the ability to change member roles. This is the dropdown list below the username in the <guilabel>Project Members</guilabel> list. In virtually all cases, this value should be set to Member. This example purposefully shows an administrative user where this value is admin."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:878(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:875(para)
 msgid "The admin is global, not per project, so granting a user the admin role in any project gives the user administrative rights across the whole cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:883(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:880(para)
 msgid "Typical use is to only create administrative users in a single project, by convention the admin project, which is created by default during cloud setup. If your administrative users also use the cloud to launch and manage instances, it is strongly recommended that you use separate user accounts for administrative access and normal operations and that they be in distinct projects.<indexterm class=\"singular\"><primary>accounts</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:893(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:890(title)
 msgid "Customizing Authorization"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:895(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:892(para)
 msgid "The default <glossterm>authorization</glossterm> settings allow administrative users only to create resources on behalf of a different project. OpenStack handles two kinds of authorization <phrase role=\"keep-together\">policies</phrase>:<indexterm class=\"singular\"><primary>authorization</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:906(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:903(term)
 msgid "Operation based"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:909(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:906(para)
 msgid "Policies specify access criteria for specific operations, possibly with fine-grained control over specific attributes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:916(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:913(term)
 msgid "Resource based"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:919(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:916(para)
 msgid "Whether access to a specific resource might be granted or not according to the permissions configured for the resource (currently available only for the network resource). The actual authorization policies enforced in an OpenStack service vary from deployment to deployment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:928(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:925(para)
 msgid "The policy engine reads entries from the <code>policy.json</code> file. The actual location of this file might vary from distribution to distribution: for nova, it is typically in <code>/etc/nova/policy.json</code>. You can update entries while the system is running, and you do not have to restart services. Currently, the only way to update such policies is to edit the policy file."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:935(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:932(para)
 msgid "The OpenStack service's policy engine matches a policy directly. A rule indicates evaluation of the elements of such policies. For instance, in a <code>compute:create: [[\"rule:admin_or_owner\"]]</code> statement, the policy is <code>compute:create</code>, and the rule is <code>admin_or_owner</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:941(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:938(para)
 msgid "Policies are triggered by an OpenStack policy engine whenever one of them matches an OpenStack API operation or a specific attribute being used in a given operation. For instance, the engine tests the <code>create:compute</code> policy every time a user sends a <code>POST /v2/{tenant_id}/servers</code> request to the OpenStack Compute API server. Policies can be also related to specific <glossterm>API extension</glossterm>s. For instance, if a user needs an extension like <code>compute_extension:rescue</code>, the attributes defined by the provider extensions trigger the rule test for that operation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:951(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:948(para)
 msgid "An authorization policy can be composed by one or more rules. If more rules are specified, evaluation policy is successful if any of the rules evaluates successfully; if an API operation matches multiple policies, then all the policies must evaluate successfully. Also, authorization rules are recursive. Once a rule is matched, the rule(s) can be resolved to another rule, until a terminal rule is reached. These are the rules <phrase role=\"keep-together\">defined</phrase>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:961(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:958(term)
 msgid "Role-based rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:964(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:961(para)
 msgid "Evaluate successfully if the user submitting the request has the specified role. For instance, <code>\"role:admin\"</code> is successful if the user submitting the request is an administrator."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:972(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:969(term)
 msgid "Field-based rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:975(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:972(para)
 msgid "Evaluate successfully if a field of the resource specified in the current request matches a specific value. For instance, <code>\"field:networks:shared=True\"</code> is successful if the attribute shared of the network resource is set to <literal>true</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:984(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:981(term)
 msgid "Generic rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:987(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:984(para)
 msgid "Compare an attribute in the resource with an attribute extracted from the user's security credentials and evaluates successfully if the comparison is successful. For instance, <code>\"tenant_id:%(tenant_id)s\"</code> is successful if the tenant identifier in the resource is equal to the tenant identifier of the user submitting the request."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:997(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:994(para)
 msgid "Here are snippets of the default nova <filename>policy.json</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1027(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1024(para)
 msgid "Shows a rule that evaluates successfully if the current user is an administrator or the owner of the resource specified in the request (tenant identifier is equal)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1033(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1030(para)
 msgid "Shows the default policy, which is always evaluated if an API operation does not match any of the policies in <code>policy.json</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1039(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1036(para)
 msgid "Shows a policy restricting the ability to manipulate flavors to administrators using the Admin API only.<indexterm class=\"singular\"><primary>admin API</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1047(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1044(para)
 msgid "In some cases, some operations should be restricted to administrators only. Therefore, as a further example, let us consider how this sample policy file could be modified in a scenario where we enable users to create their own flavors:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1056(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1053(title)
 msgid "Users Who Disrupt Other Users"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1058(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1055(para)
 msgid "Users on your cloud can disrupt other users, sometimes intentionally and maliciously and other times by accident. Understanding the situation allows you to make a better decision on how to handle the disruption.<indexterm class=\"singular\"><primary>user management</primary><secondary>handling disruptive users</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1067(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1064(para)
 msgid "For example, a group of users have instances that are utilizing a large amount of compute resources for very compute-intensive tasks. This is driving the load up on compute nodes and affecting other users. In this situation, review your user use cases. You may find that high compute scenarios are common, and should then plan for proper segregation in your cloud, such as host aggregation or regions."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1074(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1071(para)
 msgid "Another example is a user consuming a very large amount of bandwidth<indexterm class=\"singular\"><primary>bandwidth</primary><secondary>recognizing DDOS attacks</secondary></indexterm>. Again, the key is to understand what the user is doing. If she naturally needs a high amount of bandwidth, you might have to limit her transmission rate as to not affect other users or move her to an area with more bandwidth available. On the other hand, maybe her instance has been hacked and is part of a botnet launching DDOS attacks. Resolution of this issue is the same as though any other server on your network has been hacked. Contact the user and give her time to respond. If she doesn't respond, shut down the instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1088(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1085(para)
 msgid "A final example is if a user is hammering cloud resources repeatedly. Contact the user and learn what he is trying to do. Maybe he doesn't understand that what he’s doing is inappropriate, or maybe there is an issue with the resource he is trying to access that is causing his requests to queue or lag."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1099(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1096(para)
 msgid "One key element of systems administration that is often overlooked is that end users are the reason systems administrators exist. Don't go the BOFH route and terminate every user who causes an alert to go off. Work with users to understand what they're trying to accomplish and see how your environment can better assist them in achieving their goals. Meet your users needs by organizing your users into projects, applying policies, managing quotas, and working with them.<indexterm class=\"singular\"><primary>systems administration</primary><see>user management</see></indexterm>"
 msgstr ""
 
@@ -8698,7 +8702,7 @@ msgid "OpenStack is intended to work well across a variety of installation flavo
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:29(para)
-msgid "At the time of writing, OpenStack has more than 1,500 configuration options. You can see them documented at <link href=\"http://docs.openstack.org/juno/config-reference/content/config_overview.html\">the OpenStack configuration reference guide</link>. This chapter cannot hope to document all of these, but we do try to introduce the important concepts so that you know where to go digging for more information."
+msgid "At the time of writing, OpenStack has more than 3,000 configuration options. You can see them documented at <link href=\"http://docs.openstack.org/kilo/config-reference/content/config_overview.html\">the OpenStack configuration reference guide</link>. This chapter cannot hope to document all of these, but we do try to introduce the important concepts so that you know where to go digging for more information."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:37(title)
@@ -8710,7 +8714,7 @@ msgid "Many OpenStack projects implement a driver layer, and each of these drive
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:55(para)
-msgid "The currently implemented hypervisors are listed on <link href=\"http://docs.openstack.org/juno/config-reference/content/section_compute-hypervisors.html\">the OpenStack documentation website</link>. You can see a matrix of the various features in OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at <link href=\"http://docs.openstack.org/developer/nova/support-matrix.html\">the Hypervisor support matrix page</link>."
+msgid "The currently implemented hypervisors are listed on <link href=\"http://docs.openstack.org/kilo/config-reference/content/section_compute-hypervisors.html\">the OpenStack documentation website</link>. You can see a matrix of the various features in OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at <link href=\"http://docs.openstack.org/developer/nova/support-matrix.html\">the Hypervisor support matrix page</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:63(para)
@@ -8818,26 +8822,26 @@ msgid "Enabling IPv6 Support"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:214(para)
-msgid "The Havana release with OpenStack Networking (neutron) does not offer complete support of IPv6. Better support is planned for the Icehouse release. You can follow along the progress being made by watching the <link href=\"https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam\">neutron IPv6 Subteam at work</link>.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>IPv6 support</secondary></indexterm><indexterm class=\"singular\"><primary>IPv6, enabling support for</primary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>IPv6 support</secondary></indexterm>"
+msgid "The Havana release with OpenStack Networking (neutron) does not offer complete support of IPv6. Better support has been delivered in the Kilo release, and will continue to improve in Liberty. You can follow along the progress being made by watching the <link href=\"https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam\">neutron IPv6 Subteam at work</link>.<indexterm class=\"singular\"><primary>Liberty</primary><secondary>IPv6 support</secondary></indexterm><indexterm class=\"singular\"><primary>IPv6, enabling support for</primary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>IPv6 support</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:230(para)
+#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:231(para)
 msgid "By modifying your configuration setup, you can set up IPv6 when using <literal>nova-network</literal> for networking, and a tested setup is documented for FlatDHCP and a multi-host configuration. The key is to make <literal>nova-network</literal> think a <literal>radvd</literal> command ran successfully. The entire configuration is detailed in a Cybera blog post, <link href=\"http://www.cybera.ca/news-and-events/tech-radar/an-ipv6-enabled-cloud/\">“An IPv6 enabled cloud”</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:240(title)
+#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:241(title)
 msgid "Periodic Task Frequency for Compute"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:242(para)
+#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:243(para)
 msgid "Before the Grizzly release, the frequency of periodic tasks was specified in seconds between runs. This meant that if the periodic task took 30 minutes to run and the frequency was set to hourly, then the periodic task actually ran every 90 minutes, because the task would wait an hour after running before running again. This changed in Grizzly, and we now time the frequency of periodic tasks from the start of the work the task does. So, our 30 minute periodic task will run every hour, with a 30 minute wait between the end of the first run and the start of the next.<indexterm class=\"singular\"><primary>configuration options</primary><secondary>periodic task frequency</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:258(title)
+#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:259(title)
 msgid "Geographical Considerations for Object Storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:260(para)
+#: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:261(para)
 msgid "Enhanced support for global clustering of object storage servers continues to be added since the Grizzly (1.8.0) release, when regions were introduced. You would implement these global clusters to ensure replication across geographic areas in case of a natural disaster and also to ensure that users can write or access their objects more quickly based on the closest data center. You configure a default region with one zone for each cluster, but be sure your network (WAN) can handle the additional request and response load between zones as you add more zones and build a ring that handles more zones. Refer to <link href=\"http://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters\">Geographically Distributed Clusters</link> in the documentation for additional information.<indexterm class=\"singular\"><primary>Object Storage</primary><secondary>geographical considerations</secondary></indexterm><indexterm class=\"singular\"><primary>storage</primary><secondary>geographical considerations</secondary></indexterm><indexterm class=\"singular\"><primary>configuration options</primary><secondary>geographical storage considerations</secondary></indexterm>"
 msgstr ""
 
