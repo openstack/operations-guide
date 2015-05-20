@@ -434,14 +434,14 @@ flavor = keystone</programlisting>
         file:</para>
 
       <programlisting language="ini">[database]
-connection = mysql://nova:NOVA_DBPASS@controller/nova</programlisting>
+connection = mysql+pymysql://nova:NOVA_DBPASS@controller/nova</programlisting>
 
       <para>Remove defunct configuration from the
           <literal>[DEFAULT]</literal> section in the
           <filename>/etc/nova/nova.conf</filename> file:</para>
 
       <programlisting language="ini">[DEFAULT]
-sql_connection = mysql://nova:NOVA_DBPASS@controller/nova</programlisting>
+sql_connection = mysql+pymysql://nova:NOVA_DBPASS@controller/nova</programlisting>
 
       <para>Add or modify the following keys in the
           <filename>/etc/nova/nova.conf</filename> file:</para>
@@ -828,7 +828,7 @@ flavor = keystone</programlisting>
         file:</para>
 
       <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/nova/nova.conf database \
-  connection mysql://nova:NOVA_DBPASS@controller/nova</userinput></screen>
+  connection mysql+pymysql://nova:NOVA_DBPASS@controller/nova</userinput></screen>
 
       <para>Remove defunct database configuration from the
           <filename>/etc/nova/nova.conf</filename> file:</para>
@@ -880,7 +880,7 @@ flavor = keystone</programlisting>
           <filename>/etc/cinder/cinder.conf</filename> file:</para>
 
       <screen><prompt>#</prompt> <userinput>openstack-config --set /etc/cinder/cinder.conf database \
-  connection mysql://cinder:CINDER_DBPASS@controller/cinder</userinput></screen>
+  connection mysql+pymysql://cinder:CINDER_DBPASS@controller/cinder</userinput></screen>
 
       <para>Remove defunct database configuration from the
           <filename>/etc/cinder/cinder.conf</filename> file:</para>
@@ -1417,7 +1417,7 @@ rabbit_password = <replaceable>RABBIT_PASS</replaceable></programlisting>
           </step>
           <step><para>Replace <replaceable>NEUTRON_DBPASS</replaceable> with
             the password you chose for the database.</para>
-          <screen><userinput>mysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
+          <screen><userinput>mysql+pymysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
         </step>
         <step><para>Edit the
               <filename>/etc/neutron/neutron.conf</filename> file to
@@ -1895,7 +1895,7 @@ qpid_hostname = <replaceable>controller</replaceable></programlisting>
           </step>
           <step><para>Replace <replaceable>NEUTRON_DBPASS</replaceable> with
               the password you chose for the database.</para>
-            <screen><userinput>mysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
+            <screen><userinput>mysql+pymysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
           </step>
           <step>
           <warning>
@@ -1914,7 +1914,7 @@ qpid_hostname = <replaceable>controller</replaceable></programlisting>
         </step>
         <step><para>Perform the conversion from OVS to ML2:</para>
   <screen><prompt>#</prompt> <userinput>python -m neutron.db.migration.migrate_to_ml2 openvswitch \
-  mysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
+  mysql+pymysql://neutron:NEUTRON_DBPASS@controller/neutron</userinput></screen>
         </step>
         <step><para>Edit the
               <filename>/etc/neutron/neutron.conf</filename> file to
@@ -2113,7 +2113,7 @@ service_plugins = router</programlisting>
   --config-file /etc/neutron/plugins/ml2/ml2_conf.ini current" neutron</userinput>
 <computeroutput>INFO  [alembic.migration] Context impl MySQLImpl.
 INFO  [alembic.migration] Will assume non-transactional DDL.
-Current revision for mysql://neutron:XXXXX@controller/neutron: 5ac1c354a051 -> icehouse (head), icehouse</computeroutput></screen>
+Current revision for mysql+pymysql://neutron:XXXXX@controller/neutron: 5ac1c354a051 -> icehouse (head), icehouse</computeroutput></screen>
         </listitem>
       </itemizedlist>
     </section>
