@@ -669,7 +669,7 @@ Optional arguments:  --force &lt;True|False&gt;  Optional flag to indicate wheth
 --display-description &lt;display-description&gt;
 Optional snapshot description. (Default=None)</programlisting>
     <note><para>For more information about updating Block Storage volumes (for example, resizing or
-      transferring), see the <link xlink:href="http://docs.openstack.org/user-guide/content/"
+      transferring), see the <link xlink:href="http://docs.openstack.org/user-guide/"
         >OpenStack End User Guide</link>.</para></note>
     <section xml:id="block_storage_creation_failures">
       <title>Block Storage Creation Failures</title>
@@ -1124,14 +1124,14 @@ Optional snapshot description. (Default=None)</programlisting>
 
     <para>Read more detailed instructions for launching an instance from a
     bootable volume in the <link
-    xlink:href="http://docs.openstack.org/user-guide/content/boot_from_volume.html">OpenStack End User
+    xlink:href="http://docs.openstack.org/user-guide/cli_nova_launch_instance_from_volume.html">OpenStack End User
     Guide</link>.</para>
 
     <para>To boot normally from an image and attach block storage, map to a
     device other than vda. You can find instructions for launching an instance
     and attaching a volume to the instance and for copying the image to the
     attached volume in the <link
-    xlink:href="http://docs.openstack.org/user-guide/content/dashboard_launch_instances_from_image.html">OpenStack End User
+    xlink:href="http://docs.openstack.org/user-guide/dashboard_launch_instances.html">OpenStack End User
     Guide</link>.</para>
   </section>
 
@@ -1518,7 +1518,7 @@ Optional snapshot description. (Default=None)</programlisting>
 
     <para>This section was intended as a brief introduction to some of the
     most useful of many OpenStack commands. For an exhaustive list, please
-    refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/content/">Admin User
+    refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/">Admin User
     Guide</link>, and for additional hints and tips, see the <link
     xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">Cloud Admin Guide</link>. We hope
     your users remain happy and recognize your hard work! (For more hard work,
