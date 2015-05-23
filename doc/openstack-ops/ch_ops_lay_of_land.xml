@@ -26,7 +26,7 @@
     with a <guilabel>System Panel</guilabel> and <guilabel>Identity
     Panel</guilabel>. These interfaces give you access to system information
     and usage as well as to settings for configuring what end users can do.
-    Refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/content/ch_dashboard.html">OpenStack Admin
+    Refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/dashboard.html">OpenStack Admin
     User Guide</link> for detailed how-to information about using the
     dashboard as an admin user.<indexterm class="singular">
         <primary>working environment</primary>
@@ -825,7 +825,7 @@ None            1.2.3.5 48a415...b010ff nova vlan20</programlisting>
     <para>We hope you have enjoyed this quick tour of your working
     environment, including how to interact with your cloud and extract useful
     information. From here, you can use the <emphasis><link
-    xlink:href="http://docs.openstack.org/user-guide-admin/content/">Admin User Guide</link></emphasis>
+    xlink:href="http://docs.openstack.org/user-guide-admin/">Admin User Guide</link></emphasis>
     as your reference for all of the command-line functionality in your
     cloud.</para>
   </section>
