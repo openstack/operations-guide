@@ -346,24 +346,6 @@ $EC2_SECRET_KEY --url $S3_URL --ec2cert $NOVA_CERT"</programlisting>
       responses from the endpoints, which can be helpful in creating custom
       tools written to the OpenStack API.</para>
 
-      <tip>
-        <para><link xlink:href="https://wiki.openstack.org/wiki/KeyringSupport">Keyring
-        Support</link> enables you to securely save your OpenStack password in
-        an encrypted file.<indexterm class="singular">
-            <primary>Keyring Support</primary>
-          </indexterm></para>
-
-        <para>This feature is disabled by default. To enable it, add the
-        <code>--os-cache</code> flag or set the environment variable
-        <code>OS_CACHE=1</code>.</para>
-
-        <para>Configuring <literal>OS_CACHE</literal> causes the command-line
-        tool to authenticate on each and every interaction with the cloud.
-        This can assist with working around this scenario. However, it
-        increases the time taken to run commands and also the load on the
-        server.</para>
-      </tip>
-
       <section xml:id="curl">
         <title>Using cURL for further inspection</title>
 
