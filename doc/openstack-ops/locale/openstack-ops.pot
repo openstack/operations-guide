@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-30 06:00+0000\n"
+"POT-Creation-Date: 2015-05-28 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1275,7 +1275,7 @@ msgstr ""
 msgid "From this you see that the DHCP server on that network is using the tape6256f7d-31 device and has an IP address of 10.0.1.100. Seeing the address 169.254.169.254, you can also see that the dhcp-agent is running a metadata-proxy service. Any of the commands mentioned previously in this chapter can be run in the same way. It is also possible to run a shell, such as <literal>bash</literal>, and have an interactive session within the namespace. In the latter case, exiting the shell returns you to the top-level default namespace."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1094(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:823(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:996(title)
+#: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_projects_users.xml:1094(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:805(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:996(title)
 msgid "Summary"
 msgstr ""
 
@@ -4042,7 +4042,7 @@ msgid "OpenStack Block Storage also allows for creating snapshots of volumes. Re
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:671(para)
-msgid "For more information about updating Block Storage volumes (for example, resizing or transferring), see the <link href=\"http://docs.openstack.org/user-guide/content/\">OpenStack End User Guide</link>."
+msgid "For more information about updating Block Storage volumes (for example, resizing or transferring), see the <link href=\"http://docs.openstack.org/user-guide/\">OpenStack End User Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:675(title)
@@ -4294,11 +4294,11 @@ msgid "If you have previously prepared block storage with a bootable file system
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1125(para)
-msgid "Read more detailed instructions for launching an instance from a bootable volume in the <link href=\"http://docs.openstack.org/user-guide/content/boot_from_volume.html\">OpenStack End User Guide</link>."
+msgid "Read more detailed instructions for launching an instance from a bootable volume in the <link href=\"http://docs.openstack.org/user-guide/cli_nova_launch_instance_from_volume.html\">OpenStack End User Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1130(para)
-msgid "To boot normally from an image and attach block storage, map to a device other than vda. You can find instructions for launching an instance and attaching a volume to the instance and for copying the image to the attached volume in the <link href=\"http://docs.openstack.org/user-guide/content/dashboard_launch_instances_from_image.html\">OpenStack End User Guide</link>."
+msgid "To boot normally from an image and attach block storage, map to a device other than vda. You can find instructions for launching an instance and attaching a volume to the instance and for copying the image to the attached volume in the <link href=\"http://docs.openstack.org/user-guide/dashboard_launch_instances.html\">OpenStack End User Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1141(title)
@@ -4570,7 +4570,7 @@ msgid "Good Luck!"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1519(para)
-msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
+msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link href=\"http://docs.openstack.org/user-guide-admin/\">Admin User Guide</link>, and for additional hints and tips, see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:10(title) ./doc/openstack-ops/ch_ops_upgrades.xml:166(title)
@@ -8386,7 +8386,7 @@ msgid "Using the OpenStack Dashboard for Administration"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:20(para)
-msgid "As a cloud administrative user, you can use the OpenStack dashboard to create and manage projects, users, images, and flavors. Users are allowed to create and manage images within specified projects and to share images, depending on the Image service configuration. Typically, the policy configuration allows admin users only to set quotas and create and manage services. The dashboard provides an <guilabel>Admin</guilabel> tab with a <guilabel>System Panel</guilabel> and <guilabel>Identity Panel</guilabel>. These interfaces give you access to system information and usage as well as to settings for configuring what end users can do. Refer to the <link href=\"http://docs.openstack.org/user-guide-admin/content/ch_dashboard.html\">OpenStack Admin User Guide</link> for detailed how-to information about using the dashboard as an admin user.<indexterm class=\"singular\"><primary>working environment</primary><secondary>dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm>"
+msgid "As a cloud administrative user, you can use the OpenStack dashboard to create and manage projects, users, images, and flavors. Users are allowed to create and manage images within specified projects and to share images, depending on the Image service configuration. Typically, the policy configuration allows admin users only to set quotas and create and manage services. The dashboard provides an <guilabel>Admin</guilabel> tab with a <guilabel>System Panel</guilabel> and <guilabel>Identity Panel</guilabel>. These interfaces give you access to system information and usage as well as to settings for configuring what end users can do. Refer to the <link href=\"http://docs.openstack.org/user-guide-admin/dashboard.html\">OpenStack Admin User Guide</link> for detailed how-to information about using the dashboard as an admin user.<indexterm class=\"singular\"><primary>working environment</primary><secondary>dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:41(title)
@@ -8517,180 +8517,168 @@ msgstr ""
 msgid "This example shows the HTTP requests from the client and the responses from the endpoints, which can be helpful in creating custom tools written to the OpenStack API."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:350(para)
-msgid "<link href=\"https://wiki.openstack.org/wiki/KeyringSupport\">Keyring Support</link> enables you to securely save your OpenStack password in an encrypted file.<indexterm class=\"singular\"><primary>Keyring Support</primary></indexterm>"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:356(para)
-msgid "This feature is disabled by default. To enable it, add the <code>--os-cache</code> flag or set the environment variable <code>OS_CACHE=1</code>."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:360(para)
-msgid "Configuring <literal>OS_CACHE</literal> causes the command-line tool to authenticate on each and every interaction with the cloud. This can assist with working around this scenario. However, it increases the time taken to run commands and also the load on the server."
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:368(title)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:350(title)
 msgid "Using cURL for further inspection"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:370(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:352(para)
 msgid "Underlying the use of the command-line tools is the OpenStack API, which is a RESTful API that runs over HTTP. There may be cases where you want to interact with the API directly or need to use it because of a suspected bug in one of the CLI tools. The best way to do this is to use a combination of <link href=\"http://curl.haxx.se/\">cURL</link> and another tool, such as <link href=\"http://stedolan.github.io/jq/\">jq</link>, to parse the JSON from the responses.<indexterm class=\"singular\"><primary>authentication tokens</primary></indexterm><indexterm class=\"singular\"><primary>cURL</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:383(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:365(para)
 msgid "The first thing you must do is authenticate with the cloud using your credentials to get an <glossterm>authentication token</glossterm>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:387(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:369(para)
 msgid "Your credentials are a combination of username, password, and tenant (project). You can extract these values from the <code>openrc.sh</code> discussed above. The token allows you to interact with your other service endpoints without needing to reauthenticate for every request. Tokens are typically good for 24 hours, and when the token expires, you are alerted with a 401 (Unauthorized) response and you can request another <phrase role=\"keep-together\">token</phrase>.<indexterm class=\"singular\"><primary>catalog</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:400(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:382(para)
 msgid "Look at your OpenStack service <glossterm>catalog</glossterm>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:412(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:394(para)
 msgid "Read through the JSON response to get a feel for how the catalog is laid out."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:415(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:397(para)
 msgid "To make working with subsequent requests easier, store the token in an environment variable:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:425(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:407(para)
 msgid "Now you can refer to your token on the command line as <literal>$TOKEN</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:430(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:412(para)
 msgid "Pick a service endpoint from your service catalog, such as compute. Try a request, for example, listing instances (servers):"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:441(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:423(para)
 msgid "To discover how API requests should be structured, read the <link href=\"http://developer.openstack.org/api-ref.html\">OpenStack API Reference</link>. To chew through the responses using jq, see the <link href=\"http://stedolan.github.io/jq/manual/\">jq Manual</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:446(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:428(para)
 msgid "The <code>-s flag</code> used in the cURL commands above are used to prevent the progress meter from being shown. If you are having trouble running cURL commands, you'll want to remove it. Likewise, to help you troubleshoot cURL commands, you can include the <code>-v</code> flag to show you the verbose output. There are many more extremely useful features in cURL; refer to the man page for all the options."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:457(title)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:439(title)
 msgid "Servers and Services"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:459(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:441(para)
 msgid "As an administrator, you have a few ways to discover what your OpenStack cloud looks like simply by using the OpenStack tools available. This section gives you an idea of how to get an overview of your cloud, its shape, size, and current state.<indexterm class=\"singular\"><primary>services</primary><secondary>obtaining overview of</secondary></indexterm><indexterm class=\"singular\"><primary>servers</primary><secondary>obtaining overview of</secondary></indexterm><indexterm class=\"singular\"><primary>cloud computing</primary><secondary>cloud overview</secondary></indexterm><indexterm class=\"singular\"><primary>command-line tools</primary><secondary>servers and services</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:481(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:463(para)
 msgid "First, you can discover what servers belong to your OpenStack cloud by running:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:486(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:468(para)
 msgid "The output looks like the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:500(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:482(para)
 msgid "The output shows that there are five compute nodes and one cloud controller. You see a smiley face, such as <code>:-)</code>, which indicates that the services are up and running. If a service is no longer available, the <code>:-)</code> symbol changes to <code>XXX</code>. This is an indication that you should troubleshoot why the service is down."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:507(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:489(para)
 msgid "If you are using cinder, run the following command to see a similar listing:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:520(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:502(para)
 msgid "With these two tables, you now have a good overview of what servers and services make up your cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:523(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:505(para)
 msgid "You can also use the Identity Service (keystone) to see what services are available in your cloud as well as what endpoints have been configured for the services.<indexterm class=\"singular\"><primary>Identity Service</primary><secondary>displaying services and endpoints with</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:531(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:513(para)
 msgid "The following command requires you to have your shell environment configured with the proper administrative variables:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:558(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:540(para)
 msgid "The preceding output has been truncated to show only two services. You will see one service block for each service that your cloud provides. Note how the endpoint domain can be different depending on the endpoint type. Different endpoint domains per type are not required, but this can be done for different reasons, such as endpoint privacy or network traffic segregation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:565(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:547(para)
 msgid "You can find the version of the Compute installation by using the <literal>nova-manage</literal><phrase role=\"keep-together\">command</phrase>: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:571(title)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:553(title)
 msgid "Diagnose Your Compute Nodes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:573(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:555(para)
 msgid "You can obtain extra information about virtual machines that are running—their CPU usage, the memory, the disk I/O or network I/O—per instance, by running the <literal>nova diagnostics</literal> command with<indexterm class=\"singular\"><primary>compute nodes</primary><secondary>diagnosing</secondary></indexterm><indexterm class=\"singular\"><primary>command-line tools</primary><secondary>compute node diagnostics</secondary></indexterm> a server ID:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:588(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:570(para)
 msgid "The output of this command varies depending on the hypervisor because hypervisors support different attributes.<indexterm class=\"singular\"><primary>hypervisors</primary><secondary>compute node diagnosis and</secondary></indexterm> The following demonstrates the difference between the two most popular hypervisors. Here is example output when the hypervisor is Xen: <placeholder-1/>While the command should work with any hypervisor that is controlled through libvirt (KVM, QEMU, or LXC), it has been tested only with KVM. Here is the example output when the hypervisor is KVM:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:638(title)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:620(title)
 msgid "Network Inspection"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:640(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:622(para)
 msgid "To see which fixed IP networks are configured in your cloud, you can use the <literal>nova</literal> command-line client to get the IP ranges:<indexterm class=\"singular\"><primary>networks</primary><secondary>inspection of</secondary></indexterm><indexterm class=\"singular\"><primary>working environment</primary><secondary>network inspection</secondary></indexterm><placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:658(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:640(para)
 msgid "The <literal>nova-manage</literal> tool can provide some additional details:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:666(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:648(para)
 msgid "This output shows that two networks are configured, each network containing 255 IPs (a /24 subnet). The first network has been assigned to a certain project, while the second network is still open for assignment. You can assign this network manually; otherwise, it is automatically assigned when a project launches its first instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:672(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:654(para)
 msgid "To find out whether any floating IPs are available in your cloud, run:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:680(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:662(para)
 msgid "Here, two floating IPs are available. The first has been allocated to a project, while the other is unallocated."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:685(title)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:667(title)
 msgid "Users and Projects"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:687(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:669(para)
 msgid "To see a list of projects that have been added to the cloud,<indexterm class=\"singular\"><primary>projects</primary><secondary>obtaining list of current</secondary></indexterm><indexterm class=\"singular\"><primary>user management</primary><secondary>listing users</secondary></indexterm><indexterm class=\"singular\"><primary>working environment</primary><secondary>users and projects</secondary></indexterm> run:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:720(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:702(para)
 msgid "To see a list of users, run:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:743(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:725(para)
 msgid "Sometimes a user and a group have a one-to-one mapping. This happens for standard system accounts, such as cinder, glance, nova, and swift, or when only one user is part of a group."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:750(title)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:732(title)
 msgid "Running Instances"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:752(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:734(para)
 msgid "To see a list of running instances,<indexterm class=\"singular\"><primary>instances</primary><secondary>list of running</secondary></indexterm><indexterm class=\"singular\"><primary>working environment</primary><secondary>running instances</secondary></indexterm> run:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:776(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:758(para)
 msgid "Unfortunately, this command does not tell you various details about the running <phrase role=\"keep-together\">instances</phrase>, such as what compute node the instance is running on, what flavor the instance is, and so on. You can use the following command to view details about individual instances:<indexterm class=\"singular\"><primary>config drive</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:786(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:768(para)
 msgid "For example: <placeholder-1/><placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:816(para)
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:798(para)
 msgid "This output shows that an instance named <placeholder-1/> was created from an Ubuntu 12.04 image using a flavor of <literal>m1.small</literal> and is hosted on the compute node <literal>c02.example.com</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:825(para)
-msgid "We hope you have enjoyed this quick tour of your working environment, including how to interact with your cloud and extract useful information. From here, you can use the <emphasis><link href=\"http://docs.openstack.org/user-guide-admin/content/\">Admin User Guide</link></emphasis> as your reference for all of the command-line functionality in your cloud."
+#: ./doc/openstack-ops/ch_ops_lay_of_land.xml:807(para)
+msgid "We hope you have enjoyed this quick tour of your working environment, including how to interact with your cloud and extract useful information. From here, you can use the <emphasis><link href=\"http://docs.openstack.org/user-guide-admin/\">Admin User Guide</link></emphasis> as your reference for all of the command-line functionality in your cloud."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_advanced_configuration.xml:12(title)
