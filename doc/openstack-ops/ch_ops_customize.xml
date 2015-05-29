@@ -641,7 +641,7 @@ proxy-server Allow IPs: set(['my.instance.ip.address']) (txn: ...)</computeroutp
         allowed.</para>
       </step>
 
-      <step xml:id="test_middleware_step">
+      <step>
         <para>Test the middleware from outside DevStack on a remote machine
         that has access to your DevStack instance:</para>
 
