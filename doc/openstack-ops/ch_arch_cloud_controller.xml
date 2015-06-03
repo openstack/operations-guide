@@ -734,7 +734,7 @@
       </listitem>
 
       <listitem>
-        <para>PAM (Pluggable Authentication Module)</para>
+        <para>Memcached (a distributed memory object caching system)</para>
       </listitem>
 
       <listitem>
