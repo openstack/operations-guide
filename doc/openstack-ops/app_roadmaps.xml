@@ -692,7 +692,7 @@ project</link>.<indexterm class="singular">
       <para>Block Storage is now considered a stable project, with wide uptake
       and a long track record of quality drivers. The team
       still discussed many areas of work at the Kilo summit,
-      including better error reporting, automated dicovery, and thin
+      including better error reporting, automated discovery, and thin
       provisioning features.</para>
     </section>
 
