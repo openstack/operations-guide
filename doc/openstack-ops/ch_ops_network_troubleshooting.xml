@@ -837,7 +837,7 @@ proto ICMP (1), length 84)
 
       <para>Sometimes an instance is terminated but the floating IP was not
       correctly de-associated from that instance. Because the database is in
-      an inconsistent state, the usual tools to dissaociate the IP no longer
+      an inconsistent state, the usual tools to disassociate the IP no longer
       work. To fix this, you must manually update the database.<indexterm
           class="singular">
           <primary>IP addresses</primary>
