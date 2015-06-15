@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-28 06:00+0000\n"
+"POT-Creation-Date: 2015-06-15 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -572,7 +572,7 @@ msgid "Block Storage Improvements"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:692(para)
-msgid "Block Storage is now considered a stable project, with wide uptake and a long track record of quality drivers. The team still discussed many areas of work at the Kilo summit, including better error reporting, automated dicovery, and thin provisioning features."
+msgid "Block Storage is now considered a stable project, with wide uptake and a long track record of quality drivers. The team still discussed many areas of work at the Kilo summit, including better error reporting, automated discovery, and thin provisioning features."
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:700(title)
@@ -1084,7 +1084,7 @@ msgid "Manually Disassociating a Floating IP"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:838(para)
-msgid "Sometimes an instance is terminated but the floating IP was not correctly de-associated from that instance. Because the database is in an inconsistent state, the usual tools to dissaociate the IP no longer work. To fix this, you must manually update the database.<indexterm class=\"singular\"><primary>IP addresses</primary><secondary>floating</secondary></indexterm><indexterm class=\"singular\"><primary>floating IP address</primary></indexterm>"
+msgid "Sometimes an instance is terminated but the floating IP was not correctly de-associated from that instance. Because the database is in an inconsistent state, the usual tools to disassociate the IP no longer work. To fix this, you must manually update the database.<indexterm class=\"singular\"><primary>IP addresses</primary><secondary>floating</secondary></indexterm><indexterm class=\"singular\"><primary>floating IP address</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:850(para)
@@ -10196,7 +10196,7 @@ msgid "When you create a deployment plan, focus on a few vital areas because the
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:70(para)
-msgid "Disk partioning and disk array setup for scalability"
+msgid "Disk partitioning and disk array setup for scalability"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:74(para)
@@ -10776,7 +10776,7 @@ msgid "SQL database (such as MySQL or PostgreSQL)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:737(para)
-msgid "PAM (Pluggable Authentication Module)"
+msgid "Memcached (a distributed memory object caching system)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:741(para)

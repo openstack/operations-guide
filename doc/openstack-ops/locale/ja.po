@@ -20,7 +20,7 @@
 # Toru Makabe <t.makabe@gmail.com>, 2013
 # doki701 <tokidokidokidoki@gmail.com>, 2013
 # Tom Fifield <tom@openstack.org>, 2014
-# Tomoyuki KATO <tomo@dream.daynight.jp>, 2012-2014
+# Tomoyuki KATO <tomo@dream.daynight.jp>, 2012-2015
 # Toru Makabe <t.makabe@gmail.com>, 2013
 # tsutomu.takekawa <takekawa@gmail.com>, 2013
 # Ying Chun Guo <daisy.ycguo@gmail.com>, 2013
@@ -29,9 +29,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-05-27 09:52+0000\n"
-"PO-Revision-Date: 2015-05-25 14:49+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2015-06-13 08:59+0000\n"
+"PO-Revision-Date: 2015-06-15 05:47+0000\n"
+"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -43,8 +43,14 @@ msgstr ""
 msgid "\"Hey Alvaro, can you run a VLAN on top of a VLAN?\""
 msgstr "「Alvaro、VLAN 上に VLAN って作れるのかい？」"
 
+msgid "\"If you did, you'd add an extra 4 bytes to the packet\""
+msgstr "「もしやったら、パケットに余計に４バイト追加になるよ」"
+
 msgid "\"The Issue\""
 msgstr "「あの問題」"
+
+msgid "&lt;instance id&gt;/console.log"
+msgstr "&lt;instance id&gt;/console.log"
 
 msgid "&lt;uuid of instance that was snapshotted&gt;"
 msgstr "&lt;スナップショットされたインスタンスの UUID&gt;"
@@ -58,17 +64,29 @@ msgstr "* <code>schedule_run_instance</code>"
 msgid "/var/lib/nova/instances"
 msgstr "/var/lib/nova/instances"
 
+msgid "/var/lib/nova/instances/instance-"
+msgstr "/var/lib/nova/instances/instance-"
+
 msgid "/var/log/apache2/"
 msgstr "/var/log/apache2/"
 
 msgid "/var/log/cinder"
 msgstr "/var/log/cinder"
 
+msgid "/var/log/cinder/cinder-volume.log"
+msgstr "/var/log/cinder/cinder-volume.log"
+
 msgid "/var/log/glance"
 msgstr "/var/log/glance"
 
 msgid "/var/log/keystone"
 msgstr "/var/log/keystone"
+
+msgid "/var/log/libvirt/libvirtd.log"
+msgstr "/var/log/libvirt/libvirtd.log"
+
+msgid "/var/log/neutron"
+msgstr "/var/log/neutron"
 
 msgid "/var/log/nova"
 msgstr "/var/log/nova"
@@ -193,14 +211,47 @@ msgstr "2013.1.3"
 msgid "2013.1.4"
 msgstr "2013.1.4"
 
+msgid "2013.1.5"
+msgstr "2013.1.5"
+
 msgid "2013.2"
 msgstr "2013.2"
 
 msgid "2013.2.1"
 msgstr "2013.2.1"
 
+msgid "2013.2.2"
+msgstr "2013.2.2"
+
+msgid "2013.2.3"
+msgstr "2013.2.3"
+
+msgid "2013.2.4"
+msgstr "2013.2.4"
+
 msgid "2014"
 msgstr "2014"
+
+msgid "2014.1"
+msgstr "2014.1"
+
+msgid "2014.1.1"
+msgstr "2014.1.1"
+
+msgid "2014.1.2"
+msgstr "2014.1.2"
+
+msgid "2014.1.3"
+msgstr "2014.1.3"
+
+msgid "2014.2"
+msgstr "2014.2"
+
+msgid "2015.1"
+msgstr "2015.1"
+
+msgid "2015.2"
+msgstr "2015.2"
 
 msgid "21"
 msgstr "21"
@@ -468,6 +519,16 @@ msgstr ""
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_00in01.png'; md5=THIS FILE DOESN'T EXIST"
+msgstr ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_00in01.png'; md5=THIS FILE DOESN'T EXIST"
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+msgid ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0101.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -548,6 +609,16 @@ msgstr ""
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_0201.png'; md5=THIS FILE DOESN'T EXIST"
+msgstr ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_0201.png'; md5=THIS FILE DOESN'T EXIST"
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+msgid ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0901.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -562,6 +633,26 @@ msgid ""
 msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0902.png'; md5=THIS FILE DOESN'T EXIST"
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+msgid ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_1201.png'; md5=THIS FILE DOESN'T EXIST"
+msgstr ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_1201.png'; md5=THIS FILE DOESN'T EXIST"
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+msgid ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_1202.png'; md5=THIS FILE DOESN'T EXIST"
+msgstr ""
+"@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
+"openstack-ops/figures/osog_1202.png'; md5=THIS FILE DOESN'T EXIST"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -599,6 +690,22 @@ msgstr ""
 "\"><primary>管理ネットワーク</primary></indexterm><indexterm class=\"singular"
 "\"><primary>ネットワークデザイン</primary><secondary>管理ネットワーク</"
 "secondary></indexterm>"
+
+msgid ""
+"A DHCP problem might be caused by a misbehaving dnsmasq process. First, "
+"debug by checking logs and then restart the dnsmasq processes only for that "
+"project (tenant). In VLAN mode, there is a dnsmasq process for each tenant. "
+"Once you have restarted targeted dnsmasq processes, the simplest way to rule "
+"out dnsmasq causes is to kill all of the dnsmasq processes on the machine "
+"and restart <literal>nova-network</literal>. As a last resort, do this as "
+"root:"
+msgstr ""
+"DHCPの問題はdnsmasqの不具合が原因となりがちです。まず、ログを確認し、その後該"
+"当するプロジェクト(テナント)のdnsmasqプロセスを再起動してください。VLANモード"
+"においては、dnsmasqプロセスはテナントごとに存在します。すでに該当のdnsmasqプ"
+"ロセスを再起動しているのであれば、もっともシンプルな解決法は、マシン上の全て"
+"のdnsmasqプロセスをkillし、<literal>nova-network</literal>を再起動することで"
+"す。最終手段として、rootで以下を実行してください。"
 
 msgid ""
 "A boolean to indicate whether the volume should be deleted when the instance "
@@ -682,6 +789,24 @@ msgstr ""
 "Gluster For OpenStack (GFO) と呼ばれます。GFO は、swift のカスタマイズバー"
 "ジョンを使用しており、Gluster がバックエンドストレージを使用できるようになっ"
 "ています。"
+
+msgid ""
+"A feature was introduced in Essex to periodically check and see if there "
+"were any <code>_base</code> files not in use. If there were, Nova would "
+"delete them. This idea sounds innocent enough and has some good qualities to "
+"it. But how did this feature end up turned on? It was disabled by default in "
+"Essex. As it should be. It was <link href=\"https://bugs.launchpad.net/nova/"
+"+bug/1029674\">decided to be turned on in Folsom</link> (https://bugs."
+"launchpad.net/nova/+bug/1029674). I cannot emphasize enough that:"
+msgstr ""
+"Essex で、<code>_base</code> 下の任意のファイルが使用されていないかどうか定期"
+"的にチェックして確認する機能が導入された。もしあれば、Nova はそのファイルを削"
+"除する。このアイデアは問題がないように見え、品質的にも良いようだった。しか"
+"し、この機能を有効にすると最終的にどうなるのか？Essex ではこの機能がデフォル"
+"トで無効化されていた。そうあるべきであったからだ。これは、<link href="
+"\"https://bugs.launchpad.net/nova/+bug/1029674 \">Folsom で有効になることが決"
+"定された</link> (https://bugs.launchpad.net/nova/+bug/1029674)。私はそうある"
+"べきとは思わない。何故なら"
 
 msgid "A few nights later, it happened again."
 msgstr "数日後、それは再び起こった。"
@@ -781,6 +906,26 @@ msgstr ""
 "したファイルに関するエントリがあるのだろうかと思った。 <placeholder-2/>"
 
 msgid ""
+"A quick Google search turned up this: <link href=\"https://lists.launchpad."
+"net/openstack/msg11696.html\">DHCP lease errors in VLAN mode</link> (https://"
+"lists.launchpad.net/openstack/msg11696.html) which further supported our "
+"DHCP theory."
+msgstr ""
+"ちょっと Google 検索した結果、これを見つけた。<link href=\"https://lists."
+"launchpad.net/openstack/msg11696.html\">VLAN モードでの DHCPリースエラー</"
+"link> (https://lists.launchpad.net/openstack/msg11696.html) 。この情報はその"
+"後の我々の DHCP 方針の支えになった。"
+
+msgid ""
+"A quick way to check whether DNS is working is to resolve a hostname inside "
+"your instance by using the <code>host</code> command. If DNS is working, you "
+"should see:"
+msgstr ""
+"DNSが正しくホスト名をインスタンス内から解決できているか確認する簡単な方法は、"
+"<code>host</code>コマンドです。もしDNSが正しく動いていれば、以下メッセージが"
+"確認できます。"
+
+msgid ""
 "A range of publicly routable, IPv4 network addresses to be used by OpenStack "
 "Networking for floating IPs. You may be restricted in your access to IPv4 "
 "addresses; a large range of IPv4 addresses is not necessary."
@@ -788,6 +933,20 @@ msgstr ""
 "OpenStack Networking が Floating IP に使用する、パブリックにルーティング可能"
 "な IPv4 ネットワークアドレスの範囲。IPv4 アドレスへのアクセスは制限される可能"
 "性があります。IPv4 アドレスの範囲を大きくする必要はありません。"
+
+msgid ""
+"A report came in: VMs were launching slowly, or not at all. Cue the standard "
+"checksnothing on the nagios, but there was a spike in network towards the "
+"current master of our RabbitMQ cluster. Investigation started, but soon the "
+"other parts of the queue cluster were leaking memory like a sieve. Then the "
+"alert came inthe master rabbit server went down. Connections failed over to "
+"the slave."
+msgstr ""
+"報告が入った。VM の起動が遅いか、全く起動しない。標準のチェック項目は？"
+"Nagios 上は問題なかったが、RabbitMQ クラスタの現用系に向かうネットワークのみ"
+"高負荷を示していた。捜査を開始したが、すぐに RabbitMQ クラスタの別の部分がざ"
+"るのようにメモリリークを起こしていることを発見した。また警報か？RabbitMQ サー"
+"バーの現用系はダウンしようとしていた。接続は待機系にフェイルオーバーした。"
 
 msgid ""
 "A scalable storage solution that replicates data across commodity storage "
@@ -843,6 +1002,18 @@ msgstr "アクセス方法"
 
 msgid "Accessible from…"
 msgstr "アクセス可能な場所"
+
+msgid ""
+"Acknowledging that many small-scale deployments see running Object Storage "
+"just for the storage of virtual machine images as too costly, we opted for "
+"the file back end in the OpenStack Image service (Glance). If your cloud "
+"will include Object Storage, you can easily add it as a back end."
+msgstr ""
+"多くの小規模なデプロイメントでは、 Object Storage を仮想マシンイメージのスト"
+"レージのみに使用するとコストがかかり過ぎることが分かっているため、OpenStack "
+"Image service (Glance) 内のファイルバックエンドを選択しました。設計対象のクラ"
+"ウド環境に Object Storage が含まれる場合には、バックエンドとして容易に追加で"
+"きます。"
 
 msgid "Acknowledgments"
 msgstr "謝辞"
@@ -994,6 +1165,9 @@ msgstr ""
 "変更がレビューされ、受理されて、マスターブランチにマージされると、バグの状態"
 "は自動的に以下のようになります。"
 
+msgid "After the dnsmasq processes start again, check whether DNS is working."
+msgstr "dnsmasq再起動後に、DNSが動いているか確認します。"
+
 msgid ""
 "After the packet is on this NIC, it transfers to the compute node's default "
 "gateway. The packet is now most likely out of your control at this point. "
@@ -1056,6 +1230,9 @@ msgstr ""
 "サービスのためのすべてのAMQP（Advavnced Message Queue Protocol）メッセージは"
 "キューブローカーによって送受信されます。<indexterm class=\"singular"
 "\"><primary>Advanced Message Queuing Protocol (AMQP)</primary></indexterm>"
+
+msgid "All nodes"
+msgstr "全ノード"
 
 msgid "All nova services"
 msgstr "すべての Nova サービス"
@@ -1286,6 +1463,9 @@ msgstr ""
 "する項目、しない項目をすべて慎重に検討していく必要があります。例えば、ユー"
 "ザーデータが含まれるハードドライブは自動フォーマットは必要ありません。"
 
+msgid "And finally, you can disassociate the floating IP:"
+msgstr "最後に、floating IPを開放します。"
+
 msgid ""
 "And the best part: the same user had just tried creating a CentOS instance. "
 "What?"
@@ -1340,6 +1520,15 @@ msgstr "2013年4月11日"
 
 msgid "Apr 15, 2011"
 msgstr "2011年4月15日"
+
+msgid "Apr 17, 2014"
+msgstr "2014年4月17日"
+
+msgid "Apr 3, 2014"
+msgstr "2014年4月3日"
+
+msgid "Apr 30, 2015"
+msgstr "2015年4月"
 
 msgid "Apr 4, 2013"
 msgstr "2013年4月4日"
@@ -1663,6 +1852,9 @@ msgstr "2012年8月10日"
 msgid "Aug 8, 2013"
 msgstr "2013年8月8日"
 
+msgid "Aug 8, 2014"
+msgstr "2014年8月8日"
+
 msgid "Austin"
 msgstr "Austin"
 
@@ -1702,6 +1894,9 @@ msgstr "バックエンドのストレージサービス"
 
 msgid "Backup and Recovery"
 msgstr "バックアップとリカバリー"
+
+msgid "Bare-Metal Deployment (Ironic)"
+msgstr "Bare-Metal Deployment (Ironic)"
 
 msgid "Basic node deployment"
 msgstr "基本ノードデプロイメント"
@@ -1810,8 +2005,14 @@ msgstr ""
 msgid "Block Storage Creation Failures"
 msgstr "ブロックストレージの作成エラー"
 
+msgid "Block Storage Service (cinder) back end"
+msgstr "Block Storage Service (cinder) バックエンド"
+
 msgid "Block Storage Service (cinder) backend"
 msgstr "Block Storage Service (cinder) バックエンド"
+
+msgid "Block Storage nodes"
+msgstr "Block Storage ノード"
 
 msgid "Block storage"
 msgstr "ブロックストレージ"
@@ -2029,6 +2230,9 @@ msgstr "<guibutton>プロジェクトの作成</guibutton> ボタンをクリッ
 msgid "Cloud Controller and Storage Proxy Failures and Maintenance"
 msgstr "クラウドコントローラーとストレージプロキシの故障とメンテナンス"
 
+msgid "Cloud controller"
+msgstr "クラウドコントローラー"
+
 msgid "Cloud controller hardware sizing considerations"
 msgstr "クラウドコントローラーのハードウェアサイジングに関する考慮事項"
 
@@ -2218,6 +2422,19 @@ msgstr ""
 "<phrase role=\"keep-together\"><literal>neutron</literal> を使用するように設"
 "定</phrase>"
 
+msgid ""
+"Congratulations! By now, you should have a solid design for your cloud. We "
+"now recommend that you turn to the OpenStack Installation Guide (<link href="
+"\"http://docs.openstack.org/havana/install-guide/install/apt/\"/> for "
+"Ubuntu, for example), which contains a step-by-step guide on how to manually "
+"install the OpenStack packages and dependencies on your cloud."
+msgstr ""
+"おめでとう！これでクラウドのための設計が固まりました。次にOpenStack インス"
+"トールガイド(<link href=\"http://docs.openstack.org/havana/install-guide/"
+"install/apt/\"/> Ubuntuの例を挙げます)に進むことをお勧めします。これにはあな"
+"たのクラウドに必要なパッケージやOpenStackの手動インストール手順をステップバイ"
+"ステップで説明しています。"
+
 msgid "Connectivity for maximum performance"
 msgstr "パフォーマンスを最大化するための接続性"
 
@@ -2309,8 +2526,22 @@ msgstr "DAIR"
 msgid "DHCP traffic can be isolated within an individual host."
 msgstr "DHCP トラフィックは個々のホスト内に閉じ込めることができる。"
 
+msgid ""
+"DHCP traffic uses UDP. The client sends from port 68 to port 67 on the "
+"server. Try to boot a new instance and then systematically listen on the "
+"NICs until you identify the one that isn't seeing the traffic. To use "
+"<code>tcpdump</code> to listen to ports 67 and 68 on br100, you would do:"
+msgstr ""
+"DHCPトラフィックはUDPを使います。そして、クライアントは68番ポートからサーバー"
+"の67番ポートへパケットを送信します。新しいインスタンスを起動し、機械的にNICを"
+"リッスンしてください。トラフィックに現れない通信を特定できるまで行います。"
+"<code>tcpdump</code>でbr100上のポート67、68をリッスンするには、こうします。"
+
 msgid "DNS"
 msgstr "DNS"
+
+msgid "DNS as a Service (Designate)"
+msgstr "DNS as a Service (Designate)"
 
 msgid "Daemon"
 msgstr "デーモン"
@@ -2327,6 +2558,9 @@ msgstr "ダッシュボードサービス"
 msgid "Dashboard's Create Project form"
 msgstr "Dashboard のプロジェクトの作成フォーム"
 
+msgid "Data Processing (Sahara)"
+msgstr "Data Processing (Sahara)"
+
 msgid "Database"
 msgstr "データベース"
 
@@ -2338,6 +2572,9 @@ msgstr "データベース接続性"
 
 msgid "Database and message queue server (such as MySQL, RabbitMQ)"
 msgstr "データベースとメッセージキューサーバ（例:MySQL、RabbitMQ）"
+
+msgid "Database as a Service (Trove)"
+msgstr "Database as a Service (Trove)"
 
 msgid "Databases"
 msgstr "データベース"
@@ -2481,16 +2718,14 @@ msgstr "ディスクのパーティショニングと RAID"
 msgid "Disk Size: minimum 5 GB"
 msgstr "ディスクサイズ: 最低 5 GB"
 
-msgid "Disk partioning and disk array setup for scalability"
-msgstr ""
-"スケーラビリティ確保に向けたディスクのパーティショニングおよびディスク配列設"
-"定"
-
 msgid "Disk space"
 msgstr "ディスク領域"
 
 msgid "Disk space is cheap these days. Data recovery is not."
 msgstr "今日、ディスクスペースは安価である。データの復元はそうではない。"
+
+msgid "Disk usage"
+msgstr "ディスク使用量"
 
 msgid "Disk: two 300 GB 10000 RPM SAS Disks"
 msgstr "ディスク: 300 GB 10000 RPM SAS ディスク x 2"
@@ -2602,6 +2837,9 @@ msgstr ""
 "<indexterm class=\"singular\"><primary>コマンドラインインターフェース (CLI)</"
 "primary></indexterm>"
 
+msgid "End-of-life"
+msgstr "エンドオブライフ"
+
 msgid "Ensure that the operating system has recognized the new disk:"
 msgstr ""
 "オペレーティングシステムが新しいディスクを認識していることを確認します。"
@@ -2695,6 +2933,9 @@ msgstr ""
 "blueprint を使ってよりきちんとした形で機能が規定されていきます。 この後、"
 "blueprint はプロジェクトメンバーによって承認され、開発が始まります。"
 
+msgid "Feb 13, 2014"
+msgstr "2014年2月13日"
+
 msgid "Feb 3, 2011"
 msgstr "2011年2月3日"
 
@@ -2735,6 +2976,21 @@ msgstr ""
 "ある。ＯＫ。クラウドコントローラーからパブリックインターネットにパケットが戻"
 "る際、パケットには VLAN を持つべきではない。ＮＧ。うぉっ。まるで パケットの "
 "VLAN 部分が削除されていないように見える。"
+
+msgid ""
+"Finally, I checked StackTach and reviewed the user's events. They had "
+"created and deleted several snapshotsmost likely experimenting. Although the "
+"timestamps didn't match up, my conclusion was that they launched their "
+"instance and then deleted the snapshot and it was somehow removed from /var/"
+"lib/nova/instances/_base. None of that made sense, but it was the best I "
+"could come up with."
+msgstr ""
+"最後に、私は StackTack をチェックし、ユーザのイベントを見直した。彼らはいくつ"
+"かのスナップショットを作ったり消したりしていた－ありそうな操作ではあるが。タ"
+"イムスタンプが一致しないとはいえ、彼らがインスタンスを起動して、その後スナッ"
+"プショットを削除し、それが何故か /var/lib/nova/instances/_base から削除された"
+"というのが私の結論だった。大した意味は無かったが、それがその時私が得た全て"
+"だった。"
 
 msgid "Finally, mount the disk:"
 msgstr "最後に、ディスクをマウントします。"
@@ -2991,6 +3247,13 @@ msgstr ""
 "をクリックします。削除するには <guiicon>-</guiicon> をクリックします。"
 
 msgid ""
+"From these tables, you can see that a floating IP is technically never "
+"directly related to an instance; it must always go through a fixed IP."
+msgstr ""
+"これらのテーブルから、Floating IPが技術的には直接インスタンスにひも付けられて"
+"おらず、固定IP経由であることがわかります。"
+
+msgid ""
 "Frontend web for API requests, the scheduler for choosing which compute node "
 "to boot an instance on, Identity services, and the dashboard"
 msgstr ""
@@ -3127,6 +3390,19 @@ msgstr ""
 "ストが拒否されていることがわかります。"
 
 msgid ""
+"Here, the external server received the ping request and sent a ping reply. "
+"On the compute node, you can see that both the ping and ping reply "
+"successfully passed through. You might also see duplicate packets on the "
+"compute node, as seen above, because <literal>tcpdump</literal> captured the "
+"packet on both the bridge and outgoing interface."
+msgstr ""
+"外部サーバーはpingリクエストを受信し、pingリプライを送信しています。コン"
+"ピュートノード上では、pingとpingリプライがそれぞれ成功していることがわかりま"
+"す。また、見ての通り、コンピュートノード上ではパケットが重複していることもわ"
+"かるでしょう。なぜなら<literal>tcpdump</literal>はブリッジと外向けインター"
+"フェイスの両方でパケットをキャプチャするからです。"
+
+msgid ""
 "Here, two floating IPs are available. The first has been allocated to a "
 "project, while the other is unallocated."
 msgstr ""
@@ -3251,6 +3527,15 @@ msgstr "Hyper-V"
 
 msgid "Hypervisor"
 msgstr "ハイパーバイザー"
+
+msgid ""
+"I checked Glance and noticed that this image was a snapshot that the user "
+"created. At least that was good newsthis user would have been the only user "
+"affected."
+msgstr ""
+"私は Glance をチェックし、問題のイメージがそのユーザの作成したスナップショッ"
+"トであることに注目した。最終的に、それはグッドニュースだった。このユーザが影"
+"響を受けた唯一のユーザだった。"
 
 msgid ""
 "I logged into the cloud controller and was able to both <placeholder-1/> and "
@@ -3397,6 +3682,19 @@ msgstr ""
 "ラーがそれらを扱えるよう、CPU負荷を確認してください。"
 
 msgid ""
+"If restarting the dnsmasq process doesn't fix the issue, you might need to "
+"use <code>tcpdump</code> to look at the packets to trace where the failure "
+"is. The DNS server listens on UDP port 53. You should see the DNS request on "
+"the bridge (such as, br100) of your compute node. Let's say you start "
+"listening with <code>tcpdump</code> on the compute node:"
+msgstr ""
+"dnsmasqの再起動でも問題が解決しないときは、<code>tcpdump</code>で問題がある場"
+"所のパケットトレースを行う必要があるでしょう。DNSサーバーはUDPポート53番で"
+"リッスンします。あなたのコンピュートノードのブリッジ(br100など)上でDNSリクエ"
+"ストをチェックしてください。コンピュートノード上にて、<code>tcpdump</code>で"
+"リッスンを開始すると、"
+
+msgid ""
 "If the instance fails to resolve the hostname, you have a DNS problem. For "
 "example:"
 msgstr ""
@@ -3413,6 +3711,21 @@ msgstr ""
 "linkend=\"fig1-2\"/> に移行することができます。このレイアウトでは、環境内の全"
 "インスタンスに 10G のネットワークリンクを2 つ提供するだけでなく、ストレージ層"
 "にさらなるネットワーク帯域幅を提供し、パフォーマンスを最大化します。"
+
+msgid ""
+"If the problem does not seem to be related to dnsmasq itself, at this point "
+"use <code>tcpdump</code> on the interfaces to determine where the packets "
+"are getting lost."
+msgstr ""
+"もし問題がdnsmasqと関係しないようであれば、<code>tcpdump</code>を使ってパケッ"
+"トロスがないか確認してください。"
+
+msgid ""
+"If there's a suspicious-looking dnsmasq log message, take a look at the "
+"command-line arguments to the dnsmasq processes to see if they look correct:"
+msgstr ""
+"もしdnsmasqのログメッセージで疑わしいものがあれば、コマンドラインにてdnsmasq"
+"が正しく動いているか確認してください。"
 
 msgid ""
 "If this is the first time you are deploying a cloud infrastructure in your "
@@ -3484,6 +3797,19 @@ msgstr ""
 "いるディスクは一時的です。つまり、(ユーザー視点から) 仮想マシンが終了されると"
 "このストレージは効率的に表示がなくなります。<indexterm class=\"singular"
 "\"><primary>ストレージ</primary><secondary>一時</secondary></indexterm>"
+
+msgid ""
+"If you do not see the <literal>DHCPDISCOVER</literal>, a problem exists with "
+"the packet getting from the instance to the machine running dnsmasq. If you "
+"see all of the preceding output and your instances are still not able to "
+"obtain IP addresses, then the packet is able to get from the instance to the "
+"host running dnsmasq, but it is not able to make the return trip."
+msgstr ""
+"もし<literal>DHCPDISCOVER</literal>が見つからなければ、dnsmasqが動いているマ"
+"シンがインスタンスからパケットを受け取れない何らかの問題があります。もし上記"
+"の出力が全て確認でき、かついまだにIPアドレスを取得できないのであれば、パケッ"
+"トはインスタンスからdnsmasq稼働マシンに到達していますが、その復路に問題があり"
+"ます。"
 
 msgid ""
 "If you have an OpenStack Object Storage service, we recommend using this as "
@@ -3589,6 +3915,40 @@ msgstr ""
 "もしあなたがネットワークの問題に直面した場合、まず最初にするとよいのは、イン"
 "ターフェイスがUPになっているかを確認することです。例えば、"
 
+msgid ""
+"If you're running the Cirros image, it doesn't have the \"host\" program "
+"installed, in which case you can use ping to try to access a machine by "
+"hostname to see whether it resolves. If DNS is working, the first line of "
+"ping would be:"
+msgstr ""
+"もしあなたがCirrosイメージを使っているのであれば、\"host\"プログラムはインス"
+"トールされていません。その場合はpingを使い、ホスト名が解決できているか判断で"
+"きます。もしDNSが動いていれば、ping結果の先頭行はこうなるはずです。"
+
+msgid ""
+"If your instance failed to obtain an IP through DHCP, some messages should "
+"appear in the console. For example, for the Cirros image, you see output "
+"that looks like the following:"
+msgstr ""
+"もしインスタンスがDHCPからのIP取得に失敗していれば、いくつかのメッセージがコ"
+"ンソールで確認できるはずです。例えば、Cirrosイメージでは、以下のような出力に"
+"なります。"
+
+msgid ""
+"If your instances are still not able to obtain IP addresses, the next thing "
+"to check is whether dnsmasq is seeing the DHCP requests from the instance. "
+"On the machine that is running the dnsmasq process, which is the compute "
+"host if running in multi-host mode, look at <literal>/var/log/syslog</"
+"literal> to see the dnsmasq output. If dnsmasq is seeing the request "
+"properly and handing out an IP, the output looks like this:"
+msgstr ""
+"もしまだインスタンスがIPアドレスを取得できない場合、次はdnsmasqがインスタンス"
+"からのDHCPリクエストを見えているか確認します。dnsmasqプロセスが動いているマシ"
+"ンで、<literal>/var/log/syslog</literal>を参照し、dnsmasqの出力を確認します。"
+"なお、マルチホストモードで動作している場合は、dnsmasqプロセスはコンピュート"
+"ノードで動作します。もしdnsmasqがリクエストを正しく受け取り、処理していれば、"
+"以下のような出力になります。"
+
 msgid "Image Catalog and Delivery"
 msgstr "イメージカタログと配布"
 
@@ -3686,6 +4046,24 @@ msgstr ""
 "さらに、リモート電源管理装置も検討してください。通常、IPMI はサーバーの電源状"
 "態を制御しますが、サーバーが接続されている PDU にリモートアクセスできれば、す"
 "べてが手詰まりに見えるような状況で非常に役に立ちます。"
+
+msgid ""
+"In an OpenStack cloud, the dnsmasq process acts as the DNS server for the "
+"instances in addition to acting as the DHCP server. A misbehaving dnsmasq "
+"process may be the source of DNS-related issues inside the instance. As "
+"mentioned in the previous section, the simplest way to rule out a "
+"misbehaving dnsmasq process is to kill all the dnsmasq processes on the "
+"machine and restart <literal>nova-network</literal>. However, be aware that "
+"this command affects everyone running instances on this node, including "
+"tenants that have not seen the issue. As a last resort, as root:"
+msgstr ""
+"OpenStackクラウドにおいて、dnsmasqプロセスはDHCPサーバに加えてDNSサーバーの役"
+"割を担っています。dnsmasqの不具合は、インスタンスにおけるDNS関連問題の原因と"
+"なりえます。前節で述べたように、dnsmasqの不具合を解決するもっともシンプルな方"
+"法は、マシン上のすべてのdnsmasqプロセスをkillし、<literal>nova-network</"
+"literal>を再起動することです。しかしながら、このコマンドは該当ノード上で動い"
+"ているすべてのインスタンス、特に問題がないテナントにも影響します。最終手段と"
+"して、rootで以下を実行します。"
 
 msgid ""
 "In general, the questions you should ask when selecting storage are as "
@@ -4024,6 +4402,9 @@ msgstr "2012年6月22日"
 msgid "Jun 6, 2013"
 msgstr "2013年6月6日"
 
+msgid "Jun 9, 2014"
+msgstr "2014年6月9日"
+
 msgid "Juno"
 msgstr "Juno"
 
@@ -4108,6 +4489,9 @@ msgstr ""
 msgid "List the currently set quota values for a tenant, as follows:"
 msgstr "テナントの現在のクォータ値を一覧表示します。"
 
+msgid "Live Migration back end"
+msgstr "ライブマイグレーションのバックエンド"
+
 msgid ""
 "Live migration can also be done with nonshared storage, using a feature "
 "known as <emphasis>KVM live block migration</emphasis>. While an earlier "
@@ -4129,6 +4513,9 @@ msgstr ""
 
 msgid "Log in as an administrative user."
 msgstr "管理ユーザーとしてログインします。"
+
+msgid "Log location"
+msgstr "ログの場所"
 
 msgid "Logging"
 msgstr "ロギング"
@@ -4180,6 +4567,17 @@ msgstr "Lustre"
 msgid "MIT CSAIL"
 msgstr "MIT CSAIL"
 
+msgid ""
+"MTU is maximum transmission unit. It specifies the maximum number of bytes "
+"that the interface accepts for each packet. If two interfaces have two "
+"different MTUs, bytes might get chopped off and weird things happensuch as "
+"random session lockups."
+msgstr ""
+"MTU とは最大転送単位（Maximum Transmission Unit）である。これは、各パケットに"
+"対してそのインターフェースが受け取る最大バイト数を指定する。もし２つのイン"
+"ターフェースが異なる MTU であった場合、バイトは尻切れトンボとなって変なことが"
+"起こり始める…例えばセッションのランダムなロックアップとか。"
+
 msgid "Maintenance, Failures, and Debugging"
 msgstr "メンテナンス、故障およびデバッグ"
 
@@ -4218,11 +4616,17 @@ msgstr ""
 "理にかなっています。コンピュートホストでは、CPU や RAM を、ストレージノードで"
 "はブロックストレージを多く使用します。"
 
+msgid "Mar 20, 2015"
+msgstr "2015年3月20日"
+
 msgid "May 9, 2013"
 msgstr "2013年5月9日"
 
 msgid "Memory"
 msgstr "メモリ"
+
+msgid "Memory usage"
+msgstr "メモリー使用量"
 
 msgid "Memory: 128 GB"
 msgstr "メモリー: 128 GB"
@@ -4244,6 +4648,9 @@ msgstr "メッセージキュー"
 
 msgid "Message queue services"
 msgstr "メッセージキューサービス"
+
+msgid "Messaging as a Service (Zaqar)"
+msgstr "Messaging as a Service (Zaqar)"
 
 msgid "Metadata items"
 msgstr "メタデータ項目"
@@ -4388,6 +4795,12 @@ msgstr "名前"
 msgid "NeCTAR"
 msgstr "NeCTAR"
 
+msgid "NeCTAR website"
+msgstr "NeCTAR Web サイト"
+
+msgid "NeCTAR-RC GitHub"
+msgstr "NeCTAR-RC GitHub"
+
 msgid "NetApp"
 msgstr "NetApp"
 
@@ -4402,6 +4815,9 @@ msgstr "ネットワークの考慮事項"
 
 msgid "Network Design"
 msgstr "ネットワーク設計"
+
+msgid "Network I/O"
+msgstr "ネットワーク I/O"
 
 msgid "Network Inspection"
 msgstr "ネットワークの検査"
@@ -4431,6 +4847,9 @@ msgid "Network manager"
 msgstr "ネットワークマネージャー"
 
 msgid "Network node"
+msgstr "ネットワークノード"
+
+msgid "Network nodes"
 msgstr "ネットワークノード"
 
 msgid ""
@@ -4496,6 +4915,9 @@ msgstr "NewValue"
 msgid "Nexenta"
 msgstr "Nexenta"
 
+msgid "Next, find the fixed IP entry for that UUID:"
+msgstr "次に、そのUUIDから固定IPのエントリーを探します。"
+
 msgid "Next, migrate them one by one:"
 msgstr "次に、それらを一つずつマイグレーションします。"
 
@@ -4523,6 +4945,9 @@ msgstr "ノードの接続性"
 
 msgid "Node diagrams"
 msgstr "ノードの図"
+
+msgid "Node type"
+msgstr "ノード種別"
 
 msgid "Node types"
 msgstr "ノードのタイプ"
@@ -4673,11 +5098,20 @@ msgstr "テナント ID を取得します。"
 msgid "Oct 12, 2012"
 msgstr "2012年10月12日"
 
+msgid "Oct 16, 2014"
+msgstr "2014年10月16日"
+
 msgid "Oct 17, 2013"
 msgstr "2013年10月17日"
 
+msgid "Oct 2, 2014"
+msgstr "2014年10月2日"
+
 msgid "Oct 21, 2010"
 msgstr "2010年10月21日"
+
+msgid "Oct, 2015"
+msgstr "2012年10月"
 
 msgid "Off Compute Node Storage—Shared File System"
 msgstr "コンピュートノード外のストレージ （共有ファイルシステム）"
@@ -5064,6 +5498,30 @@ msgstr ""
 "\"singular\"><primary>DNS (Domain Name Serverサービス、システム)</"
 "primary><secondary>DNS サービスの選択</secondary></indexterm>"
 
+msgid ""
+"OpenStack follows a six month release cycle, typically releasing in April/"
+"May and October/November each year. At the start of each cycle, the "
+"community gathers in a single location for a design summit. At the summit, "
+"the features for the coming releases are discussed, prioritized, and "
+"planned. <xref linkend=\"release-cycle-diagram\"/> shows an example release "
+"cycle, with dates showing milestone releases, code freeze, and string freeze "
+"dates, along with an example of when the summit occurs. Milestones are "
+"interim releases within the cycle that are available as packages for "
+"download and testing. Code freeze is putting a stop to adding new features "
+"to the release. String freeze is putting a stop to changing any strings "
+"within the source code."
+msgstr ""
+"OpenStack は6ヶ月のリリースサイクルを取っており、通常は4/5月と10/11月にリリー"
+"スが行われます。各リリースサイクルの最初に、OpenStack コミュニティは一ヶ所に"
+"集まりデザインサミットを行います。サミットでは、次のリリースでの機能が議論さ"
+"れ、優先度付けと計画が行われます。<xref linkend=\"release-cycle-diagram\"/> "
+"は、リリースサイクルの一例で、サミットが行われて以降のマイルストーンリリー"
+"ス、Code Freeze、String Freeze などが記載されています。マイルストーンはリリー"
+"スサイクル内での中間リリースで、テスト用にパッケージが作成され、ダウンロード"
+"できるようになります。 Code Freeze では、そのリリースに向けての新機能の追加が"
+"凍結されます。String Freeze は、ソースコード内の文字列の変更が凍結されること"
+"を意味します。"
+
 msgid "OpenStack internal network"
 msgstr "OpenStack 内部ネットワーク"
 
@@ -5101,8 +5559,14 @@ msgstr ""
 "indexterm><indexterm class=\"singular\"><primary>クラウドコントローラー</"
 "primary><secondary>コンセプト</secondary></indexterm>"
 
+msgid "OpenStack log locations"
+msgstr "OpenStack のログの場所"
+
 msgid "OpenStack modules are one of the following types:"
 msgstr "OpenStack のモジュールは、以下の種別のいずれかです。"
+
+msgid "OpenStack on OpenStack (TripleO)"
+msgstr "OpenStack on OpenStack (TripleO)"
 
 msgid "OpenStack package repository"
 msgstr "OpenStack パッケージリポジトリ"
@@ -5138,6 +5602,25 @@ msgstr "OpenStack リリース"
 msgid "OpenStack segregation methods"
 msgstr "OpenStack 分離の手法"
 
+msgid ""
+"OpenStack services use the standard logging levels, at increasing severity: "
+"DEBUG, INFO, AUDIT, WARNING, ERROR, CRITICAL, and TRACE. That is, messages "
+"only appear in the logs if they are more \"severe\" than the particular log "
+"level, with DEBUG allowing all log statements through. For example, TRACE is "
+"logged only if the software has a stack trace, while INFO is logged for "
+"every message including those that are only for information.<indexterm class="
+"\"singular\"><primary>logging/monitoring</primary><secondary>logging levels</"
+"secondary></indexterm>"
+msgstr ""
+"OpenStack サービスは標準のロギングレベルを利用しています。重要度のレベルは次"
+"の通りです(重要度の低い順): DEBUG、INFO、AUDIT、WARNING、ERROR、CRTICAL、"
+"TRACE。特定のログレベルより「重要」な場合のみメッセージはログに出力されます。"
+"ログレベルDEBUGの場合、すべてのログが出力されます。TRACEの場合、ソフトウェア"
+"がスタックトレースを持つ場合にのみログに出力されます。INFOの場合、情報のみの"
+"メッセージも含めて出力されます。.<indexterm class=\"singular"
+"\"><primary>logging/monitoring</primary><secondary>logging levels</"
+"secondary></indexterm>"
+
 msgid "OpenStack storage"
 msgstr "OpenStack ストレージ"
 
@@ -5151,6 +5634,12 @@ msgstr ""
 "言った適用するための数多くの検討事項があります。<indexterm class=\"singular"
 "\"><primary>ネットワークデザイン</primary><secondary>ネットワークサービス</"
 "secondary></indexterm>"
+
+msgid "OpenStack-Specific Resources"
+msgstr "OpenStack 固有のリソース"
+
+msgid "OpenStack.org case study"
+msgstr "OpenStack.org ケーススタディー"
 
 msgid "Operations"
 msgstr "運用"
@@ -5194,9 +5683,6 @@ msgstr "オーバーヘッド"
 
 msgid "Overview"
 msgstr "概要"
-
-msgid "PAM (Pluggable Authentication Module)"
-msgstr "PAM (Pluggable Authentication Module)"
 
 msgid "PC"
 msgstr "PC"
@@ -5479,11 +5965,23 @@ msgstr "リージョン"
 msgid "Relatively simple to deploy."
 msgstr "比較的シンプルな構成"
 
+msgid "Release cycle diagram"
+msgstr "リリースサイクル図"
+
 msgid "Releases"
 msgstr "リリース番号"
 
 msgid "Remote Management"
 msgstr "リモート管理"
+
+msgid "Remove all packages."
+msgstr "すべてのパッケージを削除します。"
+
+msgid "Remove databases."
+msgstr "データベースを削除します。"
+
+msgid "Remove remaining files."
+msgstr "残っているファイルを削除します。"
 
 msgid ""
 "Replace <replaceable>NEUTRON_DBPASS</replaceable> with the password you "
@@ -5709,6 +6207,9 @@ msgstr "セキュリティグループルール"
 msgid "Security groups"
 msgstr "セキュリティグループ"
 
+msgid "Security-supported"
+msgstr "セキュリティサポート"
+
 msgid "See <xref linkend=\"node_compute-diagram\"/>."
 msgstr "<xref linkend=\"node_compute-diagram\"/> を参照してください。"
 
@@ -5731,6 +6232,9 @@ msgstr ""
 msgid "Sep 22, 2011"
 msgstr "2011年9月22日"
 
+msgid "Sep 22, 2014"
+msgstr "2014年9月22日"
+
 msgid "Sep 27, 2012"
 msgstr "2012年9月27日"
 
@@ -5742,6 +6246,9 @@ msgstr "シリーズ"
 
 msgid "Seriously, Google."
 msgstr "マジ？Google。"
+
+msgid "Server load"
+msgstr "サーバー負荷"
 
 msgid "Servers and Services"
 msgstr "サーバーとサービス"
@@ -5760,6 +6267,13 @@ msgstr "コンピュートサービスのクォータの設定"
 
 msgid "Set Image Quotas"
 msgstr "イメージクォータの設定"
+
+msgid ""
+"Several minutes after <literal>nova-network</literal> is restarted, you "
+"should see new dnsmasq processes running:"
+msgstr ""
+"<literal>nova-network</literal>の再起動から数分後、新たなdnsmasqプロセスが動"
+"いていることが確認できるでしょう。"
 
 msgid ""
 "Several options are available for MySQL load balancing, and the supported "
@@ -6772,6 +7286,9 @@ msgstr ""
 msgid "The output looks like the following:"
 msgstr "出力は以下のようになります。"
 
+msgid "The output looks something like the following:"
+msgstr "出力は以下のようになります。"
+
 msgid ""
 "The output shows that there are five compute nodes and one cloud controller. "
 "You see a smiley face, such as <code>:-)</code>, which indicates that the "
@@ -6950,6 +7467,15 @@ msgstr ""
 "ティションに分割することです。"
 
 msgid ""
+"The simplest way to identify that this is the problem with your instance is "
+"to look at the console output of your instance. If DHCP failed, you can "
+"retrieve the console log by doing:"
+msgstr ""
+"もっともシンプルにこの問題を特定する方法は、インスタンス上のコンソール出力を"
+"確認することです。もしDHCPが正しく動いていなければ、下記のようにコンソールロ"
+"グを参照してください。"
+
+msgid ""
 "The starting point for most is the core count of your cloud. By applying "
 "some ratios, you can gather information about: <placeholder-1/> You can use "
 "these ratios to determine how much additional infrastructure you need to "
@@ -7021,6 +7547,13 @@ msgstr ""
 
 msgid "Then start the <code>nova-compute</code> service:"
 msgstr "そして <code>nova-compute</code> サービスを起動します。"
+
+msgid ""
+"Then, if you use SSH to log into your instance and try <code>ping openstack."
+"org</code>, you should see something like:"
+msgstr ""
+"インスタンスに SSH ログインして、<code>ping openstack.org</code> を試すと、以"
+"下のようなメッセージが確認できるでしょう。"
 
 msgid ""
 "There are also several <literal>*-manage</literal> command-line tools. These "
@@ -7193,6 +7726,17 @@ msgid ""
 "This book provides information about designing and operating OpenStack "
 "clouds."
 msgstr "本書は OpenStack クラウドの設計および運用に関する情報を提供します。"
+
+msgid ""
+"This bug report was the key to everything: <link href=\"https://bugs."
+"launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978\"> KVM images lose "
+"connectivity with bridged network</link> (https://bugs.launchpad.net/ubuntu/"
+"+source/qemu-kvm/+bug/997978)"
+msgstr ""
+"このバグ報告は、すべてに対して重要です: <link title=\"DAIR project\" href="
+"\"https://bugs.launchpad.net/ubuntu/+source/qemu-kvm/+bug/997978\"> KVMイメー"
+"ジがブリッジネットワークで接続を失う</link> (https://bugs.launchpad.net/"
+"ubuntu/+source/qemu-kvm/+bug/997978)"
 
 msgid ""
 "This can be useful when booting from volume because a new volume can be "
@@ -7438,6 +7982,13 @@ msgstr ""
 "要があるのは、Compute ノードと OpenStack Networking ノードのみです。"
 
 msgid ""
+"This is an ongoing and hot topic in networking circles especially with the "
+"raise of virtualization and virtual switches."
+msgstr ""
+"これはネットワーク業界で進行中で話題のトピックである（特に仮想マシンと仮想ス"
+"イッチで発生する）。"
+
+msgid ""
 "This is the first half of the equation. To get flavor types that are "
 "guaranteed a particular ratio, you must set the <parameter>extra_specs</"
 "parameter> in the flavor type to the key-value pair you want to match in the "
@@ -7478,6 +8029,16 @@ msgstr ""
 "全ではありません。その他のオープンソースソリューションも存在します "
 "(MooseFS)。ユーザーの所属組織では、すでにユーザーが使用できるように、ファイル"
 "レベルの共有ストレージソリューションがデプロイされている可能性があります。"
+
+msgid ""
+"This may be a dnsmasq and/or <literal>nova-network</literal> related issue. "
+"(For the preceding example, the problem happened to be that dnsmasq did not "
+"have any more IP addresses to give away because there were no more fixed IPs "
+"available in the OpenStack Compute database.)"
+msgstr ""
+"これはdnsmasqの、もしくはdnsmasqと<literal>nova-network</literal>両方の問題で"
+"す。(例えば上記では、OpenStack Compute データベース上に利用可能な固定IPがな"
+"く、dnsmasqがIPアドレスを払い出せない問題が発生しています)"
 
 msgid "This might print the error and cause of the problem.<placeholder-1/>"
 msgstr ""
@@ -7972,6 +8533,9 @@ msgstr ""
 msgid "Trending"
 msgstr "トレンド"
 
+msgid "Troubleshooting Open vSwitch"
+msgstr "Open vSwitch のトラブルシューティング"
+
 msgid ""
 "Try executing the <code>nova reboot</code> command again. You should see an "
 "error message about why the instance was not able to boot"
@@ -8006,6 +8570,9 @@ msgstr ""
 "Ubuntu 12.04はRabiitMQのバージョン2.7.1を55672番ポートを使うようにインストー"
 "ルします。RabbitMQバージョン3.0以降では15672が利用されます。Ubuntuマシン上で"
 "どのバージョンのRabbitMQが実行されているかは次のように確認できます。"
+
+msgid "Under Development"
+msgstr "開発中"
 
 msgid "Under Identity Panel, click <guilabel>Projects</guilabel>."
 msgstr "認証パネルの <guilabel>プロジェクト</guilabel> をクリックします。"
@@ -8118,6 +8685,14 @@ msgstr "アップグレード"
 msgid "Upstream OpenStack"
 msgstr "OpenStack コミュニティ"
 
+msgid ""
+"Use <literal>openstack-nova-network</literal> on RHEL/CentOS/Fedora but "
+"<literal>nova-network</literal> on Ubuntu/Debian."
+msgstr ""
+"RHEL/CentOS/Fedora の場合は <literal>openstack-nova-network</literal> を使用"
+"しますが、Ubuntu/Debian の場合は <literal>nova-network</literal> を使用しま"
+"す。"
+
 msgid "Use Cases"
 msgstr "事例"
 
@@ -8160,6 +8735,17 @@ msgstr "ユーザー名"
 
 msgid "Users and Projects"
 msgstr "ユーザーとプロジェクト"
+
+msgid ""
+"Users being able to retrieve console logs from running instances is a boon "
+"for supportmany times they can figure out what's going on inside their "
+"instance and fix what's going on without bothering you. Unfortunately, "
+"sometimes overzealous logging of failures can cause problems of its own."
+msgstr ""
+"稼働中のインスタンスからコンソールログを取得可能なユーザはサポートの恩恵とな"
+"る（インスタンスの中で何が起こっているのか何度も確認できるし、あなたが悩まず"
+"に問題を修正することができる）。不幸なことに、過剰な失敗の記録は時々、自らの"
+"問題となり得る。"
 
 msgid ""
 "Users must be associated with at least one project, though they may belong "
@@ -8546,6 +9132,15 @@ msgid "What is the platter count you can achieve?"
 msgstr "実現したいプラッター数（ディスク容量）はどれくらいか？"
 
 msgid ""
+"When debugging DNS issues, start by making sure that the host where the "
+"dnsmasq process for that instance runs is able to correctly resolve. If the "
+"host cannot resolve, then the instances won't be able to either."
+msgstr ""
+"DNS問題のデバッグをするとき、そのインスタンスのdnsmasqが動いているホストが、"
+"名前解決できるかを確認することから始めます。もしホストができないのであれば、"
+"インスタンスも同様でしょう。"
+
+msgid ""
 "When designing your cluster, you must consider durability and availability. "
 "Understand that the predominant source of these is the spread and placement "
 "of your data, rather than the reliability of the hardware. Consider the "
@@ -8650,6 +9245,18 @@ msgstr ""
 
 msgid "Where Are the Logs?"
 msgstr "ログはどこにあるのか？"
+
+msgid ""
+"Where do you even begin troubleshooting something like this? An instance "
+"just randomly locks when a command is issued. Is it the image? Nopeit "
+"happens on all images. Is it the compute node? Nopeall nodes. Is the "
+"instance locked up? No! New SSH connections work just fine!"
+msgstr ""
+"どこかであなたはこのような障害調査を行ったことがあるだろうか？インスタンスは"
+"コマンドを打つ度に全くランダムにロックアップしてしまう。元になったイメージの"
+"問題か？No－全てのイメージで同じ問題が発生する。コンピュートノードの問題か？"
+"No－全てのノードで発生する。インスタンスはロックアップしたのか？No！新しいSSH"
+"接続は問題なく機能する！"
 
 msgid ""
 "Whereas traditional applications required larger hardware to scale "
@@ -8997,6 +9604,9 @@ msgstr ""
 "manage</literal><phrase role=\"keep-together\">command</phrase> を使用するこ"
 "とができます: <placeholder-1/>"
 
+msgid "You can now get the related floating IP entry:"
+msgstr "関連する Floating IP のエントリーが見つかります。"
+
 msgid ""
 "You can now optionally migrate the instances back to their original compute "
 "node."
@@ -9023,6 +9633,9 @@ msgid ""
 "You can obtain further statistics by looking for the number of successful "
 "requests:"
 msgstr "成功したリクエストを検索することで、更なる情報を取得できます。"
+
+msgid "You can optionally also deallocate the IP from the user's pool:"
+msgstr "また、ユーザプールからIPを開放することもできます。"
 
 msgid ""
 "You can save resources by looking at the best fit for the hardware you have "
@@ -9233,6 +9846,15 @@ msgstr ""
 "サービスごとに１コア割り当ててコントローラーをサイジングする必要があります。"
 
 msgid ""
+"You should be doing sanity checks on the interfaces using command such as "
+"<code>ip a</code> and <code>brctl show</code> to ensure that the interfaces "
+"are actually up and configured the way that you think that they are."
+msgstr ""
+"また、<code>ip a</code> や <code>brctl show</code> などのコマンドを使って、イ"
+"ンターフェイスが実際にUPしているか、あなたが考えたとおりに設定されているか、"
+"正当性を検査をすべきです。"
+
+msgid ""
 "Your credentials are a combination of username, password, and tenant "
 "(project). You can extract these values from the <code>openrc.sh</code> "
 "discussed above. The token allows you to interact with your other service "
@@ -9274,6 +9896,9 @@ msgstr "cinder-manage"
 msgid "cinder-scheduler"
 msgstr "cinder-scheduler"
 
+msgid "cinder-volume"
+msgstr "cinder-volume"
+
 msgid "controller"
 msgstr "controller"
 
@@ -9309,6 +9934,9 @@ msgstr "fixed_ips"
 
 msgid "floating-ips"
 msgstr "floating-ips"
+
+msgid "floating_ips"
+msgstr "floating_ips"
 
 msgid "gigabytes"
 msgstr "gigabytes"
@@ -9376,6 +10004,9 @@ msgstr "key"
 msgid "key-pairs"
 msgstr "key-pairs"
 
+msgid "keystone-*"
+msgstr "keystone-*"
+
 msgid "keystone-manage"
 msgstr "keystone-manage"
 
@@ -9403,8 +10034,14 @@ msgstr "m1.xlarge"
 msgid "metadata-items"
 msgstr "metadata-items"
 
+msgid "misc (swift, dnsmasq)"
+msgstr "その他 (swift, dnsmasq)"
+
 msgid "multi-host*"
 msgstr "マルチホスト*"
+
+msgid "neutron-*"
+msgstr "neutron-*"
 
 msgid "nova host-list (os-hosts)"
 msgstr "nova host-list (os-hosts)"
