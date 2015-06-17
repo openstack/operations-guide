@@ -121,7 +121,7 @@
 
       <listitem>
         <para>Offers each service's REST API access, where the API endpoint
-        catalog is managed by the Identity Service</para>
+        catalog is managed by the Identity service</para>
       </listitem>
     </varlistentry>
   </variablelist>
@@ -321,7 +321,7 @@
           <td><para>This deployment felt that the spare I/O on the Object
           Storage proxy server was sufficient and that the Image Delivery
           portion of glance benefited from being on physical hardware and
-          having good connectivity to the Object Storage backend it was
+          having good connectivity to the Object Storage back end it was
           using.</para></td>
         </tr>
 
@@ -587,7 +587,7 @@
     <para>The OpenStack Image service consists of two parts:
     <code>glance-api</code> and <code>glance-registry</code>. The former is
     responsible for the delivery of images; the compute node uses it to
-    download images from the backend. The latter maintains the metadata
+    download images from the back end. The latter maintains the metadata
     information associated with virtual machine images and requires a
     database.<indexterm class="singular">
         <primary>glance</primary>
@@ -612,7 +612,7 @@
       </indexterm></para>
 
     <para>The <code>glance-api</code> part is an abstraction layer that allows
-    a choice of backend. Currently, it supports:</para>
+    a choice of back end. Currently, it supports:</para>
 
     <variablelist>
       <varlistentry>
@@ -705,22 +705,22 @@
     group. Resources quotas, such as the number of cores that can be used,
     disk space, and so on, are associated with a project.</para>
 
-    <para>The OpenStack Identity Service (keystone) is the point that provides
+    <para>OpenStack Identity is the service that provides
     the authentication decisions and user attribute information, which is then
     used by the other OpenStack services to perform authorization. Policy is
     set in the <filename>policy.json</filename> file. For <phrase
     role="keep-together">information</phrase> on how to configure these, see
     <xref linkend="projects_users" />.<indexterm class="singular">
-        <primary>Identity Service</primary>
+        <primary>Identity</primary>
 
         <secondary>authentication decisions</secondary>
       </indexterm><indexterm class="singular">
-        <primary>Identity Service</primary>
+        <primary>Identity</primary>
 
         <secondary>plug-in support</secondary>
       </indexterm></para>
 
-    <para>The Identity Service supports different plug-ins for authentication
+    <para>OpenStack Identity supports different plug-ins for authentication
     decisions and identity storage. Examples of these plug-ins include:</para>
 
     <itemizedlist role="compact">
@@ -752,7 +752,7 @@
 
     <para>Because the cloud controller handles so many different services, it
     must be able to handle the amount of traffic that hits it. For example, if
-    you choose to host the OpenStack Imaging Service on the cloud controller,
+    you choose to host the OpenStack Image service on the cloud controller,
     the cloud controller should be able to support the transferring of the
     images at an acceptable speed.<indexterm class="singular">
         <primary>cloud controllers</primary>

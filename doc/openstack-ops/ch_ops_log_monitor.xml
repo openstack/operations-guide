@@ -209,7 +209,7 @@
 2013-02-25 21:05:51 17409 TRACE cinder</computeroutput></screen>
 
     <para>In this example, <literal>cinder-volumes</literal> failed to start
-    and has provided a stack trace, since its volume backend has been unable
+    and has provided a stack trace, since its volume back end has been unable
     to set up the storage volume—probably because the LVM volume that is
     expected from the configuration does not exist.</para>
 
@@ -825,7 +825,7 @@ notification_driver=messagingv2</programlisting>
 
       <para>But how can you tell whether images are being successfully
       uploaded to the Image service? Maybe the disk that Image service is
-      storing the images on is full or the S3 backend is down. You could
+      storing the images on is full or the S3 back end is down. You could
       naturally check this by doing a quick image upload:</para>
 
       <?hard-pagebreak ?>

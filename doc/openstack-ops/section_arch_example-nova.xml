@@ -142,13 +142,13 @@
           </tr>
 
           <tr>
-            <td><para>Identity Service (keystone) driver</para></td>
+            <td><para>Identity (keystone) driver</para></td>
 
             <td><para>SQL</para></td>
           </tr>
 
           <tr>
-            <td><para>Block Storage Service (cinder) back end</para></td>
+            <td><para>Block Storage (cinder) back end</para></td>
 
             <td><para>LVM/iSCSI</para></td>
           </tr>
@@ -321,8 +321,8 @@
       your cloud will include Object Storage, you can easily add it as a
       back end.</para>
 
-      <para>We chose the <emphasis>SQL back end for the Identity Service
-      (keystone)</emphasis> over others, such as LDAP. This back end is simple
+      <para>We chose the <emphasis>SQL back end for Identity</emphasis>
+      over others, such as LDAP. This back end is simple
       to install and is robust. The authors acknowledge that many
       installations want to bind with existing directory services and caution
       careful understanding of the <link xlink:href="http://docs.openstack.org/havana/config-reference/content/ch_configuring-openstack-identity.html#configuring-keystone-for-ldap-backend"
@@ -331,7 +331,7 @@
 
       <para>Block Storage (cinder) is installed natively on external storage
       nodes and uses the <emphasis>LVM/iSCSI plug-in</emphasis>. Most Block
-      Storage Service plug-ins are tied to particular vendor products and
+      Storage plug-ins are tied to particular vendor products and
       implementations limiting their use to consumers of those hardware
       platforms, but LVM/iSCSI is robust and stable on commodity
       hardware.</para>
@@ -346,15 +346,15 @@
     </section>
 
     <section xml:id="neutron">
-      <title>Why not use the OpenStack Network Service (neutron)?</title>
+      <title>Why not use OpenStack Networking?</title>
 
-      <para>This example architecture does not use the OpenStack Network
-      Service (neutron), because it does not yet support multi-host networking
+      <para>This example architecture does not use OpenStack Networking,
+      because it does not yet support multi-host networking
       and our organizations (university, government) have access to a large
       range of publicly-accessible IPv4 addresses.<indexterm class="singular">
           <primary>legacy networking (nova)</primary>
 
-          <secondary>vs. OpenStack Network Service (neutron)</secondary>
+          <secondary>vs. OpenStack Networking (neutron)</secondary>
         </indexterm></para>
     </section>
 

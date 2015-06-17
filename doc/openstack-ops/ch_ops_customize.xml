@@ -243,7 +243,7 @@ RABBIT_PASSWORD=devstack
 SERVICE_PASSWORD=devstack
 SERVICE_TOKEN=devstack
 
-# OpenStack Identity Service branch
+# OpenStack Identity branch
 KEYSTONE_BRANCH=stable/havana
 
 # OpenStack Compute branch
@@ -255,7 +255,7 @@ CINDER_BRANCH=stable/havana
 # OpenStack Image service branch
 GLANCE_BRANCH=stable/havana
 
-# OpenStack Dashboard branch
+# OpenStack dashboard branch
 HORIZON_BRANCH=stable/havana
 
 # OpenStack Object Storage branch

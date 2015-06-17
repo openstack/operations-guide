@@ -101,19 +101,19 @@
           </tr>
 
           <tr>
-            <td><para>Image service (glance) backend</para></td>
+            <td><para>Image service back end</para></td>
 
             <td><para>GlusterFS</para></td>
           </tr>
 
           <tr>
-            <td><para>Identity Service (keystone) driver</para></td>
+            <td><para>Identity driver</para></td>
 
             <td><para>SQL</para></td>
           </tr>
 
           <tr>
-            <td><para>Block Storage Service (cinder) backend</para></td>
+            <td><para>Block Storage back end</para></td>
 
             <td><para>GlusterFS</para></td>
           </tr>
@@ -176,7 +176,7 @@
           <term>MySQL</term>
 
           <listitem>
-            <para>MySQL is used as the database backend for all databases in
+            <para>MySQL is used as the database back end for all databases in
             the OpenStack environment. MySQL is the supported database of
             choice for Red Hat Enterprise Linux (and included in
             distribution); the database is open source, scalable, and handles
@@ -863,7 +863,7 @@
             role="keep-together"><literal>qpid_heartbeat = </literal><phrase
             role="keep-together"><literal>10</literal>,</phrase></phrase><phrase
             role="keep-together"> configured to use a Gluster</phrase> volume
-            from the storage layer as the backend for Block Storage, using the
+            from the storage layer as the back end for Block Storage, using the
             Gluster native client.</td>
 
             <td>Block Storage API, scheduler, and volume services are run on all

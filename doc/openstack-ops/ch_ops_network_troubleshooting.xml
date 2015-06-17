@@ -145,9 +145,9 @@
     <title>Visualizing OpenStack Networking Service Traffic in the
     Cloud</title>
 
-    <para>The OpenStack Networking Service, neutron, has many more degrees of
+    <para>OpenStack Networking has many more degrees of
     freedom than <literal>nova-network</literal> does because of its pluggable
-    backend. It can be configured with open source or vendor proprietary
+    back end. It can be configured with open source or vendor proprietary
     plug-ins that control software defined networking (SDN) hardware or
     plug-ins that use Linux native facilities on your hosts, such as Open
     vSwitch or Linux Bridge.<indexterm class="startofrange" xml:id="Topen">
@@ -164,8 +164,8 @@
     various components involved however they are plumbed together in your
     environment.</para>
 
-    <para>For this example, we will use the Open vSwitch (OVS) backend. Other
-    backend plug-ins will have very different flow paths. OVS is the most
+    <para>For this example, we will use the Open vSwitch (OVS) back end. Other
+    back-end plug-ins will have very different flow paths. OVS is the most
     popularly deployed network driver, according to the October 2013 OpenStack
     User Survey, with 50 percent more sites using it than the second place
     Linux Bridge driver. We'll describe each step in turn, with <xref
@@ -1134,7 +1134,7 @@ proto UDP (17), length 75)
   <section xml:id="trouble_shooting_ovs">
     <title>Troubleshooting Open vSwitch</title>
 
-    <para>Open vSwitch, as used in the previous OpenStack Networking Service
+    <para>Open vSwitch, as used in the previous OpenStack Networking
     examples is a full-featured multilayer virtual switch licensed under the
     open source Apache 2.0 license. Full documentation can be found at <link
     xlink:href="http://openvswitch.org/">the project's website</link>. In

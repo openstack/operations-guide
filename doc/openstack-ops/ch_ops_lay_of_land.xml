@@ -502,10 +502,10 @@ cloud.example.com nova</programlisting>
       <para>With these two tables, you now have a good overview of what
       servers and services make up your cloud.</para>
 
-      <para>You can also use the Identity Service (keystone) to see what
+      <para>You can also use the Identity service (keystone) to see what
       services are available in your cloud as well as what endpoints have been
       configured for the services.<indexterm class="singular">
-          <primary>Identity Service</primary>
+          <primary>Identity</primary>
 
           <secondary>displaying services and endpoints with</secondary>
         </indexterm></para>
