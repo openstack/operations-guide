@@ -25,9 +25,9 @@
   <para>This infrastructure includes systems to automatically install the
   operating system's initial configuration and later coordinate the
   configuration of all services automatically and centrally, which reduces
-  both manual effort and the chance for error. Examples include Ansible, Chef,
-  Puppet, and Salt. You can even use OpenStack to deploy OpenStack, fondly
-  named TripleO, for OpenStack On OpenStack.<indexterm class="singular">
+  both manual effort and the chance for error. Examples include Ansible,
+  CFEngine, Chef, Puppet, and Salt. You can even use OpenStack to deploy
+  OpenStack, named TripleO (OpenStack On OpenStack).<indexterm class="singular">
       <primary>Puppet</primary>
     </indexterm><indexterm class="singular">
       <primary>Chef</primary>
