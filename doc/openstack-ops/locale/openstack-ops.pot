@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-15 06:00+0000\n"
+"POT-Creation-Date: 2015-06-22 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10176,7 +10176,7 @@ msgid "A critical part of a cloud's scalability is the amount of effort that it 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:25(para)
-msgid "This infrastructure includes systems to automatically install the operating system's initial configuration and later coordinate the configuration of all services automatically and centrally, which reduces both manual effort and the chance for error. Examples include Ansible, Chef, Puppet, and Salt. You can even use OpenStack to deploy OpenStack, fondly named TripleO, for OpenStack On OpenStack.<indexterm class=\"singular\"><primary>Puppet</primary></indexterm><indexterm class=\"singular\"><primary>Chef</primary></indexterm>"
+msgid "This infrastructure includes systems to automatically install the operating system's initial configuration and later coordinate the configuration of all services automatically and centrally, which reduces both manual effort and the chance for error. Examples include Ansible, CFEngine, Chef, Puppet, and Salt. You can even use OpenStack to deploy OpenStack, named TripleO (OpenStack On OpenStack).<indexterm class=\"singular\"><primary>Puppet</primary></indexterm><indexterm class=\"singular\"><primary>Chef</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:37(title)
