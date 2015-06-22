@@ -111,7 +111,7 @@
       <term>User dashboard</term>
 
       <listitem>
-        <para>Provides a web-based frontend for users to consume OpenStack
+        <para>Provides a web-based front end for users to consume OpenStack
         cloud services</para>
       </listitem>
     </varlistentry>
@@ -146,7 +146,7 @@
 
   <itemizedlist>
     <listitem>
-      <para>Frontend web for API requests, the scheduler for choosing which
+      <para>Front end web for API requests, the scheduler for choosing which
       compute node to boot an instance on, Identity services, and the
       dashboard</para>
     </listitem>
