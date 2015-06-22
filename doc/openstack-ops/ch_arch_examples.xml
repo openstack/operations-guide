@@ -20,7 +20,7 @@
   each as well as a rationale for why it worked well in a given
   environment.</para>
 
-  <para>Because OpenStack is highly configurable, with many different backends
+  <para>Because OpenStack is highly configurable, with many different back ends
   and network configuration options, it is difficult to write documentation
   that covers all possible OpenStack deployments. Therefore, this guide
   defines example architectures to simplify the task of documenting, as well

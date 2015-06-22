@@ -20,9 +20,9 @@
     <para>While version 3 of the Identity API is available, the client tools
     do not yet implement those calls, and most OpenStack clouds are still
     implementing Identity API v2.0.<indexterm class="singular">
-        <primary>Identity Service</primary>
+        <primary>Identity</primary>
 
-        <secondary>Identity Service API</secondary>
+        <secondary>Identity service API</secondary>
       </indexterm></para>
   </warning>
 
@@ -46,10 +46,10 @@
         <secondary>definition of</secondary>
       </indexterm></para>
 
-    <para>The initial implementation of the OpenStack Compute Service (nova)
+    <para>The initial implementation of OpenStack Compute
     had its own authentication system and used the term
     <literal>project</literal>. When authentication moved into the OpenStack
-    Identity Service (keystone) project, it used the term
+    Identity (keystone) project, it used the term
     <literal>tenant</literal> to refer to a group of users. Because of this
     legacy, some of the OpenStack tools refer to projects and some refer to
     tenants.</para>
@@ -156,7 +156,7 @@
     </warning>
 
     <para>Using the command-line interface, you can manage quotas for the
-    OpenStack Compute Service and the Block Storage Service.</para>
+    OpenStack Compute service and the Block Storage service.</para>
 
     <para>Typically, default values are changed because a tenant requires more
     than the OpenStack default of 10 volumes per tenant, or more than the
@@ -217,12 +217,12 @@
     <section xml:id="cli_set_compute_quotas">
       <title>Set Compute Service Quotas</title>
 
-      <para>As an administrative user, you can update the Compute Service
+      <para>As an administrative user, you can update the Compute service
       quotas for an existing tenant, as well as update the quota defaults for
       a new tenant.<indexterm class="singular">
           <primary>Compute</primary>
 
-          <secondary>Compute Service</secondary>
+          <secondary>Compute service</secondary>
         </indexterm> See <xref linkend="compute-quota-table" />.</para>
 
       <table rules="all" xml:id="compute-quota-table">
@@ -593,7 +593,7 @@ Accept-Ranges: bytes</computeroutput></screen>
       <title>Set Block Storage Quotas</title>
 
       <para>As an administrative user, you can update the Block Storage
-      Service quotas for a tenant, as well as update the quota defaults for a
+      service quotas for a tenant, as well as update the quota defaults for a
       new tenant. See <xref linkend="block-storage-quota-table" />.<indexterm
           class="singular">
           <primary>Block Storage</primary>

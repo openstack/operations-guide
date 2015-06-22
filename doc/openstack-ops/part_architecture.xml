@@ -68,7 +68,7 @@
     </variablelist>
 
     <para>As shown, end users can interact through the dashboard, CLIs, and
-    APIs. All services authenticate through a common Identity Service, and
+    APIs. All services authenticate through a common Identity service, and
     individual services interact with each other through public APIs, except
     where privileged administrator commands are necessary. <xref
     linkend="openstack-diagram" /> shows the most common, but not the

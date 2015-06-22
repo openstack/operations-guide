@@ -47,10 +47,10 @@
       sites span multiple data centers, some use off compute node storage with
       a shared file system, and some use on compute node storage with a
       non-shared file system. Each site deploys the Image service with an
-      Object Storage back end. A central Identity Service, dashboard, and
+      Object Storage back end. A central Identity, dashboard, and
       Compute API service are used. A login to the dashboard triggers a SAML
       login with Shibboleth, which creates an <glossterm>account</glossterm>
-      in the Identity Service with a SQL back end. An Object Storage Global
+      in the Identity service with a SQL back end. An Object Storage Global
       Cluster is used across several sites.</para>
 
       <para>Compute nodes have 24 to 48 cores, with at least 4 GB of RAM per
@@ -136,7 +136,7 @@
       core.</para>
 
       <para>With our upgrade to Grizzly in August 2013, we moved to OpenStack
-      Networking Service, neutron (quantum at the time). Compute nodes have
+      Networking, neutron (quantum at the time). Compute nodes have
       two-gigabit network interfaces and a separate management card for IPMI
       management. One network interface is used for node-to-node
       communications. The other is used as a trunk port for OpenStack managed
@@ -267,7 +267,7 @@
       instance provisioning.</para>
 
       <para>Users and groups are managed through Active Directory and imported
-      into the Identity Service using LDAP.&#160;CLIs are available for nova
+      into the Identity service using LDAP.&#160;CLIs are available for nova
       and Euca2ools to do this.</para>
 
       <para>There are three clouds currently running at CERN, totaling about

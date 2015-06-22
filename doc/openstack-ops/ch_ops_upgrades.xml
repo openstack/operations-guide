@@ -216,21 +216,20 @@
 
     <orderedlist>
       <listitem>
-        <para>Upgrade the OpenStack Identity Service
-          (keystone).</para>
+        <para>Upgrade OpenStack Identity.</para>
       </listitem>
 
       <listitem>
-        <para>Upgrade the OpenStack Image service (glance).</para>
+        <para>Upgrade the OpenStack Image service.</para>
       </listitem>
 
       <listitem>
-        <para>Upgrade OpenStack Compute (nova), including networking
+        <para>Upgrade OpenStack Compute, including networking
           components.</para>
       </listitem>
 
       <listitem>
-        <para>Upgrade OpenStack Block Storage (cinder).</para>
+        <para>Upgrade OpenStack Block Storage.</para>
       </listitem>
 
       <listitem>
@@ -332,9 +331,8 @@ scheduler=havana</programlisting>
           Installation Guide</citetitle></link> and upgrading to the
       same architecture for Havana. All nodes should run Ubuntu 12.04
       LTS. This section primarily addresses upgrading core OpenStack
-      services, such as the Identity Service (keystone), Image service
-      (glance), Compute (nova) including networking, Block Storage
-      (cinder), and the dashboard.<indexterm class="startofrange"
+      services, such as Identity, Image service, Compute including networking,
+      Block Storage, and the dashboard.<indexterm class="startofrange"
         xml:id="UPubuntu">
         <primary>upgrading</primary>
         <secondary>Grizzly to Havana (Ubuntu)</secondary>
@@ -703,10 +701,9 @@ auth_uri = http://controller:5000</programlisting>
       same architecture for Havana. All nodes should run Red Hat
       Enterprise Linux 6.4 or compatible derivatives. Newer minor
       releases should also work. This section primarily addresses
-      upgrading core OpenStack services, such as the Identity Service
-      (keystone), Image service (glance), Compute (nova) including
-      networking, Block Storage (cinder), and the dashboard.<indexterm
-        class="startofrange" xml:id="UPredhat">
+      upgrading core OpenStack services, such as the Identity,
+      Image service, Compute including networking, Block Storage,
+      and the dashboard.<indexterm class="startofrange" xml:id="UPredhat">
         <primary>upgrading</primary>
         <secondary>Grizzly to Havana (Red Hat)</secondary>
       </indexterm></para>

@@ -166,7 +166,7 @@ find $backup_dir -ctime +7 -type f -delete</programlisting>
 
       <para><code>/var/lib/glance</code> should also be backed up. Take
       special notice of <code>/var/lib/glance/images</code>. If you are using
-      a file-based backend of glance, <code>/var/lib/glance/images</code> is
+      a file-based back end of glance, <code>/var/lib/glance/images</code> is
       where the images are stored and care should be taken.</para>
 
       <para>There are two ways to ensure stability with this directory. The
@@ -183,7 +183,7 @@ backup-server:/var/lib/glance/images/</programlisting>
 
       <para><code>/etc/keystone</code> and <code>/var/log/keystone</code>
       follow the same rules as other components.<indexterm class="singular">
-          <primary>Identity Service</primary>
+          <primary>Identity</primary>
 
           <secondary>backup/recovery</secondary>
         </indexterm></para>

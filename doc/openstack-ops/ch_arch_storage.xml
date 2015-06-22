@@ -193,8 +193,8 @@
       <para>These volumes are persistent: they can be detached from one
       instance and re-attached to another, and the data remains intact. Block
       storage is implemented in OpenStack by the OpenStack Block Storage
-      (cinder) project, which supports multiple backends in the form of
-      drivers. Your choice of a storage backend must be supported by a Block
+      (cinder) project, which supports multiple back ends in the form of
+      drivers. Your choice of a storage back end must be supported by a Block
       Storage driver.</para>
 
       <para>Most block storage drivers allow the instance to have direct
@@ -351,14 +351,14 @@
     instantly when starting a new instance. For other systems, ephemeral
     storage—storage that is released when a VM attached to it is shut down— is
     the preferred way. When you select <glossterm>storage
-    backend</glossterm>s, <indexterm class="singular">
+    back end</glossterm>s, <indexterm class="singular">
         <primary>storage</primary>
 
-        <secondary>choosing backends</secondary>
+        <secondary>choosing back ends</secondary>
       </indexterm><indexterm class="singular">
-        <primary>storage backend</primary>
+        <primary>storage back end</primary>
       </indexterm><indexterm class="singular">
-        <primary>backend interactions</primary>
+        <primary>back end interactions</primary>
 
         <secondary>store</secondary>
       </indexterm>ask the following questions on behalf of your users:</para>
@@ -609,7 +609,7 @@
       <title>Commodity Storage Backend Technologies</title>
 
       <para>This section provides a high-level overview of the differences
-      among the different commodity storage backend technologies. Depending on
+      among the different commodity storage back end technologies. Depending on
       your cloud user's needs, you can implement one or many of these
       technologies in different combinations:<indexterm class="singular">
           <primary>storage</primary>
@@ -661,7 +661,7 @@
             storage, and file-system interfaces, although the file-system
             interface is not yet considered production-ready. Ceph supports
             the same API as swift for object storage and can be used as a
-            backend for cinder block storage as well as backend storage for
+            back end for cinder block storage as well as back-end storage for
             glance images. Ceph supports "thin provisioning," implemented
             using copy-on-write.</para>
 
@@ -697,7 +697,7 @@
             3.3, you can use Gluster to consolidate your object storage and
             file storage into one unified file and object storage solution,
             which is called Gluster For OpenStack (GFO). GFO uses a customized
-            version of swift that enables Gluster to be used as the backend
+            version of swift that enables Gluster to be used as the back-end
             storage.</para>
 
             <para>The main reason to use GFO rather than regular swift is if
@@ -717,7 +717,7 @@
           <listitem>
             <para>The Logical Volume Manager is a Linux-based system that
             provides an abstraction layer on top of physical disks to expose
-            logical volumes to the operating system. The LVM backend
+            logical volumes to the operating system. The LVM back-end
             implements block storage as LVM logical partitions.</para>
 
             <para>On each host that will house block storage, an administrator
@@ -748,7 +748,7 @@
             number of advantages over ext4, including improved data-integrity
             checking.</para>
 
-            <para>The ZFS backend for OpenStack Block Storage supports only
+            <para>The ZFS back end for OpenStack Block Storage supports only
             Solaris-based systems, such as Illumos. While there is a Linux
             port of ZFS, it is not included in any of the standard Linux
             distributions, and it has not been tested with OpenStack Block
@@ -758,7 +758,7 @@
             failures.</para>
 
             <para>We don't recommend ZFS unless you have previous experience
-            with deploying it, since the ZFS backend for Block Storage
+            with deploying it, since the ZFS back end for Block Storage
             requires a Solaris-based operating system, and we assume that your
             experience is primarily with Linux-based systems.</para>
           </listitem>
