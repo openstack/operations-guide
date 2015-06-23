@@ -705,9 +705,9 @@
     group. Resources quotas, such as the number of cores that can be used,
     disk space, and so on, are associated with a project.</para>
 
-    <para>OpenStack Identity is the service that provides
-    the authentication decisions and user attribute information, which is then
-    used by the other OpenStack services to perform authorization. Policy is
+    <para>OpenStack Identity provides
+    authentication decisions and user attribute information, which is then
+    used by the other OpenStack services to perform authorization. The policy is
     set in the <filename>policy.json</filename> file. For <phrase
     role="keep-together">information</phrase> on how to configure these, see
     <xref linkend="projects_users" />.<indexterm class="singular">
