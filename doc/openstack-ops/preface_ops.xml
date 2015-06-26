@@ -96,10 +96,10 @@
 
       <para>If your preference is to build your own OpenStack expertise
       internally, a good way to kick-start that might be to attend or arrange
-      a training session. The OpenStack Foundation recently launched a <link
+      a training session. The OpenStack Foundation has a <link
       xlink:href="http://www.openstack.org/marketplace/training">Training Marketplace</link> where
       you can look for nearby events. Also, the OpenStack community is <link
-      xlink:href="https://wiki.openstack.org/wiki/Training-manuals">working to produce</link> open
+      xlink:href="https://wiki.openstack.org/wiki/Training-guides">working to produce</link> open
       source training materials.</para>
     </section>
 
@@ -142,7 +142,7 @@
       have access to a network hardware expert who can configure the
       switches and routers required in your OpenStack cloud.</para>
     <tip>
-      <para>Cloud computing is a quite advanced topic, and this book
+      <para>Cloud computing is quite an advanced topic, and this book
         requires a lot of background knowledge. However, if you are
         fairly new to cloud computing, we recommend that you make use
         of the <xref linkend="openstack_glossary"/> at the back of the
@@ -261,6 +261,16 @@
               manage resources in an OpenStack cloud with the
               OpenStack dashboard and OpenStack client <phrase
                 role="keep-together">commands</phrase></para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><link xlink:href="http://docs.openstack.org/networking-guide/">Networking
+              Guide</link></term>
+
+          <listitem>
+            <para>This guide targets OpenStack administrators seeking
+              to deploy and manage OpenStack Networking (neutron).</para>
           </listitem>
         </varlistentry>
 
