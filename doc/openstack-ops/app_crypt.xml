@@ -97,7 +97,7 @@
             instance. This was still true. When the ping reply was
             sent from the instance, it should be in a VLAN. True. When
             it came back to the cloud controller and on its way out to
-            the public internet, it should no longer have a VLAN.
+            the Internet, it should no longer have a VLAN.
             False. Uh oh. It looked as though the VLAN part of the
             packet was not being removed.</para>
         <para>That made no sense.</para>
@@ -119,10 +119,10 @@
         <para>In <filename>nova.conf</filename>, <code>vlan_interface</code>
             specifies what interface OpenStack should attach all VLANs
             to. The correct setting should have been:
-                <programlisting>vlan_interface=bond0</programlisting>.</para>
+                <programlisting>vlan_interface=bond0</programlisting></para>
         <para>As this would be the server's bonded NIC.</para>
         <para>vlan20 is the VLAN that the data center gave us for
-            outgoing public internet access. It's a correct VLAN and
+            outgoing Internet access. It's a correct VLAN and
             is also attached to bond0.</para>
         <para>By mistake, I configured OpenStack to attach all tenant
             VLANs to vlan20 instead of bond0 thereby stacking one VLAN
@@ -268,7 +268,7 @@
             to oversee the development of cyberinfrastructure in
             Alberta, Canada) deployed an updated OpenStack cloud for
             their <link xlink:title="DAIR project"
-                xlink:href="http://www.canarie.ca/en/dair-program/about"
+                xlink:href="http://www.canarie.ca/cloud/"
                 >DAIR project</link>
             (http://www.canarie.ca/en/dair-program/about). A few days
             into production, a compute node locks up. Upon rebooting
@@ -334,7 +334,7 @@
         <para>A feature was introduced in Essex to periodically check
             and see if there were any <code>_base</code> files not in use.
             If there
-            were, Nova would delete them. This idea sounds innocent
+            were, OpenStack Compute would delete them. This idea sounds innocent
             enough and has some good qualities to it. But how did this
             feature end up turned on? It was disabled by default in
             Essex. As it should be. It was <link
@@ -547,7 +547,7 @@ HTTP/1.1" status: 200 len: 931 time: 3.9426181
         <para>So, I found myself wondering what changed in the EC2 API on
             Havana that might cause this to happen. Was it a bug or a normal
             behavior that I now need to work around?</para>
-        <para>After digging into the Nova code, I noticed two areas in
+        <para>After digging into the nova (OpenStack Compute) code, I noticed two areas in
             <filename>api/ec2/cloud.py</filename> potentially impacting my
             system:</para>
         <programlisting language="python">
