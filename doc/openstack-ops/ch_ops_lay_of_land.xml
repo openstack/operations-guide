@@ -513,32 +513,28 @@ cloud.example.com nova</programlisting>
       <para>The following command requires you to have your shell environment
       configured with the proper administrative variables:</para>
 
-      <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone catalog</programlisting>
+      <programlisting><?db-font-size 60%?><prompt>$</prompt> openstack catalog list</programlisting>
 
-      <programlisting><?db-font-size 60%?>Service: image
-+-------------+----------------------------------------+
-|   Property  |                 Value                  |
-+-------------+----------------------------------------+
-|   adminURL  | http://cloud.internal.example.com:9292 |
-| internalURL | http://cloud.example.com:9292          |
-|  publicURL  | http://cloud.example.com:9292          |
-|    region   |               RegionOne                |
-+-------------+----------------------------------------+
-
-Service: identity
-+-------------+----------------------------------------------+
-|   Property  |                   Value                      |
-+-------------+----------------------------------------------+
-|   adminURL  | http://cloud.internal.example.com:35357/v2.0 |
-| internalURL | http://cloud.example.com:5000/v2.0           |
-|  publicURL  | http://cloud.example.com:5000/v2.0           |
-|    region   |                 RegionOne                    |
-+-------------+----------------------------------------------+</programlisting>
+      <programlisting><?db-font-size 60%?>
++----------+------------+---------------------------------------------------------------------------------+
+| Name     | Type       | Endpoints                                                                       |
++----------+------------+---------------------------------------------------------------------------------+
+| nova     | compute    | RegionOne                                                                       |
+|          |            |   publicURL: http://192.168.122.10:8774/v2/9faa845768224258808fc17a1bb27e5e     |
+|          |            |   internalURL: http://192.168.122.10:8774/v2/9faa845768224258808fc17a1bb27e5e   |
+|          |            |   adminURL: http://192.168.122.10:8774/v2/9faa845768224258808fc17a1bb27e5e      |
+|          |            |                                                                                 |
+| cinderv2 | volumev2   | RegionOne                                                                       |
+|          |            |   publicURL: http://192.168.122.10:8776/v2/9faa845768224258808fc17a1bb27e5e     |
+|          |            |   internalURL: http://192.168.122.10:8776/v2/9faa845768224258808fc17a1bb27e5e   |
+|          |            |   adminURL: http://192.168.122.10:8776/v2/9faa845768224258808fc17a1bb27e5e      |
+|          |            |                                                                                 |
+</programlisting>
 
       <?hard-pagebreak ?>
 
       <para>The preceding output has been truncated to show only two services.
-      You will see one service block for each service that your cloud
+      You will see one service entry for each service that your cloud
       provides. Note how the endpoint domain can be different depending on the
       endpoint type. Different endpoint domains per type are not required, but
       this can be done for different reasons, such as endpoint privacy or
@@ -681,45 +677,32 @@ None            1.2.3.5 48a415...b010ff nova vlan20</programlisting>
         <secondary>users and projects</secondary>
       </indexterm> run:</para>
 
-    <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone tenant-list</programlisting>
+    <programlisting><?db-font-size 60%?><prompt>$</prompt> openstack project list</programlisting>
 
-    <programlisting><?db-font-size 60%?>+-----+----------+---------+
-| id  | name     | enabled |
-+-----+----------+---------+
-| ... | jtopjian | True    |
-| ... | alvaro   | True    |
-| ... | everett  | True    |
-| ... | admin    | True    |
-| ... | services | True    |
-| ... | jonathan | True    |
-| ... | lorin    | True    |
-| ... | anne     | True    |
-| ... | rhulsker | True    |
-| ... | tom      | True    |
-| ... | adam     | True    |
-+-----+----------+---------+</programlisting>
+    <programlisting><?db-font-size 60%?>+----------------------------------+--------------------+
+| ID                               | Name               |
++----------------------------------+--------------------+
+| 422c17c0b26f4fbe9449f37a5621a5e6 | alt_demo           |
+| 5dc65773519248f3a580cfe28ba7fa3f | demo               |
+| 9faa845768224258808fc17a1bb27e5e | admin              |
+| a733070a420c4b509784d7ea8f6884f7 | invisible_to_admin |
+| aeb3e976e7794f3f89e4a7965db46c1e | service            |
++----------------------------------+--------------------+ </programlisting>
 
     <para>To see a list of users, run:</para>
 
-    <programlisting><?db-font-size 60%?><prompt>$</prompt> keystone user-list</programlisting>
+    <programlisting><?db-font-size 60%?><prompt>$</prompt> openstack user list</programlisting>
 
-    <programlisting><?db-font-size 60%?>+-----+----------+---------+------------------------------+
-| id  | name     | enabled | email                        |
-+-----+----------+---------+------------------------------+
-| ... | everett  | True    | everett.towne@backspace.com  |
-| ... | jonathan | True    | jon@sfcu.edu                 |
-| ... | nova     | True    | nova@localhost               |
-| ... | rhulsker | True    | ryan.hulkster@cyberalbert.ca |
-| ... | lorin    | True    | lorinhoch@nsservices.com     |
-| ... | alvaro   | True    | Alvaro.Perry@cyberalbert.ca  |
-| ... | anne     | True    | anne.green@backspace.com     |
-| ... | admin    | True    | root@localhost               |
-| ... | cinder   | True    | cinder@localhost             |
-| ... | glance   | True    | glance@localhost             |
-| ... | jtopjian | True    | joe.topjian@cyberalbert.com  |
-| ... | adam     | True    | adam@ossmanuals.net          |
-| ... | tom      | True    | fafield@univm.edu.au         |
-+-----+----------+---------+------------------------------+</programlisting>
+    <programlisting><?db-font-size 60%?>+----------------------------------+----------+
+| ID                               | Name     |
++----------------------------------+----------+
+| 5837063598694771aedd66aa4cddf0b8 | demo     |
+| 58efd9d852b74b87acc6efafaf31b30e | cinder   |
+| 6845d995a57a441f890abc8f55da8dfb | glance   |
+| ac2d15a1205f46d4837d5336cd4c5f5a | alt_demo |
+| d8f593c3ae2b47289221f17a776a218b | admin    |
+| d959ec0a99e24df0b7cb106ff940df20 | nova     |
++----------------------------------+----------+</programlisting>
 
     <note>
       <para>Sometimes a user and a group have a one-to-one mapping. This
