@@ -13,7 +13,7 @@
   to providing information about what's coming up. The bad news: each release
   moves very quickly. The purpose of this appendix is to highlight some of the
   useful pages to track, and take an educated guess at what is coming up in
-  the Kilo release and perhaps further afield.<indexterm class="singular">
+  the next release and perhaps further afield.<indexterm class="singular">
       <primary>Kilo</primary>
 
       <secondary>upcoming release of</secondary>
@@ -489,7 +489,7 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
 
       <para>These changes have facilitated the first proper OpenStack upgrade
       guide, found in <xref linkend="ch_ops_upgrades" />, and will continue to
-      improve in Kilo.<indexterm class="singular">
+      improve in the next release.<indexterm class="singular">
           <primary>Kilo</primary>
 
           <secondary>upgrades in</secondary>
@@ -565,7 +565,7 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
     external network and VXLAN tenant networks. However, it does appear that
     there are problems with the use of VLANs, IPv6, Floating IPs, high
     north-south traffic scenarios and large numbers of compute nodes. It is
-    expected these will improve significantly with the Kilo release, but
+    expected these will improve significantly with the next release, but
     bug reports on specific issues are highly desirable.</para>
   </section>
 
@@ -611,22 +611,22 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
   </section>
 
   <section xml:id="roadmap-savanna">
-    <title>Data Processing (Sahara)</title>
+    <title>Data processing service for OpenStack (sahara)</title>
 
     <para>A much-requested answer to big data problems, a dedicated team has
     been making solid progress on a Hadoop-as-a-Service project.</para>
   </section>
 
   <section xml:id="roadmap-baremetal">
-    <title>Bare-Metal Deployment (Ironic)</title>
+    <title>Bare metal Deployment (ironic)</title>
 
     <para>The bare-metal deployment has been widely lauded, and development
-    continues. The Juno release brought the Ironic drive into the Compute
-    project, and it is aimed to deprecate the existing bare-metal driver in
+    continues. The Juno release brought the OpenStack Bare metal drive into the Compute
+    project, and it was aimed to deprecate the existing bare-metal driver in
     Kilo.
     If you are a current user of the bare metal driver, a particular blueprint to follow is <link
     xlink:href="https://blueprints.launchpad.net/nova/+spec/deprecate-baremetal-driver">
-    Deprecate the Baremetal driver</link>.<indexterm class="singular">
+    Deprecate the bare metal driver</link>.<indexterm class="singular">
         <primary>Kilo</primary>
 
         <secondary>Compute bare-metal deployment</secondary>
@@ -634,16 +634,16 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
   </section>
 
   <section xml:id="roadmap-trove">
-    <title>Database as a Service (Trove)</title>
+    <title>Database as a Service (trove)</title>
 
     <para>The OpenStack community has had a database-as-a-service tool in
     development for some time, and we saw the first integrated
-    release of it in Icehouse. From release it was able to deploy database
+    release of it in Icehouse. From its release it was able to deploy database
     servers out of the box in a highly available way, initially supporting only
     MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and
     Couchbase, in addition to replication functionality for MySQL. In Kilo,
     more advanced clustering capability was delivered, in addition to better
-    integration with other OpenStack components such as networking.
+    integration with other OpenStack components such as Networking.
     <indexterm class="singular">
         <primary>Juno</primary>
 
@@ -652,22 +652,17 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
   </section>
 
   <section xml:id="roadmap-zaqar">
-    <title>Messaging as a Service (Zaqar)</title>
+    <title>Message Service (zaqar)</title>
 
-    <para>A service to provide queues of messages and notifications has
-    entered “incubation,” meaning if the upcoming development cycles are
-    successful, it will be released in <phrase
-    role="keep-together">Kilo</phrase>.</para>
+    <para>A service to provide queues of messages and notifications was released.</para>
   </section>
 
   <section xml:id="roadmap-designate">
-    <title>DNS as a Service (Designate)</title>
+    <title>DNS service (designate)</title>
 
     <para>A long requested service, to provide the ability to manipulate DNS
     entries associated with OpenStack resources has gathered a following. The
-    Designate project has entered “incubation,” meaning if the upcoming
-    development cycles are successful, it could be released in <phrase
-    role="keep-together">Kilo</phrase>.</para>
+    designate project was also released.</para>
   </section>
   <section xml:id="roadmap-scheduling">
     <title>Scheduler Improvements</title>
@@ -677,7 +672,7 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
     underwent significant improvement, while in Icehouse it was the scheduler in
     Block Storage that received a boost. Further down the track, an effort
     started this cycle that aims to create a holistic scheduler covering both
-    will come to fruition. Some of this work done in Kilo can be found under the
+    will come to fruition. Some of the work that was done in Kilo can be found under the
 <link xlink:href="https://wiki.openstack.org/wiki/Gantt/kilo">Gantt
 project</link>.<indexterm class="singular">
         <primary>Kilo</primary>
@@ -688,9 +683,9 @@ project</link>.<indexterm class="singular">
     <section xml:id="roadmap-volumes">
       <title>Block Storage Improvements</title>
 
-      <para>Block Storage is now considered a stable project, with wide uptake
+      <para>Block Storage is considered a stable project, with wide uptake
       and a long track record of quality drivers. The team
-      still discussed many areas of work at the Kilo summit,
+      has discussed many areas of work at the summits,
       including better error reporting, automated discovery, and thin
       provisioning features.</para>
     </section>
