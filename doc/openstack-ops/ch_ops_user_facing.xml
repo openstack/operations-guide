@@ -34,7 +34,7 @@
     <section xml:id="add_images">
       <title>Adding Images</title>
 
-      <para>Several premade images exist and can easily be imported into the
+      <para>Several pre-made images exist and can easily be imported into the
       Image service. A common image to add is the CirrOS image, which is very
       small and used for testing purposes.<indexterm class="singular">
           <primary>images</primary>
@@ -74,7 +74,7 @@
     <section xml:id="sharing_images">
       <title>Sharing Images Between Projects</title>
 
-      <para>In a multitenant cloud environment, users sometimes want to share
+      <para>In a multi-tenant cloud environment, users sometimes want to share
       their personal images or snapshots with other projects.<indexterm
           class="singular">
           <primary>projects</primary>
@@ -99,7 +99,7 @@
 
         <step>
           <para>Obtain the UUID of the project with which you want to share
-          your image. Unfortunately, nonadmin users are unable to use the
+          your image. Unfortunately, non-admin users are unable to use the
           <literal>keystone</literal> command to do this. The easiest solution
           is to obtain the UUID either from an administrator of the cloud or
           from a user located in the project.</para>
