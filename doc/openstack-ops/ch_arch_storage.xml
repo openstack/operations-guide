@@ -342,7 +342,7 @@
   </section>
 
   <section xml:id="storage_backends">
-    <title>Choosing Storage Backends</title>
+    <title>Choosing Storage Back Ends</title>
 
     <para>Users will indicate different needs for their cloud use cases. Some
     may need fast access to many objects that do not change often, or want to
@@ -606,7 +606,7 @@
     </itemizedlist>
 
     <section xml:id="commodity_storage_backends">
-      <title>Commodity Storage Backend Technologies</title>
+      <title>Commodity Storage Back-end Technologies</title>
 
       <para>This section provides a high-level overview of the differences
       among the different commodity storage back end technologies. Depending on
