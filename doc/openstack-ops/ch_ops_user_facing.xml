@@ -1229,6 +1229,18 @@ Optional snapshot description. (Default=None)</programlisting>
           <primary>live snapshots</primary>
         </indexterm></para>
 
+    <note>
+            <title>Disable live snapshotting</title>
+            <para>If you use libvirt version <literal>1.2.2</literal>,
+                  you may experience intermittent problems with live snapshot creation.
+            </para>
+
+            <para>To effectively disable the libvirt live snapshotting, until the problem
+                  is resolved, add the below setting to nova.conf.</para>
+                  <programlisting language="ini">[workarounds]
+    disable_libvirt_livesnapshot = True</programlisting>
+    </note>
+
       <sidebar>
         <title>Ensuring Snapshots of Linux Guests Are Consistent</title>
 
