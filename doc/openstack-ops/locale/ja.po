@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-07-04 06:30+0000\n"
-"PO-Revision-Date: 2015-07-05 10:00+0000\n"
+"POT-Creation-Date: 2015-07-06 07:28+0000\n"
+"PO-Revision-Date: 2015-07-06 22:44+0000\n"
 "Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -2810,6 +2810,9 @@ msgstr ""
 
 msgid "Direct I/O access can increase performance."
 msgstr "I/O アクセスが直接行われるので、性能向上が図れます。"
+
+msgid "Disable live snapshotting"
+msgstr "ライブスナップショットの無効化"
 
 msgid "Disappearing Images"
 msgstr "イメージの消失"
