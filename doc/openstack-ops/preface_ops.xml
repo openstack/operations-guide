@@ -18,7 +18,7 @@
   <section xml:id="introduction-to-openstack">
     <title>Introduction to OpenStack</title>
 
-    <para>OpenStack believes in open source, open design, open
+    <para>OpenStack believes in open source, open design, and open
       development, all in an open community that encourages
       participation by anyone. The long-term vision for OpenStack is
       to produce a ubiquitous open source cloud computing platform
@@ -107,7 +107,7 @@
       <title>Roll Your Own OpenStack</title>
 
       <para>However, this guide has a different audience—those seeking
-        flexibility from the OpenStack framework by conducting
+        flexibility from the OpenStack framework by deploying
         do-it-yourself solutions.</para>
 
       <para>OpenStack is designed for horizontal scalability, so you
@@ -290,7 +290,7 @@
   <section xml:id="how-this-book-is-organized">
     <title>How This Book Is Organized</title>
 
-    <para>This book is organized in two parts: the architecture
+    <para>This book is organized into two parts: the architecture
       decisions for designing OpenStack clouds and the repeated
       operations for running OpenStack clouds.</para>
 
@@ -357,7 +357,7 @@
 
         <listitem>
           <para>As with other architecture decisions, storage concepts
-            within OpenStack take a lot of consideration, and this
+            within OpenStack offer many options. This
             chapter lays out the choices for you.</para>
         </listitem>
       </varlistentry>
@@ -403,7 +403,7 @@
 
         <listitem>
           <para>This chapter shows you how to use OpenStack cloud
-            resources and train your users as well.</para>
+            resources and how to train your users.</para>
         </listitem>
       </varlistentry>
 
@@ -513,7 +513,7 @@
         <listitem>
           <para>These are shared legendary tales of image
             disappearances, VM massacres, and crazy troubleshooting
-            techniques to share those hard-learned lessons and <phrase
+            techniques that result in hard-learned lessons and <phrase
               role="keep-together">wisdom</phrase>.</para>
         </listitem>
       </varlistentry>
@@ -554,8 +554,8 @@
     <title>Why and How We Wrote This Book</title>
 
     <para>We wrote this book because we have deployed and maintained
-      OpenStack clouds for at least a year, and wanted to be able to
-      distribute this knowledge to others. After months of being the
+      OpenStack clouds for at least a year and we wanted to
+      share this knowledge with others. After months of being the
       point people for an OpenStack cloud, we also wanted to have a
       document to hand to our system administrators so that they'd
       know how to operate the cloud on a daily basis—both reactively
@@ -661,7 +661,7 @@
 
         <listitem>
           <para>Adam facilitated this book sprint. He also founded the
-            books sprint methodology and is the most experienced
+            book sprint methodology and is the most experienced
             book-sprint facilitator around. See <link
               xlink:href="http://www.booksprints.net"/> for more
             information. Adam founded FLOSS Manuals—a community of
