@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-01 06:00+0000\n"
+"POT-Creation-Date: 2015-07-08 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3660,7 +3660,7 @@ msgid "Introduction to OpenStack"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:21(para)
-msgid "OpenStack believes in open source, open design, open development, all in an open community that encourages participation by anyone. The long-term vision for OpenStack is to produce a ubiquitous open source cloud computing platform that meets the needs of public and private cloud providers regardless of size. OpenStack services control large pools of compute, storage, and networking resources throughout a data center."
+msgid "OpenStack believes in open source, open design, and open development, all in an open community that encourages participation by anyone. The long-term vision for OpenStack is to produce a ubiquitous open source cloud computing platform that meets the needs of public and private cloud providers regardless of size. OpenStack services control large pools of compute, storage, and networking resources throughout a data center."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:30(para)
@@ -3708,7 +3708,7 @@ msgid "Roll Your Own OpenStack"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:109(para)
-msgid "However, this guide has a different audience—those seeking flexibility from the OpenStack framework by conducting do-it-yourself solutions."
+msgid "However, this guide has a different audience—those seeking flexibility from the OpenStack framework by deploying do-it-yourself solutions."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:113(para)
@@ -3844,7 +3844,7 @@ msgid "How This Book Is Organized"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:293(para)
-msgid "This book is organized in two parts: the architecture decisions for designing OpenStack clouds and the repeated operations for running OpenStack clouds."
+msgid "This book is organized into two parts: the architecture decisions for designing OpenStack clouds and the repeated operations for running OpenStack clouds."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:297(emphasis)
@@ -3872,7 +3872,7 @@ msgid "This chapter discusses the growth of your cloud resources through scaling
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:359(para)
-msgid "As with other architecture decisions, storage concepts within OpenStack take a lot of consideration, and this chapter lays out the choices for you."
+msgid "As with other architecture decisions, storage concepts within OpenStack offer many options. This chapter lays out the choices for you."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:369(para)
@@ -3892,7 +3892,7 @@ msgid "This chapter walks through user-enabling processes that all admins must f
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:405(para)
-msgid "This chapter shows you how to use OpenStack cloud resources and train your users as well."
+msgid "This chapter shows you how to use OpenStack cloud resources and how to train your users."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:414(para)
@@ -3936,7 +3936,7 @@ msgid "You can read a small selection of use cases from the OpenStack community 
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:514(para)
-msgid "These are shared legendary tales of image disappearances, VM massacres, and crazy troubleshooting techniques to share those hard-learned lessons and <phrase role=\"keep-together\">wisdom</phrase>."
+msgid "These are shared legendary tales of image disappearances, VM massacres, and crazy troubleshooting techniques that result in hard-learned lessons and <phrase role=\"keep-together\">wisdom</phrase>."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:525(para)
@@ -3956,7 +3956,7 @@ msgid "Why and How We Wrote This Book"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:556(para)
-msgid "We wrote this book because we have deployed and maintained OpenStack clouds for at least a year, and wanted to be able to distribute this knowledge to others. After months of being the point people for an OpenStack cloud, we also wanted to have a document to hand to our system administrators so that they'd know how to operate the cloud on a daily basis—both reactively and pro-actively. We wanted to provide more detailed technical information about the decisions that deployers make along the way."
+msgid "We wrote this book because we have deployed and maintained OpenStack clouds for at least a year and we wanted to share this knowledge with others. After months of being the point people for an OpenStack cloud, we also wanted to have a document to hand to our system administrators so that they'd know how to operate the cloud on a daily basis—both reactively and pro-actively. We wanted to provide more detailed technical information about the decisions that deployers make along the way."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:568(para)
@@ -4024,7 +4024,7 @@ msgid "Adam Hyde"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:663(para)
-msgid "Adam facilitated this book sprint. He also founded the books sprint methodology and is the most experienced book-sprint facilitator around. See <link xlink:href=\"http://www.booksprints.net\"/> for more information. Adam founded FLOSS Manuals—a community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print."
+msgid "Adam facilitated this book sprint. He also founded the book sprint methodology and is the most experienced book-sprint facilitator around. See <link xlink:href=\"http://www.booksprints.net\"/> for more information. Adam founded FLOSS Manuals—a community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:676(term)
