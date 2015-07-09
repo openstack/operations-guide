@@ -267,7 +267,7 @@
             <screen><prompt>#</prompt> <userinput>ovs-vsctl -- set Bridge br-int mirrors=@m  -- --id=@snooper0 \
 get Port snooper0  -- --id=@patch-tun get Port patch-tun  \
 -- --id=@m create Mirror name=mymirror select-dst-port=@patch-tun \
-select-src-port=@patch-tun output-port=@snooper0</userinput></screen>
+select-src-port=@patch-tun output-port=@snooper0 select_all=1</userinput></screen>
           </step>
 
           <step>
