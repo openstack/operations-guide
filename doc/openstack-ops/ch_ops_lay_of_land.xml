@@ -218,10 +218,10 @@
       command-line tools to make queries against your OpenStack cloud. By far,
       the easiest way to obtain <glossterm>authentication</glossterm>
       credentials to use with command-line clients is to use the OpenStack
-      dashboard. From the top-right navigation row, select
-      <guimenuitem>Project</guimenuitem>, then <guimenuitem>Access &amp;
-      Security</guimenuitem>, then <guimenuitem>API Access</guimenuitem> to
-      access the user settings page where you can set your language and
+      dashboard. From the top-right navigation row, select <guimenuitem>Project
+      </guimenuitem>, then <guimenuitem>Compute</guimenuitem>, then <guimenuitem>
+      Access &amp; Security</guimenuitem>, then <guimenuitem>API Access</guimenuitem>
+      to access the user settings page where you can set your language and
       timezone preferences for the dashboard view. This action displays two
       buttons, <guilabel>Download OpenStack RC File</guilabel> and
       <guilabel>Download EC2 Credentials</guilabel>, which let you generate
@@ -286,9 +286,10 @@ export OS_PASSWORD=$OS_PASSWORD_INPUT</programlisting>
       </warning>
 
       <para>EC2 compatibility credentials can be downloaded by selecting
-      <guimenuitem>Project</guimenuitem>, then <guimenuitem>Access &amp;
-      Security</guimenuitem>, then <guimenuitem>API Access</guimenuitem> to
-      display the <guilabel>Download EC2 Credentials</guilabel> button. Click
+      <guimenuitem>Project</guimenuitem>, then <guimenuitem>Compute
+      </guimenuitem>, then <guimenuitem>Access &amp; Security</guimenuitem>,
+      then <guimenuitem>API Access</guimenuitem> to display the
+      <guilabel>Download EC2 Credentials</guilabel> button. Click
       the button to generate a ZIP file with server x509 certificates and a
       shell script fragment. Create a new directory in a secure location
       because these are live credentials containing all the authentication
