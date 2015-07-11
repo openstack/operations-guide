@@ -804,7 +804,7 @@ Accept-Ranges: bytes</computeroutput></screen>
 
     <para>Once you've gathered this information, creating the user in the
     dashboard is just another web form similar to what we've seen before and
-    can be found by clicking the Users link in the Admin navigation bar and
+    can be found by clicking the Users link in the Identity navigation bar and
     then clicking the Create User button at the top right.</para>
 
     <para>Modifying users is also done from this Users page. If you have a
