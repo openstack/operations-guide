@@ -218,12 +218,12 @@
       command-line tools to make queries against your OpenStack cloud. By far,
       the easiest way to obtain <glossterm>authentication</glossterm>
       credentials to use with command-line clients is to use the OpenStack
-      dashboard. From the top-right navigation row, select <guimenuitem>Project
-      </guimenuitem>, then <guimenuitem>Compute</guimenuitem>, then <guimenuitem>
-      Access &amp; Security</guimenuitem>, then <guimenuitem>API Access</guimenuitem>
-      to access the user settings page where you can set your language and
-      timezone preferences for the dashboard view. This action displays two
-      buttons, <guilabel>Download OpenStack RC File</guilabel> and
+      dashboard. Select <guimenuitem>Project</guimenuitem>, click the
+      <guimenuitem>Project</guimenuitem> tab, and click <guimenuitem>Access
+      &amp; Security</guimenuitem> on the <guimenuitem>Compute</guimenuitem>
+      category. On the <guimenuitem>Access &amp; Security</guimenuitem> page,
+      click the <guimenuitem>API Access</guimenuitem> tab to display
+      two buttons, <guilabel>Download OpenStack RC File</guilabel> and
       <guilabel>Download EC2 Credentials</guilabel>, which let you generate
       files that you can source in your shell to populate the environment
       variables the command-line tools require to know where your service
