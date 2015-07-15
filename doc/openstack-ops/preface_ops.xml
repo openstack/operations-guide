@@ -74,10 +74,7 @@
       private cloud, and there are several ways to accomplish this goal.
       Perhaps the simplest of all is an appliance-style solution. You purchase
       an appliance, unpack it, plug in the power and the network, and watch it
-      transform into an OpenStack cloud with minimal additional configuration.
-      Few, if any, other open source cloud products have such turnkey options.
-      If a turnkey solution is interesting to you, take a look at Nebula
-      One.</para>
+      transform into an OpenStack cloud with minimal additional configuration.</para>
 
       <para>However, hardware choice is important for many applications, so if
         that applies to you, consider that there are several software
