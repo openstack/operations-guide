@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-08 06:01+0000\n"
+"POT-Creation-Date: 2015-07-16 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3643,7 +3643,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/preface_ops.xml:594(None)
+#: ./doc/openstack-ops/preface_ops.xml:591(None)
 msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_00in01.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
@@ -3688,454 +3688,454 @@ msgid "Plug and Play OpenStack"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:73(para)
-msgid "However, the enticing part of OpenStack might be to build your own private cloud, and there are several ways to accomplish this goal. Perhaps the simplest of all is an appliance-style solution. You purchase an appliance, unpack it, plug in the power and the network, and watch it transform into an OpenStack cloud with minimal additional configuration. Few, if any, other open source cloud products have such turnkey options. If a turnkey solution is interesting to you, take a look at Nebula One."
+msgid "However, the enticing part of OpenStack might be to build your own private cloud, and there are several ways to accomplish this goal. Perhaps the simplest of all is an appliance-style solution. You purchase an appliance, unpack it, plug in the power and the network, and watch it transform into an OpenStack cloud with minimal additional configuration."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:82(para)
+#: ./doc/openstack-ops/preface_ops.xml:79(para)
 msgid "However, hardware choice is important for many applications, so if that applies to you, consider that there are several software distributions available that you can run on servers, storage, and network products of your choosing. Canonical (where OpenStack replaced Eucalyptus as the default cloud option in 2011), Red Hat, and SUSE offer enterprise OpenStack solutions and support. You may also want to take a look at some of the specialized distributions, such as those from Rackspace, Piston, SwiftStack, or Cloudscaling."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:91(para)
+#: ./doc/openstack-ops/preface_ops.xml:88(para)
 msgid "Alternatively, if you want someone to help guide you through the decisions about the underlying hardware or your applications, perhaps adding in a few features or integrating components along the way, consider contacting one of the system integrators with OpenStack experience, such as Mirantis or Metacloud."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:97(para)
+#: ./doc/openstack-ops/preface_ops.xml:94(para)
 msgid "If your preference is to build your own OpenStack expertise internally, a good way to kick-start that might be to attend or arrange a training session. The OpenStack Foundation has a <link xlink:href=\"http://www.openstack.org/marketplace/training\">Training Marketplace</link> where you can look for nearby events. Also, the OpenStack community is <link xlink:href=\"https://wiki.openstack.org/wiki/Training-guides\">working to produce</link> open source training materials."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:107(title)
+#: ./doc/openstack-ops/preface_ops.xml:104(title)
 msgid "Roll Your Own OpenStack"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:109(para)
+#: ./doc/openstack-ops/preface_ops.xml:106(para)
 msgid "However, this guide has a different audience—those seeking flexibility from the OpenStack framework by deploying do-it-yourself solutions."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:113(para)
+#: ./doc/openstack-ops/preface_ops.xml:110(para)
 msgid "OpenStack is designed for horizontal scalability, so you can easily add new compute, network, and storage resources to grow your cloud over time. In addition to the pervasiveness of massive OpenStack public clouds, many organizations, such as PayPal, Intel, and Comcast, build large-scale private clouds. OpenStack offers much more than a typical software package because it lets you integrate a number of different technologies to construct a cloud. This approach provides great flexibility, but the number of options might be daunting at first."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:126(title)
+#: ./doc/openstack-ops/preface_ops.xml:123(title)
 msgid "Who This Book Is For"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:127(para)
+#: ./doc/openstack-ops/preface_ops.xml:124(para)
 msgid "This book is for those of you starting to run OpenStack clouds as well as those of you who were handed an operational one and want to keep it running well. Perhaps you're on a DevOps team, perhaps you are a system administrator starting to dabble in the cloud, or maybe you want to get on the OpenStack cloud team at your company. This book is for all of you."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:133(para)
+#: ./doc/openstack-ops/preface_ops.xml:130(para)
 msgid "This guide assumes that you are familiar with a Linux distribution that supports OpenStack, SQL databases, and virtualization. You must be comfortable administering and configuring multiple Linux machines for networking. You must install and maintain an SQL database and occasionally run queries against it."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:139(para)
+#: ./doc/openstack-ops/preface_ops.xml:136(para)
 msgid "One of the most complex aspects of an OpenStack cloud is the networking configuration. You should be familiar with concepts such as DHCP, Linux bridges, VLANs, and iptables. You must also have access to a network hardware expert who can configure the switches and routers required in your OpenStack cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:145(para)
+#: ./doc/openstack-ops/preface_ops.xml:142(para)
 msgid "Cloud computing is quite an advanced topic, and this book requires a lot of background knowledge. However, if you are fairly new to cloud computing, we recommend that you make use of the <xref linkend=\"openstack_glossary\"/> at the back of the book, as well as the online documentation for OpenStack and additional resources mentioned in this book in <xref linkend=\"recommended-reading\"/>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:154(title)
+#: ./doc/openstack-ops/preface_ops.xml:151(title)
 msgid "Further Reading"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:155(para)
+#: ./doc/openstack-ops/preface_ops.xml:152(para)
 msgid "There are other books on the <link xlink:href=\"http://docs.openstack.org\">OpenStack documentation website</link> that can help you get the job done."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:160(title)
+#: ./doc/openstack-ops/preface_ops.xml:157(title)
 msgid "OpenStack Guides"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:162(term)
+#: ./doc/openstack-ops/preface_ops.xml:159(term)
 msgid "OpenStack Installation Guides"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:164(para)
+#: ./doc/openstack-ops/preface_ops.xml:161(para)
 msgid "Describes a manual installation process, as in, by hand, without automation, for multiple distributions based on a packaging system:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:171(link) ./doc/openstack-ops/ch_ops_resources.xml:16(link)
+#: ./doc/openstack-ops/preface_ops.xml:168(link) ./doc/openstack-ops/ch_ops_resources.xml:16(link)
 msgid "Installation Guide for openSUSE 13.2 and SUSE Linux Enterprise Server 12"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:177(link) ./doc/openstack-ops/ch_ops_resources.xml:21(link)
+#: ./doc/openstack-ops/preface_ops.xml:174(link) ./doc/openstack-ops/ch_ops_resources.xml:21(link)
 msgid "Installation Guide for Red Hat Enterprise Linux 7, CentOS 7, and Fedora 21"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:183(link) ./doc/openstack-ops/ch_ops_resources.xml:27(link)
+#: ./doc/openstack-ops/preface_ops.xml:180(link) ./doc/openstack-ops/ch_ops_resources.xml:27(link)
 msgid "Installation Guide for Ubuntu 14.04 (LTS) Server"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:191(link)
+#: ./doc/openstack-ops/preface_ops.xml:188(link)
 msgid "OpenStack Configuration Reference"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:195(para)
+#: ./doc/openstack-ops/preface_ops.xml:192(para)
 msgid "Contains a reference listing of all configuration options for core and integrated OpenStack services by release version"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:202(link) ./doc/openstack-ops/ch_ops_resources.xml:31(link)
+#: ./doc/openstack-ops/preface_ops.xml:199(link) ./doc/openstack-ops/ch_ops_resources.xml:31(link)
 msgid "OpenStack Cloud Administrator Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:206(para)
+#: ./doc/openstack-ops/preface_ops.xml:203(para)
 msgid "Contains how-to information for managing an OpenStack cloud as needed for your use cases, such as storage, computing, or software-defined-networking"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:214(link)
+#: ./doc/openstack-ops/preface_ops.xml:211(link)
 msgid "OpenStack High Availability Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:218(para)
+#: ./doc/openstack-ops/preface_ops.xml:215(para)
 msgid "Describes potential strategies for making your OpenStack services and related controllers and data stores highly available"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:225(link)
+#: ./doc/openstack-ops/preface_ops.xml:222(link)
 msgid "OpenStack Security Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:229(para)
+#: ./doc/openstack-ops/preface_ops.xml:226(para)
 msgid "Provides best practices and conceptual information about securing an OpenStack cloud"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:235(link)
+#: ./doc/openstack-ops/preface_ops.xml:232(link)
 msgid "Virtual Machine Image Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:239(para)
+#: ./doc/openstack-ops/preface_ops.xml:236(para)
 msgid "Shows you how to obtain, create, and modify virtual machine images that are compatible with OpenStack"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:245(link)
+#: ./doc/openstack-ops/preface_ops.xml:242(link)
 msgid "OpenStack End User Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:249(para)
+#: ./doc/openstack-ops/preface_ops.xml:246(para)
 msgid "Shows OpenStack end users how to create and manage resources in an OpenStack cloud with the OpenStack dashboard and OpenStack client commands"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:256(link)
+#: ./doc/openstack-ops/preface_ops.xml:253(link)
 msgid "OpenStack Admin User Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:260(para)
+#: ./doc/openstack-ops/preface_ops.xml:257(para)
 msgid "Shows OpenStack administrators how to create and manage resources in an OpenStack cloud with the OpenStack dashboard and OpenStack client <phrase role=\"keep-together\">commands</phrase>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:268(link)
+#: ./doc/openstack-ops/preface_ops.xml:265(link)
 msgid "Networking Guide"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:272(para)
+#: ./doc/openstack-ops/preface_ops.xml:269(para)
 msgid "This guide targets OpenStack administrators seeking to deploy and manage OpenStack Networking (neutron)."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:278(link)
+#: ./doc/openstack-ops/preface_ops.xml:275(link)
 msgid "OpenStack API Quick Start"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:282(para)
+#: ./doc/openstack-ops/preface_ops.xml:279(para)
 msgid "A brief overview of how to send REST API requests to endpoints for OpenStack services"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:291(title)
+#: ./doc/openstack-ops/preface_ops.xml:288(title)
 msgid "How This Book Is Organized"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:293(para)
+#: ./doc/openstack-ops/preface_ops.xml:290(para)
 msgid "This book is organized into two parts: the architecture decisions for designing OpenStack clouds and the repeated operations for running OpenStack clouds."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:297(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:294(emphasis)
 msgid "Part I:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:304(para)
+#: ./doc/openstack-ops/preface_ops.xml:301(para)
 msgid "Because of all the decisions the other chapters discuss, this chapter describes the decisions made for this particular book and much of the justification for the example architecture."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:315(para)
+#: ./doc/openstack-ops/preface_ops.xml:312(para)
 msgid "While this book doesn't describe installation, we do recommend automation for deployment and configuration, discussed in this chapter."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:325(para)
+#: ./doc/openstack-ops/preface_ops.xml:322(para)
 msgid "The cloud controller is an invention for the sake of consolidating and describing which services run on which nodes. This chapter discusses hardware and network considerations as well as how to design the cloud controller for performance and separation of services."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:338(para)
+#: ./doc/openstack-ops/preface_ops.xml:335(para)
 msgid "This chapter describes the compute nodes, which are dedicated to running virtual machines. Some hardware choices come into play here, as well as logging and networking descriptions."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:349(para)
+#: ./doc/openstack-ops/preface_ops.xml:346(para)
 msgid "This chapter discusses the growth of your cloud resources through scaling and segregation considerations."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:359(para)
+#: ./doc/openstack-ops/preface_ops.xml:356(para)
 msgid "As with other architecture decisions, storage concepts within OpenStack offer many options. This chapter lays out the choices for you."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:369(para)
+#: ./doc/openstack-ops/preface_ops.xml:366(para)
 msgid "Your OpenStack cloud networking needs to fit into your existing networks while also enabling the best design for your users and administrators, and this chapter gives you in-depth information about networking decisions."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:377(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:374(emphasis)
 msgid "Part II:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:384(para)
+#: ./doc/openstack-ops/preface_ops.xml:381(para)
 msgid "This chapter is written to let you get your hands wrapped around your OpenStack cloud through command-line tools and understanding what is already set up in your cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:395(para)
+#: ./doc/openstack-ops/preface_ops.xml:392(para)
 msgid "This chapter walks through user-enabling processes that all admins must face to manage users, give them quotas to parcel out resources, and so on."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:405(para)
+#: ./doc/openstack-ops/preface_ops.xml:402(para)
 msgid "This chapter shows you how to use OpenStack cloud resources and how to train your users."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:414(para)
+#: ./doc/openstack-ops/preface_ops.xml:411(para)
 msgid "This chapter goes into the common failures that the authors have seen while running clouds in production, including troubleshooting."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:424(para)
+#: ./doc/openstack-ops/preface_ops.xml:421(para)
 msgid "Because network troubleshooting is especially difficult with virtual resources, this chapter is chock-full of helpful tips and tricks for tracing network traffic, finding the root cause of networking failures, and debugging related services, such as DHCP and DNS."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:437(para)
+#: ./doc/openstack-ops/preface_ops.xml:434(para)
 msgid "This chapter shows you where OpenStack places logs and how to best read and manage logs for monitoring purposes."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:447(para)
+#: ./doc/openstack-ops/preface_ops.xml:444(para)
 msgid "This chapter describes what you need to back up within OpenStack as well as best practices for recovering backups."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:457(para)
+#: ./doc/openstack-ops/preface_ops.xml:454(para)
 msgid "For readers who need to get a specialized feature into OpenStack, this chapter describes how to use DevStack to write custom middleware or a custom scheduler to rebalance your resources."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:468(para)
+#: ./doc/openstack-ops/preface_ops.xml:465(para)
 msgid "Because OpenStack is so, well, open, this chapter is dedicated to helping you navigate the community and find out where you can help and where you can get help."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:478(para)
+#: ./doc/openstack-ops/preface_ops.xml:475(para)
 msgid "Much of OpenStack is driver-oriented, so you can plug in different solutions to the base set of services. This chapter describes some advanced configuration <phrase role=\"keep-together\">topics</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:489(para)
+#: ./doc/openstack-ops/preface_ops.xml:486(para)
 msgid "This chapter provides upgrade information based on the architectures used in this book."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:497(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:494(emphasis)
 msgid "Back matter:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:504(para)
+#: ./doc/openstack-ops/preface_ops.xml:501(para)
 msgid "You can read a small selection of use cases from the OpenStack community with some technical details and further resources."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:514(para)
+#: ./doc/openstack-ops/preface_ops.xml:511(para)
 msgid "These are shared legendary tales of image disappearances, VM massacres, and crazy troubleshooting techniques that result in hard-learned lessons and <phrase role=\"keep-together\">wisdom</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:525(para)
+#: ./doc/openstack-ops/preface_ops.xml:522(para)
 msgid "Read about how to track the OpenStack roadmap through the open and transparent development processes."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:534(para)
+#: ./doc/openstack-ops/preface_ops.xml:531(para)
 msgid "So many OpenStack resources are available online because of the fast-moving nature of the project, but there are also resources listed here that the authors found helpful while learning themselves."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:545(para)
+#: ./doc/openstack-ops/preface_ops.xml:542(para)
 msgid "A list of terms used in this book is included, which is a subset of the larger OpenStack glossary available online."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:554(title)
+#: ./doc/openstack-ops/preface_ops.xml:551(title)
 msgid "Why and How We Wrote This Book"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:556(para)
+#: ./doc/openstack-ops/preface_ops.xml:553(para)
 msgid "We wrote this book because we have deployed and maintained OpenStack clouds for at least a year and we wanted to share this knowledge with others. After months of being the point people for an OpenStack cloud, we also wanted to have a document to hand to our system administrators so that they'd know how to operate the cloud on a daily basis—both reactively and pro-actively. We wanted to provide more detailed technical information about the decisions that deployers make along the way."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:568(para)
+#: ./doc/openstack-ops/preface_ops.xml:565(para)
 msgid "Design and create an architecture for your first nontrivial OpenStack cloud. After you read this guide, you'll know which questions to ask and how to organize your compute, networking, and storage resources and the associated software packages."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:576(para)
+#: ./doc/openstack-ops/preface_ops.xml:573(para)
 msgid "Perform the day-to-day tasks required to administer a cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:566(para)
+#: ./doc/openstack-ops/preface_ops.xml:563(para)
 msgid "We wrote this book to help you:<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:581(para)
+#: ./doc/openstack-ops/preface_ops.xml:578(para)
 msgid "We wrote this book in a book sprint, which is a facilitated, rapid development production method for books. For more information, see the <link xlink:href=\"http://www.booksprints.net/\">BookSprints site</link>. Your authors cobbled this book together in five days during February 2013, fueled by caffeine and the best takeout food that Austin, Texas, could <phrase role=\"keep-together\">offer</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:589(para)
+#: ./doc/openstack-ops/preface_ops.xml:586(para)
 msgid "On the first day, we filled white boards with colorful sticky notes to start to shape this nebulous book about how to architect and operate clouds:<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:599(para)
+#: ./doc/openstack-ops/preface_ops.xml:596(para)
 msgid "We wrote furiously from our own experiences and bounced ideas between each other. At regular intervals we reviewed the shape and organization of the book and further molded it, leading to what you see today."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:604(para)
+#: ./doc/openstack-ops/preface_ops.xml:601(para)
 msgid "The team includes:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:608(term)
+#: ./doc/openstack-ops/preface_ops.xml:605(term)
 msgid "Tom Fifield"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:611(para)
+#: ./doc/openstack-ops/preface_ops.xml:608(para)
 msgid "After learning about scalability in computing from particle physics experiments, such as ATLAS at the Large Hadron Collider (LHC) at CERN, Tom worked on OpenStack clouds in production to support the Australian public research sector. Tom currently serves as an OpenStack community manager and works on OpenStack documentation in his spare time."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:622(term)
+#: ./doc/openstack-ops/preface_ops.xml:619(term)
 msgid "Diane Fleming"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:625(para)
+#: ./doc/openstack-ops/preface_ops.xml:622(para)
 msgid "Diane works on the OpenStack API documentation tirelessly. She helped out wherever she could on this project."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:632(term)
+#: ./doc/openstack-ops/preface_ops.xml:629(term)
 msgid "Anne Gentle"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:635(para)
+#: ./doc/openstack-ops/preface_ops.xml:632(para)
 msgid "Anne is the documentation coordinator for OpenStack and also served as an individual contributor to the Google Documentation Summit in 2011, working with the Open Street Maps team. She has worked on book sprints in the past, with FLOSS Manuals’ Adam Hyde facilitating. Anne lives in Austin, Texas."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:645(term)
+#: ./doc/openstack-ops/preface_ops.xml:642(term)
 msgid "Lorin Hochstein"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:648(para)
+#: ./doc/openstack-ops/preface_ops.xml:645(para)
 msgid "An academic turned software-developer-slash-operator, Lorin worked as the lead architect for Cloud Services at Nimbis Services, where he deploys OpenStack for technical computing applications. He has been working with OpenStack since the Cactus release. Previously, he worked on high-performance computing extensions for OpenStack at University of Southern California's Information Sciences Institute (USC-ISI)."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:660(term)
+#: ./doc/openstack-ops/preface_ops.xml:657(term)
 msgid "Adam Hyde"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:663(para)
+#: ./doc/openstack-ops/preface_ops.xml:660(para)
 msgid "Adam facilitated this book sprint. He also founded the book sprint methodology and is the most experienced book-sprint facilitator around. See <link xlink:href=\"http://www.booksprints.net\"/> for more information. Adam founded FLOSS Manuals—a community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:676(term)
+#: ./doc/openstack-ops/preface_ops.xml:673(term)
 msgid "Jonathan Proulx"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:679(para)
+#: ./doc/openstack-ops/preface_ops.xml:676(para)
 msgid "Jon has been piloting an OpenStack cloud as a senior technical architect at the MIT Computer Science and Artificial Intelligence Lab for his researchers to have as much computing power as they need. He started contributing to OpenStack documentation and reviewing the documentation so that he could accelerate his learning."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:689(term)
+#: ./doc/openstack-ops/preface_ops.xml:686(term)
 msgid "Everett Toews"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:692(para)
+#: ./doc/openstack-ops/preface_ops.xml:689(para)
 msgid "Everett is a developer advocate at Rackspace making OpenStack and the Rackspace Cloud easy to use. Sometimes developer, sometimes advocate, and sometimes operator, he's built web applications, taught workshops, given presentations around the world, and deployed OpenStack for production use by academia and business."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:702(term)
+#: ./doc/openstack-ops/preface_ops.xml:699(term)
 msgid "Joe Topjian"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:705(para)
+#: ./doc/openstack-ops/preface_ops.xml:702(para)
 msgid "Joe has designed and deployed several clouds at Cybera, a nonprofit where they are building e-infrastructure to support entrepreneurs and local researchers in Alberta, Canada. He also actively maintains and operates these clouds as a systems architect, and his experiences have generated a wealth of troubleshooting skills for cloud environments."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:716(term)
+#: ./doc/openstack-ops/preface_ops.xml:713(term)
 msgid "OpenStack community members"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:719(para)
+#: ./doc/openstack-ops/preface_ops.xml:716(para)
 msgid "Many individual efforts keep a community book alive. Our community members updated content for this book year-round. Also, a year after the first sprint, Jon Proulx hosted a second two-day mini-sprint at MIT with the goal of updating the book for the latest release. Since the book's inception, more than 30 contributors have supported this book. We have a tool chain for reviews, continuous builds, and translations. Writers and developers continuously review patches, enter doc bugs, edit content, and fix doc bugs. We want to recognize their efforts!"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:731(para)
+#: ./doc/openstack-ops/preface_ops.xml:728(para)
 msgid "The following people have contributed to this book: Akihiro Motoki, Alejandro Avella, Alexandra Settle, Andreas Jaeger, Andy McCallum, Benjamin Stassart, Chandan Kumar, Chris Ricker, David Cramer, David Wittman, Denny Zhang, Emilien Macchi, Gauvain Pocentek, Ignacio Barrio, James E. Blair, Jay Clark, Jeff White, Jeremy Stanley, K Jonathan Harker, KATO Tomoyuki, Lana Brindley, Laura Alves, Lee Li, Lukasz Jernas, Mario B. Codeniera, Matthew Kassawara, Michael Still, Monty Taylor, Nermina Miller, Nigel Williams, Phil Hopkins, Russell Bryant, Sahid Orentino Ferdjaoui, Sandy Walsh, Sascha Peilicke, Sean M. Collins, Sergey Lukjanov, Shilla Saebi, Stephen Gordon, Summer Long, Uwe Stuehler, Vaibhav Bhatkar, Veronica Musso, Ying Chun \"Daisy\" Guo, Zhengguang Ou, and ZhiQiang Fan."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:752(title)
+#: ./doc/openstack-ops/preface_ops.xml:749(title)
 msgid "How to Contribute to This Book"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:754(para)
+#: ./doc/openstack-ops/preface_ops.xml:751(para)
 msgid "The genesis of this book was an in-person event, but now that the book is in your hands, we want you to contribute to it. OpenStack documentation follows the coding principles of iterative work, with bug logging, investigating, and fixing. We also store the source content on GitHub and invite collaborators through the OpenStack Gerrit installation, which offers reviews. For the O'Reilly edition of this book, we are using the company's Atlas system, which also stores source content on GitHub and enables collaboration among contributors."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:764(para)
+#: ./doc/openstack-ops/preface_ops.xml:761(para)
 msgid "Learn more about how to contribute to the OpenStack docs at <link xlink:href=\"https://wiki.openstack.org/wiki/Documentation/HowTo\">Documentation How To</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:768(para)
+#: ./doc/openstack-ops/preface_ops.xml:765(para)
 msgid "If you find a bug and can't fix it or aren't sure it's really a doc bug, log a bug at <link xlink:href=\"https://bugs.launchpad.net/openstack-manuals\">OpenStack Manuals</link>. Tag the bug under <guilabel>Extra</guilabel> options with the <literal>ops-guide</literal> tag to indicate that the bug is in this guide. You can assign the bug to yourself if you know how to fix it. Also, a member of the OpenStack doc-core team can triage the doc bug."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:781(title)
+#: ./doc/openstack-ops/preface_ops.xml:778(title)
 msgid "Conventions Used in This Book"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:783(para)
+#: ./doc/openstack-ops/preface_ops.xml:780(para)
 msgid "The following typographical conventions are used in this book:"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:788(emphasis)
+#: ./doc/openstack-ops/preface_ops.xml:785(emphasis)
 msgid "Italic"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:791(para)
+#: ./doc/openstack-ops/preface_ops.xml:788(para)
 msgid "Indicates new terms, URLs, email addresses, filenames, and file extensions."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:797(literal)
+#: ./doc/openstack-ops/preface_ops.xml:794(literal)
 msgid "Constant width"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:800(para)
+#: ./doc/openstack-ops/preface_ops.xml:797(para)
 msgid "Used for program listings, as well as within paragraphs to refer to program elements such as variable or function names, databases, data types, environment variables, statements, and keywords."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:811(para)
+#: ./doc/openstack-ops/preface_ops.xml:808(para)
 msgid "Shows commands or other text that should be typed literally by the user."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:817(replaceable)
+#: ./doc/openstack-ops/preface_ops.xml:814(replaceable)
 msgid "Constant width italic"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:820(para)
+#: ./doc/openstack-ops/preface_ops.xml:817(para)
 msgid "Shows text that should be replaced with user-supplied values or by values determined by context."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:826(term)
+#: ./doc/openstack-ops/preface_ops.xml:823(term)
 msgid "Command prompts"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:829(para)
+#: ./doc/openstack-ops/preface_ops.xml:826(para)
 msgid "Commands prefixed with the <literal>#</literal> prompt should be executed by the <literal>root</literal> user. These examples can also be executed using the <literal>sudo</literal> command, if available."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:834(para)
+#: ./doc/openstack-ops/preface_ops.xml:831(para)
 msgid "Commands prefixed with the <literal>$</literal> prompt can be executed by any user, including <literal>root</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:842(para)
+#: ./doc/openstack-ops/preface_ops.xml:839(para)
 msgid "This element signifies a tip or suggestion."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:846(para)
+#: ./doc/openstack-ops/preface_ops.xml:843(para)
 msgid "This element signifies a general note."
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:850(para)
+#: ./doc/openstack-ops/preface_ops.xml:847(para)
 msgid "This element indicates a warning or caution."
 msgstr ""
 
