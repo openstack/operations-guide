@@ -69,7 +69,8 @@
       </indexterm></para>
 
     <para>You can find all of the documentation at the <link
-    xlink:href="http://devstack.org/">DevStack</link> website.</para>
+    xlink:href="http://docs.openstack.org/developer/devstack/"
+    >DevStack</link> website.</para>
 
     <procedure>
       <title>To run DevStack for the stable Havana branch on an instance in
