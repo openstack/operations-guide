@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-16 06:00+0000\n"
+"POT-Creation-Date: 2015-07-20 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2219,7 +2219,7 @@ msgstr ""
 msgid "Update a default value for a new tenant, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:396(replaceable) ./doc/openstack-ops/ch_ops_customize.xml:832(code)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:396(replaceable) ./doc/openstack-ops/ch_ops_customize.xml:833(code)
 msgid "key"
 msgstr ""
 
@@ -3249,7 +3249,7 @@ msgstr ""
 msgid "It is essentially an object storage system that manages disks and aggregates the space and performance of disks linearly in hyper scale on commodity hardware in a smart way. On top of its object store, Sheepdog provides elastic volume service and http service. Sheepdog does not assume anything about kernel version and can work nicely with xattr-supported file systems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:789(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title) ./doc/openstack-ops/ch_ops_customize.xml:1187(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:789(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title) ./doc/openstack-ops/ch_ops_customize.xml:1188(title)
 msgid "Conclusion"
 msgstr ""
 
@@ -4367,7 +4367,7 @@ msgstr ""
 msgid "/var/log/neutron"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:95(para) ./doc/openstack-ops/ch_ops_customize.xml:361(code) ./doc/openstack-ops/ch_ops_customize.xml:840(code)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:95(para) ./doc/openstack-ops/ch_ops_customize.xml:362(code) ./doc/openstack-ops/ch_ops_customize.xml:841(code)
 msgid "horizon"
 msgstr ""
 
@@ -10928,474 +10928,474 @@ msgid "To create a development environment, you can use DevStack. DevStack is es
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:71(para)
-msgid "You can find all of the documentation at the <link xlink:href=\"http://devstack.org/\">DevStack</link> website."
+msgid "You can find all of the documentation at the <link xlink:href=\"http://docs.openstack.org/developer/devstack/\">DevStack</link> website."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:75(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:76(title)
 msgid "To run DevStack for the stable Havana branch on an instance in your OpenStack cloud:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:79(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:80(para)
 msgid "Boot an instance from the dashboard or the nova command-line interface (CLI) with the following parameters:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:84(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:85(para)
 msgid "Name: devstack-havana"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:88(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:89(para)
 msgid "Image: Ubuntu 12.04 LTS"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:92(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:93(para)
 msgid "Memory Size: 4 GB RAM"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:96(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:97(para)
 msgid "Disk Size: minimum 5 GB"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:100(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:101(para)
 msgid "If you are using the <code>nova</code> client, specify <code>--flavor 3</code> for the <code>nova boot</code> command to get adequate memory and disk sizes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:106(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:107(para)
 msgid "Log in and set up DevStack. Here's an example of the commands you can use to set up DevStack on a virtual machine:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:113(replaceable)
+#: ./doc/openstack-ops/ch_ops_customize.xml:114(replaceable)
 msgid "username"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:113(replaceable)
+#: ./doc/openstack-ops/ch_ops_customize.xml:114(replaceable)
 msgid "my.instance.ip.address"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:111(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:112(para)
 msgid "Log in to the instance: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:117(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:118(para)
 msgid "Update the virtual machine's operating system: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:123(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:124(para)
 msgid "Install git: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:129(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:130(para)
 msgid "Clone the stable/havana branch of the <literal>devstack</literal> repository: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:137(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:138(para)
 msgid "Change to the <literal>devstack</literal> repository: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:145(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:146(para)
 msgid "(Optional) If you've logged in to your instance as the root user, you must create a \"stack\" user; otherwise you'll run into permission issues. If you've logged in as a user other than root, you can skip these steps:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:152(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:153(para)
 msgid "Run the DevStack script to create the stack user:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:158(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:159(para)
 msgid "Give ownership of the <literal>devstack</literal> directory to the stack user:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:165(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:166(para)
 msgid "Set some permissions you can use to view the DevStack screen later:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:172(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:173(para)
 msgid "Switch to the stack user:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:180(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:181(para)
 msgid "Edit the <filename>localrc</filename> configuration file that controls what DevStack will deploy. Copy the example <filename>localrc</filename> file at the end of this section (<xref linkend=\"localrc\"/>):"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:189(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:190(para)
 msgid "Run the stack script that will install OpenStack: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:195(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:196(para)
 msgid "When the stack script is done, you can open the screen session it started to view all of the running OpenStack services: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:202(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:203(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by 0 to go to the first <literal>screen</literal> window."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:214(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:215(para)
 msgid "The <code>stack.sh</code> script takes a while to run. Perhaps you can take this opportunity to <link xlink:href=\"https://www.openstack.org/join/\">join the OpenStack Foundation</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:221(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:222(para)
 msgid "<literal>Screen</literal> is a useful program for viewing many related services at once. For more information, see the <link xlink:href=\"http://aperiodic.net/screen/quick_reference\">GNU screen quick reference</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:229(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:230(para)
 msgid "Now that you have an OpenStack development environment, you're free to hack around without worrying about damaging your production deployment. <xref linkend=\"localrc\"/> provides a working environment for running OpenStack Identity, Compute, Block Storage, Image service, the OpenStack dashboard, and Object Storage with the stable/havana branches as the starting point."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:237(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:238(title)
 msgid "localrc"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:282(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:283(title)
 msgid "Customizing Object Storage (Swift) Middleware"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:284(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:285(para)
 msgid "OpenStack Object Storage, known as swift when reading the code, is based on the Python <link xlink:href=\"http://pythonpaste.org/\">Paste</link> framework. The best introduction to its architecture is <link xlink:href=\"http://pythonpaste.org/do-it-yourself-framework.html\">A Do-It-Yourself Framework</link>. Because of the swift project's use of this framework, you are able to add features to a project by placing some custom code in a project's pipeline without having to change any of the core code.<indexterm class=\"singular\"><primary>Paste framework</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>swift</primary><secondary>swift middleware</secondary></indexterm><indexterm class=\"singular\"><primary>Object Storage</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>Object Storage</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing Object Storage (swift)</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:313(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:314(para)
 msgid "Imagine a scenario where you have public access to one of your containers, but what you really want is to restrict access to that to a set of IPs based on a whitelist. In this example, we'll create a piece of middleware for swift that allows access to a container from only a set of IP addresses, as determined by the container's metadata items. Only those IP addresses that you explicitly whitelist using the container's metadata will be able to access the container."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:322(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:323(para)
 msgid "This example is for illustrative purposes only. It should not be used as a container IP whitelist solution without further development and extensive security testing.<indexterm class=\"singular\"><primary>security issues</primary><secondary>middleware example</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:331(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:332(para)
 msgid "When you join the screen session that <code>stack.sh</code> starts with <code>screen -r stack</code>, you see a screen for each service running, which can be a few or several, depending on how many services you configured DevStack to run."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:336(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:337(para)
 msgid "The asterisk * indicates which screen window you are viewing. This example shows we are viewing the key (for keystone) screen window:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:341(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:342(para)
 msgid "The purpose of the screen windows are as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:345(code) ./doc/openstack-ops/ch_ops_customize.xml:824(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:346(code) ./doc/openstack-ops/ch_ops_customize.xml:825(code)
 msgid "shell"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:348(para) ./doc/openstack-ops/ch_ops_customize.xml:827(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:349(para) ./doc/openstack-ops/ch_ops_customize.xml:828(para)
 msgid "A shell where you can get some work done"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:353(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:354(code)
 msgid "key*"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:356(para) ./doc/openstack-ops/ch_ops_customize.xml:835(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:357(para) ./doc/openstack-ops/ch_ops_customize.xml:836(para)
 msgid "The keystone service"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:364(para) ./doc/openstack-ops/ch_ops_customize.xml:843(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:365(para) ./doc/openstack-ops/ch_ops_customize.xml:844(para)
 msgid "The horizon dashboard web application"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:369(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:370(code)
 msgid "s-{name}"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:372(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:373(para)
 msgid "The swift services"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:378(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:379(title)
 msgid "To create the middleware and plug it in through Paste configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:381(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:382(para)
 msgid "All of the code for OpenStack lives in <code>/opt/stack</code>. Go to the swift directory in the <code>shell</code> screen and edit your middleware module."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:386(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:387(para)
 msgid "Change to the directory where Object Storage is installed:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:393(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:394(para)
 msgid "Create the <literal>ip_whitelist.py</literal> Python source code file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:400(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:401(para)
 msgid "Copy the code in <xref linkend=\"ip_whitelist\"/> into <filename>ip_whitelist.py</filename>. The following code is a middleware example that restricts access to a container based on IP address as explained at the beginning of the section. Middleware passes the request on to another application. This example uses the swift \"swob\" library to wrap Web Server Gateway Interface (WSGI) requests and responses into objects for swift to interact with. When you're done, save and close the file."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:410(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:411(title)
 msgid "ip_whitelist.py"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:507(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:508(para)
 msgid "There is a lot of useful information in <code>env</code> and <code>conf</code> that you can use to decide what to do with the request. To find out more about what properties are available, you can insert the following log statement into the <code>__init__</code> method:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:515(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:516(para)
 msgid "and the following log statement into the <code>__call__</code> method:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:522(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:523(para)
 msgid "To plug this middleware into the swift Paste pipeline, you edit one configuration file, <filename>/etc/swift/proxy-server.conf</filename>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:530(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:531(para)
 msgid "Find the <code>[filter:ratelimit]</code> section in <filename>/etc/swift/proxy-server.conf</filename>, and copy in the following configuration section after it:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:546(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:547(para)
 msgid "Find the <code>[pipeline:main]</code> section in <filename>/etc/swift/proxy-server.conf</filename>, and add <code>ip_whitelist</code> after ratelimit to the list like so. When you're done, save and close the file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:556(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:557(para)
 msgid "Restart the <literal>swift proxy</literal> service to make swift use your middleware. Start by switching to the <literal>swift-proxy</literal> screen:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:562(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:563(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by <keycap>3</keycap>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:570(para) ./doc/openstack-ops/ch_ops_customize.xml:1069(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:571(para) ./doc/openstack-ops/ch_ops_customize.xml:1070(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo> to kill the service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:578(para) ./doc/openstack-ops/ch_ops_customize.xml:1077(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:579(para) ./doc/openstack-ops/ch_ops_customize.xml:1078(para)
 msgid "Press Up Arrow to bring up the last command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:582(para) ./doc/openstack-ops/ch_ops_customize.xml:1081(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:583(para) ./doc/openstack-ops/ch_ops_customize.xml:1082(para)
 msgid "Press Enter to run it."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:588(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:589(para)
 msgid "Test your middleware with the <code>swift</code> CLI. Start by switching to the shell screen and finish by switching back to the <code>swift-proxy</code> screen to check the log output:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:594(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:595(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by 0."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:602(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:603(para)
 msgid "Make sure you're in the <literal>devstack</literal> directory:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:609(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:610(para)
 msgid "Source openrc to set up your environment variables for the CLI:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:616(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:617(para)
 msgid "Create a container called <literal>middleware-test</literal>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:623(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:624(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by <keycap>3</keycap> to check the log output."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:634(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:635(para)
 msgid "Among the log statements you'll see the lines:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:639(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:640(para)
 msgid "These two statements are produced by our middleware and show that the request was sent from our DevStack instance and was allowed."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:645(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:646(para)
 msgid "Test the middleware from outside DevStack on a remote machine that has access to your DevStack instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:650(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:651(para)
 msgid "Install the <code>keystone</code> and <code>swift</code> clients on your local machine:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:657(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:658(para)
 msgid "Attempt to list the objects in the <literal>middleware-test</literal> container:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:670(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:671(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by <keycap>3</keycap> to check the log output. Look at the swift log statements again, and among the log statements, you'll see the lines:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:685(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:686(para)
 msgid "Here we can see that the request was denied because the remote IP address wasn't in the set of allowed IPs."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:690(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:691(para)
 msgid "Back in your DevStack instance on the shell screen, add some metadata to your container to allow the request from the remote machine:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:696(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:697(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by <keycap>0</keycap>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:704(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:705(para)
 msgid "Add metadata to the container to allow the IP:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:710(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:711(para)
 msgid "Now try the command from Step 10 again and it succeeds. There are no objects in the container, so there is nothing to list; however, there is also no error to report."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:719(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:720(para)
 msgid "Functional testing like this is not a replacement for proper unit and integration testing, but it serves to get you started.<indexterm class=\"singular\"><primary>testing</primary><secondary>functional testing</secondary></indexterm><indexterm class=\"singular\"><primary>functional testing</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:730(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:731(para)
 msgid "You can follow a similar pattern in other projects that use the Python Paste framework. Simply create a middleware module and plug it in through configuration. The middleware runs in sequence as part of that project's pipeline and can call out to other services as necessary. No project core code is touched. Look for a <code>pipeline</code> value in the project's <code>conf</code> or <code>ini</code> configuration files in <code>/etc/&lt;project&gt;</code> to identify projects that use Paste."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:739(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:740(para)
 msgid "When your middleware is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official swift <link xlink:href=\"https://github.com/openstack/swift/tree/master/swift/common/middleware\">middleware</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:748(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:749(title)
 msgid "Customizing the OpenStack Compute (nova) Scheduler"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:750(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:751(para)
 msgid "Many OpenStack projects allow for customization of specific features using a driver architecture. You can write a driver that conforms to a particular interface and plug it in through configuration. For example, you can easily plug in a new scheduler for Compute. The existing schedulers for Compute are feature full and well documented at <link xlink:href=\"http://docs.openstack.org/kilo/config-reference/content/section_compute-scheduler.html\">Scheduling</link>. However, depending on your user's use cases, the existing schedulers might not meet your requirements. You might need to create a new scheduler.<indexterm class=\"singular\"><primary>customization</primary><secondary>OpenStack Compute (nova) Scheduler</secondary></indexterm><indexterm class=\"singular\"><primary>schedulers</primary><secondary>customization of</secondary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing OpenStack Compute (nova) scheduler</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:772(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:773(para)
 msgid "To create a scheduler, you must inherit from the class <code>nova.scheduler.driver.Scheduler</code>. Of the five methods that you can override, you <emphasis>must</emphasis> override the two methods marked with an asterisk (*) below:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:779(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:780(code)
 msgid "update_service_capabilities"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:783(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:784(code)
 msgid "hosts_up"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:787(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:788(code)
 msgid "group_hosts"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:791(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:792(para)
 msgid "* <code>schedule_run_instance</code>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:795(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:796(para)
 msgid "* <code>select_destinations</code>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:799(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:800(para)
 msgid "To demonstrate customizing OpenStack, we'll create an example of a Compute scheduler that randomly places an instance on a subset of hosts, depending on the originating IP address of the request and the prefix of the hostname. Such an example could be useful when you have a group of users on a subnet and you want all of their instances to start within some subset of your hosts."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:807(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:808(para)
 msgid "This example is for illustrative purposes only. It should not be used as a scheduler for Compute without further development and <phrase role=\"keep-together\">testing</phrase>.<indexterm class=\"singular\"><primary>security issues</primary><secondary>scheduler example</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:816(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:817(para)
 msgid "When you join the screen session that <code>stack.sh</code> starts with <code>screen -r stack</code>, you are greeted with many screen windows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:848(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:849(code)
 msgid "n-{name}"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:851(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:852(para)
 msgid "The nova services"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:856(code)
+#: ./doc/openstack-ops/ch_ops_customize.xml:857(code)
 msgid "n-sch"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:859(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:860(para)
 msgid "The nova scheduler service"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:865(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:866(title)
 msgid "To create the scheduler and plug it in through configuration:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:869(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:870(para)
 msgid "The code for OpenStack lives in <code>/opt/stack</code>, so go to the <literal>nova</literal> directory and edit your scheduler module. Change to the directory where <literal>nova</literal> is installed:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:878(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:879(para)
 msgid "Create the <filename>ip_scheduler.py</filename> Python source code file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:885(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:886(para)
 msgid "The code in <xref linkend=\"ip_scheduler\"/> is a driver that will schedule servers to hosts based on IP address as explained at the beginning of the section. Copy the code into <filename>ip_scheduler.py</filename>. When you're done, save and close the file."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:892(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:893(title)
 msgid "ip_scheduler.py"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1020(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1021(para)
 msgid "There is a lot of useful information in <code>context</code>, <code>request_spec</code>, and <code>filter_properties</code> that you can use to decide where to schedule the instance. To find out more about what properties are available, you can insert the following log statements into the <code>schedule_run_instance</code> method of the scheduler above:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1033(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1034(para)
 msgid "To plug this scheduler into nova, edit one configuration file, <filename>/etc/nova/nova.conf</filename>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1040(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1041(para)
 msgid "Find the <code>scheduler_driver</code> config and change it like so:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1047(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1048(para)
 msgid "Restart the nova scheduler service to make nova use your scheduler. Start by switching to the <code>n-sch</code> screen:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1052(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1053(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by <keycap>9</keycap>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1060(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1061(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by <keycap>N</keycap> until you reach the <code>n-sch</code> screen."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1087(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1088(para)
 msgid "Test your scheduler with the nova CLI. Start by switching to the <code>shell</code> screen and finish by switching back to the <code>n-sch</code> screen to check the log output:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1093(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1094(para)
 msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> followed by <keycap>0</keycap>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1101(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1102(para)
 msgid "Make sure you're in the <filename>devstack</filename> directory:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1108(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1109(para)
 msgid "Source <filename>openrc</filename> to set up your environment variables for the CLI:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1115(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1116(para)
 msgid "Put the image ID for the only installed image into an environment variable:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1122(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1123(para)
 msgid "Boot a test server:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1130(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1131(para)
 msgid "Switch back to the <code>n-sch</code> screen. Among the log statements, you'll see the line:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1141(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1142(para)
 msgid "Functional testing like this is not a replacement for proper unit and integration testing, but it serves to get you started."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1145(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1146(para)
 msgid "A similar pattern can be followed in other projects that use the driver architecture. Simply create a module and class that conform to the driver interface and plug it in through configuration. Your code runs when that feature is used and can call out to other services as necessary. No project core code is touched. Look for a \"driver\" value in the project's <filename>.conf</filename> configuration files in <code>/etc/&lt;project&gt;</code> to identify projects that use a driver architecture."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1154(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1155(para)
 msgid "When your scheduler is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official Compute <link xlink:href=\"https://github.com/openstack/nova/tree/master/nova/scheduler\">schedulers</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1163(title)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1164(title)
 msgid "Customizing the Dashboard (Horizon)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1165(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1166(para)
 msgid "The dashboard is based on the Python <link xlink:href=\"https://www.djangoproject.com/\">Django</link> web application framework. The best guide to customizing it has already been written and can be found at <link xlink:href=\"http://docs.openstack.org/developer/horizon/topics/tutorial.html\">Building on Horizon</link>.<indexterm class=\"singular\"><primary>Django</primary></indexterm><indexterm class=\"singular\"><primary>Python</primary></indexterm><indexterm class=\"singular\"><primary>dashboard</primary></indexterm><indexterm class=\"singular\"><primary>DevStack</primary><secondary>customizing dashboard</secondary></indexterm><indexterm class=\"singular\"><primary>customization</primary><secondary>dashboard</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_customize.xml:1189(para)
+#: ./doc/openstack-ops/ch_ops_customize.xml:1190(para)
 msgid "When operating an OpenStack cloud, you may discover that your users can be quite demanding. If OpenStack doesn't do what your users need, it may be up to you to fulfill those requirements. This chapter provided you with some options for customization and gave you the tools you need to get started."
 msgstr ""
 
