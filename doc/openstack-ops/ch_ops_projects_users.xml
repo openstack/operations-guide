@@ -407,8 +407,7 @@
           <title>To view quota values for a tenant (project)</title>
 
           <step>
-            <para>Place the tenant ID in a useable variable, as
-            follows:</para>
+            <para>Place the tenant ID in a variable:</para>
 
             <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
@@ -701,8 +700,7 @@ Accept-Ranges: bytes</computeroutput></screen>
           <title>To update Block Storage quotas for a tenant (project)</title>
 
           <step>
-            <para>Place the tenant ID in a useable variable, as
-            follows:</para>
+            <para>Place the tenant ID in a variable:</para>
 
             <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
