@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-23 06:00+0000\n"
+"POT-Creation-Date: 2015-07-26 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -8688,7 +8688,7 @@ msgid "One cloud controller acted as a gateway to all compute nodes. VlanManager
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:92(para)
-msgid "Finally, Alvaro noticed something. When a packet from the outside hits the cloud controller, it should not be configured with a VLAN. We verified this as true. When the packet went from the cloud controller to the compute node, it should only have a VLAN if it was destined for an instance. This was still true. When the ping reply was sent from the instance, it should be in a VLAN. True. When it came back to the cloud controller and on its way out to the public internet, it should no longer have a VLAN. False. Uh oh. It looked as though the VLAN part of the packet was not being removed."
+msgid "Finally, Alvaro noticed something. When a packet from the outside hits the cloud controller, it should not be configured with a VLAN. We verified this as true. When the packet went from the cloud controller to the compute node, it should only have a VLAN if it was destined for an instance. This was still true. When the ping reply was sent from the instance, it should be in a VLAN. True. When it came back to the cloud controller and on its way out to the Internet, it should no longer have a VLAN. False. Uh oh. It looked as though the VLAN part of the packet was not being removed."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:103(para)
@@ -8712,7 +8712,7 @@ msgid "Then it all made sense… <placeholder-1/>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:119(para)
-msgid "In <filename>nova.conf</filename>, <code>vlan_interface</code> specifies what interface OpenStack should attach all VLANs to. The correct setting should have been: <placeholder-1/>."
+msgid "In <filename>nova.conf</filename>, <code>vlan_interface</code> specifies what interface OpenStack should attach all VLANs to. The correct setting should have been: <placeholder-1/>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:123(para)
@@ -8720,7 +8720,7 @@ msgid "As this would be the server's bonded NIC."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:124(para)
-msgid "vlan20 is the VLAN that the data center gave us for outgoing public internet access. It's a correct VLAN and is also attached to bond0."
+msgid "vlan20 is the VLAN that the data center gave us for outgoing Internet access. It's a correct VLAN and is also attached to bond0."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:127(para)
@@ -8848,7 +8848,7 @@ msgid "Disappearing Images"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:267(para)
-msgid "At the end of 2012, Cybera (a nonprofit with a mandate to oversee the development of cyberinfrastructure in Alberta, Canada) deployed an updated OpenStack cloud for their <link xlink:title=\"DAIR project\" xlink:href=\"http://www.canarie.ca/en/dair-program/about\">DAIR project</link> (http://www.canarie.ca/en/dair-program/about). A few days into production, a compute node locks up. Upon rebooting the node, I checked to see what instances were hosted on that node so I could boot them on behalf of the customer. Luckily, only one instance."
+msgid "At the end of 2012, Cybera (a nonprofit with a mandate to oversee the development of cyberinfrastructure in Alberta, Canada) deployed an updated OpenStack cloud for their <link xlink:title=\"DAIR project\" xlink:href=\"http://www.canarie.ca/cloud/\">DAIR project</link> (http://www.canarie.ca/en/dair-program/about). A few days into production, a compute node locks up. Upon rebooting the node, I checked to see what instances were hosted on that node so I could boot them on behalf of the customer. Luckily, only one instance."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:278(para)
@@ -8888,7 +8888,7 @@ msgid "Ah-hah! So OpenStack was deleting it. But why?"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:334(para)
-msgid "A feature was introduced in Essex to periodically check and see if there were any <code>_base</code> files not in use. If there were, Nova would delete them. This idea sounds innocent enough and has some good qualities to it. But how did this feature end up turned on? It was disabled by default in Essex. As it should be. It was <link xlink:href=\"https://bugs.launchpad.net/nova/+bug/1029674\">decided to be turned on in Folsom</link> (https://bugs.launchpad.net/nova/+bug/1029674). I cannot emphasize enough that:"
+msgid "A feature was introduced in Essex to periodically check and see if there were any <code>_base</code> files not in use. If there were, OpenStack Compute would delete them. This idea sounds innocent enough and has some good qualities to it. But how did this feature end up turned on? It was disabled by default in Essex. As it should be. It was <link xlink:href=\"https://bugs.launchpad.net/nova/+bug/1029674\">decided to be turned on in Folsom</link> (https://bugs.launchpad.net/nova/+bug/1029674). I cannot emphasize enough that:"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:346(emphasis)
@@ -9044,7 +9044,7 @@ msgid "So, I found myself wondering what changed in the EC2 API on Havana that m
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:550(para)
-msgid "After digging into the Nova code, I noticed two areas in <filename>api/ec2/cloud.py</filename> potentially impacting my system:"
+msgid "After digging into the nova (OpenStack Compute) code, I noticed two areas in <filename>api/ec2/cloud.py</filename> potentially impacting my system:"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:562(para)
