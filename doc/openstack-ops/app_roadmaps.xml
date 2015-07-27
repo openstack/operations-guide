@@ -549,8 +549,7 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
       <para>As mentioned, there's currently no way to cleanly migrate from
       <literal>nova-network</literal> to neutron. We recommend that you keep a
       migration in mind and what that process might involve for when a proper
-      migration path is released. Current thinking is that upgrades without
-      instance downtime will be available in the Kilo release.</para>
+      migration path is released.</para>
     </section>
   </section>
 
