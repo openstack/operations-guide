@@ -319,7 +319,7 @@
       </listitem>
 
       <listitem>
-        <para><glossterm baseform="Availability zone">Availability
+        <para><glossterm baseform="availability zone">Availability
         zones</glossterm> and host aggregates, which merely divide a single
         Compute deployment.</para>
       </listitem>
