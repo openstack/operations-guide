@@ -397,7 +397,7 @@
 
             <para>For example:</para>
 
-            <screen><prompt>$</prompt> <userinput>nova quota-class-update default instances 15</userinput></screen>
+            <screen><prompt>$</prompt> <userinput>nova quota-class-update default --instances 15</userinput></screen>
           </step>
         </procedure>
 
