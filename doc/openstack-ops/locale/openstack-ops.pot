@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-27 06:00+0000\n"
+"POT-Creation-Date: 2015-07-29 06:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1328,7 +1328,7 @@ msgid "Working with Roadmaps"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:12(para)
-msgid "The good news: OpenStack has unprecedented transparency when it comes to providing information about what's coming up. The bad news: each release moves very quickly. The purpose of this appendix is to highlight some of the useful pages to track, and take an educated guess at what is coming up in the Kilo release and perhaps further afield.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>upcoming release of</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>release cycle</tertiary></indexterm>"
+msgid "The good news: OpenStack has unprecedented transparency when it comes to providing information about what's coming up. The bad news: each release moves very quickly. The purpose of this appendix is to highlight some of the useful pages to track, and take an educated guess at what is coming up in the next release and perhaps further afield.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>upcoming release of</secondary></indexterm><indexterm class=\"singular\"><primary>OpenStack community</primary><secondary>working with roadmaps</secondary><tertiary>release cycle</tertiary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:28(para)
@@ -1764,7 +1764,7 @@ msgid "In addition, database migrations are now tested with the Turbo Hipster to
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:490(para)
-msgid "These changes have facilitated the first proper OpenStack upgrade guide, found in <xref linkend=\"ch_ops_upgrades\"/>, and will continue to improve in Kilo.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>upgrades in</secondary></indexterm>"
+msgid "These changes have facilitated the first proper OpenStack upgrade guide, found in <xref linkend=\"ch_ops_upgrades\"/>, and will continue to improve in the next release.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>upgrades in</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:500(title)
@@ -1800,7 +1800,7 @@ msgid "One of the long-time complaints surrounding OpenStack Networking was the 
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:563(para)
-msgid "Early indications are that it does do this well for a base set of scenarios, such as using the ML2 plug-in with Open vSwitch, one flat external network and VXLAN tenant networks. However, it does appear that there are problems with the use of VLANs, IPv6, Floating IPs, high north-south traffic scenarios and large numbers of compute nodes. It is expected these will improve significantly with the Kilo release, but bug reports on specific issues are highly desirable."
+msgid "Early indications are that it does do this well for a base set of scenarios, such as using the ML2 plug-in with Open vSwitch, one flat external network and VXLAN tenant networks. However, it does appear that there are problems with the use of VLANs, IPv6, Floating IPs, high north-south traffic scenarios and large numbers of compute nodes. It is expected these will improve significantly with the next release, but bug reports on specific issues are highly desirable."
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:574(title)
@@ -1828,7 +1828,7 @@ msgid "This project continues to improve and you may consider using it for green
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:614(title)
-msgid "Data Processing (Sahara)"
+msgid "Data processing service for OpenStack (sahara)"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:616(para)
@@ -1836,58 +1836,58 @@ msgid "A much-requested answer to big data problems, a dedicated team has been m
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:621(title)
-msgid "Bare-Metal Deployment (Ironic)"
+msgid "Bare metal Deployment (ironic)"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:623(para)
-msgid "The bare-metal deployment has been widely lauded, and development continues. The Juno release brought the Ironic drive into the Compute project, and it is aimed to deprecate the existing bare-metal driver in Kilo. If you are a current user of the bare metal driver, a particular blueprint to follow is <link xlink:href=\"https://blueprints.launchpad.net/nova/+spec/deprecate-baremetal-driver\"> Deprecate the Baremetal driver</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>Compute bare-metal deployment</secondary></indexterm>"
+msgid "The bare-metal deployment has been widely lauded, and development continues. The Juno release brought the OpenStack Bare metal drive into the Compute project, and it was aimed to deprecate the existing bare-metal driver in Kilo. If you are a current user of the bare metal driver, a particular blueprint to follow is <link xlink:href=\"https://blueprints.launchpad.net/nova/+spec/deprecate-baremetal-driver\"> Deprecate the bare metal driver</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>Compute bare-metal deployment</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:637(title)
-msgid "Database as a Service (Trove)"
+msgid "Database as a Service (trove)"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:639(para)
-msgid "The OpenStack community has had a database-as-a-service tool in development for some time, and we saw the first integrated release of it in Icehouse. From release it was able to deploy database servers out of the box in a highly available way, initially supporting only MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and Couchbase, in addition to replication functionality for MySQL. In Kilo, more advanced clustering capability was delivered, in addition to better integration with other OpenStack components such as networking. <indexterm class=\"singular\"><primary>Juno</primary><secondary>database-as-a-service tool</secondary></indexterm>"
+msgid "The OpenStack community has had a database-as-a-service tool in development for some time, and we saw the first integrated release of it in Icehouse. From its release it was able to deploy database servers out of the box in a highly available way, initially supporting only MySQL. Juno introduced support for Mongo (including clustering), PostgreSQL and Couchbase, in addition to replication functionality for MySQL. In Kilo, more advanced clustering capability was delivered, in addition to better integration with other OpenStack components such as Networking. <indexterm class=\"singular\"><primary>Juno</primary><secondary>database-as-a-service tool</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:655(title)
-msgid "Messaging as a Service (Zaqar)"
+msgid "Message Service (zaqar)"
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:657(para)
-msgid "A service to provide queues of messages and notifications has entered “incubation,” meaning if the upcoming development cycles are successful, it will be released in <phrase role=\"keep-together\">Kilo</phrase>."
+msgid "A service to provide queues of messages and notifications was released."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:664(title)
-msgid "DNS as a Service (Designate)"
+#: ./doc/openstack-ops/app_roadmaps.xml:661(title)
+msgid "DNS service (designate)"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:666(para)
-msgid "A long requested service, to provide the ability to manipulate DNS entries associated with OpenStack resources has gathered a following. The Designate project has entered “incubation,” meaning if the upcoming development cycles are successful, it could be released in <phrase role=\"keep-together\">Kilo</phrase>."
+#: ./doc/openstack-ops/app_roadmaps.xml:663(para)
+msgid "A long requested service, to provide the ability to manipulate DNS entries associated with OpenStack resources has gathered a following. The designate project was also released."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:673(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:668(title)
 msgid "Scheduler Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:675(para)
-msgid "Both Compute and Block Storage rely on schedulers to determine where to place virtual machines or volumes. In Havana, the Compute scheduler underwent significant improvement, while in Icehouse it was the scheduler in Block Storage that received a boost. Further down the track, an effort started this cycle that aims to create a holistic scheduler covering both will come to fruition. Some of this work done in Kilo can be found under the <link xlink:href=\"https://wiki.openstack.org/wiki/Gantt/kilo\">Gantt project</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>scheduler improvements</secondary></indexterm>"
+#: ./doc/openstack-ops/app_roadmaps.xml:670(para)
+msgid "Both Compute and Block Storage rely on schedulers to determine where to place virtual machines or volumes. In Havana, the Compute scheduler underwent significant improvement, while in Icehouse it was the scheduler in Block Storage that received a boost. Further down the track, an effort started this cycle that aims to create a holistic scheduler covering both will come to fruition. Some of the work that was done in Kilo can be found under the <link xlink:href=\"https://wiki.openstack.org/wiki/Gantt/kilo\">Gantt project</link>.<indexterm class=\"singular\"><primary>Kilo</primary><secondary>scheduler improvements</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:689(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:684(title)
 msgid "Block Storage Improvements"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:691(para)
-msgid "Block Storage is now considered a stable project, with wide uptake and a long track record of quality drivers. The team still discussed many areas of work at the Kilo summit, including better error reporting, automated discovery, and thin provisioning features."
+#: ./doc/openstack-ops/app_roadmaps.xml:686(para)
+msgid "Block Storage is considered a stable project, with wide uptake and a long track record of quality drivers. The team has discussed many areas of work at the summits, including better error reporting, automated discovery, and thin provisioning features."
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:699(title)
+#: ./doc/openstack-ops/app_roadmaps.xml:694(title)
 msgid "Toward a Python SDK"
 msgstr ""
 
-#: ./doc/openstack-ops/app_roadmaps.xml:701(para)
+#: ./doc/openstack-ops/app_roadmaps.xml:696(para)
 msgid "Though many successfully use the various python-*client code as an effective SDK for interacting with OpenStack, consistency between the projects and documentation availability waxes and wanes. To combat this, an <link xlink:href=\"https://wiki.openstack.org/wiki/PythonOpenStackSDK\">effort to improve the experience</link> has started. Cross-project development efforts in OpenStack have a checkered history, such as the <link xlink:href=\"https://wiki.openstack.org/wiki/OpenStackClient\"> unified client project</link> having several false starts. However, the early signs for the SDK project are promising, and we expect to see results during the Juno cycle.<indexterm class=\"endofrange\" startref=\"OSaspect\"/>"
 msgstr ""
 
@@ -10628,7 +10628,7 @@ msgid "Cells and regions, which segregate an entire cloud and result in running 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:322(para)
-msgid "<glossterm baseform=\"Availability zone\">Availability zones</glossterm> and host aggregates, which merely divide a single Compute deployment."
+msgid "<glossterm baseform=\"availability zone\">Availability zones</glossterm> and host aggregates, which merely divide a single Compute deployment."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_scaling.xml:328(para)

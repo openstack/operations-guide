@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-07-27 01:23+0000\n"
-"PO-Revision-Date: 2015-07-27 04:10+0000\n"
+"POT-Creation-Date: 2015-07-28 00:45+0000\n"
+"PO-Revision-Date: 2015-07-28 07:47+0000\n"
 "Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -531,13 +531,6 @@ msgstr "<filename>keystone.conf</filename>:"
 
 msgid "<filename>nova.conf</filename>:"
 msgstr "<filename>nova.conf</filename>:"
-
-msgid ""
-"<glossterm baseform=\"Availability zone\">Availability zones</glossterm> and "
-"host aggregates, which merely divide a single Compute deployment."
-msgstr ""
-"<glossterm baseform=\"Availability zone\">アベイラビリティゾーン</glossterm> "
-"およびホストアグリゲート。コンピュートのデプロイメントの分割のみを行います。"
 
 msgid ""
 "<glossterm>Block storage</glossterm>: You don't have to offer users block "
@@ -1279,6 +1272,9 @@ msgstr ""
 "商用ストレージノード全体でデータを複製する拡張性の高いストレージソリューショ"
 "ン。Ceph は、DreamHost の創設者により開発され、現在は実稼動環境で使用されてい"
 "ます。"
+
+msgid "A service to provide queues of messages and notifications was released."
+msgstr "メッセージと通知のキューを提供するサービスが提供されました。"
 
 msgid "A shell where you can get some work done"
 msgstr "作業を行うためのシェル"
@@ -2821,8 +2817,8 @@ msgstr "バックエンドのストレージサービス"
 msgid "Backup and Recovery"
 msgstr "バックアップとリカバリー"
 
-msgid "Bare-Metal Deployment (Ironic)"
-msgstr "Bare-Metal Deployment (Ironic)"
+msgid "Bare metal Deployment (ironic)"
+msgstr "Bare metal Deployment (ironic)"
 
 msgid "Basic node deployment"
 msgstr "基本ノードデプロイメント"
@@ -2965,6 +2961,9 @@ msgstr ""
 
 msgid "Block Storage Creation Failures"
 msgstr "ブロックストレージの作成エラー"
+
+msgid "Block Storage Improvements"
+msgstr "Block Storage の改善"
 
 msgid "Block Storage back end"
 msgstr "Block Storage バックエンド"
@@ -3764,8 +3763,8 @@ msgstr ""
 msgid "DNS"
 msgstr "DNS"
 
-msgid "DNS as a Service (Designate)"
-msgstr "DNS as a Service (Designate)"
+msgid "DNS service (designate)"
+msgstr "DNS service (designate)"
 
 msgid "Daemon"
 msgstr "デーモン"
@@ -3782,8 +3781,8 @@ msgstr "ダッシュボードサービス"
 msgid "Dashboard's Create Project form"
 msgstr "Dashboard のプロジェクトの作成フォーム"
 
-msgid "Data Processing (Sahara)"
-msgstr "Data Processing (Sahara)"
+msgid "Data processing service for OpenStack (sahara)"
+msgstr "Data processing service for OpenStack (sahara)"
 
 msgid "Database"
 msgstr "データベース"
@@ -3797,8 +3796,8 @@ msgstr "データベース接続性"
 msgid "Database and message queue server (such as MySQL, RabbitMQ)"
 msgstr "データベースとメッセージキューサーバ（例:MySQL、RabbitMQ）"
 
-msgid "Database as a Service (Trove)"
-msgstr "Database as a Service (Trove)"
+msgid "Database as a Service (trove)"
+msgstr "Database as a Service (trove)"
 
 msgid "Databases"
 msgstr "データベース"
@@ -7058,6 +7057,9 @@ msgstr "Memory_MB"
 msgid "Message Queue"
 msgstr "メッセージキュー"
 
+msgid "Message Service (zaqar)"
+msgstr "Message Service (zaqar)"
+
 msgid "Message queue"
 msgstr "メッセージキュー"
 
@@ -7066,9 +7068,6 @@ msgstr "メッセージキューとデータベースのサービス"
 
 msgid "Message queue services"
 msgstr "メッセージキューサービス"
-
-msgid "Messaging as a Service (Zaqar)"
-msgstr "Messaging as a Service (Zaqar)"
 
 msgid "Metadata items"
 msgstr "メタデータ項目"
@@ -9630,6 +9629,9 @@ msgstr "スケーリング"
 
 msgid "Scenario"
 msgstr "シナリオ"
+
+msgid "Scheduler Improvements"
+msgstr "スケジューラーの改善"
 
 msgid "Scheduling"
 msgstr "スケジューリング"
