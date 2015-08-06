@@ -469,13 +469,16 @@
       We discuss the terms used in these fields when we explain the
       command-line equivalents.</para>
 
-      <para>From the command line, you can get a list of security groups for
-      the project you're acting in using the <literal>nova</literal>
-      command:</para>
+      <section xml:id="config-sec-group-by-nova-command">
+        <title>Setting with nova command</title>
 
-      <?hard-pagebreak ?>
+        <para>From the command line, you can get a list of security groups for
+        the project you're acting in using the <literal>nova</literal>
+        command:</para>
 
-      <screen><prompt>$</prompt> <userinput>nova secgroup-list</userinput>
+        <?hard-pagebreak ?>
+
+        <screen><prompt>$</prompt> <userinput>nova secgroup-list</userinput>
 <computeroutput>+---------+-------------+
 | Name    | Description |
 +---------+-------------+
@@ -483,9 +486,9 @@
 | open    | all ports   |
 +---------+-------------+</computeroutput></screen>
 
-      <para>To view the details of the "open" security group:</para>
+        <para>To view the details of the "open" security group:</para>
 
-      <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules open</userinput>
+        <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules open</userinput>
 <computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
@@ -494,37 +497,37 @@
 | udp         | 1         | 65535   | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
 
-      <para>These rules are all "allow" type rules, as the default is deny.
-      The first column is the IP protocol (one of icmp, tcp, or udp), and the
-      second and third columns specify the affected port range. The fourth
-      column specifies the IP range in CIDR format. This example shows the
-      full port range for all protocols allowed from all IPs.</para>
+        <para>These rules are all "allow" type rules, as the default is deny.
+        The first column is the IP protocol (one of icmp, tcp, or udp), and the
+        second and third columns specify the affected port range. The fourth
+        column specifies the IP range in CIDR format. This example shows the
+        full port range for all protocols allowed from all IPs.</para>
 
-      <para>When adding a new security group, you should pick a descriptive
-      but brief name. This name shows up in brief descriptions of the
-      instances that use it where the longer description field often does not.
-      Seeing that an instance is using security group <literal>http</literal>
-      is much easier to understand than <literal>bobs_group</literal> or
-      <literal>secgrp1</literal>.</para>
+        <para>When adding a new security group, you should pick a descriptive
+        but brief name. This name shows up in brief descriptions of the
+        instances that use it where the longer description field often does not.
+        Seeing that an instance is using security group <literal>http</literal>
+        is much easier to understand than <literal>bobs_group</literal> or
+        <literal>secgrp1</literal>.</para>
 
-      <para>As an example, let's create a security group that allows web
-      traffic anywhere on the Internet. We'll call this group
-      <literal>global_http</literal>, which is clear and reasonably concise,
-      encapsulating what is allowed and from where. From the command line,
-      do:</para>
+        <para>As an example, let's create a security group that allows web
+        traffic anywhere on the Internet. We'll call this group
+        <literal>global_http</literal>, which is clear and reasonably concise,
+        encapsulating what is allowed and from where. From the command line,
+        do:</para>
 
-      <screen><prompt>$</prompt> <userinput>nova secgroup-create \
-       global_http "allow web traffic from the Internet"</userinput>
+        <screen><prompt>$</prompt> <userinput>nova secgroup-create \
+         global_http "allow web traffic from the Internet"</userinput>
 <computeroutput>+-------------+-------------------------------------+
 | Name        | Description                         |
 +-------------+-------------------------------------+
 | global_http | allow web traffic from the Internet |
 +-------------+-------------------------------------+</computeroutput></screen>
 
-      <para>This creates the empty security group. To make it do what we want,
-      we need to add some rules:</para>
+        <para>This creates the empty security group. To make it do what we want,
+        we need to add some rules:</para>
 
-      <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule &lt;secgroup&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt; &lt;cidr&gt;</userinput>
+        <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule &lt;secgroup&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt; &lt;cidr&gt;</userinput>
 <prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 80 80 0.0.0.0/0</userinput>
 <computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
@@ -532,25 +535,25 @@
 | tcp         | 80        | 80      | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
 
-      <para>Note that the arguments are positional, and the
-      <literal>from-port</literal> and <literal>to-port</literal> arguments
-      specify the allowed local port range connections. These arguments are
-      not indicating source and destination ports of the connection. More
-      complex rule sets can be built up through multiple invocations of
-      <literal>nova secgroup-add-rule</literal>. For example, if you want to
-      pass both http and https traffic, do this:</para>
+        <para>Note that the arguments are positional, and the
+        <literal>from-port</literal> and <literal>to-port</literal> arguments
+        specify the allowed local port range connections. These arguments are
+        not indicating source and destination ports of the connection. More
+        complex rule sets can be built up through multiple invocations of
+        <literal>nova secgroup-add-rule</literal>. For example, if you want to
+        pass both http and https traffic, do this:</para>
 
-      <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 443 443 0.0.0.0/0</userinput>
+        <screen><prompt>$</prompt> <userinput>nova secgroup-add-rule global_http tcp 443 443 0.0.0.0/0</userinput>
 <computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
 | tcp         | 443       | 443     | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
 
-      <para>Despite only outputting the newly added rule, this operation is
-      additive:</para>
+        <para>Despite only outputting the newly added rule, this operation is
+        additive:</para>
 
-      <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules global_http</userinput>
+        <screen><prompt>$</prompt> <userinput>nova secgroup-list-rules global_http</userinput>
 <computeroutput>+-------------+-----------+---------+-----------+--------------+
 | IP Protocol | From Port | To Port | IP Range  | Source Group |
 +-------------+-----------+---------+-----------+--------------+
@@ -558,30 +561,247 @@
 | tcp         | 443       | 443     | 0.0.0.0/0 |              |
 +-------------+-----------+---------+-----------+--------------+</computeroutput></screen>
 
-      <para>The inverse operation is called
-      <literal>secgroup-delete-rule</literal>, using the same format. Whole
-      security groups can be removed with
-      <literal>secgroup-delete</literal>.</para>
+        <para>The inverse operation is called
+        <literal>secgroup-delete-rule</literal>, using the same format. Whole
+        security groups can be removed with
+        <literal>secgroup-delete</literal>.</para>
 
-      <para>To create security group rules for a cluster of instances, you
-      want to use <phrase role="keep-together">SourceGroups</phrase>.</para>
+        <para>To create security group rules for a cluster of instances, you
+        want to use <phrase role="keep-together">SourceGroups</phrase>.</para>
 
-      <para>SourceGroups are a special dynamic way of defining the CIDR of
-      allowed sources. The user specifies a SourceGroup (security group name)
-      and then all the users' other instances using the specified SourceGroup
-      are selected dynamically. This dynamic selection alleviates the need for
-      individual rules to allow each new member of the <phrase
-      role="keep-together">cluster</phrase>.</para>
+        <para>SourceGroups are a special dynamic way of defining the CIDR of
+        allowed sources. The user specifies a SourceGroup (security group name)
+        and then all the users' other instances using the specified SourceGroup
+        are selected dynamically. This dynamic selection alleviates the need for
+        individual rules to allow each new member of the <phrase
+        role="keep-together">cluster</phrase>.</para>
 
-      <para>The code is structured like this: <code>nova
-      secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt;
-      &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code>. An example
-      usage is shown here:</para>
+        <para>The code is structured like this: <code>nova
+        secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt;
+        &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code>. An example
+        usage is shown here:</para>
 
-      <screen><prompt>$</prompt> <userinput>nova secgroup-add-group-rule cluster global-http tcp 22 22</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>nova secgroup-add-group-rule cluster global-http tcp 22 22</userinput></screen>
 
-      <para>The "cluster" rule allows SSH access from any other instance that
-      uses the <literal>global-http</literal> group.</para>
+        <para>The "cluster" rule allows SSH access from any other instance that
+        uses the <literal>global-http</literal> group.</para>
+      </section>
+      <section xml:id="config-sec-group-by-neutron-command">
+        <title>Setting with neutron command</title>
+
+        <para>If your environment is using Neutron, you can configure security groups settings using the <literal>neutron</literal> command.
+        Get a list of security groups for the project you are acting in, by using following command:</para>
+
+        <screen><prompt>$</prompt> <userinput>neutron security-group-list</userinput>
+<computeroutput>+--------------------------------------+---------+-------------+
+| id                                   | name    | description |
++--------------------------------------+---------+-------------+
+| 6777138a-deb7-4f10-8236-6400e7aff5b0 | default | default     |
+| 750acb39-d69b-4ea0-a62d-b56101166b01 | open    | all ports   |
++--------------------------------------+---------+-------------+</computeroutput></screen>
+
+        <para>To view the details of the "open" security group:</para>
+
+        <screen><prompt>$</prompt> <userinput>neutron security-group-show open</userinput>
+<computeroutput>+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                | Value                                                                                                                                                                                                                                                                                                                                  |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| description          | all ports                                                                                                                                                                                                                                                                                                                              |
+| id                   | 750acb39-d69b-4ea0-a62d-b56101166b01                                                                                                                                                                                                                                                                                                   |
+| name                 | open                                                                                                                                                                                                                                                                                                                                   |
+| security_group_rules | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "607ec981611a4839b7b06f6dfa81317d", "port_range_max": null, "security_group_id": "750acb39-d69b-4e0-a62d-b56101166b01", "port_range_min": null, "ethertype": "IPv4", "id": "361a1b62-95dd-46e1-8639-c3b2000aab60"}           |
+|                      | {"remote_group_id": null, "direction": "ingress", "remote_ip_prefix": "0.0.0.0/0", "protocol": "udp", "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": 65535, "security_group_id": "750acb9-d69b-4ea0-a62d-b56101166b01", "port_range_min": 1, "ethertype": "IPv4", "id": "496ba8b7-d96e-4655-920f-068a3d4ddc36"}    |
+|                      | {"remote_group_id": null, "direction": "ingress", "remote_ip_prefix": "0.0.0.0/0", "protocol": "icmp", "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": null, "security_group_id": "750acb9-d69b-4ea0-a62d-b56101166b01", "port_range_min": null, "ethertype": "IPv4", "id": "50642a56-3c4e-4b31-9293-0a636759a156"} |
+|                      | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "607ec981611a4839b7b06f6dfa81317d", "port_range_max": null, "security_group_id": "750acb39-d69b-4e0-a62d-b56101166b01", "port_range_min": null, "ethertype": "IPv6", "id": "f46f35eb-8581-4ca1-bbc9-cf8d0614d067"}           |
+|                      | {"remote_group_id": null, "direction": "ingress", "remote_ip_prefix": "0.0.0.0/0", "protocol": "tcp", "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": 65535, "security_group_id": "750acb9-d69b-4ea0-a62d-b56101166b01", "port_range_min": 1, "ethertype": "IPv4", "id": "fb6f2d5e-8290-4ed8-a23b-c6870813c921"}    |
+| tenant_id            | 607ec981611a4839b7b06f6dfa81317d                                                                                                                                                                                                                                                                                                       |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</computeroutput></screen>
+
+        <para>These rules are all "allow" type rules, as the default is deny.
+        This example shows the full port range for all protocols allowed from all IPs.
+        This section describes the most common security-group-rule parameters:</para>
+
+        <variablelist>
+          <varlistentry>
+            <term>direction</term>
+
+            <listitem>
+              <para>The direction in which the security group rule is applied.
+              Valid values are <literal>ingress</literal> or <literal>egress</literal>.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>remote_ip_prefix</term>
+
+            <listitem>
+              <para>This attribute value matches the specified IP prefix as the
+              source IP address of the IP packet.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>protocol</term>
+
+            <listitem>
+              <para>The protocol that is matched by the security group rule.
+              Valid values are <literal>null</literal>, <literal>tcp</literal>, <literal>udp</literal>, and <literal>icmp</literal>.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>port_range_min</term>
+
+            <listitem>
+              <para>The minimum port number in the range that is matched by the security group rule.
+              If the protocol is TCP or UDP, this value must be less than or equal to the <literal>port_range_max</literal> attribute value.
+              If the protocol is ICMP, this value must be an ICMP type.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>port_range_max</term>
+
+            <listitem>
+              <para>The maximum port number in the range that is matched by the security group rule.
+              The <literal>port_range_min</literal> attribute constrains the <literal>port_range_max</literal> attribute.
+              If the protocol is ICMP, this value must be an ICMP type.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term>ethertype</term>
+
+            <listitem>
+              <para>Must be <literal>IPv4</literal> or <literal>IPv6</literal>,
+              and addresses represented in CIDR must match the ingress or egress rules.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+        <para>When adding a new security group, you should pick a descriptive
+        but brief name. This name shows up in brief descriptions of the
+        instances that use it where the longer description field often does not.
+        Seeing that an instance is using security group <literal>http</literal>
+        is much easier to understand than <literal>bobs_group</literal> or
+        <literal>secgrp1</literal>.</para>
+
+        <para>This example creates a security group that allows web
+        traffic anywhere on the Internet. We'll call this group
+        <literal>global_http</literal>, which is clear and reasonably concise,
+        encapsulating what is allowed and from where. From the command line,
+        do:</para>
+
+        <screen><prompt>$</prompt> <userinput>neutron security-group-create \
+         global_http --descriptioin "allow web traffic from the Internet"</userinput>
+<computeroutput>Created a new security_group:
++----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                | Value                                                                                                                                                                                                                                                                                                                         |
++----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| description          | allow web traffic from the Internet                                                                                                                                                                                                                                                                                           |
+| id                   | c6d78d56-7c56-4c82-abcb-05aa9839d1e7                                                                                                                                                                                                                                                                                          |
+| name                 | global_http                                                                                                                                                                                                                                                                                                                   |
+| security_group_rules | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": null, "security_group_id": "c6d78d56-7c56-4c82-abcb-05aa9839d1e7", "port_range_min": null, "ethertype": "IPv4", "id": "b2e56b3a-890b-48d3-9380-8a9f6f8b1b36"} |
+|                      | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": null, "security_group_id": "c6d78d56-7c56-4c82-abcb-05aa9839d1e7", "port_range_min": null, "ethertype": "IPv6", "id": "153d84ba-651d-45fd-9015-58807749efc5"} |
+| tenant_id            | 341f49145ec7445192dc3c2abc33500d                                                                                                                                                                                                                                                                                              |
++----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</computeroutput></screen>
+
+        <para>Immediately after create, the security group has only an allow egress rule.
+        To make it do what we want, we need to add some rules:</para>
+
+        <screen><prompt>$</prompt> <userinput>neutron security-group-create [-h] [f {shell,table,value}]
+                              [-c COLUMN] [--max-width &lt;integer&gt;]
+                              [--prefix PREFIX]
+                              [--request-format {json,xml}]
+                              [--tenant-id TENANT_ID]
+                              [--direction {ingress,egress}]
+                              [--ethertype ETHERTYPE]
+                              [--protocol PROTOCOL]
+                              [--port-range-min PORT_RANGE_MIN]
+                              [--port-range-max PORT_RANGE_MAX]
+                              [--remote-ip-prefix REMOTE_IP_PREFIX]
+                              [--remote-group-id REMOTE_GROUP]
+                              SECURITY_GROUP</userinput>
+<prompt>$</prompt> <userinput>neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol tcp --port-range-min 80 --port-range-max 80 --remote-ip-prefix 0.0.0.0/0 global_http</userinput>
+<computeroutput>Created a new security_group_rule:
++-------------------+--------------------------------------+
+| Field             | Value                                |
++-------------------+--------------------------------------+
+| direction         | ingress                              |
+| ethertype         | IPv4                                 |
+| id                | 88ec4762-239e-492b-8583-e480e9734622 |
+| port_range_max    | 80                                   |
+| port_range_min    | 80                                   |
+| protocol          | tcp                                  |
+| remote_group_id   |                                      |
+| remote_ip_prefix  | 0.0.0.0/0                            |
+| security_group_id | c6d78d56-7c56-4c82-abcb-05aa9839d1e7 |
+| tenant_id         | 341f49145ec7445192dc3c2abc33500d     |
++-------------------+--------------------------------------+</computeroutput></screen>
+
+        <para>More complex rule sets can be built up through multiple invocations of
+        <literal>neutron security-group-rule-create</literal>. For example, if you want to
+        pass both http and https traffic, do this:</para>
+
+        <screen><prompt>$</prompt> <userinput>neutron security-group-rule-create --direction ingress --ethertype ipv4 --protocol tcp --port-range-min 443 --port-range-max 443 --remote-ip-prefix 0.0.0.0/0 global_http</userinput>
+<computeroutput>Created a new security_group_rule:
++-------------------+--------------------------------------+
+| Field             | Value                                |
++-------------------+--------------------------------------+
+| direction         | ingress                              |
+| ethertype         | IPv4                                 |
+| id                | c50315e5-29f3-408e-ae15-50fdc03fb9af |
+| port_range_max    | 443                                  |
+| port_range_min    | 443                                  |
+| protocol          | tcp                                  |
+| remote_group_id   |                                      |
+| remote_ip_prefix  | 0.0.0.0/0                            |
+| security_group_id | c6d78d56-7c56-4c82-abcb-05aa9839d1e7 |
+| tenant_id         | 341f49145ec7445192dc3c2abc33500d     |
++-------------------+--------------------------------------+</computeroutput></screen>
+
+        <para>Despite only outputting the newly added rule, this operation is
+        additive:</para>
+
+        <screen><prompt>$</prompt> <userinput>neutron security-group-show global_http</userinput>
+<computeroutput>+----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field                | Value                                                                                                                                                                                                                                                                                                                                |
++----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| description          | allow web traffic from the Internet                                                                                                                                                                                                                                                                                                  |
+| id                   | c6d78d56-7c56-4c82-abcb-05aa9839d1e7                                                                                                                                                                                                                                                                                                 |
+| name                 | global_http                                                                                                                                                                                                                                                                                                                          |
+| security_group_rules | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": null, "security_group_id": "c6d78d56-7c56-4c82-abcb-05aa9839d1e7", "port_range_min": null, "ethertype": "IPv6", "id": "153d84ba-651d-45fd-9015-58807749efc5"}        |
+|                      | {"remote_group_id": null, "direction": "ingress", "remote_ip_prefix": "0.0.0.0/0", "protocol": "tcp", "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": 80, "security_group_id": "c6d78d56-7c56-4c82-abcb-05aa9839d1e7", "port_range_min": 80, "ethertype": "IPv4", "id": "88ec4762-239e-492b-8583-e480e9734622"}   |
+|                      | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": null, "security_group_id": "c6d78d56-7c56-4c82-abcb-05aa9839d1e7", "port_range_min": null, "ethertype": "IPv4", "id": "b2e56b3a-890b-48d3-9380-8a9f6f8b1b36"}        |
+|                      | {"remote_group_id": null, "direction": "ingress", "remote_ip_prefix": "0.0.0.0/0", "protocol": "tcp", "tenant_id": "341f49145ec7445192dc3c2abc33500d", "port_range_max": 443, "security_group_id": "c6d78d56-7c56-4c82-abcb-05aa9839d1e7", "port_range_min": 443, "ethertype": "IPv4", "id": "c50315e5-29f3-408e-ae15-50fdc03fb9af"} |
+| tenant_id            | 341f49145ec7445192dc3c2abc33500d                                                                                                                                                                                                                                                                                                     |
++----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</computeroutput></screen>
+
+        <para>The inverse operation is called
+        <literal>security-group-rule-delete</literal>, specifying security-group-rule ID.
+        Whole security groups can be removed with
+        <literal>security-group-delete</literal>.</para>
+
+        <para>To create security group rules for a cluster of instances,
+        use <phrase role="keep-together">RemoteGroups</phrase>.</para>
+
+        <para>RemoteGroups are a dynamic way of defining the CIDR of
+        allowed sources. The user specifies a RemoteGroup (security group name)
+        and then all the users' other instances using the specified RemoteGroup
+        are selected dynamically. This dynamic selection alleviates the need for
+        individual rules to allow each new member of the <phrase
+        role="keep-together">cluster</phrase>.</para>
+
+        <para>The code is similar to the above example of <literal>security-group-rule-create</literal>.
+        To use RemoteGroup, specify <literal>--remote-group-id</literal>
+        instead of <literal>--remote-ip-prefix</literal>.
+        For example:</para>
+        <screen><prompt>$</prompt> <userinput>neutron security-group-rule-create --direction ingress
+        --ethertype IPv4 --protocol tcp --port-range-min 22 --port-range-max 22 --remote-group-id global_http cluster</userinput></screen>
+
+        <para>The "cluster" rule allows SSH access from any other instance that
+        uses the <literal>global-http</literal> group.</para>
+      </section>
     </section>
   </section>
 
