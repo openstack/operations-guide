@@ -665,7 +665,7 @@
             <listitem>
               <para>The maximum port number in the range that is matched by the security group rule.
               The <literal>port_range_min</literal> attribute constrains the <literal>port_range_max</literal> attribute.
-              If the protocol is ICMP, this value must be an ICMP type.</para>
+              If the protocol is ICMP, this value must be an ICMP code.</para>
             </listitem>
           </varlistentry>
 
