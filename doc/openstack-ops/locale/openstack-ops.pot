@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-07 06:00+0000\n"
+"POT-Creation-Date: 2015-08-11 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5424,7 +5424,7 @@ msgid "port_range_max"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:666(para)
-msgid "The maximum port number in the range that is matched by the security group rule. The <literal>port_range_min</literal> attribute constrains the <literal>port_range_max</literal> attribute. If the protocol is ICMP, this value must be an ICMP type."
+msgid "The maximum port number in the range that is matched by the security group rule. The <literal>port_range_min</literal> attribute constrains the <literal>port_range_max</literal> attribute. If the protocol is ICMP, this value must be an ICMP code."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:673(term)
