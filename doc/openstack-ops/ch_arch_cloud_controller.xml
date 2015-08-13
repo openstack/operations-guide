@@ -367,7 +367,7 @@
   <section xml:id="database">
     <title>Database</title>
 
-    <para>OpenStack Compute uses a SQL database to store and retrieve stateful
+    <para>OpenStack Compute uses an SQL database to store and retrieve stateful
     information. MySQL is the popular database choice in the OpenStack
     community.<indexterm class="singular">
         <primary>databases</primary>
