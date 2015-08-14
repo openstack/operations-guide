@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-11 06:00+0000\n"
+"POT-Creation-Date: 2015-08-14 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4164,7 +4164,7 @@ msgid "Using OpenStack Compute cells, the NeCTAR Research Cloud spans eight site
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:45(para)
-msgid "Each site runs a different configuration, as a resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a non-shared file system. Each site deploys the Image service with an Object Storage back end. A central Identity, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity service with a SQL back end. An Object Storage Global Cluster is used across several sites."
+msgid "Each site runs a different configuration, as a resource <glossterm>cell</glossterm>s in an OpenStack Compute cells setup. Some sites span multiple data centers, some use off compute node storage with a shared file system, and some use on compute node storage with a non-shared file system. Each site deploys the Image service with an Object Storage back end. A central Identity, dashboard, and Compute API service are used. A login to the dashboard triggers a SAML login with Shibboleth, which creates an <glossterm>account</glossterm> in the Identity service with an SQL back end. An Object Storage Global Cluster is used across several sites."
 msgstr ""
 
 #: ./doc/openstack-ops/app_usecases.xml:56(para)
@@ -7668,7 +7668,7 @@ msgid "Database"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:370(para)
-msgid "OpenStack Compute uses a SQL database to store and retrieve stateful information. MySQL is the popular database choice in the OpenStack community.<indexterm class=\"singular\"><primary>databases</primary><secondary>design considerations</secondary></indexterm><indexterm class=\"singular\"><primary>design considerations</primary><secondary>database choice</secondary></indexterm>"
+msgid "OpenStack Compute uses an SQL database to store and retrieve stateful information. MySQL is the popular database choice in the OpenStack community.<indexterm class=\"singular\"><primary>databases</primary><secondary>design considerations</secondary></indexterm><indexterm class=\"singular\"><primary>design considerations</primary><secondary>database choice</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_cloud_controller.xml:382(para)
