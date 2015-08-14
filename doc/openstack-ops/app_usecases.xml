@@ -50,7 +50,7 @@
       Object Storage back end. A central Identity, dashboard, and
       Compute API service are used. A login to the dashboard triggers a SAML
       login with Shibboleth, which creates an <glossterm>account</glossterm>
-      in the Identity service with a SQL back end. An Object Storage Global
+      in the Identity service with an SQL back end. An Object Storage Global
       Cluster is used across several sites.</para>
 
       <para>Compute nodes have 24 to 48 cores, with at least 4 GB of RAM per
