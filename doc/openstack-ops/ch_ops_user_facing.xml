@@ -42,9 +42,9 @@
           <secondary>adding</secondary>
         </indexterm> To add this image, simply do:</para>
 
-      <screen><prompt>$</prompt> <userinput>wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img</userinput>
+      <screen><prompt>$</prompt> <userinput>wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img</userinput>
 <prompt>$</prompt> <userinput>glance image-create --name='cirros image' --is-public=true \
-  --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.1-x86_64-disk.img</userinput></screen>
+  --container-format=bare --disk-format=qcow2 &lt; cirros-0.3.4-x86_64-disk.img</userinput></screen>
 
       <para>The <code>glance image-create</code> command provides a large set
       of options for working with your image. For example, the

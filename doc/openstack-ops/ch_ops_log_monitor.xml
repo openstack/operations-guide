@@ -837,10 +837,9 @@ notification_driver=messagingv2</programlisting>
 
 
 . /root/openrc
-wget https://launchpad.net/cirros/trunk/0.3.0/+download/ \
-     cirros-0.3.0-x86_64-disk.img
+wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
 glance image-create --name='cirros image' --is-public=true
---container-format=bare --disk-format=qcow2 &lt; cirros-0.3.0-x8
+--container-format=bare --disk-format=qcow2 &lt; cirros-0.3.4-x8
 6_64-disk.img</programlisting>
 
       <para>By taking this script and rolling it into an alert for your
