@@ -265,7 +265,7 @@
             <code>snooper0</code> (returns UUID of mirror port):</para>
 
             <screen><prompt>#</prompt> <userinput>ovs-vsctl -- set Bridge br-int mirrors=@m  -- --id=@snooper0 \
-get Port snooper0  -- --id=@patch-tun get Port patch-tun  \
+get Port snooper0  -- --id=@patch-tun get Port patch-tun \
 -- --id=@m create Mirror name=mymirror select-dst-port=@patch-tun \
 select-src-port=@patch-tun output-port=@snooper0 select_all=1</userinput></screen>
           </step>
@@ -332,8 +332,8 @@ select-src-port=@patch-tun output-port=@snooper0 select_all=1</userinput></scree
             br-int</literal>:</para>
 
             <screen><prompt>#</prompt> <userinput>ovs-ofctl dump-flows br-int|grep vlan=2113</userinput>
-<computeroutput>cookie=0x0, duration=173615.481s, table=0, n_packets=7676140, \
-n_bytes=444818637, idle_age=0, hard_age=65534, priority=3, \
+<computeroutput>cookie=0x0, duration=173615.481s, table=0, n_packets=7676140,
+n_bytes=444818637, idle_age=0, hard_age=65534, priority=3,
 in_port=1,dl_vlan=2113 actions=mod_vlan_vid:7,NORMAL
 </computeroutput></screen>
 
@@ -345,10 +345,10 @@ in_port=1,dl_vlan=2113 actions=mod_vlan_vid:7,NORMAL
             <screen><prompt>#</prompt> <userinput>ovs-ofctl show br-int</userinput>
 <computeroutput>OFPT_FEATURES_REPLY (xid=0x2): dpid:000022bc45e1914b
 n_tables:254, n_buffers:256
-capabilities: FLOW_STATS TABLE_STATS PORT_STATS QUEUE_STATS \
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS QUEUE_STATS
 ARP_MATCH_IP
-actions: OUTPUT SET_VLAN_VID SET_VLAN_PCP STRIP_VLAN SET_DL_SRC \
-SET_DL_DST SET_NW_SRC SET_NW_DST SET_NW_TOS SET_TP_SRC \
+actions: OUTPUT SET_VLAN_VID SET_VLAN_PCP STRIP_VLAN SET_DL_SRC
+SET_DL_DST SET_NW_SRC SET_NW_DST SET_NW_TOS SET_TP_SRC
 SET_TP_DST ENQUEUE
  1(int-br-eth1): addr:c2:72:74:7f:86:08
      config:     0
@@ -388,8 +388,8 @@ OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
             reverse of the process described above:</para>
 
             <screen><prompt>#</prompt> <userinput>ovs-ofctl dump-flows br-eth1|grep 2113</userinput>
-<computeroutput>cookie=0x0, duration=184168.225s, table=0, n_packets=0, n_bytes=0, \
-idle_age=65534, hard_age=65534, priority=4,in_port=1,dl_vlan=7 \
+<computeroutput>cookie=0x0, duration=184168.225s, table=0, n_packets=0, n_bytes=0,
+idle_age=65534, hard_age=65534, priority=4,in_port=1,dl_vlan=7
 actions=mod_vlan_vid:2113,NORMAL</computeroutput></screen>
 
             <para>Packets, now tagged with the external VLAN tag, then exit
@@ -414,7 +414,7 @@ actions=mod_vlan_vid:2113,NORMAL</computeroutput></screen>
 <computeroutput>        Port "gre-1"
             Interface "gre-1"
                 type: gre
-                options: {in_key=flow, local_ip="10.10.128.21", \
+                options: {in_key=flow, local_ip="10.10.128.21",
                 out_key=flow, remote_ip="10.10.128.16"}
 </computeroutput></screen>
 
@@ -462,25 +462,25 @@ actions=mod_vlan_vid:2113,NORMAL</computeroutput></screen>
             br-tun</literal>:</para>
 
             <screen><prompt>#</prompt> <userinput>ovs-ofctl dump-flows br-tun|grep 0x3</userinput>
-<computeroutput>cookie=0x0, duration=380575.724s, table=2, n_packets=1800, \
-n_bytes=286104, priority=1,tun_id=0x3 \
+<computeroutput>cookie=0x0, duration=380575.724s, table=2, n_packets=1800,
+n_bytes=286104, priority=1,tun_id=0x3
 actions=mod_vlan_vid:1,resubmit(,10)
- cookie=0x0, duration=715.529s, table=20, n_packets=5, \
-n_bytes=830, hard_timeout=300,priority=1, \
-vlan_tci=0x0001/0x0fff,dl_dst=fa:16:3e:a6:48:24 \
-actions=load:0-&gt;NXM_OF_VLAN_TCI[], \
+ cookie=0x0, duration=715.529s, table=20, n_packets=5,
+n_bytes=830, hard_timeout=300,priority=1,
+vlan_tci=0x0001/0x0fff,dl_dst=fa:16:3e:a6:48:24
+actions=load:0-&gt;NXM_OF_VLAN_TCI[],
 load:0x3-&gt;NXM_NX_TUN_ID[],output:53
- cookie=0x0, duration=193729.242s, table=21, n_packets=58761, \
-n_bytes=2618498, dl_vlan=1 actions=strip_vlan,set_tunnel:0x3, \
-output:4,output:58,output:56,output:11,output:12,output:47, \
-output:13,output:48,output:49,output:44,output:43,output:45, \
-output:46,output:30,output:31,output:29,output:28,output:26, \
-output:27,output:24,output:25,output:32,output:19,output:21, \
-output:59,output:60,output:57,output:6,output:5,output:20, \
-output:18,output:17,output:16,output:15,output:14,output:7, \
-output:9,output:8,output:53,output:10,output:3,output:2, \
-output:38,output:37,output:39,output:40,output:34,output:23, \
-output:36,output:35,output:22,output:42,output:41,output:54, \
+ cookie=0x0, duration=193729.242s, table=21, n_packets=58761,
+n_bytes=2618498, dl_vlan=1 actions=strip_vlan,set_tunnel:0x3,
+output:4,output:58,output:56,output:11,output:12,output:47,
+output:13,output:48,output:49,output:44,output:43,output:45,
+output:46,output:30,output:31,output:29,output:28,output:26,
+output:27,output:24,output:25,output:32,output:19,output:21,
+output:59,output:60,output:57,output:6,output:5,output:20,
+output:18,output:17,output:16,output:15,output:14,output:7,
+output:9,output:8,output:53,output:10,output:3,output:2,
+output:38,output:37,output:39,output:40,output:34,output:23,
+output:36,output:35,output:22,output:42,output:41,output:54,
 output:52,output:51,output:50,output:55,output:33
 </computeroutput></screen>
 
@@ -545,9 +545,9 @@ output:52,output:51,output:50,output:55,output:33
         qr-e6256f7d-31 in this example:</para>
 
         <screen><prompt>#</prompt> <userinput>ip netns exec qrouter-e521f9d0-a1bd-4ff4-bc81-78a60dd88fe5 ip a|grep state</userinput>
-<computeroutput>10: qr-e6256f7d-31: &lt;BROADCAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue \
+<computeroutput>10: qr-e6256f7d-31: &lt;BROADCAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue
     state UNKNOWN
-11: qg-35916e1f-36: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 \
+11: qg-35916e1f-36: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500
     qdisc pfifo_fast state UNKNOWN qlen 500
 28: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN
 </computeroutput></screen>
@@ -660,38 +660,38 @@ icmp-echo'</screen>
 
     <para>On the external server:</para>
 
-    <screen><computeroutput>12:51:42.020227 IP (tos 0x0, ttl 61, id 0, offset 0, flags [DF], \
+    <screen><computeroutput>12:51:42.020227 IP (tos 0x0, ttl 61, id 0, offset 0, flags [DF],
 proto ICMP (1), length 84)
     203.0.113.30 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
-12:51:42.020255 IP (tos 0x0, ttl 64, id 8137, offset 0, flags [none], \
+12:51:42.020255 IP (tos 0x0, ttl 64, id 8137, offset 0, flags [none],
 proto ICMP (1), length 84)
-    1.2.3.4 &gt; 203.0.113.30: ICMP echo reply, id 24895, seq 1, \
+    1.2.3.4 &gt; 203.0.113.30: ICMP echo reply, id 24895, seq 1,
     length 64</computeroutput></screen>
 
     <para>On the compute node:</para>
 
-    <screen><computeroutput>12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], \
+    <screen><computeroutput>12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF],
 proto ICMP (1), length 84)
     10.0.2.24 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
-12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], \
+12:51:42.019519 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF],
 proto ICMP (1), length 84)
     10.0.2.24 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
-12:51:42.019545 IP (tos 0x0, ttl 63, id 0, offset 0, flags [DF], \
+12:51:42.019545 IP (tos 0x0, ttl 63, id 0, offset 0, flags [DF],
 proto ICMP (1), length 84)
     203.0.113.30 &gt; 1.2.3.4: ICMP echo request, id 24895, seq 1, length 64
-12:51:42.019780 IP (tos 0x0, ttl 62, id 8137, offset 0, flags [none], \
+12:51:42.019780 IP (tos 0x0, ttl 62, id 8137, offset 0, flags [none],
 proto ICMP (1), length 84)
     1.2.3.4 &gt; 203.0.113.30: ICMP echo reply, id 24895, seq 1, length 64
-12:51:42.019801 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], \
+12:51:42.019801 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none],
 proto ICMP (1), length 84)
     1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64
-12:51:42.019807 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], \
+12:51:42.019807 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none],
 proto ICMP (1), length 84)
     1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</computeroutput></screen>
 
     <para>On the instance:</para>
 
-    <screen><computeroutput>12:51:42.020974 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none], \
+    <screen><computeroutput>12:51:42.020974 IP (tos 0x0, ttl 61, id 8137, offset 0, flags [none],
 proto ICMP (1), length 84)
  1.2.3.4 &gt; 10.0.2.24: ICMP echo reply, id 24895, seq 1, length 64</computeroutput></screen>
 
@@ -935,19 +935,19 @@ unreachable</computeroutput></screen>
 
     <screen><prompt>#</prompt> <userinput>ps aux | grep dnsmasq</userinput></screen>
 
-    <screen><computeroutput>nobody 3735 0.0 0.0 27540 1044 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order \
-    --bind-interfaces --conf-file= \
-    --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid \
-    --listen-address=192.168.100.1 --except-interface=lo \
-    --dhcp-range=set:'novanetwork',192.168.100.2,static,120s \
-    --dhcp-lease-max=256 \
-    --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf \
+    <screen><computeroutput>nobody 3735 0.0 0.0 27540 1044 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order
+    --bind-interfaces --conf-file=
+    --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid
+    --listen-address=192.168.100.1 --except-interface=lo
+    --dhcp-range=set:'novanetwork',192.168.100.2,static,120s
+    --dhcp-lease-max=256
+    --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf
     --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro
-root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order \
-     --bind-interfaces --conf-file= \
-     --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid \
-     --listen-address=192.168.100.1 --except-interface=lo \
-     --dhcp-range=set:'novanetwork',192.168.100.2,static,120s \
+root 3736 0.0 0.0 27512 444 ? S 15:40 0:00 /usr/sbin/dnsmasq --strict-order
+     --bind-interfaces --conf-file=
+     --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid
+     --listen-address=192.168.100.1 --except-interface=lo
+     --dhcp-range=set:'novanetwork',192.168.100.2,static,120s
      --dhcp-lease-max=256
      --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf
      --dhcp-script=/usr/bin/nova-dhcpbridge --leasefile-ro</computeroutput></screen>
@@ -994,7 +994,7 @@ fa:16:3e:56:0b:6f test</computeroutput></screen>
     <para>The output looks something like the following:</para>
 
     <screen><computeroutput>108 1695 0.0 0.0 25972 1000 ? S Feb26 0:00 /usr/sbin/dnsmasq
--u libvirt-dnsmasq \
+-u libvirt-dnsmasq
 --strict-order --bind-interfaces
  --pid-file=/var/run/libvirt/network/default.pid --conf-file=
  --except-interface lo --listen-address 192.168.122.1
@@ -1005,7 +1005,7 @@ nobody 2438 0.0 0.0 27540 1096 ? S Feb26 0:00 /usr/sbin/dnsmasq --strict-order
 --bind-interfaces --conf-file=
  --domain=novalocal --pid-file=/var/lib/nova/networks/nova-br100.pid
  --listen-address=192.168.100.1
- --except-interface=lo \
+ --except-interface=lo
  --dhcp-range=set:'novanetwork',192.168.100.2,static,120s
  --dhcp-lease-max=256
  --dhcp-hostsfile=/var/lib/nova/networks/nova-br100.conf
