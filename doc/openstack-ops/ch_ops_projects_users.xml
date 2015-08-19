@@ -117,16 +117,15 @@
       quite convenient to deal with all these operations at one time.</para>
 
       <para>To add a project through the command line, you must use the
-      keystone utility, which uses <literal>tenant</literal> in place of
-      <literal>project</literal>:</para>
+      OpenStack command line client.</para>
 
-      <programlisting><?db-font-size 75%?><prompt>#</prompt> keystone tenant-create --name=demo</programlisting>
+      <programlisting><?db-font-size 75%?><prompt>#</prompt> openstack project create demo</programlisting>
 
       <para>This command creates a project named "demo." Optionally, you can
       add a description string by appending <code>--description
       <replaceable>tenant-description</replaceable></code>, which can be very
       useful. You can also create a group in a disabled state by appending
-      <code>--enabled false</code> to the command. By default, projects are
+      <code>--disable</code> to the command. By default, projects are
       created in an enabled state.</para>
     </section>
   </section>
@@ -163,16 +162,16 @@
     OpenStack default of 1 TB of disk space on a compute node.</para>
 
     <note>
-      <para>To view all tenants, run: <screen><prompt>$</prompt> <userinput>keystone tenant-list</userinput>
+      <para>To view all tenants, run: <screen><prompt>$</prompt> <userinput>openstack project list</userinput>
 <computeroutput>
-+---------------------------------+----------+---------+
-|                id               |   name   | enabled |
-+---------------------------------+----------+---------+
-| a981642d22c94e159a4a6540f70f9f8 |  admin   |   True  |
-| 934b662357674c7b9f5e4ec6ded4d0e | tenant01 |   True  |
-| 7bc1dbfd7d284ec4a856ea1eb82dca8 | tenant02 |   True  |
-| 9c554aaef7804ba49e1b21cbd97d218 | services |   True  |
-+---------------------------------+----------+---------+
++---------------------------------+----------+
+| ID                              | Name     |
++---------------------------------+----------+
+| a981642d22c94e159a4a6540f70f9f8 | admin    |
+| 934b662357674c7b9f5e4ec6ded4d0e | tenant01 |
+| 7bc1dbfd7d284ec4a856ea1eb82dca8 | tenant02 |
+| 9c554aaef7804ba49e1b21cbd97d218 | services |
++---------------------------------+----------+
 </computeroutput></screen></para>
     </note>
 
@@ -409,7 +408,7 @@
           <step>
             <para>Place the tenant ID in a variable:</para>
 
-            <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
+            <screen><prompt>$</prompt> <userinput>tenant=$(openstack project list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
 
           <step>
@@ -446,7 +445,7 @@
           <step>
             <para>Obtain the tenant ID, as follows:</para>
 
-            <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
+            <screen><prompt>$</prompt> <userinput>tenant=$(openstack project list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
 
           <step>
@@ -702,7 +701,7 @@ Accept-Ranges: bytes</computeroutput></screen>
           <step>
             <para>Place the tenant ID in a variable:</para>
 
-            <screen><prompt>$</prompt> <userinput>tenant=$(keystone tenant-list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
+            <screen><prompt>$</prompt> <userinput>tenant=$(openstack project list | awk '/<replaceable>tenantName</replaceable>/ {print $2}')</userinput></screen>
           </step>
 
           <step>
