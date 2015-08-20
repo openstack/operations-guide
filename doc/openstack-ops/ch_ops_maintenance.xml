@@ -100,14 +100,14 @@
 
       <para>Also check that all services are functioning. The following set of
       commands sources the <code>openrc</code> file, then runs some basic
-      glance, nova, and keystone commands. If the commands work as expected,
+      glance, nova, and openstack commands. If the commands work as expected,
       you can be confident that those services are in working
       condition:</para>
 
       <programlisting><?db-font-size 65%?># source openrc
 # glance index
 # nova list
-# keystone tenant-list</programlisting>
+# openstack project list</programlisting>
 
       <para>For the storage proxy, ensure that the Object Storage service has
       resumed:</para>
