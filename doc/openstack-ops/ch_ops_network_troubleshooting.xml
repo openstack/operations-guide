@@ -157,7 +157,7 @@
       </indexterm></para>
 
     <para>The networking chapter of the OpenStack <link
-    xlink:href="http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html"
+    xlink:href="http://docs.openstack.org/admin-guide-cloud/networking.html"
     xlink:title="Cloud Administrator Guide">Cloud Administrator Guide</link>
     shows a variety of networking scenarios and their connection paths. The
     purpose of this section is to give you the tools to troubleshoot the

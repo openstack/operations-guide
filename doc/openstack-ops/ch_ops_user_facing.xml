@@ -1752,7 +1752,7 @@ Optional snapshot description. (Default=None)</programlisting>
     most useful of many OpenStack commands. For an exhaustive list, please
     refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/">Admin User
     Guide</link>, and for additional hints and tips, see the <link
-    xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">Cloud Admin Guide</link>. We hope
+    xlink:href="http://docs.openstack.org/admin-guide-cloud/">Cloud Admin Guide</link>. We hope
     your users remain happy and recognize your hard work! (For more hard work,
     turn the page to the next chapter, where we discuss the system-facing
     operations: maintenance, failures and debugging.)</para>

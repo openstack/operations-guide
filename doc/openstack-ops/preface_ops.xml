@@ -196,7 +196,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/admin-guide-cloud/">OpenStack
               Cloud Administrator Guide</link></term>
 
           <listitem>
@@ -239,7 +239,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://docs.openstack.org/user-guide/content/">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/user-guide/">OpenStack
               End User Guide</link></term>
 
           <listitem>
@@ -250,7 +250,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://docs.openstack.org/user-guide-admin/content/">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/user-guide-admin/">OpenStack
               Admin User Guide</link></term>
 
           <listitem>
