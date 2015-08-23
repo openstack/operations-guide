@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-14 06:00+0000\n"
+"POT-Creation-Date: 2015-08-23 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1899,7 +1899,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:861(None)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:860(None)
 msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/osog_0902.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
@@ -1976,638 +1976,638 @@ msgid "It is also possible to add project members and adjust the project quotas.
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_projects_users.xml:119(para)
-msgid "To add a project through the command line, you must use the keystone utility, which uses <literal>tenant</literal> in place of <literal>project</literal>:"
+msgid "To add a project through the command line, you must use the OpenStack command line client."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:125(para)
-msgid "This command creates a project named \"demo.\" Optionally, you can add a description string by appending <code>--description <replaceable>tenant-description</replaceable></code>, which can be very useful. You can also create a group in a disabled state by appending <code>--enabled false</code> to the command. By default, projects are created in an enabled state."
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:124(para)
+msgid "This command creates a project named \"demo.\" Optionally, you can add a description string by appending <code>--description <replaceable>tenant-description</replaceable></code>, which can be very useful. You can also create a group in a disabled state by appending <code>--disable</code> to the command. By default, projects are created in an enabled state."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:135(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:134(title)
 msgid "Quotas"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:137(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:136(para)
 msgid "To prevent system capacities from being exhausted without notification, you can set up <glossterm baseform=\"quota\">quotas</glossterm>. Quotas are operational limits. For example, the number of gigabytes allowed per tenant can be controlled to ensure that a single tenant cannot consume all of the disk space. Quotas are currently enforced at the tenant (or project) level, rather than the user level.<indexterm class=\"startofrange\" xml:id=\"quotas9\"><primary>quotas</primary></indexterm><indexterm class=\"singular\"><primary>user management</primary><secondary>quotas</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:152(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:151(para)
 msgid "Because without sensible quotas a single tenant could use up all the available resources, default quotas are shipped with OpenStack. You should pay attention to which quota settings make sense for your hardware capabilities."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:158(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:157(para)
 msgid "Using the command-line interface, you can manage quotas for the OpenStack Compute service and the Block Storage service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:161(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:160(para)
 msgid "Typically, default values are changed because a tenant requires more than the OpenStack default of 10 volumes per tenant, or more than the OpenStack default of 1 TB of disk space on a compute node."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:166(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:165(para)
 msgid "To view all tenants, run: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:180(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:179(title)
 msgid "Set Image Quotas"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:182(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:181(para)
 msgid "OpenStack Havana introduced a basic quota feature for the Image service, so you can now restrict a project's image storage by total number of bytes. Currently, this quota is applied cloud-wide, so if you were to set an Image quota limit of 5 GB, then all projects in your cloud will be able to store only 5 GB of images and snapshots.<indexterm class=\"singular\"><primary>Image service</primary><secondary>quota setting</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:193(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:192(para)
 msgid "To enable this feature, edit the <filename>/etc/glance/glance-api.conf</filename> file, and under the [DEFAULT] section, add:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:199(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:198(para)
 msgid "For example, to restrict a project's image storage to 5 GB, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:205(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:204(para)
 msgid "In the Icehouse release, there is a configuration option in <filename>glance-api.conf</filename> that limits the number of members allowed per image, called <code>image_member_quota</code>, set to 128 by default. That setting is a different quota from the storage quota.<indexterm class=\"singular\"><primary>Icehouse</primary><secondary>image quotas</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:218(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:217(title)
 msgid "Set Compute Service Quotas"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:220(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:219(para)
 msgid "As an administrative user, you can update the Compute service quotas for an existing tenant, as well as update the quota defaults for a new tenant.<indexterm class=\"singular\"><primary>Compute</primary><secondary>Compute service</secondary></indexterm> See <xref linkend=\"compute-quota-table\"/>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:229(caption)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:228(caption)
 msgid "Compute quota descriptions"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:239(th)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:238(th)
 msgid "Quota"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:241(th) ./doc/openstack-ops/ch_ops_projects_users.xml:612(th) ./doc/openstack-ops/ch_ops_user_facing.xml:273(emphasis) ./doc/openstack-ops/section_arch_example-neutron.xml:260(th)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:240(th) ./doc/openstack-ops/ch_ops_projects_users.xml:611(th) ./doc/openstack-ops/ch_ops_user_facing.xml:273(emphasis) ./doc/openstack-ops/section_arch_example-neutron.xml:260(th)
 msgid "Description"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:243(th) ./doc/openstack-ops/ch_ops_projects_users.xml:610(th)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:242(th) ./doc/openstack-ops/ch_ops_projects_users.xml:609(th)
 msgid "Property name"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:249(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:248(para)
 msgid "Fixed IPs"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:251(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:250(para)
 msgid "Number of fixed IP addresses allowed per tenant. This number must be equal to or greater than the number of allowed instances."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:255(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:254(systemitem)
 msgid "fixed-ips"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:259(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1198(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:258(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1198(title)
 msgid "Floating IPs"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:261(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:260(para)
 msgid "Number of floating IP addresses allowed per tenant."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:264(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:263(systemitem)
 msgid "floating-ips"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:268(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:267(para)
 msgid "Injected file content bytes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:270(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:269(para)
 msgid "Number of content bytes allowed per injected file."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:273(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:272(systemitem)
 msgid "injected-file-content-bytes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:278(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:277(para)
 msgid "Injected file path bytes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:280(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:279(para)
 msgid "Number of bytes allowed per injected file path."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:283(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:282(systemitem)
 msgid "injected-file-path-bytes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:288(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:287(para)
 msgid "Injected files"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:290(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:289(para)
 msgid "Number of injected files allowed per tenant."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:292(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:291(systemitem)
 msgid "injected-files"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:296(para) ./doc/openstack-ops/ch_ops_user_facing.xml:910(title) ./doc/openstack-ops/ch_ops_maintenance.xml:267(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:295(para) ./doc/openstack-ops/ch_ops_user_facing.xml:910(title) ./doc/openstack-ops/ch_ops_maintenance.xml:267(title)
 msgid "Instances"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:298(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:297(para)
 msgid "Number of instances allowed per tenant."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:300(systemitem) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:821(literal)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:299(systemitem) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:821(literal)
 msgid "instances"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:304(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:303(para)
 msgid "Key pairs"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:306(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:305(para)
 msgid "Number of key pairs allowed per user."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:308(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:307(systemitem)
 msgid "key-pairs"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:312(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:311(para)
 msgid "Metadata items"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:314(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:313(para)
 msgid "Number of metadata items allowed per instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:317(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:316(systemitem)
 msgid "metadata-items"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:321(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:320(para)
 msgid "RAM"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:323(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:322(para)
 msgid "Megabytes of instance RAM allowed per tenant."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:326(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:325(systemitem)
 msgid "ram"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:330(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:329(para)
 msgid "Security group rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:332(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:331(para)
 msgid "Number of rules per security group."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:334(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:333(systemitem)
 msgid "security-group-rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:339(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:338(para)
 msgid "Security groups"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:341(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:340(para)
 msgid "Number of security groups per tenant."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:343(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:342(systemitem)
 msgid "security-groups"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:347(para) ./doc/openstack-ops/ch_ops_user_facing.xml:324(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:346(para) ./doc/openstack-ops/ch_ops_user_facing.xml:324(para)
 msgid "VCPUs"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:349(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:348(para)
 msgid "Number of instance cores allowed per tenant."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:351(systemitem)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:350(systemitem)
 msgid "cores"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:357(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:356(title)
 msgid "View and update compute quotas for a tenant (project)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:359(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:358(para)
 msgid "As an administrative user, you can use the <literal>nova quota-*</literal> commands, which are provided by the <literal>python-novaclient</literal> package, to view and update tenant quotas."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:365(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:364(title)
 msgid "To view and update default quota values"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:368(para) ./doc/openstack-ops/ch_ops_projects_users.xml:655(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:367(para) ./doc/openstack-ops/ch_ops_projects_users.xml:654(para)
 msgid "List all default quotas for all tenants, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:372(para) ./doc/openstack-ops/ch_ops_projects_users.xml:398(para) ./doc/openstack-ops/ch_ops_projects_users.xml:421(para) ./doc/openstack-ops/ch_ops_projects_users.xml:457(para) ./doc/openstack-ops/ch_ops_projects_users.xml:659(para) ./doc/openstack-ops/ch_ops_projects_users.xml:686(para) ./doc/openstack-ops/ch_ops_user_facing.xml:114(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:371(para) ./doc/openstack-ops/ch_ops_projects_users.xml:397(para) ./doc/openstack-ops/ch_ops_projects_users.xml:420(para) ./doc/openstack-ops/ch_ops_projects_users.xml:456(para) ./doc/openstack-ops/ch_ops_projects_users.xml:658(para) ./doc/openstack-ops/ch_ops_projects_users.xml:685(para) ./doc/openstack-ops/ch_ops_user_facing.xml:114(para)
 msgid "For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:394(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:393(para)
 msgid "Update a default value for a new tenant, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:396(replaceable) ./doc/openstack-ops/ch_ops_customize.xml:833(code)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:395(replaceable) ./doc/openstack-ops/ch_ops_customize.xml:833(code)
 msgid "key"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:396(replaceable)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:395(replaceable)
 msgid "value"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:407(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:406(title)
 msgid "To view quota values for a tenant (project)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:410(para) ./doc/openstack-ops/ch_ops_projects_users.xml:703(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:409(para) ./doc/openstack-ops/ch_ops_projects_users.xml:702(para)
 msgid "Place the tenant ID in a variable:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:412(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:449(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:684(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:705(replaceable)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:411(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:448(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:683(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:704(replaceable)
 msgid "tenantName"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:416(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:415(para)
 msgid "List the currently set quota values for a tenant, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:444(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:443(title)
 msgid "To update quota values for a tenant (project)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:447(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:446(para)
 msgid "Obtain the tenant ID, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:453(para) ./doc/openstack-ops/ch_ops_projects_users.xml:709(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:452(para) ./doc/openstack-ops/ch_ops_projects_users.xml:708(para)
 msgid "Update a particular quota value, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:455(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:711(replaceable)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:454(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:710(replaceable)
 msgid "quotaName"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:455(replaceable)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:454(replaceable)
 msgid "quotaValue"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:455(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:711(replaceable)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:454(replaceable) ./doc/openstack-ops/ch_ops_projects_users.xml:710(replaceable)
 msgid "tenantID"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:479(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:478(para)
 msgid "To view a list of options for the <literal>quota-update</literal> command, run:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:490(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:489(title)
 msgid "Set Object Storage Quotas"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:492(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:491(para)
 msgid "Object Storage quotas were introduced in Swift 1.8 (OpenStack Grizzly). There are currently two categories of quotas for Object Storage:<indexterm class=\"singular\"><primary>account quotas</primary></indexterm><indexterm class=\"singular\"><primary>containers</primary><secondary>quota setting</secondary></indexterm><indexterm class=\"singular\"><primary>Object Storage</primary><secondary>quota setting</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:508(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:507(term)
 msgid "Container quotas"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:511(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:510(para)
 msgid "Limit the total size (in bytes) or number of objects that can be stored in a single container."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:517(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:516(term)
 msgid "Account quotas"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:520(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:519(para)
 msgid "Limit the total size (in bytes) that a user has available in the Object Storage <phrase role=\"keep-together\">service</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:527(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:526(para)
 msgid "To take advantage of either container quotas or account quotas, your Object Storage proxy server must have <code>container_quotas</code> or <code>account_quotas</code> (or both) added to the <literal>[pipeline:main]</literal> pipeline. Each quota type also requires its own section in the <filename>proxy-server.conf</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:544(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:543(para)
 msgid "To view and update Object Storage quotas, use the <code>swift</code> command provided by the <code>python-swiftclient</code> package. Any user included in the project can view the quotas placed on their project. To update Object Storage quotas on a project, you must have the role of ResellerAdmin in the project that the quota is being applied to."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:553(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:552(para)
 msgid "To view account quotas placed on a project:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:566(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:565(para)
 msgid "To apply or update account quotas on a project:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:571(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:570(para)
 msgid "For example, to place a 5 GB quota on an account:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:576(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:575(para)
 msgid "To verify the quota, run the <literal>swift stat</literal> command again:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:592(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:591(title)
 msgid "Set Block Storage Quotas"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:594(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:593(para)
 msgid "As an administrative user, you can update the Block Storage service quotas for a tenant, as well as update the quota defaults for a new tenant. See <xref linkend=\"block-storage-quota-table\"/>.<indexterm class=\"singular\"><primary>Block Storage</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:602(caption)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:601(caption)
 msgid "Block Storage quota descriptions"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:618(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:617(para)
 msgid "gigabytes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:620(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:619(para)
 msgid "Number of volume gigabytes allowed per tenant"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:625(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:624(para)
 msgid "snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:627(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:626(para)
 msgid "Number of Block Storage snapshots allowed per tenant."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:632(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:631(para)
 msgid "volumes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:634(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:633(para)
 msgid "Number of Block Storage volumes allowed per tenant"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:643(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:642(title)
 msgid "View and update Block Storage quotas for a tenant (project)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:646(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:645(para)
 msgid "As an administrative user, you can use the <literal>cinder quota-*</literal> commands, which are provided by the <literal>python-cinderclient</literal> package, to view and update tenant quotas."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:652(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:651(title)
 msgid "To view and update default Block Storage quota values"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:672(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:671(para)
 msgid "To update a default value for a new tenant, update the property in the <filename>/etc/cinder/cinder.conf</filename> file."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:679(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:678(title)
 msgid "To view Block Storage quotas for a tenant (project)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:682(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:681(para)
 msgid "View quotas for the tenant, as follows:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:700(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:699(title)
 msgid "To update Block Storage quotas for a tenant (project)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:711(replaceable)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:710(replaceable)
 msgid "NewValue"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:713(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:712(para)
 msgid "For example:<indexterm class=\"endofrange\" startref=\"quotas9\"/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:732(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:731(title)
 msgid "User Management"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:734(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:733(para)
 msgid "The command-line tools for managing users are inconvenient to use directly. They require issuing multiple commands to complete a single task, and they use UUIDs rather than symbolic names for many items. In practice, humans typically do not use these tools directly. Fortunately, the OpenStack dashboard provides a reasonable interface to this. In addition, many sites write custom tools for local needs to enforce local policies and provide levels of self-service to users that aren't currently available with packaged tools.<indexterm class=\"singular\"><primary>user management</primary><secondary>creating new users</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:749(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:748(title)
 msgid "Creating New Users"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:751(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:750(para)
 msgid "To create a user, you need the following information:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:755(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:754(para)
 msgid "Username"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:759(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:758(para)
 msgid "Email address"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:763(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:762(para)
 msgid "Password"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:767(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:766(para)
 msgid "Primary project"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:771(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:770(para)
 msgid "Role"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:775(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:774(para)
 msgid "Username and email address are self-explanatory, though your site may have local conventions you should observe. The primary project is simply the first project the user is associated with and must exist prior to creating the user. Role is almost always going to be \"member.\" Out of the box, OpenStack comes with two roles defined:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:786(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:785(term)
 msgid "member"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:789(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:788(para)
 msgid "A typical user"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:794(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:793(term)
 msgid "admin"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:797(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:796(para)
 msgid "An administrative super user, which has full permissions across all projects and should be used with great care"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:803(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:802(para)
 msgid "It is possible to define other roles, but doing so is uncommon."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:806(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:805(para)
 msgid "Once you've gathered this information, creating the user in the dashboard is just another web form similar to what we've seen before and can be found by clicking the Users link in the Admin navigation bar and then clicking the Create User button at the top right."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:811(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:810(para)
 msgid "Modifying users is also done from this Users page. If you have a large number of users, this page can get quite crowded. The Filter search box at the top of the page can be used to limit the users listing. A form very similar to the user creation dialog can be pulled up by selecting Edit from the actions dropdown menu at the end of the line for the user you are modifying."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:820(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:819(title)
 msgid "Associating Users with Projects"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:822(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:821(para)
 msgid "Many sites run with users being associated with only one project. This is a more conservative and simpler choice both for administration and for users. Administratively, if a user reports a problem with an instance or quota, it is obvious which project this relates to. Users needn't worry about what project they are acting in if they are only in one project. However, note that, by default, any user can affect the resources of any other user within their project. It is also possible to associate users with multiple projects if that makes sense for your organization.<indexterm class=\"singular\"><primary>Project Members tab</primary></indexterm><indexterm class=\"singular\"><primary>user management</primary><secondary>associating users with projects</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:838(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:837(para)
 msgid "Associating existing users with an additional project or removing them from an older project is done from the Projects page of the dashboard by selecting Modify Users from the Actions column, as shown in <xref linkend=\"horizon-edit-project\"/>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:843(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:842(para)
 msgid "From this view, you can do a number of useful things, as well as a few dangerous ones."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:846(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:845(para)
 msgid "The first column of this form, named All Users, includes a list of all the users in your cloud who are not already associated with this project. The second column shows all the users who are. These lists can be quite long, but they can be limited by typing a substring of the username you are looking for in the filter field at the top of the <phrase role=\"keep-together\">column</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:853(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:852(para)
 msgid "From here, click the <guiicon>+</guiicon> icon to add users to the project. Click the <guiicon>-</guiicon> to remove them."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:857(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:856(title)
 msgid "<guilabel>Edit Project Members</guilabel> tab"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:866(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:865(para)
 msgid "The dangerous possibility comes with the ability to change member roles. This is the dropdown list below the username in the <guilabel>Project Members</guilabel> list. In virtually all cases, this value should be set to Member. This example purposefully shows an administrative user where this value is admin."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:873(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:872(para)
 msgid "The admin is global, not per project, so granting a user the admin role in any project gives the user administrative rights across the whole cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:878(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:877(para)
 msgid "Typical use is to only create administrative users in a single project, by convention the admin project, which is created by default during cloud setup. If your administrative users also use the cloud to launch and manage instances, it is strongly recommended that you use separate user accounts for administrative access and normal operations and that they be in distinct projects.<indexterm class=\"singular\"><primary>accounts</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:888(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:887(title)
 msgid "Customizing Authorization"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:890(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:889(para)
 msgid "The default <glossterm>authorization</glossterm> settings allow administrative users only to create resources on behalf of a different project. OpenStack handles two kinds of authorization <phrase role=\"keep-together\">policies</phrase>:<indexterm class=\"singular\"><primary>authorization</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:901(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:900(term)
 msgid "Operation based"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:904(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:903(para)
 msgid "Policies specify access criteria for specific operations, possibly with fine-grained control over specific attributes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:911(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:910(term)
 msgid "Resource based"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:914(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:913(para)
 msgid "Whether access to a specific resource might be granted or not according to the permissions configured for the resource (currently available only for the network resource). The actual authorization policies enforced in an OpenStack service vary from deployment to deployment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:923(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:922(para)
 msgid "The policy engine reads entries from the <code>policy.json</code> file. The actual location of this file might vary from distribution to distribution: for nova, it is typically in <code>/etc/nova/policy.json</code>. You can update entries while the system is running, and you do not have to restart services. Currently, the only way to update such policies is to edit the policy file."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:930(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:929(para)
 msgid "The OpenStack service's policy engine matches a policy directly. A rule indicates evaluation of the elements of such policies. For instance, in a <code>compute:create: [[\"rule:admin_or_owner\"]]</code> statement, the policy is <code>compute:create</code>, and the rule is <code>admin_or_owner</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:936(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:935(para)
 msgid "Policies are triggered by an OpenStack policy engine whenever one of them matches an OpenStack API operation or a specific attribute being used in a given operation. For instance, the engine tests the <code>create:compute</code> policy every time a user sends a <code>POST /v2/{tenant_id}/servers</code> request to the OpenStack Compute API server. Policies can be also related to specific <glossterm>API extension</glossterm>s. For instance, if a user needs an extension like <code>compute_extension:rescue</code>, the attributes defined by the provider extensions trigger the rule test for that operation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:946(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:945(para)
 msgid "An authorization policy can be composed by one or more rules. If more rules are specified, evaluation policy is successful if any of the rules evaluates successfully; if an API operation matches multiple policies, then all the policies must evaluate successfully. Also, authorization rules are recursive. Once a rule is matched, the rule(s) can be resolved to another rule, until a terminal rule is reached. These are the rules <phrase role=\"keep-together\">defined</phrase>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:956(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:955(term)
 msgid "Role-based rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:959(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:958(para)
 msgid "Evaluate successfully if the user submitting the request has the specified role. For instance, <code>\"role:admin\"</code> is successful if the user submitting the request is an administrator."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:967(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:966(term)
 msgid "Field-based rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:970(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:969(para)
 msgid "Evaluate successfully if a field of the resource specified in the current request matches a specific value. For instance, <code>\"field:networks:shared=True\"</code> is successful if the attribute shared of the network resource is set to <literal>true</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:979(term)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:978(term)
 msgid "Generic rules"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:982(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:981(para)
 msgid "Compare an attribute in the resource with an attribute extracted from the user's security credentials and evaluates successfully if the comparison is successful. For instance, <code>\"tenant_id:%(tenant_id)s\"</code> is successful if the tenant identifier in the resource is equal to the tenant identifier of the user submitting the request."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:992(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:991(para)
 msgid "Here are snippets of the default nova <filename>policy.json</filename> file:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1022(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1021(para)
 msgid "Shows a rule that evaluates successfully if the current user is an administrator or the owner of the resource specified in the request (tenant identifier is equal)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1028(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1027(para)
 msgid "Shows the default policy, which is always evaluated if an API operation does not match any of the policies in <code>policy.json</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1034(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1033(para)
 msgid "Shows a policy restricting the ability to manipulate flavors to administrators using the Admin API only.<indexterm class=\"singular\"><primary>admin API</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1042(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1041(para)
 msgid "In some cases, some operations should be restricted to administrators only. Therefore, as a further example, let us consider how this sample policy file could be modified in a scenario where we enable users to create their own flavors:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1051(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1050(title)
 msgid "Users Who Disrupt Other Users"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1053(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1052(para)
 msgid "Users on your cloud can disrupt other users, sometimes intentionally and maliciously and other times by accident. Understanding the situation allows you to make a better decision on how to handle the disruption.<indexterm class=\"singular\"><primary>user management</primary><secondary>handling disruptive users</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1062(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1061(para)
 msgid "For example, a group of users have instances that are utilizing a large amount of compute resources for very compute-intensive tasks. This is driving the load up on compute nodes and affecting other users. In this situation, review your user use cases. You may find that high compute scenarios are common, and should then plan for proper segregation in your cloud, such as host aggregation or regions."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1069(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1068(para)
 msgid "Another example is a user consuming a very large amount of bandwidth<indexterm class=\"singular\"><primary>bandwidth</primary><secondary>recognizing DDOS attacks</secondary></indexterm>. Again, the key is to understand what the user is doing. If she naturally needs a high amount of bandwidth, you might have to limit her transmission rate as to not affect other users or move her to an area with more bandwidth available. On the other hand, maybe her instance has been hacked and is part of a botnet launching DDOS attacks. Resolution of this issue is the same as though any other server on your network has been hacked. Contact the user and give her time to respond. If she doesn't respond, shut down the instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1083(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1082(para)
 msgid "A final example is if a user is hammering cloud resources repeatedly. Contact the user and learn what he is trying to do. Maybe he doesn't understand that what he’s doing is inappropriate, or maybe there is an issue with the resource he is trying to access that is causing his requests to queue or lag."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1092(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:996(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:788(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1091(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:995(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:281(title) ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:1289(title) ./doc/openstack-ops/ch_ops_lay_of_land.xml:788(title)
 msgid "Summary"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:1094(para)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:1093(para)
 msgid "One key element of systems administration that is often overlooked is that end users are the reason systems administrators exist. Don't go the BOFH route and terminate every user who causes an alert to go off. Work with users to understand what they're trying to accomplish and see how your environment can better assist them in achieving their goals. Meet your users needs by organizing your users into projects, applying policies, managing quotas, and working with them.<indexterm class=\"singular\"><primary>systems administration</primary><see>user management</see></indexterm>"
 msgstr ""
 
@@ -4763,107 +4763,107 @@ msgstr ""
 msgid "But how can you tell whether images are being successfully uploaded to the Image service? Maybe the disk that Image service is storing the images on is full or the S3 back end is down. You could naturally check this by doing a quick image upload:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:846(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:845(para)
 msgid "By taking this script and rolling it into an alert for your monitoring system (such as Nagios), you now have an automated way of ensuring that image uploads to the Image Catalog are working."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:851(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:850(para)
 msgid "You must remove the image after each test. Even better, test whether you can successfully delete an image from the Image Service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:856(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:855(para)
 msgid "Intelligent alerting takes considerably more time to plan and implement than the other alerts described in this chapter. A good outline to implement intelligent alerting is:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:862(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:861(para)
 msgid "Review common actions in your cloud."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:866(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:865(para)
 msgid "Create ways to automatically test these actions."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:870(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:869(para)
 msgid "Roll these tests into an alerting system."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:874(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:873(para)
 msgid "Some other examples for Intelligent Alerting include:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:878(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:877(para)
 msgid "Can instances launch and be destroyed?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:882(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:881(para)
 msgid "Can users be created?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:886(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:885(para)
 msgid "Can objects be stored and deleted?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:890(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:889(para)
 msgid "Can volumes be created and destroyed?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:896(title)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:895(title)
 msgid "Trending"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:898(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:897(para)
 msgid "Trending can give you great insight into how your cloud is performing day to day. You can learn, for example, if a busy day was simply a rare occurrence or if you should start adding new compute nodes.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>trending</secondary><seealso>logging/monitoring</seealso></indexterm><indexterm class=\"singular\"><primary>trending</primary><secondary>monitoring cloud performance with</secondary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>trending</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:917(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:916(para)
 msgid "Trending takes a slightly different approach than alerting. While alerting is interested in a binary result (whether a check succeeds or fails), trending records the current state of something at a certain point in time. Once enough points in time have been recorded, you can see how the value has changed over time.<indexterm class=\"singular\"><primary>trending</primary><secondary>vs. alerts</secondary></indexterm><indexterm class=\"singular\"><primary>binary</primary><secondary>binary results in trending</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:931(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:930(para)
 msgid "All of the alert types mentioned earlier can also be used for trend reporting. Some other trend examples include:<indexterm class=\"singular\"><primary>trending</primary><secondary>report examples</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:941(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:940(para)
 msgid "The number of instances on each compute node"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:945(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:944(para)
 msgid "The types of flavors in use"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:949(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:948(para)
 msgid "The number of volumes in use"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:953(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:952(para)
 msgid "The number of Object Storage requests each hour"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:957(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:956(para)
 msgid "The number of <literal>nova-api</literal> requests each hour"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:962(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:961(para)
 msgid "The I/O statistics of your storage services"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:966(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:965(para)
 msgid "As an example, recording <code>nova-api</code> usage can allow you to track the need to scale your cloud controller. By keeping an eye on <code>nova-api</code> requests, you can determine whether you need to spawn more <literal>nova-api</literal> processes or go as far as introducing an entirely new server to run <code>nova-api</code>. To get an approximate count of the requests, look for standard INFO messages in <code>/var/log/nova/nova-api.log</code>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:976(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:975(para)
 msgid "You can obtain further statistics by looking for the number of successful requests:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:981(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:980(para)
 msgid "By running this command periodically and keeping a record of the result, you can create a trending report over time that shows whether your <code>nova-api</code> usage is increasing, decreasing, or keeping steady."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:986(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:985(para)
 msgid "A tool such as collectd can be used to store this information. While collectd is out of the scope of this book, a good starting point would be to use collectd to store the result as a COUNTER data type. More information can be found in <link xlink:href=\"https://collectd.org/wiki/index.php/Data_source\">collectd's documentation</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_log_monitor.xml:998(para)
+#: ./doc/openstack-ops/ch_ops_log_monitor.xml:997(para)
 msgid "For stable operations, you want to detect failure promptly and determine causes efficiently. With a distributed system, it's even more important to track the right items to meet a service-level target. Learning where these logs are located in the file system or API gives you an advantage. This chapter also showed how to read, interpret, and manipulate information from OpenStack services so that you can monitor effectively."
 msgstr ""
 
@@ -9764,7 +9764,7 @@ msgid "After a cloud controller reboots, ensure that all required services were 
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:101(para)
-msgid "Also check that all services are functioning. The following set of commands sources the <code>openrc</code> file, then runs some basic glance, nova, and keystone commands. If the commands work as expected, you can be confident that those services are in working condition:"
+msgid "Also check that all services are functioning. The following set of commands sources the <code>openrc</code> file, then runs some basic glance, nova, and openstack commands. If the commands work as expected, you can be confident that those services are in working condition:"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_maintenance.xml:112(para)
