@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-23 06:00+0000\n"
+"POT-Creation-Date: 2015-08-24 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4712,7 +4712,7 @@ msgid "OpenStack Telemetry"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:664(para)
-msgid "An integrated OpenStack project (code-named ceilometer) collects metering and event data relating to OpenStack services. Data collected by the Telemetry module could be used for billing. Depending on deployment configuration, collected data may be accessible to users based on the deployment configuration. The Telemetry service provides a REST API documented at <link xlink:href=\"http://developer.openstack.org/api-ref-telemetry-v2.html\"/>. You can read more about the module in the <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_admin-openstack-telemetry.html\"> OpenStack Cloud Administrator Guide</link> or in the <link xlink:href=\"http://docs.openstack.org/developer/ceilometer\">developer documentation</link>.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>metering and telemetry</secondary></indexterm><indexterm class=\"singular\"><primary>telemetry/metering</primary></indexterm><indexterm class=\"singular\"><primary>metering/telemetry</primary></indexterm><indexterm class=\"singular\"><primary>ceilometer</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>ceilometer project</secondary></indexterm>"
+msgid "An integrated OpenStack project (code-named ceilometer) collects metering and event data relating to OpenStack services. Data collected by the Telemetry module could be used for billing. Depending on deployment configuration, collected data may be accessible to users based on the deployment configuration. The Telemetry service provides a REST API documented at <link xlink:href=\"http://developer.openstack.org/api-ref-telemetry-v2.html\"/>. You can read more about the module in the <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/telemetry.html\"> OpenStack Cloud Administrator Guide</link> or in the <link xlink:href=\"http://docs.openstack.org/developer/ceilometer\">developer documentation</link>.<indexterm class=\"singular\"><primary>monitoring</primary><secondary>metering and telemetry</secondary></indexterm><indexterm class=\"singular\"><primary>telemetry/metering</primary></indexterm><indexterm class=\"singular\"><primary>metering/telemetry</primary></indexterm><indexterm class=\"singular\"><primary>ceilometer</primary></indexterm><indexterm class=\"singular\"><primary>logging/monitoring</primary><secondary>ceilometer project</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:691(title)
@@ -6020,7 +6020,7 @@ msgid "Good Luck!"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:1751(para)
-msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link xlink:href=\"http://docs.openstack.org/user-guide-admin/\">Admin User Guide</link>, and for additional hints and tips, see the <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/content/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
+msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link xlink:href=\"http://docs.openstack.org/user-guide-admin/\">Admin User Guide</link>, and for additional hints and tips, see the <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_compute_nodes.xml:12(title)
@@ -6520,7 +6520,7 @@ msgid "OpenStack Networking has many more degrees of freedom than <literal>nova-
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:159(para)
-msgid "The networking chapter of the OpenStack <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html\" xlink:title=\"Cloud Administrator Guide\">Cloud Administrator Guide</link> shows a variety of networking scenarios and their connection paths. The purpose of this section is to give you the tools to troubleshoot the various components involved however they are plumbed together in your environment."
+msgid "The networking chapter of the OpenStack <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/networking.html\" xlink:title=\"Cloud Administrator Guide\">Cloud Administrator Guide</link> shows a variety of networking scenarios and their connection paths. The purpose of this section is to give you the tools to troubleshoot the various components involved however they are plumbed together in your environment."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_network_troubleshooting.xml:167(para)
