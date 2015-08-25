@@ -445,7 +445,7 @@ xlink:href="https://wiki.openstack.org/wiki/Kilo_Release_Schedule">Current stabl
     provide details of your deployments and needs, anonymously by default.
     Each cycle, the user committee analyzes the results and produces a report,
     including providing specific information to the technical committee and
-    technical leads of the projects.</para>
+    project team leads.</para>
   </section>
 
   <section xml:id="aspects-to-watch">
