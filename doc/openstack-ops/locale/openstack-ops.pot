@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-24 06:01+0000\n"
+"POT-Creation-Date: 2015-08-26 06:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1732,7 +1732,7 @@ msgid "To determine the potential features going in to future releases, or to lo
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:441(para)
-msgid "Aside from the direct-to-blueprint pathway, there is another very well-regarded mechanism to influence the development roadmap: the user survey. Found at <link xlink:href=\"http://openstack.org/user-survey\"/>, it allows you to provide details of your deployments and needs, anonymously by default. Each cycle, the user committee analyzes the results and produces a report, including providing specific information to the technical committee and technical leads of the projects."
+msgid "Aside from the direct-to-blueprint pathway, there is another very well-regarded mechanism to influence the development roadmap: the user survey. Found at <link xlink:href=\"http://openstack.org/user-survey\"/>, it allows you to provide details of your deployments and needs, anonymously by default. Each cycle, the user committee analyzes the results and produces a report, including providing specific information to the technical committee and project team leads."
 msgstr ""
 
 #: ./doc/openstack-ops/app_roadmaps.xml:452(title)
