@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-26 06:03+0000\n"
+"POT-Creation-Date: 2015-09-03 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2765,7 +2765,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./doc/openstack-ops/ch_arch_storage.xml:436(None) ./doc/openstack-ops/ch_arch_storage.xml:453(None) ./doc/openstack-ops/ch_arch_storage.xml:466(None) ./doc/openstack-ops/ch_arch_storage.xml:473(None) ./doc/openstack-ops/ch_arch_storage.xml:486(None) ./doc/openstack-ops/ch_arch_storage.xml:493(None) ./doc/openstack-ops/ch_arch_storage.xml:500(None) ./doc/openstack-ops/ch_arch_storage.xml:513(None) ./doc/openstack-ops/ch_arch_storage.xml:520(None) ./doc/openstack-ops/ch_arch_storage.xml:533(None) ./doc/openstack-ops/ch_arch_storage.xml:544(None) ./doc/openstack-ops/ch_arch_storage.xml:550(None)
+#: ./doc/openstack-ops/ch_arch_storage.xml:448(None) ./doc/openstack-ops/ch_arch_storage.xml:465(None) ./doc/openstack-ops/ch_arch_storage.xml:478(None) ./doc/openstack-ops/ch_arch_storage.xml:485(None) ./doc/openstack-ops/ch_arch_storage.xml:498(None) ./doc/openstack-ops/ch_arch_storage.xml:505(None) ./doc/openstack-ops/ch_arch_storage.xml:512(None) ./doc/openstack-ops/ch_arch_storage.xml:525(None) ./doc/openstack-ops/ch_arch_storage.xml:532(None) ./doc/openstack-ops/ch_arch_storage.xml:545(None) ./doc/openstack-ops/ch_arch_storage.xml:556(None) ./doc/openstack-ops/ch_arch_storage.xml:562(None)
 msgid "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/openstack-ops/figures/Check_mark_23x20_02.png'; md5=THIS FILE DOESN'T EXIST"
 msgstr ""
 
@@ -2953,7 +2953,7 @@ msgstr ""
 msgid "OpenStack Block Storage (cinder)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:282(para) ./doc/openstack-ops/ch_arch_storage.xml:622(term) ./doc/openstack-ops/section_arch_example-nova.xml:165(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:282(para) ./doc/openstack-ops/ch_arch_storage.xml:634(term) ./doc/openstack-ops/section_arch_example-nova.xml:165(para)
 msgid "OpenStack Object Storage (swift)"
 msgstr ""
 
@@ -2986,274 +2986,290 @@ msgid "Amount of available physical storage"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:307(para)
-msgid "Example of typical usage…"
+msgid "Encryption set by…"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:309(para)
-msgid "10 GB first disk, 30 GB second disk"
+msgid "Parameter in nova.conf"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:311(para)
-msgid "1 TB disk"
+msgid "Admin establishing <link xlink:href=\"http://docs.openstack.org/user-guide-admin/dashboard_manage_volumes.html\"> encrypted volume type</link>, then user selecting encrypted volume"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:313(para)
-msgid "10s of TBs of dataset storage"
+#: ./doc/openstack-ops/ch_arch_storage.xml:315(para)
+msgid "Not yet available"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:319(title)
-msgid "File-level Storage (for Live Migration)"
+#: ./doc/openstack-ops/ch_arch_storage.xml:319(para)
+msgid "Example of typical usage…"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_storage.xml:321(para)
+msgid "10 GB first disk, 30 GB second disk"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml:323(para)
+msgid "1 TB disk"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml:325(para)
+msgid "10s of TBs of dataset storage"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml:331(title)
+msgid "File-level Storage (for Live Migration)"
+msgstr ""
+
+#: ./doc/openstack-ops/ch_arch_storage.xml:333(para)
 msgid "With file-level storage, users access stored data using the operating system's file system interface. Most users, if they have used a network storage solution before, have encountered this form of networked storage. In the Unix world, the most common form of this is NFS. In the Windows world, the most common form is called CIFS (previously, SMB).<indexterm class=\"singular\"><primary>migration</primary></indexterm><indexterm class=\"singular\"><primary>live migration</primary></indexterm><indexterm class=\"singular\"><primary>storage</primary><secondary>file-level</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:336(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:348(para)
 msgid "OpenStack clouds do not present file-level storage to end users. However, it is important to consider file-level storage for storing instances under <code>/var/lib/nova/instances</code> when designing your cloud, since you must have a shared file system if you want to support live migration."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:345(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:357(title)
 msgid "Choosing Storage Back Ends"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:347(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:359(para)
 msgid "Users will indicate different needs for their cloud use cases. Some may need fast access to many objects that do not change often, or want to set a time-to-live (TTL) value on a file. Others may access only storage that is mounted with the file system itself, but want it to be replicated instantly when starting a new instance. For other systems, ephemeral storage—storage that is released when a VM attached to it is shut down— is the preferred way. When you select <glossterm>storage back end</glossterm>s, <indexterm class=\"singular\"><primary>storage</primary><secondary>choosing back ends</secondary></indexterm><indexterm class=\"singular\"><primary>storage back end</primary></indexterm><indexterm class=\"singular\"><primary>back end interactions</primary><secondary>store</secondary></indexterm>ask the following questions on behalf of your users:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:368(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:380(para)
 msgid "Do my users need block storage?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:372(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:384(para)
 msgid "Do my users need object storage?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:376(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:388(para)
 msgid "Do I need to support live migration?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:380(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:392(para)
 msgid "Should my persistent storage drives be contained in my compute nodes, or should I use external storage?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:385(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:397(para)
 msgid "What is the platter count I can achieve? Do more spindles result in better I/O despite network access?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:390(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:402(para)
 msgid "Which one results in the best cost-performance scenario I'm aiming for?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:395(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:407(para)
 msgid "How do I manage the storage operationally?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:399(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:411(para)
 msgid "How redundant and distributed is the storage? What happens if a storage node fails? To what extent can it mitigate my data-loss disaster scenarios?"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:405(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:417(para)
 msgid "To deploy your storage by using only commodity hardware, you can use a number of open-source packages, as shown in <xref linkend=\"storage_solutions\"/>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:410(caption)
+#: ./doc/openstack-ops/ch_arch_storage.xml:422(caption)
 msgid "Persistent file-based storage support"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:414(th) ./doc/openstack-ops/ch_arch_storage.xml:442(para) ./doc/openstack-ops/ch_arch_storage.xml:448(para) ./doc/openstack-ops/ch_arch_storage.xml:457(para) ./doc/openstack-ops/ch_arch_storage.xml:528(para) ./doc/openstack-ops/ch_arch_storage.xml:537(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:426(th) ./doc/openstack-ops/ch_arch_storage.xml:454(para) ./doc/openstack-ops/ch_arch_storage.xml:460(para) ./doc/openstack-ops/ch_arch_storage.xml:469(para) ./doc/openstack-ops/ch_arch_storage.xml:540(para) ./doc/openstack-ops/ch_arch_storage.xml:549(para)
 msgid " "
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:416(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:428(th)
 msgid "Object"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:418(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:430(th)
 msgid "Block"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:421(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:433(para)
 msgid "This list of open source file-level shared storage solutions is not exhaustive; other open source solutions exist (MooseFS). Your organization may already have deployed a file-level shared storage solution that you can use."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:420(th)
+#: ./doc/openstack-ops/ch_arch_storage.xml:432(th)
 msgid "File-level<placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:431(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:443(para)
 msgid "Swift"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:446(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:458(para)
 msgid "LVM"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:461(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:473(para)
 msgid "Ceph"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:477(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:489(para)
 msgid "Experimental"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:481(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:493(para)
 msgid "Gluster"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:506(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:518(para)
 msgid "NFS"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:526(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:538(para)
 msgid "ZFS"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:540(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:552(para)
 msgid "Sheepdog"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:559(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:571(title)
 msgid "Storage Driver Support"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:561(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:573(para)
 msgid "In addition to the open source technologies, there are a number of proprietary solutions that are officially supported by OpenStack Block Storage.<indexterm class=\"singular\"><primary>storage</primary><secondary>storage driver support</secondary></indexterm> They are offered by the following vendors:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:571(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:583(para)
 msgid "IBM (Storwize family/SVC, XIV)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:575(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:587(para)
 msgid "NetApp"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:579(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:591(para)
 msgid "Nexenta"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:583(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:595(para)
 msgid "SolidFire"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:587(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:599(para)
 msgid "You can find a matrix of the functionality provided by all of the supported Block Storage drivers on the <link xlink:href=\"https://wiki.openstack.org/wiki/CinderSupportMatrix\" xlink:title=\"OpenStack wiki\">OpenStack wiki</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:593(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:605(para)
 msgid "Also, you need to decide whether you want to support object storage in your cloud. The two common use cases for providing object storage in a compute cloud are:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:599(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:611(para)
 msgid "To provide users with a persistent storage mechanism"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:603(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:615(para)
 msgid "As a scalable, reliable data store for virtual machine images"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:609(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:621(title)
 msgid "Commodity Storage Back-end Technologies"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:611(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:623(para)
 msgid "This section provides a high-level overview of the differences among the different commodity storage back end technologies. Depending on your cloud user's needs, you can implement one or many of these technologies in different combinations:<indexterm class=\"singular\"><primary>storage</primary><secondary>commodity storage</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:625(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:637(para)
 msgid "The official OpenStack Object Store implementation. It is a mature technology that has been used for several years in production by Rackspace as the technology behind Rackspace Cloud Files. As it is highly scalable, it is well-suited to managing petabytes of storage. OpenStack Object Storage's advantages are better <phrase role=\"keep-together\">integration</phrase> with OpenStack (integrates with OpenStack Identity, works with the OpenStack dashboard interface) and better support for multiple data center deployment through support of asynchronous eventual consistency replication."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:636(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:648(para)
 msgid "Therefore, if you eventually plan on distributing your storage cluster across multiple data centers, if you need unified accounts for your users for both compute and object storage, or if you want to control your object storage with the OpenStack dashboard, you should consider OpenStack Object Storage. More detail can be found about OpenStack Object Storage in the section below.<indexterm class=\"singular\"><primary>accounts</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:649(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:661(term)
 msgid "Ceph<indexterm class=\"singular\"><primary>Ceph</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:654(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:666(para)
 msgid "A scalable storage solution that replicates data across commodity storage nodes. Ceph was originally developed by one of the founders of DreamHost and is currently used in production there."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:659(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:671(para)
 msgid "Ceph was designed to expose different types of storage interfaces to the end user: it supports object storage, block storage, and file-system interfaces, although the file-system interface is not yet considered production-ready. Ceph supports the same API as swift for object storage and can be used as a back end for cinder block storage as well as back-end storage for glance images. Ceph supports \"thin provisioning,\" implemented using copy-on-write."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:668(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:680(para)
 msgid "This can be useful when booting from volume because a new volume can be provisioned very quickly. Ceph also supports keystone-based authentication (as of version 0.56), so it can be a seamless swap in for the default OpenStack swift implementation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:674(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:686(para)
 msgid "Ceph's advantages are that it gives the administrator more fine-grained control over data distribution and replication strategies, enables you to consolidate your object and block storage, enables very fast provisioning of boot-from-volume instances using thin provisioning, and supports a distributed file-system interface, though this interface is <link xlink:href=\"http://ceph.com/docs/master/cephfs/\" xlink:title=\"OpenStack wiki\">not yet recommended</link> for use in production deployment by the Ceph project."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:684(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:696(para)
 msgid "If you want to manage your object and block storage within a single system, or if you want to support fast boot-from-volume, you should consider Ceph."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:691(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:703(term)
 msgid "Gluster<indexterm class=\"singular\"><primary>GlusterFS</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:696(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:708(para)
 msgid "A distributed, shared file system. As of Gluster version 3.3, you can use Gluster to consolidate your object storage and file storage into one unified file and object storage solution, which is called Gluster For OpenStack (GFO). GFO uses a customized version of swift that enables Gluster to be used as the back-end storage."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:703(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:715(para)
 msgid "The main reason to use GFO rather than regular swift is if you also want to support a distributed file system, either to support shared storage live migration or to provide it as a separate service to your end users. If you want to manage your object and file storage within a single system, you should consider GFO."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:713(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:725(term)
 msgid "LVM<indexterm class=\"singular\"><primary>LVM (Logical Volume Manager)</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:718(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:730(para)
 msgid "The Logical Volume Manager is a Linux-based system that provides an abstraction layer on top of physical disks to expose logical volumes to the operating system. The LVM back-end implements block storage as LVM logical partitions."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:723(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:735(para)
 msgid "On each host that will house block storage, an administrator must initially create a volume group dedicated to Block Storage volumes. Blocks are created from LVM logical volumes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:728(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:740(para)
 msgid "LVM does <emphasis>not</emphasis> provide any replication. Typically, administrators configure RAID on nodes that use LVM as block storage to protect against failures of individual hard drives. However, RAID does not protect against a failure of the entire host."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:738(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:750(term)
 msgid "ZFS<indexterm class=\"singular\"><primary>ZFS</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:743(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:755(para)
 msgid "The Solaris iSCSI driver for OpenStack Block Storage implements blocks as ZFS entities. ZFS is a file system that also has the functionality of a volume manager. This is unlike on a Linux system, where there is a separation of volume manager (LVM) and file system (such as, ext3, ext4, xfs, and btrfs). ZFS has a number of advantages over ext4, including improved data-integrity checking."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:751(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:763(para)
 msgid "The ZFS back end for OpenStack Block Storage supports only Solaris-based systems, such as Illumos. While there is a Linux port of ZFS, it is not included in any of the standard Linux distributions, and it has not been tested with OpenStack Block Storage. As with LVM, ZFS does not provide replication across hosts on its own; you need to add a replication solution on top of ZFS if your cloud needs to be able to handle storage-node failures."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:760(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:772(para)
 msgid "We don't recommend ZFS unless you have previous experience with deploying it, since the ZFS back end for Block Storage requires a Solaris-based operating system, and we assume that your experience is primarily with Linux-based systems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:768(term)
+#: ./doc/openstack-ops/ch_arch_storage.xml:780(term)
 msgid "Sheepdog<indexterm class=\"singular\"><primary>Sheepdog</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:773(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:785(para)
 msgid "Sheepdog is a userspace distributed storage system. Sheepdog scales to several hundred nodes, and has powerful virtual disk management features like snapshot, cloning, rollback, thin provisioning."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:777(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:789(para)
 msgid "It is essentially an object storage system that manages disks and aggregates the space and performance of disks linearly in hyper scale on commodity hardware in a smart way. On top of its object store, Sheepdog provides elastic volume service and http service. Sheepdog does not assume anything about kernel version and can work nicely with xattr-supported file systems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:789(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title) ./doc/openstack-ops/ch_ops_customize.xml:1188(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:801(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title) ./doc/openstack-ops/ch_ops_customize.xml:1188(title)
 msgid "Conclusion"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:791(para)
+#: ./doc/openstack-ops/ch_arch_storage.xml:803(para)
 msgid "We hope that you now have some considerations in mind and questions to ask your future cloud users about their storage use cases. As you can see, your storage decisions will also influence your network design for performance and security needs. Continue with us to make more informed decisions about your OpenStack cloud <phrase role=\"keep-together\">design</phrase>."
 msgstr ""
 
