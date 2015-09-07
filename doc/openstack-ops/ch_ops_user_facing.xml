@@ -693,7 +693,7 @@
         do:</para>
 
         <screen><prompt>$</prompt> <userinput>neutron security-group-create \
-         global_http --descriptioin "allow web traffic from the Internet"</userinput>
+         global_http --description "allow web traffic from the Internet"</userinput>
 <computeroutput>Created a new security_group:
 +----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Field                | Value                                                                                                                                                                                                                                                                                                                         |
