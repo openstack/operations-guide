@@ -1323,7 +1323,7 @@ rabbit_password = <replaceable>RABBIT_PASS</replaceable></programlisting>
           </step>
           <step><para>Stop the services:</para>
           <screen><prompt>#</prompt> <userinput>service nova-api stop</userinput>
-          <prompt>#</prompt> <userinput>service nova-scheduler stop</userinput>
+<prompt>#</prompt> <userinput>service nova-scheduler stop</userinput>
 <prompt>#</prompt> <userinput>service nova-conductor stop</userinput>
 <prompt>#</prompt> <userinput>service nova-cert stop</userinput>
 <prompt>#</prompt> <userinput>service nova-consoleauth stop</userinput>
