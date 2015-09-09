@@ -107,7 +107,7 @@
         before the title FIXME -->
       <listitem>
         <para>Do a full manual install by using the <link
-            xlink:href="http://docs.openstack.org/"
+            xlink:href="http://docs.openstack.org/index.html#install-guides"
               ><citetitle>OpenStack Installation
             Guide</citetitle></link> for your platform. Review the
           final configuration files and installed packages.</para>
