@@ -23,8 +23,8 @@
     images, depending on the Image service configuration. Typically, the
     policy configuration allows admin users only to set quotas and create and
     manage services. The dashboard provides an <guilabel>Admin</guilabel> tab
-    with a <guilabel>System Panel</guilabel> and <guilabel>Identity
-    Panel</guilabel>. These interfaces give you access to system information
+    with a <guilabel>System Panel</guilabel> and an <guilabel>Identity
+    </guilabel> tab. These interfaces give you access to system information
     and usage as well as to settings for configuring what end users can do.
     Refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/dashboard.html">OpenStack Admin
     User Guide</link> for detailed how-to information about using the
