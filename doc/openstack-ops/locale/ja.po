@@ -1,4 +1,3 @@
-#
 # Translators:
 # Akihiro Motoki <amotoki@gmail.com>, 2013
 # Akira Yoshiyama <akirayoshiyama@gmail.com>, 2013
@@ -26,19 +25,24 @@
 # Ying Chun Guo <daisy.ycguo@gmail.com>, 2013
 # ykatabam <ykatabam@redhat.com>, 2014
 # Yuki Shira <shirayuking@gmail.com>, 2013
+#
+#
+# Akihiro Motoki <amotoki@gmail.com>, 2015. #zanata
+# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-09-01 21:59+0000\n"
-"PO-Revision-Date: 2015-09-02 11:52+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
-"Language-Team: Japanese (http://www.transifex.com/openstack/openstack-"
-"manuals-i18n/language/ja/)\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-09-17 05:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-09-15 12:30+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/openstack/openstack-"
+"manuals-i18n/language/ja/)\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.7.1\n"
 
 msgid "\"Hey Alvaro, can you run a VLAN on top of a VLAN?\""
 msgstr "「Alvaro、VLAN 上に VLAN って作れるのかい？」"
@@ -1047,8 +1051,7 @@ msgstr ""
 "the <literal>ovs-agent</literal> running on compute nodes is achieved by "
 "adding in more compute nodes as necessary.</td></tr></tbody></table>"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1057,8 +1060,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/Check_mark_23x20_02.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1067,8 +1069,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0001.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1077,8 +1078,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_00in01.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1087,8 +1087,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0101.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1097,8 +1096,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0102.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1107,8 +1105,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0103.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1117,8 +1114,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0104.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1127,8 +1123,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0105.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1137,8 +1132,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0106.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1147,8 +1141,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_01in01.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1157,8 +1150,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_01in02.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1167,8 +1159,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0201.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1177,8 +1168,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0901.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1187,8 +1177,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_0902.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1197,8 +1186,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_1201.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -1207,8 +1195,7 @@ msgstr ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
 "openstack-ops/figures/osog_1202.png'; md5=THIS FILE DOESN'T EXIST"
 
-#. When image changes, this message will be marked fuzzy or untranslated for
-#. you.
+#. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 msgid ""
 "@@image: 'http://git.openstack.org/cgit/openstack/operations-guide/plain/doc/"
@@ -3031,7 +3018,7 @@ msgid ""
 "depending on the Image service configuration. Typically, the policy "
 "configuration allows admin users only to set quotas and create and manage "
 "services. The dashboard provides an <guilabel>Admin</guilabel> tab with a "
-"<guilabel>System Panel</guilabel> and <guilabel>Identity Panel</guilabel>. "
+"<guilabel>System Panel</guilabel> and an <guilabel>Identity </guilabel> tab. "
 "These interfaces give you access to system information and usage as well as "
 "to settings for configuring what end users can do. Refer to the <link xlink:"
 "href=\"http://docs.openstack.org/user-guide-admin/dashboard.html\">OpenStack "
@@ -3046,11 +3033,11 @@ msgstr ""
 "理したり、共有したりすることができます。通常、ポリシーの設定では、管理ユー"
 "ザーのみがクォータの設定とサービスの作成/管理を行うことができます。ダッシュ"
 "ボードには <guilabel>管理</guilabel> タブがあり、<guilabel>システムパネル</"
-"guilabel> と <guilabel>認証パネル</guilabel> に分かれています。これらのイン"
-"ターフェースにより、システム情報と使用状況のデータにアクセスすることができる"
-"のに加えて、エンドユーザーが実行可能な操作を設定することもできます。管理ユー"
-"ザーとしてダッシュボードを使用する方法についての詳しい説明は  <link xlink:"
-"href=\"http://docs.openstack.org/ja/user-guide-admin/dashboard.html"
+"guilabel> と <guilabel>ユーザー管理タブ</guilabel> に分かれています。これらの"
+"インターフェースにより、システム情報と使用状況のデータにアクセスすることがで"
+"きるのに加えて、エンドユーザーが実行可能な操作を設定することもできます。管理"
+"ユーザーとしてダッシュボードを使用する方法についての詳しい説明は  <link "
+"xlink:href=\"http://docs.openstack.org/ja/user-guide-admin/dashboard.html"
 "\">OpenStack 管理ユーザーガイド</link> を参照してください。<indexterm class="
 "\"singular\"><primary>作業環境</primary><secondary>ダッシュボード</"
 "secondary></indexterm><indexterm class=\"singular\"><primary>ダッシュボード</"
@@ -4608,16 +4595,15 @@ msgstr "バグの確認と優先付け"
 
 msgid ""
 "Congratulations! By now, you should have a solid design for your cloud. We "
-"now recommend that you turn to the OpenStack Installation Guide (<link xlink:"
-"href=\"http://docs.openstack.org/havana/install-guide/install/apt/\"/> for "
-"Ubuntu, for example), which contains a step-by-step guide on how to manually "
-"install the OpenStack packages and dependencies on your cloud."
+"now recommend that you turn to the OpenStack Installation Guides (<link "
+"xlink:href=\"http://docs.openstack.org/index.html#install-guides\"/>), which "
+"contains a step-by-step guide on how to manually install the OpenStack "
+"packages and dependencies on your cloud."
 msgstr ""
 "おめでとう！これでクラウドのための設計が固まりました。次にOpenStack インス"
-"トールガイド(<link xlink:href=\"http://docs.openstack.org/havana/install-"
-"guide/install/apt/\"/> Ubuntuの例を挙げます)に進むことをお勧めします。これに"
-"はあなたのクラウドに必要なパッケージやOpenStackの手動インストール手順をステッ"
-"プバイステップで説明しています。"
+"トールガイド(<link xlink:href=\"http://docs.openstack.org/index.html#install-"
+"guides\"/>)に進むことをお勧めします。これにはあなたのクラウドに必要なパッケー"
+"ジやOpenStackの手動インストール手順をステップバイステップで説明しています。"
 
 msgid "Connect the qemu-nbd device to the disk."
 msgstr "qemu-nbd デバイスをディスクに接続します。"
@@ -5378,14 +5364,14 @@ msgstr "管理者がライブマイグレーションを必要とするか？"
 
 msgid ""
 "Do a full manual install by using the <link xlink:href=\"http://docs."
-"openstack.org/\"><citetitle>OpenStack Installation Guide</citetitle></link> "
-"for your platform. Review the final configuration files and installed "
-"packages."
+"openstack.org/index.html#install-guides\"><citetitle>OpenStack Installation "
+"Guide</citetitle></link> for your platform. Review the final configuration "
+"files and installed packages."
 msgstr ""
 "お使いのプラットフォーム用の <link xlink:href=\"http://docs.openstack.org/"
-"\"><citetitle>OpenStack Installation Guide</citetitle></link> を使用して、完"
-"全な手動インストールを実行する。最終的な設定ファイルとインストールされたパッ"
-"ケージをレビューします。"
+"index.html#install-guides\"><citetitle>OpenStack Installation Guide</"
+"citetitle></link> を使用して、完全な手動インストールを実行する。最終的な設定"
+"ファイルとインストールされたパッケージをレビューします。"
 
 msgid "Do more spindles result in better I/O despite network access?"
 msgstr ""
@@ -5470,31 +5456,33 @@ msgstr ""
 
 msgid ""
 "EC2 compatibility credentials can be downloaded by selecting "
-"<guimenuitem>Project</guimenuitem>, then <guimenuitem>Access &amp; Security</"
-"guimenuitem>, then <guimenuitem>API Access</guimenuitem> to display the "
-"<guilabel>Download EC2 Credentials</guilabel> button. Click the button to "
-"generate a ZIP file with server x509 certificates and a shell script "
-"fragment. Create a new directory in a secure location because these are live "
-"credentials containing all the authentication information required to access "
-"your cloud identity, unlike the default <code>user-openrc</code>. Extract "
-"the ZIP file here. You should have <filename>cacert.pem</filename>, "
-"<filename>cert.pem</filename>, <filename>ec2rc.sh</filename>, and "
-"<filename>pk.pem</filename>. The <filename>ec2rc.sh</filename> is similar to "
-"this:<indexterm class=\"singular\"><primary>access key</primary></indexterm>"
+"<guimenuitem>Project</guimenuitem>, then <guimenuitem>Compute </"
+"guimenuitem>, then <guimenuitem>Access &amp; Security</guimenuitem>, then "
+"<guimenuitem>API Access</guimenuitem> to display the <guilabel>Download EC2 "
+"Credentials</guilabel> button. Click the button to generate a ZIP file with "
+"server x509 certificates and a shell script fragment. Create a new directory "
+"in a secure location because these are live credentials containing all the "
+"authentication information required to access your cloud identity, unlike "
+"the default <code>user-openrc</code>. Extract the ZIP file here. You should "
+"have <filename>cacert.pem</filename>, <filename>cert.pem</filename>, "
+"<filename>ec2rc.sh</filename>, and <filename>pk.pem</filename>. The "
+"<filename>ec2rc.sh</filename> is similar to this:<indexterm class=\"singular"
+"\"><primary>access key</primary></indexterm>"
 msgstr ""
 "EC2 互換のクレデンシャルをダウンロードするには、<guimenuitem>プロジェクト</"
-"guimenuitem>、<guimenuitem>アクセスとセキュリティ</guimenuitem>、"
-"<guimenuitem>API アクセス</guimenuitem> の順に選択し、<guilabel>EC2 認証情報"
-"のダウンロード</guilabel> ボタンを表示します。このボタンをクリックすると、 "
-"サーバーの x509 証明書とシェルスクリプトフラグメントが含まれた ZIP が生成され"
-"ます。これらのファイルは、デフォルトの <code>user-openrc</code> とは異なり、"
-"クラウドのアイデンティティへのアクセスに必要なすべての認証情報を含む有効なク"
-"レデンシャルなので、セキュリティ保護された場所に新規ディレクトリを作成して、"
-"そこで ZIP ファイルを展開します。<filename>cacert.pem</filename>、"
-"<filename>cert.pem</filename>、<filename>ec2rc.sh</filename>、および "
-"<filename>pk.pem</filename> が含まれているはずです。<filename>ec2rc.sh</"
-"filename> には、以下と似たような内容が記述されています:<indexterm class="
-"\"singular\"><primary>アクセスキー</primary></indexterm>"
+"guimenuitem>、<guimenuitem>コンピュート </guimenuitem>、<guimenuitem>アクセス"
+"とセキュリティ</guimenuitem>、<guimenuitem>API アクセス</guimenuitem> の順に"
+"選択し、<guilabel>EC2 認証情報のダウンロード</guilabel> ボタンを表示します。"
+"このボタンをクリックすると、 サーバーの x509 証明書とシェルスクリプトフラグメ"
+"ントが含まれた ZIP が生成されます。これらのファイルは、デフォルトの "
+"<code>user-openrc</code> とは異なり、クラウドのアイデンティティへのアクセスに"
+"必要なすべての認証情報を含む有効なクレデンシャルなので、セキュリティ保護され"
+"た場所に新規ディレクトリを作成して、そこで ZIP ファイルを展開します。"
+"<filename>cacert.pem</filename>、<filename>cert.pem</filename>、"
+"<filename>ec2rc.sh</filename>、および <filename>pk.pem</filename> が含まれて"
+"いるはずです。<filename>ec2rc.sh</filename> には、以下と似たような内容が記述"
+"されています:<indexterm class=\"singular\"><primary>アクセスキー</primary></"
+"indexterm>"
 
 msgid "Each cell has a full nova installation except nova-api."
 msgstr "各セルには nova-api　以外の全 nova 設定が含まれています。"
@@ -10950,13 +10938,13 @@ msgstr ""
 msgid ""
 "Once you've gathered this information, creating the user in the dashboard is "
 "just another web form similar to what we've seen before and can be found by "
-"clicking the Users link in the Admin navigation bar and then clicking the "
+"clicking the Users link in the Identity navigation bar and then clicking the "
 "Create User button at the top right."
 msgstr ""
 "一度この情報を収集すると、ダッシュボードでのユーザーの作成は、これまでに見て"
-"きた他の Web フォームと同じです。\"管理\" ナビゲーションバーの \"ユーザー\" "
-"リンクにあります。そして、右上にある \"ユーザーの作成\" ボタンをクリックしま"
-"す。"
+"きた他の Web フォームと同じです。\"ユーザー管理\" ナビゲーションバーの \"ユー"
+"ザー\" リンクにあります。そして、右上にある \"ユーザーの作成\" ボタンをクリッ"
+"クします。"
 
 msgid ""
 "One choice that always comes up is whether to virtualize. Some services, "
@@ -13266,9 +13254,11 @@ msgstr ""
 msgid "Segregating Your Cloud"
 msgstr "クラウドの分離"
 
-msgid "Select the <guilabel>Admin</guilabel> tab in the left navigation bar."
+msgid ""
+"Select the <guilabel>Identity</guilabel> tab in the left navigation bar."
 msgstr ""
-"左側にあるナビゲーションバーの <guilabel>管理</guilabel> タブを選択します。"
+"左側にあるナビゲーションバーの <guilabel>ユーザー管理</guilabel> タブを選択し"
+"ます。"
 
 msgid "Semiannually"
 msgstr "1 年に 2 回"
@@ -18934,8 +18924,9 @@ msgstr ""
 msgid "Under Development"
 msgstr "開発中"
 
-msgid "Under Identity Panel, click <guilabel>Projects</guilabel>."
-msgstr "認証パネルの <guilabel>プロジェクト</guilabel> をクリックします。"
+msgid "Under Identity tab, click <guilabel>Projects</guilabel>."
+msgstr ""
+"ユーザー管理タブの <guilabel>プロジェクト</guilabel> をクリックします。"
 
 msgid ""
 "Underlying the use of the command-line tools is the OpenStack API, which is "
@@ -21435,18 +21426,19 @@ msgid ""
 "line tools to make queries against your OpenStack cloud. By far, the easiest "
 "way to obtain <glossterm>authentication</glossterm> credentials to use with "
 "command-line clients is to use the OpenStack dashboard. From the top-right "
-"navigation row, select <guimenuitem>Project</guimenuitem>, then "
-"<guimenuitem>Access &amp; Security</guimenuitem>, then <guimenuitem>API "
-"Access</guimenuitem> to access the user settings page where you can set your "
-"language and timezone preferences for the dashboard view. This action "
-"displays two buttons, <guilabel>Download OpenStack RC File</guilabel> and "
-"<guilabel>Download EC2 Credentials</guilabel>, which let you generate files "
-"that you can source in your shell to populate the environment variables the "
-"command-line tools require to know where your service endpoints and your "
-"authentication information are. The user you logged in to the dashboard "
-"dictates the filename for the openrc file, such as <filename>demo-openrc.sh</"
-"filename>. When logged in as admin, the file is named <filename>admin-openrc."
-"sh</filename>.<indexterm class=\"singular\"><primary>credentials</primary></"
+"navigation row, select <guimenuitem>Project </guimenuitem>, then "
+"<guimenuitem>Compute</guimenuitem>, then <guimenuitem> Access &amp; "
+"Security</guimenuitem>, then <guimenuitem>API Access</guimenuitem> to access "
+"the user settings page where you can set your language and timezone "
+"preferences for the dashboard view. This action displays two buttons, "
+"<guilabel>Download OpenStack RC File</guilabel> and <guilabel>Download EC2 "
+"Credentials</guilabel>, which let you generate files that you can source in "
+"your shell to populate the environment variables the command-line tools "
+"require to know where your service endpoints and your authentication "
+"information are. The user you logged in to the dashboard dictates the "
+"filename for the openrc file, such as <filename>demo-openrc.sh</filename>. "
+"When logged in as admin, the file is named <filename>admin-openrc.sh</"
+"filename>.<indexterm class=\"singular\"><primary>credentials</primary></"
 "indexterm><indexterm class=\"singular\"><primary>authentication</primary></"
 "indexterm><indexterm class=\"singular\"><primary>command-line tools</"
 "primary><secondary>getting credentials</secondary></indexterm>"
@@ -21455,21 +21447,22 @@ msgstr ""
 "は、適切な認証情報が必要です。コマンドラインクライアントで使用する<glossterm>"
 "認証</glossterm>のクレデンシャルを取得する最も簡単な方法は、OpenStack ダッ"
 "シュボードを使用する方法です。画面右上のナビレーションバーから <guimenuitem>"
-"プロジェクト</guimenuitem> を選択し、<guimenuitem>アクセスとセキュリティ</"
-"guimenuitem> をクリックしてから, <guimenuitem>API アクセス</guimenuitem> のタ"
-"ブを開き、ユーザー設定のページにアクセスします。このページでは、ダッシュボー"
-"ドで表示される言語とタイムゾーンを設定することができます。この操作では、"
-"<guilabel>OpenStack RC ファイルのダウンロード</guilabel> と <guilabel>EC2 認"
-"証情報のダウンロード</guilabel> の 2 つのボタンが表示されます。これらのボタン"
-"により、コマンドラインツールがサービスエンドポイントと認証情報の場所を知るの"
-"に必要な環境変数を読み込むために、シェルで元データとして使用することのできる"
-"ファイルを生成することができます。ダッシュボードにログインしたユーザーによっ"
-"て、openrc ファイルのファイル名が決定します (例: <filename>demo-openrc.sh</"
-"filename>)。admin としてログインした場合には、ファイル名は <filename>admin-"
-"openrc.sh</filename> となります。<indexterm class=\"singular\"><primary>認証"
-"情報</primary></indexterm><indexterm class=\"singular\"><primary>認証</"
-"primary></indexterm><indexterm class=\"singular\"><primary>コマンドラインツー"
-"ル</primary><secondary>認証情報の取得</secondary></indexterm>"
+"プロジェクト</guimenuitem> を選択し、<guimenuitem>コンピュート</guimenuitem> "
+"に進んで、<guimenuitem>アクセスとセキュリティ</guimenuitem> をクリックしてか"
+"ら, <guimenuitem>API アクセス</guimenuitem> のタブを開き、ユーザー設定のペー"
+"ジにアクセスします。このページでは、ダッシュボードで表示される言語とタイム"
+"ゾーンを設定することができます。この操作では、<guilabel>OpenStack RC ファイル"
+"のダウンロード</guilabel> と <guilabel>EC2 認証情報のダウンロード</guilabel> "
+"の 2 つのボタンが表示されます。これらのボタンにより、コマンドラインツールが"
+"サービスエンドポイントと認証情報の場所を知るのに必要な環境変数を読み込むため"
+"に、シェルで元データとして使用することのできるファイルを生成することができま"
+"す。ダッシュボードにログインしたユーザーによって、openrc ファイルのファイル名"
+"が決定します (例: <filename>demo-openrc.sh</filename>)。admin としてログイン"
+"した場合には、ファイル名は <filename>admin-openrc.sh</filename> となります。"
+"<indexterm class=\"singular\"><primary>認証情報</primary></"
+"indexterm><indexterm class=\"singular\"><primary>認証</primary></"
+"indexterm><indexterm class=\"singular\"><primary>コマンドラインツール</"
+"primary><secondary>認証情報の取得</secondary></indexterm>"
 
 msgid ""
 "You must have the matching private key to access instances associated with "
