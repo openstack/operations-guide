@@ -796,7 +796,7 @@
         To use RemoteGroup, specify <literal>--remote-group-id</literal>
         instead of <literal>--remote-ip-prefix</literal>.
         For example:</para>
-        <screen><prompt>$</prompt> <userinput>neutron security-group-rule-create --direction ingress
+        <screen><prompt>$</prompt> <userinput>neutron security-group-rule-create --direction ingress \
         --ethertype IPv4 --protocol tcp --port-range-min 22 --port-range-max 22 --remote-group-id global_http cluster</userinput></screen>
 
         <para>The "cluster" rule allows SSH access from any other instance that
