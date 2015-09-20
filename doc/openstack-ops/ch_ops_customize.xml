@@ -130,8 +130,8 @@
             <para>Clone the stable/havana branch of the
             <literal>devstack</literal> repository:
 
-            <screen><prompt>$</prompt> <userinput>git clone https://github.com/openstack-dev/devstack.git -b
-stable/havana devstack/</userinput></screen></para>
+            <screen><prompt>$</prompt> <userinput>git clone https://github.com/openstack-dev/devstack.git -b \
+  stable/havana devstack/</userinput></screen></para>
           </step>
 
           <step>
