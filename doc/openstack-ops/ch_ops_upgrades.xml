@@ -1867,8 +1867,8 @@ qpid_hostname = <replaceable>controller</replaceable></programlisting>
           </note>
           </step>
           <step><para>Install the ML2 plug-in package:</para>
-          <screen><prompt>#</prompt> <userinput>yum install openstack-
-              neutron-ml2</userinput></screen></step>
+          <screen><prompt>#</prompt> <userinput>yum install openstack-neutron-ml2</userinput></screen>
+          </step>
           <step><para>Populate the
               <filename>/etc/neutron/plugins/ml2/ml2_conf.ini</filename>
             file with the equivalent configuration for your
