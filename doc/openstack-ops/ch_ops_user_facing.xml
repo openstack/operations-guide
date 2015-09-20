@@ -927,8 +927,8 @@ Optional snapshot description. (Default=None)</programlisting>
       the name is unique. You can start an instance from the dashboard from
       the <guibutton>Launch Instance</guibutton> button on the
       <guilabel>Instances</guilabel> page or by selecting the
-      <guilabel>Launch</guilabel> action next to an image or snapshot on the
-      <guilabel>Images &amp; Snapshots</guilabel> page.<indexterm
+      <guilabel>Launch Instance</guilabel> action next to an image or snapshot
+      on the <guilabel>Images</guilabel> page.<indexterm
           class="singular">
           <primary>instances</primary>
 
