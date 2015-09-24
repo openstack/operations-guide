@@ -17,7 +17,7 @@
   example architecture that uses OpenStack Networking (neutron) after this
   section. Each example offers high availability, meaning that if a particular
   node goes down, another node with the same configuration can take over the
-  tasks so that service continues to be available.<indexterm class="singular">
+  tasks so that the services continue to be available.<indexterm class="singular">
       <primary>Havana</primary>
     </indexterm><indexterm class="singular">
       <primary>Grizzly</primary>
