@@ -9,28 +9,26 @@
          xmlns:ns="http://docbook.org/ns/docbook">
   <?dbhtml stop-chunking?>
 
-  <title>Example Architectures</title>
+  <title>Architecture Examples</title>
 
-  <para>To understand the possibilities OpenStack offers, it's best to start
-  with basic architectures that are tried-and-true and have been tested in
-  production environments. We offer two such examples with basic pivots on the
+  <para>To understand the possibilities that OpenStack offers, it's best to start
+  with basic architecture that has been tested in
+  production environments. We offer two examples with basic pivots on the
   base operating system (Ubuntu and Red Hat Enterprise Linux) and the
-  networking architectures. There are other differences between these two
-  examples, but you should find the considerations made for the choices in
-  each as well as a rationale for why it worked well in a given
-  environment.</para>
+  networking architecture. There are other differences between these two
+  examples and this guide provides reasons for each choice made.</para>
 
   <para>Because OpenStack is highly configurable, with many different back ends
   and network configuration options, it is difficult to write documentation
   that covers all possible OpenStack deployments. Therefore, this guide
-  defines example architectures to simplify the task of documenting, as well
+  defines examples of architecture to simplify the task of documenting, as well
   as to provide the scope for this guide. Both of the offered architecture
   examples are currently running in production and serving users.</para>
 
   <tip>
     <para>As always, refer to the <xref linkend="openstack_glossary" /> if you
-    are unclear about any of the terminology mentioned in these
-    architectures.</para>
+    are unclear about any of the terminology mentioned in architecture
+    examples.</para>
   </tip>
 
   <xi:include href="section_arch_example-nova.xml" />
@@ -38,7 +36,7 @@
   <xi:include href="section_arch_example-neutron.xml" />
 
   <section xml:id="example_archs_conclusion">
-    <title>Parting Thoughts on Architectures</title>
+    <title>Parting Thoughts on Architecture Examples</title>
 
     <para>With so many considerations and options available, our hope is to
     provide a few clearly-marked and tested paths for your OpenStack
