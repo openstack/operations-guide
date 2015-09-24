@@ -839,7 +839,7 @@
                 least one instance will be available in case of node failure.
                 Compute is also behind HAProxy, which detects when the software
                 fails and routes requests around the failing instance.</para>
-              <para>Compute's compute and conductor services, which run on the
+              <para>Nova-compute and nova-conductor services, which run on the
                 compute nodes, are only needed to run services on that node, so
                 availability of those services is coupled tightly to the nodes
                 that are available. As long as a compute node is up, it will
