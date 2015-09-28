@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-17 06:00+0000\n"
+"POT-Creation-Date: 2015-09-28 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -8364,7 +8364,7 @@ msgid "The nova API, scheduler, objectstore, cert, consoleauth, conductor, and v
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:842(para)
-msgid "Compute's compute and conductor services, which run on the compute nodes, are only needed to run services on that node, so availability of those services is coupled tightly to the nodes that are available. As long as a compute node is up, it will have the needed services running on top of it."
+msgid "Nova-compute and nova-conductor services, which run on the compute nodes, are only needed to run services on that node, so availability of those services is coupled tightly to the nodes that are available. As long as a compute node is up, it will have the needed services running on top of it."
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-neutron.xml:895(para)
@@ -9180,7 +9180,7 @@ msgid "Example Architecture—Legacy Networking (nova)"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:14(para)
-msgid "This particular example architecture has been upgraded from Grizzly to Havana and tested in production environments where many public IP addresses are available for assignment to multiple instances. You can find a second example architecture that uses OpenStack Networking (neutron) after this section. Each example offers high availability, meaning that if a particular node goes down, another node with the same configuration can take over the tasks so that service continues to be available.<indexterm class=\"singular\"><primary>Havana</primary></indexterm><indexterm class=\"singular\"><primary>Grizzly</primary></indexterm>"
+msgid "This particular example architecture has been upgraded from Grizzly to Havana and tested in production environments where many public IP addresses are available for assignment to multiple instances. You can find a second example architecture that uses OpenStack Networking (neutron) after this section. Each example offers high availability, meaning that if a particular node goes down, another node with the same configuration can take over the tasks so that the services continue to be available.<indexterm class=\"singular\"><primary>Havana</primary></indexterm><indexterm class=\"singular\"><primary>Grizzly</primary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/section_arch_example-nova.xml:29(para)
