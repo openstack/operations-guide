@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-28 06:01+0000\n"
+"POT-Creation-Date: 2015-10-01 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -8760,7 +8760,7 @@ msgid "Thinking it was just a one-off issue, I terminated the instance and launc
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:32(para)
-msgid "At the data center, I was finishing up some tasks and remembered the lock-up. I logged into the new instance and ran <placeholder-1/> again. It worked. Phew. I decided to run it one more time. It locked up. WTF."
+msgid "At the data center, I was finishing up some tasks and remembered the lock-up. I logged into the new instance and ran <placeholder-1/> again. It worked. Phew. I decided to run it one more time. It locked up."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:36(para)
@@ -8768,7 +8768,7 @@ msgid "After reproducing the problem several times, I came to the unfortunate co
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:40(para)
-msgid "Where do you even begin troubleshooting something like this? An instance just randomly locks when a command is issued. Is it the image? Nopeit happens on all images. Is it the compute node? Nopeall nodes. Is the instance locked up? No! New SSH connections work just fine!"
+msgid "Where do you even begin troubleshooting something like this? An instance that just randomly locks up when a command is issued. Is it the image? Nopeit happens on all images. Is it the compute node? Nopeall nodes. Is the instance locked up? No! New SSH connections work just fine!"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:45(para)
@@ -8832,7 +8832,7 @@ msgid "vlan20 is the VLAN that the data center gave us for outgoing Internet acc
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:127(para)
-msgid "By mistake, I configured OpenStack to attach all tenant VLANs to vlan20 instead of bond0 thereby stacking one VLAN on top of another which then added an extra 4 bytes to each packet which cause a packet of 1504 bytes to be sent out which would cause problems when it arrived at an interface that only accepted 1500!"
+msgid "By mistake, I configured OpenStack to attach all tenant VLANs to vlan20 instead of bond0 thereby stacking one VLAN on top of another. This added an extra 4 bytes to each packet and caused a packet of 1504 bytes to be sent out which would cause problems when it arrived at an interface that only accepted 1500."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:133(para)
@@ -9088,11 +9088,11 @@ msgid "Users being able to retrieve console logs from running instances is a boo
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:457(para)
-msgid "A report came in: VMs were launching slowly, or not at all. Cue the standard checksnothing on the nagios, but there was a spike in network towards the current master of our RabbitMQ cluster. Investigation started, but soon the other parts of the queue cluster were leaking memory like a sieve. Then the alert came inthe master rabbit server went down. Connections failed over to the slave."
+msgid "A report came in: VMs were launching slowly, or not at all. Cue the standard checksnothing on the Nagios, but there was a spike in network towards the current master of our RabbitMQ cluster. Investigation started, but soon the other parts of the queue cluster were leaking memory like a sieve. Then the alert came inthe master Rabbit server went down and connections failed over to the slave."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:464(para)
-msgid "At that time, our control services were hosted by another team and we didn't have much debugging information to determine what was going on with the master, and couldn't reboot it. That team noted that it failed without alert, but managed to reboot it. After an hour, the cluster had returned to its normal state and we went home for the day."
+msgid "At that time, our control services were hosted by another team and we didn't have much debugging information to determine what was going on with the master, and we could not reboot it. That team noted that it failed without alert, but managed to reboot it. After an hour, the cluster had returned to its normal state and we went home for the day."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:471(para)
@@ -9104,7 +9104,7 @@ msgid "After finding the instance ID we headed over to <filename>/var/lib/nova/i
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:491(para)
-msgid "Sure enough, the user had been periodically refreshing the console log page on the dashboard and the 5G file was traversing the rabbit cluster to get to the dashboard."
+msgid "Sure enough, the user had been periodically refreshing the console log page on the dashboard and the 5G file was traversing the Rabbit cluster to get to the dashboard."
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:495(para)
@@ -9156,7 +9156,7 @@ msgid "After digging into the nova (OpenStack Compute) code, I noticed two areas
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:562(para)
-msgid "Since my database contained many recordsover 1 million metadata records and over 300,000 instance records in \"deleted\" or \"errored\" stateseach search took ages. I decided to clean up the database by first archiving a copy for backup and then performing some deletions using the MySQL client. For example, I ran the following SQL command to remove rows of instances deleted for over a year:"
+msgid "Since my database contained many recordsover 1 million metadata records and over 300,000 instance records in \"deleted\" or \"errored\" stateseach search took a long time. I decided to clean up the database by first archiving a copy for backup and then performing some deletions using the MySQL client. For example, I ran the following SQL command to remove rows of instances deleted for over a year:"
 msgstr ""
 
 #: ./doc/openstack-ops/app_crypt.xml:570(para)
@@ -9492,7 +9492,7 @@ msgid "Getting Credentials"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:217(para)
-msgid "You must have the appropriate credentials if you want to use the command-line tools to make queries against your OpenStack cloud. By far, the easiest way to obtain <glossterm>authentication</glossterm> credentials to use with command-line clients is to use the OpenStack dashboard. From the top-right navigation row, select <guimenuitem>Project </guimenuitem>, then <guimenuitem>Compute</guimenuitem>, then <guimenuitem> Access &amp; Security</guimenuitem>, then <guimenuitem>API Access</guimenuitem> to access the user settings page where you can set your language and timezone preferences for the dashboard view. This action displays two buttons, <guilabel>Download OpenStack RC File</guilabel> and <guilabel>Download EC2 Credentials</guilabel>, which let you generate files that you can source in your shell to populate the environment variables the command-line tools require to know where your service endpoints and your authentication information are. The user you logged in to the dashboard dictates the filename for the openrc file, such as <filename>demo-openrc.sh</filename>. When logged in as admin, the file is named <filename>admin-openrc.sh</filename>.<indexterm class=\"singular\"><primary>credentials</primary></indexterm><indexterm class=\"singular\"><primary>authentication</primary></indexterm><indexterm class=\"singular\"><primary>command-line tools</primary><secondary>getting credentials</secondary></indexterm>"
+msgid "You must have the appropriate credentials if you want to use the command-line tools to make queries against your OpenStack cloud. By far, the easiest way to obtain <glossterm>authentication</glossterm> credentials to use with command-line clients is to use the OpenStack dashboard. Select <guimenuitem>Project</guimenuitem>, click the <guimenuitem>Project</guimenuitem> tab, and click <guimenuitem>Access &amp; Security</guimenuitem> on the <guimenuitem>Compute</guimenuitem> category. On the <guimenuitem>Access &amp; Security</guimenuitem> page, click the <guimenuitem>API Access</guimenuitem> tab to display two buttons, <guilabel>Download OpenStack RC File</guilabel> and <guilabel>Download EC2 Credentials</guilabel>, which let you generate files that you can source in your shell to populate the environment variables the command-line tools require to know where your service endpoints and your authentication information are. The user you logged in to the dashboard dictates the filename for the openrc file, such as <filename>demo-openrc.sh</filename>. When logged in as admin, the file is named <filename>admin-openrc.sh</filename>.<indexterm class=\"singular\"><primary>credentials</primary></indexterm><indexterm class=\"singular\"><primary>authentication</primary></indexterm><indexterm class=\"singular\"><primary>command-line tools</primary><secondary>getting credentials</secondary></indexterm>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_lay_of_land.xml:244(para)
@@ -9688,26 +9688,26 @@ msgid "We hope you have enjoyed this quick tour of your working environment, inc
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_examples.xml:12(title)
-msgid "Example Architectures"
+msgid "Architecture Examples"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_examples.xml:14(para)
-msgid "To understand the possibilities OpenStack offers, it's best to start with basic architectures that are tried-and-true and have been tested in production environments. We offer two such examples with basic pivots on the base operating system (Ubuntu and Red Hat Enterprise Linux) and the networking architectures. There are other differences between these two examples, but you should find the considerations made for the choices in each as well as a rationale for why it worked well in a given environment."
+msgid "To understand the possibilities that OpenStack offers, it's best to start with basic architecture that has been tested in production environments. We offer two examples with basic pivots on the base operating system (Ubuntu and Red Hat Enterprise Linux) and the networking architecture. There are other differences between these two examples and this guide provides reasons for each choice made."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_examples.xml:23(para)
-msgid "Because OpenStack is highly configurable, with many different back ends and network configuration options, it is difficult to write documentation that covers all possible OpenStack deployments. Therefore, this guide defines example architectures to simplify the task of documenting, as well as to provide the scope for this guide. Both of the offered architecture examples are currently running in production and serving users."
+#: ./doc/openstack-ops/ch_arch_examples.xml:21(para)
+msgid "Because OpenStack is highly configurable, with many different back ends and network configuration options, it is difficult to write documentation that covers all possible OpenStack deployments. Therefore, this guide defines examples of architecture to simplify the task of documenting, as well as to provide the scope for this guide. Both of the offered architecture examples are currently running in production and serving users."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_examples.xml:31(para)
-msgid "As always, refer to the <xref linkend=\"openstack_glossary\"/> if you are unclear about any of the terminology mentioned in these architectures."
+#: ./doc/openstack-ops/ch_arch_examples.xml:29(para)
+msgid "As always, refer to the <xref linkend=\"openstack_glossary\"/> if you are unclear about any of the terminology mentioned in architecture examples."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_examples.xml:41(title)
-msgid "Parting Thoughts on Architectures"
+#: ./doc/openstack-ops/ch_arch_examples.xml:39(title)
+msgid "Parting Thoughts on Architecture Examples"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_examples.xml:43(para)
+#: ./doc/openstack-ops/ch_arch_examples.xml:41(para)
 msgid "With so many considerations and options available, our hope is to provide a few clearly-marked and tested paths for your OpenStack exploration. If you're looking for additional ideas, check out <xref linkend=\"use-cases\"/>, the <link xlink:href=\"http://docs.openstack.org/\">OpenStack Installation Guides</link>, or the <link xlink:href=\"http://www.openstack.org/user-stories/\">OpenStack User Stories page</link>."
 msgstr ""
 
