@@ -1201,10 +1201,10 @@ Optional snapshot description. (Default=None)</programlisting>
     have a limited number of floating IPs controlled by a quota. However,
     these need to be allocated to the project from the central pool prior to
     their use—usually by the administrator of the project. To allocate a
-    floating IP to a project, use the <guibutton>Allocate IP to
-    Project</guibutton> button on the <guilabel>Access &amp;
-    Security</guilabel> page of the dashboard. The command line can also be
-    used:<indexterm class="singular">
+    floating IP to a project, use the <guibutton>Allocate IP To
+    Project</guibutton> button on the <guilabel>Floating IPs</guilabel> tab
+    of the <guilabel>Access &amp; Security</guilabel> page of the dashboard.
+    The command line can also be used:<indexterm class="singular">
         <primary>address pool</primary>
       </indexterm><indexterm class="singular">
         <primary>IP addresses</primary>
@@ -1221,11 +1221,13 @@ Optional snapshot description. (Default=None)</programlisting>
     <para>Once allocated, a floating IP can be assigned to running instances
     from the dashboard either by selecting <guibutton>Associate Floating
     IP</guibutton> from the actions drop-down next to the IP on the
+    <guilabel>Floating IPs</guilabel> tab of the
     <guilabel>Access &amp; Security</guilabel> page or by making this
     selection next to the instance you want to associate it with on the
     <guilabel>Instances</guilabel> page. The inverse action,
-    <guibutton>Dissociate Floating IP</guibutton>, is available only from the
-    <guilabel>Access &amp; Security</guilabel> page and not from the
+    <guibutton>Dissociate Floating IP</guibutton>, is available from the
+    <guilabel>Floating IPs</guilabel> tab of the
+    <guilabel>Access &amp; Security</guilabel> page and from the
     <guilabel>Instances</guilabel> page.</para>
 
     <para>To associate or disassociate a floating IP with a server from the
