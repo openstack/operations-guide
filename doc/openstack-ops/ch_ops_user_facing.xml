@@ -1377,24 +1377,8 @@ Optional snapshot description. (Default=None)</programlisting>
     <screen><prompt>$</prompt> <userinput>nova image-create &lt;instance name or uuid&gt; &lt;name of new image&gt;</userinput></screen>
 
     <para>The dashboard interface for snapshots can be confusing because the
-    <guilabel>Images &amp; Snapshots</guilabel> page splits content up into
-    several areas:</para>
-
-    <itemizedlist role="compact">
-      <listitem>
-        <para>Images</para>
-      </listitem>
-
-      <listitem>
-        <para>Instance snapshots</para>
-      </listitem>
-
-      <listitem>
-        <para>Volume snapshots</para>
-      </listitem>
-    </itemizedlist>
-
-    <para>However, an instance snapshot <emphasis>is</emphasis> an image. The
+    snapshots and images are displayed in the <guilabel>Images</guilabel>
+    page. However, an instance snapshot <emphasis>is</emphasis> an image. The
     only difference between an image that you upload directly to the Image
     Service and an image that you create by snapshot is that an image created
     by snapshot has additional properties in the glance database. These
