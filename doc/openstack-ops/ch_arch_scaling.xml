@@ -618,7 +618,7 @@
       <para>“The Cloud” has been described as a volatile environment where
       servers can be created and terminated at will. While this may be true,
       it does not mean that your servers must be volatile. Ensuring that your
-      cloud’s hardware is stable and configured correctly means that your
+      cloud's hardware is stable and configured correctly means that your
       cloud environment remains up and running. Basically, put effort into
       creating a stable hardware environment so that you can host a cloud that
       users may treat as unstable and volatile.<indexterm class="singular">
@@ -688,7 +688,7 @@
     <section xml:id="burin_testing">
       <title>Burn-in Testing</title>
 
-      <para>The chances of failure for the server’s hardware are high at the start and the
+      <para>The chances of failure for the server's hardware are high at the start and the
       end of its life. As a result, dealing with hardware
       failures while in production can be avoided by appropriate burn-in
       testing to attempt to trigger the early-stage failures. The general

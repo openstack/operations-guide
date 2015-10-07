@@ -1081,7 +1081,7 @@ Accept-Ranges: bytes</computeroutput></screen>
 
       <para>A final example is if a user is hammering cloud resources
       repeatedly. Contact the user and learn what he is trying to do. Maybe he
-      doesn't understand that what he’s doing is inappropriate, or maybe there
+      doesn't understand that what he's doing is inappropriate, or maybe there
       is an issue with the resource he is trying to access that is causing his
       requests to queue or lag.</para>
     </section>
