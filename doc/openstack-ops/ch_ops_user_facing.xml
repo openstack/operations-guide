@@ -68,7 +68,7 @@
       <para>Run the following command to view the properties of existing
       images:</para>
 
-      <screen><prompt>$</prompt> <userinput>glance details</userinput></screen>
+      <screen><prompt>$</prompt> <userinput>glance image-show &lt;image-uuid&gt;</userinput></screen>
     </section>
 
     <section xml:id="sharing_images">
