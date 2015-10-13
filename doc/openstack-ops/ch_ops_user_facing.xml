@@ -278,7 +278,7 @@
         <tr>
           <td><para>ID</para></td>
 
-          <td><para>A unique numeric ID.</para></td>
+          <td><para>Unique ID (integer or UUID) for the flavor.</para></td>
         </tr>
 
         <tr>
