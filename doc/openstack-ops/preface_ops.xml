@@ -208,7 +208,7 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://docs.openstack.org/high-availability-guide/content/index.html">OpenStack
+          <term><link xlink:href="http://docs.openstack.org/ha-guide/index.html">OpenStack
               High Availability Guide</link></term>
 
           <listitem>
