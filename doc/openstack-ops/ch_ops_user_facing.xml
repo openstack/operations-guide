@@ -709,19 +709,20 @@
         <para>Immediately after create, the security group has only an allow egress rule.
         To make it do what we want, we need to add some rules:</para>
 
-        <screen><prompt>$</prompt> <userinput>neutron security-group-create [-h] [f {shell,table,value}]
-                              [-c COLUMN] [--max-width &lt;integer&gt;]
-                              [--prefix PREFIX]
-                              [--request-format {json,xml}]
-                              [--tenant-id TENANT_ID]
-                              [--direction {ingress,egress}]
-                              [--ethertype ETHERTYPE]
-                              [--protocol PROTOCOL]
-                              [--port-range-min PORT_RANGE_MIN]
-                              [--port-range-max PORT_RANGE_MAX]
-                              [--remote-ip-prefix REMOTE_IP_PREFIX]
-                              [--remote-group-id REMOTE_GROUP]
-                              SECURITY_GROUP</userinput>
+        <screen><prompt>$</prompt> <userinput>neutron security-group-rule-create [-h]
+                                     [-f {html,json,json,shell,table,value,yaml,yaml}]
+                                     [-c COLUMN] [--max-width &lt;integer&gt;]
+                                     [--noindent] [--prefix PREFIX]
+                                     [--request-format {json,xml}]
+                                     [--tenant-id TENANT_ID]
+                                     [--direction {ingress,egress}]
+                                     [--ethertype ETHERTYPE]
+                                     [--protocol PROTOCOL]
+                                     [--port-range-min PORT_RANGE_MIN]
+                                     [--port-range-max PORT_RANGE_MAX]
+                                     [--remote-ip-prefix REMOTE_IP_PREFIX]
+                                     [--remote-group-id REMOTE_GROUP]
+                                     SECURITY_GROUP</userinput>
 <prompt>$</prompt> <userinput>neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol tcp --port-range-min 80 --port-range-max 80 --remote-ip-prefix 0.0.0.0/0 global_http</userinput>
 <computeroutput>Created a new security_group_rule:
 +-------------------+--------------------------------------+
