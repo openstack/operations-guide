@@ -195,7 +195,7 @@
       <title>High Availability</title>
 
       <para>The <emphasis><link
-      xlink:href="http://docs.openstack.org/high-availability-guide/content/">OpenStack High Availability
+      xlink:href="http://docs.openstack.org/ha-guide/index.html">OpenStack High Availability
       Guide</link></emphasis> offers suggestions for elimination of a single
       point of failure that could cause system downtime. While it is not a
       completely prescriptive document, it offers methods and techniques for
