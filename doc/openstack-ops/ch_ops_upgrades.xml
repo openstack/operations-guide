@@ -247,10 +247,10 @@ scheduler=X+1</programlisting>
     <?dbhtml stop-chunking?>
     <para>This section describes the process to upgrade a basic
       OpenStack deployment based on the basic three-node architecture in the
-      <link xlink:href="http://docs.openstack.org/liberty/install-guide-ubuntu/"
-      ><citetitle>OpenStack Installation Guide</citetitle></link>. All nodes
-      must run a supported distribution of Linux with a recent kernel and the
-      current release packages.</para>
+      <link xlink:href="http://docs.openstack.org/kilo/install-guide/install/apt/content/">
+      <citetitle>OpenStack Installation Guide</citetitle></link>.
+      All nodes must run a supported distribution of Linux with a recent kernel
+      and the current release packages.</para>
     <section xml:id="upgrade-considerations">
       <title>Prerequisites</title>
       <itemizedlist>
