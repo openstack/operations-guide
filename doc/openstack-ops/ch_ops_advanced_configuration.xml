@@ -28,7 +28,7 @@
 
   <para>At the time of writing, OpenStack has more than 3,000 configuration
   options. You can see them documented at <link
-  xlink:href="http://docs.openstack.org/kilo/config-reference/content/config_overview.html">the OpenStack configuration reference
+  xlink:href="http://docs.openstack.org/liberty/config-reference/content/config_overview.html">the OpenStack configuration reference
   guide</link>. This chapter cannot hope to document all of these, but we do
   try to introduce the important concepts so that you know where to go digging
   for more information.</para>
@@ -53,7 +53,7 @@
 
     <note>
       <para>The currently implemented hypervisors are listed on <link
-      xlink:href="http://docs.openstack.org/kilo/config-reference/content/section_compute-hypervisors.html">the OpenStack documentation
+      xlink:href="http://docs.openstack.org/liberty/config-reference/content/section_compute-hypervisors.html">the OpenStack documentation
       website</link>. You can see a matrix of the various features in
       OpenStack Compute (nova) hypervisor drivers on the OpenStack wiki at
         <link xlink:href="http://docs.openstack.org/developer/nova/support-matrix.html">the Hypervisor support matrix
