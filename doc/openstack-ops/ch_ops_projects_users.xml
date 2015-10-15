@@ -178,8 +178,7 @@
     <section xml:id="set_image_quotas">
       <title>Set Image Quotas</title>
 
-      <para>OpenStack Havana introduced a basic quota feature for the Image
-      service, so you can now restrict a project's image storage by total
+      <para>You can restrict a project's image storage by total
       number of bytes. Currently, this quota is applied cloud-wide, so if you
       were to set an Image quota limit of 5 GB, then all projects in your
       cloud will be able to store only 5 GB of images and snapshots.<indexterm
@@ -201,14 +200,12 @@
       <programlisting language="ini">user_storage_quota = 5368709120</programlisting>
 
       <note>
-        <para>In the Icehouse release, there is a configuration option in
+        <para>There is a configuration option in
         <filename>glance-api.conf</filename> that limits the number of members
         allowed per image, called <code>image_member_quota</code>, set to 128
         by default. That setting is a different quota from the storage
         quota.<indexterm class="singular">
-            <primary>Icehouse</primary>
-
-            <secondary>image quotas</secondary>
+            <primary>image quotas</primary>
           </indexterm></para>
       </note>
     </section>
@@ -488,8 +485,7 @@
     <section xml:id="cli_set_object_storage_quotas">
       <title>Set Object Storage Quotas</title>
 
-      <para>Object Storage quotas were introduced in Swift 1.8 (OpenStack
-      Grizzly). There are currently two categories of quotas for Object
+      <para>There are currently two categories of quotas for Object
       Storage:<indexterm class="singular">
           <primary>account quotas</primary>
         </indexterm><indexterm class="singular">

@@ -211,10 +211,7 @@
     <section xml:id="adv-config-ipv6">
       <title>Enabling IPv6 Support</title>
 
-      <para>The Havana release with OpenStack Networking (neutron) does not
-      offer complete support of IPv6. Better support has been delivered in the
-      Kilo release, and will continue to improve in Liberty.
-      You can follow along the progress being made by
+      <para>You can follow the progress being made on IPV6 support by
       watching the <link xlink:href="https://wiki.openstack.org/wiki/Meetings/Neutron-IPv6-Subteam">neutron IPv6
       Subteam at work</link>.<indexterm class="singular">
           <primary>Liberty</primary>
@@ -237,36 +234,18 @@
       enabled cloud”</link>.</para>
     </section>
 
-    <section xml:id="specific-advanced-config-period-tasks">
-      <title>Periodic Task Frequency for Compute</title>
-
-      <para>Before the Grizzly release, the frequency of periodic tasks was
-      specified in seconds between runs. This meant that if the periodic task
-      took 30 minutes to run and the frequency was set to hourly, then the
-      periodic task actually ran every 90 minutes, because the task would wait
-      an hour after running before running again. This changed in Grizzly, and
-      we now time the frequency of periodic tasks from the start of the work
-      the task does. So, our 30 minute periodic task will run every hour, with
-      a 30 minute wait between the end of the first run and the start of the
-      next.<indexterm class="singular">
-          <primary>configuration options</primary>
-
-          <secondary>periodic task frequency</secondary>
-        </indexterm></para>
-    </section>
-
     <section xml:id="adv-config-geography">
       <title>Geographical Considerations for Object Storage</title>
 
-      <para>Enhanced support for global clustering of object storage servers
-      continues to be added since the Grizzly (1.8.0) release, when regions
-      were introduced. You would implement these global clusters to ensure
-      replication across geographic areas in case of a natural disaster and
-      also to ensure that users can write or access their objects more quickly
-      based on the closest data center. You configure a default region with
-      one zone for each cluster, but be sure your network (WAN) can handle the
-      additional request and response load between zones as you add more zones
-      and build a ring that handles more zones. Refer to <link
+      <para>Support for global clustering of object storage servers
+      is available for all supported releases. You would implement these global
+      clusters to ensure replication across geographic areas in case of a
+      natural disaster and also to ensure that users can write or access their
+      objects more quickly based on the closest data center. You configure a
+      default region with one zone for each cluster, but be sure your network
+      (WAN) can handle the additional request and response load between
+      zones as you add more zones and build a ring that handles more zones.
+      Refer to <link
       xlink:href="http://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters">Geographically Distributed
       Clusters</link> in the documentation for additional
       information.<indexterm class="singular">

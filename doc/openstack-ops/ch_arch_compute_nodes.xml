@@ -169,7 +169,7 @@
     <para>The best information available to support your choice is found on
       the <link xlink:href="http://docs.openstack.org/developer/nova/support-matrix.html"
     xlink:title="reference manual">Hypervisor Support Matrix</link> and in the
-    <link xlink:href="http://docs.openstack.org/juno/config-reference/content/section_compute-hypervisors.html"
+    <link xlink:href="http://docs.openstack.org/liberty/config-reference/content/section_compute-hypervisors.html"
     xlink:title="configuration reference">configuration
     reference</link>.</para>
 
