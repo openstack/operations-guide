@@ -246,8 +246,8 @@ scheduler=X+1</programlisting>
     <title>Upgrade process</title>
     <?dbhtml stop-chunking?>
     <para>This section describes the process to upgrade a basic
-      OpenStack deployment based on the basic three-node architecture in the
-      <link xlink:href="http://docs.openstack.org/kilo/install-guide/install/apt/content/">
+      OpenStack deployment based on the basic two-node architecture in the
+      <link xlink:href="http://docs.openstack.org/index.html#install-guides">
       <citetitle>OpenStack Installation Guide</citetitle></link>.
       All nodes must run a supported distribution of Linux with a recent kernel
       and the current release packages.</para>
@@ -293,7 +293,7 @@ scheduler=X+1</programlisting>
           <note>
             <para>Consider updating your SQL server configuration as
               described in the
-              <link xlink:href="http://docs.openstack.org/kilo/install-guide/install/apt/content/"
+              <link xlink:href="http://docs.openstack.org/index.html#install-guides"
               >OpenStack Installation Guide</link>.</para>
           </note>
         </step>
@@ -361,7 +361,7 @@ scheduler=X+1</programlisting>
       </listitem>
       <listitem>
         <para>OpenStack dashboard - In typical environments, updating the
-        Telemetry service only requires restarting the service.</para>
+        dashboard only requires restarting the Apache HTTP service.</para>
         <para></para>
       </listitem>
       <listitem>
@@ -372,9 +372,6 @@ scheduler=X+1</programlisting>
         Telemetry service only requires restarting the service.</para>
         <para></para>
       </listitem>
-    </orderedlist>
-    <orderedlist>
-      <title>Network nodes</title>
       <listitem>
         <para>OpenStack Compute - Edit the configuration file and restart the
         service.</para>
