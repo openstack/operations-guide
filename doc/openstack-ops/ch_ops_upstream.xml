@@ -192,6 +192,11 @@
 
       <listitem>
         <para>Report a bug in <link
+        xlink:href="https://bugs.launchpad.net/python-openstackclient/+filebug/+login">python-openstackclient</link>.</para>
+      </listitem>
+
+      <listitem>
+        <para>Report a bug in <link
         xlink:href="https://bugs.launchpad.net/horizon/+filebug/+login">horizon</link>.</para>
       </listitem>
 
