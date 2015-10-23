@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-16 06:00+0000\n"
+"POT-Creation-Date: 2015-10-23 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,7 +162,7 @@ msgid "Upgrade process"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:248(para)
-msgid "This section describes the process to upgrade a basic OpenStack deployment based on the basic three-node architecture in the <link xlink:href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/\"><citetitle>OpenStack Installation Guide</citetitle></link>. All nodes must run a supported distribution of Linux with a recent kernel and the current release packages."
+msgid "This section describes the process to upgrade a basic OpenStack deployment based on the basic two-node architecture in the <link xlink:href=\"http://docs.openstack.org/index.html#install-guides\"><citetitle>OpenStack Installation Guide</citetitle></link>. All nodes must run a supported distribution of Linux with a recent kernel and the current release packages."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:255(title)
@@ -194,7 +194,7 @@ msgid "Make a full database backup of your production data. As of Kilo, database
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:294(para)
-msgid "Consider updating your SQL server configuration as described in the <link xlink:href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/\">OpenStack Installation Guide</link>."
+msgid "Consider updating your SQL server configuration as described in the <link xlink:href=\"http://docs.openstack.org/index.html#install-guides\">OpenStack Installation Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:303(title)
@@ -270,7 +270,7 @@ msgid "OpenStack Block Storage"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:363(para)
-msgid "OpenStack dashboard - In typical environments, updating the Telemetry service only requires restarting the service."
+msgid "OpenStack dashboard - In typical environments, updating the dashboard only requires restarting the Apache HTTP service."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upgrades.xml:368(para)
@@ -281,147 +281,143 @@ msgstr ""
 msgid "OpenStack Telemetry - In typical environments, updating the Telemetry service only requires restarting the service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:377(title)
-msgid "Network nodes"
-msgstr ""
-
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:379(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:376(para)
 msgid "OpenStack Compute - Edit the configuration file and restart the service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:383(para) ./doc/openstack-ops/ch_ops_upgrades.xml:397(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:380(para) ./doc/openstack-ops/ch_ops_upgrades.xml:394(para)
 msgid "OpenStack Networking - Edit the configuration file and restart the service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:388(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:109(para) ./doc/openstack-ops/ch_ops_log_monitor.xml:117(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:385(title) ./doc/openstack-ops/ch_ops_log_monitor.xml:109(para) ./doc/openstack-ops/ch_ops_log_monitor.xml:117(para)
 msgid "Compute nodes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:390(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:387(para)
 msgid "OpenStack Block Storage - Updating the Block Storage service only requires restarting the service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:395(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:392(title)
 msgid "Storage nodes"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:403(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:400(title)
 msgid "Final steps"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:404(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:401(para)
 msgid "On all distributions, you must perform some final tasks to complete the upgrade process.<indexterm class=\"singular\"><primary>upgrading</primary><secondary>final steps</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:410(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:407(para)
 msgid "Decrease DHCP timeouts by modifying <filename>/etc/nova/nova.conf</filename> on the compute nodes back to the original value for your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:413(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:410(para)
 msgid "Update all <filename>.ini</filename> files to match passwords and pipelines as required for the OpenStack release in your environment."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:416(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:413(para)
 msgid "After migration, users see different results from <placeholder-1/> and <placeholder-2/>. To ensure users see the same images in the list commands, edit the <filename>/etc/glance/policy.json</filename> and <filename>/etc/nova/policy.json</filename> files to contain <code>\"context_is_admin\": \"role:admin\"</code>, which limits access to private images for projects."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:423(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:420(para)
 msgid "Verify proper operation of your environment. Then, notify your users that their cloud is operating normally again."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:430(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:427(title)
 msgid "Rolling back a failed upgrade"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:432(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:429(para)
 msgid "Upgrades involve complex operations and can fail. Before attempting any upgrade, you should make a full database backup of your production data. As of Kilo, database downgrades are not supported, and the only method available to get back to a prior database version will be to restore from backup."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:438(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:435(para)
 msgid "This section provides guidance for rolling back to a previous release of OpenStack. All distributions follow a similar <phrase role=\"keep-together\">procedure</phrase>.<indexterm class=\"singular\"><primary>rollbacks</primary><secondary>process for</secondary></indexterm><indexterm class=\"singular\"><primary>upgrading</primary><secondary>rolling back failures</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:448(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:445(para)
 msgid "A common scenario is to take down production management services in preparation for an upgrade, completed part of the upgrade process, and discovered one or more problems not encountered during testing. As a consequence, you must roll back your environment to the original \"known good\" state. You also made sure that you did not make any state changes after attempting the upgrade process; no new instances, networks, storage volumes, and so on. Any of these new resources will be in a frozen state after the databases are restored from backup."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:457(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:454(para)
 msgid "Within this scope, you must complete these steps to successfully roll back your environment:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:461(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:458(para)
 msgid "Roll back configuration files."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:465(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:462(para)
 msgid "Restore databases from backup."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:469(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:466(para)
 msgid "Roll back packages."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:473(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:470(para)
 msgid "You should verify that you have the requisite backups to restore. Rolling back upgrades is a tricky process because distributions tend to put much more effort into testing upgrades than downgrades. Broken downgrades take significantly more effort to troubleshoot and, resolve than broken upgrades. Only you can weigh the risks of trying to push a failed upgrade forward versus rolling it back. Generally, consider rolling back as the very last option."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:482(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:479(para)
 msgid "The following steps described for Ubuntu have worked on at least one production environment, but they might not work for all environments."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:487(title)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:484(title)
 msgid "To perform the rollback"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:490(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:487(para)
 msgid "Stop all OpenStack services."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:493(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:490(para)
 msgid "Copy contents of configuration backup directories that you created during the upgrade process back to <filename>/etc/&lt;service&gt;</filename> directory."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:498(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:495(para)
 msgid "Restore databases from the <filename><replaceable>RELEASE_NAME</replaceable>-db-backup.sql</filename> backup file that you created with the <placeholder-1/> command during the upgrade process:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:503(replaceable)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:500(replaceable)
 msgid "RELEASE_NAME"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:507(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:504(para)
 msgid "Downgrade OpenStack packages."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:510(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:507(para)
 msgid "Downgrading packages is by far the most complicated step; it is highly dependent on the distribution and the overall administration of the system."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:517(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:514(para)
 msgid "Determine which OpenStack packages are installed on your system. Use the <placeholder-1/> command. Filter for OpenStack packages, filter again to omit packages explicitly marked in the <code>deinstall</code> state, and save the final output to a file. For example, the following command covers a controller node with keystone, glance, nova, neutron, and cinder:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:565(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:562(para)
 msgid "Depending on the type of server, the contents and order of your package list might vary from this example."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:572(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:569(para)
 msgid "You can determine the package versions available for reversion by using the <placeholder-1/> command. If you removed the Grizzly repositories, you must first reinstall them and run <placeholder-2/>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:603(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:600(para)
 msgid "This tells us the currently installed version of the package, newest candidate version, and all versions along with the repository that contains each version. Look for the appropriate Grizzly version—<code>1:2013.1.4-0ubuntu1~cloud0</code> in this case. The process of manually picking through this list of packages is rather tedious and prone to errors. You should consider using the following script to help with this process:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:655(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:652(para)
 msgid "If you decide to continue this step manually, don't forget to change <code>neutron</code> to <code>quantum</code> where applicable."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:662(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:659(para)
 msgid "Use the <placeholder-1/> command to install specific versions of each package by specifying <code>&lt;package-name&gt;=&lt;version&gt;</code>. The script in the previous step conveniently created a list of <code>package=version</code> pairs for you:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_upgrades.xml:671(para)
+#: ./doc/openstack-ops/ch_ops_upgrades.xml:668(para)
 msgid "This step completes the rollback procedure. You should remove the upgrade release repository and run <placeholder-1/> to prevent accidental upgrades until you solve whatever issue caused you to roll back your environment."
 msgstr ""
 
