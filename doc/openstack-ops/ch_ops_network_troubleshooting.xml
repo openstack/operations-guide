@@ -166,9 +166,9 @@
 
     <para>For this example, we will use the Open vSwitch (OVS) back end. Other
     back-end plug-ins will have very different flow paths. OVS is the most
-    popularly deployed network driver, according to the October 2013 OpenStack
-    User Survey, with 50 percent more sites using it than the second place
-    Linux Bridge driver. We'll describe each step in turn, with <xref
+    popularly deployed network driver, according to the October 2015 OpenStack
+    User Survey, with 41 percent more sites using it than the Linux Bridge
+    driver. We'll describe each step in turn, with <xref
     linkend="neutron-packet-ping" /> for reference.</para>
 
     <orderedlist>
