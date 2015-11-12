@@ -73,7 +73,7 @@
     >DevStack</link> website.</para>
 
     <procedure>
-      <title>To run DevStack for the stable Havana branch on an instance in
+      <title>To run DevStack on an instance in
       your OpenStack cloud:</title>
 
       <step>
@@ -82,11 +82,11 @@
 
         <itemizedlist>
           <listitem>
-            <para>Name: devstack-havana</para>
+            <para>Name: devstack</para>
           </listitem>
 
           <listitem>
-            <para>Image: Ubuntu 12.04 LTS</para>
+            <para>Image: Ubuntu 14.04 LTS</para>
           </listitem>
 
           <listitem>
@@ -127,11 +127,10 @@
           </step>
 
           <step>
-            <para>Clone the stable/havana branch of the
+            <para>Clone the
             <literal>devstack</literal> repository:
 
-            <screen><prompt>$</prompt> <userinput>git clone https://github.com/openstack-dev/devstack.git -b \
-  stable/havana devstack/</userinput></screen></para>
+            <screen><prompt>$</prompt> <userinput>git clone https://git.openstack.org/openstack-dev/devstack</userinput></screen></para>
           </step>
 
           <step>
@@ -178,12 +177,12 @@
       </step>
 
       <step>
-        <para>Edit the <filename>localrc</filename> configuration file that
+        <para>Edit the <filename>local.conf</filename> configuration file that
         controls what DevStack will deploy. Copy the example
-        <filename>localrc</filename> file at the end of this section (<xref
-        linkend="localrc" />):</para>
+        <filename>local.conf</filename> file at the end of this section (<xref
+        linkend="local.conf" />):</para>
 
-        <screen><prompt>$</prompt> <userinput>vim localrc</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>vim local.conf</userinput></screen>
       </step>
 
       <step>
@@ -229,53 +228,24 @@
 
     <para>Now that you have an OpenStack development environment, you're free
     to hack around without worrying about damaging your production deployment.
-    <xref linkend="localrc" /> provides a working environment for running
+    <xref linkend="local.conf" /> provides a working environment for running
     OpenStack Identity, Compute, Block Storage, Image service, the OpenStack
-    dashboard, and Object Storage with the stable/havana branches as the
-    starting point.</para>
+    dashboard, and Object Storage as the starting point.</para>
 
-    <example xml:id="localrc">
-      <title>localrc</title>
+    <example xml:id="local.conf">
+      <title>local.conf</title>
 
-      <programlisting language="bash"><?db-font-size 75%?># Credentials
-ADMIN_PASSWORD=devstack
-MYSQL_PASSWORD=devstack
-RABBIT_PASSWORD=devstack
-SERVICE_PASSWORD=devstack
-SERVICE_TOKEN=devstack
-
-# OpenStack Identity branch
-KEYSTONE_BRANCH=stable/havana
-
-# OpenStack Compute branch
-NOVA_BRANCH=stable/havana
-
-# OpenStack Block Storage branch
-CINDER_BRANCH=stable/havana
-
-# OpenStack Image service branch
-GLANCE_BRANCH=stable/havana
-
-# OpenStack dashboard branch
-HORIZON_BRANCH=stable/havana
-
-# OpenStack Object Storage branch
-SWIFT_BRANCH=stable/havana
-
-enable_service swift
-
-# Object Storage Settings
-SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5
-SWIFT_REPLICAS=1
-
-# Block Storage Setting
-VOLUME_BACKING_FILE_SIZE=20480M
-
-# Output
-LOGFILE=/opt/stack/logs/stack.sh.log
-VERBOSE=True
-LOG_COLOR=False
-SCREEN_LOGDIR=/opt/stack/logs</programlisting>
+      <programlisting language="bash"><?db-font-size 75%?>
+[[local|localrc]]
+FLOATING_RANGE=192.168.1.224/27
+FIXED_RANGE=10.11.12.0/24
+FIXED_NETWORK_SIZE=256
+FLAT_INTERFACE=eth0
+ADMIN_PASSWORD=supersecret
+DATABASE_PASSWORD=iheartdatabases
+RABBIT_PASSWORD=flopsymopsy
+SERVICE_PASSWORD=iheartksl
+SERVICE_TOKEN=xyzpdqlazydog</programlisting>
     </example>
   </section>
 
