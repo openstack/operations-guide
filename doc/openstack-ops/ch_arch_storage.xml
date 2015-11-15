@@ -39,27 +39,37 @@
     other resource and is always available, regardless of the state of a
     running instance.</para>
 
-    <para>Today, OpenStack clouds explicitly support two types of persistent
-    storage: <emphasis>object storage</emphasis> and <emphasis>block
-    storage</emphasis>.<indexterm class="singular">
+    <para>Today, OpenStack clouds explicitly support three types of persistent
+      storage: <emphasis>object storage</emphasis>, <emphasis>block storage</emphasis>,
+      and <emphasis>file system storage</emphasis>.
+      <indexterm class="singular">
         <primary>swift</primary>
 
         <secondary>Object Storage API</secondary>
-      </indexterm><indexterm class="singular">
+      </indexterm>
+      <indexterm class="singular">
         <primary>persistent storage</primary>
-      </indexterm><indexterm class="singular">
+      </indexterm>
+      <indexterm class="singular">
         <primary>objects</primary>
 
         <secondary>persistent storage of</secondary>
-      </indexterm><indexterm class="singular">
+      </indexterm>
+      <indexterm class="singular">
         <primary>Object Storage</primary>
 
         <secondary>Object Storage API</secondary>
-      </indexterm><indexterm class="singular">
+      </indexterm>
+      <indexterm class="singular">
         <primary>storage</primary>
 
         <secondary>object storage</secondary>
-      </indexterm></para>
+      </indexterm>
+      <indexterm class="singular">
+        <primary>shared file system storage</primary>
+        <secondary>shared file systems service</secondary>
+      </indexterm>
+    </para>
 
     <section xml:id="object_storage">
       <title>Object Storage</title>
@@ -113,21 +123,22 @@
       a rack, a server, or a disk?</para>
 
       <para>Object Storage's network patterns might seem unfamiliar at first.
-      Consider these main traffic flows: <indexterm class="singular">
+      Consider these main traffic flows:
+        <indexterm class="singular">
           <primary>objects</primary>
-
           <secondary>storage decisions and</secondary>
-        </indexterm><indexterm class="singular">
+        </indexterm>
+        <indexterm class="singular">
           <primary>containers</primary>
-
           <secondary>storage decisions and</secondary>
         </indexterm><indexterm class="singular">
           <primary>account server</primary>
-        </indexterm><itemizedlist>
+        </indexterm>
+        <itemizedlist>
           <listitem>
             <para>Among <glossterm>object</glossterm>,
-            <glossterm>container</glossterm>, and <glossterm>account
-            server</glossterm>s</para>
+            <glossterm>container</glossterm>, and
+              <glossterm>account server</glossterm>s</para>
           </listitem>
 
           <listitem>
@@ -137,7 +148,8 @@
           <listitem>
             <para>Between the proxies and your users</para>
           </listitem>
-        </itemizedlist></para>
+        </itemizedlist>
+      </para>
 
       <para>Object Storage is very "chatty" among servers hosting data—even a
       small cluster does megabytes/second of traffic, which is predominantly,
@@ -155,7 +167,8 @@
       being uploaded, the proxy server must write out as many streams as there
       are replicas—giving a multiple of network traffic. For a three-replica
       cluster, 10 Gbps in means 30 Gbps out. Combining this with the previous
-      high bandwidth<indexterm class="singular">
+      high bandwidth
+        <indexterm class="singular">
           <primary>bandwidth</primary>
 
           <secondary>private vs. public network recommendations</secondary>
@@ -163,12 +176,14 @@
       recommendation that your private network be of significantly higher
       bandwidth than your public need be. Oh, and OpenStack Object Storage
       communicates internally with unencrypted, unauthenticated rsync for
-      performance—you do want the private network to be private.</para>
+      performance—you do want the private network to be private.
+      </para>
 
       <para>The remaining point on bandwidth is the public-facing portion. The
       <literal>swift-proxy</literal> service is stateless, which means that
       you can easily add more and use HTTP load-balancing methods to share
-      bandwidth and availability between them.</para>
+      bandwidth and availability between them.
+      </para>
 
       <para>More proxies means more bandwidth, if your storage can keep
       up.</para>
@@ -210,6 +225,78 @@
       file-based virtual machines stored in
       <code>/var/lib/nova/instances</code>.</para>
     </section>
+
+    <section xml:id="shared_file_system_service">
+      <title>Shared File Systems Service</title>
+      <para>
+        The Shared File Systems service provides a set of services for
+        management of Shared File Systems in a multi-tenant cloud environment.
+        Users interact with Shared File Systems service by mounting remote File
+        Systems on their instances with the following usage of those systems
+        for file storing and exchange. Shared File Systems service provides you
+        with shares. A share is a remote, mountable file system. You can mount
+        a share to and access a share from several hosts by several users at a
+        time. With shares, user can also:
+        <itemizedlist>
+          <listitem>
+            <para>Create a share specifying its size, shared file system
+              protocol, visibility level
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Create a share on either a share server or standalone, depending
+              on the selected back-end mode, with or without using a share
+              network.
+            </para>
+          </listitem>
+          <listitem>
+            <para>Specify access rules and security services for existing
+              shares.</para>
+          </listitem>
+          <listitem>
+            <para>Combine several shares in groups to keep data consistency
+              inside the groups for the following safe group operations.</para>
+          </listitem>
+          <listitem>
+            <para>Create a snapshot of a selected share or a share group for
+              storing the existing shares consistently or creating new shares from
+              that snapshot in a consistent way</para>
+          </listitem>
+          <listitem>
+            <para>Create a share from a snapshot.</para>
+          </listitem>
+          <listitem>
+            <para>Set rate limits and quotas for specific shares and snapshots</para>
+          </listitem>
+          <listitem>
+            <para>View usage of share resources</para>
+          </listitem>
+          <listitem>
+            <para>Remove shares.</para>
+          </listitem>
+        </itemizedlist>
+        Like Block Storage, the Shared File Systems service is persistent. It
+        can be:
+        <itemizedlist>
+          <listitem>
+            <para>Mounted to any number of client machines.</para>
+          </listitem>
+          <listitem>
+            <para>Detached from one instance and attached to another without
+              data loss. During this process the data are safe unless the
+              Shared File Systems service itself is changed or removed.</para>
+          </listitem>
+        </itemizedlist>
+        Shares are provided by the Shared File Systems service. In OpenStack,
+        Shared File Systems service is implemented by Shared File System
+        (manila) project, which supports multiple back-ends in the form of
+        drivers. The Shared File Systems service can be configured to provision
+        shares from one or more back-ends. Share servers are, mostly, virtual
+        machines that export file shares via different protocols such as NFS,
+        CIFS, GlusterFS, or HDFS.
+      </para>
+    </section>
   </section>
 
   <section xml:id="storage_concepts">
@@ -227,6 +314,16 @@
     <table rules="all" xml:id="openstack_storage">
       <caption>OpenStack storage</caption>
 
+      <col width="12%" />
+
+      <col width="22%" />
+
+      <col width="22%" />
+
+      <col width="22%" />
+
+      <col width="22%" />
+
       <thead>
         <tr>
           <th></th>
@@ -236,6 +333,8 @@
           <th>Block storage</th>
 
           <th>Object storage</th>
+
+          <th>Shared File System storage</th>
         </tr>
       </thead>
 
@@ -249,6 +348,8 @@
           (VM)</para></td>
 
           <td><para>Store data, including VM images</para></td>
+
+          <td><para>Add additional persistent storage to a virtual machine</para></td>
         </tr>
 
         <tr>
@@ -260,6 +361,10 @@
           partitioned, formatted, and mounted (such as, /dev/vdc)</para></td>
 
           <td><para>The REST API</para></td>
+
+          <td><para>A Shared File Systems service share (either manila
+            managed or an external one registered in manila) that can be partitioned,
+            formatted and mounted (such as /dev/vdc)</para></td>
         </tr>
 
         <tr>
@@ -270,6 +375,8 @@
           <td><para>Within a VM</para></td>
 
           <td><para>Anywhere</para></td>
+
+          <td><para>Within a VM</para></td>
         </tr>
 
         <tr>
@@ -280,12 +387,16 @@
           <td><para>OpenStack Block Storage (cinder)</para></td>
 
           <td><para>OpenStack Object Storage (swift)</para></td>
+
+          <td><para>OpenStack Shared File System Storage (manila)</para></td>
         </tr>
 
         <tr>
           <td><para>Persists until…</para></td>
 
           <td><para>VM is terminated</para></td>
+
+          <td><para>Deleted by user</para></td>
 
           <td><para>Deleted by user</para></td>
 
@@ -301,6 +412,33 @@
           <td><para>User specification in initial request</para></td>
 
           <td><para>Amount of available physical storage</para></td>
+
+          <td>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para>
+                    User specification in initial request
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Requests for extension
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Available user-level quotes
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Limitations applied by Administrator
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </td>
         </tr>
 
         <tr>
@@ -309,10 +447,13 @@
          <td><para>Parameter in nova.conf</para></td>
 
          <td><para>Admin establishing
-<link xlink:href="http://docs.openstack.org/user-guide-admin/dashboard_manage_volumes.html"> encrypted volume type</link>,
+<link xlink:href="http://docs.openstack.org/user-guide-admin/dashboard_manage_volumes.html">encrypted volume type</link>,
         then user selecting encrypted volume</para></td>
 
          <td><para>Not yet available</para></td>
+
+         <td><para>Shared File Systems service does not apply any additional
+           encryption above what the share’s back-end storage provides</para></td>
         </tr>
 
         <tr>
@@ -323,6 +464,10 @@
           <td><para>1 TB disk</para></td>
 
           <td><para>10s of TBs of dataset storage</para></td>
+
+          <td><para>Depends completely on the size of back-end storage specified when
+            a share was being created. In case of thin provisioning it can be partial
+            space reservation (for more details see <link xlink:href="http://docs.openstack.org/developer/manila/devref/capabilities_and_extra_specs.html?highlight=extra%20specs#common-capabilities">Capabilities and Extra-Specs</link> specification)</para></td>
         </tr>
       </tbody>
     </table>

@@ -192,6 +192,16 @@
 
       <listitem>
         <para>Report a bug in <link
+        xlink:href="https://bugs.launchpad.net/manila/+filebug/+login">manila</link>.</para>
+      </listitem>
+
+      <listitem>
+        <para>Report a bug in <link
+        xlink:href="https://bugs.launchpad.net/python-manilaclient/+filebug/+login">python-manilaclient</link>.</para>
+      </listitem>
+
+      <listitem>
+        <para>Report a bug in <link
         xlink:href="https://bugs.launchpad.net/python-openstackclient/+filebug/+login">python-openstackclient</link>.</para>
       </listitem>
 
