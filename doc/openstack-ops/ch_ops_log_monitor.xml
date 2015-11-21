@@ -652,7 +652,7 @@ notification_driver=messagingv2</programlisting>
       <para>Once <code>nova</code> is sending notifications, install and
       configure StackTach. Since StackTach is relatively new and constantly
       changing, installation instructions would quickly become outdated. Please
-      refer to the <link xlink:href="https://github.com/stackforge/stacktach">StackTach GitHub
+      refer to the <link xlink:href="https://github.com/openstack/stacktach">StackTach GitHub
       repo</link> for instructions as well as a demo video. Additional details on the latest
       developments can be discovered at the
       <link xlink:href="http://stacktach.com/">official page</link></para>

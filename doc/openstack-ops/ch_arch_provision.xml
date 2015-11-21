@@ -277,20 +277,19 @@
     <para>These tools also make it possible to test and roll back changes, as
     they are fully repeatable. Conveniently, a large body of work has been
     done by the OpenStack community in this space. Puppet, a configuration
-    management tool, even provides official modules for OpenStack in an
-    OpenStack infrastructure system known as <link
-    xlink:href="https://github.com/stackforge/puppet-openstack">Stackforge</link>. Chef configuration
-    management is provided within <link role="orm:hideurl:ital"
-    xlink:href="https://github.com/stackforge/openstack-chef-repo"></link>.
+    management tool, even provides official modules for OpenStack projects in
+    an OpenStack infrastructure system known as <link
+    xlink:href="https://wiki.openstack.org/wiki/Puppet">Puppet OpenStack
+    </link>. Chef configuration management is provided within <link
+    role="orm:hideurl:ital"
+    xlink:href="https://github.com/openstack/openstack-chef-repo"></link>.
     Additional configuration management systems include Juju, Ansible, and
     Salt. Also, PackStack is a command-line utility for Red Hat Enterprise
     Linux and derivatives that uses Puppet modules to support rapid deployment
-    of OpenStack on existing servers over an SSH connection.<indexterm
-        class="singular">
-        <primary>Stackforge</primary>
-      </indexterm></para>
+    of OpenStack on existing servers over an SSH connection.
+    </para>
 
-    <para>An integral part of a configuration-management system is the items
+    <para>An integral part of a configuration-management system is the item
     that it controls. You should carefully consider all of the items that you
     want, or do not want, to be automatically managed. For example, you may
     not want to automatically format hard drives with user data.</para>
