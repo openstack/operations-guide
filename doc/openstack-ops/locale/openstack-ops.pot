@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-11-15 06:18+0000\n"
+"POT-Creation-Date: 2015-11-25 06:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2449,7 +2449,7 @@ msgstr ""
 msgid "It is essentially an object storage system that manages disks and aggregates the space and performance of disks linearly in hyper scale on commodity hardware in a smart way. On top of its object store, Sheepdog provides elastic volume service and http service. Sheepdog does not assume anything about kernel version and can work nicely with xattr-supported file systems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:946(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_provision.xml:368(title) ./doc/openstack-ops/ch_ops_customize.xml:1158(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:946(title) ./doc/openstack-ops/ch_arch_network_design.xml:526(title) ./doc/openstack-ops/ch_arch_compute_nodes.xml:610(title) ./doc/openstack-ops/ch_arch_provision.xml:367(title) ./doc/openstack-ops/ch_ops_customize.xml:1158(title)
 msgid "Conclusion"
 msgstr ""
 
@@ -2959,8 +2959,8 @@ msgstr ""
 msgid "Installation Guide for openSUSE 13.2 and SUSE Linux Enterprise Server 12"
 msgstr ""
 
-#: ./doc/openstack-ops/preface_ops.xml:174(link) ./doc/openstack-ops/ch_ops_resources.xml:21(link)
-msgid "Installation Guide for Red Hat Enterprise Linux 7, CentOS 7, and Fedora 22"
+#: ./doc/openstack-ops/preface_ops.xml:174(link)
+msgid "Installation Guide for Red Hat Enterprise Linux 7 and CentOS 7"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:180(link) ./doc/openstack-ops/ch_ops_resources.xml:27(link)
@@ -3904,7 +3904,7 @@ msgid "To enable <code>nova</code> to send notifications, add the following to <
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:652(para)
-msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link xlink:href=\"https://github.com/stackforge/stacktach\">StackTach GitHub repo</link> for instructions as well as a demo video. Additional details on the latest developments can be discovered at the <link xlink:href=\"http://stacktach.com/\">official page</link>"
+msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link xlink:href=\"https://github.com/openstack/stacktach\">StackTach GitHub repo</link> for instructions as well as a demo video. Additional details on the latest developments can be discovered at the <link xlink:href=\"http://stacktach.com/\">official page</link>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:662(title)
@@ -6623,6 +6623,10 @@ msgstr ""
 msgid "OpenStack"
 msgstr ""
 
+#: ./doc/openstack-ops/ch_ops_resources.xml:21(link)
+msgid "Installation Guide for Red Hat Enterprise Linux 7, CentOS 7, and Fedora 22"
+msgstr ""
+
 #: ./doc/openstack-ops/ch_ops_resources.xml:35(emphasis)
 msgid "OpenStack Cloud Computing Cookbook"
 msgstr ""
@@ -6866,46 +6870,46 @@ msgid "The purpose of automatic configuration management is to establish and mai
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:277(para)
-msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet, a configuration management tool, even provides official modules for OpenStack in an OpenStack infrastructure system known as <link xlink:href=\"https://github.com/stackforge/puppet-openstack\">Stackforge</link>. Chef configuration management is provided within <link role=\"orm:hideurl:ital\" xlink:href=\"https://github.com/stackforge/openstack-chef-repo\"/>. Additional configuration management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection.<indexterm class=\"singular\"><primary>Stackforge</primary></indexterm>"
+msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet, a configuration management tool, even provides official modules for OpenStack projects in an OpenStack infrastructure system known as <link xlink:href=\"https://wiki.openstack.org/wiki/Puppet\">Puppet OpenStack </link>. Chef configuration management is provided within <link role=\"orm:hideurl:ital\" xlink:href=\"https://github.com/openstack/openstack-chef-repo\"/>. Additional configuration management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:293(para)
-msgid "An integral part of a configuration-management system is the items that it controls. You should carefully consider all of the items that you want, or do not want, to be automatically managed. For example, you may not want to automatically format hard drives with user data."
+#: ./doc/openstack-ops/ch_arch_provision.xml:292(para)
+msgid "An integral part of a configuration-management system is the item that it controls. You should carefully consider all of the items that you want, or do not want, to be automatically managed. For example, you may not want to automatically format hard drives with user data."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:300(title)
+#: ./doc/openstack-ops/ch_arch_provision.xml:299(title)
 msgid "Remote Management"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:302(para)
+#: ./doc/openstack-ops/ch_arch_provision.xml:301(para)
 msgid "In our experience, most operators don't sit right next to the servers running the cloud, and many don't necessarily enjoy visiting the data center. OpenStack should be entirely remotely configurable, but sometimes not everything goes according to plan.<indexterm class=\"singular\"><primary>provisioning/deployment</primary><secondary>remote management</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:312(para)
+#: ./doc/openstack-ops/ch_arch_provision.xml:311(para)
 msgid "In this instance, having an out-of-band access into nodes running OpenStack components is a boon. The IPMI protocol is the de facto standard here, and acquiring hardware that supports it is highly recommended to achieve that lights-out data center aim."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:317(para)
+#: ./doc/openstack-ops/ch_arch_provision.xml:316(para)
 msgid "In addition, consider remote power control as well. While IPMI usually controls the server's power state, having remote access to the PDU that the server is plugged into can really be useful for situations when everything seems wedged."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:324(title)
+#: ./doc/openstack-ops/ch_arch_provision.xml:323(title)
 msgid "Parting Thoughts for Provisioning and Deploying OpenStack"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:326(para)
+#: ./doc/openstack-ops/ch_arch_provision.xml:325(para)
 msgid "You can save time by understanding the use cases for the cloud you want to create. Use cases for OpenStack are varied. Some include object storage only; others require preconfigured compute resources to speed development-environment set up; and others need fast provisioning of compute resources that are already secured per tenant with private networks. Your users may have need for highly redundant servers to make sure their legacy applications continue to run. Perhaps a goal would be to architect these legacy applications so that they run on multiple instances in a cloudy, fault-tolerant way, but not make it a goal to add to those clusters over time. Your users may indicate that they need scaling considerations because of heavy Windows server use.<indexterm class=\"singular\"><primary>provisioning/deployment</primary><secondary>tips for</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:343(para)
+#: ./doc/openstack-ops/ch_arch_provision.xml:342(para)
 msgid "You can save resources by looking at the best fit for the hardware you have in place already. You might have some high-density storage hardware available. You could format and repurpose those servers for OpenStack Object Storage. All of these considerations and input from users help you build your use case and your deployment plan."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:350(para)
+#: ./doc/openstack-ops/ch_arch_provision.xml:349(para)
 msgid "For further research about OpenStack deployment, investigate the supported and documented preconfigured, prepackaged installers for OpenStack from companies such as <link xlink:href=\"http://www.ubuntu.com/cloud/ubuntu-openstack\">Canonical</link>, <link xlink:href=\"http://www.cisco.com/web/solutions/openstack/index.html\">Cisco</link>, <link xlink:href=\"http://www.cloudscaling.com/\">Cloudscaling</link>, <link xlink:href=\"http://www-03.ibm.com/software/products/en/smartcloud-orchestrator/\">IBM</link>, <link xlink:href=\"http://www.metacloud.com/\">Metacloud</link>, <link xlink:href=\"http://www.mirantis.com/\">Mirantis</link>, <link xlink:href=\"http://www.pistoncloud.com/\">Piston</link>, <link xlink:href=\"http://www.rackspace.com/cloud/private/\">Rackspace</link>, <link xlink:href=\"http://www.redhat.com/openstack/\">Red Hat</link>, <link xlink:href=\"https://www.suse.com/products/suse-cloud/\">SUSE</link>, and <link xlink:href=\"https://www.swiftstack.com/\">SwiftStack</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_provision.xml:370(para)
+#: ./doc/openstack-ops/ch_arch_provision.xml:369(para)
 msgid "The decisions you make with respect to provisioning and deployment will affect your day-to-day, week-to-week, and month-to-month maintenance of the cloud. Your configuration management will be able to evolve over time. However, more thought and design need to be done for upfront choices about deployment, disk partitioning, and network configuration."
 msgstr ""
 
