@@ -30,6 +30,7 @@
 # Akihiro Motoki <amotoki@gmail.com>, 2015. #zanata
 # KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>, 2015. #zanata
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Shinichi Take <chantake33@gmail.com>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -37,8 +38,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-12-01 02:10+0000\n"
-"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"PO-Revision-Date: 2015-12-02 08:36+0000\n"
+"Last-Translator: Shinichi Take <chantake33@gmail.com>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Zanata 3.7.3\n"
@@ -1854,6 +1855,9 @@ msgid "Add additional cloud controllers (see <xref linkend=\"maintenance\"/>)."
 msgstr ""
 "追加でクラウドコントローラーを増やす (<xref linkend=\"maintenance\"/> を参"
 "照)。"
+
+msgid "Add additional persistent storage to a virtual machine"
+msgstr "永続的なストレージを仮想マシン（VM）へ追加する"
 
 msgid "Add additional persistent storage to a virtual machine (VM)"
 msgstr "永続的なストレージを仮想マシン（VM）へ追加する"
@@ -8261,6 +8265,9 @@ msgstr ""
 "画、実装にかなり時間を要します。インテリジェントなアラートを実装する流れは次"
 "のようになります。"
 
+msgid "Interacting with share networks."
+msgstr "共有ネットワークに接続する"
+
 msgid "Internal network connectivity"
 msgstr "内部ネットワーク接続性"
 
@@ -11944,6 +11951,9 @@ msgstr ""
 msgid "Reporting Bugs"
 msgstr "バグ報告"
 
+msgid "Requests for extension"
+msgstr "延長申請"
+
 msgid ""
 "Requires file injection into the instance to configure network interfaces."
 msgstr ""
@@ -12791,6 +12801,9 @@ msgstr ""
 
 msgid "Specify access rules and security services for existing shares."
 msgstr "既存の共有のアクセスルールおよびセキュリティーサービスを指定します。"
+
+msgid "Specify quotas for existing users or tenants"
+msgstr "既存のユーザまたはテナントのクォータを表示します"
 
 msgid "StackTach"
 msgstr "StackTach"
@@ -18050,6 +18063,9 @@ msgstr ""
 "ネットワーク経路のどこに障害があるかを素早く見つけるには、pingを使います。ま"
 "ずあなたがインスタンス上で、google.comのような外部ホストにpingできるのであれ"
 "ば、ネットワークの問題はないでしょう。"
+
+msgid "Use security services"
+msgstr "セキュリティサービスを指定する。"
 
 msgid ""
 "Use the <placeholder-1/> command to install specific versions of each "
