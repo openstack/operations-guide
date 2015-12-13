@@ -759,8 +759,8 @@
       GitHub and enables collaboration among contributors.</para>
 
     <para>Learn more about how to contribute to the OpenStack docs at
-        <link xlink:href="https://wiki.openstack.org/wiki/Documentation/HowTo">Documentation How
-        To</link>.</para>
+        <link xlink:href="http://docs.openstack.org/contributor-guide/">OpenStack
+        Documentation Contributor Guide</link>.</para>
 
     <para>If you find a bug and can't fix it or aren't sure it's
       really a doc bug, log a bug at <link
