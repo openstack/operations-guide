@@ -368,9 +368,8 @@
             again in a title.</para>
         <para>This past Valentine's Day, I received an alert that a
             compute node was no longer available in the cloud&mdash;meaning,
-        <screen><prompt>$</prompt><userinput>nova-manage service list</userinput></screen>
-            showed this particular node with a status of
-                <code>XXX</code>.</para>
+        <screen><prompt>$</prompt><userinput>nova service-list</userinput></screen>
+            showed this particular node in down state.</para>
         <para>I logged into the cloud controller and was able to both
             <command>ping</command> and SSH into the problematic compute node which
             seemed very odd. Usually if I receive this type of alert,

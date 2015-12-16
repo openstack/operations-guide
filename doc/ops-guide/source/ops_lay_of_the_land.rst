@@ -88,7 +88,6 @@ installed with the project's services on the cloud controller and do not
 need to be installed\*-manage command-line toolscommand-line tools
 administrative separately:
 
-* :command:`nova-manage`
 * :command:`glance-manage`
 * :command:`keystone-manage`
 * :command:`cinder-manage`
@@ -300,28 +299,31 @@ running:
 
 .. code-block:: console
 
-   # nova-manage service list | sort
+   # nova service-list
 
 The output looks like the following:
 
 .. code-block:: console
 
-   Binary           Host              Zone Status  State Updated_At
-   nova-cert        cloud.example.com nova enabled  :-)  2013-02-25 19:32:38
-   nova-compute     c01.example.com   nova enabled  :-)  2013-02-25 19:32:35
-   nova-compute     c02.example.com   nova enabled  :-)  2013-02-25 19:32:32
-   nova-compute     c03.example.com   nova enabled  :-)  2013-02-25 19:32:36
-   nova-compute     c04.example.com   nova enabled  :-)  2013-02-25 19:32:32
-   nova-compute     c05.example.com   nova enabled  :-)  2013-02-25 19:32:41
-   nova-conductor   cloud.example.com nova enabled  :-)  2013-02-25 19:32:40
-   nova-consoleauth cloud.example.com nova enabled  :-)  2013-02-25 19:32:36
-   nova-network     cloud.example.com nova enabled  :-)  2013-02-25 19:32:32
-   nova-scheduler   cloud.example.com nova enabled  :-)  2013-02-25 19:32:33
+   +----+------------------+-------------------+------+---------+-------+----------------------------+-----------------+
+   | Id | Binary           | Host              | Zone | Status  | State | Updated_at                 | Disabled Reason |
+   +----+------------------+-------------------+------+---------+-------+----------------------------+-----------------+
+   | 1  | nova-cert        | cloud.example.com | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 2  | nova-compute     | c01.example.com   | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 3  | nova-compute     | c01.example.com.  | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 4  | nova-compute     | c01.example.com   | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 5  | nova-compute     | c01.example.com   | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 6  | nova-compute     | c01.example.com   | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 7  | nova-conductor   | cloud.example.com | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 8  | nova-cert        | cloud.example.com | nova | enabled | up    | 2016-01-05T17:20:42.000000 | -               |
+   | 9  | nova-scheduler   | cloud.example.com | nova | enabled | up    | 2016-01-05T17:20:38.000000 | -               |
+   | 10 | nova-consoleauth | cloud.example.com | nova | enabled | up    | 2016-01-05T17:20:35.000000 | -               |
+   +----+------------------+-------------------+------+---------+-------+----------------------------+-----------------+
 
 The output shows that there are five compute nodes and one cloud
-controller. You see a smiley face, such as ``:-)``, which indicates that
-the services are up and running. If a service is no longer available,
-the ``:-)`` symbol changes to ``XXX``. This is an indication that you
+controller. You see all the services in the up state, which indicates that
+the services are up and running. If a service is in a down state, it is
+no longer available. This is an indication that you
 should troubleshoot why the service is down.
 
 If you are using cinder, run the following command to see a similar
@@ -373,11 +375,11 @@ be done for different reasons, such as endpoint privacy or network
 traffic segregation.
 
 You can find the version of the Compute installation by using the
-:command:`nova-manage` command:
+nova client command:
 
 .. code-block:: console
 
-   # nova-manage version
+   # nova version-list
 
 Diagnose Your Compute Nodes
 ---------------------------
@@ -453,11 +455,11 @@ the :command:`nova` command-line client to get the IP ranges:
    | 8283efb2-e53d-46e1-a6bd-bb2bdef9cb9a | test02 |  10.1.1.0/24 |
    +--------------------------------------+--------+--------------+
 
-The :command:`nova-manage` tool can provide some additional details:
+The nova command-line client can provide some additional details:
 
 .. code-block:: console
 
-   # nova-manage network list
+   # nova network-list
    id IPv4        IPv6 start address DNS1 DNS2 VlanID project   uuid
    1  10.1.0.0/24 None 10.1.0.3      None None 300    2725bbd   beacb3f2
    2  10.1.1.0/24 None 10.1.1.3      None None 301    none      d0b1a796
@@ -472,7 +474,7 @@ To find out whether any floating IPs are available in your cloud, run:
 
 .. code-block:: console
 
-   # nova-manage floating list
+   # nova floating-ip-list
    2725bb...59f43f 1.2.3.4 None            nova vlan20
    None            1.2.3.5 48a415...b010ff nova vlan20
 

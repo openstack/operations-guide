@@ -341,9 +341,9 @@ no longer available in the cloud—meaning,
 
 .. code-block:: console
 
-   $ nova-manage service list
+   $ nova service-list
 
-showed this particular node with a status of ``XXX``.
+showed this particular node in a down state.
 
 I logged into the cloud controller and was able to both ``ping`` and SSH
 into the problematic compute node which seemed very odd. Usually if I

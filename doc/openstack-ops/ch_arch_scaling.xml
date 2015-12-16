@@ -584,10 +584,6 @@
               <listitem>
                 <para>euca-describe-availability-zones verbose</para>
               </listitem>
-
-              <listitem>
-                <para><literal>nova-manage</literal> service list</para>
-              </listitem>
             </itemizedlist>The internal availability zone is hidden in
           euca-describe-availability_zones (nonverbose).</para>
 

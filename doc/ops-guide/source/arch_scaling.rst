@@ -339,22 +339,22 @@ change all flavor types relating to them.
 
     When you run any of the following operations, the services appear in
     their own internal availability zone
-    (CONF.internal\_service\_availability\_zone):
+    (CONF.internal_service_availability_zone):
 
-    -  nova host-list (os-hosts)
+    -  :command:`nova host-list` (os-hosts)
 
-    -  euca-describe-availability-zones verbose
+    -  :command:`euca-describe-availability-zones verbose`
 
-    -  ``nova-manage`` service list
+    -  :command:`nova service-list`
 
     The internal availability zone is hidden in
-    euca-describe-availability\_zones (nonverbose).
+    euca-describe-availability_zones (nonverbose).
 
-    CONF.node\_availability\_zone has been renamed to
-    CONF.default\_availability\_zone and is used only by the
+    CONF.node_availability_zone has been renamed to
+    CONF.default_availability_zone and is used only by the
     ``nova-api`` and ``nova-scheduler`` services.
 
-    CONF.node\_availability\_zone still works but is deprecated.
+    CONF.node_availability_zone still works but is deprecated.
 
 Scalable Hardware
 ~~~~~~~~~~~~~~~~~
