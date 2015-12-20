@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-11-25 06:22+0000\n"
+"POT-Creation-Date: 2015-12-20 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3272,7 +3272,7 @@ msgid "The genesis of this book was an in-person event, but now that the book is
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:761(para)
-msgid "Learn more about how to contribute to the OpenStack docs at <link xlink:href=\"https://wiki.openstack.org/wiki/Documentation/HowTo\">Documentation How To</link>."
+msgid "Learn more about how to contribute to the OpenStack docs at <link xlink:href=\"http://docs.openstack.org/contributor-guide/\">OpenStack Documentation Contributor Guide</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:765(para)
