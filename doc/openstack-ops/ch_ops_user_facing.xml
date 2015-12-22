@@ -1933,9 +1933,14 @@ Optional snapshot description. (Default=None)</programlisting>
       but this is the base command that later details are layered upon.</para>
 
       <para>To delete instances from the dashboard, select the
-      <guilabel>Terminate instance</guilabel> action next to the instance on
-      the <guilabel>Instances</guilabel> page. From the command line, do
-      this:</para>
+      <guilabel>Delete instance</guilabel> action next to the instance on
+      the <guilabel>Instances</guilabel> page.
+
+      <note>
+        <para>In releases prior to Mitaka, select the equivalent <guilabel>Terminate instance</guilabel> action.</para>
+      </note>.
+
+      From the command line, do this:</para>
 
       <screen><prompt>$</prompt> <userinput>nova delete &lt;instance-uuid&gt;</userinput></screen>
 
