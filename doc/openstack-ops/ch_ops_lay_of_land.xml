@@ -140,7 +140,7 @@
       example:</para>
 
       <programlisting><?db-font-size 60%?># pip install -e \
-  git+https://github.com/openstack/python-novaclient.git#egg=python-novaclient</programlisting>
+  git+https://git.openstack.org/openstack/python-novaclient#egg=python-novaclient</programlisting>
 
       <para>If you support the EC2 API on your cloud, you should also install
       the euca2ools package or some other EC2 API tool so that you can get the

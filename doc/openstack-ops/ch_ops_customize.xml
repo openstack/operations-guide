@@ -712,7 +712,7 @@ proxy-server IP my.local.ip.address denied access to Account=AUTH_... \
     the same functionality. They can use your code, provide feedback, and
     possibly contribute. If enough support exists for it, perhaps you can
     propose that it be added to the official swift <link
-    xlink:href="https://github.com/openstack/swift/tree/master/swift/common/middleware">middleware</link>.</para>
+    xlink:href="https://git.openstack.org/cgit/openstack/swift/tree/swift/common/middleware">middleware</link>.</para>
   </section>
 
   <section xml:id="nova_scheduler_example">
@@ -1127,7 +1127,7 @@ _schedule /opt/stack/nova/nova/scheduler/ip_scheduler.py:76</computeroutput></sc
     the same functionality. They can use your code, provide feedback, and
     possibly contribute. If enough support exists for it, perhaps you can
     propose that it be added to the official Compute <link
-    xlink:href="https://github.com/openstack/nova/tree/master/nova/scheduler">schedulers</link>.</para>
+    xlink:href="https://git.openstack.org/cgit/openstack/nova/tree/nova/scheduler">schedulers</link>.</para>
   </section>
 
   <section xml:id="ops_dashboard">

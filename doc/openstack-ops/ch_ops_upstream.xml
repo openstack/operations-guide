@@ -420,10 +420,10 @@
 
     <para>Just like the code, <link
     xlink:href="http://docs.openstack.org"></link> is updated constantly using
-    the Gerrit review system, with source stored in GitHub in the <link
-    xlink:href="https://github.com/openstack/openstack-manuals/">openstack-manuals repository</link>
-    and the <link xlink:href="https://github.com/openstack/api-site/">api-site
-    repository</link>, in DocBook format.</para>
+    the Gerrit review system, with source stored in git.openstack.org in the <link
+    xlink:href="https://git.openstack.org/cgit/openstack/openstack-manuals/">openstack-manuals repository</link>
+    and the <link xlink:href="https://git.openstack.org/cgit/openstack/api-site/">api-site
+    repository</link>.</para>
 
     <para>To review the documentation before it's published, go to the
     OpenStack Gerrit server at&#160;<link
