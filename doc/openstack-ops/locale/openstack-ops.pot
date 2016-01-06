@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-20 06:01+0000\n"
+"POT-Creation-Date: 2016-01-06 06:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3904,7 +3904,7 @@ msgid "To enable <code>nova</code> to send notifications, add the following to <
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:652(para)
-msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link xlink:href=\"https://github.com/openstack/stacktach\">StackTach GitHub repo</link> for instructions as well as a demo video. Additional details on the latest developments can be discovered at the <link xlink:href=\"http://stacktach.com/\">official page</link>"
+msgid "Once <code>nova</code> is sending notifications, install and configure StackTach. Since StackTach is relatively new and constantly changing, installation instructions would quickly become outdated. Please refer to the <link xlink:href=\"https://git.openstack.org/cgit//openstack/stacktach\">StackTach Git repo</link> for instructions as well as a demo video. Additional details on the latest developments can be discovered at the <link xlink:href=\"http://stacktach.com/\">official page</link>"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_log_monitor.xml:662(title)
@@ -6870,7 +6870,7 @@ msgid "The purpose of automatic configuration management is to establish and mai
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:277(para)
-msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet, a configuration management tool, even provides official modules for OpenStack projects in an OpenStack infrastructure system known as <link xlink:href=\"https://wiki.openstack.org/wiki/Puppet\">Puppet OpenStack </link>. Chef configuration management is provided within <link role=\"orm:hideurl:ital\" xlink:href=\"https://github.com/openstack/openstack-chef-repo\"/>. Additional configuration management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection."
+msgid "These tools also make it possible to test and roll back changes, as they are fully repeatable. Conveniently, a large body of work has been done by the OpenStack community in this space. Puppet, a configuration management tool, even provides official modules for OpenStack projects in an OpenStack infrastructure system known as <link xlink:href=\"https://wiki.openstack.org/wiki/Puppet\">Puppet OpenStack </link>. Chef configuration management is provided within <link role=\"orm:hideurl:ital\" xlink:href=\"https://git.openstack.org/cgit/openstack/openstack-chef-repo\"/>. Additional configuration management systems include Juju, Ansible, and Salt. Also, PackStack is a command-line utility for Red Hat Enterprise Linux and derivatives that uses Puppet modules to support rapid deployment of OpenStack on existing servers over an SSH connection."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_arch_provision.xml:292(para)
@@ -8216,7 +8216,7 @@ msgid "The genesis of this book was an in-person event, but now that the book is
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:421(para)
-msgid "Just like the code, <link xlink:href=\"http://docs.openstack.org\"/> is updated constantly using the Gerrit review system, with source stored in GitHub in the <link xlink:href=\"https://github.com/openstack/openstack-manuals/\">openstack-manuals repository</link> and the <link xlink:href=\"https://github.com/openstack/api-site/\">api-site repository</link>, in DocBook format."
+msgid "Just like the code, <link xlink:href=\"http://docs.openstack.org\"/> is updated constantly using the Gerrit review system, with source stored in git.openstack.org in the <link xlink:href=\"https://git.openstack.org/cgit/openstack/openstack-manuals/\">openstack-manuals repository</link> and the <link xlink:href=\"https://git.openstack.org/cgit/openstack/api-site/\">api-site repository</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_upstream.xml:428(para)
@@ -10896,7 +10896,7 @@ msgid "You can follow a similar pattern in other projects that use the Python Pa
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:710(para)
-msgid "When your middleware is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official swift <link xlink:href=\"https://github.com/openstack/swift/tree/master/swift/common/middleware\">middleware</link>."
+msgid "When your middleware is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official swift <link xlink:href=\"https://git.openstack.org/cgit/openstack/swift/tree/swift/common/middleware\">middleware</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:719(title)
@@ -11040,7 +11040,7 @@ msgid "A similar pattern can be followed in other projects that use the driver a
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:1125(para)
-msgid "When your scheduler is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official Compute <link xlink:href=\"https://github.com/openstack/nova/tree/master/nova/scheduler\">schedulers</link>."
+msgid "When your scheduler is done, we encourage you to open source it and let the community know on the OpenStack mailing list. Perhaps others need the same functionality. They can use your code, provide feedback, and possibly contribute. If enough support exists for it, perhaps you can propose that it be added to the official Compute <link xlink:href=\"https://git.openstack.org/cgit/openstack/nova/tree/nova/scheduler\">schedulers</link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_customize.xml:1134(title)
