@@ -272,8 +272,8 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://docs.openstack.org/api/quick-start/content/">OpenStack
-              API Quick Start</link></term>
+          <term><link xlink:href="http://developer.openstack.org/api-guide/quick-start/">OpenStack
+              API Guide</link></term>
 
           <listitem>
             <para>A brief overview of how to send REST API requests to
