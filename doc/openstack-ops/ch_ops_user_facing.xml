@@ -152,7 +152,7 @@
 
       <screen><prompt>$</prompt> <userinput>glance help</userinput></screen>
 
-      <para>or the <link xlink:href="http://docs.openstack.org/cli-reference/content/glanceclient_commands.html">Command-Line Interface Reference
+      <para>or the <link xlink:href="http://docs.openstack.org/cli-reference/glance.html">Command-Line Interface Reference
       </link>.</para>
     </section>
 
