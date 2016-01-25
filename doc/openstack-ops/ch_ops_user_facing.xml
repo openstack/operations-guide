@@ -646,7 +646,9 @@
 
             <listitem>
               <para>The protocol that is matched by the security group rule.
-              Valid values are <literal>null</literal>, <literal>tcp</literal>, <literal>udp</literal>, and <literal>icmp</literal>.</para>
+              Valid values are <literal>null</literal>, <literal>tcp</literal>,
+              <literal>udp</literal>, <literal>icmp</literal>,
+              and <literal>icmpv6</literal>.</para>
             </listitem>
           </varlistentry>
 
@@ -654,9 +656,12 @@
             <term>port_range_min</term>
 
             <listitem>
-              <para>The minimum port number in the range that is matched by the security group rule.
-              If the protocol is TCP or UDP, this value must be less than or equal to the <literal>port_range_max</literal> attribute value.
-              If the protocol is ICMP, this value must be an ICMP type.</para>
+              <para>The minimum port number in the range that is matched
+              by the security group rule.  If the protocol is TCP or UDP,
+              this value must be less than or equal to the
+              <literal>port_range_max</literal> attribute value.  If the
+              protocol is ICMP or ICMPv6, this value must be an
+              ICMP or ICMPv6 type, respectively.</para>
             </listitem>
           </varlistentry>
 
@@ -664,9 +669,12 @@
             <term>port_range_max</term>
 
             <listitem>
-              <para>The maximum port number in the range that is matched by the security group rule.
-              The <literal>port_range_min</literal> attribute constrains the <literal>port_range_max</literal> attribute.
-              If the protocol is ICMP, this value must be an ICMP code.</para>
+              <para>The maximum port number in the range that is matched
+              by the security group rule.
+              The <literal>port_range_min</literal> attribute constrains
+              the <literal>port_range_max</literal> attribute.  If the
+              protocol is ICMP or ICMPv6,  this value must be an ICMP or
+              ICMPv6 type, respectively.</para>
             </listitem>
           </varlistentry>
 
