@@ -49,7 +49,7 @@
 
       <para>The <code>glance image-create</code> command provides a large set
       of options for working with your image. For example, the
-      <code>min-disk</code> option is useful for images that require root
+      <code> min-disk</code> option is useful for images that require root
       disks of a certain size (for example, large Windows images). To view
       these options, do:</para>
 
@@ -71,6 +71,143 @@
 
       <screen><prompt>$</prompt> <userinput>glance image-show &lt;image-uuid&gt;</userinput></screen>
     </section>
+
+
+    <section xml:id="add_signed_images">
+      <title>Adding Signed Images</title>
+
+      <para>To provide a chain of trust from an end user to the Image
+      service, and the Image service to Compute, an end user can import
+      signed images into the Image service that can be verified in Compute.
+      Appropriate Image service properties need to be set to enable signature
+      verification.  Currently, signature verification is provided in Compute
+      only, but an accompanying feature in the Image service is targeted for
+      Mitaka.</para>
+
+      <note><para>Prior to the steps below, an asymmetric keypair and certificate
+       must be generated.  In this example, these are called private_key.pem and
+       new_cert.crt, respectively, and both reside in the current directory. Also
+       note that the image in this example is cirros-0.3.4-x86_64-disk.img, but
+       any image can be used.</para></note>
+
+      <para>The following are steps needed to create the signature used for the signed images:</para>
+
+   <procedure>
+      <step>
+        <para>Retrieve image for upload</para>
+        <screen><prompt>$</prompt> <userinput>wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img > cirros-0.3.4-x86_64-disk.img</userinput></screen>
+      </step>
+
+   <step>
+        <para>Use private key to create a signature of the image</para>
+        <note>
+          <para>The following implicit values are being used to create the
+          signature in this example:
+          <itemizedlist>
+             <listitem><para>Signature hash method = SHA-256</para></listitem>
+             <listitem><para>Signature key type = RSA-PSS</para></listitem>
+          </itemizedlist>
+          </para>
+        </note>
+         <note>
+          <para>The following options are currently supported:
+          <itemizedlist>
+             <listitem><para>Signature hash methods: SHA-224, SHA-256, SHA-384, and SHA-512</para></listitem>
+             <listitem><para>Signature key types: DSA, ECC_SECT571K1, ECC_SECT409K1, ECC_SECT571R1, ECC_SECT409R1, ECC_SECP521R1, ECC_SECP384R1, and RSA-PSS</para></listitem>
+          </itemizedlist>
+          </para>
+        </note>
+        <para>Generate signature of image and convert it to a base64 representation:</para>
+        <screen><prompt>$</prompt> <userinput>openssl dgst -sha256 -sign private_key.pem -sigopt rsa_padding_mode:\
+        pss -out image-file.signature cirros-0.3.4-x86_64-disk.img</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>base64 image-file.signature > signature_64</userinput></screen>
+        <screen><prompt>$</prompt> <userinput>cat signature_64
+'c4br5f3FYQV6Nu20cRUSnx75R/VcW3diQdsUN2nhPw+UcQRDoGx92hwMgRxzFYeUyydRTWCcUS2ZLudPR9X7rM
+THFInA54Zj1TwEIbJTkHwlqbWBMU4+k5IUIjXxHO6RuH3Z5f/SlSt7ajsNVXaIclWqIw5YvEkgXTIEuDPE+C4='</userinput></screen>
+      </step>
+
+      <step><para>Create context</para>
+        <screen><prompt>$</prompt> <userinput>python
+&gt;&gt;&gt; from keystoneclient.v3 import client
+&gt;&gt;&gt; keystone_client = client.Client(username='demo',
+                                    user_domain_name='Default',
+                                    password='password',
+                                    project_name='demo',
+                                    auth_url='http://localhost:5000/v3')
+
+&gt;&gt;&gt; from oslo_context import context
+&gt;&gt;&gt; context = context.RequestContext(auth_token=keystone_client.auth_token,
+                                     tenant=keystone_client.project_id)</userinput></screen>
+      </step>
+
+      <step><para>Encode certificate in DER format</para>
+         <screen><userinput>
+&gt;&gt;&gt; from cryptography import x509 as cryptography_x509
+&gt;&gt;&gt; from cryptography.hazmat import backends
+&gt;&gt;&gt; from cryptography.hazmat.primitives import serialization
+&gt;&gt;&gt; with open("new_cert.crt", "rb") as cert_file:
+&gt;&gt;&gt;      cert = cryptography_x509.load_pem_x509_certificate(
+                  cert_file.read(),
+                  backend=backends.default_backend()
+                  )
+&gt;&gt;&gt; certificate_der = cert.public_bytes(encoding=serialization.Encoding.DER)</userinput></screen>
+      </step>
+
+      <step><para>Upload Certificate in DER format to Castellan</para>
+         <screen><userinput>
+&gt;&gt;&gt; from castellan.common.objects import x_509
+&gt;&gt;&gt; from castellan import key_manager
+&gt;&gt;&gt; castellan_cert = x_509.X509(certificate_der)
+&gt;&gt;&gt; key_API = key_manager.API()
+&gt;&gt;&gt; cert_uuid = key_API.store(context, castellan_cert)
+&gt;&gt;&gt; cert_uuid
+u'62a33f41-f061-44ba-9a69-4fc247d3bfce'
+      </userinput></screen>
+      </step>
+      <step><para>Upload Image to Image service, with Signature Metadata</para>
+
+      <note>
+        <para>The following signature properties are used:
+          <itemizedlist>
+            <listitem>
+              <para>img_signature uses the signature called signature_64</para>
+            </listitem>
+            <listitem>
+              <para>img_signature_certificate_uuid uses the value from cert_uuid in
+              section 5 above</para>
+            </listitem>
+            <listitem>
+              <para>img_signature_hash_method matches 'SHA-256' in section 2 above</para>
+            </listitem>
+            <listitem>
+              <para>img_signature_key_type matches 'RSA-PSS' in section 2 above</para>
+            </listitem>
+          </itemizedlist>
+        </para>
+      </note>
+
+        <screen><prompt>$</prompt> <userinput>source openrc demo</userinput>
+<prompt>$</prompt> <userinput>export OS_IMAGE_API_VERSION=2</userinput>
+<prompt>$</prompt> <userinput>glance image-create\
+--property name=cirrosSignedImage_goodSignature\
+--property is-public=true\
+--container-format bare\
+--disk-format qcow2\
+--property img_signature='c4br5f3FYQV6Nu20cRUSnx75R/VcW3diQdsUN2nhPw+UcQRDoGx92hwM
+gRxzFYeUyydRTWCcUS2ZLudPR9X7rMTHFInA54Zj1TwEIbJTkHwlqbWBMU4+k5IUIjXxHO6RuH3Z5f/
+SlSt7ajsNVXaIclWqIw5YvEkgXTIEuDPE+C4='\
+--property img_signature_certificate_uuid='62a33f41-f061-44ba-9a69-4fc247d3bfce'\
+--property img_signature_hash_method='SHA-256'\
+--property img_signature_key_type='RSA-PSS'\
+&lt; ~/cirros-0.3.4-x86_64-disk.img</userinput></screen>
+      </step>
+      <step><para>Signature verification will occur when Compute boots the signed image</para>
+      <note>
+        <para>As of the Mitaka release, Compute supports instance signature validation. This is enabled by setting the verify_glance_signatures flag in nova.conf to TRUE. When enabled, Compute will automatically validate signed instances prior to its launch.</para>
+      </note>
+    </step>
+    </procedure>
+  </section>
 
     <section xml:id="sharing_images">
       <title>Sharing Images Between Projects</title>
