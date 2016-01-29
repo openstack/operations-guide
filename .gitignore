@@ -7,12 +7,13 @@
 *.egg-info
 
 # Testenvironment
-.tox
+.tox/
 
 # Build directories
 target/
 publish-docs/
 generated/
+build/
 /build-*.log.gz
 
 # Transifex Client Setting
