@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-01-06 06:02+0000\n"
+"POT-Creation-Date: 2016-02-10 06:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1167,7 +1167,7 @@ msgstr ""
 msgid "fixed-ips"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:255(para) ./doc/openstack-ops/ch_ops_user_facing.xml:2042(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:255(para) ./doc/openstack-ops/ch_ops_user_facing.xml:2050(title)
 msgid "Floating IPs"
 msgstr ""
 
@@ -1215,7 +1215,7 @@ msgstr ""
 msgid "injected-files"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_projects_users.xml:292(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1754(title) ./doc/openstack-ops/ch_ops_maintenance.xml:267(title)
+#: ./doc/openstack-ops/ch_ops_projects_users.xml:292(para) ./doc/openstack-ops/ch_ops_user_facing.xml:1762(title) ./doc/openstack-ops/ch_ops_maintenance.xml:267(title)
 msgid "Instances"
 msgstr ""
 
@@ -1949,7 +1949,7 @@ msgstr ""
 msgid "More proxies means more bandwidth, if your storage can keep up."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:193(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:196(title) ./doc/openstack-ops/ch_ops_user_facing.xml:813(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:193(title) ./doc/openstack-ops/ch_ops_backup_recovery.xml:196(title) ./doc/openstack-ops/ch_ops_user_facing.xml:821(title)
 msgid "Block Storage"
 msgstr ""
 
@@ -1969,7 +1969,7 @@ msgstr ""
 msgid "These drivers work a little differently than a traditional \"block\" storage driver. On an NFS or GlusterFS file system, a single file is created and then mapped as a \"virtual\" volume into the instance. This mapping/translation is similar to how OpenStack utilizes QEMU's file-based virtual machines stored in <code>/var/lib/nova/instances</code>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_arch_storage.xml:230(title) ./doc/openstack-ops/ch_ops_user_facing.xml:915(title)
+#: ./doc/openstack-ops/ch_arch_storage.xml:230(title) ./doc/openstack-ops/ch_ops_user_facing.xml:923(title)
 msgid "Shared File Systems Service"
 msgstr ""
 
@@ -3032,7 +3032,7 @@ msgid "This guide targets OpenStack administrators seeking to deploy and manage 
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:275(link)
-msgid "OpenStack API Quick Start"
+msgid "OpenStack API Guide"
 msgstr ""
 
 #: ./doc/openstack-ops/preface_ops.xml:279(para)
@@ -4316,7 +4316,7 @@ msgid "A full set of options can be found using:<indexterm class=\"singular\"><p
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:155(para)
-msgid "or the <link xlink:href=\"http://docs.openstack.org/cli-reference/content/glanceclient_commands.html\">Command-Line Interface Reference </link>."
+msgid "or the <link xlink:href=\"http://docs.openstack.org/cli-reference/glance.html\">Command-Line Interface Reference </link>."
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:160(title)
@@ -4387,7 +4387,7 @@ msgstr ""
 msgid "Unique ID (integer or UUID) for the flavor."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:286(para) ./doc/openstack-ops/ch_ops_user_facing.xml:2237(th) ./doc/openstack-ops/ch_arch_scaling.xml:78(th)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:286(para) ./doc/openstack-ops/ch_ops_user_facing.xml:2245(th) ./doc/openstack-ops/ch_arch_scaling.xml:78(th)
 msgid "Name"
 msgstr ""
 
@@ -4535,7 +4535,7 @@ msgstr ""
 msgid "These rules are all \"allow\" type rules, as the default is deny. The first column is the IP protocol (one of icmp, tcp, or udp), and the second and third columns specify the affected port range. The fourth column specifies the IP range in CIDR format. This example shows the full port range for all protocols allowed from all IPs."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:507(para) ./doc/openstack-ops/ch_ops_user_facing.xml:683(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:507(para) ./doc/openstack-ops/ch_ops_user_facing.xml:691(para)
 msgid "When adding a new security group, you should pick a descriptive but brief name. This name shows up in brief descriptions of the instances that use it where the longer description field often does not. Seeing that an instance is using security group <literal>http</literal> is much easier to understand than <literal>bobs_group</literal> or <literal>secgrp1</literal>."
 msgstr ""
 
@@ -4551,7 +4551,7 @@ msgstr ""
 msgid "Note that the arguments are positional, and the <literal>from-port</literal> and <literal>to-port</literal> arguments specify the allowed local port range connections. These arguments are not indicating source and destination ports of the connection. More complex rule sets can be built up through multiple invocations of <literal>nova secgroup-add-rule</literal>. For example, if you want to pass both http and https traffic, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:554(para) ./doc/openstack-ops/ch_ops_user_facing.xml:765(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:554(para) ./doc/openstack-ops/ch_ops_user_facing.xml:773(para)
 msgid "Despite only outputting the newly added rule, this operation is additive:"
 msgstr ""
 
@@ -4571,7 +4571,7 @@ msgstr ""
 msgid "The code is structured like this: <code>nova secgroup-add-group-rule &lt;secgroup&gt; &lt;source-group&gt; &lt;ip-proto&gt; &lt;from-port&gt; &lt;to-port&gt;</code>. An example usage is shown here:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:587(para) ./doc/openstack-ops/ch_ops_user_facing.xml:804(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:587(para) ./doc/openstack-ops/ch_ops_user_facing.xml:812(para)
 msgid "The \"cluster\" rule allows SSH access from any other instance that uses the <literal>global-http</literal> group."
 msgstr ""
 
@@ -4608,966 +4608,966 @@ msgid "protocol"
 msgstr ""
 
 #: ./doc/openstack-ops/ch_ops_user_facing.xml:648(para)
-msgid "The protocol that is matched by the security group rule. Valid values are <literal>null</literal>, <literal>tcp</literal>, <literal>udp</literal>, and <literal>icmp</literal>."
+msgid "The protocol that is matched by the security group rule. Valid values are <literal>null</literal>, <literal>tcp</literal>, <literal>udp</literal>, <literal>icmp</literal>, and <literal>icmpv6</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:654(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:656(term)
 msgid "port_range_min"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:657(para)
-msgid "The minimum port number in the range that is matched by the security group rule. If the protocol is TCP or UDP, this value must be less than or equal to the <literal>port_range_max</literal> attribute value. If the protocol is ICMP, this value must be an ICMP type."
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:659(para)
+msgid "The minimum port number in the range that is matched by the security group rule. If the protocol is TCP or UDP, this value must be less than or equal to the <literal>port_range_max</literal> attribute value. If the protocol is ICMP or ICMPv6, this value must be an ICMP or ICMPv6 type, respectively."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:664(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:669(term)
 msgid "port_range_max"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:667(para)
-msgid "The maximum port number in the range that is matched by the security group rule. The <literal>port_range_min</literal> attribute constrains the <literal>port_range_max</literal> attribute. If the protocol is ICMP, this value must be an ICMP code."
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:672(para)
+msgid "The maximum port number in the range that is matched by the security group rule. The <literal>port_range_min</literal> attribute constrains the <literal>port_range_max</literal> attribute. If the protocol is ICMP or ICMPv6, this value must be an ICMP or ICMPv6 type, respectively."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:674(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:682(term)
 msgid "ethertype"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:677(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:685(para)
 msgid "Must be <literal>IPv4</literal> or <literal>IPv6</literal>, and addresses represented in CIDR must match the ingress or egress rules."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:690(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:698(para)
 msgid "This example creates a security group that allows web traffic anywhere on the Internet. We'll call this group <literal>global_http</literal>, which is clear and reasonably concise, encapsulating what is allowed and from where. From the command line, do:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:710(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:718(para)
 msgid "Immediately after create, the security group has only an allow egress rule. To make it do what we want, we need to add some rules:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:744(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:752(para)
 msgid "More complex rule sets can be built up through multiple invocations of <literal>neutron security-group-rule-create</literal>. For example, if you want to pass both http and https traffic, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:782(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:790(para)
 msgid "The inverse operation is called <literal>security-group-rule-delete</literal>, specifying security-group-rule ID. Whole security groups can be removed with <literal>security-group-delete</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:787(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:795(para)
 msgid "To create security group rules for a cluster of instances, use <phrase role=\"keep-together\">RemoteGroups</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:790(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:798(para)
 msgid "RemoteGroups are a dynamic way of defining the CIDR of allowed sources. The user specifies a RemoteGroup (security group name) and then all the users' other instances using the specified RemoteGroup are selected dynamically. This dynamic selection alleviates the need for individual rules to allow each new member of the <phrase role=\"keep-together\">cluster</phrase>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:797(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:805(para)
 msgid "The code is similar to the above example of <literal>security-group-rule-create</literal>. To use RemoteGroup, specify <literal>--remote-group-id</literal> instead of <literal>--remote-ip-prefix</literal>. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:815(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:823(para)
 msgid "OpenStack volumes are persistent block-storage devices that may be attached and detached from instances, but they can be attached to only one instance at a time. Similar to an external hard drive, they do not provide shared storage in the way a network file system or object store does. It is left to the operating system in the instance to put a file system on the block device and mount it, or not. <indexterm class=\"singular\"><primary>block storage</primary></indexterm><indexterm class=\"singular\"><primary>storage</primary><secondary>block storage</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>block storage</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:834(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:842(para)
 msgid "As with other removable disk technology, it is important that the operating system is not trying to make use of the disk before removing it. On Linux instances, this typically involves unmounting any file systems mounted from the volume. The OpenStack volume service cannot tell whether it is safe to remove volumes from an instance, so it does what it is told. If a user tells the volume service to detach a volume from an instance while it is being written to, you can expect some level of file system corruption as well as faults from whatever process within the instance was using the device."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:844(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:852(para)
 msgid "There is nothing OpenStack-specific in being aware of the steps needed to access block devices from within the instance operating system, potentially formatting them for first use and being cautious when removing them. What is specific is how to create new volumes and attach and detach them from instances. These operations can all be done from the <guilabel>Volumes</guilabel> page of the dashboard or by using the <literal>cinder</literal> command-line client."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:852(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:860(para)
 msgid "To add new volumes, you need only a name and a volume size in gigabytes. Either put these into the <guilabel>create volume</guilabel> web form or use the command line:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:858(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:866(para)
 msgid "This creates a 10 GB volume named <literal>test-volume</literal>. To list existing volumes and the instances they are connected to, if any:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:869(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:877(para)
 msgid "OpenStack Block Storage also allows creating snapshots of volumes. Remember that this is a block-level snapshot that is crash consistent, so it is best if the volume is not connected to an instance when the snapshot is taken and second best if the volume is not in use on the instance it is attached to. If the volume is under heavy use, the snapshot may have an inconsistent file system. In fact, by default, the volume service does not take a snapshot of a volume that is attached to an image, though it can be forced to. To take a volume snapshot, either select <guilabel>Create Snapshot</guilabel> from the actions column next to the volume name on the dashboard volume page, or run this from the command line:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:895(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:903(para)
 msgid "For more information about updating Block Storage volumes (for example, resizing or transferring), see the <link xlink:href=\"http://docs.openstack.org/user-guide/\">OpenStack End User Guide</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:899(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:907(title)
 msgid "Block Storage Creation Failures"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:901(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:909(para)
 msgid "If a user tries to create a volume and the volume immediately goes into an error state, the best way to troubleshoot is to grep the cinder log files for the volume's UUID. First try the log files on the cloud controller, and then try the storage node where the volume was attempted to be created:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:917(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:925(para)
 msgid "Similar to Block Storage, the Shared File System is a persistent storage, called share, that can be used in multi-tenant environments. Users create and mount a share as a remote file system on any machine that allows mounting shares, and has network access to share exporter. This share can then be used for storing, sharing, and exchanging files. The default configuration of the Shared File Systems service depends on the back-end driver the admin chooses when starting the Shared File Systems service. For more information about existing back-end drivers, see section <link xlink:href=\"http://docs.openstack.org/developer/manila/devref/index.html#share-backends\">\"Share Backends\"</link> of Shared File Systems service Developer Guide. For example, in case of OpenStack Block Storage based back-end is used, the Shared File Systems service cares about everything, including VMs, networking, keypairs, and security groups. Other configurations require more detailed knowledge of shares functionality to set up and tune specific parameters and modes of shares functioning."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:942(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:950(para)
 msgid "Create, update, delete and force-delete shares"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:945(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:953(para)
 msgid "Change access rules for shares, reset share state"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:948(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:956(para)
 msgid "Specify quotas for existing users or tenants"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:951(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:959(para)
 msgid "Create share networks"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:954(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:962(para)
 msgid "Define new share types"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:957(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:965(para)
 msgid "Perform operations with share snapshots: create, change name, create a share from a snapshot, delete"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:961(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:969(para)
 msgid "Operate with consistency groups"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:964(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:972(para)
 msgid "Use security services"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:935(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:943(para)
 msgid "Shares are a remote mountable file system, so users can mount a share to multiple hosts, and have it accessed from multiple hosts by multiple users at a time. With the Shared File Systems service, you can perform a large number of operations with shares: <placeholder-1/> For more information on share management see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_management.html\"> “Share management”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide. As to Security services, you should remember that different drivers support different authentication methods, while generic driver does not support Security Services at all (see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_security_services.html\"> “Security services”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:979(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:987(para)
 msgid "You can create a share in a network, list shares, and show information for, update, and delete a specified share. You can also create snapshots of shares (see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_snapshots.html\"> “Share snapshots”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:988(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:996(para)
 msgid "There are default and specific share types that allow you to filter or choose back-ends before you create a share. Functions and behaviour of share type is similar to Block Storage volume type (see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_types.html\"> “Share types”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:997(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1005(para)
 msgid "To help users keep and restore their data, Shared File Systems service provides a mechanism to create and operate snapshots (see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_snapshots.html\"> “Share snapshots”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1015(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1023(para)
 msgid "LDAP"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1018(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1026(para)
 msgid "Kerberos"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1021(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1029(para)
 msgid "Microsoft Active Directory"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1005(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1013(para)
 msgid "A security service stores configuration information for clients for authentication and authorization. Inside Manila a share network can be associated with up to three security types (for detailed information see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_security_services.html\"> “Security services”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide): <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1032(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1040(para)
 msgid "Without interaction with share networks, in so called \"no share servers\" mode."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1036(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1044(para)
 msgid "Interacting with share networks."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1026(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1034(para)
 msgid "Shared File Systems service differs from the principles implemented in Block Storage. Shared File Systems service can work in two modes: <placeholder-1/> Networking service is used by the Shared File Systems service to directly operate with share servers. For switching interaction with Networking service on, create a share specifying a share network. To use \"share servers\" mode even being out of OpenStack, a network plugin called StandaloneNetworkPlugin is used. In this case, provide network information in the configuration: IP range, network type, and segmentation ID. Also you can add security services to a share network (see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_networking.html\"> “Networking”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1052(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1060(para)
 msgid "The main idea of consistency groups is to enable you to create snapshots at the exact same point in time from multiple file system shares. Those snapshots can be then used for restoring all shares that were associated with the consistency group (see section <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_cgroups.html\"> “Consistency groups”</link> of chapter “Shared File Systems” in OpenStack Cloud Administrator Guide)."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1069(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1077(para)
 msgid "Rate limits"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1072(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1080(para)
 msgid "Absolute limits"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1084(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1092(para)
 msgid "Max amount of space awailable for all shares"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1085(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1093(para)
 msgid "Max number of shares"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1086(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1094(para)
 msgid "Max number of shared networks"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1087(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1095(para)
 msgid "Max number of share snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1088(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1096(para)
 msgid "Max total amount of all snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1089(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1097(para)
 msgid "Type and number of API calls that can be made in a specific time interval"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1062(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1070(para)
 msgid "Shared File System storage allows administrators to set limits and quotas for specific tenants and users. Limits are the resource limitations that are allowed for each tenant or user. Limits consist of: <placeholder-1/> Rate limits control the frequency at which users can issue specific API requests. Rate limits are configured by administrators in a config file. Also, administrator can specify quotas also known as max values of absolute limits per tenant. Whereas users can see only the amount of their consumed resources. Administrator can specify rate limits or quotas for the following resources: <placeholder-2/> User can see his rate limits and absolute limits by running commands <code>manila rate-limits</code> and <code>manila absolute-limits</code> respectively. For more details on limits and quotas see subsection <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_quotas.html\"> \"Quotas and limits\"</link> of \"Share management\" section of OpenStack Cloud Administrator Guide document."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1108(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1116(para)
 msgid "Create share"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1111(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1119(para)
 msgid "Operating with a share"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1114(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1122(para)
 msgid "Manage access to shares"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1117(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1125(para)
 msgid "Create snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1120(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1128(para)
 msgid "Create a share network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1123(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1131(para)
 msgid "Manage a share network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1102(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1110(para)
 msgid "This section lists several of the most important Use Cases that demonstrate the main functions and abilities of Shared File Systems service: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1129(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1137(para)
 msgid "Shared File Systems service cannot warn you beforehand if it is safe to write a specific large amount of data onto a certain share or to remove a consistency group if it has a number of shares assigned to it. In such a potentially erroneous situations, if a mistake happens, you can expect some error message or even failing of shares or consistency groups into an incorrect status. You can also expect some level of system corruption if a user tries to unmount an unmanaged share while a process is using it for data transfer."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1141(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1149(title)
 msgid "Create Share"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1148(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1156(para)
 msgid "Check if there is an appropriate share type defined in the Shared File Systems service"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1153(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1161(para)
 msgid "If such a share type does not exist, an Admin should create it using <code>manila type-create</code> command before other users are able to use it"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1158(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1166(para)
 msgid "Using a share network is optional. However if you need one, check if there is an appropriate network defined in Shared File Systems service by using <code>manila share-network-list</code> command. For the information on creating a share network, see <xref linkend=\"create_a_share_network\"/> below in this chapter."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1166(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1174(para)
 msgid "Create a public share using <code>manila create</code>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1169(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1177(para)
 msgid "Make sure that the share has been created successfully and is ready to use (check the share status and see the share export location)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1143(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1151(para)
 msgid "In this section, we examine the process of creating a simple share. It consists of several steps: <placeholder-1/> Below is the same whole procedure described step by step and in more detail."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1179(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1187(para)
 msgid "Before you start, make sure that Shared File Systems service is installed on your OpenStack cluster and is ready to use."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1185(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1193(para)
 msgid "By default, there are no share types defined in Shared File Systems service, so you can check if a required one has been already created: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1195(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1203(para)
 msgid "If the share types list is empty or does not contain a type you need, create the required share type using this command: <placeholder-1/> This command will create a public share with the following parameters: <code>name = netapp1</code>, <code>spec_driver_handles_share_servers = False</code>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1202(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1210(para)
 msgid "You can now create a public share with my_share_net network, default share type, NFS shared file systems protocol, and 1 GB size: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1235(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1243(para)
 msgid "To confirm that creation has been successful, see the share in the share list: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1283(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1291(para)
 msgid "See subsection <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_management.html\"> “Share Management”</link> of “Shared File Systems” section of Cloud Administration Guide document for the details on share management operations."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1246(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1254(para)
 msgid "Check the share status and see the share export location. After creation, the share status should become <code>available</code>: <placeholder-1/> The value <code>is_public</code> defines the level of visibility for the share: whether other tenants can or cannot see the share. By default, the share is private. Now you can mount the created share like a remote file system and use it for your purposes. <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1295(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1303(title)
 msgid "Manage Access To Shares"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1306(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1314(para)
 msgid "<code>rw</code>: read and write (RW) access. This is the default value."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1312(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1320(para)
 msgid "<code>ro:</code> read-only (RO) access."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1322(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1330(para)
 msgid "<code>ip</code>: authenticates an instance through its IP address. A valid format is XX.XX.XX.XX orXX.XX.XX.XX/XX. For example 0.0.0.0/0."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1329(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1337(para)
 msgid "<code>cert</code>: authenticates an instance through a TLS certificate. Specify the TLS identity as the IDENTKEY. A valid value is any string up to 64 characters long in the common name (CN) of the certificate. The meaning of a string depends on its interpretation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1338(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1346(para)
 msgid "<code>user</code>: authenticates by a specified user or group name. A valid value is an alphanumeric string that can contain some special characters and is from 4 to 32 characters long."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1347(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1355(para)
 msgid "Do not mount a share without an access rule! This can lead to an exception."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1297(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1305(para)
 msgid "Currently, you have a share and would like to control access to this share for other users. For this, you have to perform a number of steps and operations. Before getting to manage access to the share, pay attention to the following important parameters. To grant or deny access to a share, specify one of these supported share access levels: <placeholder-1/> Additionally, you should also specify one of these supported authentication methods: <placeholder-2/><placeholder-3/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1353(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1361(para)
 msgid "Allow access to the share with IP access type and 10.254.0.4 IP address: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1368(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1376(para)
 msgid "Mount the Share: <placeholder-1/> Then check if the share mounted successfully and according to the specified access rules: <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1383(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1391(para)
 msgid "Different share features are supported by different share drivers. In these examples there was used generic (Cinder as a back-end) driver that does not support <code>user</code> and <code>cert</code> authentication methods."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1392(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1400(para)
 msgid "For the details of features supported by different drivers see section <link xlink:href=\"http://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html\"> “Manila share features support mapping”</link> of Manila Developer Guide document."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1405(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1413(title)
 msgid "Manage Shares"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1407(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1415(para)
 msgid "There are several other useful operations you would perform when working with shares."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1413(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1421(title)
 msgid "Update Share"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1415(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1423(para)
 msgid "To change the name of a share, or update its description, or level of visibility for other tenants, use this command: <placeholder-1/> Check the attributes of the updated Share1: <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1453(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1461(title)
 msgid "Reset Share State"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1455(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1463(para)
 msgid "Sometimes a share may appear and then hang in an erroneous or a transitional state. Unprivileged users do not have the appropriate access rights to correct this situation. However, having cloud administrator's permissions, you can reset the share's state by using <placeholder-1/> command to reset share state, where state indicates which state to assign the share to. Options include: <code>available, error, creating, deleting, error_deleting</code> states."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1468(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1476(para)
 msgid "After running <placeholder-1/> check the share's status: <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1507(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1515(title)
 msgid "Delete Share"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1509(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1517(para)
 msgid "If you do not need a share any more, you can delete it using <placeholder-1/> command like: <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1516(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1524(para)
 msgid "If you specified the consistency group while creating a share, you should provide the --consistency-group parameter to delete the share:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1527(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1535(para)
 msgid "Sometimes it appears that a share hangs in one of transitional states (i.e. <code>creating, deleting, managing, unmanaging, extending, and shrinking</code>). In that case, to delete it, you need <placeholder-1/> command and administrative permissions to run it: <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1537(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1545(para)
 msgid "For more details and additional information about other cases, features, API commands etc, see subsection <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_management.html\"> “Share Management”</link> of “Shared File Systems” section of Cloud Administration Guide document."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1553(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1561(title)
 msgid "Create Snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1555(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1563(para)
 msgid "The Shared File Systems service provides a mechanism of snapshots to help users to restore their own data. To create a snapshot, use <placeholder-1/> command like: <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1595(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1603(para)
 msgid "For more details and additional information on snapshots, see subsection <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_snapshots.html\"> “Share Snapshots”</link> of “Shared File Systems” section of “Cloud Administration Guide” document."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1575(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1583(para)
 msgid "Then, if needed, update the name and description of the created snapshot: <placeholder-1/> To make sure that the snapshot is available, run: <placeholder-2/><placeholder-3/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1610(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1618(title)
 msgid "Create a Share Network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1612(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1620(para)
 msgid "To control a share network, Shared File Systems service requires interaction with Networking service to manage share servers on its own. If the selected driver runs in a mode that requires such kind of interaction, you need to specify the share network when a share is created. For the information on share creation, see <xref linkend=\"create_share\"/> earlier in this chapter. Initially, check the existing share networks type list by: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1627(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1635(para)
 msgid "If share network list is empty or does not contain a required network, just create, for example, a share network with a private network and subnetwork. <placeholder-1/> The <code>segmentation_id</code>, <code>cidr</code>, <code>ip_version</code>, and <code>network_type</code> share network attributes are automatically set to the values determined by the network provider."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1655(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1663(para)
 msgid "Then check if the network became created by requesting the networks list once again: <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1670(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1678(para)
 msgid "See subsection <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_networks.html\"> “Share Networks”</link> of “Shared File Systems” section of Cloud Administration Guide document for more details."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1666(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1674(para)
 msgid "Finally, to create a share that uses this share network, get to Create Share use case described earlier in this chapter. <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1683(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1691(title)
 msgid "Manage a Share Network"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1685(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1693(para)
 msgid "There is a pair of useful commands that help manipulate share networks. To start, check the network list: <placeholder-1/> If you configured the back-end with <code>driver_handles_share_servers = True</code> (with the share servers) and had already some operations in the Shared File Systems service, you can see <code>manila_service_network</code> in the neutron list of networks. This network was created by the share driver for internal usage. <placeholder-2/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1711(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1719(para)
 msgid "You also can see detailed information about the share network including <code>network_type, segmentation_id</code> fields: <placeholder-1/> You also can add and remove the security services to the share network."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1736(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1744(para)
 msgid "For details, see subsection <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/shared_file_systems_security_services.html\"> \"Security Services\"</link> of “Shared File Systems” section of Cloud Administration Guide document."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1756(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1764(para)
 msgid "Instances are the running virtual machines within an OpenStack cloud. This section deals with how to work with them and their underlying images, their network properties, and how they are represented in the database.<indexterm class=\"singular\"><primary>user training</primary><secondary>instances</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1766(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1774(title)
 msgid "Starting Instances"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1768(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1776(para)
 msgid "To launch an instance, you need to select an image, a flavor, and a name. The name needn't be unique, but your life will be simpler if it is because many tools will use the name in place of the UUID so long as the name is unique. You can start an instance from the dashboard from the <guibutton>Launch Instance</guibutton> button on the <guilabel>Instances</guilabel> page or by selecting the <guilabel>Launch Instance</guilabel> action next to an image or snapshot on the <guilabel>Images</guilabel> page.<indexterm class=\"singular\"><primary>instances</primary><secondary>starting</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1782(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1790(para)
 msgid "On the command line, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1786(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1794(para)
 msgid "There are a number of optional items that can be specified. You should read the rest of this section before trying to start an instance, but this is the base command that later details are layered upon."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1790(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1798(para)
 msgid "To delete instances from the dashboard, select the <guilabel>Terminate instance</guilabel> action next to the instance on the <guilabel>Instances</guilabel> page. From the command line, do this:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1797(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1805(para)
 msgid "It is important to note that powering off an instance does not terminate it in the OpenStack sense."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1802(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1810(title)
 msgid "Instance Boot Failures"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1804(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1812(para)
 msgid "If an instance fails to start and immediately moves to an error state, there are a few different ways to track down what has gone wrong. Some of these can be done with normal user access, while others require access to your log server or compute nodes.<indexterm class=\"singular\"><primary>instances</primary><secondary>boot failures</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1813(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1821(para)
 msgid "The simplest reasons for nodes to fail to launch are quota violations or the scheduler being unable to find a suitable compute node on which to run the instance. In these cases, the error is apparent when you run a <code>nova show</code> on the faulted instance:<indexterm class=\"singular\"><primary>config drive</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1851(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1859(para)
 msgid "In this case, looking at the <literal>fault</literal> message shows <literal>NoValidHost</literal>, indicating that the scheduler was unable to match the instance requirements."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1855(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1863(para)
 msgid "If <code>nova show</code> does not sufficiently explain the failure, searching for the instance UUID in the <code>nova-compute.log</code> on the compute node it was scheduled on or the <code>nova-scheduler.log</code> on your scheduler hosts is a good place to start looking for lower-level problems."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1861(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1869(para)
 msgid "Using <code>nova show</code> as an admin user will show the compute node the instance was scheduled on as <code>hostId</code>. If the instance failed during scheduling, this field is blank."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1867(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1875(title)
 msgid "Using Instance-Specific Data"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1869(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1877(para)
 msgid "There are two main types of instance-specific data: metadata and user data.<indexterm class=\"singular\"><primary>metadata</primary><secondary>instance metadata</secondary></indexterm><indexterm class=\"singular\"><primary>instances</primary><secondary>instance-specific data</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1881(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1889(title)
 msgid "Instance metadata"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1883(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1891(para)
 msgid "For Compute, instance metadata is a collection of key-value pairs associated with an instance. Compute reads and writes to these key-value pairs any time during the instance lifetime, from inside and outside the instance, when the end user uses the Compute API to do so. However, you cannot query the instance-associated key-value pairs with the metadata service that is compatible with the Amazon EC2 metadata service."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1891(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1899(para)
 msgid "For an example of instance metadata, users can generate and register SSH keys using the <literal>nova</literal> command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1896(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1904(para)
 msgid "This creates a key named <placeholder-1/>, which you can associate with instances. The file <filename>mykey.pem</filename> is the private key, which should be saved to a secure location because it allows root access to instances the <placeholder-2/> key is associated with."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1902(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1910(para)
 msgid "Use this command to register an existing key with OpenStack:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1908(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1916(para)
 msgid "You must have the matching private key to access instances associated with this key."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1912(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1920(para)
 msgid "To associate a key with an instance on boot, add <code>--key_name mykey</code> to your command line. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1918(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1926(para)
 msgid "When booting a server, you can also add arbitrary metadata so that you can more easily identify it among other running instances. Use the <code>--meta</code> option with a key-value pair, where you can make up the string for both the key and the value. For example, you could add a description and also the creator of the server:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1927(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1935(para)
 msgid "When viewing the server information, you can see the metadata included on the <phrase role=\"keep-together\">metadata</phrase> line:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1963(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1971(title)
 msgid "Instance user data"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1965(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1973(para)
 msgid "The <code>user-data</code> key is a special key in the metadata service that holds a file that cloud-aware applications within the guest instance can access. For example, <link xlink:href=\"https://help.ubuntu.com/community/CloudInit\" xlink:title=\"OpenStack Image service\">cloudinit</link> is an open source package from Ubuntu, but available in most distributions, that handles early initialization of a cloud instance that makes use of this user data.<indexterm class=\"singular\"><primary>user data</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1976(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1984(para)
 msgid "This user data can be put in a file on your local system and then passed in at instance creation with the flag <code>--user-data &lt;user-data-file&gt;</code>. For example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1982(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1990(para)
 msgid "To understand the difference between user data and metadata, realize that user data is created before an instance is started. User data is accessible from within the instance when it is running. User data can be used to store configuration, a script, or anything the tenant wants."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1990(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:1998(title)
 msgid "File injection"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1992(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2000(para)
 msgid "Arbitrary local files can also be placed into the instance file system at creation time by using the <code>--file &lt;dst-path=src-path&gt;</code> option. You may store up to five files.<indexterm class=\"singular\"><primary>file injection</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:1999(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2007(para)
 msgid "For example, let's say you have a special <filename>authorized_keys</filename> file named special_authorized_keysfile that for some reason you want to put on the instance instead of using the regular SSH key injection. In this case, you can use the following command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2012(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2020(title)
 msgid "Associating Security Groups"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2014(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2022(para)
 msgid "Security groups, as discussed earlier, are typically required to allow network traffic to an instance, unless the default security group for a project has been modified to be more permissive.<indexterm class=\"singular\"><primary>security groups</primary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>security groups</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2025(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2033(para)
 msgid "Adding security groups is typically done on instance boot. When launching from the dashboard, you do this on the <guilabel>Access &amp; Security</guilabel> tab of the <guilabel>Launch Instance</guilabel> dialog. When launching from the command line, append <code>--security-groups</code> with a comma-separated list of security groups."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2032(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2040(para)
 msgid "It is also possible to add and remove security groups when an instance is running. Currently this is only available through the command-line tools. Here is an example:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2044(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2052(para)
 msgid "Where floating IPs are configured in a deployment, each project will have a limited number of floating IPs controlled by a quota. However, these need to be allocated to the project from the central pool prior to their use—usually by the administrator of the project. To allocate a floating IP to a project, use the <guibutton>Allocate IP To Project</guibutton> button on the <guilabel>Floating IPs</guilabel> tab of the <guilabel>Access &amp; Security</guilabel> page of the dashboard. The command line can also be used:<indexterm class=\"singular\"><primary>address pool</primary></indexterm><indexterm class=\"singular\"><primary>IP addresses</primary><secondary>floating</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>floating IPs</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2065(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2073(para)
 msgid "Once allocated, a floating IP can be assigned to running instances from the dashboard either by selecting <guibutton>Associate Floating IP</guibutton> from the actions drop-down next to the IP on the <guilabel>Floating IPs</guilabel> tab of the <guilabel>Access &amp; Security</guilabel> page or by making this selection next to the instance you want to associate it with on the <guilabel>Instances</guilabel> page. The inverse action, <guibutton>Dissociate Floating IP</guibutton>, is available from the <guilabel>Floating IPs</guilabel> tab of the <guilabel>Access &amp; Security</guilabel> page and from the <guilabel>Instances</guilabel> page."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2077(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2085(para)
 msgid "To associate or disassociate a floating IP with a server from the command line, use the following commands:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2086(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2094(title)
 msgid "Attaching Block Storage"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2088(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2096(para)
 msgid "You can attach block storage to instances from the dashboard on the <guilabel>Volumes</guilabel> page. Click the <guibutton>Edit Attachments</guibutton> action next to the volume you want to attach.<indexterm class=\"singular\"><primary>storage</primary><secondary>block storage</secondary></indexterm><indexterm class=\"singular\"><primary>block storage</primary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>block storage</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2103(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2111(para)
 msgid "To perform this action from command line, run the following command:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2108(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2116(para)
 msgid "You can also specify block device<indexterm class=\"singular\"><primary>block device</primary></indexterm> mapping at instance boot time through the nova command-line client with this option set:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2116(code)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2124(code)
 msgid "&lt;dev-name&gt;=&lt;id&gt;:&lt;type&gt;:&lt;size(GB)&gt;:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2115(phrase)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2123(phrase)
 msgid "The block device mapping format is <placeholder-1/>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2117(code)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2125(code)
 msgid "&lt;delete-on-terminate&gt;"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2117(phrase)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2125(phrase)
 msgid "<placeholder-1/>, where:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2122(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2130(term)
 msgid "dev-name"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2125(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2133(para)
 msgid "A device name where the volume is attached in the system at <code>/dev/<replaceable>dev_name</replaceable></code>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2131(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2139(term)
 msgid "id"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2134(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2142(para)
 msgid "The ID of the volume to boot from, as shown in the output of <literal>nova volume-list</literal>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2140(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2148(term)
 msgid "type"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2143(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2151(para)
 msgid "Either <literal>snap</literal>, which means that the volume was created from a snapshot, or anything other than <literal>snap</literal> (a blank string is valid). In the preceding example, the volume was not created from a snapshot, so we leave this field blank in our following example."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2152(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2160(term)
 msgid "size (GB)"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2155(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2163(para)
 msgid "The size of the volume in gigabytes. It is safe to leave this blank and have the Compute Service infer the size."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2161(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2169(term)
 msgid "delete-on-terminate"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2164(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2172(para)
 msgid "A boolean to indicate whether the volume should be deleted when the instance is terminated. True can be specified as <literal>True</literal> or <literal>1</literal>. False can be specified as <literal>False</literal> or <literal>0</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2173(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2181(para)
 msgid "The following command will boot a new instance and attach a volume at the same time. The volume of ID 13 will be attached as <code>/dev/vdc</code>. It is not a snapshot, does not specify a size, and will not be deleted when the instance is terminated:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2182(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2190(para)
 msgid "If you have previously prepared block storage with a bootable file system image, it is even possible to boot from persistent block storage. The following command boots an image from the specified volume. It is similar to the previous command, but the image is omitted and the volume is now attached as <code>/dev/vda</code>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2191(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2199(para)
 msgid "Read more detailed instructions for launching an instance from a bootable volume in the <link xlink:href=\"http://docs.openstack.org/user-guide/cli_nova_launch_instance_from_volume.html\">OpenStack End User Guide</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2196(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2204(para)
 msgid "To boot normally from an image and attach block storage, map to a device other than vda. You can find instructions for launching an instance and attaching a volume to the instance and for copying the image to the attached volume in the <link xlink:href=\"http://docs.openstack.org/user-guide/dashboard_launch_instances.html\">OpenStack End User Guide</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2207(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2215(title)
 msgid "Taking Snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2209(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2217(para)
 msgid "The OpenStack snapshot mechanism allows you to create new images from running instances. This is very convenient for upgrading base images or for taking a published image and customizing it for local use. To snapshot a running instance to an image using the CLI, do this:<indexterm class=\"singular\"><primary>base image</primary></indexterm><indexterm class=\"singular\"><primary>snapshot</primary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>snapshots</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2225(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2233(para)
 msgid "The dashboard interface for snapshots can be confusing because the snapshots and images are displayed in the <guilabel>Images</guilabel> page. However, an instance snapshot <emphasis>is</emphasis> an image. The only difference between an image that you upload directly to the Image Service and an image that you create by snapshot is that an image created by snapshot has additional properties in the glance database. These properties are found in the <literal>image_properties</literal> table and include:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2239(th)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2247(th)
 msgid "Value"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2245(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2253(literal)
 msgid "image_type"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2247(para) ./doc/openstack-ops/ch_ops_user_facing.xml:2266(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2255(para) ./doc/openstack-ops/ch_ops_user_facing.xml:2274(para)
 msgid "snapshot"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2251(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2259(literal)
 msgid "instance_uuid"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2253(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2261(para)
 msgid "&lt;uuid of instance that was snapshotted&gt;"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2257(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2265(literal)
 msgid "base_image_ref"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2259(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2267(para)
 msgid "&lt;uuid of original image of instance that was snapshotted&gt;"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2264(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2272(literal)
 msgid "image_location"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2272(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2280(title)
 msgid "Live Snapshots"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2274(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2282(para)
 msgid "Live snapshots is a feature that allows users to snapshot the running virtual machines without pausing them. These snapshots are simply disk-only snapshots. Snapshotting an instance can now be performed with no downtime (assuming QEMU 1.3+ and libvirt 1.0+ are used).<indexterm class=\"singular\"><primary>live snapshots</primary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2283(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2291(title)
 msgid "Disable live snapshotting"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2284(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2292(para)
 msgid "If you use libvirt version <literal>1.2.2</literal>, you may experience intermittent problems with live snapshot creation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2288(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2296(para)
 msgid "To effectively disable the libvirt live snapshotting, until the problem is resolved, add the below setting to nova.conf."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2295(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2303(title)
 msgid "Ensuring Snapshots of Linux Guests Are Consistent"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2297(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2305(para)
 msgid "The following section is from Sébastien Han's <link xlink:href=\"http://www.sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/\" xlink:title=\"OpenStack Image service\">“OpenStack: Perform Consistent Snapshots” blog entry</link>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2302(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2310(para)
 msgid "A snapshot captures the state of the file system, but not the state of the memory. Therefore, to ensure your snapshot contains the data that you want, before your snapshot you need to ensure that:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2309(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2317(para)
 msgid "Running programs have written their contents to disk"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2313(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2321(para)
 msgid "The file system does not have any \"dirty\" buffers: where programs have issued the command to write to disk, but the operating system has not yet done the write"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2319(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2327(para)
 msgid "To ensure that important services have written their contents to disk (such as databases), we recommend that you read the documentation for those applications to determine what commands to issue to have them sync their contents to disk. If you are unsure how to do this, the safest approach is to simply stop these running services normally."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2326(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2334(para)
 msgid "To deal with the \"dirty\" buffer issue, we recommend using the sync command before snapshotting:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2331(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2339(para)
 msgid "Running <code>sync</code> writes dirty buffers (buffered blocks that have been modified but not written yet to the disk block) to disk."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2335(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2343(para)
 msgid "Just running <code>sync</code> is not enough to ensure that the file system is consistent. We recommend that you use the <code>fsfreeze</code> tool, which halts new access to the file system, and create a stable image on disk that is suitable for snapshotting. The <code>fsfreeze</code> tool supports several file systems, including ext3, ext4, and XFS. If your virtual machine instance is running on Ubuntu, install the util-linux package to get <literal>fsfreeze</literal>:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2345(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2353(para)
 msgid "In the very common case where the underlying snapshot is done via LVM, the filesystem freeze is automatically handled by LVM."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2352(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2360(para)
 msgid "If your operating system doesn't have a version of <literal>fsfreeze</literal> available, you can use <literal>xfs_freeze</literal> instead, which is available on Ubuntu in the xfsprogs package. Despite the \"xfs\" in the name, xfs_freeze also works on ext3 and ext4 if you are using a Linux kernel version 2.6.29 or greater, since it works at the virtual file system (VFS) level starting at 2.6.29. The xfs_freeze version supports the same command-line arguments as <literal>fsfreeze</literal>."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2361(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2369(para)
 msgid "Consider the example where you want to take a snapshot of a persistent block storage volume, detected by the guest operating system as <literal>/dev/vdb</literal> and mounted on <literal>/mnt</literal>. The fsfreeze command accepts two arguments:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2369(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2377(term)
 msgid "-f"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2372(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2380(para)
 msgid "Freeze the system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2377(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2385(term)
 msgid "-u"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2380(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2388(para)
 msgid "Thaw (unfreeze) the system"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2385(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2393(para)
 msgid "To freeze the volume in preparation for snapshotting, you would do the following, as root, inside the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2390(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2398(para)
 msgid "You <emphasis>must mount the file system</emphasis> before you run the <literal>fsfreeze</literal> command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2393(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2401(para)
 msgid "When the <literal>fsfreeze -f</literal> command is issued, all ongoing transactions in the file system are allowed to complete, new write system calls are halted, and other calls that modify the file system are halted. Most importantly, all dirty data, metadata, and log information are written to disk."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2399(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2407(para)
 msgid "Once the volume has been frozen, do not attempt to read from or write to the volume, as these operations hang. The operating system stops every I/O operation and any I/O attempts are delayed until the file system has been unfrozen."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2404(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2412(para)
 msgid "Once you have issued the <literal>fsfreeze</literal> command, it is safe to perform the snapshot. For example, if your instance was named <literal>mon-instance</literal> and you wanted to snapshot it to an image named <literal>mon-snapshot</literal>, you could now run the following:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2412(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2420(para)
 msgid "When the snapshot is done, you can thaw the file system with the following command, as root, inside of the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2417(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2425(para)
 msgid "If you want to back up the root file system, you can't simply run the preceding command because it will freeze the prompt. Instead, run the following one-liner, as root, inside the instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2423(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2431(para)
 msgid "After this command it is common practice to call <placeholder-1/> from your workstation, and once done press enter in your instance shell to unfreeze it. Obviously you could automate this, but at least it will let you properly synchronize."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2429(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2437(title)
 msgid "Ensuring Snapshots of Windows Guests Are Consistent"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2431(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2439(para)
 msgid "Obtaining consistent snapshots of Windows VMs is conceptually similar to obtaining consistent snapshots of Linux VMs, although it requires additional utilities to coordinate with a Windows-only subsystem designed to facilitate consistent backups."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2436(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2444(para)
 msgid "Windows XP and later releases include a Volume Shadow Copy Service (VSS) which provides a framework so that compliant applications can be consistently backed up on a live filesystem. To use this framework, a VSS requestor is run that signals to the VSS service that a consistent backup is needed. The VSS service notifies compliant applications (called VSS writers) to quiesce their data activity. The VSS service then tells the copy provider to create a snapshot. Once the snapshot has been made, the VSS service unfreezes VSS writers and normal I/O activity resumes."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2446(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2454(para)
 msgid "QEMU provides a guest agent that can be run in guests running on KVM hypervisors. This guest agent, on Windows VMs, coordinates with the Windows VSS service to facilitate a workflow which ensures consistent snapshots. This feature requires at least QEMU 1.7. The relevant guest agent commands are:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2454(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2462(term)
 msgid "guest-file-flush"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2456(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2464(para)
 msgid "Write out \"dirty\" buffers to disk, similar to the Linux <literal>sync</literal> operation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2462(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2470(term)
 msgid "guest-fsfreeze"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2464(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2472(para)
 msgid "Suspend I/O to the disks, similar to the Linux <literal>fsfreeze -f</literal> operation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2470(term)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2478(term)
 msgid "guest-fsfreeze-thaw"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2472(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2480(para)
 msgid "Resume I/O to the disks, similar to the Linux <literal>fsfreeze -u</literal> operation."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2478(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2486(para)
 msgid "To obtain snapshots of a Windows VM these commands can be scripted in sequence: flush the filesystems, freeze the filesystems, snapshot the filesystems, then unfreeze the filesystems. As with scripting similar workflows against Linux VMs, care must be used when writing such a script to ensure error handling is thorough and filesystems will not be left in a frozen state."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2491(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2499(title)
 msgid "Instances in the Database"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2493(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2501(para)
 msgid "While instance information is stored in a number of database tables, the table you most likely need to look at in relation to user instances is the instances table.<indexterm class=\"singular\"><primary>instances</primary><secondary>database information</secondary></indexterm><indexterm class=\"singular\"><primary>databases</primary><secondary>instance information in</secondary></indexterm><indexterm class=\"singular\"><primary>user training</primary><secondary>instances</secondary></indexterm>"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2509(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2517(para)
 msgid "The instances table carries most of the information related to both running and deleted instances. It has a bewildering array of fields; for an exhaustive list, look at the database. These are the most useful fields for operators looking to form queries:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2516(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2524(para)
 msgid "The <literal>deleted</literal> field is set to <literal>1</literal> if the instance has been deleted and <literal>NULL</literal> if it has not been deleted. This field is important for excluding deleted instances from your queries."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2523(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2531(para)
 msgid "The <literal>uuid</literal> field is the UUID of the instance and is used throughout other tables in the database as a foreign key. This ID is also reported in logs, the dashboard, and command-line tools to uniquely identify an instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2530(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2538(para)
 msgid "A collection of foreign keys are available to find relations to the instance. The most useful of these—<literal>user_id</literal> and <literal>project_id</literal>—are the UUIDs of the user who launched the instance and the project it was launched in."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2537(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2545(para)
 msgid "The <literal>host</literal> field tells which compute node is hosting the instance."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2542(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2550(para)
 msgid "The <literal>hostname</literal> field holds the name of the instance when it is launched. The display-name is initially the same as hostname but can be reset using the nova rename command."
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2548(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2556(para)
 msgid "A number of time-related fields are useful for tracking when state changes happened on an instance:"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2553(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2561(literal)
 msgid "created_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2557(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2565(literal)
 msgid "updated_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2561(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2569(literal)
 msgid "deleted_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2565(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2573(literal)
 msgid "scheduled_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2569(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2577(literal)
 msgid "launched_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2573(literal)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2581(literal)
 msgid "terminated_at"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2579(title)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2587(title)
 msgid "Good Luck!"
 msgstr ""
 
-#: ./doc/openstack-ops/ch_ops_user_facing.xml:2581(para)
+#: ./doc/openstack-ops/ch_ops_user_facing.xml:2589(para)
 msgid "This section was intended as a brief introduction to some of the most useful of many OpenStack commands. For an exhaustive list, please refer to the <link xlink:href=\"http://docs.openstack.org/user-guide-admin/\">Admin User Guide</link>, and for additional hints and tips, see the <link xlink:href=\"http://docs.openstack.org/admin-guide-cloud/\">Cloud Admin Guide</link>. We hope your users remain happy and recognize your hard work! (For more hard work, turn the page to the next chapter, where we discuss the system-facing operations: maintenance, failures and debugging.)"
 msgstr ""
 
