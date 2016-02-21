@@ -36,11 +36,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-02-01 07:26+0000\n"
+"POT-Creation-Date: 2016-02-16 22:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-02-09 06:40+0000\n"
+"PO-Revision-Date: 2016-02-21 12:46+0000\n"
 "Last-Translator: KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -5433,6 +5433,9 @@ msgstr ""
 
 msgid "Enabling IPv6 Support"
 msgstr "IPv6 サポートの有効化"
+
+msgid "Encode certificate in DER format"
+msgstr "証明書を DER 形式でエンコードします"
 
 msgid "Encryption set by…"
 msgstr "暗号化の設定 …"
@@ -12608,6 +12611,9 @@ msgstr ""
 msgid "Shutting Down a Storage Node"
 msgstr "ストレージノードのシャットダウン"
 
+msgid "Signature verification will occur when Compute boots the signed image"
+msgstr "Compute が署名付きイメージを起動するとき、署名が検証されます。"
+
 msgid ""
 "Similarly, if you have an existing cloud and are looking to upgrade from "
 "<literal>nova-network</literal> to OpenStack Networking, you should have the "
@@ -13140,17 +13146,6 @@ msgstr ""
 "<code>copy-from</code> オプションは、指定された位置から <code>/var/lib/"
 "glance/images</code> ディレクトリの中にコピーします。例に示されたように "
 "STDIN リダイレクションを使用するときに、同じことが実行されます。"
-
-msgid ""
-"The <code>glance image-create</code> command provides a large set of options "
-"for working with your image. For example, the <code>min-disk</code> option "
-"is useful for images that require root disks of a certain size (for example, "
-"large Windows images). To view these options, do:"
-msgstr ""
-"<code>glance image-create</code> コマンドでは、イメージに指定できる多数のオプ"
-"ションが用意されています。たとえば、<code>min-disk</code> オプションは、特定"
-"の容量のルートディスクを必要とするイメージ (例: 大きな Windows イメージ) のた"
-"めに有用です。これらのオプションを表示するには、次のようにします:"
 
 msgid ""
 "The <code>glance-api</code> part is an abstraction layer that allows a "
@@ -14491,6 +14486,9 @@ msgstr ""
 "sebastien-han.fr/blog/2012/12/10/openstack-perform-consistent-snapshots/\" "
 "xlink:title=\"OpenStack Image service\">“OpenStack: Perform Consistent "
 "Snapshots” ブログ記事</link>からの引用です。"
+
+msgid "The following signature properties are used: <placeholder-1/>"
+msgstr "以下の署名のプロパティーが使用されます。 <placeholder-1/>"
 
 msgid ""
 "The following steps described for Ubuntu have worked on at least one "
@@ -17961,6 +17959,13 @@ msgstr ""
 "ジョンのデータベースに戻す唯一の方法は、バックアップからリストアすることで"
 "す。"
 
+msgid "Upload Certificate in DER format to Castellan"
+msgstr "証明書を DER 形式で Castellan にアップロードします"
+
+msgid "Upload Image to Image service, with Signature Metadata"
+msgstr ""
+"署名のメタデータを付けて、イメージをイメージサービスにアップロードします"
+
 msgid "Upstream OpenStack"
 msgstr "OpenStack コミュニティー"
 
@@ -20395,6 +20400,24 @@ msgstr "image_type"
 
 msgid "images"
 msgstr "images"
+
+msgid "img_signature uses the signature called signature_64"
+msgstr "img_signature は signature_64 という署名を使用します"
+
+msgid ""
+"img_signature_certificate_uuid uses the value from cert_uuid in section 5 "
+"above"
+msgstr ""
+"img_signature_certificate_uuid は、上のセクション 5 にある cert_uuid の値を使"
+"用します"
+
+msgid "img_signature_hash_method matches 'SHA-256' in section 2 above"
+msgstr ""
+"img_signature_hash_method は、上のセクション 2 にある SHA-256 と一致します"
+
+msgid "img_signature_key_type matches 'RSA-PSS' in section 2 above"
+msgstr ""
+"img_signature_key_type は、上のセクション 2 にある RSA-PSS と一致します"
 
 msgid "injected-file-content-bytes"
 msgstr "injected-file-content-bytes"
