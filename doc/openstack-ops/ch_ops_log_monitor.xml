@@ -630,9 +630,12 @@ $ARG2$ -e</programlisting>
     <section xml:id="stacktach">
       <title>StackTach</title>
 
-      <para>StackTach is a tool created by Rackspace to collect and report the
-      notifications sent by <code>nova</code>. Notifications are essentially the
-      same as logs but can be much more detailed. A good overview of
+      <para>StackTach is a tool that collects and reports the notifications
+      sent by <code>nova</code>. Notifications are essentially the same as logs
+      but can be much more detailed. Nearly all OpenStack components are
+      capable of generating notifications when significant events occur.
+      Notifications are messages placed on the OpenStack queue (generally
+      RabbitMQ) for consumption by downstream systems. An overview of
       notifications can be found at <link xlink:href="https://wiki.openstack.org/wiki/SystemUsageData"
       xlink:title="System Usage Data">System Usage Data</link>.<indexterm
           class="singular">
@@ -650,12 +653,59 @@ $ARG2$ -e</programlisting>
 notification_driver=messagingv2</programlisting>
 
       <para>Once <code>nova</code> is sending notifications, install and
-      configure StackTach. Since StackTach is relatively new and constantly
-      changing, installation instructions would quickly become outdated. Please
-      refer to the <link xlink:href="https://git.openstack.org/cgit//openstack/stacktach">StackTach Git
-      repo</link> for instructions as well as a demo video. Additional details on the latest
-      developments can be discovered at the
-      <link xlink:href="http://stacktach.com/">official page</link></para>
+      configure StackTach. StackTach workers for Queue consumption and pipeling
+      processing are configured to read these notifications from RabbitMQ
+      servers and store them in a database. Users can inquire on instances,
+      requests and servers by using the browser interface or command line tool, <link xlink:href="https://github.com/rackerlabs/stacky">Stacky</link>.
+      Since StackTach is relatively new and constantly changing, installation
+      instructions quickly become outdated. Please refer to the <link xlink:href="https://git.openstack.org/cgit//openstack/stacktach">StackTach Git repo</link> for instructions as well as a
+      demo video. Additional details on the latest developments can be
+      discovered at the<link xlink:href="http://stacktach.com/">official page</link></para>
+    </section>
+    <section xml:id="Logstash">
+      <title>Logstash</title>
+      <para>
+      Logstash is a high performance indexing and search engine for logs. Logs
+      from Jenkins test runs are sent to logstash where they are indexed and
+      stored. Logstash facilitates reviewing logs from multiple sources in a
+      single test run, searching for errors or particular events within a test
+      run, and searching for log event trends across test runs.</para>
+      <para>
+      There are four major layers in Logstash setup which are
+      <itemizedlist>
+      <listitem>
+      <para>Log Pusher</para>
+      </listitem>
+      <listitem>
+      <para>Log Indexer</para>
+      </listitem>
+      <listitem>
+      <para>ElasticSearch</para>
+      </listitem>
+      <listitem>
+      <para>Kibana</para>
+      </listitem>
+      </itemizedlist>
+      Each layer scales horizontally. As the number of logs grows you can add
+      more log pushers, more Logstash indexers, and more ElasticSearch nodes.
+      </para>
+      <para>
+      Logpusher is a pair of Python scripts which first listens to Jenkins
+      build events and converts them into Gearman jobs. Gearman provides a
+      generic application framework to farm out work to other machines or
+      processes that are better suited to do the work. It allows you to do work
+      in parallel, to load balance processing, and to call functions between
+      languages.Later Logpusher performs Gearman jobs to push log files into
+      logstash. Logstash indexer reads these log events, filters them to remove
+      unwanted lines, collapse multiple events together, and parses useful
+      information before shipping them to ElasticSearch for storage and
+      indexing. Kibana is a logstash oriented web client for ElasticSearch.<indexterm class="singular">
+      <primary>Logstash</primary>
+        </indexterm><indexterm class="singular">
+          <primary>logging/monitoring</primary>
+
+          <secondary>Logstash</secondary>
+        </indexterm></para>
     </section>
 
     <section xml:id="metering_telemetry">
