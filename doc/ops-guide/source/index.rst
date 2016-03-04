@@ -1,4 +1,4 @@
-﻿==========================
+==========================
 OpenStack Operations Guide
 ==========================
 
@@ -7,9 +7,6 @@ Abstract
 
 This book provides information about designing and operating OpenStack clouds.
 
-.. warning:: This guide is a work-in-progress and changing rapidly
-   while we continue to test and enhance this guide. Please note
-   where there are open "to do" items and help where you are able.
 
 Contents
 ~~~~~~~~
@@ -17,12 +14,13 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   common/conventions.rst
-
+   acknowledgements.rst
+   preface_ops.rst
+   part_architecture.rst
+   part_operations.rst
+   app_usecases.rst
+   app_crypt.rst
+   app_roadmaps.rst
+   ch_ops_resources.rst
    common/app_support.rst
    common/glossary.rst
-
-Search in this guide
-~~~~~~~~~~~~~~~~~~~~
-
-* :ref:`search`
