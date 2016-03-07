@@ -36,11 +36,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-02-16 22:13+0000\n"
+"POT-Creation-Date: 2016-03-03 21:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-02-21 12:46+0000\n"
+"PO-Revision-Date: 2016-03-07 04:44+0000\n"
 "Last-Translator: KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -4738,6 +4738,9 @@ msgstr "OpenStack 開発環境の作成"
 msgid "Create and bring up a dummy interface, <code>snooper0</code>:"
 msgstr "ダミーインターフェース <code>snooper0</code> を作成して起動します。"
 
+msgid "Create context"
+msgstr "コンテキストの作成"
+
 msgid ""
 "Create mirror of <code>patch-tun</code> to <code>snooper0</code> (returns "
 "UUID of mirror port):"
@@ -6326,6 +6329,9 @@ msgstr "一般的なセキュリティグループの設定"
 
 msgid "General list"
 msgstr "一般向けメーリングリスト"
+
+msgid "Generate signature of image and convert it to a base64 representation:"
+msgstr "イメージの署名を生成して、base64 形式に変換します。"
 
 msgid "Generic rules"
 msgstr "一般的なルール"
@@ -11128,6 +11134,9 @@ msgstr "OpenStack 固有のリソース"
 msgid "OpenStack.org case study"
 msgstr "OpenStack.org ケーススタディー"
 
+msgid "Operate with consistency groups"
+msgstr "一貫性グループの操作"
+
 msgid "Operating with a share"
 msgstr "共有の運用"
 
@@ -12611,6 +12620,22 @@ msgstr ""
 msgid "Shutting Down a Storage Node"
 msgstr "ストレージノードのシャットダウン"
 
+msgid "Signature hash method = SHA-256"
+msgstr "署名のハッシュ方法 = SHA-256"
+
+msgid "Signature hash methods: SHA-224, SHA-256, SHA-384, and SHA-512"
+msgstr "署名のハッシュ方法: SHA-224、SHA-256、SHA-384、SHA-512"
+
+msgid "Signature key type = RSA-PSS"
+msgstr "署名の鍵形式 = RSA-PSS"
+
+msgid ""
+"Signature key types: DSA, ECC_SECT571K1, ECC_SECT409K1, ECC_SECT571R1, "
+"ECC_SECT409R1, ECC_SECP521R1, ECC_SECP384R1, and RSA-PSS"
+msgstr ""
+"署名の鍵形式: DSA、ECC_SECT571K1、ECC_SECT409K1、ECC_SECT571R1、"
+"ECC_SECT409R1、ECC_SECP521R1、ECC_SECP384R1、RSA-PSS"
+
 msgid "Signature verification will occur when Compute boots the signed image"
 msgstr "Compute が署名付きイメージを起動するとき、署名が検証されます。"
 
@@ -12799,25 +12824,6 @@ msgstr "既存のユーザまたはテナントのクォータを表示します
 
 msgid "StackTach"
 msgstr "StackTach"
-
-msgid ""
-"StackTach is a tool created by Rackspace to collect and report the "
-"notifications sent by <code>nova</code>. Notifications are essentially the "
-"same as logs but can be much more detailed. A good overview of notifications "
-"can be found at <link xlink:href=\"https://wiki.openstack.org/wiki/"
-"SystemUsageData\" xlink:title=\"System Usage Data\">System Usage Data</link>."
-"<indexterm class=\"singular\"><primary>StackTach</primary></"
-"indexterm><indexterm class=\"singular\"><primary>logging/monitoring</"
-"primary><secondary>StackTack tool</secondary></indexterm>"
-msgstr ""
-"StackTachはRackspaceによって作られたツールで、<code>nova</code>から送られた通"
-"知を収集してレポートします。通知は本質的にはログと同じですが、より詳細な情報"
-"を持ちます。通知の概要のよい資料は、<link xlink:href=\"https://wiki."
-"openstack.org/wiki/SystemUsageData\" xlink:title=\"System Usage Data"
-"\">System Usage Data</link> にあります。<indexterm class=\"singular"
-"\"><primary>StackTach</primary></indexterm><indexterm class=\"singular"
-"\"><primary>logging/monitoring</primary><secondary>StackTack tool</"
-"secondary></indexterm>"
 
 msgid "Standard VLAN number limitation."
 msgstr "標準的な VLAN 数の上限。"
@@ -14442,6 +14448,16 @@ msgstr ""
 "されていますが、必須項目ではありません。<placeholder-1/>"
 
 msgid ""
+"The following implicit values are being used to create the signature in this "
+"example: <placeholder-1/>"
+msgstr ""
+"以下の暗黙的な値が、この例において署名を作成するために使用されます。 "
+"<placeholder-1/>"
+
+msgid "The following options are currently supported: <placeholder-1/>"
+msgstr "以下のオプションが現在サポートされます。 <placeholder-1/>"
+
+msgid ""
 "The following people have contributed to this book: Akihiro Motoki, "
 "Alejandro Avella, Alexandra Settle, Andreas Jaeger, Andy McCallum, Benjamin "
 "Stassart, Chandan Kumar, Chris Ricker, David Cramer, David Wittman, Denny "
@@ -14673,6 +14689,17 @@ msgstr ""
 "トや、共有ストレージのライブマイグレーションのサポートを提供したり、エンド"
 "ユーザーに個別サービスとして提供したりするためです。単一システムでオブジェク"
 "トとファイルストレージを管理する場合は、GFO の使用を検討してください。"
+
+msgid ""
+"The maximum port number in the range that is matched by the security group "
+"rule. The <literal>port_range_min</literal> attribute constrains the "
+"<literal>port_range_max</literal> attribute. If the protocol is ICMP or "
+"ICMPv6, this value must be an ICMP or ICMPv6 type, respectively."
+msgstr ""
+"セキュリティグループルールに一致する、ポート番号の範囲の最大値。"
+"<literal>port_range_min</literal> 属性が <literal>port_range_max</literal> 属"
+"性を制限します。プロトコルが ICMP または ICMPv6 の場合、この値はそれぞれ "
+"ICMP コードまたは ICMPv6 コードでなければいけません。"
 
 msgid ""
 "The most important step is the pre-upgrade testing. If you are upgrading "
@@ -18005,6 +18032,9 @@ msgstr ""
 "ずあなたがインスタンス上で、google.comのような外部ホストにpingできるのであれ"
 "ば、ネットワークの問題はないでしょう。"
 
+msgid "Use private key to create a signature of the image"
+msgstr "秘密鍵を使用したイメージ署名の作成"
+
 msgid "Use security services"
 msgstr "セキュリティサービスを指定する。"
 
@@ -20523,6 +20553,13 @@ msgstr "nova-manage"
 
 msgid "nova-network"
 msgstr "nova-network"
+
+msgid ""
+"or the <link xlink:href=\"http://docs.openstack.org/cli-reference/glance.html"
+"\">Command-Line Interface Reference </link>."
+msgstr ""
+"または <link xlink:href=\"http://docs.openstack.org/cli-reference/glance.html"
+"\">Command-Line Interface Reference </link>。"
 
 msgid "port_range_max"
 msgstr "port_range_max"
