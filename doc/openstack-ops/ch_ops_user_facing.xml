@@ -2231,7 +2231,7 @@ Optional snapshot description. (Default=None)</programlisting>
     <title>Attaching Block Storage</title>
 
     <para>You can attach block storage to instances from the dashboard on the
-    <guilabel>Volumes</guilabel> page. Click the <guibutton>Edit
+    <guilabel>Volumes</guilabel> page. Click the <guibutton>Manage
     Attachments</guibutton> action next to the volume you want to
     attach.<indexterm class="singular">
         <primary>storage</primary>
