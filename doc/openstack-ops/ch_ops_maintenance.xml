@@ -562,6 +562,17 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
       <programlisting><?db-font-size 65%?>mysql&gt; update instances set host = 'c02.example.com' where host = \
        'c01.example.com' and deleted = 0;</programlisting>
 
+      <para>If you're using the Networking service ML2 plug-in, update the
+      Networking service database to indicate that all ports that
+      used to be hosted on c01.example.com are now hosted on
+      c02.example.com:</para>
+
+      <programlisting><?db-font-size 65%?>mysql&gt; update ml2_port_bindings set host = 'c02.example.com' where host = \
+       'c01.example.com';</programlisting>
+
+      <programlisting><?db-font-size 65%?>mysql&gt; update ml2_port_binding_levels set host = 'c02.example.com' where host = \
+       'c01.example.com';</programlisting>
+
       <para>After that, use the <literal>nova</literal> command to reboot all
       instances that were on c01.example.com while regenerating their XML
       files at the same time:</para>
