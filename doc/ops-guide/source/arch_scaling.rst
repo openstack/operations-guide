@@ -87,6 +87,11 @@ and require 80 TB of storage for ``/var/lib/nova/instances``:
 -  Default CPU overcommit ratio (``cpu_allocation_ratio`` in nova.conf)
    of 16:1.
 
+.. note::
+   Regardless of the overcommit ratio, an instance can not be placed
+   on any physical node with fewer raw (pre-overcommit) resources than
+   instance flavor requires.
+
 However, you need more than the core count alone to estimate the load
 that the API services, database servers, and queue servers are likely to
 encounter. You must also consider the usage patterns of your cloud.

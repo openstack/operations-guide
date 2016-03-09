@@ -186,6 +186,12 @@
       </listitem>
     </itemizedlist>
 
+    <note>
+     <para>Regardless of the overcommit ratio, an instance can not be placed
+           on any physical node with fewer raw (pre-overcommit) resources than
+           instance flavor requires.</para>
+    </note>
+
     <para>However, you need more than the core count alone to estimate the
     load that the API services, database servers, and queue servers are likely
     to encounter. You must also consider the usage patterns of your
