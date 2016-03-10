@@ -21,14 +21,14 @@ if [ -z "$DOCNAME" ] ; then
 fi
 
 # We're not doing anything for this directory.
-if [[ "$DOCNAME" = "common-rst" ]] ; then
+if [[ "$DOCNAME" = "common" ]] ; then
     exit 0
 fi
 
 rm -f doc/$DOCNAME/source/locale/$DOCNAME.pot
 sphinx-build -b gettext doc/$DOCNAME/source/ doc/$DOCNAME/source/locale/
 
-# common-rst is translated as part of openstack-manuals, do not
+# common is translated as part of openstack-manuals, do not
 # include the file in the combined tree.
 rm doc/$DOCNAME/source/locale/common.pot
 
