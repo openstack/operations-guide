@@ -765,6 +765,10 @@ Accept-Ranges: bytes</computeroutput></screen>
       <listitem>
         <para>Role</para>
       </listitem>
+
+      <listitem>
+        <para>Enabled</para>
+      </listitem>
     </itemizedlist>
 
     <para>Username and email address are self-explanatory, though your site
