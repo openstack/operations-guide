@@ -7,13 +7,11 @@ flavors, from very small private clouds to large public clouds. To
 achieve this, the developers add configuration options to their code
 that allow the behavior of the various components to be tweaked
 depending on your needs. Unfortunately, it is not possible to cover all
-possible deployments with the default configuration values.advanced
-configuration configuration optionsconfiguration options wide
-availability of
+possible deployments with the default configuration values.
 
 At the time of writing, OpenStack has more than 3,000 configuration
-options. You can see them documented at `the OpenStack configuration
-reference
+options. You can see them documented at the
+`OpenStack configuration reference
 guide <http://docs.openstack.org/liberty/config-reference/content/config_overview.html>`_.
 This chapter cannot hope to document all of these, but we do try to
 introduce the important concepts so that you know where to go digging
@@ -27,18 +25,17 @@ drivers will implement its own configuration options. For example, in
 OpenStack Compute (nova), there are various hypervisor drivers
 implemented—libvirt, xenserver, hyper-v, and vmware, for example. Not
 all of these hypervisor drivers have the same features, and each has
-different tuning requirements.hypervisors differences betweendrivers
-differences between
+different tuning requirements.
 
 .. note::
 
-    The currently implemented hypervisors are listed on `the OpenStack
-    documentation
-    website <http://docs.openstack.org/liberty/config-reference/content/section_compute-hypervisors.html>`_.
-    You can see a matrix of the various features in OpenStack Compute
-    (nova) hypervisor drivers on the OpenStack wiki at `the Hypervisor
-    support matrix
-    page <http://docs.openstack.org/developer/nova/support-matrix.html>`_.
+   The currently implemented hypervisors are listed on the `OpenStack
+   documentation
+   website <http://docs.openstack.org/liberty/config-reference/content/section_compute-hypervisors.html>`_.
+   You can see a matrix of the various features in OpenStack Compute
+   (nova) hypervisor drivers on the OpenStack wiki at the `Hypervisor
+   support matrix
+   page <http://docs.openstack.org/developer/nova/support-matrix.html>`_.
 
 The point we are trying to make here is that just because an option
 exists doesn't mean that option is relevant to your driver choices.
@@ -52,15 +49,13 @@ Another common concept across various OpenStack projects is that of
 periodic tasks. Periodic tasks are much like cron jobs on traditional
 Unix systems, but they are run inside an OpenStack process. For example,
 when OpenStack Compute (nova) needs to work out what images it can
-remove from its local cache, it runs a periodic task to do this.periodic
-tasksconfiguration options periodic task implementation
+remove from its local cache, it runs a periodic task to do this.
 
 Periodic tasks are important to understand because of limitations in the
 threading model that OpenStack uses. OpenStack uses cooperative
 threading in Python, which means that if something long and complicated
 is running, it will block other tasks inside that process from running
-unless it voluntarily yields execution to another cooperative
-thread.cooperative threading
+unless it voluntarily yields execution to another cooperative thread.
 
 A tangible example of this is the ``nova-compute`` process. In order to
 manage the image cache with libvirt, ``nova-compute`` has a periodic
@@ -121,21 +116,20 @@ consider tuning. It is by no means an exhaustive list.
 Security Configuration for Compute, Networking, and Storage
 -----------------------------------------------------------
 
-The *`OpenStack Security Guide <http://docs.openstack.org/sec/>`_*
+The `OpenStack Security Guide <http://docs.openstack.org/sec/>`_
 provides a deep dive into securing an OpenStack cloud, including
 SSL/TLS, key management, PKI and certificate management, data transport
-and privacy concerns, and compliance.security issues configuration
-optionsconfiguration options security
+and privacy concerns, and compliance.
 
 High Availability
 -----------------
 
-The *`OpenStack High Availability
-Guide <http://docs.openstack.org/ha-guide/index.html>`_* offers
+The `OpenStack High Availability
+Guide <http://docs.openstack.org/ha-guide/index.html>`_ offers
 suggestions for elimination of a single point of failure that could
 cause system downtime. While it is not a completely prescriptive
 document, it offers methods and techniques for avoiding downtime and
-data loss.high availabilityconfiguration options high availability
+data loss.
 
 Enabling IPv6 Support
 ---------------------
@@ -165,6 +159,5 @@ handle the additional request and response load between zones as you add
 more zones and build a ring that handles more zones. Refer to
 `Geographically Distributed
 Clusters <http://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters>`_
-in the documentation for additional information.Object Storage
-geographical considerationsstorage geographical
-considerationsconfiguration options geographical storage considerations
+in the documentation for additional information.
+
