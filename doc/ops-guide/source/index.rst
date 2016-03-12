@@ -17,10 +17,10 @@ Contents
    acknowledgements.rst
    preface_ops.rst
    part_architecture.rst
-   part_operations.rst
+   operations.rst
    app_usecases.rst
    app_crypt.rst
    app_roadmaps.rst
-   ch_ops_resources.rst
+   app_resources.rst
    common/app_support.rst
    common/glossary.rst
