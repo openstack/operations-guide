@@ -5,16 +5,16 @@ Provisioning and Deployment
 A critical part of a cloud's scalability is the amount of effort that it
 takes to run your cloud. To minimize the operational cost of running
 your cloud, set up and use an automated deployment and configuration
-infrastructure with a configuration management system, such as Puppet or
-Chef. Combined, these systems greatly reduce manual effort and the
-chance for operator error.cloud computing minimizing costs of
+infrastructure with a configuration management system, such as :term:`Puppet`
+or :term:`Chef`. Combined, these systems greatly reduce manual effort and the
+chance for operator error.
 
 This infrastructure includes systems to automatically install the
 operating system's initial configuration and later coordinate the
 configuration of all services automatically and centrally, which reduces
 both manual effort and the chance for error. Examples include Ansible,
 CFEngine, Chef, Puppet, and Salt. You can even use OpenStack to deploy
-OpenStack, named TripleO (OpenStack On OpenStack).PuppetChef
+OpenStack, named TripleO (OpenStack On OpenStack).
 
 Automated Deployment
 ~~~~~~~~~~~~~~~~~~~~
@@ -24,8 +24,7 @@ on new servers, without intervention, after the absolute minimum amount
 of manual work, including physical racking, MAC-to-IP assignment, and
 power configuration. Typically, solutions rely on wrappers around PXE
 boot and TFTP servers for the basic operating system install and then
-hand off to an automated configuration management system.deployment
-provisioning/deploymentprovisioning/deployment automated deployment
+hand off to an automated configuration management system.
 
 Both Ubuntu and Red Hat Enterprise Linux include mechanisms for
 configuring the operating system, including preseed and kickstart, that
@@ -48,8 +47,7 @@ Disk Partitioning and RAID
 --------------------------
 
 At the very base of any operating system are the hard drives on which
-the operating system (OS) is installed.RAID (redundant array of
-independent disks)partitions disk partitioningdisk partitioning
+the operating system (OS) is installed.
 
 You must complete the following configurations on the server's hard
 drives:
@@ -66,10 +64,10 @@ The simplest option to get started is to use one hard drive with two
 partitions:
 
 -  File system to store files and directories, where all the data lives,
-   including the root partition that starts and runs the system
+   including the root partition that starts and runs the system.
 
 -  Swap space to free up memory for processes, as an independent area of
-   the physical disk used only for swapping and nothing else
+   the physical disk used only for swapping and nothing else.
 
 RAID is not used in this simplistic one-drive setup because generally
 for production clouds, you want to ensure that if one disk fails,
@@ -80,7 +78,7 @@ We recommend that you choose one of the following multiple disk options:
 
 Option 1
     Partition all drives in the same way in a horizontal fashion, as
-    shown in ?.
+    shown in :ref:`partition_setup`.
 
     With this option, you can assign different partitions to different
     RAID arrays. You can allocate partition 1 of disk one and two to the
@@ -88,7 +86,10 @@ Option 1
     the root partition mirror. You can use partition 3 of all disks for
     a ``cinder-volumes`` LVM partition running on a RAID 10 array.
 
+    .. _partition_setup:
+
     .. image:: figures/osog_0201.png
+
 
     While you might end up with unused partitions, such as partition 1
     in disk three and four of this example, this option allows for
@@ -115,7 +116,7 @@ Option 3
    example, MIT uses `Fully Automatic Installation
    (FAI) <http://fai-project.org/>`_ to do the initial PXE-based
    partition and then install using a combination of min/max and
-   percentage-based partitioning.Fully Automatic Installation (FAI)
+   percentage-based partitioning.
 
 As with most architecture choices, the right answer depends on your
 environment. If you are using existing hardware, you know the disk
@@ -148,8 +149,7 @@ Network Configuration
 
 Network configuration is a very large topic that spans multiple areas of
 this book. For now, make sure that your servers can PXE boot and
-successfully communicate with the deployment server.networks
-configuration of
+successfully communicate with the deployment server.
 
 For example, you usually cannot configure NICs for VLANs when PXE
 booting. Additionally, you usually cannot PXE boot with bonded NICs. If
@@ -165,8 +165,7 @@ You want to maintain consistency in your deployments so that you can
 have the same cloud every time, repeatably. Proper use of automatic
 configuration-management tools ensures that components of the cloud
 systems are in particular states, in addition to simplifying deployment,
-and configuration change propagation.automated
-configurationprovisioning/deployment automated configuration
+and configuration change propagation.
 
 These tools also make it possible to test and roll back changes, as they
 are fully repeatable. Conveniently, a large body of work has been done
@@ -192,8 +191,7 @@ Remote Management
 In our experience, most operators don't sit right next to the servers
 running the cloud, and many don't necessarily enjoy visiting the data
 center. OpenStack should be entirely remotely configurable, but
-sometimes not everything goes according to plan.provisioning/deployment
-remote management
+sometimes not everything goes according to plan.
 
 In this instance, having an out-of-band access into nodes running
 OpenStack components is a boon. The IPMI protocol is the de facto
