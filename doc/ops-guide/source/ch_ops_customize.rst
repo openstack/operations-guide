@@ -2,10 +2,8 @@
 Customization
 =============
 
->>>>>>> 8f1a44b... Ops guide rst conversion
 OpenStack might not do everything you need it to do out of the box. To
-add a new feature, you can follow different paths.customization paths
-available
+add a new feature, you can follow different paths.
 
 To take the first path, you can modify the OpenStack code directly.
 Learn `how to
@@ -18,7 +16,7 @@ integration with an existing project. The community is always open to
 contributions and welcomes new functionality that follows the
 feature-development guidelines. This path still requires you to use
 DevStack for testing your feature additions, so this chapter walks you
-through the DevStack environment.OpenStack community customization and
+through the DevStack environment.
 
 For the second path, you can write new features and plug them in using
 changes to a configuration file. If the project where your feature would
@@ -41,139 +39,141 @@ Create an OpenStack Development Environment
 To create a development environment, you can use DevStack. DevStack is
 essentially a collection of shell scripts and configuration files that
 builds an OpenStack development environment for you. You use it to
-create such an environment for developing a new feature.customization
-development environment creation fordevelopment environments,
-creatingDevStack development environment creation
+create such an environment for developing a new feature.
 
 You can find all of the documentation at the
 `DevStack <http://docs.openstack.org/developer/devstack/>`_ website.
 
-Boot an instance from the dashboard or the nova command-line interface
-(CLI) with the following parameters:
+**To run DevStack on an instance in your OpenStack cloud:**
 
--  Name: devstack
+#. Boot an instance from the dashboard or the nova command-line interface
+   (CLI) with the following parameters:
 
--  Image: Ubuntu 14.04 LTS
+   -  Name: devstack
 
--  Memory Size: 4 GB RAM
+   -  Image: Ubuntu 14.04 LTS
 
--  Disk Size: minimum 5 GB
+   -  Memory Size: 4 GB RAM
 
-If you are using the ``nova`` client, specify ``--flavor 3`` for the
-``nova boot`` command to get adequate memory and disk sizes.
+   -  Disk Size: minimum 5 GB
 
-Log in and set up DevStack. Here's an example of the commands you can
-use to set up DevStack on a virtual machine:
+   If you are using the ``nova`` client, specify :option:`--flavor 3` for the
+   :command:`nova boot` command to get adequate memory and disk sizes.
 
-Log in to the instance:
+#. Log in and set up DevStack. Here's an example of the commands you can
+   use to set up DevStack on a virtual machine:
 
-::
+   #. Log in to the instance:
 
-    $ ssh username@my.instance.ip.address
+      .. code-block:: console
 
-Update the virtual machine's operating system:
+         $ ssh username@my.instance.ip.address
 
-::
+   #. Update the virtual machine's operating system:
 
-    # apt-get -y update
+      .. code-block:: console
 
-Install git:
+         # apt-get -y update
 
-::
+   #. Install git:
 
-    # apt-get -y install git
+      .. code-block:: console
 
-Clone the ``devstack`` repository:
+         # apt-get -y install git
 
-::
+   #. Clone the ``devstack`` repository:
 
-    $ git clone https://git.openstack.org/openstack-dev/devstack
+      .. code-block:: console
 
-Change to the ``devstack`` repository:
+         $ git clone https://git.openstack.org/openstack-dev/devstack
 
-::
+   #. Change to the ``devstack`` repository:
 
-    $ cd devstack
+      .. code-block:: console
 
-(Optional) If you've logged in to your instance as the root user, you
-must create a "stack" user; otherwise you'll run into permission issues.
-If you've logged in as a user other than root, you can skip these steps:
+         $ cd devstack
 
-Run the DevStack script to create the stack user:
+#. (Optional) If you've logged in to your instance as the root user, you
+   must create a "stack" user; otherwise you'll run into permission issues.
+   If you've logged in as a user other than root, you can skip these steps:
 
-::
+   #. Run the DevStack script to create the stack user:
 
-    # tools/create-stack-user.sh
+      .. code-block:: console
 
-Give ownership of the ``devstack`` directory to the stack user:
+         # tools/create-stack-user.sh
 
-::
+   #. Give ownership of the ``devstack`` directory to the stack user:
 
-    # chown -R stack:stack /root/devstack
+      .. code-block:: console
 
-Set some permissions you can use to view the DevStack screen later:
+         # chown -R stack:stack /root/devstack
 
-::
+   #. Set some permissions you can use to view the DevStack screen later:
 
-    # chmod o+rwx /dev/pts/0
+      .. code-block:: console
 
-Switch to the stack user:
+         # chmod o+rwx /dev/pts/0
 
-::
+   #. Switch to the stack user:
 
-    $ su stack
+      .. code-block:: console
 
-Edit the ``local.conf`` configuration file that controls what DevStack
-will deploy. Copy the example ``local.conf`` file at the end of this
-section (`example\_title <#local.conf>`__):
+         $ su stack
 
-::
+#. Edit the ``local.conf`` configuration file that controls what DevStack
+   will deploy. Copy the example ``local.conf`` file at the end of this
+   section (:ref:`local.conf`):
 
-    $ vim local.conf
+   .. code-block:: console
 
-Run the stack script that will install OpenStack:
+      $ vim local.conf
 
-::
+#. Run the stack script that will install OpenStack:
 
-    $ ./stack.sh
+   .. code-block:: console
 
-When the stack script is done, you can open the screen session it
-started to view all of the running OpenStack services:
+      $ ./stack.sh
 
-::
+#. When the stack script is done, you can open the screen session it
+   started to view all of the running OpenStack services:
 
-    $ screen -r stack
+   .. code-block:: console
 
-Press +Ctrl+ +A+ followed by 0 to go to the first ``screen`` window.
+      $ screen -r stack
+
+#. Press ``Ctrl+A`` followed by 0 to go to the first ``screen`` window.
 
 .. note::
 
-    -  The ``stack.sh`` script takes a while to run. Perhaps you can
-       take this opportunity to `join the OpenStack
-       Foundation <https://www.openstack.org/join/>`__.
+   -  The ``stack.sh`` script takes a while to run. Perhaps you can
+      take this opportunity to `join the OpenStack
+      Foundation <https://www.openstack.org/join/>`__.
 
-    -  ``Screen`` is a useful program for viewing many related services
-       at once. For more information, see the `GNU screen quick
-       reference <http://aperiodic.net/screen/quick_reference>`__.
+   -  ``Screen`` is a useful program for viewing many related services
+      at once. For more information, see the `GNU screen quick
+      reference <http://aperiodic.net/screen/quick_reference>`__.
 
 Now that you have an OpenStack development environment, you're free to
 hack around without worrying about damaging your production deployment.
-`example\_title <#local.conf>`__ provides a working environment for
+:ref:`local.conf` provides a working environment for
 running OpenStack Identity, Compute, Block Storage, Image service, the
 OpenStack dashboard, and Object Storage as the starting point.
 
-.. code:: bash
+.. _local.conf:
 
-    [[local|localrc]]
-    FLOATING_RANGE=192.168.1.224/27
-    FIXED_RANGE=10.11.12.0/24
-    FIXED_NETWORK_SIZE=256
-    FLAT_INTERFACE=eth0
-    ADMIN_PASSWORD=supersecret
-    DATABASE_PASSWORD=iheartdatabases
-    RABBIT_PASSWORD=flopsymopsy
-    SERVICE_PASSWORD=iheartksl
-    SERVICE_TOKEN=xyzpdqlazydog
+.. code-block:: bash
+
+   [[local|localrc]]
+   FLOATING_RANGE=192.168.1.224/27
+   FIXED_RANGE=10.11.12.0/24
+   FIXED_NETWORK_SIZE=256
+   FLAT_INTERFACE=eth0
+   ADMIN_PASSWORD=supersecret
+   DATABASE_PASSWORD=iheartdatabases
+   RABBIT_PASSWORD=flopsymopsy
+   SERVICE_PASSWORD=iheartksl
+   SERVICE_TOKEN=xyzpdqlazydog
 
 Customizing Object Storage (Swift) Middleware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -184,10 +184,7 @@ introduction to its architecture is `A Do-It-Yourself
 Framework <http://pythonpaste.org/do-it-yourself-framework.html>`_.
 Because of the swift project's use of this framework, you are able to
 add features to a project by placing some custom code in a project's
-pipeline without having to change any of the core code.Paste
-frameworkPythonswift swift middlewareObject Storage customization
-ofcustomization Object StorageDevStack customizing Object Storage
-(swift)
+pipeline without having to change any of the core code.
 
 Imagine a scenario where you have public access to one of your
 containers, but what you really want is to restrict access to that to a
@@ -199,23 +196,22 @@ container's metadata will be able to access the container.
 
 .. warning::
 
-    This example is for illustrative purposes only. It should not be
-    used as a container IP whitelist solution without further
-    development and extensive security testing.security issues
-    middleware example
+   This example is for illustrative purposes only. It should not be
+   used as a container IP whitelist solution without further
+   development and extensive security testing.
 
 When you join the screen session that ``stack.sh`` starts with
 ``screen -r stack``, you see a screen for each service running, which
 can be a few or several, depending on how many services you configured
 DevStack to run.
 
-The asterisk \* indicates which screen window you are viewing. This
+The asterisk * indicates which screen window you are viewing. This
 example shows we are viewing the key (for keystone) screen window:
 
 
-::
+.. code-block:: console
 
-    0$ shell  1$ key*  2$ horizon  3$ s-proxy  4$ s-object  5$ s-container  6$ s-account
+   0$ shell  1$ key*  2$ horizon  3$ s-proxy  4$ s-object  5$ s-container  6$ s-account
 
 The purpose of the screen windows are as follows:
 
@@ -232,275 +228,278 @@ The purpose of the screen windows are as follows:
 ``s-{name}``
     The swift services
 
+**To create the middleware and plug it in through Paste configuration:**
+
 All of the code for OpenStack lives in ``/opt/stack``. Go to the swift
 directory in the ``shell`` screen and edit your middleware module.
 
-Change to the directory where Object Storage is installed:
-
-::
-
-    $ cd /opt/stack/swift
-
-Create the ``ip_whitelist.py`` Python source code file:
-
-::
-
-    $ vim swift/common/middleware/ip_whitelist.py
-
-Copy the code in `example\_title <#ip_whitelist>`__ into
-``ip_whitelist.py``. The following code is a middleware example that
-restricts access to a container based on IP address as explained at the
-beginning of the section. Middleware passes the request on to another
-application. This example uses the swift "swob" library to wrap Web
-Server Gateway Interface (WSGI) requests and responses into objects for
-swift to interact with. When you're done, save and close the file.
-
-.. code:: python
-
-    # vim: tabstop=4 shiftwidth=4 softtabstop=4
-    # Copyright (c) 2014 OpenStack Foundation
-    # All Rights Reserved.
-    #
-    #    Licensed under the Apache License, Version 2.0 (the "License"); you may
-    #    not use this file except in compliance with the License. You may obtain
-    #    a copy of the License at
-    #
-    #         http://www.apache.org/licenses/LICENSE-2.0
-    #
-    #    Unless required by applicable law or agreed to in writing, software
-    #    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-    #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-    #    License for the specific language governing permissions and limitations
-    #    under the License.
-
-    import socket
+#. Change to the directory where Object Storage is installed:
+
+   .. code-block:: console
+
+      $ cd /opt/stack/swift
+
+#. Create the ``ip_whitelist.py`` Python source code file:
+
+   .. code-block:: console
+
+      $ vim swift/common/middleware/ip_whitelist.py
+
+#. Copy the code as shown below into ``ip_whitelist.py``.
+   The following code is a middleware example that
+   restricts access to a container based on IP address as explained at the
+   beginning of the section. Middleware passes the request on to another
+   application. This example uses the swift "swob" library to wrap Web
+   Server Gateway Interface (WSGI) requests and responses into objects for
+   swift to interact with. When you're done, save and close the file.
+
+   .. code-block:: python
+
+      # vim: tabstop=4 shiftwidth=4 softtabstop=4
+      # Copyright (c) 2014 OpenStack Foundation
+      # All Rights Reserved.
+      #
+      #    Licensed under the Apache License, Version 2.0 (the "License"); you may
+      #    not use this file except in compliance with the License. You may obtain
+      #    a copy of the License at
+      #
+      #         http://www.apache.org/licenses/LICENSE-2.0
+      #
+      #    Unless required by applicable law or agreed to in writing, software
+      #    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+      #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+      #    License for the specific language governing permissions and limitations
+      #    under the License.
 
-    from swift.common.utils import get_logger
-    from swift.proxy.controllers.base import get_container_info
-    from swift.common.swob import Request, Response
+      import socket
 
-    class IPWhitelistMiddleware(object):
-        """
-        IP Whitelist Middleware
+      from swift.common.utils import get_logger
+      from swift.proxy.controllers.base import get_container_info
+      from swift.common.swob import Request, Response
 
-        Middleware that allows access to a container from only a set of IP
-        addresses as determined by the container's metadata items that start
-        with the prefix 'allow'. E.G. allow-dev=192.168.0.20
-        """
-
-        def __init__(self, app, conf, logger=None):
-            self.app = app
-
-            if logger:
-                self.logger = logger
-            else:
-                self.logger = get_logger(conf, log_route='ip_whitelist')
-
-            self.deny_message = conf.get('deny_message', "IP Denied")
-            self.local_ip = socket.gethostbyname(socket.gethostname())
-
-        def __call__(self, env, start_response):
-            """
-            WSGI entry point.
-            Wraps env in swob.Request object and passes it down.
+      class IPWhitelistMiddleware(object):
+          """
+          IP Whitelist Middleware
 
-            :param env: WSGI environment dictionary
-            :param start_response: WSGI callable
-            """
-            req = Request(env)
+          Middleware that allows access to a container from only a set of IP
+          addresses as determined by the container's metadata items that start
+          with the prefix 'allow'. E.G. allow-dev=192.168.0.20
+          """
 
-            try:
-                version, account, container, obj = req.split_path(1, 4, True)
-            except ValueError:
-                return self.app(env, start_response)
+          def __init__(self, app, conf, logger=None):
+              self.app = app
 
-            container_info = get_container_info(
-                req.environ, self.app, swift_source='IPWhitelistMiddleware')
+              if logger:
+                  self.logger = logger
+              else:
+                  self.logger = get_logger(conf, log_route='ip_whitelist')
 
-            remote_ip = env['REMOTE_ADDR']
-            self.logger.debug("Remote IP: %(remote_ip)s",
-                              {'remote_ip': remote_ip})
+              self.deny_message = conf.get('deny_message', "IP Denied")
+              self.local_ip = socket.gethostbyname(socket.gethostname())
 
-            meta = container_info['meta']
-            allow = {k:v for k,v in meta.iteritems() if k.startswith('allow')}
-            allow_ips = set(allow.values())
-            allow_ips.add(self.local_ip)
-            self.logger.debug("Allow IPs: %(allow_ips)s",
-                              {'allow_ips': allow_ips})
+          def __call__(self, env, start_response):
+              """
+              WSGI entry point.
+              Wraps env in swob.Request object and passes it down.
 
-            if remote_ip in allow_ips:
-                return self.app(env, start_response)
-            else:
-                self.logger.debug(
-                    "IP %(remote_ip)s denied access to Account=%(account)s "
-                    "Container=%(container)s. Not in %(allow_ips)s", locals())
-                return Response(
-                    status=403,
-                    body=self.deny_message,
-                    request=req)(env, start_response)
+              :param env: WSGI environment dictionary
+              :param start_response: WSGI callable
+              """
+              req = Request(env)
 
+              try:
+                  version, account, container, obj = req.split_path(1, 4, True)
+              except ValueError:
+                  return self.app(env, start_response)
 
-    def filter_factory(global_conf, **local_conf):
-        """
-        paste.deploy app factory for creating WSGI proxy apps.
-        """
-        conf = global_conf.copy()
-        conf.update(local_conf)
+              container_info = get_container_info(
+                  req.environ, self.app, swift_source='IPWhitelistMiddleware')
 
-        def ip_whitelist(app):
-            return IPWhitelistMiddleware(app, conf)
-        return ip_whitelist
+              remote_ip = env['REMOTE_ADDR']
+              self.logger.debug("Remote IP: %(remote_ip)s",
+                                {'remote_ip': remote_ip})
 
-There is a lot of useful information in ``env`` and ``conf`` that you
-can use to decide what to do with the request. To find out more about
-what properties are available, you can insert the following log
-statement into the ``__init__`` method:
+              meta = container_info['meta']
+              allow = {k:v for k,v in meta.iteritems() if k.startswith('allow')}
+              allow_ips = set(allow.values())
+              allow_ips.add(self.local_ip)
+              self.logger.debug("Allow IPs: %(allow_ips)s",
+                                {'allow_ips': allow_ips})
 
-.. code:: python
+              if remote_ip in allow_ips:
+                  return self.app(env, start_response)
+              else:
+                  self.logger.debug(
+                      "IP %(remote_ip)s denied access to Account=%(account)s "
+                      "Container=%(container)s. Not in %(allow_ips)s", locals())
+                  return Response(
+                      status=403,
+                      body=self.deny_message,
+                      request=req)(env, start_response)
 
-    self.logger.debug("conf = %(conf)s", locals())
 
-and the following log statement into the ``__call__`` method:
+      def filter_factory(global_conf, **local_conf):
+          """
+          paste.deploy app factory for creating WSGI proxy apps.
+          """
+          conf = global_conf.copy()
+          conf.update(local_conf)
 
-.. code:: python
+          def ip_whitelist(app):
+              return IPWhitelistMiddleware(app, conf)
+          return ip_whitelist
 
-    self.logger.debug("env = %(env)s", locals())
 
-To plug this middleware into the swift Paste pipeline, you edit one
-configuration file, ``/etc/swift/proxy-server.conf``:
+   There is a lot of useful information in ``env`` and ``conf`` that you
+   can use to decide what to do with the request. To find out more about
+   what properties are available, you can insert the following log
+   statement into the ``__init__`` method:
 
-::
+   .. code-block:: python
 
-    $ vim /etc/swift/proxy-server.conf
+      self.logger.debug("conf = %(conf)s", locals())
 
-Find the ``[filter:ratelimit]`` section in
-``/etc/swift/proxy-server.conf``, and copy in the following
-configuration section after it:
 
-.. code:: ini
+   and the following log statement into the ``__call__`` method:
 
-    [filter:ip_whitelist]
-    paste.filter_factory = swift.common.middleware.ip_whitelist:filter_factory
-    # You can override the default log routing for this filter here:
-    # set log_name = ratelimit
-    # set log_facility = LOG_LOCAL0
-    # set log_level = INFO
-    # set log_headers = False
-    # set log_address = /dev/log
-    deny_message = You shall not pass!
+   .. code-block:: python
 
-Find the ``[pipeline:main]`` section in
-``/etc/swift/proxy-server.conf``, and add ``ip_whitelist`` after
-ratelimit to the list like so. When you're done, save and close the
-file:
+      self.logger.debug("env = %(env)s", locals())
 
-.. code:: ini
+#. To plug this middleware into the swift Paste pipeline, you edit one
+   configuration file, ``/etc/swift/proxy-server.conf``:
 
-    [pipeline:main]
-    pipeline = catch_errors gatekeeper healthcheck proxy-logging cache bulk tempurl ratelimit ip_whitelist ...
+   .. code-block:: console
 
-Restart the ``swift proxy`` service to make swift use your middleware.
-Start by switching to the ``swift-proxy`` screen:
+      $ vim /etc/swift/proxy-server.conf
 
-Press +Ctrl+ +A+ followed by 3.
+#. Find the ``[filter:ratelimit]`` section in
+   ``/etc/swift/proxy-server.conf``, and copy in the following
+   configuration section after it:
 
-Press +Ctrl+ +C+ to kill the service.
+   .. code-block:: ini
 
-Press Up Arrow to bring up the last command.
+      [filter:ip_whitelist]
+      paste.filter_factory = swift.common.middleware.ip_whitelist:filter_factory
+      # You can override the default log routing for this filter here:
+      # set log_name = ratelimit
+      # set log_facility = LOG_LOCAL0
+      # set log_level = INFO
+      # set log_headers = False
+      # set log_address = /dev/log
+      deny_message = You shall not pass!
 
-Press Enter to run it.
+#. Find the ``[pipeline:main]`` section in
+   ``/etc/swift/proxy-server.conf``, and add ``ip_whitelist`` after
+   ratelimit to the list like so. When you're done, save and close the
+   file:
 
-Test your middleware with the ``swift`` CLI. Start by switching to the
-shell screen and finish by switching back to the ``swift-proxy`` screen
-to check the log output:
+   .. code-block:: ini
 
-Press  +Ctrl+ +A+ followed by 0.
+      [pipeline:main]
+      pipeline = catch_errors gatekeeper healthcheck proxy-logging cache bulk tempurl ratelimit ip_whitelist ...
 
-Make sure you're in the ``devstack`` directory:
+#. Restart the ``swift proxy`` service to make swift use your middleware.
+   Start by switching to the ``swift-proxy`` screen:
 
-::
+   #. Press **Ctrl+A** followed by 3.
 
-    $ cd /root/devstack
+   #. Press **Ctrl+C** to kill the service.
 
-Source openrc to set up your environment variables for the CLI:
+   #. Press Up Arrow to bring up the last command.
 
-::
+   #. Press Enter to run it.
 
-    $ source openrc
+#. Test your middleware with the ``swift`` CLI. Start by switching to the
+   shell screen and finish by switching back to the ``swift-proxy`` screen
+   to check the log output:
 
-Create a container called ``middleware-test``:
+   #. Press  **Ctrl+A** followed by 0.
 
-::
+   #. Make sure you're in the ``devstack`` directory:
 
-    $ swift post middleware-test
+      .. code-block:: console
 
-Press +Ctrl+ +A+ followed by 3 to check the log output.
+         $ cd /root/devstack
 
-Among the log statements you'll see the lines:
+   #. Source openrc to set up your environment variables for the CLI:
 
-::
+      .. code-block:: console
 
-    proxy-server Remote IP: my.instance.ip.address (txn: ...)
-    proxy-server Allow IPs: set(['my.instance.ip.address']) (txn: ...)
+         $ source openrc
 
-These two statements are produced by our middleware and show that the
-request was sent from our DevStack instance and was allowed.
+   #. Create a container called ``middleware-test``:
 
-Test the middleware from outside DevStack on a remote machine that has
-access to your DevStack instance:
+      .. code-block:: console
 
-Install the ``keystone`` and ``swift`` clients on your local machine:
+         $ swift post middleware-test
 
-::
+   #. Press **Ctrl+A** followed by 3 to check the log output.
 
-    # pip install python-keystoneclient python-swiftclient
+#. Among the log statements you'll see the lines:
 
-Attempt to list the objects in the ``middleware-test`` container:
+   .. code-block:: ini
 
-::
+      proxy-server Remote IP: my.instance.ip.address (txn: ...)
+      proxy-server Allow IPs: set(['my.instance.ip.address']) (txn: ...)
 
-    $ swift --os-auth-url=http://my.instance.ip.address:5000/v2.0/ \
-    --os-region-name=RegionOne --os-username=demo:demo \
-    --os-password=devstack list middleware-test
-    Container GET failed: http://my.instance.ip.address:8080/v1/AUTH_.../
-        middleware-test?format=json 403 Forbidden   You shall not pass!
+   These two statements are produced by our middleware and show that the
+   request was sent from our DevStack instance and was allowed.
 
-Press +Ctrl+ +A+ followed by 3 to check the log output. Look at the
-swift log statements again, and among the log statements, you'll see the
-lines:
+#. Test the middleware from outside DevStack on a remote machine that has
+   access to your DevStack instance:
 
-::
+   #. Install the ``keystone`` and ``swift`` clients on your local machine:
 
-    proxy-server Authorizing from an overriding middleware (i.e: tempurl) (txn: ...)
-    proxy-server ... IPWhitelistMiddleware
-    proxy-server Remote IP: my.local.ip.address (txn: ...)
-    proxy-server Allow IPs: set(['my.instance.ip.address']) (txn: ...)
-    proxy-server IP my.local.ip.address denied access to Account=AUTH_... \
-       Container=None. Not in set(['my.instance.ip.address']) (txn: ...)
+      .. code-block:: console
 
-Here we can see that the request was denied because the remote IP
-address wasn't in the set of allowed IPs.
+         # pip install python-keystoneclient python-swiftclient
 
-Back in your DevStack instance on the shell screen, add some metadata to
-your container to allow the request from the remote machine:
+   #. Attempt to list the objects in the ``middleware-test`` container:
 
-Press +Ctrl+ +A+ followed by 0.
+      .. code-block:: console
 
-Add metadata to the container to allow the IP:
+         $ swift --os-auth-url=http://my.instance.ip.address:5000/v2.0/ \
+         --os-region-name=RegionOne --os-username=demo:demo \
+         --os-password=devstack list middleware-test
+         Container GET failed: http://my.instance.ip.address:8080/v1/AUTH_.../
+             middleware-test?format=json 403 Forbidden   You shall not pass!
 
-::
+#. Press **Ctrl+A** followed by 3 to check the log output. Look at the
+   swift log statements again, and among the log statements, you'll see the
+   lines:
 
-    $ swift post --meta allow-dev:my.local.ip.address middleware-test
+   .. code-block:: console
 
-Now try the command from Step 10 again and it succeeds. There are no
-objects in the container, so there is nothing to list; however, there is
-also no error to report.
+      proxy-server Authorizing from an overriding middleware (i.e: tempurl) (txn: ...)
+      proxy-server ... IPWhitelistMiddleware
+      proxy-server Remote IP: my.local.ip.address (txn: ...)
+      proxy-server Allow IPs: set(['my.instance.ip.address']) (txn: ...)
+      proxy-server IP my.local.ip.address denied access to Account=AUTH_... \
+         Container=None. Not in set(['my.instance.ip.address']) (txn: ...)
+
+   Here we can see that the request was denied because the remote IP
+   address wasn't in the set of allowed IPs.
+
+#. Back in your DevStack instance on the shell screen, add some metadata to
+   your container to allow the request from the remote machine:
+
+   #. Press **Ctrl+A** followed by 0.
+
+   #. Add metadata to the container to allow the IP:
+
+      .. code-block:: console
+
+         $ swift post --meta allow-dev:my.local.ip.address middleware-test
+
+   #. Now try the command from Step 10 again and it succeeds. There are no
+      objects in the container, so there is nothing to list; however, there is
+      also no error to report.
 
 .. warning::
 
-    Functional testing like this is not a replacement for proper unit
-    and integration testing, but it serves to get you started.testing
-    functional testingfunctional testing
+   Functional testing like this is not a replacement for proper unit
+   and integration testing, but it serves to get you started.
 
 You can follow a similar pattern in other projects that use the Python
 Paste framework. Simply create a middleware module and plug it in
@@ -528,8 +527,7 @@ schedulers for Compute are feature full and well documented at
 `Scheduling <http://docs.openstack.org/liberty/config-reference/content/section_compute-scheduler.html>`_.
 However, depending on your user's use cases, the existing schedulers
 might not meet your requirements. You might need to create a new
-scheduler.customization OpenStack Compute (nova) Schedulerschedulers
-customization ofDevStack customizing OpenStack Compute (nova) scheduler
+scheduler.
 
 To create a scheduler, you must inherit from the class
 ``nova.scheduler.driver.Scheduler``. Of the five methods that you can
@@ -555,16 +553,17 @@ some subset of your hosts.
 
 .. warning::
 
-    This example is for illustrative purposes only. It should not be
-    used as a scheduler for Compute without further development and
-    testing.security issues scheduler example
+   This example is for illustrative purposes only. It should not be
+   used as a scheduler for Compute without further development and
+   testing.
 
 When you join the screen session that ``stack.sh`` starts with
 ``screen -r stack``, you are greeted with many screen windows:
 
-::
+.. code-block:: console
 
-    0$ shell*  1$ key  2$ horizon  ...  9$ n-api  ...  14$ n-sch ...
+   0$ shell*  1$ key  2$ horizon  ...  9$ n-api  ...  14$ n-sch ...
+
 
 ``shell``
     A shell where you can get some work done
@@ -581,235 +580,238 @@ When you join the screen session that ``stack.sh`` starts with
 ``n-sch``
     The nova scheduler service
 
-The code for OpenStack lives in ``/opt/stack``, so go to the ``nova``
-directory and edit your scheduler module. Change to the directory where
-``nova`` is installed:
+**To create the scheduler and plug it in through configuration**
 
-::
+#. The code for OpenStack lives in ``/opt/stack``, so go to the ``nova``
+   directory and edit your scheduler module. Change to the directory where
+   ``nova`` is installed:
 
-    $ cd /opt/stack/nova
+   .. code-block:: console
 
-Create the ``ip_scheduler.py`` Python source code file:
+      $ cd /opt/stack/nova
 
-::
+#. Create the ``ip_scheduler.py`` Python source code file:
 
-    $ vim nova/scheduler/ip_scheduler.py
+   .. code-block:: console
 
-The code in `example\_title <#ip_scheduler>`__ is a driver that will
-schedule servers to hosts based on IP address as explained at the
-beginning of the section. Copy the code into ``ip_scheduler.py``. When
-you're done, save and close the file.
+      $ vim nova/scheduler/ip_scheduler.py
 
-.. code:: python
+#. The code shown below is a driver that will
+   schedule servers to hosts based on IP address as explained at the
+   beginning of the section. Copy the code into ``ip_scheduler.py``. When
+   you're done, save and close the file.
 
-    # vim: tabstop=4 shiftwidth=4 softtabstop=4
-    # Copyright (c) 2014 OpenStack Foundation
-    # All Rights Reserved.
-    #
-    #    Licensed under the Apache License, Version 2.0 (the "License"); you may
-    #    not use this file except in compliance with the License. You may obtain
-    #    a copy of the License at
-    #
-    #         http://www.apache.org/licenses/LICENSE-2.0
-    #
-    #    Unless required by applicable law or agreed to in writing, software
-    #    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-    #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-    #    License for the specific language governing permissions and limitations
-    #    under the License.
+   .. code-block:: python
 
-    """
-    IP Scheduler implementation
-    """
+      # vim: tabstop=4 shiftwidth=4 softtabstop=4
+      # Copyright (c) 2014 OpenStack Foundation
+      # All Rights Reserved.
+      #
+      #    Licensed under the Apache License, Version 2.0 (the "License"); you may
+      #    not use this file except in compliance with the License. You may obtain
+      #    a copy of the License at
+      #
+      #         http://www.apache.org/licenses/LICENSE-2.0
+      #
+      #    Unless required by applicable law or agreed to in writing, software
+      #    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+      #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+      #    License for the specific language governing permissions and limitations
+      #    under the License.
 
-    import random
+      """
+      IP Scheduler implementation
+      """
 
-    from oslo.config import cfg
+      import random
 
-    from nova.compute import rpcapi as compute_rpcapi
-    from nova import exception
-    from nova.openstack.common import log as logging
-    from nova.openstack.common.gettextutils import _
-    from nova.scheduler import driver
+      from oslo.config import cfg
 
-    CONF = cfg.CONF
-    CONF.import_opt('compute_topic', 'nova.compute.rpcapi')
-    LOG = logging.getLogger(__name__)
+      from nova.compute import rpcapi as compute_rpcapi
+      from nova import exception
+      from nova.openstack.common import log as logging
+      from nova.openstack.common.gettextutils import _
+      from nova.scheduler import driver
 
-    class IPScheduler(driver.Scheduler):
-        """
-        Implements Scheduler as a random node selector based on
-        IP address and hostname prefix.
-        """
+      CONF = cfg.CONF
+      CONF.import_opt('compute_topic', 'nova.compute.rpcapi')
+      LOG = logging.getLogger(__name__)
 
-        def __init__(self, *args, **kwargs):
-            super(IPScheduler, self).__init__(*args, **kwargs)
-            self.compute_rpcapi = compute_rpcapi.ComputeAPI()
+      class IPScheduler(driver.Scheduler):
+          """
+          Implements Scheduler as a random node selector based on
+          IP address and hostname prefix.
+          """
 
-        def _filter_hosts(self, request_spec, hosts, filter_properties,
-            hostname_prefix):
-            """Filter a list of hosts based on hostname prefix."""
+          def __init__(self, *args, **kwargs):
+              super(IPScheduler, self).__init__(*args, **kwargs)
+              self.compute_rpcapi = compute_rpcapi.ComputeAPI()
 
-            hosts = [host for host in hosts if host.startswith(hostname_prefix)]
-            return hosts
+          def _filter_hosts(self, request_spec, hosts, filter_properties,
+              hostname_prefix):
+              """Filter a list of hosts based on hostname prefix."""
 
-        def _schedule(self, context, topic, request_spec, filter_properties):
-            """Picks a host that is up at random."""
+              hosts = [host for host in hosts if host.startswith(hostname_prefix)]
+              return hosts
 
-            elevated = context.elevated()
-            hosts = self.hosts_up(elevated, topic)
-            if not hosts:
-                msg = _("Is the appropriate service running?")
-                raise exception.NoValidHost(reason=msg)
+          def _schedule(self, context, topic, request_spec, filter_properties):
+              """Picks a host that is up at random."""
 
-            remote_ip = context.remote_address
+              elevated = context.elevated()
+              hosts = self.hosts_up(elevated, topic)
+              if not hosts:
+                  msg = _("Is the appropriate service running?")
+                  raise exception.NoValidHost(reason=msg)
 
-            if remote_ip.startswith('10.1'):
-                hostname_prefix = 'doc'
-            elif remote_ip.startswith('10.2'):
-                hostname_prefix = 'ops'
-            else:
-                hostname_prefix = 'dev'
+              remote_ip = context.remote_address
 
-            hosts = self._filter_hosts(request_spec, hosts, filter_properties,
-                hostname_prefix)
-            if not hosts:
-                msg = _("Could not find another compute")
-                raise exception.NoValidHost(reason=msg)
+              if remote_ip.startswith('10.1'):
+                  hostname_prefix = 'doc'
+              elif remote_ip.startswith('10.2'):
+                  hostname_prefix = 'ops'
+              else:
+                  hostname_prefix = 'dev'
 
-            host = random.choice(hosts)
-            LOG.debug("Request from %(remote_ip)s scheduled to %(host)s" % locals())
+              hosts = self._filter_hosts(request_spec, hosts, filter_properties,
+                  hostname_prefix)
+              if not hosts:
+                  msg = _("Could not find another compute")
+                  raise exception.NoValidHost(reason=msg)
 
-            return host
+              host = random.choice(hosts)
+              LOG.debug("Request from %(remote_ip)s scheduled to %(host)s" % locals())
 
-        def select_destinations(self, context, request_spec, filter_properties):
-            """Selects random destinations."""
-            num_instances = request_spec['num_instances']
-            # NOTE(timello): Returns a list of dicts with 'host', 'nodename' and
-            # 'limits' as keys for compatibility with filter_scheduler.
-            dests = []
-            for i in range(num_instances):
-                host = self._schedule(context, CONF.compute_topic,
-                        request_spec, filter_properties)
-                host_state = dict(host=host, nodename=None, limits=None)
-                dests.append(host_state)
+              return host
 
-            if len(dests) < num_instances:
-                raise exception.NoValidHost(reason='')
-            return dests
+          def select_destinations(self, context, request_spec, filter_properties):
+              """Selects random destinations."""
+              num_instances = request_spec['num_instances']
+              # NOTE(timello): Returns a list of dicts with 'host', 'nodename' and
+              # 'limits' as keys for compatibility with filter_scheduler.
+              dests = []
+              for i in range(num_instances):
+                  host = self._schedule(context, CONF.compute_topic,
+                          request_spec, filter_properties)
+                  host_state = dict(host=host, nodename=None, limits=None)
+                  dests.append(host_state)
 
-        def schedule_run_instance(self, context, request_spec,
-                                  admin_password, injected_files,
-                                  requested_networks, is_first_time,
-                                  filter_properties, legacy_bdm_in_spec):
-            """Create and run an instance or instances."""
-            instance_uuids = request_spec.get('instance_uuids')
-            for num, instance_uuid in enumerate(instance_uuids):
-                request_spec['instance_properties']['launch_index'] = num
-                try:
-                    host = self._schedule(context, CONF.compute_topic,
-                                          request_spec, filter_properties)
-                    updated_instance = driver.instance_update_db(context,
-                            instance_uuid)
-                    self.compute_rpcapi.run_instance(context,
-                            instance=updated_instance, host=host,
-                            requested_networks=requested_networks,
-                            injected_files=injected_files,
-                            admin_password=admin_password,
-                            is_first_time=is_first_time,
-                            request_spec=request_spec,
-                            filter_properties=filter_properties,
-                            legacy_bdm_in_spec=legacy_bdm_in_spec)
-                except Exception as ex:
-                    # NOTE(vish): we don't reraise the exception here to make sure
-                    #             that all instances in the request get set to
-                    #             error properly
-                    driver.handle_schedule_error(context, ex, instance_uuid,
-                                                 request_spec)
+              if len(dests) < num_instances:
+                  raise exception.NoValidHost(reason='')
+              return dests
 
-There is a lot of useful information in ``context``, ``request_spec``,
-and ``filter_properties`` that you can use to decide where to schedule
-the instance. To find out more about what properties are available, you
-can insert the following log statements into the
-``schedule_run_instance`` method of the scheduler above:
+          def schedule_run_instance(self, context, request_spec,
+                                    admin_password, injected_files,
+                                    requested_networks, is_first_time,
+                                    filter_properties, legacy_bdm_in_spec):
+              """Create and run an instance or instances."""
+              instance_uuids = request_spec.get('instance_uuids')
+              for num, instance_uuid in enumerate(instance_uuids):
+                  request_spec['instance_properties']['launch_index'] = num
+                  try:
+                      host = self._schedule(context, CONF.compute_topic,
+                                            request_spec, filter_properties)
+                      updated_instance = driver.instance_update_db(context,
+                              instance_uuid)
+                      self.compute_rpcapi.run_instance(context,
+                              instance=updated_instance, host=host,
+                              requested_networks=requested_networks,
+                              injected_files=injected_files,
+                              admin_password=admin_password,
+                              is_first_time=is_first_time,
+                              request_spec=request_spec,
+                              filter_properties=filter_properties,
+                              legacy_bdm_in_spec=legacy_bdm_in_spec)
+                  except Exception as ex:
+                      # NOTE(vish): we don't reraise the exception here to make sure
+                      #             that all instances in the request get set to
+                      #             error properly
+                      driver.handle_schedule_error(context, ex, instance_uuid,
+                                                   request_spec)
 
-.. code:: python
 
-    LOG.debug("context = %(context)s" % {'context': context.__dict__})
-    LOG.debug("request_spec = %(request_spec)s" % locals())
-    LOG.debug("filter_properties = %(filter_properties)s" % locals())
+   There is a lot of useful information in ``context``, ``request_spec``,
+   and ``filter_properties`` that you can use to decide where to schedule
+   the instance. To find out more about what properties are available, you
+   can insert the following log statements into the
+   ``schedule_run_instance`` method of the scheduler above:
 
-To plug this scheduler into nova, edit one configuration file,
-``/etc/nova/nova.conf``:
+   .. code-block:: python
 
-::
+      LOG.debug("context = %(context)s" % {'context': context.__dict__})
+      LOG.debug("request_spec = %(request_spec)s" % locals())
+      LOG.debug("filter_properties = %(filter_properties)s" % locals())
 
-    $ vim /etc/nova/nova.conf
+#. To plug this scheduler into nova, edit one configuration file,
+   ``/etc/nova/nova.conf``:
 
-Find the ``scheduler_driver`` config and change it like so:
+   .. code-block:: console
 
-.. code:: ini
+      $ vim /etc/nova/nova.conf
 
-    scheduler_driver=nova.scheduler.ip_scheduler.IPScheduler
+#. Find the ``scheduler_driver`` config and change it like so:
 
-Restart the nova scheduler service to make nova use your scheduler.
-Start by switching to the ``n-sch`` screen:
+   .. code-block:: ini
 
-Press +Ctrl+ +A+ followed by 9.
+      scheduler_driver=nova.scheduler.ip_scheduler.IPScheduler
 
-Press +Ctrl+ +A+ followed by N until you reach the ``n-sch`` screen.
+#. Restart the nova scheduler service to make nova use your scheduler.
+   Start by switching to the ``n-sch`` screen:
 
-Press +Ctrl+ +C+ to kill the service.
+   #. Press **Ctrl+A** followed by 9.
 
-Press Up Arrow to bring up the last command.
+   #. Press **Ctrl+A** followed by N until you reach the ``n-sch`` screen.
 
-Press Enter to run it.
+   #. Press **Ctrl+C** to kill the service.
 
-Test your scheduler with the nova CLI. Start by switching to the
-``shell`` screen and finish by switching back to the ``n-sch`` screen to
-check the log output:
+   #. Press Up Arrow to bring up the last command.
 
-Press  +Ctrl+ +A+ followed by 0.
+   #. Press Enter to run it.
 
-Make sure you're in the ``devstack`` directory:
+#. Test your scheduler with the nova CLI. Start by switching to the
+   ``shell`` screen and finish by switching back to the ``n-sch`` screen to
+   check the log output:
 
-::
+   #. Press  **Ctrl+A** followed by 0.
 
-    $ cd /root/devstack
+   #. Make sure you're in the ``devstack`` directory:
 
-Source ``openrc`` to set up your environment variables for the CLI:
+      .. code-block:: console
 
-::
+         $ cd /root/devstack
 
-    $ source openrc
+   #. Source ``openrc`` to set up your environment variables for the CLI:
 
-Put the image ID for the only installed image into an environment
-variable:
+      .. code-block:: console
 
-::
+         $ source openrc
 
-    $ IMAGE_ID=`nova image-list | egrep cirros | egrep -v "kernel|ramdisk" | awk '{print $2}'`
+   #. Put the image ID for the only installed image into an environment
+      variable:
 
-Boot a test server:
+      .. code-block:: console
 
-::
+         $ IMAGE_ID=`nova image-list | egrep cirros | egrep -v "kernel|ramdisk" | awk '{print $2}'`
 
-    $ nova boot --flavor 1 --image $IMAGE_ID scheduler-test
+   #. Boot a test server:
 
-Switch back to the ``n-sch`` screen. Among the log statements, you'll
-see the line:
+      .. code-block:: console
 
-::
+         $ nova boot --flavor 1 --image $IMAGE_ID scheduler-test
 
-    2014-01-23 19:57:47.262 DEBUG nova.scheduler.ip_scheduler \
-    [req-... demo demo] Request from 162.242.221.84 \
-    scheduled to devstack-havana \
-    _schedule /opt/stack/nova/nova/scheduler/ip_scheduler.py:76
+#. Switch back to the ``n-sch`` screen. Among the log statements, you'll
+   see the line:
+
+   .. code-block:: console
+
+      2014-01-23 19:57:47.262 DEBUG nova.scheduler.ip_scheduler \
+      [req-... demo demo] Request from 162.242.221.84 \
+      scheduled to devstack-havana \
+      _schedule /opt/stack/nova/nova/scheduler/ip_scheduler.py:76
 
 .. warning::
 
-    Functional testing like this is not a replacement for proper unit
-    and integration testing, but it serves to get you started.
+   Functional testing like this is not a replacement for proper unit
+   and integration testing, but it serves to get you started.
 
 A similar pattern can be followed in other projects that use the driver
 architecture. Simply create a module and class that conform to the
@@ -833,8 +835,7 @@ The dashboard is based on the Python
 `Django <https://www.djangoproject.com/>`_ web application framework.
 The best guide to customizing it has already been written and can be
 found at `Building on
-Horizon <http://docs.openstack.org/developer/horizon/topics/tutorial.html>`_.DjangoPythondashboardDevStack
-customizing dashboardcustomization dashboard
+Horizon <http://docs.openstack.org/developer/horizon/topics/tutorial.html>`_.
 
 Conclusion
 ~~~~~~~~~~
