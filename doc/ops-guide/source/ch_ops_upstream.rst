@@ -13,9 +13,7 @@ There are several avenues available for seeking assistance. The quickest
 way is to help the community help you. Search the Q&A sites, mailing
 list archives, and bug lists for issues similar to yours. If you can't
 find anything, follow the directions for reporting bugs or use one of
-the channels for support, which are listed below.mailing listsOpenStack
-documentationhelp, resources fortroubleshooting getting helpOpenStack
-community getting help from
+the channels for support, which are listed below.
 
 Your first port of call should be the official OpenStack documentation,
 found on http://docs.openstack.org. You can get questions answered on
@@ -58,11 +56,10 @@ As an operator, you are in a very good position to report unexpected
 behavior with your cloud. Since OpenStack is flexible, you may be the
 only individual to report a particular issue. Every issue is important
 to fix, so it is essential to learn how to easily submit a bug
-report.maintenance/debugging reporting bugsbugs, reportingOpenStack
-community reporting bugs
+report.
 
-All OpenStack projects use `Launchpad <https://launchpad.net/>`_ for
-bug tracking. You'll need to create an account on Launchpad before you
+All OpenStack projects use `Launchpad <https://launchpad.net/>`_
+for bug tracking. You'll need to create an account on Launchpad before you
 can submit a bug report.
 
 Once you have a Launchpad account, reporting a bug is as simple as
@@ -173,19 +170,19 @@ Core developers also prioritize the bug, based on its impact:
 
 The bug impacts are categorized as follows:
 
-1. *Critical* if the bug prevents a key feature from working properly
+#. *Critical* if the bug prevents a key feature from working properly
    (regression) for all users (or without a simple workaround) or
    results in data loss
 
-2. *High* if the bug prevents a key feature from working properly for
+#. *High* if the bug prevents a key feature from working properly for
    some users (or with a workaround)
 
-3. *Medium* if the bug prevents a secondary feature from working
+#. *Medium* if the bug prevents a secondary feature from working
    properly
 
-4. *Low* if the bug is mostly cosmetic
+#. *Low* if the bug is mostly cosmetic
 
-5. *Wishlist* if the bug is not really a bug but rather a welcome change
+#. *Wishlist* if the bug is not really a bug but rather a welcome change
    in behavior
 
 If the bug contains the solution, or a patch, set the bug status to
@@ -232,13 +229,13 @@ developers, and the entire ecosystem. We all share the responsibility to
 make this community the best it can possibly be, and signing up to be a
 member is the first step to participating. Like the software, individual
 membership within the OpenStack Foundation is free and accessible to
-anyone.OpenStack community joining
+anyone.
 
 How to Contribute to the Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack documentation efforts encompass operator and administrator
-docs, API docs, and user docs.OpenStack community contributing to
+docs, API docs, and user docs.
 
 The genesis of this book was an in-person event, but now that the book
 is in your hands, we want you to contribute to it. OpenStack
@@ -275,8 +272,7 @@ management drawn from the OpenStack community. The team's job is
 facilitating the reporting of vulnerabilities, coordinating security
 fixes and handling progressive disclosure of the vulnerability
 information. Specifically, the team is responsible for the following
-functions:vulnerability tracking/managementsecurity issues
-reporting/fixing vulnerabilitiesOpenStack community security information
+functions:
 
 Vulnerability management
     All vulnerabilities discovered by community members (or users) can
@@ -313,9 +309,10 @@ Finding Additional Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to this book, there are many other sources of information
-about OpenStack. The \ `OpenStack website <http://www.openstack.org/>`_
-is a good starting point, with \ `OpenStack
-Docs <http://docs.openstack.org/>`_ and `OpenStack API
+about OpenStack. The
+`OpenStack website <http://www.openstack.org/>`_
+is a good starting point, with
+`OpenStack Docs <http://docs.openstack.org/>`_ and `OpenStack API
 Docs <http://developer.openstack.org/>`_ providing technical
 documentation about OpenStack. The `OpenStack
 wiki <https://wiki.openstack.org/wiki/Main_Page>`_ contains a lot of
