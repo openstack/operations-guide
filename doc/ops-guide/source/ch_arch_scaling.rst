@@ -5,8 +5,7 @@ Scaling
 Whereas traditional applications required larger hardware to scale
 ("vertical scaling"), cloud-based applications typically request more,
 discrete hardware ("horizontal scaling"). If your cloud is successful,
-eventually you must add resources to meet the increasing demand.scaling
-vertical vs. horizontal
+eventually you must add resources to meet the increasing demand.
 
 To suit the cloud paradigm, OpenStack itself is designed to be
 horizontally scalable. Rather than switching to larger servers, you
@@ -25,8 +24,7 @@ of metrics. Since you can define virtual hardware templates, called
 "flavors" in OpenStack, you can start to make scaling decisions based on
 the flavors you'll provide. These templates define sizes for memory in
 RAM, root disk size, amount of ephemeral data disk space available, and
-number of cores for starters.virtual machine (VM)hardware virtual
-hardwareflavorscaling metrics for
+number of cores for starters.
 
 The default OpenStack flavors are shown in the following table.
 
@@ -99,7 +97,7 @@ development project that creates one VM per code commit. In the former,
 the heavy work of creating a VM happens only every few months, whereas
 the latter puts constant heavy load on the cloud controller. You must
 consider your average VM lifetime, as a larger number generally means
-less load on the cloud controller.cloud controllers scalability and
+less load on the cloud controller.
 
 Aside from the creation and termination of VMs, you must consider the
 impact of users accessing the service—particularly on ``nova-api`` and
@@ -124,7 +122,7 @@ CPU performance (CPU/core).
 .. note::
 
    For a discussion of metric tracking, including how to extract
-   metrics from your cloud, see ?.
+   metrics from your cloud, see :doc:`ch_ops_log_monitor`.
 
 Adding Cloud Controller Nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,9 +130,7 @@ Adding Cloud Controller Nodes
 You can facilitate the horizontal expansion of your cloud by adding
 nodes. Adding compute nodes is straightforward—they are easily picked up
 by the existing installation. However, you must consider some important
-points when you design your cluster to be highly available.compute nodes
-addinghigh availabilityconfiguration options high availabilitycloud
-controller nodes addingscaling adding cloud controller nodes
+points when you design your cluster to be highly available.
 
 Recall that a cloud controller node runs several different services. You
 can install services that communicate only using the message queue
@@ -159,7 +155,7 @@ the one machine.
    Several options are available for MySQL load balancing, and the
    supported AMQP brokers have built-in clustering support. Information
    on how to configure these and many of the other services can be
-   found in ?.Advanced Message Queuing Protocol (AMQP)
+   found in :doc:`part_operations`.
 
 Segregating Your Cloud
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -168,8 +164,7 @@ When you want to offer users different regions to provide legal
 considerations for data storage, redundancy across earthquake fault
 lines, or for low-latency API calls, you segregate your cloud. Use one
 of the following OpenStack methods to segregate your cloud: *cells*,
-*regions*, *availability zones*, or *host aggregates*.segregation
-methodsscaling cloud segregation
+*regions*, *availability zones*, or *host aggregates*.
 
 Each method provides different functionality and can be best divided
 into two groups:
@@ -177,8 +172,8 @@ into two groups:
 -  Cells and regions, which segregate an entire cloud and result in
    running separate Compute deployments.
 
--  Availability zones and host aggregates, which merely divide a single
-   Compute deployment.
+-  :term:`Availability zones <availability zone>` and host aggregates, which
+   merely divide a single Compute deployment.
 
 The table below provides a comparison view of each segregation method currently
 provided by OpenStack Compute.
@@ -193,8 +188,8 @@ provided by OpenStack Compute.
      - Availability zones
      - Host aggregates
    * - **Use when you need**
-     - A single API endpoint for compute, or you require a second level of
-       scheduling.
+     - A single :term:`API endpoint` for compute, or you require a second
+       level of scheduling.
      - Discrete regions with separate API endpoints and no coordination
        between regions.
      - Logical separation within your nova deployment for physical isolation
@@ -233,8 +228,7 @@ service, but no ``nova-compute`` services. Each child cell runs all of
 the other typical ``nova-*`` services found in a regular installation,
 except for the ``nova-api`` service. Each cell has its own message queue
 and database service and also runs ``nova-cells``, which manages the
-communication between the API cell and child cells.scaling cells and
-regionscells cloud segregationregion
+communication between the API cell and child cells.
 
 This allows for a single API server being used to control access to
 multiple cloud installations. Introducing a second level of scheduling
@@ -256,7 +250,7 @@ Availability Zones and Host Aggregates
 --------------------------------------
 
 You can use availability zones, host aggregates, or both to partition a
-nova deployment.scaling availability zones
+nova deployment.
 
 Availability zones are implemented through and configured in a similar
 way to host aggregates.
@@ -269,7 +263,7 @@ Availability zone
 This enables you to arrange OpenStack compute hosts into logical groups
 and provides a form of physical isolation and redundancy from other
 availability zones, such as by using a separate power supply or network
-equipment.availability zone
+equipment.
 
 You define the availability zone in which a specified compute host
 resides locally on each server. An availability zone is commonly used to
@@ -292,7 +286,7 @@ aggregates to further partition an availability zone. For example, you
 might use host aggregates to partition an availability zone into groups
 of hosts that either share common resources, such as storage and
 network, or have a special property, such as trusted computing
-hardware.scaling host aggregatehost aggregate
+hardware.
 
 A common use of host aggregates is to provide information for use with
 the ``nova-scheduler``. For example, you might use a host aggregate to
@@ -380,8 +374,7 @@ not mean that your servers must be volatile. Ensuring that your cloud's
 hardware is stable and configured correctly means that your cloud
 environment remains up and running. Basically, put effort into creating
 a stable hardware environment so that you can host a cloud that users
-may treat as unstable and volatile.servers avoiding volatility
-inhardware scalability planningscaling hardware procurement
+may treat as unstable and volatile.
 
 OpenStack can be deployed on any hardware supported by an
 OpenStack-compatible Linux distribution.
@@ -406,8 +399,7 @@ Taking into account the considerations that we've mentioned in this
 chapter—particularly on the sizing of the cloud controller—it should be
 possible to procure additional compute or object storage nodes as
 needed. New nodes do not need to be the same specification, or even
-vendor, as existing nodes.capability scaling andweightcapacity
-planningscaling capacity planning
+vendor, as existing nodes.
 
 For compute nodes, ``nova-scheduler`` will take care of differences in
 sizing having to do with core count and RAM amounts; however, you should
@@ -416,7 +408,7 @@ When adding object storage nodes, a weight should be specified that
 reflects the capability of the node.
 
 Monitoring the resource usage and user growth will enable you to know
-when to procure. ? details some useful metrics.
+when to procure. :doc:`ch_ops_log_monitor` details some useful metrics.
 
 Burn-in Testing
 ---------------
@@ -426,6 +418,5 @@ and the end of its life. As a result, dealing with hardware failures
 while in production can be avoided by appropriate burn-in testing to
 attempt to trigger the early-stage failures. The general principle is to
 stress the hardware to its limits. Examples of burn-in tests include
-running a CPU or disk benchmark for several days.testing burn-in
-testingtroubleshooting burn-in testingburn-in testingscaling burn-in
-testing
+running a CPU or disk benchmark for several days.
+
