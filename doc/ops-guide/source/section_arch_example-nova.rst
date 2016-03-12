@@ -2,14 +2,14 @@
 Example Architecture — Legacy Networking (nova)
 ===============================================
 
-This particular example architecture has been upgraded from Grizzly to
-Havana and tested in production environments where many public IP
+This particular example architecture has been upgraded from :term:`Grizzly` to
+:term:`Havana` and tested in production environments where many public IP
 addresses are available for assignment to multiple instances. You can
 find a second example architecture that uses OpenStack Networking
 (neutron) after this section. Each example offers high availability,
 meaning that if a particular node goes down, another node with the same
 configuration can take over the tasks so that the services continue to
-be available.HavanaGrizzly
+be available.
 
 Overview
 ~~~~~~~~
@@ -21,10 +21,7 @@ proxying requests to the API, then four for storage itself to provide
 enough replication for eventual consistency. This example architecture
 does not dictate a particular number of nodes, but shows the thinking
 and considerations that went into choosing this architecture including
-the features offered.CentOSRDO (Red Hat Distributed
-OpenStack)Ubuntulegacy networking (nova) component overviewexample
-architectures legacy networking; OpenStack networkingObject Storage
-simplest architecture forCompute simplest architecture for
+the features offered.
 
 Components
 ~~~~~~~~~~
@@ -68,18 +65,15 @@ Components
 
 An asterisk (\*) indicates when the example architecture deviates from
 the settings of a default installation. We'll offer explanations for
-those deviations next.objects object storagestorage object
-storagemigrationlive migrationIP addresses floatingfloating IP
-addressstorage block storageblock storagedashboardlegacy networking
-(nova) features supported by
+those deviations next.
 
 .. note::
 
     The following features of OpenStack are supported by the example
     architecture documented in this guide, but are optional:
 
-    -  Dashboard: You probably want to offer a dashboard, but your users
-       may be more interested in API access only.
+    -  :term:`Dashboard`: You probably want to offer a dashboard, but your
+       users may be more interested in API access only.
 
     -  Block storage: You don't have to offer users block storage if
        their use case only needs ephemeral storage on compute nodes, for
@@ -109,7 +103,7 @@ Rationale
 This example architecture has been selected based on the current default
 feature set of OpenStack Havana, with an emphasis on stability. We
 believe that many clouds that currently run OpenStack in production have
-made similar choices.legacy networking (nova) rationale for choice of
+made similar choices.
 
 You must first choose the operating system that runs on all of the
 physical nodes. While OpenStack is supported on several distributions of
@@ -123,25 +117,24 @@ Archive <https://wiki.ubuntu.com/ServerTeam/CloudArchive>`__. The Cloud
 Archive is a package repository supported by Canonical that allows you
 to upgrade to future OpenStack releases while remaining on Ubuntu 12.04.
 
-*KVM* as a hypervisor complements the choice of Ubuntu—being a matched
-pair in terms of support, and also because of the significant degree of
-attention it garners from the OpenStack development community (including
+*KVM* as a :term:`hypervisor` complements the choice of Ubuntu—being a
+matched pair in terms of support, and also because of the significant degree
+of attention it garners from the OpenStack development community (including
 the authors, who mostly use KVM). It is also feature complete, free from
-licensing charges and restrictions.kernel-based VM (KVM)
-hypervisorhypervisors KVM
+licensing charges and restrictions.
 
 *MySQL* follows a similar trend. Despite its recent change of ownership,
 this database is the most tested for use with OpenStack and is heavily
 documented. We deviate from the default database, *SQLite*, because
 SQLite is not an appropriate database for production usage.
 
-The choice of *RabbitMQ* over other AMQP compatible options that are
-gaining support in OpenStack, such as ZeroMQ and Qpid, is due to its
+The choice of *RabbitMQ* over other
+:term:`AMQP <Advanced Message Queuing Protocol (AMQP)>` compatible options
+that are gaining support in OpenStack, such as ZeroMQ and Qpid, is due to its
 ease of use and significant testing in production. It also is the only
 option that supports features such as Compute cells. We recommend
 clustering with RabbitMQ, as it is an integral component of the system
-and fairly simple to implement due to its inbuilt nature.Advanced
-Message Queuing Protocol (AMQP)
+and fairly simple to implement due to its inbuilt nature.
 
 As discussed in previous chapters, there are several options for
 networking in OpenStack Compute. We recommend *FlatDHCP* and to use
@@ -156,8 +149,8 @@ the distributed file system.
 
 Acknowledging that many small-scale deployments see running Object
 Storage just for the storage of virtual machine images as too costly, we
-opted for the file back end in the OpenStack Image service (Glance). If
-your cloud will include Object Storage, you can easily add it as a back
+opted for the file back end in the OpenStack :term:`Image service` (Glance).
+If your cloud will include Object Storage, you can easily add it as a back
 end.
 
 We chose the *SQL back end for Identity* over others, such as LDAP. This
@@ -183,22 +176,20 @@ Why not use OpenStack Networking?
 This example architecture does not use OpenStack Networking, because it
 does not yet support multi-host networking and our organizations
 (university, government) have access to a large range of
-publicly-accessible IPv4 addresses.legacy networking (nova) vs.
-OpenStack Networking (neutron)
+publicly-accessible IPv4 addresses.
 
 Why use multi-host networking?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In a default OpenStack deployment, there is a single ``nova-network``
 service that runs within the cloud (usually on the cloud controller)
-that provides services such as network address translation (NAT), DHCP,
-and DNS to the guest instances. If the single node that runs the
+that provides services such as
+:term:`network address translation <NAT>` (NAT), :term:`DHCP`,
+and :term:`DNS` to the guest instances. If the single node that runs the
 ``nova-network`` service goes down, you cannot access your instances,
 and the instances cannot access the Internet. The single node that runs
 the ``nova-network`` service can become a bottleneck if excessive
-network traffic comes in and goes out of the cloud.networks
-multi-hostmulti-host networkinglegacy networking (nova) benefits of
-multi-host networking
+network traffic comes in and goes out of the cloud.
 
 .. note::
 
@@ -213,12 +204,15 @@ Detailed Description
 The reference architecture consists of multiple compute nodes, a cloud
 controller, an external NFS storage server for instance storage, and an
 OpenStack Block Storage server for volume storage.legacy networking
-(nova) detailed description A network time service (Network Time
-Protocol, or NTP) synchronizes time on all the nodes. FlatDHCPManager in
+(nova) detailed description A network time service (:term:`Network Time
+Protocol <NTP>`, or NTP) synchronizes time on all the nodes. FlatDHCPManager in
 multi-host mode is used for the networking. A logical diagram for this
 example architecture shows which services are running on each node:
 
-|image0|
+.. image:: figures/osog_01in01.png
+   :width: 100%
+
+|
 
 The cloud controller runs the dashboard, the API services, the database
 (MySQL), a message queue server (RabbitMQ), the scheduler for choosing
@@ -226,7 +220,7 @@ compute resources (``nova-scheduler``), Identity services (keystone,
 ``nova-consoleauth``), Image services (``glance-api``,
 ``glance-registry``), services for console access of guests, and Block
 Storage services, including the scheduler for storage resources
-(``cinder-api`` and ``cinder-scheduler``).cloud controllers duties of
+(``cinder-api`` and ``cinder-scheduler``).
 
 Compute nodes are where the computing resources are held, and in our
 example architecture, they run the hypervisor (KVM), libvirt (the driver
@@ -245,7 +239,10 @@ if possible. Floating IP access is direct to the Internet, whereas Flat
 IP access goes through a NAT. To envision the network traffic, use this
 diagram:
 
-|image1|
+.. image:: figures/osog_01in02.png
+   :width: 100%
+
+|
 
 Optional Extensions
 -------------------
@@ -253,13 +250,10 @@ Optional Extensions
 You can extend this reference architecture aslegacy networking (nova)
 optional extensions follows:
 
--  Add additional cloud controllers (see `??? <#maintenance>`_).
+-  Add additional cloud controllers (see :doc:`ch_ops_maintenance`).
 
 -  Add an OpenStack Storage service (see the Object Storage chapter in
    the *OpenStack Installation Guide* for your distribution).
 
 -  Add additional OpenStack Block Storage hosts (see
-   `??? <#maintenance>`_).
-
-.. |image0| image:: figures/osog_01in01.png
-.. |image1| image:: figures/osog_01in02.png
+   :doc:`ch_ops_maintenance`).
