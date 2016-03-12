@@ -6,16 +6,17 @@ Storage is found in many parts of the OpenStack stack, and the differing
 types can cause confusion to even experienced cloud engineers. This
 section focuses on persistent storage options you can configure with
 your cloud. It's important to understand the distinction between
-ephemeral storage and persistent storage.
+:term:`ephemeral <ephemeral volume>` storage and
+:term:`persistent <persistent volume>` storage.
 
 Ephemeral Storage
 ~~~~~~~~~~~~~~~~~
 
-If you deploy only the OpenStack Compute Service (nova), your users do
+If you deploy only the OpenStack :term:`Compute service` (nova), your users do
 not have access to any form of persistent storage by default. The disks
 associated with VMs are "ephemeral," meaning that (from the user's point
 of view) they effectively disappear when a virtual machine is
-terminated.storage ephemeral
+terminated.
 
 Persistent Storage
 ~~~~~~~~~~~~~~~~~~
@@ -26,9 +27,6 @@ instance.
 
 Today, OpenStack clouds explicitly support three types of persistent
 storage: *object storage*, *block storage*, and *file system storage*.
-swift Object Storage API persistent storage objects persistent storage
-of Object Storage Object Storage API storage object storage shared file
-system storage shared file systems service
 
 Object Storage
 --------------
@@ -40,7 +38,7 @@ OpenStack Object Storage (swift) project. If your intended users need to
 archive or manage large datasets, you want to provide them with object
 storage. In addition, OpenStack can store your virtual machine (VM)
 images inside of an object storage system, as an alternative to storing
-the images on a file system.binary binary objects
+the images on a file system.
 
 OpenStack Object Storage provides a highly scalable, highly available
 storage solution by relaxing some of the constraints of traditional file
@@ -50,12 +48,12 @@ type of storage is built on the idea that all storage hardware fails, at
 every level, at some point. Infrequently encountered failures that would
 hamstring other storage systems, such as issues taking down RAID cards
 or entire servers, are handled gracefully with OpenStack Object
-Storage.scaling Object Storage and
+Storage.
 
 A good document describing the Object Storage architecture is found
-within `the developer
-documentation <http://docs.openstack.org/developer/swift/overview_architecture.html>`_—read
-this first. Once you understand the architecture, you should know what a
+within the `developer
+documentation <http://docs.openstack.org/developer/swift/overview_architecture.html>`_
+— read this first. Once you understand the architecture, you should know what a
 proxy server does and how zones work. However, some important points are
 often missed at first glance.
 
@@ -73,10 +71,10 @@ throughout your data center's network and power-failure zones. Is a zone
 a rack, a server, or a disk?
 
 Object Storage's network patterns might seem unfamiliar at first.
-Consider these main traffic flows: objects storage decisions and
-containers storage decisions andaccount server
+Consider these main traffic flows:
 
--  Among object, container, and account servers
+-  Among :term:`object`, :term:`container`, and
+   :term:`account servers <account server>`
 
 -  Between those servers and the proxies
 
@@ -115,8 +113,7 @@ Block Storage
 
 Block storage (sometimes referred to as volume storage) provides users
 with access to block-storage devices. Users interact with block storage
-by attaching volumes to their running VM instances.volume storageblock
-storagestorage block storage
+by attaching volumes to their running VM instances.
 
 These volumes are persistent: they can be detached from one instance and
 re-attached to another, and the data remains intact. Block storage is
@@ -264,7 +261,7 @@ system's file system interface. Most users, if they have used a network
 storage solution before, have encountered this form of networked
 storage. In the Unix world, the most common form of this is NFS. In the
 Windows world, the most common form is called CIFS (previously,
-SMB).migrationlive migrationstorage file-level
+SMB).
 
 OpenStack clouds do not present file-level storage to end users.
 However, it is important to consider file-level storage for storing
@@ -281,9 +278,9 @@ set a time-to-live (TTL) value on a file. Others may access only storage
 that is mounted with the file system itself, but want it to be
 replicated instantly when starting a new instance. For other systems,
 ephemeral storage—storage that is released when a VM attached to it is
-shut down— is the preferred way. When you select storage back ends,
-storage choosing back endsstorage back endback end interactions storeask
-the following questions on behalf of your users:
+shut down— is the preferred way. When you select
+:term:`storage back ends <storage back end>`,
+ask the following questions on behalf of your users:
 
 -  Do my users need block storage?
 
@@ -319,32 +316,45 @@ number of open-source packages, as shown in the following table.
      - File-level
    * - Swift
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      -
      -  
    * - LVM
      -
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      -  
    * - Ceph
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      - Experimental
    * - Gluster
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
    * - NFS
      -
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
    * - ZFS
      -
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      -  
    * - Sheepdog
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      - .. image:: figures/Check_mark_23x20_02.png
+          :width: 30%
      -
+
 
 .. note::
 
@@ -357,8 +367,7 @@ number of open-source packages, as shown in the following table.
 
 In addition to the open source technologies, there are a number of
 proprietary solutions that are officially supported by OpenStack Block
-Storage.storage storage driver support They are offered by the following
-vendors:
+Storage. They are offered by the following vendors:
 
 -  IBM (Storwize family/SVC, XIV)
 
@@ -386,7 +395,7 @@ Commodity Storage Back-end Technologies
 This section provides a high-level overview of the differences among the
 different commodity storage back end technologies. Depending on your
 cloud user's needs, you can implement one or many of these technologies
-in different combinations:storage commodity storage
+in different combinations:
 
 OpenStack Object Storage (swift)
     The official OpenStack Object Store implementation. It is a mature
@@ -404,9 +413,9 @@ OpenStack Object Storage (swift)
     for your users for both compute and object storage, or if you want
     to control your object storage with the OpenStack dashboard, you
     should consider OpenStack Object Storage. More detail can be found
-    about OpenStack Object Storage in the section below.accounts
+    about OpenStack Object Storage in the section below.
 
-CephCeph
+Ceph
     A scalable storage solution that replicates data across commodity
     storage nodes. Ceph was originally developed by one of the founders
     of DreamHost and is currently used in production there.
@@ -437,7 +446,7 @@ CephCeph
     system, or if you want to support fast boot-from-volume, you should
     consider Ceph.
 
-GlusterGlusterFS
+Gluster
     A distributed, shared file system. As of Gluster version 3.3, you
     can use Gluster to consolidate your object storage and file storage
     into one unified file and object storage solution, which is called
@@ -450,7 +459,7 @@ GlusterGlusterFS
     your end users. If you want to manage your object and file storage
     within a single system, you should consider GFO.
 
-LVMLVM (Logical Volume Manager)
+LVM
     The Logical Volume Manager is a Linux-based system that provides an
     abstraction layer on top of physical disks to expose logical volumes
     to the operating system. The LVM back-end implements block storage
@@ -468,7 +477,7 @@ LVMLVM (Logical Volume Manager)
        However, RAID does not protect against a failure of the entire
        host.
 
-ZFSZFS
+ZFS
     The Solaris iSCSI driver for OpenStack Block Storage implements
     blocks as ZFS entities. ZFS is a file system that also has the
     functionality of a volume manager. This is unlike on a Linux system,
@@ -489,7 +498,7 @@ ZFSZFS
     Solaris-based operating system, and we assume that your experience
     is primarily with Linux-based systems.
 
-SheepdogSheepdog
+Sheepdog
     Sheepdog is a userspace distributed storage system. Sheepdog scales
     to several hundred nodes, and has powerful virtual disk management
     features like snapshot, cloning, rollback, thin provisioning.
@@ -509,3 +518,4 @@ ask your future cloud users about their storage use cases. As you can
 see, your storage decisions will also influence your network design for
 performance and security needs. Continue with us to make more informed
 decisions about your OpenStack cloud design.
+
