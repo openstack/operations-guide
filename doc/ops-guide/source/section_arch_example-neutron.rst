@@ -7,17 +7,16 @@ Networking, also known as the Neutron project, in a highly available
 environment.
 
 Overview
---------
+~~~~~~~~
 
 A highly-available environment can be put into place if you require an
 environment that can scale horizontally, or want your cloud to continue
 to be operational in case of node failure. This example architecture has
 been written based on the current default feature set of OpenStack
-Havana, with an emphasis on high availability.RDO (Red Hat Distributed
-OpenStack)OpenStack Networking (neutron) component overview
+Havana, with an emphasis on high availability.
 
 Components
-~~~~~~~~~~
+----------
 
 .. list-table::
    :widths: 50 50
@@ -49,14 +48,13 @@ Components
      - GlusterFS
 
 Rationale
-~~~~~~~~~
+---------
 
 This example architecture has been selected based on the current default
 feature set of OpenStack Havana, with an emphasis on high availability.
 This architecture is currently being deployed in an internal Red Hat
 OpenStack cloud and used to run hosted and shared services, which by
-their nature must be highly available.OpenStack Networking (neutron)
-rationale for choice of
+their nature must be highly available.
 
 This architecture's components have been selected for the following
 reasons:
@@ -85,9 +83,9 @@ MySQL
     database is open source, scalable, and handles memory well.
 
 Qpid
-    Apache Qpid offers 100 percent compatibility with the Advanced
-    Message Queuing Protocol Standard, and its broker is available for
-    both C++ and Java.
+    Apache Qpid offers 100 percent compatibility with the
+    :term:`Advanced Message Queuing Protocol (AMQP)` Standard, and its
+    broker is available for both C++ and Java.
 
 OpenStack Networking
     OpenStack Networking offers sophisticated networking functionality,
@@ -104,16 +102,16 @@ GlusterFS
     for example, by an expensive storage array).
 
 Detailed Description
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Node types
-~~~~~~~~~~
+----------
 
 This section gives you a breakdown of the different nodes that make up
 the OpenStack environment. A node is a physical machine that is
 provisioned with an operating system, and running a defined software
 stack on top of it. The table below provides node descriptions and
-specifications.OpenStack Networking (neutron) detailed description of
+specifications.
 
 .. list-table:: Node types
    :widths: 33 33 33
@@ -138,7 +136,7 @@ specifications.OpenStack Networking (neutron) detailed description of
          run on the host as well. This persistent storage is backed onto
          the storage nodes for reliability.
 
-       See `Node controller <#node_controller-diagram>`_.
+       See :ref:`controller_node`.
      - Model: Dell R620
 
        CPU: 2x Intel® Xeon® CPU E5-2620 0 @ 2.00 GHz
@@ -156,7 +154,7 @@ specifications.OpenStack Networking (neutron) detailed description of
        * Use local storage on the node for the virtual machines so that
          no VM migration or instance recovery at node failure is possible.
 
-       See `Node compute <#node_compute-diagram>`_.
+       See :ref:`compute_node`.
      - Model: Dell R620
 
        CPU: 2x Intel® Xeon® CPU E5-2650 0 @ 2.00 GHz
@@ -173,7 +171,7 @@ specifications.OpenStack Networking (neutron) detailed description of
        Storage nodes use GlusterFS technology to keep the data highly
        available and scalable.
 
-       See `Node storage <#node_storage-diagram>`_.
+       See :ref:`storage_node`.
      - Model: Dell R720xd
 
        CPU: 2x Intel® Xeon® CPU E5-2620 0 @ 2.00 GHz
@@ -197,7 +195,7 @@ specifications.OpenStack Networking (neutron) detailed description of
          exception of the networking API service (which runs on the
          controller node).
 
-       See `Node network <#node_network-diagram>`_.
+       See :ref:`network_node`.
      - Model: Dell R620
 
        CPU: 1x Intel® Xeon® CPU E5-2620 0 @ 2.00 GHz
@@ -228,8 +226,10 @@ specifications.OpenStack Networking (neutron) detailed description of
        Network: two 10G network ports
 
 
+.. _networking_layout:
+
 Networking layout
-~~~~~~~~~~~~~~~~~
+-----------------
 
 The network contains all the management devices for all hardware in the
 environment (for example, by including Dell iDrac7 devices for the
@@ -288,7 +288,7 @@ Node connectivity
 ~~~~~~~~~~~~~~~~~
 
 The following section details how the nodes are connected to the
-different networks (see `section\_title <#networking_layout>`__) and
+different networks (see :ref:`networking_layout`) and
 what other considerations need to take place (for example, bonding) when
 connecting nodes to the networks.
 
@@ -303,6 +303,7 @@ appropriate nodes for maximum performance.
 
 .. figure:: figures/osog_0101.png
    :alt: Basic node deployment
+   :width: 100%
 
    Basic node deployment
 
@@ -313,11 +314,11 @@ Connectivity for maximum performance
 If the networking performance of the basic layout is not enough, you can
 move to the design below, which provides 2 × 10G network
 links to all instances in the environment as well as providing more
-network bandwidth to the storage layer.bandwidth obtaining maximum
-performance
+network bandwidth to the storage layer.
 
 .. figure:: figures/osog_0102.png
    :alt: Performance node deployment
+   :width: 100%
 
    Performance node deployment
 
@@ -331,23 +332,35 @@ will be running on top of them and how they interact with each other.
 The diagrams also illustrate how the availability and scalability of
 services are achieved.
 
+.. _controller_node:
+
 .. figure:: figures/osog_0103.png
    :alt: Controller node
+   :width: 100%
 
    Controller node
 
+.. _compute_node:
+
 .. figure:: figures/osog_0104.png
    :alt: Compute node
+   :width: 100%
 
    Compute node
 
+.. _network_node:
+
 .. figure:: figures/osog_0105.png
    :alt: Network node
+   :width: 100%
 
    Network node
 
+.. _storage_node:
+
 .. figure:: figures/osog_0106.png
    :alt: Storage node
+   :width: 100%
 
    Storage node
 
@@ -356,8 +369,7 @@ Example Component Configuration
 -------------------------------
 
 The following tables include example configuration
-and considerations for both third-party and OpenStackOpenStack
-Networking (neutron) third-party component configuration components:
+and considerations for both third-party and OpenStack components:
 
 .. list-table:: Table: Third-party component configuration
    :widths: 25 25 25 25
