@@ -19,8 +19,8 @@ serving users.
 
 .. note::
 
-   As always, refer to the Glossary if you are unclear about any of the
-   terminology mentioned in architecture examples.
+   As always, refer to the :doc:`common/glossary` if you are unclear
+   about any of the terminology mentioned in architecture examples.
 
 .. toctree::
    :maxdepth: 2
