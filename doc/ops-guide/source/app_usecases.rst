@@ -12,8 +12,7 @@ NeCTAR
 Who uses it: researchers from the Australian publicly funded research
 sector. Use is across a wide variety of disciplines, with the purpose of
 instances ranging from running simple web servers to using hundreds of
-cores for high-throughput computing.NeCTAR Research Clouduse cases
-NeCTAROpenStack community use cases NeCTAR
+cores for high-throughput computing.
 
 Deployment
 ----------
@@ -52,9 +51,7 @@ MIT CSAIL
 ~~~~~~~~~
 
 Who uses it: researchers from the MIT Computer Science and Artificial
-Intelligence Lab.CSAIL (Computer Science and Artificial Intelligence
-Lab)MIT CSAIL (Computer Science and Artificial Intelligence Lab)use
-cases MIT CSAILOpenStack community use cases MIT CSAIL
+Intelligence Lab.
 
 Deployment
 ----------
@@ -125,7 +122,7 @@ digital infrastructure as advanced networking and cloud computing and
 storage to create an environment for developing and testing innovative
 ICT applications, protocols, and services; performing at-scale
 experimentation for deployment; and facilitating a faster time to
-market.DAIRuse cases DAIROpenStack community use cases DAIR
+market.
 
 Deployment
 ----------
@@ -141,7 +138,7 @@ For Object Storage, each region has a swift environment.
 
 A NetApp appliance is used in each region for both block storage and
 instance storage. There are future plans to move the instances off the
-NetApp appliance and onto a distributed file system such as Ceph or
+NetApp appliance and onto a distributed file system such as :term:`Ceph` or
 GlusterFS.
 
 VlanManager is used extensively for network management. All servers have
@@ -156,15 +153,11 @@ Resources
 
 -  `DAIR homepage <http://www.canarie.ca/cloud/>`__
 
--  `DAIR homepage <http://www.canarie.ca/cloud/>`_
-
 CERN
 ~~~~
 
 Who uses it: researchers at CERN (European Organization for Nuclear
-Research) conducting high-energy physics research.CERN (European
-Organization for Nuclear Research)use cases CERNOpenStack community use
-cases CERN
+Research) conducting high-energy physics research.
 
 Deployment
 ----------
