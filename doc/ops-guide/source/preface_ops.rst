@@ -3,7 +3,7 @@ Preface
 =======
 
 OpenStack is an open source platform that lets you build an
-Infrastructure as a Service (IaaS) cloud that runs on commodity
+:term:`Infrastructure-as-a-Service (IaaS)<IaaS>` cloud that runs on commodity
 hardware.
 
 Introduction to OpenStack
@@ -123,9 +123,9 @@ your OpenStack cloud.
 
    Cloud computing is quite an advanced topic, and this book requires a
    lot of background knowledge. However, if you are fairly new to cloud
-   computing, we recommend that you make use of the ? at the back of
-   the book, as well as the online documentation for OpenStack and
-   additional resources mentioned in this book in ?.
+   computing, we recommend that you make use of the :doc:`common/glossary`
+   at the back of the book, as well as the online documentation for OpenStack
+   and additional resources mentioned in this book in :doc:`ch_ops_resources`.
 
 Further Reading
 ---------------
@@ -196,38 +196,38 @@ OpenStack clouds.
 
 **Part I:**
 
-`Architecture Examples <#example_architecture>`_
+:doc:`ch_arch_examples`
     Because of all the decisions the other chapters discuss, this
     chapter describes the decisions made for this particular book and
     much of the justification for the example architecture.
 
-`Provisioning and Deployment <#section_arch_provision>`_
+:doc:`ch_arch_provision`
     While this book doesn't describe installation, we do recommend
     automation for deployment and configuration, discussed in this
     chapter.
 
-`Designing for Cloud Controllers and Management <#cloud_controller_design>`_
+:doc:`ch_arch_cloud_controller`
     The cloud controller is an invention for the sake of consolidating
     and describing which services run on which nodes. This chapter
     discusses hardware and network considerations as well as how to
     design the cloud controller for performance and separation of
     services.
 
-`Compute Nodes <#compute_nodes>`_
+:doc:`ch_arch_compute_nodes`
     This chapter describes the compute nodes, which are dedicated to
     running virtual machines. Some hardware choices come into play here,
     as well as logging and networking descriptions.
 
-`Scaling <#scaling>`_
+:doc:`ch_arch_scaling`
     This chapter discusses the growth of your cloud resources through
     scaling and segregation considerations.
 
-`Storage Decisions <#storage_decision>`_
+:doc:`ch_arch_storage`
     As with other architecture decisions, storage concepts within
     OpenStack offer many options. This chapter lays out the choices for
     you.
 
-`Network Design <#network_design>`_
+:doc:`ch_arch_network_design`
     Your OpenStack cloud networking needs to fit into your existing
     networks while also enabling the best design for your users and
     administrators, and this chapter gives you in-depth information
@@ -235,79 +235,79 @@ OpenStack clouds.
 
 **Part II:**
 
-`Lay of the Land <#lay_of_the_land>`_
+:doc:`ch_ops_lay_of_land`
     This chapter is written to let you get your hands wrapped around
     your OpenStack cloud through command-line tools and understanding
     what is already set up in your cloud.
 
-`Managing Projects and Users <#projects_users>`_
+:doc:`ch_ops_projects_users`
     This chapter walks through user-enabling processes that all admins
     must face to manage users, give them quotas to parcel out resources,
     and so on.
 
-`User-Facing Operations <#user_facing_operations>`_
+:doc:`ch_ops_user_facing`
     This chapter shows you how to use OpenStack cloud resources and how
     to train your users.
 
-`Maintenance, Failures, and Debugging <#maintenance>`_
+:doc:`ch_ops_maintenance`
     This chapter goes into the common failures that the authors have
     seen while running clouds in production, including troubleshooting.
 
-`Network Troubleshooting <#network_troubleshooting>`_
+:doc:`ch_ops_network_troubleshooting`
     Because network troubleshooting is especially difficult with virtual
     resources, this chapter is chock-full of helpful tips and tricks for
     tracing network traffic, finding the root cause of networking
     failures, and debugging related services, such as DHCP and DNS.
 
-`Logging and Monitoring <#logging_monitoring>`_
+:doc:`ch_ops_log_monitor`
     This chapter shows you where OpenStack places logs and how to best
     read and manage logs for monitoring purposes.
 
-`Backup and Recovery <#backup_and_recovery>`_
+:doc:`ch_ops_backup_recovery`
     This chapter describes what you need to back up within OpenStack as
     well as best practices for recovering backups.
 
-`Customization <#customize>`_
+:doc:`ch_ops_customize`
     For readers who need to get a specialized feature into OpenStack,
     this chapter describes how to use DevStack to write custom
     middleware or a custom scheduler to rebalance your resources.
 
-`Upstream OpenStack <#upstream_openstack>`_
+:doc:`ch_ops_upstream`
     Because OpenStack is so, well, open, this chapter is dedicated to
     helping you navigate the community and find out where you can help
     and where you can get help.
 
-`Advanced Configuration <#advanced_configuration>`_
+:doc:`ch_ops_advanced_configuration`
     Much of OpenStack is driver-oriented, so you can plug in different
     solutions to the base set of services. This chapter describes some
     advanced configuration topics.
 
-`Upgrades <#ch_ops_upgrades>`_
+:doc:`ch_ops_upgrades`
     This chapter provides upgrade information based on the architectures
     used in this book.
 
 **Back matter:**
 
-`Use Cases <#use-cases>`_
+:doc:`app_usecases`
     You can read a small selection of use cases from the OpenStack
     community with some technical details and further resources.
 
-`Tales From the Cryp^H^H^H^H Cloud <#app_crypt>`_
+:doc:`app_crypt`
     These are shared legendary tales of image disappearances, VM
     massacres, and crazy troubleshooting techniques that result in
     hard-learned lessons and wisdom.
 
-`Working with Roadmaps <#working-with-roadmaps>`_
+:doc:`app_roadmaps`
     Read about how to track the OpenStack roadmap through the open and
     transparent development processes.
 
-`Resources <#recommended-reading>`_
+:doc:`ch_ops_resources`
     So many OpenStack resources are available online because of the
     fast-moving nature of the project, but there are also resources
     listed here that the authors found helpful while learning
     themselves.
 
-`Glossary <#openstack_glossary>`_
+:doc:`common/glossary`
     A list of terms used in this book is included, which is a subset of
     the larger OpenStack glossary available online.
 
@@ -481,22 +481,22 @@ Constant width italic
 Command prompts
     Commands prefixed with the ``#`` prompt should be executed by the
     ``root`` user. These examples can also be executed using the
-    ``sudo`` command, if available.
+    :command:`sudo` command, if available.
 
     Commands prefixed with the ``$`` prompt can be executed by any user,
     including ``root``.
 
 .. tip::
 
-    This element signifies a tip or suggestion.
+   This element signifies a tip or suggestion.
 
 .. note::
 
-    This element signifies a general note.
+   This element signifies a general note.
 
 .. warning::
 
-    This element indicates a warning or caution.
+   This element indicates a warning or caution.
 
 See also:
 
