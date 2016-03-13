@@ -162,6 +162,9 @@ OpenStack dashboard, and Object Storage as the starting point.
 
 .. _local.conf:
 
+local.conf
+----------
+
 .. code-block:: bash
 
    [[local|localrc]]
