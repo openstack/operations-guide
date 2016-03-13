@@ -88,8 +88,9 @@ Option 1
 
     .. _partition_setup:
 
-    .. image:: figures/osog_0201.png
+    .. figure:: figures/osog_0201.png
 
+       Figure. Partition setup of drives
 
     While you might end up with unused partitions, such as partition 1
     in disk three and four of this example, this option allows for
