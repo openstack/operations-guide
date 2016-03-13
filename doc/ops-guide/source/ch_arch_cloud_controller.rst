@@ -9,8 +9,7 @@ using the concept of a *cloud controller*. A cloud controller is just a
 conceptual simplification. In the real world, you design an architecture
 for your cloud controller that enables high availability so that if any
 node fails, another can take over the required tasks. In reality, cloud
-controller tasks are spread out across more than a single node.design
-considerations cloud controller servicescloud controllers concept of
+controller tasks are spread out across more than a single node.
 
 The cloud controller provides the central management system for
 OpenStack deployments. Typically, the cloud controller manages
@@ -21,17 +20,15 @@ For many deployments, the cloud controller is a single node. However, to
 have high availability, you have to take a few considerations into
 account, which we'll cover in this chapter.
 
-The cloud controller manages the following services for the cloud:cloud
-controllers services managed by
+The cloud controller manages the following services for the cloud:
 
 Databases
     Tracks current information about users and instances, for example,
     in a database, typically one database instance managed per service
 
 Message queue services
-    All AMQP—Advanced Message Queue Protocol—messages for services are
-    received and sent according to the queue brokerAdvanced Message
-    Queuing Protocol (AMQP)
+    All :term:`Advanced Message Queuing Protocol (AMQP)` messages for
+    services are received and sent according to the queue broker
 
 Conductor services
     Proxy requests to a database
@@ -60,10 +57,10 @@ API endpoints
 For our example, the cloud controller has a collection of ``nova-*``
 components that represent the global state of the cloud; talks to
 services such as authentication; maintains information about the cloud
-in a database; communicates to all compute nodes and storage workers
-through a queue; and provides API access. Each service running on a
-designated cloud controller may be broken out into separate nodes for
-scalability or availability.storage storage workersworkers
+in a database; communicates to all compute nodes and storage
+:term:`workers <worker>` through a queue; and provides API access.
+Each service running on a designated cloud controller may be broken out
+into separate nodes for scalability or availability.
 
 As another example, you could use pairs of servers for a collective
 cloud controller—one active, one standby—for redundant nodes providing a
@@ -86,8 +83,7 @@ Hardware Considerations
 
 A cloud controller's hardware can be the same as a compute node, though
 you may want to further specify based on the size and type of cloud that
-you run.hardware design considerationsdesign considerations hardware
-considerations
+you run.
 
 It's also possible to use virtual machines for all or some of the
 services that the cloud controller manages, such as the message queuing.
@@ -95,8 +91,7 @@ In this guide, we assume that all services are running directly on the
 cloud controller.
 
 The table below contains common considerations to review when sizing hardware
-for the cloud controller design.cloud controllers hardware sizing
-considerationsActive Directorydashboard
+for the cloud controller design.
 
 .. list-table:: Cloud controller hardware sizing considerations
    :widths: 50 50
@@ -135,10 +130,8 @@ Separation of Services
 
 While our example contains all central services in a single location, it
 is possible and indeed often a good idea to separate services onto
-different physical servers. ? is a list of deployment scenarios we've
-seen and their justifications.provisioning/deployment deployment
-scenariosservices separation ofseparation of servicesdesign
-considerations separation of services
+different physical servers. The table below is a list of deployment
+scenarios we've seen and their justifications.
 
 .. list-table:: Deployment scenarios
    :widths: 50 50
@@ -180,8 +173,7 @@ Database
 
 OpenStack Compute uses an SQL database to store and retrieve stateful
 information. MySQL is the popular database choice in the OpenStack
-community.databases design considerationsdesign considerations database
-choice
+community.
 
 Loss of the database leads to errors. As a result, we recommend that you
 cluster your database to make it failure tolerant. Configuring and
@@ -196,7 +188,7 @@ Most OpenStack services communicate with each other using the *message
 queue*.messages design considerationsdesign considerations message
 queues For example, Compute communicates to block storage services and
 networking services through the message queue. Also, you can optionally
-enable notifications for any service. RabbitMQ, Qpid, and 0mq are all
+enable notifications for any service. RabbitMQ, Qpid, and Zeromq are all
 popular choices for a message-queue service. In general, if the message
 queue fails or becomes inaccessible, the cluster grinds to a halt and
 ends up in a read-only state, with information stuck at the point where
@@ -204,15 +196,14 @@ the last message was sent. Accordingly, we recommend that you cluster
 the message queue. Be aware that clustered message queues can be a pain
 point for many OpenStack deployments. While RabbitMQ has native
 clustering support, there have been reports of issues when running it at
-a large scale. While other queuing solutions are available, such as 0mq
-and Qpid, 0mq does not offer stateful queues. Qpid is the messaging
+a large scale. While other queuing solutions are available, such as Zeromq
+and Qpid, Zeromq does not offer stateful queues. Qpid is the messaging
 system of choice for Red Hat and its derivatives. Qpid does not have
 native clustering capabilities and requires a supplemental service, such
 as Pacemaker or Corsync. For your message queue, you need to determine
 what level of data loss you are comfortable with and whether to use an
 OpenStack project's ability to retry multiple MQ hosts in the event of a
-failure, such as using Compute's ability to do so.0mqQpidRabbitMQmessage
-queue
+failure, such as using Compute's ability to do so.
 
 Conductor Services
 ~~~~~~~~~~~~~~~~~~
@@ -224,8 +215,7 @@ regard to security, if a compute node is compromised, the attacker
 inherently has access to the database. With regard to performance,
 ``nova-compute`` calls to the database are single-threaded and blocking.
 This creates a performance bottleneck because database requests are
-fulfilled serially rather than in parallel.conductorsdesign
-considerations conductor services
+fulfilled serially rather than in parallel.
 
 The conductor service resolves both of these issues by acting as a proxy
 for the ``nova-compute`` service. Now, instead of ``nova-compute``
@@ -240,7 +230,7 @@ compute nodes are fulfilled in parallel.
 
    If you are using ``nova-network`` and multi-host networking in your
    cloud environment, ``nova-compute`` still requires direct access to
-   the database.multi-host networking
+   the database.
 
 The ``nova-conductor`` service is horizontally scalable. To make
 ``nova-conductor`` highly available and fault tolerant, just launch more
@@ -252,8 +242,7 @@ Application Programming Interface (API)
 
 All public access, whether direct, through a command-line client, or
 through the web-based dashboard, uses the API service. Find the API
-reference at http://api.openstack.org/.API (application programming
-interface) design considerationsdesign considerations API support
+reference at http://api.openstack.org/.
 
 You must choose whether you want to support the Amazon EC2 compatibility
 APIs, or just the OpenStack APIs. One issue you might encounter when
@@ -264,32 +253,28 @@ For example, the EC2 API refers to instances using IDs that contain
 hexadecimal, whereas the OpenStack API uses names and digits. Similarly,
 the EC2 API tends to rely on DNS aliases for contacting virtual
 machines, as opposed to OpenStack, which typically lists IP
-addresses.DNS (Domain Name Server, Service or System) DNS
-aliasestroubleshooting DNS issues
+addresses.
 
 If OpenStack is not set up in the right way, it is simple to have
 scenarios in which users are unable to contact their instances due to
 having only an incorrect DNS alias. Despite this, EC2 compatibility can
 assist users migrating to your cloud.
 
-As with databases and message queues, having more than one API server is
-a good thing. Traditional HTTP load-balancing techniques can be used to
-achieve a highly available ``nova-api`` service.API (application
-programming interface) API server
+As with databases and message queues, having more than one :term:`API server`
+is a good thing. Traditional HTTP load-balancing techniques can be used to
+achieve a highly available ``nova-api`` service.
 
 Extensions
 ~~~~~~~~~~
 
 The `API
 Specifications <http://docs.openstack.org/api/api-specs.html>`_ define
->>>>>>> 8f1a44b... Ops guide rst conversion
 the core actions, capabilities, and mediatypes of the OpenStack API. A
 client can always depend on the availability of this core API, and
 implementers are always required to support it in its entirety.
 Requiring strict adherence to the core API allows clients to rely upon a
 minimal level of functionality when interacting with multiple
-implementations of the same API.extensions design considerationsdesign
-considerations extensions
+implementations of the same API.
 
 The OpenStack Compute API is extensible. An extension adds capabilities
 to an API beyond those defined in the core. The introduction of new
@@ -308,8 +293,7 @@ created. The scheduling services receive creation requests for these
 resources from the message queue and then begin the process of
 determining the appropriate node where the resource should reside. This
 process is done by applying a series of user-configurable filters
-against the available collection of nodes.schedulers design
-considerationsdesign considerations scheduling
+against the available collection of nodes.
 
 There are currently two schedulers: ``nova-scheduler`` for virtual
 machines and ``cinder-scheduler`` for block storage volumes. Both
@@ -326,9 +310,7 @@ The OpenStack Image service consists of two parts: ``glance-api`` and
 ``glance-registry``. The former is responsible for the delivery of
 images; the compute node uses it to download images from the back end.
 The latter maintains the metadata information associated with virtual
-machine images and requires a database.glance glance registryglance
-glance API servermetadata OpenStack Image service andImage service
-design considerationsdesign considerations images
+machine images and requires a database.
 
 The ``glance-api`` part is an abstraction layer that allows a choice of
 back end. Currently, it supports:
@@ -358,12 +340,12 @@ The OpenStack dashboard (horizon) provides a web-based user interface to
 the various OpenStack components. The dashboard includes an end-user
 area for users to manage their virtual infrastructure and an admin area
 for cloud operators to manage the OpenStack environment as a
-whole.dashboarddesign considerations dashboard
+whole.
 
 The dashboard is implemented as a Python web application that normally
-runs in Apache ``httpd``. Therefore, you may treat it the same as any
+runs in :term:`Apache` ``httpd``. Therefore, you may treat it the same as any
 other web application, provided it can reach the API servers (including
-their admin endpoints) over the network.Apache
+their admin endpoints) over the network.
 
 Authentication and Authorization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -372,8 +354,7 @@ The concepts supporting OpenStack's authentication and authorization are
 derived from well-understood and widely used systems of a similar
 nature. Users have credentials they can use to authenticate, and they
 can be a member of one or more groups (known as projects or tenants,
-interchangeably).credentialsauthorizationauthenticationdesign
-considerations authentication/authorization
+interchangeably).
 
 For example, a cloud administrator might be able to list all instances
 in the cloud, whereas a user can see only those in his current group.
@@ -383,8 +364,7 @@ space, and so on, are associated with a project.
 OpenStack Identity provides authentication decisions and user attribute
 information, which is then used by the other OpenStack services to
 perform authorization. The policy is set in the ``policy.json`` file.
-For information on how to configure these, see ?.Identity authentication
-decisionsIdentity plug-in support
+For information on how to configure these, see :doc:`ch_ops_projects_users`
 
 OpenStack Identity supports different plug-ins for authentication
 decisions and identity storage. Examples of these plug-ins include:
@@ -408,8 +388,7 @@ Because the cloud controller handles so many different services, it must
 be able to handle the amount of traffic that hits it. For example, if
 you choose to host the OpenStack Image service on the cloud controller,
 the cloud controller should be able to support the transferring of the
-images at an acceptable speed.cloud controllers network traffic
-andnetworks design considerationsdesign considerations networks
+images at an acceptable speed.
 
 As another example, if you choose to use single-host networking where
 the cloud controller is the network gateway for all instances, then the
