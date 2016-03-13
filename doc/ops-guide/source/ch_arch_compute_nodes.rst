@@ -12,8 +12,7 @@ Choosing a CPU
 
 The type of CPU in your compute node is a very important choice. First,
 ensure that the CPU supports virtualization by way of *VT-x* for Intel
-chips and *AMD-v* for AMD chips.CPUs (central processing units)
-choosingcompute nodes CPU choice
+chips and *AMD-v* for AMD chips.
 
 .. note::
 
@@ -24,14 +23,15 @@ choosingcompute nodes CPU choice
    <http://www.amd.com/en-us/innovations/software-technologies/server-solution/virtualization>`_.
    Note that your CPU may support virtualization but it may be
    disabled. Consult your BIOS documentation for how to enable CPU
-   features.virtualization technologyAMD VirtualizationIntel
-   Virtualization Technology
+   features.
 
 The number of cores that the CPU has also affects the decision. It's
 common for current CPUs to have up to 12 cores. Additionally, if an
 Intel CPU supports hyperthreading, those 12 cores are doubled to 24
 cores. If you purchase a server that supports multiple CPUs, the number
-of cores is further multiplied.coreshyperthreadingmultithreading
+of cores is further multiplied.
+
+**Multithread Considerations**
 
 Hyper-Threading is Intel's proprietary simultaneous multithreading
 implementation used to improve parallelization on their CPUs. You might
@@ -42,18 +42,14 @@ Whether you should enable Hyper-Threading on your CPUs depends upon your
 use case. For example, disabling Hyper-Threading can be beneficial in
 intense computing environments. We recommend that you do performance
 testing with your local workload with both Hyper-Threading on and off to
-determine what is more appropriate in your case.CPUs (central processing
-units) enabling hyperthreading on
+determine what is more appropriate in your case.
 
 Choosing a Hypervisor
 ~~~~~~~~~~~~~~~~~~~~~
 
 A hypervisor provides software to manage virtual machine access to the
 underlying hardware. The hypervisor creates, manages, and monitors
-virtual machines.DockerHyper-VESXi hypervisorESX hypervisorVMware
-APIQuick EMUlator (QEMU)Linux containers (LXC)kernel-based VM (KVM)
-hypervisorXen API XenServer hypervisorhypervisors choosingcompute nodes
-hypervisor choice OpenStack Compute supports many hypervisors to various
+virtual machines. OpenStack Compute supports many hypervisors to various
 degrees, including:
 
 -  `KVM <http://www.linux-kvm.org/page/Main_Page>`_
@@ -92,8 +88,7 @@ and in the `configuration reference
 
    It is also possible to run multiple hypervisors in a single
    deployment using host aggregates or cells. However, an individual
-   compute node can run only a single hypervisor at a time.hypervisors
-   running multiple
+   compute node can run only a single hypervisor at a time.
 
 Instance Storage Solutions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,9 +96,7 @@ Instance Storage Solutions
 As part of the procurement for a compute cluster, you must specify some
 storage for the disk on which the instantiated instance runs. There are
 three main approaches to providing this temporary-style storage, and it
-is important to understand the implications of the choice.storage
-instance storage solutionsinstances storage solutionscompute nodes
-instance storage solutions
+is important to understand the implications of the choice.
 
 They are:
 
@@ -144,7 +137,7 @@ Off Compute Node Storage—Shared File System
 -------------------------------------------
 
 In this option, the disks storing the running instances are hosted in
-servers outside of the compute nodes.shared storagefile systems shared
+servers outside of the compute nodes.
 
 If you use separate compute and storage hosts, you can treat your
 compute hosts as "stateless." As long as you don't have any instances
@@ -195,7 +188,7 @@ On Compute Node Storage—Nonshared File System
 ---------------------------------------------
 
 In this option, each compute node is specified with enough disks to
-store the instances it hosts.file systems nonshared
+store the instances it hosts.
 
 There are two main reasons why this is a good idea:
 
@@ -223,7 +216,7 @@ themselves may be best in a scenario where you have to deploy to
 preexisting servers for which you have little to no control over their
 specifications. Running a nonshared file system on the compute nodes
 themselves is a good option for clouds with high I/O requirements and
-low concern for reliability.scaling file system choice
+low concern for reliability.
 
 Issues with Live Migration
 --------------------------
@@ -232,8 +225,7 @@ We consider live migration an integral part of the operations of the
 cloud. This feature provides the ability to seamlessly move instances
 from one physical host to another, a necessity for performing upgrades
 that require reboots of the compute hosts, but only works well with
-shared storage.storage live migrationmigrationlive migrationcompute
-nodes live migration
+shared storage.
 
 Live migration can also be done with nonshared storage, using a feature
 known as *KVM live block migration*. While an earlier implementation of
@@ -241,14 +233,13 @@ block-based migration in KVM and QEMU was considered unreliable, there
 is a newer, more reliable implementation of block-based live migration
 as of QEMU 1.4 and libvirt 1.0.2 that is also compatible with OpenStack.
 However, none of the authors of this guide have first-hand experience
-using live block migration.block migration
+using live block migration.
 
 Choice of File System
 ---------------------
 
 If you want to support shared-storage live migration, you need to
-configure a distributed file system.compute nodes file system choicefile
-systems choice ofstorage file system choice
+configure a distributed file system.
 
 Possible options include:
 
@@ -270,10 +261,8 @@ Overcommitting
 
 OpenStack allows you to overcommit CPU and RAM on compute nodes. This
 allows you to increase the number of instances you can have running on
-your cloud, at the cost of reducing the performance of the instances.RAM
-overcommitCPUs (central processing units)
-overcommittingovercommittingcompute nodes overcommitting OpenStack
-Compute uses the following ratios by default:
+your cloud, at the cost of reducing the performance of the instances.
+OpenStack Compute uses the following ratios by default:
 
 -  CPU allocation ratio: 16:1
 
@@ -286,7 +275,7 @@ cores. With typical flavor definitions of 4 virtual cores per instance,
 this ratio would provide 48 instances on a physical node.
 
 The formula for the number of virtual instances on a compute node is
-*(OR\*PC)/VC*, where:
+*(OR*PC)/VC*, where:
 
 *OR*
     CPU overcommit ratio (virtual cores per physical core)
@@ -313,9 +302,9 @@ particular use case.
 Logging
 ~~~~~~~
 
-Logging is detailed more fully in ?. However, it is an important design
-consideration to take into account before commencing operations of your
-cloud.logging/monitoring compute nodes andcompute nodes logging
+Logging is detailed more fully in :doc:`ch_ops_log_monitor`. However,
+it is an important design consideration to take into account before
+commencing operations of your cloud.
 
 OpenStack produces a great deal of useful logging information, however;
 but for the information to be useful for operations purposes, you should
@@ -326,7 +315,7 @@ Networking
 ~~~~~~~~~~
 
 Networking in OpenStack is a complex, multifaceted challenge. See
-?.
+:doc:`ch_arch_network_design`.
 
 Conclusion
 ~~~~~~~~~~
