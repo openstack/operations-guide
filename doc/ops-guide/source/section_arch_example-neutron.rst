@@ -520,7 +520,7 @@ and considerations for both third-party and OpenStack components:
        can be achieved with additional controller nodes. HAProxy allows
        scalability for Compute as more nodes are added. The scalability
        of services running on the compute nodes (compute, conductor) is
-       achieved linearly by adding in more compute nodes.                                                                                                                                                         |
+       achieved linearly by adding in more compute nodes.
    * - Block Storage (cinder)
      - Controller
      - Configured to use Qpid, ``qpid_heartbeat = ``\ ``10``,configured to
