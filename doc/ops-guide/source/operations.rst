@@ -10,8 +10,8 @@ dependencies on your cloud.
 
 While it is important for an operator to be familiar with the steps
 involved in deploying OpenStack, we also strongly encourage you to
-evaluate configuration-management tools, such as Puppet or Chef, which
-can help automate this deployment process.ChefPuppet
+evaluate configuration-management tools, such as :term:`Puppet` or
+:term:`Chef`, which can help automate this deployment process.
 
 In the remainder of this guide, we assume that you have successfully
 deployed an OpenStack cloud and are able to perform basic operations
@@ -39,4 +39,3 @@ problem.
    ch_ops_upstream.rst
    ch_ops_advanced_configuration.rst
    ch_ops_upgrades.rst
-.. ch_ops_resources.rst
