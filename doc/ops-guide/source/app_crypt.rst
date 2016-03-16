@@ -17,15 +17,15 @@ took for granted that everything was working.
 On my last day in Kelowna, I was in a conference call from my hotel. In
 the background, I was fooling around on the new cloud. I launched an
 instance and logged in. Everything looked fine. Out of boredom, I ran
-``ps aux`` and all of the sudden the instance locked up.
+:command:`ps aux` and all of the sudden the instance locked up.
 
 Thinking it was just a one-off issue, I terminated the instance and
 launched a new one. By then, the conference call ended and I was off to
 the data center.
 
 At the data center, I was finishing up some tasks and remembered the
-lock-up. I logged into the new instance and ran ``ps aux`` again. It worked.
-Phew. I decided to run it one more time. It locked up.
+lock-up. I logged into the new instance and ran :command:`ps aux` again.
+It worked. Phew. I decided to run it one more time. It locked up.
 
 After reproducing the problem several times, I came to the unfortunate
 conclusion that this cloud did indeed have a problem. Even worse, my
@@ -47,9 +47,9 @@ happen—such as random session lockups.
 
 .. note::
 
-   Not all packets have a size of 1500. Running the ``ls`` command over
+   Not all packets have a size of 1500. Running the :command:`ls` command over
    SSH might only create a single packets less than 1500 bytes.
-   However, running a command with heavy output, such as ``ps aux``
+   However, running a command with heavy output, such as :command:`ps aux`
    requires several packets of 1500 bytes.
 
 OK, so where is the MTU issue coming from? Why haven't we seen this in
@@ -73,9 +73,9 @@ multi-node, non-multi-host setup.
 One cloud controller acted as a gateway to all compute nodes.
 VlanManager was used for the network config. This means that the cloud
 controller and all compute nodes had a different VLAN for each OpenStack
-project. We used the -s option of ``ping`` to change the packet size. We
-watched as sometimes packets would fully return, sometimes they'd only
-make it out and never back in, and sometimes the packets would stop at a
+project. We used the :option:`-s` option of ``ping`` to change the packet
+size. We watched as sometimes packets would fully return, sometimes they'd
+only make it out and never back in, and sometimes the packets would stop at a
 random point. We changed ``tcpdump`` to start displaying the hex dump of
 the packet. We pinged between every combination of outside, controller,
 compute, and instance.
@@ -95,12 +95,12 @@ That made no sense.
 While bouncing this idea around in our heads, I was randomly typing
 commands on the compute node:
 
-.. code::
+.. code-block:: console
 
-    $ ip a
-    …
-    10: vlan100@vlan20: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br100 state UP
-    …
+   $ ip a
+   …
+   10: vlan100@vlan20: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br100 state UP
+   …
 
 "Hey Alvaro, can you run a VLAN on top of a VLAN?"
 
@@ -108,17 +108,17 @@ commands on the compute node:
 
 Then it all made sense…
 
-.. code::
+.. code-block:: console
 
-    $ grep vlan_interface /etc/nova/nova.conf
-    vlan_interface=vlan20
+   $ grep vlan_interface /etc/nova/nova.conf
+   vlan_interface=vlan20
 
 In ``nova.conf``, ``vlan_interface`` specifies what interface OpenStack
 should attach all VLANs to. The correct setting should have been:
 
-.. code::
+.. code-block:: ini
 
-    vlan_interface=bond0
+   vlan_interface=bond0
 
 As this would be the server's bonded NIC.
 
@@ -155,22 +155,22 @@ cloud controller (DHCP server) to renew its fixed IP. For some reason,
 this instance could not renew its IP. We correlated the instance's logs
 with the logs on the cloud controller and put together a conversation:
 
-1. Instance tries to renew IP.
+#. Instance tries to renew IP.
 
-2. Cloud controller receives the renewal request and sends a response.
+#. Cloud controller receives the renewal request and sends a response.
 
-3. Instance "ignores" the response and re-sends the renewal request.
+#. Instance "ignores" the response and re-sends the renewal request.
 
-4. Cloud controller receives the second request and sends a new
+#. Cloud controller receives the second request and sends a new
    response.
 
-5. Instance begins sending a renewal request to ``255.255.255.255``
+#. Instance begins sending a renewal request to ``255.255.255.255``
    since it hasn't heard back from the cloud controller.
 
-6. The cloud controller receives the ``255.255.255.255`` request and
+#. The cloud controller receives the ``255.255.255.255`` request and
    sends a third response.
 
-7. The instance finally gives up.
+#. The instance finally gives up.
 
 With this information in hand, we were sure that the problem had to do
 with DHCP. We thought that for some reason, the instance wasn't getting
@@ -255,8 +255,8 @@ production, a compute node locks up. Upon rebooting the node, I checked
 to see what instances were hosted on that node so I could boot them on
 behalf of the customer. Luckily, only one instance.
 
-The ``nova reboot`` command wasn't working, so I used ``virsh``, but it
-immediately came back with an error saying it was unable to find the
+The :command:`nova reboot` command wasn't working, so I used :command:`virsh`,
+but it immediately came back with an error saying it was unable to find the
 backing disk. In this case, the backing disk is the Glance image that is
 copied to ``/var/lib/nova/instances/_base`` when the image is used for
 the first time. Why couldn't it find it? I checked the directory and
@@ -296,14 +296,14 @@ shared NFS mount. This means that all compute nodes have access to it,
 which includes the ``_base`` directory. Another centralized area is
 ``/var/log/rsyslog`` on the cloud controller. This directory collects
 all OpenStack logs from all compute nodes. I wondered if there were any
-entries for the file that ``virsh`` is reporting:
+entries for the file that :command:`virsh` is reporting:
 
-::
+.. code-block:: console
 
-    dair-ua-c03/nova.log:Dec 19 12:10:59 dair-ua-c03
-    2012-12-19 12:10:59 INFO nova.virt.libvirt.imagecache
-    [-] Removing base file:
-    /var/lib/nova/instances/_base/7b4783508212f5d242cbf9ff56fb8d33b4ce6166_10
+   dair-ua-c03/nova.log:Dec 19 12:10:59 dair-ua-c03
+   2012-12-19 12:10:59 INFO nova.virt.libvirt.imagecache
+   [-] Removing base file:
+   /var/lib/nova/instances/_base/7b4783508212f5d242cbf9ff56fb8d33b4ce6166_10
 
 Ah-hah! So OpenStack was deleting it. But why?
 
@@ -339,9 +339,9 @@ event, I don't think, or hope, that I'll have the opportunity to use
 This past Valentine's Day, I received an alert that a compute node was
 no longer available in the cloud—meaning,
 
-::
+.. code-block:: console
 
-    $nova-manage service list
+   $ nova-manage service list
 
 showed this particular node with a status of ``XXX``.
 
@@ -385,14 +385,14 @@ immediately saw the problem: the switches detected spanning tree packets
 coming from the two compute nodes and immediately shut the ports down to
 prevent spanning tree loops:
 
-::
+.. code-block:: console
 
-    Feb 15 01:40:18 SW-1 Stp: %SPANTREE-4-BLOCK_BPDUGUARD: Received BPDU packet on Port-Channel35 with BPDU guard enabled. Disabling interface. (source mac fa:16:3e:24:e7:22)
-    Feb 15 01:40:18 SW-1 Ebra: %ETH-4-ERRDISABLE: bpduguard error detected on Port-Channel35.
-    Feb 15 01:40:18 SW-1 Mlag: %MLAG-4-INTF_INACTIVE_LOCAL: Local interface Port-Channel35 is link down. MLAG 35 is inactive.
-    Feb 15 01:40:18 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Port-Channel35 (Server35), changed state to down
-    Feb 15 01:40:19 SW-1 Stp: %SPANTREE-6-INTERFACE_DEL: Interface Port-Channel35 has been removed from instance MST0
-    Feb 15 01:40:19 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet35 (Server35), changed state to down
+   Feb 15 01:40:18 SW-1 Stp: %SPANTREE-4-BLOCK_BPDUGUARD: Received BPDU packet on Port-Channel35 with BPDU guard enabled. Disabling interface. (source mac fa:16:3e:24:e7:22)
+   Feb 15 01:40:18 SW-1 Ebra: %ETH-4-ERRDISABLE: bpduguard error detected on Port-Channel35.
+   Feb 15 01:40:18 SW-1 Mlag: %MLAG-4-INTF_INACTIVE_LOCAL: Local interface Port-Channel35 is link down. MLAG 35 is inactive.
+   Feb 15 01:40:18 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Port-Channel35 (Server35), changed state to down
+   Feb 15 01:40:19 SW-1 Stp: %SPANTREE-6-INTERFACE_DEL: Interface Port-Channel35 has been removed from instance MST0
+   Feb 15 01:40:19 SW-1 Ebra: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet35 (Server35), changed state to down
 
 He re-enabled the switch ports and the two compute nodes immediately
 came back to life.
@@ -444,12 +444,12 @@ log from one of our users' instances.
 After finding the instance ID we headed over to
 ``/var/lib/nova/instances`` to find the ``console.log``:
 
-::
+.. code-block:: console
 
-    adm@cc12:/var/lib/nova/instances/instance-00000e05# wc -l console.log
-    92890453 console.log
-    adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
-    5.5G console.log
+   adm@cc12:/var/lib/nova/instances/instance-00000e05# wc -l console.log
+   92890453 console.log
+   adm@cc12:/var/lib/nova/instances/instance-00000e05# ls -sh console.log
+   5.5G console.log
 
 Sure enough, the user had been periodically refreshing the console log
 page on the dashboard and the 5G file was traversing the Rabbit cluster
@@ -465,7 +465,6 @@ resolution, but we look forward to the discussion at the next summit.
 
 Havana Haunted by the Dead
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
->>>>>>> 8f1a44b... Ops guide rst conversion
 
 Felix Lee of Academia Sinica Grid Computing Centre in Taiwan contributed
 this story.
@@ -476,31 +475,31 @@ repository and everything was running pretty well—except the EC2 API.
 I noticed that the API would suffer from a heavy load and respond slowly
 to particular EC2 requests such as ``RunInstances``.
 
-Output from ``/var/log/nova/nova-api.log`` on Havana:
+Output from ``/var/log/nova/nova-api.log`` on :term:`Havana`:
 
-::
+.. code-block:: console
 
-    2014-01-10 09:11:45.072 129745 INFO nova.ec2.wsgi.server
-    [req-84d16d16-3808-426b-b7af-3b90a11b83b0
-    0c6e7dba03c24c6a9bce299747499e8a 7052bd6714e7460caeb16242e68124f9]
-    117.103.103.29 "GET
-    /services/Cloud?AWSAccessKeyId=[something]&Action=RunInstances&ClientToken=[something]&ImageId=ami-00000001&InstanceInitiatedShutdownBehavior=terminate...
-    HTTP/1.1" status: 200 len: 1109 time: 138.5970151
+   2014-01-10 09:11:45.072 129745 INFO nova.ec2.wsgi.server
+   [req-84d16d16-3808-426b-b7af-3b90a11b83b0
+   0c6e7dba03c24c6a9bce299747499e8a 7052bd6714e7460caeb16242e68124f9]
+   117.103.103.29 "GET
+   /services/Cloud?AWSAccessKeyId=[something]&Action=RunInstances&ClientToken=[something]&ImageId=ami-00000001&InstanceInitiatedShutdownBehavior=terminate...
+   HTTP/1.1" status: 200 len: 1109 time: 138.5970151
 
 This request took over two minutes to process, but executed quickly on
 another co-existing Grizzly deployment using the same hardware and
 system configuration.
 
-Output from ``/var/log/nova/nova-api.log`` on Grizzly:
+Output from ``/var/log/nova/nova-api.log`` on :term:`Grizzly`:
 
-::
+.. code-block:: console
 
-    2014-01-08 11:15:15.704 INFO nova.ec2.wsgi.server
-    [req-ccac9790-3357-4aa8-84bd-cdaab1aa394e
-    ebbd729575cb404081a45c9ada0849b7 8175953c209044358ab5e0ec19d52c37]
-    117.103.103.29 "GET
-    /services/Cloud?AWSAccessKeyId=[something]&Action=RunInstances&ClientToken=[something]&ImageId=ami-00000007&InstanceInitiatedShutdownBehavior=terminate...
-    HTTP/1.1" status: 200 len: 931 time: 3.9426181
+   2014-01-08 11:15:15.704 INFO nova.ec2.wsgi.server
+   [req-ccac9790-3357-4aa8-84bd-cdaab1aa394e
+   ebbd729575cb404081a45c9ada0849b7 8175953c209044358ab5e0ec19d52c37]
+   117.103.103.29 "GET
+   /services/Cloud?AWSAccessKeyId=[something]&Action=RunInstances&ClientToken=[something]&ImageId=ami-00000007&InstanceInitiatedShutdownBehavior=terminate...
+   HTTP/1.1" status: 200 len: 931 time: 3.9426181
 
 While monitoring system resources, I noticed a significant increase in
 memory consumption while the EC2 API processed this request. I thought
@@ -518,15 +517,15 @@ need to work around?
 After digging into the nova (OpenStack Compute) code, I noticed two
 areas in ``api/ec2/cloud.py`` potentially impacting my system:
 
-.. code:: python
+.. code-block:: python
 
-            instances = self.compute_api.get_all(context,
-                                                 search_opts=search_opts,
-                                                 sort_dir='asc')
+   instances = self.compute_api.get_all(context,
+                                        search_opts=search_opts,
+                                        sort_dir='asc')
 
-            sys_metas = self.compute_api.get_all_system_metadata(
-                context, search_filts=[{'key': ['EC2_client_token']},
-                                       {'value': [client_token]}])
+   sys_metas = self.compute_api.get_all_system_metadata(
+       context, search_filts=[{'key': ['EC2_client_token']},
+                              {'value': [client_token]}])
 
 Since my database contained many records—over 1 million metadata records
 and over 300,000 instance records in "deleted" or "errored" states—each
@@ -535,9 +534,9 @@ archiving a copy for backup and then performing some deletions using the
 MySQL client. For example, I ran the following SQL command to remove
 rows of instances deleted for over a year:
 
-::
+.. code-block:: console
 
-    mysql> delete from nova.instances where deleted=1 and terminated_at < (NOW() - INTERVAL 1 YEAR);
+   mysql> delete from nova.instances where deleted=1 and terminated_at < (NOW() - INTERVAL 1 YEAR);
 
 Performance increased greatly after deleting the old records and my new
 deployment continues to behave well.

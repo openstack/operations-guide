@@ -6,22 +6,23 @@ The good news: OpenStack has unprecedented transparency when it comes to
 providing information about what's coming up. The bad news: each release
 moves very quickly. The purpose of this appendix is to highlight some of
 the useful pages to track, and take an educated guess at what is coming
-up in the next release and perhaps further afield.Kilo upcoming release
-ofOpenStack community working with roadmaps release cycle
+up in the next release and perhaps further afield.
 
 OpenStack follows a six month release cycle, typically releasing in
 April/May and October/November each year. At the start of each cycle,
 the community gathers in a single location for a design summit. At the
 summit, the features for the coming releases are discussed, prioritized,
-and planned. ? shows an example release cycle, with dates showing
-milestone releases, code freeze, and string freeze dates, along with an
-example of when the summit occurs. Milestones are interim releases
+and planned. The below figure shows an example release cycle, with dates
+showing milestone releases, code freeze, and string freeze dates, along
+with an example of when the summit occurs. Milestones are interim releases
 within the cycle that are available as packages for download and
 testing. Code freeze is putting a stop to adding new features to the
 release. String freeze is putting a stop to changing any strings within
 the source code.
 
 .. image:: figures/osog_ac01.png
+   :width: 100%
+
 
 Information Available to You
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,8 +198,7 @@ Influencing the Roadmap
 OpenStack truly welcomes your ideas (and contributions) and highly
 values feedback from real-world users of the software. By learning a
 little about the process that drives feature development, you can
-participate and perhaps get the additions you desire.OpenStack community
-working with roadmaps influencing
+participate and perhaps get the additions you desire.
 
 Feature requests typically start their life in Etherpad, a collaborative
 editing tool, which is used to take coordinating notes at a design
@@ -216,11 +216,11 @@ to work with blueprints
 the perspective of Victoria Martínez, a developer intern.
 
 The roadmap for the next release as it is developed can be seen at
-`Releases <http://status.openstack.org/release/>`_.
+`Releases <http://releases.openstack.org>`_.
 
 To determine the potential features going in to future releases, or to
 look at features implemented previously, take a look at the existing
-blueprints such as \ `OpenStack Compute (nova)
+blueprints such as  `OpenStack Compute (nova)
 Blueprints <https://blueprints.launchpad.net/nova>`_, `OpenStack
 Identity (keystone)
 Blueprints <https://blueprints.launchpad.net/keystone>`_, and release
@@ -241,7 +241,7 @@ You want to keep an eye on the areas improving within OpenStack. The
 best way to "watch" roadmaps for each project is to look at the
 blueprints that are being approved for work on milestone releases. You
 can also learn from PTL webinars that follow the OpenStack summits twice
-a year.OpenStack community working with roadmaps aspects to watch
+a year.
 
 Driver Quality Improvements
 ---------------------------
@@ -267,8 +267,8 @@ tool. This tool tests database migration performance on copies of
 real-world user databases.
 
 These changes have facilitated the first proper OpenStack upgrade guide,
-found in ?, and will continue to improve in the next release.Kilo
-upgrades in
+found in :doc:`ch_ops_upgrades`, and will continue to improve in the next
+release.
 
 Deprecation of Nova Network
 ---------------------------
@@ -279,7 +279,7 @@ development effort on the initial networking code that remains part of
 the Compute component has gradually lessened. While many still use
 ``nova-network`` in production, there has been a long-term plan to
 remove the code in favor of the more flexible and full-featured
-OpenStack Networking.nova deprecation of
+OpenStack Networking.
 
 An attempt was made to deprecate ``nova-network`` during the Havana
 release, which was aborted due to the lack of equivalent functionality
@@ -290,8 +290,7 @@ testing, and simplicity when used for the more straightforward use cases
 been made to address these concerns, ``nova-network`` was not be
 deprecated in the Juno release. In addition, to a limited degree,
 patches to ``nova-network`` have again begin to be accepted, such as
-adding a per-network settings feature and SR-IOV support in Juno.Juno
-nova network deprecation
+adding a per-network settings feature and SR-IOV support in Juno.
 
 This leaves you with an important point of decision when designing your
 cloud. OpenStack Networking is robust enough to use with a small number
@@ -387,8 +386,7 @@ of the box in a highly available way, initially supporting only MySQL.
 Juno introduced support for Mongo (including clustering), PostgreSQL and
 Couchbase, in addition to replication functionality for MySQL. In Kilo,
 more advanced clustering capability was delivered, in addition to better
-integration with other OpenStack components such as Networking. Juno
-database-as-a-service tool
+integration with other OpenStack components such as Networking.
 
 Message Service (zaqar)
 ~~~~~~~~~~~~~~~~~~~~~~~
