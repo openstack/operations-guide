@@ -1038,7 +1038,7 @@ Optional arguments:  --force &lt;True|False&gt;  Optional flag to indicate wheth
 --display-description &lt;display-description&gt;
 Optional snapshot description. (Default=None)</programlisting>
     <note><para>For more information about updating Block Storage volumes (for example, resizing or
-      transferring), see the <link xlink:href="http://docs.openstack.org/user-guide/"
+      transferring), see the <link xlink:href="http://docs.openstack.org/user-guide/common/cli_manage_volumes.html"
         >OpenStack End User Guide</link>.</para></note>
     <section xml:id="block_storage_creation_failures">
       <title>Block Storage Creation Failures</title>
