@@ -26,8 +26,8 @@
     with a <guilabel>System Panel</guilabel> and an <guilabel>Identity
     </guilabel> tab. These interfaces give you access to system information
     and usage as well as to settings for configuring what end users can do.
-    Refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/dashboard.html">OpenStack Admin
-    User Guide</link> for detailed how-to information about using the
+    Refer to the <link xlink:href="http://docs.openstack.org/admin-guide/dashboard.html">OpenStack
+    Administrator Guide</link> for detailed how-to information about using the
     dashboard as an admin user.<indexterm class="singular">
         <primary>working environment</primary>
 

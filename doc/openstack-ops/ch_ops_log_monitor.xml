@@ -719,8 +719,8 @@ notification_driver=messagingv2</programlisting>
       provides a REST API documented at <link
       xlink:href="http://developer.openstack.org/api-ref-telemetry-v2.html"></link>.
       You can read more about the module in the
-      <link xlink:href="http://docs.openstack.org/admin-guide-cloud/telemetry.html">
-      OpenStack Cloud Administrator Guide</link> or in the <link
+      <link xlink:href="http://docs.openstack.org/admin-guide/telemetry.html">
+      OpenStack Administrator Guide</link> or in the <link
       xlink:href="http://docs.openstack.org/developer/ceilometer">developer documentation</link>.<indexterm
           class="singular">
           <primary>monitoring</primary>

@@ -447,7 +447,7 @@
          <td><para>Parameter in nova.conf</para></td>
 
          <td><para>Admin establishing
-<link xlink:href="http://docs.openstack.org/user-guide-admin/dashboard_manage_volumes.html">encrypted volume type</link>,
+<link xlink:href="http://docs.openstack.org/admin-guide/dashboard_manage_volumes.html">encrypted volume type</link>,
         then user selecting encrypted volume</para></td>
 
          <td><para>Not yet available</para></td>

@@ -1110,41 +1110,41 @@ Optional snapshot description. (Default=None)</programlisting>
           </listitem>
         </itemizedlist>
         For more information on share management see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_management.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_share_management.html">
         “Share management”</link> of chapter “Shared File Systems” in
-        OpenStack Cloud Administrator Guide.
+        OpenStack Administrator Guide.
         As to Security services, you should remember that different drivers
         support different authentication methods, while generic driver does not
         support Security Services at all (see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_security_services.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_security_services.html">
         “Security services”</link> of chapter “Shared File Systems” in
-        OpenStack Cloud Administrator Guide).
+        OpenStack Administrator Guide).
     </para>
 
     <para>
         You can create a share in a network, list shares, and
         show information for, update, and delete a specified share. You can
         also create snapshots of shares (see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_snapshots.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_snapshots.html">
         “Share snapshots”</link> of chapter “Shared File Systems” in OpenStack
-        Cloud Administrator Guide).
+        Administrator Guide).
     </para>
 
     <para>
         There are default and specific share types that allow you to filter or
         choose back-ends before you create a share. Functions and behaviour of
         share type is similar to Block Storage volume type (see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_types.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_share_types.html">
         “Share types”</link> of chapter “Shared File Systems” in OpenStack
-        Cloud Administrator Guide).
+        Administrator Guide).
     </para>
 
     <para>
         To help users keep and restore their data, Shared File Systems service
         provides a mechanism to create and operate snapshots (see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_snapshots.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_snapshots.html">
         “Share snapshots”</link> of chapter “Shared File Systems” in OpenStack
-        Cloud Administrator Guide).
+        Administrator Guide).
     </para>
 
     <para>
@@ -1152,9 +1152,9 @@ Optional snapshot description. (Default=None)</programlisting>
         authentication and authorization. Inside Manila a share network can be
         associated with up to three security types (for detailed
         information see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_security_services.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_security_services.html">
         “Security services”</link> of chapter “Shared File Systems” in
-        OpenStack Cloud Administrator Guide):
+        OpenStack Administrator Guide):
         <itemizedlist>
           <listitem>
             <para>LDAP</para>
@@ -1189,9 +1189,9 @@ Optional snapshot description. (Default=None)</programlisting>
         provide network information in the configuration: IP range, network
         type, and segmentation ID.
         Also you can add security services to a share network (see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_networking.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_networking.html">
         “Networking”</link> of chapter “Shared File Systems” in OpenStack
-        Cloud Administrator Guide).
+        Administrator Guide).
     </para>
 
     <para>
@@ -1199,9 +1199,9 @@ Optional snapshot description. (Default=None)</programlisting>
         snapshots at the exact same point in time from multiple file system
         shares. Those snapshots can be then used for restoring all shares that
         were associated with the consistency group (see section
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_cgroups.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_cgroups.html">
         “Consistency groups”</link> of chapter “Shared File Systems” in
-        OpenStack Cloud Administrator Guide).
+        OpenStack Administrator Guide).
     </para>
 
     <para>
@@ -1239,9 +1239,9 @@ Optional snapshot description. (Default=None)</programlisting>
         <code>manila rate-limits</code> and <code>manila absolute-limits</code>
         respectively.
         For more details on limits and quotas see subsection
-        <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_quotas.html">
+        <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_quotas.html">
         "Quotas and limits"</link> of "Share management" section of OpenStack
-        Cloud Administrator Guide document.
+        Administrator Guide document.
     </para>
 
     <para>
@@ -1426,9 +1426,9 @@ Optional snapshot description. (Default=None)</programlisting>
 
         <tip>
           <para>See subsection
-            <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_management.html">
+            <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_share_management.html">
             “Share Management”</link> of “Shared File Systems” section of
-            Cloud Administration Guide document for the details on share
+            Administration Guide document for the details on share
             management operations.
           </para>
         </tip>
@@ -1682,9 +1682,9 @@ Optional snapshot description. (Default=None)</programlisting>
             <para>
               For more details and additional information about other cases, features,
               API commands etc, see subsection
-              <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_management.html">
+              <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_share_management.html">
               “Share Management”</link> of “Shared File Systems”
-              section of Cloud Administration Guide document.
+              section of Administration Guide document.
             </para>
           </tip>
 
@@ -1740,9 +1740,9 @@ Optional snapshot description. (Default=None)</programlisting>
           <para>
             For more details and additional information on snapshots, see
             subsection
-            <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_snapshots.html">
+            <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_snapshots.html">
             “Share Snapshots”</link> of “Shared File Systems” section of
-            “Cloud Administration Guide” document.
+            “Administration Guide” document.
           </para>
         </tip>
       </para>
@@ -1813,8 +1813,8 @@ Optional snapshot description. (Default=None)</programlisting>
         Share use case described earlier in this chapter.
         <tip>
           <para>
-            See subsection <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_share_networks.html">
-            “Share Networks”</link> of “Shared File Systems” section of Cloud
+            See subsection <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_share_networks.html">
+            “Share Networks”</link> of “Shared File Systems” section of
             Administration Guide document for more details.
           </para>
         </tip>
@@ -1880,9 +1880,9 @@ Optional snapshot description. (Default=None)</programlisting>
       <tip>
         <para>
           For details, see subsection
-          <link xlink:href="http://docs.openstack.org/admin-guide-cloud/shared_file_systems_security_services.html">
+          <link xlink:href="http://docs.openstack.org/admin-guide/shared_file_systems_security_services.html">
           "Security Services"</link> of “Shared File Systems” section of
-          Cloud Administration Guide document.
+          Administration Guide document.
         </para>
       </tip>
 
@@ -2730,9 +2730,8 @@ Optional snapshot description. (Default=None)</programlisting>
 
     <para>This section was intended as a brief introduction to some of the
     most useful of many OpenStack commands. For an exhaustive list, please
-    refer to the <link xlink:href="http://docs.openstack.org/user-guide-admin/">Admin User
-    Guide</link>, and for additional hints and tips, see the <link
-    xlink:href="http://docs.openstack.org/admin-guide-cloud/">Cloud Admin Guide</link>. We hope
+    refer to the <link xlink:href="http://docs.openstack.org/admin-guide/">
+    OpenStack Administrator Guide</link>. We hope
     your users remain happy and recognize your hard work! (For more hard work,
     turn the page to the next chapter, where we discuss the system-facing
     operations: maintenance, failures and debugging.)</para>

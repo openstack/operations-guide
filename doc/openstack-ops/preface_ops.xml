@@ -196,8 +196,8 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://docs.openstack.org/admin-guide-cloud/">OpenStack
-              Cloud Administrator Guide</link></term>
+          <term><link xlink:href="http://docs.openstack.org/admin-guide/">OpenStack
+              Administrator Guide</link></term>
 
           <listitem>
             <para>Contains how-to information for managing an
