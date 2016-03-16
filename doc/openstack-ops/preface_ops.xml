@@ -250,8 +250,8 @@
         </varlistentry>
 
         <varlistentry>
-          <term><link xlink:href="http://docs.openstack.org/user-guide-admin/">OpenStack
-              Admin User Guide</link></term>
+          <term><link xlink:href="http://docs.openstack.org/admin-guide/">OpenStack
+              Administrator Guide</link></term>
 
           <listitem>
             <para>Shows OpenStack administrators how to create and
