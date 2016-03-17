@@ -28,14 +28,14 @@ problem.
 .. toctree::
    :maxdepth: 2
 
-   ch_ops_lay_of_land.rst
-   ch_ops_projects_users.rst
-   ch_ops_user_facing.rst
-   ch_ops_maintenance.rst
-   ch_ops_network_troubleshooting.rst
-   ch_ops_log_monitor.rst
-   ch_ops_backup_recovery.rst
-   ch_ops_customize.rst
-   ch_ops_upstream.rst
-   ch_ops_advanced_configuration.rst
-   ch_ops_upgrades.rst
+   ops_lay_of_the_land.rst
+   ops_projects_users.rst
+   ops_user_facing_operations.rst
+   ops_maintenance.rst
+   ops_network_troubleshooting.rst
+   ops_logging_monitoring.rst
+   ops_backup_recovery.rst
+   ops_customize.rst
+   ops_upstream.rst
+   ops_advanced_configuration.rst
+   ops_upgrades.rst

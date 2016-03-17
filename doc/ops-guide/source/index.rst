@@ -16,7 +16,7 @@ Contents
 
    acknowledgements.rst
    preface_ops.rst
-   part_architecture.rst
+   architecture.rst
    operations.rst
    app_usecases.rst
    app_crypt.rst

@@ -43,10 +43,10 @@ architecture for an OpenStack cloud.
 .. toctree::
    :maxdepth: 2
 
-   ch_arch_examples.rst
-   ch_arch_provision.rst
-   ch_arch_cloud_controller.rst
-   ch_arch_compute_nodes.rst
-   ch_arch_scaling.rst
-   ch_arch_network_design.rst
-   ch_arch_storage.rst
+   arch_examples.rst
+   arch_provision.rst
+   arch_cloud_controller.rst
+   arch_compute_nodes.rst
+   arch_scaling.rst
+   arch_storage.rst
+   arch_network_design.rst
