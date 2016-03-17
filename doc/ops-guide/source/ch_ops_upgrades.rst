@@ -171,8 +171,8 @@ completes. Once the upgrade of nova-compute processes is complete, the
 operator can move onto upgrading nova-conductor and remove the version
 locking for nova-compute in ``nova.conf``.
 
-Upgrade process
-~~~~~~~~~~~~~~~
+General upgrade process
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes the process to upgrade a basic OpenStack
 deployment based on the basic two-node architecture in the `OpenStack
@@ -180,6 +180,12 @@ Installation
 Guide <http://docs.openstack.org/index.html#install-guides>`_. All
 nodes must run a supported distribution of Linux with a recent kernel
 and the current release packages.
+
+
+Service specific upgrade instructions
+-------------------------------------
+
+* `Upgrading the Networking Service <http://docs.openstack.org/developer/neutron/devref/upgrade.html>`_
 
 Prerequisites
 -------------
