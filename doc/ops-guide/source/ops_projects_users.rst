@@ -336,8 +336,7 @@ commands, which are provided by the
 Set Object Storage Quotas
 -------------------------
 
-There are currently two categories of quotas for Object Storage:account
-quotascontainers quota settingObject Storage quota setting
+There are currently two categories of quotas for Object Storage:
 
 Container quotas
     Limit the total size (in bytes) or number of objects that can be
