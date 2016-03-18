@@ -95,7 +95,7 @@ The next best approach is to use a configuration-management tool, such
 as Puppet, to automatically build a cloud controller. This should not
 take more than 15 minutes if you have a spare server available. After
 the controller rebuilds, restore any backups taken
-(see :doc:`ch_ops_backup_recovery`).
+(see :doc:`ops_backup_recovery`).
 
 Also, in practice, the ``nova-compute`` services on the compute nodes do
 not always reconnect cleanly to rabbitmq hosted on the controller when
@@ -879,7 +879,7 @@ Terminal 2:
    # nova list
 
 Look for any errors or traces in the log file. For more information, see
-:ref:`ch_ops_log_monitor`.
+:doc:`ops_logging_monitoring`.
 
 If the error indicates that the problem is with another component,
 switch to tailing that component's log file. For example, if nova cannot

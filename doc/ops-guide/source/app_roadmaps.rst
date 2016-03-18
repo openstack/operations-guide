@@ -267,7 +267,7 @@ tool. This tool tests database migration performance on copies of
 real-world user databases.
 
 These changes have facilitated the first proper OpenStack upgrade guide,
-found in :doc:`ch_ops_upgrades`, and will continue to improve in the next
+found in :doc:`ops_upgrades`, and will continue to improve in the next
 release.
 
 Deprecation of Nova Network

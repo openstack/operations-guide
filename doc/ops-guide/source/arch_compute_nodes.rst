@@ -302,7 +302,7 @@ particular use case.
 Logging
 ~~~~~~~
 
-Logging is detailed more fully in :doc:`ch_ops_log_monitor`. However,
+Logging is detailed more fully in :doc:`ops_logging_monitoring`. However,
 it is an important design consideration to take into account before
 commencing operations of your cloud.
 
@@ -315,7 +315,7 @@ Networking
 ~~~~~~~~~~
 
 Networking in OpenStack is a complex, multifaceted challenge. See
-:doc:`ch_arch_network_design`.
+:doc:`arch_network_design`.
 
 Conclusion
 ~~~~~~~~~~
