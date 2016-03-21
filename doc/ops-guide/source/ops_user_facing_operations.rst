@@ -1846,7 +1846,8 @@ handles early initialization of a cloud instance that makes use of this
 user data.
 
 This user data can be put in a file on your local system and then passed
-in at instance creation with the flag :option:`--user-data <user-data-file>`
+in at instance creation with the flag
+:option:`--user-data` ``<user-data-file>``.
 
 For example
 
@@ -1863,7 +1864,7 @@ File injection
 --------------
 
 Arbitrary local files can also be placed into the instance file system
-at creation time by using the :option:`--file <dst-path=src-path>` option.
+at creation time by using the :option:`--file` ``<dst-path=src-path>`` option.
 You may store up to five files.
 
 For example, let's say you have a special ``authorized_keys`` file named

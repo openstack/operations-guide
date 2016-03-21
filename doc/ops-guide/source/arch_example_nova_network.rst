@@ -250,10 +250,10 @@ Optional Extensions
 You can extend this reference architecture aslegacy networking (nova)
 optional extensions follows:
 
--  Add additional cloud controllers (see :doc:`ch_ops_maintenance`).
+-  Add additional cloud controllers (see :doc:`ops_maintenance`).
 
 -  Add an OpenStack Storage service (see the Object Storage chapter in
    the *OpenStack Installation Guide* for your distribution).
 
 -  Add additional OpenStack Block Storage hosts (see
-   :doc:`ch_ops_maintenance`).
+   :doc:`ops_maintenance`).

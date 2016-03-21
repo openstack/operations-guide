@@ -122,7 +122,7 @@ CPU performance (CPU/core).
 .. note::
 
    For a discussion of metric tracking, including how to extract
-   metrics from your cloud, see :doc:`ch_ops_log_monitor`.
+   metrics from your cloud, see :doc:`ops_logging_monitoring`.
 
 Adding Cloud Controller Nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,7 +155,7 @@ the one machine.
    Several options are available for MySQL load balancing, and the
    supported AMQP brokers have built-in clustering support. Information
    on how to configure these and many of the other services can be
-   found in :doc:`part_operations`.
+   found in :doc:`operations`.
 
 Segregating Your Cloud
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -408,7 +408,7 @@ When adding object storage nodes, a weight should be specified that
 reflects the capability of the node.
 
 Monitoring the resource usage and user growth will enable you to know
-when to procure. :doc:`ch_ops_log_monitor` details some useful metrics.
+when to procure. :doc:`ops_logging_monitoring` details some useful metrics.
 
 Burn-in Testing
 ---------------
