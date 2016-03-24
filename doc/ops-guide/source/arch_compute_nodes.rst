@@ -296,6 +296,11 @@ allocates instances to that node until the sum of the RAM associated
 with the instances reaches 72 GB (such as nine instances, in the case
 where each instance has 8 GB of RAM).
 
+.. note::
+   Regardless of the overcommit ratio, an instance can not be placed
+   on any physical node with fewer raw (pre-overcommit) resources than
+   the instance flavor requires.
+
 You must select the appropriate CPU and RAM allocation ratio for your
 particular use case.
 
