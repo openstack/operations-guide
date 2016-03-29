@@ -539,7 +539,7 @@ OpenStack Telemetry
 
 An integrated OpenStack project (code-named :term:`ceilometer`) collects
 metering and event data relating to OpenStack services. Data collected
-by the Telemetry module could be used for billing. Depending on
+by the Telemetry service could be used for billing. Depending on
 deployment configuration, collected data may be accessible to users
 based on the deployment configuration. The Telemetry service provides a
 REST API documented at
