@@ -1140,28 +1140,29 @@ share type, NFS shared file systems protocol, and 1 GB size:
    +-----------------------------+--------------------------------------+
    | Property                    | Value                                |
    +-----------------------------+--------------------------------------+
-   | status                      | None                                 |
+   | status                      | creating                             |
    | share_type_name             | default                              |
    | description                 | My first share                       |
    | availability_zone           | None                                 |
-   | share_network_id            | None                                 |
-   | export_locations            | []                                   |
+   | share_network_id            | 9c187d23-7e1d-4d91-92d0-77ea4b9b9496 |
    | share_server_id             | None                                 |
-   | host                        | None                                 |
+   | host                        |                                      |
+   | access_rules_status         | active                               |
    | snapshot_id                 | None                                 |
    | is_public                   | True                                 |
    | task_state                  | None                                 |
    | snapshot_support            | True                                 |
-   | id                          | aca648eb-8c03-4394-a5cc-755066b7eb66 |
+   | id                          | edd82179-587e-4a87-9601-f34b2ca47e5b |
    | size                        | 1                                    |
    | name                        | Share1                               |
-   | share_type                  | c0086582-30a6-4060-b096-a42ec9d66b86 |
-   | created_at                  | 2015-09-24T12:19:06.925951           |
-   | export_location             | None                                 |
+   | share_type                  | e031d5e9-f113-491a-843f-607128a5c649 |
+   | has_replicas                | False                                |
+   | replication_type            | None                                 |
+   | created_at                  | 2016-03-20T00:00:00.000000           |
    | share_proto                 | NFS                                  |
    | consistency_group_id        | None                                 |
    | source_cgsnapshot_member_id | None                                 |
-   | project_id                  | 20787a7ba11946adad976463b57d8a2f     |
+   | project_id                  | e81908b1bfe8468abb4791eae0ef6dd9     |
    | metadata                    | {u'aim': u'testing'}                 |
    +-----------------------------+--------------------------------------+
 
@@ -1183,32 +1184,45 @@ creation, the share status should become ``available``:
 .. code-block:: console
 
    $ manila show Share1
-   +-----------------------------+-------------------------------------------+
-   | Property                    | Value                                     |
-   +-----------------------------+-------------------------------------------+
-   | status                      | available                                 |
-   | share_type_name             | default                                   |
-   | description                 | My first share                            |
-   | availability_zone           | nova                                      |
-   | share_network_id            | 5c3cbabb-f4da-465f-bc7f-fadbe047b85a      |
-   | export_locations            | 10.254.0.3:/shares/share-2d5e2c0a-1f84... |
-   | share_server_id             | 41b7829d-7f6b-4c96-aea5-d106c2959961      |
-   | host                        | manila@generic1#GENERIC1                  |
-   | snapshot_id                 | None                                      |
-   | is_public                   | True                                      |
-   | task_state                  | None                                      |
-   | snapshot_support            | True                                      |
-   | id                          | aca648eb-8c03-4394-a5cc-755066b7eb66      |
-   | size                        | 1                                         |
-   | name                        | Share1                                    |
-   | share_type                  | c0086582-30a6-4060-b096-a42ec9d66b86      |
-   | created_at                  | 2015-09-24T12:19:06.000000                |
-   | share_proto                 | NFS                                       |
-   | consistency_group_id        | None                                      |
-   | source_cgsnapshot_member_id | None                                      |
-   | project_id                  | 20787a7ba11946adad976463b57d8a2f          |
-   | metadata                    | {u'aim': u'testing'}                      |
-   +-----------------------------+-------------------------------------------+
+   +-----------------------------+----------------------------------------------------------------------+
+   | Property                    | Value                                                                |
+   +-----------------------------+----------------------------------------------------------------------+
+   | status                      | available                                                            |
+   | share_type_name             | default                                                              |
+   | description                 | My first share                                                       |
+   | availability_zone           | nova                                                                 |
+   | share_network_id            | 9c187d23-7e1d-4d91-92d0-77ea4b9b9496                                 |
+   | export_locations            |                                                                      |
+   |                             | path = 10.254.0.3:/shares/share-18cb05be-eb69-4cb2-810f-91c75ef30f90 |
+   |                             | preferred = False                                                    |
+   |                             | is_admin_only = False                                                |
+   |                             | id = d6a82c0d-36b0-438b-bf34-63f3932ddf4e                            |
+   |                             | share_instance_id = 18cb05be-eb69-4cb2-810f-91c75ef30f90             |
+   |                             | path = 10.0.0.3:/shares/share-18cb05be-eb69-4cb2-810f-91c75ef30f90   |
+   |                             | preferred = False                                                    |
+   |                             | is_admin_only = True                                                 |
+   |                             | id = 51672666-06b8-4741-99ea-64f2286f52e2                            |
+   |                             | share_instance_id = 18cb05be-eb69-4cb2-810f-91c75ef30f90             |
+   | share_server_id             | ea8b3a93-ab41-475e-9df1-0f7d49b8fa54                                 |
+   | host                        | manila@generic1#GENERIC1                                             |
+   | access_rules_status         | active                                                               |
+   | snapshot_id                 | None                                                                 |
+   | is_public                   | True                                                                 |
+   | task_state                  | None                                                                 |
+   | snapshot_support            | True                                                                 |
+   | id                          | e7364bcc-3821-49bf-82d6-0c9f0276d4ce                                 |
+   | size                        | 1                                                                    |
+   | name                        | Share1                                                               |
+   | share_type                  | e031d5e9-f113-491a-843f-607128a5c649                                 |
+   | has_replicas                | False                                                                |
+   | replication_type            | None                                                                 |
+   | created_at                  | 2016-03-20T00:00:00.000000                                           |
+   | share_proto                 | NFS                                                                  |
+   | consistency_group_id        | None                                                                 |
+   | source_cgsnapshot_member_id | None                                                                 |
+   | project_id                  | e81908b1bfe8468abb4791eae0ef6dd9                                     |
+   | metadata                    | {u'aim': u'testing'}                                                 |
+   +-----------------------------+----------------------------------------------------------------------+
 
 The value ``is_public`` defines the level of visibility for the share:
 whether other tenants can or cannot see the share. By default, the share
@@ -1325,32 +1339,45 @@ Check the attributes of the updated Share1:
 .. code-block:: console
 
    $ manila show Share1
-   +-----------------------------+--------------------------------------------+
-   | Property                    | Value                                      |
-   +-----------------------------+--------------------------------------------+
-   | status                      | available                                  |
-   | share_type_name             | default                                    |
-   | description                 | My first share. Updated                    |
-   | availability_zone           | nova                                       |
-   | share_network_id            | 5c3cbabb-f4da-465f-bc7f-fadbe047b85a       |
-   | export_locations            | 10.254.0.3:/shares/share-2d5e2c0a-1f84-... |
-   | share_server_id             | 41b7829d-7f6b-4c96-aea5-d106c2959961       |
-   | host                        | manila@generic1#GENERIC1                   |
-   | snapshot_id                 | None                                       |
-   | is_public                   | False                                      |
-   | task_state                  | None                                       |
-   | snapshot_support            | True                                       |
-   | id                          | aca648eb-8c03-4394-a5cc-755066b7eb66       |
-   | size                        | 1                                          |
-   | name                        | Share1                                     |
-   | share_type                  | c0086582-30a6-4060-b096-a42ec9d66b86       |
-   | created_at                  | 2015-09-24T12:19:06.000000                 |
-   | share_proto                 | NFS                                        |
-   | consistency_group_id        | None                                       |
-   | source_cgsnapshot_member_id | None                                       |
-   | project_id                  | 20787a7ba11946adad976463b57d8a2f           |
-   | metadata                    | {u'aim': u'testing'}                       |
-   +-----------------------------+--------------------------------------------+
+   +-----------------------------+----------------------------------------------------------------------+
+   | Property                    | Value                                                                |
+   +-----------------------------+----------------------------------------------------------------------+
+   | status                      | available                                                            |
+   | share_type_name             | default                                                              |
+   | description                 | My first share. Updated                                              |
+   | availability_zone           | nova                                                                 |
+   | share_network_id            | 9c187d23-7e1d-4d91-92d0-77ea4b9b9496                                 |
+   | export_locations            |                                                                      |
+   |                             | path = 10.254.0.3:/shares/share-18cb05be-eb69-4cb2-810f-91c75ef30f90 |
+   |                             | preferred = False                                                    |
+   |                             | is_admin_only = False                                                |
+   |                             | id = d6a82c0d-36b0-438b-bf34-63f3932ddf4e                            |
+   |                             | share_instance_id = 18cb05be-eb69-4cb2-810f-91c75ef30f90             |
+   |                             | path = 10.0.0.3:/shares/share-18cb05be-eb69-4cb2-810f-91c75ef30f90   |
+   |                             | preferred = False                                                    |
+   |                             | is_admin_only = True                                                 |
+   |                             | id = 51672666-06b8-4741-99ea-64f2286f52e2                            |
+   |                             | share_instance_id = 18cb05be-eb69-4cb2-810f-91c75ef30f90             |
+   | share_server_id             | ea8b3a93-ab41-475e-9df1-0f7d49b8fa54                                 |
+   | host                        | manila@generic1#GENERIC1                                             |
+   | access_rules_status         | active                                                               |
+   | snapshot_id                 | None                                                                 |
+   | is_public                   | False                                                                |
+   | task_state                  | None                                                                 |
+   | snapshot_support            | True                                                                 |
+   | id                          | e7364bcc-3821-49bf-82d6-0c9f0276d4ce                                 |
+   | size                        | 1                                                                    |
+   | name                        | Share1                                                               |
+   | share_type                  | e031d5e9-f113-491a-843f-607128a5c649                                 |
+   | has_replicas                | False                                                                |
+   | replication_type            | None                                                                 |
+   | created_at                  | 2016-03-20T00:00:00.000000                                           |
+   | share_proto                 | NFS                                                                  |
+   | consistency_group_id        | None                                                                 |
+   | source_cgsnapshot_member_id | None                                                                 |
+   | project_id                  | e81908b1bfe8468abb4791eae0ef6dd9                                     |
+   | metadata                    | {u'aim': u'testing'}                                                 |
+   +-----------------------------+----------------------------------------------------------------------+
 
 Reset Share State
 -----------------
@@ -1456,19 +1483,20 @@ help users to restore their own data. To create a snapshot, use
 .. code-block:: console
 
    $ manila snapshot-create Share1 --name Snapshot1 --description "Snapshot of Share1"
-   +-------------+--------------------------------------+
-   | Property    | Value                                |
-   +-------------+--------------------------------------+
-   | status      | creating                             |
-   | share_id    | aca648eb-8c03-4394-a5cc-755066b7eb66 |
-   | name        | Snapshot1                            |
-   | created_at  | 2015-09-25T05:27:38.862040           |
-   | share_proto | NFS                                  |
-   | id          | 962e8126-35c3-47bb-8c00-f0ee37f42ddd |
-   | size        | 1                                    |
-   | share_size  | 1                                    |
-   | description | Snapshot of Share1                   |
-   +-------------+--------------------------------------+
+   +-------------------+--------------------------------------+
+   | Property          | Value                                |
+   +-------------------+--------------------------------------+
+   | status            | creating                             |
+   | share_id          | e7364bcc-3821-49bf-82d6-0c9f0276d4ce |
+   | description       | Snapshot of Share1                   |
+   | created_at        | 2016-03-20T00:00:00.000000           |
+   | share_proto       | NFS                                  |
+   | provider_location | None                                 |
+   | id                | a96cf025-92d1-4012-abdd-bb0f29e5aa8f |
+   | size              | 1                                    |
+   | share_size        | 1                                    |
+   | name              | Snapshot1                            |
+   +-------------------+--------------------------------------+
 
 Then, if needed, update the name and description of the created
 snapshot:
@@ -1482,19 +1510,20 @@ To make sure that the snapshot is available, run:
 .. code-block:: console
 
    $ manila snapshot-show Snapshot1
-   +-------------+--------------------------------------+
-   | Property    | Value                                |
-   +-------------+--------------------------------------+
-   | status      | available                            |
-   | share_id    | aca648eb-8c03-4394-a5cc-755066b7eb66 |
-   | name        | Snapshot1                            |
-   | created_at  | 2015-09-25T05:27:38.000000           |
-   | share_proto | NFS                                  |
-   | id          | 962e8126-35c3-47bb-8c00-f0ee37f42ddd |
-   | size        | 1                                    |
-   | share_size  | 1                                    |
-   | description | Snapshot of Share1                   |
-   +-------------+--------------------------------------+
+   +-------------------+--------------------------------------+
+   | Property          | Value                                |
+   +-------------------+--------------------------------------+
+   | status            | available                            |
+   | share_id          | e7364bcc-3821-49bf-82d6-0c9f0276d4ce |
+   | description       | Snapshot of Share1                   |
+   | created_at        | 2016-03-30T10:53:19.000000           |
+   | share_proto       | NFS                                  |
+   | provider_location | 3ca7a3b2-9f9f-46af-906f-6a565bf8ee37 |
+   | id                | a96cf025-92d1-4012-abdd-bb0f29e5aa8f |
+   | size              | 1                                    |
+   | share_size        | 1                                    |
+   | name              | Snapshot1                            |
+   +-------------------+--------------------------------------+
 
 .. note::
 
@@ -1621,18 +1650,26 @@ You also can see detailed information about the share network including
    | Field                     | Value                                |
    +---------------------------+--------------------------------------+
    | admin_state_up            | True                                 |
-   | id                        | 3b5a629a-e7a1-46a3-afb2-ab666fb884bc |
-   | mtu                       | 0                                    |
+   | availability_zone_hints   |                                      |
+   | availability_zones        | nova                                 |
+   | created_at                | 2016-03-20T00:00:00                  |
+   | description               |                                      |
+   | id                        | ef5282ab-dbf9-4d47-91d4-b0cc9b164567 |
+   | ipv4_address_scope        |                                      |
+   | ipv6_address_scope        |                                      |
+   | mtu                       | 1450                                 |
    | name                      | manila_service_network               |
    | port_security_enabled     | True                                 |
    | provider:network_type     | vxlan                                |
    | provider:physical_network |                                      |
-   | provider:segmentation_id  | 1068                                 |
+   | provider:segmentation_id  | 1047                                 |
    | router:external           | False                                |
    | shared                    | False                                |
    | status                    | ACTIVE                               |
-   | subnets                   | 4f366100-5108-4fa2-b5b1-989a121c1403 |
-   | tenant_id                 | 24c6491074e942309a908c674606f598     |
+   | subnets                   | aba49c7d-c7eb-44b9-9c8f-f6112b05a2e0 |
+   | tags                      |                                      |
+   | tenant_id                 | f121b3ee03804266af2959e56671b24a     |
+   | updated_at                | 2016-03-20T00:00:00                  |
    +---------------------------+--------------------------------------+
 
 You also can add and remove the security services to the share network.
