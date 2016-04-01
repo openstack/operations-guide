@@ -1674,9 +1674,15 @@ read the rest of this section before trying to start an instance, but
 this is the base command that later details are layered upon.
 
 To delete instances from the dashboard, select the
-:guilabel:`Terminate instance action` next to the
-:guilabel:`instance` on the **Instances** page. From the
-command line, do this:
+:guilabel:`Delete instance action` next to the
+:guilabel:`instance` on the **Instances** page.
+
+.. note::
+
+   In releases prior to Mitaka, select the equivalent :guilabel:`Terminate
+   instance` action.
+
+From the command line, do this:
 
 .. code-block:: console
 
