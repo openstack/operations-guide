@@ -95,8 +95,8 @@ configured with open source or vendor proprietary plug-ins that control
 software defined networking (SDN) hardware or plug-ins that use Linux
 native facilities on your hosts, such as Open vSwitch or Linux Bridge.
 
-The networking chapter of the OpenStack `Cloud Administrator
-Guide <http://docs.openstack.org/admin-guide-cloud/networking.html>`_
+The networking chapter of the `OpenStack Administrator
+Guide <http://docs.openstack.org/admin-guide/networking.html>`_
 shows a variety of networking scenarios and their connection paths. The
 purpose of this section is to give you the tools to troubleshoot the
 various components involved however they are plumbed together in your
