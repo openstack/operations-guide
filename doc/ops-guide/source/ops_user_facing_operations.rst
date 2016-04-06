@@ -2316,10 +2316,7 @@ Good Luck!
 
 This section was intended as a brief introduction to some of the most
 useful of many OpenStack commands. For an exhaustive list, please refer
-to the `Admin User
-Guide <http://docs.openstack.org/user-guide-admin/>`__, and for
-additional hints and tips, see the `Administrator
-Guide <http://docs.openstack.org/admin-guide/>`__. We hope your
-users remain happy and recognize your hard work! (For more hard work,
-turn the page to the next chapter, where we discuss the system-facing
-operations: maintenance, failures and debugging.)
+to the `Administrator Guide <http://docs.openstack.org/admin-guide/>`__.
+We hope your users remain happy and recognize your hard work!
+(For more hard work, turn the page to the next chapter, where we discuss
+the system-facing operations: maintenance, failures and debugging.)

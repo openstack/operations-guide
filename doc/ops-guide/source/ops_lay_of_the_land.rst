@@ -17,8 +17,8 @@ create and manage services. The dashboard provides an :guilabel:`Admin`
 tab with a :guilabel:`System Panel` and an :guilabel:`Identity` tab.
 These interfaces give you access to system information and usage as
 well as to settings for configuring what
-end users can do. Refer to the `OpenStack Admin User
-Guide <http://docs.openstack.org/user-guide-admin/dashboard.html>`_ for
+end users can do. Refer to the `OpenStack Administrator
+Guide <http://docs.openstack.org/admin-guide/dashboard.html>`_ for
 detailed how-to information about using the dashboard as an admin user.
 
 Command-Line Tools
@@ -597,6 +597,6 @@ Summary
 
 We hope you have enjoyed this quick tour of your working environment,
 including how to interact with your cloud and extract useful
-information. From here, you can use the `Admin User
-Guide <http://docs.openstack.org/user-guide-admin/>`_ as your
+information. From here, you can use the `Administrator
+Guide <http://docs.openstack.org/admin-guide/>`_ as your
 reference for all of the command-line functionality in your cloud.
