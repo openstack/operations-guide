@@ -544,8 +544,8 @@ deployment configuration, collected data may be accessible to users
 based on the deployment configuration. The Telemetry service provides a
 REST API documented at
 http://developer.openstack.org/api-ref-telemetry-v2.html. You can read
-more about the module in the `OpenStack Cloud Administrator
-Guide <http://docs.openstack.org/admin-guide-cloud/telemetry.html>`_ or
+more about the module in the `OpenStack Administrator
+Guide <http://docs.openstack.org/admin-guide/telemetry.html>`_ or
 in the `developer
 documentation <http://docs.openstack.org/developer/ceilometer>`_.
 

@@ -152,7 +152,7 @@ OpenStack Installation Guides
     Contains a reference listing of all configuration options for core
     and integrated OpenStack services by release version
 
-`OpenStack Cloud Administrator Guide <http://docs.openstack.org/admin-guide-cloud/>`_
+`OpenStack Administrator Guide <http://docs.openstack.org/admin-guide/>`_
     Contains how-to information for managing an OpenStack cloud as
     needed for your use cases, such as storage, computing, or
     software-defined-networking

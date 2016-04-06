@@ -14,8 +14,7 @@ OpenStack
 -  `Installation Guide for Ubuntu 14.04 (LTS)
    Server <http://docs.openstack.org/liberty/install-guide-ubuntu/>`_
 
--  `OpenStack Cloud Administrator
-   Guide <http://docs.openstack.org/admin-guide-cloud/>`_
+-  `OpenStack Administrator Guide <http://docs.openstack.org/admin-guide/>`_
 
 -  `OpenStack Cloud Computing Cookbook (Packt
    Publishing) <http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book>`_
