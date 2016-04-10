@@ -1020,8 +1020,8 @@ SlSt7ajsNVXaIclWqIw5YvEkgXTIEuDPE+C4='\
     volume service does not take a snapshot of a volume that is attached to an
     image, though it can be forced to. To take a volume snapshot, either
     select <guilabel>Create Snapshot</guilabel> from the actions column next
-    to the volume name on the dashboard volume page, or run this from the
-    command line:</para>
+    to the volume name on the dashboard <guilabel>Volumes</guilabel> page, or
+    run this from the command line:</para>
 
     <programlisting>usage: cinder snapshot-create [--force &lt;True|False&gt;]
 [--display-name &lt;display-name&gt;]
