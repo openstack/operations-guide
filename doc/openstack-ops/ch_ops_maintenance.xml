@@ -522,7 +522,7 @@ inner join nova.instances on cinder.volumes.instance_uuid=nova.instances.uuid
       login screen before doing the above.</para>
     </section>
 
-    <section xml:id="totle_compute_node_failure">
+    <section xml:id="total_compute_node_failure">
       <?dbhtml stop-chunking?>
 
       <title>Total Compute Node Failure</title>
