@@ -995,7 +995,7 @@ SlSt7ajsNVXaIclWqIw5YvEkgXTIEuDPE+C4='\
     <literal>cinder</literal> command-line client.</para>
 
     <para>To add new volumes, you need only a name and a volume size in
-    gigabytes. Either put these into the <guilabel>create volume</guilabel>
+    gigabytes. Either put these into the <guilabel>Create Volume</guilabel>
     web form or use the command line:</para>
 
     <screen><prompt>$</prompt> <userinput>cinder create --display-name test-volume 10</userinput></screen>
