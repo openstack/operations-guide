@@ -1,6 +1,9 @@
 OpenStack Operations Guide
 ++++++++++++++++++++++++++
 
+This content is read-only now, any changes to operations guide will be done
+in the openstack-manuals repository where the guide lives in doc/ops-guide.
+
 This repository contains the source files for the OpenStack Operations Guide.
 
 You can read this guide at `docs.openstack.org/ops <http://docs.openstack.org/ops>`_.
