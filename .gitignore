@@ -1,0 +1,21 @@
+.DS_Store
+*.xpr
+
+# Packages
+.venv
+*.egg
+*.egg-info
+
+# Testenvironment
+.tox
+
+# Build directories
+doc/build
+
+# Transifex Client Setting
+.tx
+
+# Editors
+*~
+.*.swp
+.bak
