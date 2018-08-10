@@ -19,3 +19,4 @@ doc/build
 *~
 .*.swp
 .bak
+*.pyc
