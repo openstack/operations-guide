@@ -1,0 +1,6 @@
+- project:
+    templates:
+      - build-openstack-sphinx-docs
+    post:
+      jobs:
+        - publish-openstack-sphinx-docs-direct
