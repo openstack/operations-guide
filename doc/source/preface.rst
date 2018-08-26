@@ -399,7 +399,7 @@ content on GitHub and enables collaboration among contributors.
 
 Learn more about how to contribute to the OpenStack docs at `OpenStack
 Documentation Contributor
-Guide <https://docs.openstack.org/contributor-guide/>`_.
+Guide <https://docs.openstack.org/doc-contrib-guide/>`_.
 
 If you find a bug and can't fix it or aren't sure it's really a doc bug,
 log a bug at `OpenStack
