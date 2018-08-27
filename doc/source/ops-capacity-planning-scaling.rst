@@ -163,7 +163,7 @@ the one machine.
    supported AMQP brokers have built-in clustering support. Information
    on how to configure these and many of the other services can be
    found in the `Operations Guide
-   <https://docs.openstack.org/ops-guide/operations.html>`_.
+   <https://docs.openstack.org/operations-guide/>`_.
 
 Segregating your cloud
 ~~~~~~~~~~~~~~~~~~~~~~
