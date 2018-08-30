@@ -409,7 +409,7 @@ nodes, a :term:`weight` should be specified that reflects the
 
 Monitoring the resource usage and user growth will enable you to know
 when to procure. The `Logging and Monitoring
-<https://docs.openstack.org/ops-guide/ops-logging-monitoring.html>`_
+<https://docs.openstack.org/operations-guide/ops-logging-monitoring.html>`_
 chapte in the Operations Guide details some useful metrics.
 
 Burn-in Testing
