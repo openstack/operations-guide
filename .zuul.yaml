@@ -1,6 +1,7 @@
 - project:
     templates:
       - build-openstack-docs-pti
+      - translation-jobs-master-only
     post:
       jobs:
         - publish-openstack-tox-docs-direct
