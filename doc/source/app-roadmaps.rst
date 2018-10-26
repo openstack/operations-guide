@@ -10,15 +10,15 @@ up in the next release and perhaps further afield.
 
 OpenStack follows a six month release cycle, typically releasing in
 April/May and October/November each year. At the start of each cycle,
-the community gathers in a single location for a design summit. At the
-summit, the features for the coming releases are discussed, prioritized,
-and planned. The below figure shows an example release cycle, with dates
-showing milestone releases, code freeze, and string freeze dates, along
-with an example of when the summit occurs. Milestones are interim releases
-within the cycle that are available as packages for download and
-testing. Code freeze is putting a stop to adding new features to the
-release. String freeze is putting a stop to changing any strings within
-the source code.
+the community gathers in a single location for a Project Teams
+Gathering (PTG). At the PTG, the features for the coming releases are
+discussed, prioritized, and planned. The below figure shows an example
+release cycle, with dates showing milestone releases, code freeze, and
+string freeze dates, along with an example of when the summit occurs.
+Milestones are interim releases within the cycle that are available as
+packages for download and testing. Code freeze is putting a stop to
+adding new features to the release. String freeze is putting a stop to
+changing any strings within the source code.
 
 .. image:: figures/osog_ac01.png
    :width: 100%
@@ -30,154 +30,8 @@ Information Available to You
 There are several good sources of information available that you can use
 to track your OpenStack development desires.
 
-Release notes are maintained on the OpenStack wiki, and also shown here:
-
-.. list-table::
-   :widths: 25 25 25 25
-   :header-rows: 1
-
-   * - Series
-     - Status
-     - Releases
-     - Date
-   * - Liberty
-     - `Under Development
-       <https://wiki.openstack.org/wiki/Liberty_Release_Schedule>`_
-     - 2015.2
-     - Oct, 2015
-   * - Kilo
-     - `Current stable release, security-supported
-       <https://wiki.openstack.org/wiki/Kilo_Release_Schedule>`_
-     - `2015.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Kilo>`_
-     - Apr 30, 2015
-   * - Juno
-     - `Security-supported
-       <https://wiki.openstack.org/wiki/Juno_Release_Schedule>`_
-     - `2014.2 <https://wiki.openstack.org/wiki/ReleaseNotes/Juno>`_
-     - Oct 16, 2014
-   * - Icehouse
-     - `End-of-life
-       <https://wiki.openstack.org/wiki/Icehouse_Release_Schedule>`_
-     - `2014.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse>`_
-     - Apr 17, 2014
-   * -
-     -
-     - `2014.1.1 <https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.1>`_
-     - Jun 9, 2014
-   * -
-     -
-     - `2014.1.2 <https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.2>`_
-     - Aug 8, 2014
-   * -
-     -
-     - `2014.1.3 <https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.3>`_
-     - Oct 2, 2014
-   * - Havana
-     - End-of-life
-     - `2013.2 <https://wiki.openstack.org/wiki/ReleaseNotes/Havana>`_
-     - Apr 4, 2013
-   * -
-     -
-     - `2013.2.1 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1>`_
-     - Dec 16, 2013
-   * -
-     -
-     - `2013.2.2 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.2>`_
-     - Feb 13, 2014
-   * -
-     -
-     - `2013.2.3 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.3>`_
-     - Apr 3, 2014
-   * -
-     -
-     - `2013.2.4 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.4>`_
-     - Sep 22, 2014
-   * -
-     -
-     - `2013.2.1 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1>`_
-     - Dec 16, 2013
-   * - Grizzly
-     - End-of-life
-     - `2013.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly>`_
-     - Apr 4, 2013
-   * -
-     -
-     - `2013.1.1 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.1>`_
-     - May 9, 2013
-   * -
-     -
-     - `2013.1.2 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.2>`_
-     - Jun 6, 2013
-   * -
-     -
-     - `2013.1.3 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.3>`_
-     - Aug 8, 2013
-   * -
-     -
-     - `2013.1.4 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.4>`_
-     - Oct 17, 2013
-   * -
-     -
-     - `2013.1.5 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.1.5>`_
-     - Mar 20, 2015
-   * - Folsom
-     - End-of-life
-     - `2012.2 <https://wiki.openstack.org/wiki/ReleaseNotes/Folsom>`_
-     - Sep 27, 2012
-   * -
-     -
-     - `2012.2.1 <https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.1>`_
-     - Nov 29, 2012
-   * -
-     -
-     - `2012.2.2 <https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.2>`_
-     - Dec 13, 2012
-   * -
-     -
-     - `2012.2.3 <https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.3>`_
-     - Jan 31, 2013
-   * -
-     -
-     - `2012.2.4 <https://wiki.openstack.org/wiki/ReleaseNotes/2012.2.4>`_
-     - Apr 11, 2013
-   * - Essex
-     - End-of-life
-     - `2012.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Essex>`_
-     - Apr 5, 2012
-   * -
-     -
-     - `2012.1.1 <https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.1>`_
-     - Jun 22, 2012
-   * -
-     -
-     - `2012.1.2 <https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.2>`_
-     - Aug 10, 2012
-   * -
-     -
-     - `2012.1.3 <https://wiki.openstack.org/wiki/ReleaseNotes/2012.1.3>`_
-     - Oct 12, 2012
-   * - Diablo
-     - Deprecated
-     - `2011.3 <https://wiki.openstack.org/wiki/ReleaseNotes/Diablo>`_
-     - Sep 22, 2011
-   * -
-     -
-     - `2011.3.1 <https://wiki.openstack.org/wiki/ReleaseNotes/2011.3.1>`_
-     - Jan 19, 2012
-   * - Cactus
-     - Deprecated
-     - `2011.2 <https://wiki.openstack.org/wiki/ReleaseNotes/Cactus>`_
-     - Apr 15, 2011
-   * - Bexar
-     - Deprecated
-     - `2011.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Bexar>`_
-     - Feb 3, 2011
-   * - Austin
-     - Deprecated
-     - `2010.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Austin>`_
-     - Oct 21, 2010
-
-Here are some other resources:
+-  `List of OpenStack releases and release
+   notes <https://releases.openstack.org/>`_
 
 -  `A breakdown of current features under development, with their target
    milestone <https://status.openstack.org/release/>`_
@@ -208,7 +62,7 @@ approved by project team members, and development can begin.
 
 Therefore, the fastest way to get your feature request up for
 consideration is to create an Etherpad with your ideas and propose a
-session to the design summit. If the design summit has already passed,
+session to the PTG. If the PTG has already passed,
 you may also create a blueprint directly. Read this `blog post about how
 to work with blueprints
 <http://vmartinezdelacruz.com/how-to-work-with-blueprints-without-losing-your-mind/>`_
