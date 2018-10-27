@@ -45,7 +45,7 @@ facilitator Adam Hyde. Without his tireless support and encouragement,
 we would have thought a book of this scope was impossible in five days.
 Adam has proven the book sprint method effectively again and again. He
 creates both tools and faith in collaborative authoring at
-`www.booksprints.net <http://www.booksprints.net/>`_.
+`www.booksprints.net <https://www.booksprints.net/>`_.
 
 We couldn't have pulled it off without so much supportive help and
 encouragement.

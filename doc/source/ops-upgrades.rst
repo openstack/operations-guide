@@ -96,7 +96,7 @@ Watch the network
 To set up the test environment, you can use one of several methods:
 
 -  Do a full manual install by using the `Installation Tutorials and Guides
-   <https://docs.openstack.org/project-install-guide/ocata/>`_ for
+   <https://docs.openstack.org/rocky/install/>`_ for
    your platform. Review the final configuration files and installed
    packages.
 
@@ -177,7 +177,7 @@ Upgrade process
 This section describes the process to upgrade a basic OpenStack
 deployment based on the basic two-node architecture in the `Installation
 Tutorials and Guides
-<https://docs.openstack.org/project-install-guide/ocata/>`_. All
+<https://docs.openstack.org/rocky/install/>`_. All
 nodes must run a supported distribution of Linux with a recent kernel
 and the current release packages.
 
@@ -188,23 +188,21 @@ Refer to the following upgrade notes for information on upgrading specific
 OpenStack services:
 
 * `Networking service (neutron) upgrades
-  <https://docs.openstack.org/developer/neutron/devref/upgrade.html>`_
+  <https://docs.openstack.org/neutron/latest/contributor/internals/upgrade.html>`_
 * `Compute service (nova) upgrades
-  <https://docs.openstack.org/developer/nova/upgrade.html>`_
+  <https://docs.openstack.org/nova/latest/user/upgrade.html>`_
 * `Identity service (keystone) upgrades
-  <https://docs.openstack.org/developer/keystone/upgrading.html>`_
+  <https://docs.openstack.org/keystone/latest/admin/identity-upgrading.html>`_
 * `Block Storage service (cinder) upgrades
-  <https://docs.openstack.org/developer/cinder/upgrade.html>`_
-* `Image service (glance) zero downtime database upgrades
-  <https://docs.openstack.org/developer/glance/db.html#zero-downtime-database-upgrades>`_
-* `Image service (glance) rolling upgrades
-  <https://docs.openstack.org/developer/glance/rollingupgrades.html>`_
+  <https://docs.openstack.org/cinder/latest/upgrade.html>`_
+* `Image service (glance) database upgrades
+  <https://docs.openstack.org/glance/latest/admin/db.html>`_
 * `Bare Metal service (ironic) upgrades
-  <https://docs.openstack.org/developer/ironic/deploy/upgrade-guide.html>`_
+  <https://docs.openstack.org/ironic/latest/admin/upgrade-guide.html>`_
 * `Object Storage service (swift) upgrades
-  <https://docs.openstack.org/developer/swift/overview_policies.html#upgrade-policy>`_
+  <https://docs.openstack.org/swift/latest/overview_policies.html#upgrading-and-confirming-functionality>`_
 * `Telemetry service (ceilometer) upgrades
-  <https://docs.openstack.org/developer/ceilometer/install/upgrade.html>`_
+  <https://docs.openstack.org/ceilometer/ocata/install/upgrade.html>`_
 
 Prerequisites
 -------------
@@ -253,7 +251,7 @@ Perform a backup
 
       Consider updating your SQL server configuration as described in the
       `Installation Tutorials and Guides
-      <https://docs.openstack.org/project-install-guide/ocata/>`_.
+      <https://docs.openstack.org/rocky/install/>`_.
 
 Manage repositories
 -------------------

@@ -883,7 +883,7 @@ The default configuration of the Shared File Systems service depends on
 the back-end driver the admin chooses when starting the Shared File
 Systems service. For more information about existing back-end drivers,
 see `Share Backends
-<https://docs.openstack.org/developer/manila/devref/index.html#share-backends>`__
+<https://docs.openstack.org/manila/latest/admin/index.html#supported-share-back-ends>`__
 of Shared File Systems service Developer Guide. For example, in case of
 OpenStack Block Storage based back-end is used, the Shared File Systems
 service cares about everything, including VMs, networking, keypairs, and
@@ -907,37 +907,37 @@ large number of operations with shares:
 * Use security services
 
 For more information on share management see `Share management
-<https://docs.openstack.org/admin-guide/shared-file-systems-share-management.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide.
+<https://docs.openstack.org/manila/latest/admin/shared-file-systems-share-management.html>`__
+in OpenStack Manila Administrator Guide.
 As to Security services, you should remember that different drivers
 support different authentication methods, while generic driver does not
 support Security Services at all (see section `Security services
-<https://docs.openstack.org/admin-guide/shared-file-systems-security-services.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide).
+<https://docs.openstack.org/manila/latest/admin/shared-file-systems-security-services.html>`__
+in OpenStack Manila Administrator Guide).
 
 You can create a share in a network, list shares, and show information
 for, update, and delete a specified share. You can also create snapshots
 of shares (see `Share snapshots
-<https://docs.openstack.org/admin-guide/shared-file-systems-snapshots.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide).
+<https://docs.openstack.org/manila/latest/admin/shared-file-systems-snapshots.html>`__
+in OpenStack Manila Administrator Guide).
 
 There are default and specific share types that allow you to filter or
 choose back-ends before you create a share. Functions and behaviour of
 share type is similar to Block Storage volume type (see `Share types
-<https://docs.openstack.org/admin-guide/shared-file-systems-share-types.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide).
+<https://docs.openstack.org/manila/latest/admin/shared-file-systems-share-types.html>`__
+in OpenStack Manila Administrator Guide).
 
 To help users keep and restore their data, Shared File Systems service
 provides a mechanism to create and operate snapshots (see `Share snapshots
-<https://docs.openstack.org/admin-guide/shared-file-systems-snapshots.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide).
+<https://docs.openstack.org/manila/latest/admin/shared-file-systems-snapshots.html>`__
+in OpenStack Manila Administrator Guide).
 
 A security service stores configuration information for clients for
 authentication and authorization. Inside Manila a share network can be
 associated with up to three security types (for detailed information see
 `Security services
-<https://docs.openstack.org/admin-guide/shared-file-systems-security-services.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide):
+<https://docs.openstack.org/manila/latest/admin/shared-file-systems-security-services.html>`__
+in OpenStack Manila Administrator Guide).
 
 * LDAP
 * Kerberos
@@ -958,16 +958,14 @@ called StandaloneNetworkPlugin is used. In this case, provide network
 information in the configuration: IP range, network type, and
 segmentation ID. Also you can add security services to a share network
 (see section
-`“Networking” <https://docs.openstack.org/admin-guide/shared-file-systems-networking.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide).
+`“Networking” <https://docs.openstack.org/manila/latest/admin/shared-file-systems-networking.html>`__
+in OpenStack Manila Administrator Guide).
 
 
 The main idea of consistency groups is to enable you to create snapshots
 at the exact same point in time from multiple file system shares. Those
 snapshots can be then used for restoring all shares that were associated
-with the consistency group (see section `“Consistency
-groups” <https://docs.openstack.org/admin-guide/shared-file-systems-cgroups.html>`__
-of chapter “Shared File Systems” in OpenStack Administrator Guide).
+with the consistency group.
 
 Shared File System storage allows administrators to set limits and
 quotas for specific tenants and users. Limits are the resource
@@ -1259,7 +1257,7 @@ specified access rules:
 
    For the details of features supported by different drivers see
    `Manila share features support mapping
-   <https://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html>`__
+   <https://docs.openstack.org/manila/latest/admin/index.html#supported-share-back-ends>`__
    of Manila Developer Guide document.
 
 Manage Shares

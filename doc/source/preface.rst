@@ -284,7 +284,7 @@ We wrote this book to help you:
 
 We wrote this book in a book sprint, which is a facilitated, rapid
 development production method for books. For more information, see the
-`BookSprints site <http://www.booksprints.net/>`_. Your authors cobbled
+`BookSprints site <https://www.booksprints.net/>`_. Your authors cobbled
 this book together in five days during February 2013, fueled by caffeine
 and the best takeout food that Austin, Texas, could offer.
 
@@ -332,7 +332,7 @@ Lorin Hochstein
 Adam Hyde
     Adam facilitated this book sprint. He also founded the book sprint
     methodology and is the most experienced book-sprint facilitator
-    around. See `BookSprints <http://www.booksprints.net>`_ for more
+    around. See `BookSprints <https://www.booksprints.net>`_ for more
     information. Adam founded FLOSS Manuals—a community of some 3,000
     individuals developing Free Manuals about Free Software. He is also the
     founder and project manager for Booktype, an open source project for

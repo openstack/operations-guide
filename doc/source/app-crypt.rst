@@ -213,10 +213,10 @@ its lease and all of the sudden I found a bunch of OpenStack and dnsmasq
 discussions that were identical to the problem we were seeing!
 
 `Problem with Heavy Network IO and
-Dnsmasq <http://www.gossamer-threads.com/lists/openstack/operators/18197>`_.
+Dnsmasq <https://www.gossamer-threads.com/lists/openstack/operators/18197>`_.
 
 `instances losing IP address while running, due to No
-DHCPOFFER <http://www.gossamer-threads.com/lists/openstack/dev/14696>`_.
+DHCPOFFER <https://www.gossamer-threads.com/lists/openstack/dev/14696>`_.
 
 Seriously, Google.
 
@@ -245,7 +245,7 @@ Disappearing Images
 At the end of 2012, Cybera (a nonprofit with a mandate to oversee the
 development of cyberinfrastructure in Alberta, Canada) deployed an
 updated OpenStack cloud for their `DAIR
-project <http://www.canarie.ca/cloud/>`_. A few days into
+project <https://www.canarie.ca/cloud/>`_. A few days into
 production, a compute node locks up. Upon rebooting the node, I checked
 to see what instances were hosted on that node so I could boot them on
 behalf of the customer. Luckily, only one instance.

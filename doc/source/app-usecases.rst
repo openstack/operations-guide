@@ -40,12 +40,7 @@ to 10 percent back-ported code from trunk and modifications.
 Resources
 ---------
 
--  `OpenStack.org case
-   study <https://www.openstack.org/user-stories/nectar/>`_
-
 -  `NeCTAR-RC GitHub <https://github.com/NeCTAR-RC/>`_
-
--  `NeCTAR website <https://www.nectar.org.au/>`_
 
 MIT CSAIL
 ~~~~~~~~~
@@ -110,7 +105,7 @@ based networks.
 Resources
 ---------
 
--  `CSAIL homepage <http://www.csail.mit.edu/>`_
+-  `CSAIL homepage <https://www.csail.mit.edu/>`_
 
 DAIR
 ~~~~
@@ -151,7 +146,7 @@ controller.
 Resources
 ---------
 
--  `DAIR homepage <http://www.canarie.ca/cloud/>`__
+-  `DAIR homepage <https://www.canarie.ca/cloud/>`__
 
 CERN
 ~~~~
@@ -183,7 +178,7 @@ Resources
 ---------
 
 -  `OpenStack in Production: A tale of 3 OpenStack
-   Clouds <http://openstack-in-production.blogspot.de/2013/09/a-tale-of-3-openstack-clouds-50000.html>`_
+   Clouds <https://openstack-in-production.blogspot.de/2013/09/a-tale-of-3-openstack-clouds-50000.html>`_
 
 -  `Review of CERN Data Centre
    Infrastructure <http://cds.cern.ch/record/1457989/files/chep%202012%20CERN%20infrastructure%20final.pdf?version=1>`_

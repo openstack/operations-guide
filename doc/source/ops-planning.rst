@@ -241,9 +241,9 @@ you build your use case and your deployment plan.
     For further research about OpenStack deployment, investigate the
     supported and documented preconfigured, prepackaged installers for
     OpenStack from companies such as
-    `Canonical <https://www.ubuntu.com/cloud/openstack>`_,
-    `Cisco <http://www.cisco.com/c/en/us/solutions/data-center-virtualization/openstack-at-cisco/index.html>`_,
-    `Cloudscaling <http://www.cloudscaling.com>`_,
+    `Canonical <https://www.ubuntu.com/openstack>`_,
+    `Cisco <https://www.cisco.com/c/en/us/solutions/data-center-virtualization/openstack-at-cisco/index.html>`_,
+    `Cloudscaling <http://cloudscaling.com/blog/>`_,
     `IBM <http://www-03.ibm.com/software/products/en/ibm-cloud-orchestrator>`_,
     `Metacloud <http://www.cisco.com/c/en/us/products/cloud-systems-management/metacloud/index.html>`_,
     `Mirantis <https://www.mirantis.com>`_,

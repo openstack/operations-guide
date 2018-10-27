@@ -34,7 +34,7 @@ different tuning requirements.
    <https://docs.openstack.org/ocata/config-reference/compute/hypervisors.html>`__.
    You can see a matrix of the various features in OpenStack Compute
    (nova) hypervisor drivers at the `Hypervisor support matrix
-   page <https://docs.openstack.org/developer/nova/support-matrix.html>`_.
+   page <ttps://docs.openstack.org/nova/latest/user/support-matrix.html>`_.
 
 The point we are trying to make here is that just because an option
 exists doesn't mean that option is relevant to your driver choices.
@@ -146,6 +146,6 @@ quickly based on the closest data center. You configure a default region
 with one zone for each cluster, but be sure your network (WAN) can
 handle the additional request and response load between zones as you add
 more zones and build a ring that handles more zones. Refer to
-`Geographically Distributed Clusters
-<https://docs.openstack.org/developer/swift/admin_guide.html#geographically-distributed-clusters>`_
+`Geographically Distributed Swift Considerations
+<https://docs.openstack.org/swift/latest/admin_guide.html#geographically-distributed-swift-considerations>`_
 in the documentation for additional information.

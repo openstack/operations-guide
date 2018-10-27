@@ -217,9 +217,9 @@ Common areas of regulation include:
 This is an example of such legal frameworks:
 
 Data storage regulations in Europe are currently driven by provisions of
-the `Data protection framework <http://ec.europa.eu/justice/data-protection/>`_.
+the `Data protection board <https://edpb.europa.eu/>`_.
 `Financial Industry Regulatory Authority
-<http://www.finra.org/Industry/Regulation/FINRARules/>`_ works on this in
+<http://finra.complinet.com/>`_ works on this in
 the United States.
 
 Privacy and security are spread over different industry-specific laws and
@@ -262,7 +262,7 @@ Corrective controls:
  system is an example of a corrective control.
 
 For more information, see See also `NIST Special Publication 800-53
-<https://web.nvd.nist.gov/view/800-53/home>`_.
+<https://web.nvd.nist.gov/view/800-53/>`_.
 
 
 Software licensing

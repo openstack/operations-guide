@@ -98,7 +98,7 @@ software defined networking (SDN) hardware or plug-ins that use Linux
 native facilities on your hosts, such as Open vSwitch or Linux Bridge.
 
 The networking chapter of the `OpenStack Administrator
-Guide <https://docs.openstack.org/admin-guide/networking.html>`_
+Guide <https://docs.openstack.org/admin-guide/>`_
 shows a variety of networking scenarios and their connection paths. The
 purpose of this section is to give you the tools to troubleshoot the
 various components involved however they are plumbed together in your
@@ -473,7 +473,7 @@ is to use ``tcpdump``. We recommended using ``tcpdump`` at several
 points along the network path to correlate where a problem might be. If
 you prefer working with a GUI, either live or by using a ``tcpdump``
 capture, check out
-`Wireshark <http://www.wireshark.org/>`_.
+`Wireshark <https://www.wireshark.org/>`_.
 
 For example, run the following command:
 
@@ -920,7 +920,7 @@ Troubleshooting Open vSwitch
 Open vSwitch, as used in the previous OpenStack Networking examples is a
 full-featured multilayer virtual switch licensed under the open source
 Apache 2.0 license. Full documentation can be found at `the project's
-website <http://openvswitch.org/>`_. In practice, given the preceding
+website <http://www.openvswitch.org/>`_. In practice, given the preceding
 configuration, the most common issues are being sure that the required
 bridges (``br-int``, ``br-tun``, and ``br-ex``) exist and have the
 proper ports connected to them.
@@ -1091,5 +1091,5 @@ analysis and diagnostic system that provides a completely automated service
 for verifying and diagnosing the networking functionality provided by OVS.
 
 Additionally, you can refer to
-`neutron debug <https://docs.openstack.org/cli-reference/neutron-debug.html>`_
+`neutron client <https://docs.openstack.org/python-neutronclient/latest/>`_
 for more options.
