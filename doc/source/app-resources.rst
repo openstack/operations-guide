@@ -16,14 +16,13 @@ OpenStack
 
 -  `OpenStack Administrator Guide <https://docs.openstack.org/admin-guide/>`_
 
--  `OpenStack Cloud Computing Cookbook (Packt
-   Publishing) <http://www.packtpub.com/openstack-cloud-computing-cookbook-second-edition/book>`_
+-  `OpenStack Cloud Computing Cookbook <https://openstackcookbook.com/>`_
 
 Cloud (General)
 ~~~~~~~~~~~~~~~
 
 -  `The NIST Definition of Cloud
-   Computing <http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf>`_
+   Computing <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf>`_
 
 Python
 ~~~~~~
@@ -34,29 +33,29 @@ Networking
 ~~~~~~~~~~
 
 -  `TCP/IP Illustrated, Volume 1: The Protocols, 2/E
-   (Pearson) <http://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page>`_
+   (Pearson) <https://www.pearsonhighered.com/educator/product/TCPIP-Illustrated-Volume-1-The-Protocols/9780321336316.page>`_
 
 -  `The TCP/IP Guide (No Starch
-   Press) <http://www.nostarch.com/tcpip.htm>`_
+   Press) <https://www.nostarch.com/tcpip.htm>`_
 
 -  `A tcpdump Tutorial and
-   Primer <http://danielmiessler.com/study/tcpdump/>`_
+   Primer <https://danielmiessler.com/study/tcpdump/>`_
 
 Systems Administration
 ~~~~~~~~~~~~~~~~~~~~~~
 
 -  `UNIX and Linux Systems Administration Handbook (Prentice
-   Hall) <http://www.admin.com/>`_
+   Hall) <https://www.admin.com/>`_
 
 Virtualization
 ~~~~~~~~~~~~~~
 
 -  `The Book of Xen (No Starch
-   Press) <http://www.nostarch.com/xen.htm>`_
+   Press) <https://nostarch.com/releases/xen.html>`_
 
 Configuration Management
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `Puppet Labs Documentation <http://docs.puppetlabs.com/>`_
+-  `Puppet Labs Documentation <https://docs.puppet.com/>`_
 
--  `Pro Puppet (Apress) <http://www.apress.com/9781430230571>`_
+-  `Pro Puppet (Apress) <https://www.apress.com/9781430230571>`_

@@ -48,4 +48,4 @@ As your cloud grows, MySQL is utilized more and more. If you suspect
 that MySQL might be becoming a bottleneck, you should start researching
 MySQL optimization. The MySQL manual has an entire section dedicated to
 this topic: `Optimization Overview
-<http://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html>`_.
+<https://dev.mysql.com/doc/refman/5.5/en/optimize-overview.html>`_.

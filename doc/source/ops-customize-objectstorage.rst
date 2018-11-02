@@ -3,9 +3,9 @@ Customizing Object Storage (Swift) Middleware
 =============================================
 
 OpenStack Object Storage, known as swift when reading the code, is based
-on the Python `Paste <http://pythonpaste.org/>`_ framework. The best
-introduction to its architecture is `A Do-It-Yourself
-Framework <http://pythonpaste.org/do-it-yourself-framework.html>`_.
+on the Python `Paste <https://pypi.org/project/Paste/>`_ framework.
+The best introduction to its architecture is on `Read The
+Docs <https://paste.readthedocs.io/en/latest/>`_.
 Because of the swift project's use of this framework, you are able to
 add features to a project by placing some custom code in a project's
 pipeline without having to change any of the core code.

@@ -182,8 +182,8 @@ Documentation feedback
 
 To provide feedback on documentation, join our IRC channel ``#openstack-doc``
 on the Freenode IRC network, or `report a bug in Launchpad
-<https://bugs.launchpad.net/openstack/+filebug>`_ and choose the particular
-project that the documentation is a part of.
+<https://bugs.launchpad.net/openstack/+filebug/+login>`_ and choose
+the particular project that the documentation is a part of.
 
 The OpenStack IRC channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,7 +194,7 @@ feedback for urgent and pressing issues. To install an IRC client or use
 a browser-based client, go to
 `https://webchat.freenode.net/ <https://webchat.freenode.net>`_. You can
 also use `Colloquy <http://colloquy.info/>`_ (Mac OS X),
-`mIRC <http://www.mirc.com/>`_ (Windows),
+`mIRC <https://www.mirc.com/>`_ (Windows),
 or XChat (Linux). When you are in the IRC channel
 and want to share code or command output, the generally accepted method
 is to use a Paste Bin. The OpenStack project has one at `Paste
