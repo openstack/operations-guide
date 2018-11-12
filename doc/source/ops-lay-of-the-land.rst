@@ -17,8 +17,8 @@ create and manage services. The dashboard provides an :guilabel:`Admin`
 tab with a :guilabel:`System Panel` and an :guilabel:`Identity` tab.
 These interfaces give you access to system information and usage as
 well as to settings for configuring what
-end users can do. Refer to the `OpenStack Administrator
-Guide <https://docs.openstack.org/latest/admin/>`__ for
+end users can do. Refer to the `Horizon Administration
+Guide <https://docs.openstack.org/horizon/latest/admin/>`_ for
 detailed how-to information about using the dashboard as an admin user.
 
 Command-Line Tools
