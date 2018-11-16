@@ -5,7 +5,7 @@ OpenStack Operations Guide
 This repository contains the source files for the OpenStack Operations Guide.
 
 You can read this guide at `docs.openstack.org/operations-guide
-<http://docs.openstack.org/operations-guide>`_.
+<https://docs.openstack.org/operations-guide>`_.
 
 Prerequisites
 -------------
