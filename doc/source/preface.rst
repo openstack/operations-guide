@@ -402,9 +402,7 @@ Documentation Contributor
 Guide <https://docs.openstack.org/doc-contrib-guide/>`_.
 
 If you find a bug and can't fix it or aren't sure it's really a doc bug,
-log a bug at `OpenStack
-Manuals <https://bugs.launchpad.net/openstack-manuals>`_. Tag the bug
-under Extra options with the ``ops-guide`` tag to indicate that the bug
-is in this guide. You can assign the bug to yourself if you know how to
-fix it. Also, a member of the OpenStack doc-core team can triage the doc
+log a bug in `
+Storyboard <https://storyboard.openstack.org/#!/project/openstack/operations-guide>`_. You can assign the bug to yourself if you know how to
+fix it. Also, a member of the OpenStack operations-doc team can triage the doc
 bug.
