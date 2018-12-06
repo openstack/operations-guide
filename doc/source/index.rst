@@ -15,7 +15,7 @@ OpenStack packages and dependencies on your cloud.
 While it is important for an operator to be familiar with the steps
 involved in deploying OpenStack, we also strongly encourage you to
 evaluate `OpenStack deployment tools
-<https://docs.openstack.org/rocky/projects.html>`_
+<https://docs.openstack.org/rocky/deploy/>`_
 and configuration-management tools, such as :term:`Puppet` or
 :term:`Chef`, which can help automate this deployment process.
 
