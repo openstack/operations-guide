@@ -1889,8 +1889,6 @@ project has been modified to be more permissive.
 Adding security groups is typically done on instance boot. When
 launching from the dashboard, you do this on the
 :guilabel:`Access & Security` tab of the :guilabel:`Launch Instance` dialog.
-When launching from the command line, append ``--security-groups``
-with a comma-separated list of security groups.
 
 It is also possible to add and remove security groups when an instance
 is running. Currently this is only available through the command-line
