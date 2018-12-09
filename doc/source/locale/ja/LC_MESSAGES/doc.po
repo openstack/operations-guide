@@ -6,12 +6,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: operations-guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-07 04:29+0000\n"
+"POT-Creation-Date: 2018-12-08 09:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-12-07 09:47+0000\n"
-"Last-Translator: Yuki Kasuya <yu-kasuya@kddilabs.jp>\n"
+"PO-Revision-Date: 2018-12-08 12:16+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -33,12 +33,18 @@ msgstr "「あの問題」"
 msgid "**Back matter:**"
 msgstr "**後付:**"
 
+msgid "**Block Storage service (cinder)**"
+msgstr "**Block Storage サービス (cinder)**"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "**Column**"
 msgstr "**カラム**"
 
 msgid "**Compute nodes**"
 msgstr "**コンピュートノード**"
+
+msgid "**Compute service (nova)**"
+msgstr "**Compute サービス (nova)**"
 
 msgid "**Controller node**"
 msgstr "**コントローラーノード**"
@@ -50,6 +56,9 @@ msgstr "**再利用できるポートの作成**"
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "**Description**"
 msgstr "**説明**"
+
+msgid "**Detach a port from an instance**"
+msgstr "**インスタンスからポートの切断**"
 
 msgid "**Ensuring Snapshots of Linux Guests Are Consistent**"
 msgstr "**Linux ゲストのスナップショットの整合性の保証**"
@@ -64,6 +73,15 @@ msgstr "**複雑さの例**"
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/source/locale/arch-design
 msgid "**Example**"
 msgstr "**例**"
+
+msgid "**Identity service (keystone)**"
+msgstr "**Identity サービス (keystone)**"
+
+msgid "**Image service (glance)**"
+msgstr "**Image サービス (glance)**"
+
+msgid "**Networking service (neutron)**"
+msgstr "**Networking サービス (neutron)**"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/source/locale/arch-design
 msgid "**Overhead**"
@@ -82,6 +100,13 @@ msgstr "**共有サービス**"
 
 msgid "**Storage nodes**"
 msgstr "**ストレージノード**"
+
+msgid ""
+"**To capture packets from the patch-tun internal interface on integration "
+"bridge, br-int:**"
+msgstr ""
+"統合ブリッジ ``br-int`` の内部インターフェース ``patch-tun`` からのパケットを"
+"キャプチャーする方法。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -135,6 +160,9 @@ msgstr "**テナント (プロジェクト) のクォータ値の表示**"
 
 msgid "*Actions which delete things should not be enabled by default.*"
 msgstr "*何かを削除する操作はデフォルトで有効化されるべきではない。*"
+
+msgid "/var/lib/nova/instances"
+msgstr "/var/lib/nova/instances"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "0 GB"
@@ -349,6 +377,21 @@ msgstr "<スナップショットされたインスタンスの UUID>"
 msgid "<uuid of original image of instance that was snapshotted>"
 msgstr "<スナップショットされたインスタンスの元イメージの UUID>"
 
+msgid ""
+"A DHCP problem might be caused by a misbehaving dnsmasq process. First, "
+"debug by checking logs and then restart the dnsmasq processes only for that "
+"project (tenant). In VLAN mode, there is a dnsmasq process for each tenant. "
+"Once you have restarted targeted dnsmasq processes, the simplest way to rule "
+"out dnsmasq causes is to kill all of the dnsmasq processes on the machine "
+"and restart ``nova-network``. As a last resort, do this as root:"
+msgstr ""
+"DHCP の問題は dnsmasq の不具合が原因となりがちです。まず、ログを確認し、その"
+"後該当するプロジェクト(テナント)の dnsmasq プロセスを再起動してください。 "
+"VLAN モードにおいては、 dnsmasq プロセスはテナントごとに存在します。すでに該"
+"当の dnsmasq プロセスを再起動しているのであれば、もっともシンプルな解決法は、"
+"マシン上の全ての dnsmasq プロセスをkillし、 ``nova-network`` を再起動すること"
+"です。最終手段として、root で以下を実行してください。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "A NetApp appliance is used in each region for both block storage and "
@@ -360,6 +403,15 @@ msgstr ""
 "プライアンスが使用されています。これらのインスタンスを NetApp アプライアンス"
 "から :term:`Ceph` または GlusterFS といった分散ファイルシステム上に移動する計"
 "画があります。"
+
+msgid ""
+"A basic type of alert monitoring is to simply check and see whether a "
+"required process is running. For example, ensure that the ``nova-api`` "
+"service is running on the cloud controller:"
+msgstr ""
+"基本的なアラーム監視は、単に要求されたプロセスが稼働しているかどうかを確認す"
+"ることです。 例えば、 ``nova-api`` サービスがクラウドコントローラーで稼働して"
+"いるかどうかを確認します。"
 
 msgid ""
 "A boolean to indicate whether the volume should be deleted when the instance "
@@ -454,6 +506,15 @@ msgstr ""
 "ホストアグリゲートの一般的な用途は ``nova-scheduler`` で使用する情報を提供す"
 "ることです。例えば、ホストアグリゲートを使って、特定のフレーバーやイメージを"
 "共有するホストの集合を作成することができます。"
+
+msgid ""
+"A common way of dealing with the recovery from a full system failure, such "
+"as a power outage of a data center, is to assign each service a priority, "
+"and restore in order. :ref:`table_example_priority` shows an example."
+msgstr ""
+"データセンターの電源障害など、完全なシステム障害からリカバリーする一般的な方"
+"法は、各サービスに優先度を付け、順番に復旧していくことです。 :ref:"
+"`table_example_priority` に例を示します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "A compute node"
@@ -582,6 +643,19 @@ msgstr ""
 "集約化エリアはクラウドコントローラーの ``/var/log/rsyslog`` だ。このディレク"
 "トリは全コンピュートノードの全ての OpenStack ログが収集されていた。私は、 :"
 "command:`virsh` が報告したファイルに関するエントリがあるのだろうかと思った。"
+
+msgid ""
+"A number of operating systems use rsyslog as the default logging service. "
+"Since it is natively able to send logs to a remote location, you do not have "
+"to install anything extra to enable this feature, just modify the "
+"configuration file. In doing this, consider running your logging over a "
+"management network or using an encrypted VPN to avoid interception."
+msgstr ""
+"多くのオペレーティングシステムは、rsyslog をデフォルトのロギングサービスとし"
+"て利用します。rsyslog は、リモートにログを送信する機能を持っているので、何か"
+"を追加でインストールする必要がなく、設定ファイルを変更するだけです。リモート"
+"転送を実施する際は、盗聴を防ぐためにログが自身の管理ネットワーク上を通る、も"
+"しくは暗号化VPNを利用することを考慮する必要があります。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -799,6 +873,9 @@ msgstr ""
 "boot、root、swap、LVM 領域に分割します。この選択肢はシンプルですべてのパー"
 "ティションを利用することができますが、I/O性能に悪影響がでる可能性があります。"
 
+msgid "Add device ``snooper0`` to bridge ``br-int``:"
+msgstr "``snooper0`` デバイスを ``br-int`` ブリッジに追加します。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Add metadata to the container to allow the IP:"
 msgstr "メタデータをコンテナーに追加して、IP を許可します。"
@@ -806,9 +883,15 @@ msgstr "メタデータをコンテナーに追加して、IP を許可します
 msgid "Add the repository for the new release packages."
 msgstr "新リリースのパッケージのリポジトリーを追加します。"
 
+msgid "Adding Custom Logging Statements"
+msgstr "カスタムログの追加"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Adding Images"
 msgstr "イメージの追加"
+
+msgid "Adding Projects"
+msgstr "プロジェクトの追加"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Adding Signed Images"
@@ -846,6 +929,15 @@ msgstr "オブジェクトストレージノードの追加"
 
 msgid "Adding cloud controller nodes"
 msgstr "クラウドコントローラーノードの追加"
+
+msgid ""
+"Adding security groups is typically done on instance boot. When launching "
+"from the dashboard, you do this on the :guilabel:`Access & Security` tab of "
+"the :guilabel:`Launch Instance` dialog."
+msgstr ""
+"セキュリティグループの追加は、一般的にインスタンスの起動時に実行されます。"
+"ダッシュボードから起動するとき、これは :guilabel:`インスタンスの起動` ダイア"
+"ログの :guilabel:`アクセスとセキュリティー` タブにあります。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -892,6 +984,12 @@ msgstr ""
 "いる最中には起こらなかったが、（数時間たっていて）「あの問題」が起こるまであ"
 "と少しのところだった。"
 
+msgid ""
+"Adjust the appropriate limits in the ``/etc/security/limits.conf`` "
+"configuration file."
+msgstr ""
+"``/etc/security/limits.conf`` 設定ファイルにおいて、適切な制限を調整します。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Administrative Command-Line Tools"
 msgstr "管理系コマンドラインツール"
@@ -903,6 +1001,15 @@ msgstr "高度な設定"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "After a Compute Node Reboots"
 msgstr "コンピュートノードの再起動後"
+
+msgid ""
+"After a cloud controller reboots, ensure that all required services were "
+"successfully started. The following commands use :command:`ps` and :command:"
+"`grep` to determine if nova, glance, and keystone are currently running:"
+msgstr ""
+"クラウドコントローラーの再起動後、すべての必要なサービスが正常に起動されたこ"
+"とを確認します。以下のコマンドは、 :command:`ps` と :command:`grep` を使用し"
+"て、nova、glance、keystone が現在動作していることを確認しています。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "After a few minutes of troubleshooting, I saw the following details:"
@@ -977,6 +1084,15 @@ msgstr ""
 msgid "After running"
 msgstr "実行後"
 
+msgid ""
+"After that, use the :command:`openstack` command to reboot all instances "
+"that were on c01.example.com while regenerating their XML files at the same "
+"time:"
+msgstr ""
+"その後、:command:`openstack` コマンドを使って、c01.example.com にあったすべて"
+"のインスタンスを再起動します。起動する際にインスタンスの XML ファイルを再生成"
+"します:"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "After the compute node is successfully running, you must deal with the "
@@ -1026,6 +1142,13 @@ msgstr ""
 "か決定することができます。上記で説明した留意事項の下、典型的には、ラック 1 本"
 "分のコンピュートノードに対して8 コア、メモリ 8GB のサーバで充分です。"
 
+msgid ""
+"After you establish that the instance booted properly, the task is to figure "
+"out where the failure is."
+msgstr ""
+"インスタンスが正しく起動した後、この手順でどこが問題かを切り分けることができ"
+"ます。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "After you have the list, you can use the :command:`openstack` command to "
@@ -1057,6 +1180,33 @@ msgstr ""
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Ah-hah! So OpenStack was deleting it. But why?"
 msgstr "あっはっは！じゃぁ、OpenStack が削除したのか。でも何故？"
+
+msgid ""
+"All files and directories in ``/var/lib/nova/instances`` are uniquely named. "
+"The files in \\_base are uniquely titled for the glance image that they are "
+"based on, and the directory names ``instance-xxxxxxxx`` are uniquely titled "
+"for that particular instance. For example, if you copy all data from ``/var/"
+"lib/nova/instances`` on one compute node to another, you do not overwrite "
+"any files or cause any damage to images that have the same unique name, "
+"because they are essentially the same file."
+msgstr ""
+"``/var/lib/nova/instances`` にあるすべてのファイルとディレクトリは一意に名前"
+"が付けられています。 \\_base にあるファイルは元となった glance イメージに対応"
+"する一意に名前が付けられています。また、``instance-xxxxxxxx`` という名前が付"
+"けられたディレクトリは特定のインスタンスに対して一意にタイトルが付けられてい"
+"ます。たとえば、あるコンピュートノードにある ``/var/lib/nova/instances`` のす"
+"べてのデータを他のノードにコピーしたとしても、ファイルを上書きすることはあり"
+"ませんし、また同じ一意な名前を持つイメージにダメージを与えることもありませ"
+"ん。同じ一意な名前を持つものは本質的に同じファイルだからです。"
+
+msgid ""
+"All in all, just issue the :command:`reboot` command. The operating system "
+"cleanly shuts down services and then automatically reboots. If you want to "
+"be very thorough, run your backup jobs just before you reboot."
+msgstr ""
+"大体の場合、単に :command:`reboot` コマンドを発行します。オペレーティングシス"
+"テムがサービスを正常にシャットダウンして、その後、自動的に再起動します。万全"
+"を期したい場合、再起動する前にバックアップジョブを実行します。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -1221,6 +1371,17 @@ msgstr ""
 msgid "Among the log statements you'll see the lines:"
 msgstr "ログの中に以下の行があるでしょう。"
 
+msgid ""
+"An OpenStack cloud does not have much value without users. This chapter "
+"covers topics that relate to managing users, projects, and quotas. This "
+"chapter describes users and projects as described by version 2 of the "
+"OpenStack Identity API."
+msgstr ""
+"OpenStack クラウドは、ユーザーなしでは特に価値はありません。本章では、ユー"
+"ザー、プロジェクト、クォータの管理に関するトピックを記載します。また、"
+"OpenStack Identity API のバージョン 2 で説明されているように、ユーザーとプロ"
+"ジェクトについても説明します。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "An academic turned software-developer-slash-operator, Lorin worked as the "
@@ -1260,6 +1421,19 @@ msgstr ""
 "共有できるように、異なるフレーバーの種別が、異なる CPU および RAM 割当の比率"
 "で実行できるようになります。 これは、ホストアグリゲートに  ``metadata`` を設"
 "定して、フレーバー種別の ``extra_specs`` と一致させると機能します。"
+
+msgid ""
+"An alternative to enabling the RabbitMQ web management interface is to use "
+"the ``rabbitmqctl`` commands. For example, :command:`rabbitmqctl "
+"list_queues| grep cinder` displays any messages left in the queue. If there "
+"are messages, it's a possible sign that cinder services didn't connect "
+"properly to rabbitmq and might have to be restarted."
+msgstr ""
+"RabbitMQ Web 管理インターフェイスを有効にするもう一つの方法としては、 "
+"``rabbitmqctl`` コマンドを利用します。例えば :command:`rabbitmqctl "
+"list_queues| grep cinder` は、キューに残っているメッセージを表示します。メッ"
+"セージが存在する場合、Cinder サービスが RabbitMQ に正しく接続できてない可能性"
+"があり、再起動が必要かもしれません。"
 
 msgid ""
 "An attempt was made to deprecate ``nova-network`` during the Havana release, "
@@ -1363,6 +1537,9 @@ msgstr ""
 "アップグレード前テストシステムは、設定を動作させるために優れています。しかし"
 "ながら、システムの歴史的な使用法やユーザー操作における違いにより、アップグ"
 "レードの成否に影響することに注意することが重要です。"
+
+msgid "And finally, you can disassociate the floating IP:"
+msgstr "最後に、floating IP を開放します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -1470,6 +1647,31 @@ msgstr ""
 "人工的なスケールテストは、あくまである程度のものです。クラウドをアップグレー"
 "ドした後、クラウドのパフォーマンス観点で十分に注意する必要があります。"
 
+msgid ""
+"As a cloud administrative user, you can use the OpenStack dashboard to "
+"create and manage projects, users, images, and flavors. Users are allowed to "
+"create and manage images within specified projects and to share images, "
+"depending on the Image service configuration. Typically, the policy "
+"configuration allows admin users only to set quotas and create and manage "
+"services. The dashboard provides an :guilabel:`Admin` tab with a :guilabel:"
+"`System Panel` and an :guilabel:`Identity` tab. These interfaces give you "
+"access to system information and usage as well as to settings for "
+"configuring what end users can do. Refer to the `Horizon Administration "
+"Guide <https://docs.openstack.org/horizon/latest/admin/>`_ for detailed how-"
+"to information about using the dashboard as an admin user."
+msgstr ""
+"クラウドの管理ユーザーとして OpenStack Dashboard を使用して、プロジェクト、"
+"ユーザー、イメージ、フレーバーの作成および管理を行うことができます。ユーザー"
+"は Image service の設定に応じて、指定されたプロジェクト内でイメージを作成/管"
+"理したり、共有したりすることができます。通常、ポリシーの設定では、管理ユー"
+"ザーのみがクォータの設定とサービスの作成/管理を行うことができます。ダッシュ"
+"ボードには :guilabel:`管理` タブがあり、 :guilabel:`システムパネル` と :"
+"guilabel:`ユーザー管理タブ` に分かれています。これらのインターフェースによ"
+"り、システム情報と使用状況のデータにアクセスすることができるのに加えて、エン"
+"ドユーザーが実行可能な操作を設定することもできます。管理ユーザーとしてダッ"
+"シュボードを使用する方法についての詳しい説明は  `Horizon Administrator Guide "
+"<https://docs.openstack.org/horizon/latest/admin/>`__ を参照してください。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "As a last resort, our network admin (Alvaro) and myself sat down with four "
@@ -1500,6 +1702,16 @@ msgstr ""
 "ローラに常に負荷の大きい処理が発生します。一般論として、VMの平均寿命が長いと"
 "いうことは、クラウドコントローラの負荷が軽いことを意味するため、平均的なVMの"
 "寿命を検討する必要があります。"
+
+msgid ""
+"As an OpenStack cloud is composed of so many different services, there are a "
+"large number of log files. This chapter aims to assist you in locating and "
+"working with them and describes other ways to track the status of your "
+"deployment."
+msgstr ""
+"OpenStackクラウドは、様々なサービスから構成されるため、多くのログファイルが存"
+"在します。この章では、それぞれのログの場所と取り扱い、そしてシステムのさらな"
+"る監視方法について説明します。"
 
 msgid ""
 "As an administrative user, you can update the Block Storage service quotas "
@@ -1619,6 +1831,26 @@ msgstr "全力でこの問題を修正した結果、全てが正常に動作す
 msgid "As this would be the server's bonded NIC."
 msgstr "これはサーバーの冗長化された（bonded）NIC であるべきだからだ。"
 
+msgid ""
+"As with most architecture choices, the right answer depends on your "
+"environment. If you are using existing hardware, you know the disk density "
+"of your servers and can determine some decisions based on the options above. "
+"If you are going through a procurement process, your user's requirements "
+"also help you determine hardware purchases. Here are some examples from a "
+"private cloud providing web developers custom environments at AT&T. This "
+"example is from a specific deployment, so your existing hardware or "
+"procurement opportunity may vary from this. AT&T uses three types of "
+"hardware in its deployment:"
+msgstr ""
+"多くのアーキテクチャーの選択肢と同様に、環境により適切なソリューションは変"
+"わって来ます。既存のハードウェアを使用する場合、サーバーのディスク密度を把握"
+"し、上記のオプションをもとに意思決定していきます。調達プロセスを行っている場"
+"合、ユーザー要件などもハードウェア購入決定の一助となります。ここでは AT&T の "
+"Web 開発者にカスタムの環境を提供するプライベートクラウドの例をあげています。"
+"この例は、特定のデプロイメントであるため、既存のハードウェアや調達機会はこれ"
+"と異なる可能性があります。AT&T は、デプロイメントに 3 種類のハードウェアを使"
+"用しています。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "As with other removable disk technology, it is important that the operating "
@@ -1641,6 +1873,19 @@ msgstr ""
 "インスタンスの中のプロセスがエラーを起こす可能性もあります。"
 
 msgid ""
+"As your cloud grows, MySQL is utilized more and more. If you suspect that "
+"MySQL might be becoming a bottleneck, you should start researching MySQL "
+"optimization. The MySQL manual has an entire section dedicated to this "
+"topic: `Optimization Overview <https://dev.mysql.com/doc/refman/5.5/en/"
+"optimize-overview.html>`_."
+msgstr ""
+"クラウドが大きくなるにつれて、MySQL がさらに使用されてきます。MySQL がボトル"
+"ネックになってきたことが疑われる場合、MySQL 最適化の調査から始めるとよいで"
+"しょう。MySQL のマニュアルでは、 `Optimization Overview <https://dev.mysql."
+"com/doc/refman/5.5/en/optimize-overview.html>`_ というセクションがあり、一つ"
+"のセクション全部をあててこの話題を扱っています。"
+
+msgid ""
 "As your focus turns to stable operations, we recommend that you do skim this "
 "guide to get a sense of the content. Some of this content is useful to read "
 "in advance so that you can put best practices into effect to simplify your "
@@ -1653,6 +1898,16 @@ msgstr ""
 "てのベストプラクティスを実践するのに役に立つことでしょう。その他の部分は、 "
 "(電源障害のような) 予期しないイベントが発生した場合や特定の問題のトラブル"
 "シューティングをする場合に、リファレンスとして役に立つでしょう。"
+
+msgid ""
+"Aside from connection failures, RabbitMQ log files are generally not useful "
+"for debugging OpenStack related issues. Instead, we recommend you use the "
+"RabbitMQ web management interface. Enable it on your cloud controller:"
+msgstr ""
+"接続エラーは別として、RabbitMQ のログファイルは一般的に OpenStack 関連の問題"
+"をデバッグするために役立ちません。代わりに、RabbitMQ の Web 管理インター"
+"フェースを使用することを推奨します。クラウドコントローラーで Web 管理インター"
+"フェースを有効にするには以下のようにします。"
 
 msgid ""
 "Aside from the creation and termination of VMs, you must consider the impact "
@@ -1798,9 +2053,18 @@ msgstr ""
 msgid "Attaching Block Storage"
 msgstr "ブロックストレージの接続"
 
+msgid "Attempt to boot a nova instance in the affected environment."
+msgstr "影響のある環境において、nova インスタンスを起動できるか試します。"
+
 msgid "Attempt to list the objects in the ``middleware-test`` container:"
 msgstr ""
 "``middleware-test`` コンテナーにあるオブジェクトを一覧表示しようとします。"
+
+msgid "Automated configuration"
+msgstr "自動環境設定"
+
+msgid "Automated deployment"
+msgstr "自動デプロイメント"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/source/locale/arch-design
 msgid "Availability zone"
@@ -1866,6 +2130,13 @@ msgstr ""
 msgid "Bare metal Deployment (ironic)"
 msgstr "Bare metal Deployment (ironic)"
 
+msgid ""
+"Be sure that the instance has successfully booted and is at a login screen "
+"before doing the above."
+msgstr ""
+"上記を実行する前に、インスタンスが正常に起動し、ログイン画面になっていること"
+"を確認します。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Because it is recommended to not use partitions on a swift disk, simply "
@@ -1905,6 +2176,16 @@ msgstr ""
 "妥当なクォータがないと、単一のテナントが利用可能なリソースをすべて使用してし"
 "まう可能性があるため、デフォルトのクォータが OpenStack には含まれています。お"
 "使いのハードウェア機能には、どのクォータ設定が適切か注意してください。"
+
+msgid ""
+"Because your cloud is most likely composed of many servers, you must check "
+"logs on each of those servers to properly piece an event together. A better "
+"solution is to send the logs of all servers to a central location so that "
+"they can all be accessed from the same area."
+msgstr ""
+"クラウドは多くのサーバーから構成されるため、各サーバー上にあるイベントログを"
+"繋ぎあわせて、ログをチェックしなければなりません。よい方法は全てのサーバーの"
+"ログを一ヶ所にまとめ、同じ場所で確認できるようにすることです。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -2031,6 +2312,9 @@ msgstr ""
 "合、Floating IP クォータの 10% を使用していることになります。手動で計算するよ"
 "り、SQL やお好きなスクリプト言語を使用して、定型化されたレポートを作成できま"
 "す。"
+
+msgid "By default, Object Storage logs to syslog."
+msgstr "デフォルトで Object Storage は syslog にログを出力します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -2171,6 +2455,12 @@ msgstr "メモリー消費を確認します。"
 msgid "Check the attributes of the updated Share1:"
 msgstr "更新された Share1 の属性を確認します。"
 
+msgid "Check the port connection using the netcat utility:"
+msgstr "netcat ユーティリティーを使用してポート接続を確認します。"
+
+msgid "Check the ports for the lost IP address and update the name:"
+msgstr "失われた IP アドレス向けのポートを確認して、その名前を更新します。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Check usage and trends over the past month."
 msgstr "この 1 か月における使用量および傾向を確認します。"
@@ -2190,6 +2480,13 @@ msgid ""
 msgstr ""
 "OpenStack のアップグレード後に後始末を行います (未使用または新しいサービスを"
 "把握していますか?)。"
+
+msgid ""
+"Clean up by clearing all mirrors on ``br-int`` and deleting the dummy "
+"interface:"
+msgstr ""
+"``br-int`` にあるすべてのミラーを解除して、ダミーインターフェースを削除するこ"
+"とにより、クリーンアップします。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Click the :guilabel:`Create Project` button."
@@ -2256,6 +2553,22 @@ msgstr "コンピュートノードの故障とメンテナンス"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Compute nodes"
 msgstr "コンピュートノード"
+
+msgid ""
+"Compute nodes can fail the same way a cloud controller can fail. A "
+"motherboard failure or some other type of hardware failure can cause an "
+"entire compute node to go offline. When this happens, all instances running "
+"on that compute node will not be available. Just like with a cloud "
+"controller failure, if your infrastructure monitoring does not detect a "
+"failed compute node, your users will notify you because of their lost "
+"instances."
+msgstr ""
+"コンピュートノードは、クラウドコントローラーの障害と同じように故障します。マ"
+"ザーボードや他の種類のハードウェア障害により、コンピュートノード全体がオフラ"
+"インになる可能性があります。これが発生した場合、そのコンピュートノードで動作"
+"中のインスタンスがすべて利用できなくなります。ちょうどクラウドコントローラー"
+"が発生した場合のように、インフラ監視機能がコンピュートノードの障害を検知しな"
+"くても、インスタンスが失われるので、ユーザーが気づくでしょう。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -2336,6 +2649,9 @@ msgstr ""
 "ペレーティングシステムにより ``/dev/vdb`` として認識され、 ``/mnt`` にマウン"
 "トされているとします。fsfreeze コマンドが 2 つの引数を受け取ります:"
 
+msgid "Consider the following example:"
+msgstr "次のような例を考えてみましょう。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Consider the impact of an upgrade to users. The upgrade process interrupts "
@@ -2349,6 +2665,14 @@ msgstr ""
 "正しく準備する場合、既存のインスタンス、ネットワーク、ストレージは通常通り動"
 "作し続けるべきです。しかしながら、インスタンスがネットワークの中断を経験する"
 "かもしれません。"
+
+msgid ""
+"Consider updating your SQL server configuration as described in the "
+"`Installation Tutorials and Guides <https://docs.openstack.org/rocky/install/"
+">`_."
+msgstr ""
+"`Installation Tutorials and Guides <https://docs.openstack.org/rocky/install/"
+">`_ に記載されているように、SQL サーバーの設定の更新を考慮してください。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -2384,6 +2708,22 @@ msgid ""
 msgstr ""
 "リリースバージョン毎に、OpenStack のコアサービス、統合されたサービスのすべて"
 "の設定オプションの一覧が載っています"
+
+msgid ""
+"Contains each floating IP address that was added to Compute. This table is "
+"related to the ``fixed_ips`` table by way of the ``floating_ips."
+"fixed_ip_id`` column."
+msgstr ""
+"Compute に登録された各 Floating IP アドレス。このテーブルは ``floating_ips."
+"fixed_ip_id`` 列で ``fixed_ips`` テーブルと関連付けられます。"
+
+msgid ""
+"Contains each possible IP address for the subnet(s) added to Compute. This "
+"table is related to the ``instances`` table by way of the ``fixed_ips."
+"instance_uuid`` column."
+msgstr ""
+"nova に登録されたサブネットで利用可能なIPアドレス。このテーブルは "
+"``fixed_ips.instance_uuid`` 列で  ``instances`` テーブルと関連付けられます。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Contains guidelines for designing an OpenStack cloud"
@@ -2467,6 +2807,9 @@ msgstr ""
 msgid "Create a container called ``middleware-test``:"
 msgstr "``middleware-test`` という名前のコンテナーを作成します。"
 
+msgid "Create a port on the ``Public_AGILE`` network:"
+msgstr "``Public_AGILE`` ネットワークにポートを作成します。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Create a public share using :command:`manila create`."
 msgstr ":command:`manila create` を使用して、パブリック共有を作成します。"
@@ -2479,9 +2822,18 @@ msgstr "共有ネットワークの作成"
 msgid "Create an OpenStack Development Environment"
 msgstr "OpenStack 開発環境の作成"
 
+msgid "Create and bring up a dummy interface, ``snooper0``:"
+msgstr "ダミーインターフェース ``snooper0`` を作成して起動します。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Create context"
 msgstr "コンテキストの作成"
+
+msgid ""
+"Create mirror of ``patch-tun`` to ``snooper0`` (returns UUID of mirror port):"
+msgstr ""
+"``patch-tun`` のミラーを ``snooper0`` に作成します (ミラーポートの UUID を返"
+"します)。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Create share"
@@ -2563,6 +2915,18 @@ msgstr ""
 "統合ブリッジに TAP デバイスを持ちます。DHCP の問題のデバッグは、通常この名前"
 "空間の中での動作に関連します。"
 
+msgid ""
+"DHCP traffic uses UDP. The client sends from port 68 to port 67 on the "
+"server. Try to boot a new instance and then systematically listen on the "
+"NICs until you identify the one that isn't seeing the traffic. To use "
+"``tcpdump`` to listen to ports 67 and 68 on br100, you would do:"
+msgstr ""
+"DHCP トラフィックは UDP を使います。そして、クライアントは 68 番ポートから"
+"サーバーの 67 番ポートへパケットを送信します。新しいインスタンスを起動し、機"
+"械的にNICをリッスンしてください。トラフィックに現れない通信を特定できるまで行"
+"います。 ``tcpdump`` で br100 上のポート 67、68 をリッスンするには、こうしま"
+"す。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "DNS service (designate)"
 msgstr "DNS service (designate)"
@@ -2605,6 +2969,9 @@ msgstr "データベース"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Dealing with Network Namespaces"
 msgstr "ネットワーク名前空間への対応"
+
+msgid "Debugging DHCP Issues with nova-network"
+msgstr "nova-network の DHCP 問題の デバッグ"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Debugging DNS Issues"
@@ -2649,6 +3016,16 @@ msgstr "新しい共有種別の作成"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Delete Share"
 msgstr "共有の削除"
+
+msgid ""
+"Delete the instance and create a new instance using the ``--nic port-id`` "
+"option."
+msgstr ""
+"インスタンスを削除し、``--nic port-id`` オプションを使用して新しいインスタン"
+"スを作成します。"
+
+msgid "Delete the ports that are not needed:"
+msgstr "必要ないポートを削除します。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Deleting Images"
@@ -2716,6 +3093,14 @@ msgstr ""
 "質問を自分にすればよいのか、どのように組み上げればよいのかや、どんなソフト"
 "ウェアパッケージが必要かが分かることでしょう。"
 
+msgid ""
+"Designate a server as the central logging server. The best practice is to "
+"choose a server that is solely dedicated to this purpose. Create a file "
+"called ``/etc/rsyslog.d/server.conf`` with the following contents:"
+msgstr ""
+"集中ログサーバーとして使用するサーバーを決めます。ログ専用のサーバーを利用す"
+"るのが最も良いです。 ``/etc/rsyslog.d/server.conf`` を次のように作成します。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Despite only outputting the newly added rule, this operation is additive:"
@@ -2735,6 +3120,9 @@ msgstr ""
 "パッケージを省略します。最終出力をファイルに保存します。例えば、以下のコマン"
 "ドは、keystone、glance、nova、neutron、cinder を持つコントローラーノードを取"
 "り扱います。"
+
+msgid "Determine which servers the RabbitMQ alarms are coming from."
+msgstr "RabbitMQ のアラームが発生しているサーバーを特定します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Determining Which Component Is Broken"
@@ -2808,6 +3196,9 @@ msgstr ""
 msgid "Disk"
 msgstr "ディスク"
 
+msgid "Disk partitioning and RAID"
+msgstr "ディスクのパーティショニングと RAID"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Disk partitioning and disk array setup for scalability"
 msgstr ""
@@ -2829,6 +3220,15 @@ msgstr "ディスク使用量"
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Distributed Virtual Router"
 msgstr "分散仮想ルーター"
+
+msgid ""
+"Do a full manual install by using the `Installation Tutorials and Guides "
+"<https://docs.openstack.org/rocky/install/>`_ for your platform. Review the "
+"final configuration files and installed packages."
+msgstr ""
+"お使いのプラットフォーム用の `Installation Tutorials and Guides <https://"
+"docs.openstack.org/rocky/install/>`_ を使用して、完全な手動インストールを実行"
+"する。最終的な設定ファイルとインストールされたパッケージをレビューします。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -2998,6 +3398,9 @@ msgid ""
 msgstr ""
 "どのアプローチも有効です。あなたの経験に合うアプローチを使用してください。"
 
+msgid "ElasticSearch"
+msgstr "ElasticSearch"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Email address"
 msgstr "電子メールアドレス"
@@ -3155,6 +3558,12 @@ msgstr ""
 msgid "Field-based rules"
 msgstr "項目に基づいたルール"
 
+msgid "Figure. Neutron network paths"
+msgstr "図: Neutron ネットワーク経路"
+
+msgid "Figure. Traffic route for ping packet"
+msgstr "図: ping パケットの通信ルート"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "File System Backups"
 msgstr "ファイルシステムバックアップ"
@@ -3215,6 +3624,13 @@ msgid "Finally, mount the disk:"
 msgstr "最後に、ディスクをマウントします。"
 
 msgid ""
+"Finally, reattach volumes using the same method described in the section :"
+"ref:`volumes`."
+msgstr ""
+"最後に、 :ref:`volumes` のセクションで説明されているのと同じ方法を用いて、ボ"
+"リュームを再接続します。"
+
+msgid ""
 "Finally, to create a share that uses this share network, get to Create Share "
 "use case described earlier in this chapter."
 msgstr ""
@@ -3259,6 +3675,9 @@ msgstr ""
 "興味のあるネットワークの外部 VLAN タグを見つけます。これは、ネットワークサー"
 "ビスにより返される ``provider:segmentation_id`` です。"
 
+msgid "Find the port corresponding to the instance. For example:"
+msgstr "インスタンスに対応するポートを見つけます。例:"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Finding a Failure in the Path"
 msgstr "経路上の障害を見つける"
@@ -3266,6 +3685,9 @@ msgstr "経路上の障害を見つける"
 # auto translated by TM merge from project: neutron-fwaas-dashboard, version: stable-rocky, DocId: neutron_fwaas_dashboard/locale/django
 msgid "Firewalls"
 msgstr "ファイアウォール"
+
+msgid "First, find the UUID of the instance in question:"
+msgstr "まず、インスタンスの UUID を確認します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "First, unmount the disk:"
@@ -3437,6 +3859,13 @@ msgstr ""
 "`OpenStack エンドユーザーガイド <https://docs.openstack.org/user-guide/"
 "common/cli-manage-volumes.html>`__ を参照してください。"
 
+msgid ""
+"For more information, see `RabbitMQ documentation <https://www.rabbitmq.com/"
+"partitions.html>`_."
+msgstr ""
+"詳細は `RabbitMQ のドキュメント <https://www.rabbitmq.com/partitions.html>`_ "
+"を参照してください。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "For readers who need to get a specialized feature into OpenStack, this "
@@ -3506,6 +3935,18 @@ msgstr ""
 "ストレージプロキシの場合、:term:`Object Storage サービス <Object Storage "
 "service (swift)>` が再開していることを確認します。"
 
+msgid ""
+"For this example, we will use the Open vSwitch (OVS) back end. Other back-"
+"end plug-ins will have very different flow paths. OVS is the most popularly "
+"deployed network driver, according to the April 2016 OpenStack User Survey. "
+"We'll describe each step in turn, with :ref:`network_paths` for reference."
+msgstr ""
+"この例のために、Open vSwitch (OVS) バックエンドを使用します。他のバックエンド"
+"プラグインは、まったく別のフロー経路になるでしょう。2016 年 4 月の OpenStack "
+"User Survey によると、 OVS は、最も一般的に配備されているネットワークドライ"
+"バーです。 :ref:`network_paths` を参照しながら、各手順を順番に説明していきま"
+"す。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Freeze the system"
 msgstr "システムをフリーズします"
@@ -3521,6 +3962,20 @@ msgstr ""
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "From the command line, do this:"
 msgstr "コマンドラインから次のとおり実行します。"
+
+msgid ""
+"From the vnet NIC, the packet transfers to a bridge on the compute node, "
+"such as ``br100``."
+msgstr ""
+"パケットは vnet NIC からコンピュートノードのブリッジ、例えば ``br100`` に転送"
+"されます。"
+
+msgid ""
+"From these tables, you can see that a floating IP is technically never "
+"directly related to an instance; it must always go through a fixed IP."
+msgstr ""
+"これらのテーブルから、Floating IPが技術的には直接インスタンスにひも付けられて"
+"おらず、固定IP経由であることがわかります。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -3758,6 +4213,22 @@ msgstr ""
 "これらは、毎時間、日、週、月および年に実行する To Do 項目の簡単な一覧です。こ"
 "れらのタスクは必要なものでも、絶対的なものでもありませんが、役に立つものばか"
 "りです。"
+
+msgid ""
+"Here, the ID associated with the instance is ``faf7ded8-4a46-413b-b113-"
+"f19590746ffe``. If you search for this string on the cloud controller in the "
+"``/var/log/nova-*.log`` files, it appears in ``nova-api.log`` and ``nova-"
+"scheduler.log``. If you search for this on the compute nodes in ``/var/log/"
+"nova-*.log``, it appears in ``nova-compute.log``. If no ERROR or CRITICAL "
+"messages appear, the most recent log entry that reports this may provide a "
+"hint about what has gone wrong."
+msgstr ""
+"ここで、インスタンスのUUIDは ``faf7ded8-4a46-413b-b113-f19590746ffe`` です。"
+"クラウドコントローラー上の ``/var/log/nova-*.log`` ファイルをこの文字列で検索"
+"すると、 ``nova-api.log`` と ``nova-scheduler.log`` で見つかります。同様にコ"
+"ンピュートノードで検索した場合、 ``nova-compute.log`` で見つかります。もし、 "
+"ERROR や CRITICAL のメッセージが存在しない場合、最後のログエントリが、何が悪"
+"いかのヒントを示しているかもしれません。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -4048,6 +4519,16 @@ msgstr ""
 "log`` やスケジューラーホストの ``nova-scheduler.log`` を、インスタンスの "
 "UUID で検索するのが、より低レベルの問題を調査する良い出発点となります。"
 
+msgid ""
+"If a compute node fails and won't be fixed for a few hours (or at all), you "
+"can relaunch all instances that are hosted on the failed node if you use "
+"shared storage for ``/var/lib/nova/instances``."
+msgstr ""
+"コンピュートノードが故障し、2〜3時間もしくはそれ以上たっても復旧できないと見"
+"込まれる場合、 ``/var/lib/nova/instances`` に共有ストレージを使用していれば、"
+"故障したノードで動作していたインスタンスをすべて再スタートすることができま"
+"す。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "If a hard drive fails in an Object Storage node, replacing it is relatively "
@@ -4147,6 +4628,13 @@ msgstr ""
 "クエストをチェックしてください。コンピュートノード上にて、 ``tcpdump`` でリッ"
 "スンを開始すると、"
 
+msgid ""
+"If the affected instances also had attached volumes, first generate a list "
+"of instance and volume UUIDs:"
+msgstr ""
+"影響するインスタンスもボリュームを接続していた場合、まずインスタンスとボ"
+"リュームの UUID の一覧を生成します。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "If the error indicates that the problem is with another component, switch to "
@@ -4176,6 +4664,35 @@ msgstr ""
 "ルにサフィックスを追加します。これらのファイルの内容を確認して適用することを"
 "検討してください。"
 
+msgid ""
+"If the problem does not seem to be related to dnsmasq itself, at this point "
+"use ``tcpdump`` on the interfaces to determine where the packets are getting "
+"lost."
+msgstr ""
+"もし問題が dnsmasq と関係しないようであれば、 ``tcpdump`` を使ってパケットロ"
+"スがないか確認してください。"
+
+msgid ""
+"If there are errors, run the :command:`cluster_status` command to make sure "
+"there are no partitions:"
+msgstr ""
+"エラーがある場合、:command:`cluster_status` コマンドを実行して、パーティショ"
+"ンがないことを確認します。"
+
+msgid ""
+"If there are no errors, restart the RabbitMQ service on the next controller "
+"node."
+msgstr ""
+"エラーがなければ、次のコントローラーノードで RabbitMQ サービスを再起動しま"
+"す。"
+
+msgid ""
+"If there is not enough information in the existing logs, you may need to add "
+"your own custom logging statements to the ``nova-*`` services."
+msgstr ""
+"十分な情報が既存のログにない場合、独自のロギング宣言を ``nova-*`` サービスに"
+"追加する必要があるかもしれません。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "If there's a suspicious-looking dnsmasq log message, take a look at the "
@@ -4187,6 +4704,37 @@ msgstr ""
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "If you access or view the user's content and data, get approval first!"
 msgstr "ユーザーのコンテンツやデータを参照したい場合、まず許可を得ましょう。"
+
+msgid ""
+"If you are able to use :term:`SSH <secure shell (SSH)>` to log into an "
+"instance, but it takes a very long time (on the order of a minute) to get a "
+"prompt, then you might have a DNS issue. The reason a DNS issue can cause "
+"this problem is that the SSH server does a reverse DNS lookup on the IP "
+"address that you are connecting from. If DNS lookup isn't working on your "
+"instances, then you must wait for the DNS reverse lookup timeout to occur "
+"for the SSH login process to complete."
+msgstr ""
+"あなたが :term:`SSH <secure shell (SSH)>` を使用してインスタンスにログインで"
+"きるけれども、プロンプトが表示されるまで長い時間 (約1分) を要する場合、DNS に"
+"問題があるかもしれません。SSH サーバーが接続元 IP アドレスの DNS 逆引きするこ"
+"と、それがこの問題の原因です。もしあなたのインスタンスで DNS が正しく引けない"
+"場合、SSH のログインプロセスが完了するには、DNS の逆引きがタイムアウトするま"
+"で待たなければいけません。"
+
+msgid ""
+"If you are encountering any sort of networking difficulty, one good initial "
+"troubleshooting step is to make sure that your interfaces are up. For "
+"example:"
+msgstr ""
+"もしあなたがネットワークの問題に直面した場合、まず最初にするとよいのは、イン"
+"ターフェイスが UP になっているかを確認することです。例えば、"
+
+msgid ""
+"If you are logged in to an instance and ping an external host, for example, "
+"Google, the ping packet takes the route shown in :ref:`figure_traffic_route`."
+msgstr ""
+"インスタンスにログインして、外部ホスト (例えば Google) に ping する場合、"
+"ping パケットは :ref:`figure_traffic_route` に示されたルートを通ります。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -4229,6 +4777,17 @@ msgstr ""
 "に向けた提案があります。完全に規定されたドキュメントではありませんが、停止時"
 "間やデータ損失を避けるための方法や技術を提供しています。"
 
+msgid ""
+"If you cannot launch an instance, check the ``/var/log/rabbitmq`` log files "
+"for reported connection issues."
+msgstr ""
+"インスタンスを起動できない場合、報告された接続の問題に対して ``/var/log/"
+"rabbitmq`` ログファイルを確認します。"
+
+msgid "If you cannot launch an instance, continue to troubleshoot the issue."
+msgstr ""
+"インスタンスを起動できない場合、問題のトラブルシューティングを続けます。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "If you do not follow last three steps, OpenStack Compute cannot manage the "
@@ -4245,6 +4804,18 @@ msgid ""
 msgstr ""
 "共有が必要なくなった場合、:command:`manila delete share_name_or_ID` のように"
 "コマンドを使用して削除できます。"
+
+msgid ""
+"If you do not see the ``DHCPDISCOVER``, a problem exists with the packet "
+"getting from the instance to the machine running dnsmasq. If you see all of "
+"the preceding output and your instances are still not able to obtain IP "
+"addresses, then the packet is able to get from the instance to the host "
+"running dnsmasq, but it is not able to make the return trip."
+msgstr ""
+"もし ``DHCPDISCOVER`` が見つからなければ、 dnsmasq が動いているマシンがインス"
+"タンスからパケットを受け取れない何らかの問題があります。もし上記の出力が全て"
+"確認でき、かついまだに IP アドレスを取得できないのであれば、パケットはインス"
+"タンスから dnsmasq 稼働マシンに到達していますが、その復路に問題があります。"
 
 msgid ""
 "If you find a bug and can't fix it or aren't sure it's really a doc bug, log "
@@ -4295,6 +4866,14 @@ msgstr ""
 "定したボリュームからイメージを起動します。前のコマンドに似ていますが、イメー"
 "ジが省略され、ボリュームが ``/dev/vda`` として接続されます。"
 
+msgid ""
+"If you modify the configuration, it reverts the next time you restart ``nova-"
+"network`` or ``neutron-server``. You must use OpenStack to manage iptables."
+msgstr ""
+"もし iptables の構成を変更した場合、次の ``nova-network`` や ``neutron-"
+"server`` の再起動時に前の状態に戻ります。 iptables の管理には OpenStack を"
+"使ってください。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "If you need to reboot a compute node due to planned maintenance, such as a "
@@ -4316,6 +4895,13 @@ msgid "If you only want to backup a single database, you can instead run:"
 msgstr ""
 "もし、単一のデータベースのみバックアップする場合は次のように実行します。"
 
+msgid ""
+"If you receive alerts for RabbitMQ, take the following steps to troubleshoot "
+"and resolve the issue:"
+msgstr ""
+"RabbitMQ のアラートを受けとった場合、以下の手順を実行して、問題を調査および解"
+"決します。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "If you removed the release repositories, you must first reinstall them and "
@@ -4331,6 +4917,10 @@ msgid ""
 msgstr ""
 "もしFlatDHCPManagerを使っているのであれば、ブリッジはコンピュートノード上に一"
 "つです。VlanManagerであれば、VLANごとにブリッジが存在します。"
+
+msgid "If you still cannot find the lost IP address, repeat these steps again."
+msgstr ""
+"失われた IP アドレスがまだ見つからない場合、これらの手順をまた繰り返します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -4421,6 +5011,30 @@ msgstr ""
 "お使いの環境で Neutron を使用している場合、:command:`openstack` コマンドを使"
 "用して、セキュリティグループを設定できます。以下のコマンドを使用して、作業し"
 "ているプロジェクトのセキュリティグループの一覧を取得します。"
+
+msgid ""
+"If your instance failed to obtain an IP through DHCP, some messages should "
+"appear in the console. For example, for the Cirros image, you see output "
+"that looks like the following:"
+msgstr ""
+"もしインスタンスが DHCP からの IP 取得に失敗していれば、いくつかのメッセージ"
+"がコンソールで確認できるはずです。例えば、 Cirros イメージでは、以下のような"
+"出力になります。"
+
+msgid ""
+"If your instances are still not able to obtain IP addresses, the next thing "
+"to check is whether dnsmasq is seeing the DHCP requests from the instance. "
+"On the machine that is running the dnsmasq process, which is the compute "
+"host if running in multi-host mode, look at ``/var/log/syslog`` to see the "
+"dnsmasq output. If dnsmasq is seeing the request properly and handing out an "
+"IP, the output looks like this:"
+msgstr ""
+"もしまだインスタンスが IP アドレスを取得できない場合、次は dnsmasq がインスタ"
+"ンスからのDHCPリクエストを見えているか確認します。 dnsmasq プロセスが動いてい"
+"るマシンで、``/var/log/syslog`` を参照し、 dnsmasq の出力を確認します。なお、"
+"マルチホストモードで動作している場合は、dnsmasqプロセスはコンピュートノードで"
+"動作します。もし dnsmasq がリクエストを正しく受け取り、処理していれば、以下の"
+"ような出力になります。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -4520,6 +5134,14 @@ msgstr ""
 msgid "Implementing Periodic Tasks"
 msgstr "定期タスクの実装"
 
+msgid ""
+"In OpenStack user interfaces and documentation, a group of users is referred "
+"to as a :term:`project` or :term:`tenant`. These terms are interchangeable."
+msgstr ""
+"OpenStack ユーザーインターフェースとドキュメントでは、ユーザーのグループは :"
+"term:`プロジェクト <project>` または :term:`テナント <tenant>` と呼ばれます。"
+"これらの用語は同義です。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "In ``nova.conf``, ``vlan_interface`` specifies what interface OpenStack "
@@ -4597,6 +5219,17 @@ msgstr ""
 "多くの場合、エラーが libvirt の XML ファイル (``/etc/libvirt/qemu/instance-"
 "xxxxxxxx.xml``) の何かになります。以下のコマンドを実行することにより、インス"
 "タンスを再起動するのと同時に、強制的に XML ファイルを再作成できます:"
+
+msgid ""
+"In our experience, most operators don't sit right next to the servers "
+"running the cloud, and many don't necessarily enjoy visiting the data "
+"center. OpenStack should be entirely remotely configurable, but sometimes "
+"not everything goes according to plan."
+msgstr ""
+"経験上、多くのオペレーターはクラウドを動かすサーバのそばにいるわけではありま"
+"せんし、多くの人が必ずしも楽しんでデータセンターに訪問してるわけではありませ"
+"ん。OpenStackは、完全にリモート設定できるはずですが、計画通りにいかないことも"
+"あります。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -4803,6 +5436,19 @@ msgstr "データベースにあるインスタンス"
 msgid "Intelligent Alerting"
 msgstr "インテリジェントなアラート"
 
+msgid ""
+"Intelligent alerting can be thought of as a form of continuous integration "
+"for operations. For example, you can easily check to see whether the Image "
+"service is up and running by ensuring that the ``glance-api`` and ``glance-"
+"registry`` processes are running or by seeing whether ``glance-api`` is "
+"responding on port 9292."
+msgstr ""
+"インテリジェントなアラート機能により、ある種の運用の継続的インテグレーション"
+"と考えることができます。例えば、 ``glance-api`` プロセスと ``glance-"
+"registry`` プロセスが動作していること、または ``glance-api`` が 9292 ポートで"
+"応答していることを確認することにより、Image サービスが起動して動作しているこ"
+"とを簡単に確認できます。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Intelligent alerting takes considerably more time to plan and implement than "
@@ -4859,6 +5505,23 @@ msgstr ""
 msgid "It is possible to define other roles, but doing so is uncommon."
 msgstr "他の役割を定義できますが、一般的にはそうしません。"
 
+msgid ""
+"It is possible to watch packets on internal interfaces, but it does take a "
+"little bit of networking gymnastics. First you need to create a dummy "
+"network device that normal Linux tools can see. Then you need to add it to "
+"the bridge containing the internal interface you want to snoop on. Finally, "
+"you need to tell Open vSwitch to mirror all traffic to or from the internal "
+"port onto this dummy port. After all this, you can then run :command:"
+"`tcpdump` on the dummy interface and see the traffic on the internal port."
+msgstr ""
+"内部インターフェースにおいてパケットを監視することもできますが、少しネット"
+"ワークを操作する必要があります。まず、通常の Linux ツールが参照できるダミー"
+"ネットワークデバイスを作成する必要があります。次に、監視したい内部インター"
+"フェースを含むブリッジにそれを追加する必要があります。最後に、内部ポートのす"
+"べての通信をこのダミーポートにミラーするよう Open vSwitch に通知する必要があ"
+"ります。これをすべて終えた後、ダミーインターフェースで :command:`tcpdump` を"
+"実行して、内部ポートの通信を参照できます。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "It turns out the reason that this compute node locked up was a hardware "
@@ -4892,6 +5555,19 @@ msgstr ""
 "す。同様の方法をカスタムフレーバーにも使用できます。これは、フレーバーがカス"
 "タムフレーバー、プライベートフレーバー、パブリックフレーバーであるかをクラウ"
 "ド全体で簡単に識別する役に立ちます。"
+
+msgid ""
+"It's worth mentioning this directory in the context of failed compute nodes. "
+"This directory contains the libvirt KVM file-based disk images for the "
+"instances that are hosted on that compute node. If you are not running your "
+"cloud in a shared storage environment, this directory is unique across all "
+"compute nodes."
+msgstr ""
+"コンピュートノードの故障の話題に関連して、このディレクトリについては説明して"
+"おく価値があるでしょう。このディレクトリには、コンピュートノードにホストされ"
+"ているインスタンス用の libvirt KVM のファイル形式のディスクイメージが置かれま"
+"す。共有ストレージ環境でクラウドを実行していなければ、このディレクトリはコン"
+"ピュートノード全体で一つしかありません。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -4998,6 +5674,9 @@ msgstr "Keystone、すべての Nova サービス"
 msgid "Keystone, ``nova-api``"
 msgstr "Keystone, ``nova-api``"
 
+msgid "Kibana"
+msgstr "Kibana"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "L3-agent router namespaces are named ``qrouter-<router_uuid>``, and dhcp-"
@@ -5022,6 +5701,9 @@ msgstr "LDAP"
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Large instances"
 msgstr "大きなインスタンス"
+
+msgid "Launch several neutron ports:"
+msgstr "いくつか neutron ポートを起動します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Lay of the Land"
@@ -5109,9 +5791,22 @@ msgstr ""
 "ナップショットです。現在はインスタンスのスナップショットは停止時間なしで実行"
 "できます (QEMU 1.3+ と libvirt 1.0+ が使用されていることが前提です)。"
 
+msgid "Log Indexer"
+msgstr "Log Indexer"
+
+msgid "Log Pusher"
+msgstr "Log Pusher"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Log in as an administrative user."
 msgstr "管理ユーザーとしてログインします。"
+
+msgid ""
+"Log in to each of the controller nodes for the affected environment, and "
+"check the ``/var/log/rabbitmq`` log files for any reported issues."
+msgstr ""
+"影響のある環境の各コントローラーノードにログインして、報告された問題に対して "
+"``/var/log/rabbitmq`` ログファイルを確認します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Log location"
@@ -5145,6 +5840,9 @@ msgstr ""
 "物理的な隔離や冗長性のために、Nova デプロイメントの中で論理的な分離が必要な場"
 "合"
 
+msgid "Logstash"
+msgstr "Logstash"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Look at your OpenStack service :term:`catalog`:"
 msgstr ""
@@ -5157,6 +5855,16 @@ msgid ""
 msgstr ""
 "何らかのエラーまたはトレースをログファイルで探します。詳細は :doc:`ops-"
 "logging-monitoring` を参照してください。"
+
+msgid "Look for connection issues identified in the log files."
+msgstr "ログファイルにおいて、識別された接続の問題を探します。"
+
+msgid ""
+"Look for the vnet NIC. You can also reference ``nova.conf`` and look for the "
+"``flat_interface_bridge`` option."
+msgstr ""
+"vnet NICを探してください。また、 ``nova.conf`` の ``flat_interface_bridge`` "
+"オプションも参考になります。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Lorin Hochstein"
@@ -5177,6 +5885,22 @@ msgstr ""
 "対してそのインターフェースが受け取る最大バイト数を指定する。もし２つのイン"
 "ターフェースが異なる MTU であった場合、バイトは尻切れトンボとなって変なことが"
 "起こり始める。例えばセッションのランダムなロックアップとか。"
+
+msgid ""
+"Maintaining an OpenStack cloud requires that you manage multiple physical "
+"servers, and this number might grow over time. Because managing nodes "
+"manually is error prone, we strongly recommend that you use a configuration-"
+"management tool. These tools automate the process of ensuring that all your "
+"nodes are configured properly and encourage you to maintain your "
+"configuration information (such as packages and configuration options) in a "
+"version-controlled repository."
+msgstr ""
+"OpenStack クラウドをメンテナンスするには、複数の物理サーバーを管理することが"
+"必要です。そして、この数は日々増えていきます。ノードを手動で管理することはエ"
+"ラーを起こしやすいので、構成管理ツールを使用することを強く推奨します。これら"
+"のツールはすべてのノードが適切に設定されていることを保証するプロセスを自動化"
+"します。また、これらを使うことで、(パッケージや設定オプションといった) 構成情"
+"報のバージョン管理されたリポジトリでの管理が行いやすくなります。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Maintenance, Failures, and Debugging"
@@ -5233,9 +5957,18 @@ msgstr "共有へのアクセス権の管理"
 msgid "Manage repositories"
 msgstr "リポジトリーの管理"
 
+msgid "Managing Projects"
+msgstr "プロジェクトの管理"
+
+msgid "Managing Projects and Users"
+msgstr "プロジェクトとユーザーの管理"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Managing floating IP addresses between instances"
 msgstr "インスタンス間の Floating IP アドレスの管理"
+
+msgid "Manually Disassociating a Floating IP"
+msgstr "Floating IP の手動割り当て解除"
 
 msgid ""
 "Many OpenStack projects implement a driver layer, and each of these drivers "
@@ -5299,9 +6032,21 @@ msgstr ""
 "``gre-<n>`` インターフェースとトンネルエンドポイントを一致させることは、おそ"
 "らく Open vSwitch の状態を見ることになります。"
 
+msgid "Max amount of space available for all shares"
+msgstr "すべての共有のために利用可能な容量の合計"
+
+msgid "Max number of share snapshots"
+msgstr "共有のスナップショットの最大数"
+
+msgid "Max number of shared networks"
+msgstr "共有ネットワークの最大数"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Max number of shares"
 msgstr "共有の最大数"
+
+msgid "Max total amount of all snapshots"
+msgstr "すべてのスナップショットの合計数"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Megabytes of instance RAM allowed per project."
@@ -5466,6 +6211,36 @@ msgstr "ネットワーク I/O"
 msgid "Network Inspection"
 msgstr "ネットワークの検査"
 
+msgid "Network Troubleshooting"
+msgstr "ネットワークのトラブルシューティング"
+
+msgid "Network configuration"
+msgstr "ネットワーク設定"
+
+msgid ""
+"Network configuration is a very large topic that spans multiple areas of "
+"this book. For now, make sure that your servers can PXE boot and "
+"successfully communicate with the deployment server."
+msgstr ""
+"ネットワーク設定は、本書でも複数の箇所で取り上げられている大きいトピックで"
+"す。ここでは、お使いのサーバが PXEブートでき、デプロイメントサーバと正常に通"
+"信できることを確認しておいてください。"
+
+msgid ""
+"Network troubleshooting can be challenging. A network issue may cause "
+"problems at any point in the cloud. Using a logical troubleshooting "
+"procedure can help mitigate the issue and isolate where the network issue "
+"is. This chapter aims to give you the information you need to identify any "
+"issues for ``nova-network`` or OpenStack Networking (neutron) with Linux "
+"Bridge or Open vSwitch."
+msgstr ""
+"ネットワークのトラブルシューティングは難しい場合もあります。ネットワークの問"
+"題は、クラウドのいくつかの場所で問題となりえます。論理的な問題解決手順を用い"
+"ることで、問題の緩和やネットワークの問題の正確な切り分けにつながります。この"
+"章は、``nova-network`` 、Linux ブリッジや Open vSwitch を用いた OpenStack "
+"Networking (neutron) に関する何らかの問題を識別するために必要となる情報を提供"
+"することを目的とします。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Network usage (bandwidth and IP usage)"
 msgstr "ネットワーク使用量 (帯域および IP 使用量)"
@@ -5489,6 +6264,20 @@ msgstr "Networking サービス - 設定ファイルを編集して、サービ�
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "New API Versions"
 msgstr "新しい API "
+
+msgid "Next, create ``/etc/rsyslog.d/client.conf`` with the following line:"
+msgstr ""
+"次に、 ``/etc/rsyslog.d/client.conf`` を作成して、以下の行を書き込みます。"
+
+msgid "Next, find the fixed IP entry for that UUID:"
+msgstr "次に、その UUID から固定 IP のエントリーを探します。"
+
+msgid ""
+"Next, manually detach and reattach the volumes, where X is the proper mount "
+"point:"
+msgstr ""
+"次に、ボリュームを手動で切断し、再接続します。ここで X は適切なマウントポイン"
+"トです。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -5555,6 +6344,14 @@ msgstr ""
 "次に、何かしらの入力パケットは統合ブリッジ経由で送信されます。繰り返します"
 "が、コンピュートノードと同じようなものです。"
 
+msgid ""
+"Next, update the nova database to indicate that all instances that used to "
+"be hosted on c01.example.com are now hosted on c02.example.com:"
+msgstr ""
+"次に、c01.example.com においてホストされていたすべてのインスタンスが、今度は "
+"c02.example.com でホストされることを伝えるために nova データベースを更新しま"
+"す。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Node type"
 msgstr "ノード種別"
@@ -5570,6 +6367,13 @@ msgstr ""
 "コマンド実行は 1500 バイト未満のサイズのパケット１つで収まるかもしれない。し"
 "かし、 :command:`ps aux` のように多大な出力を行うコマンドを実行する場合、"
 "1500 バイトのパケットが複数必要とある。"
+
+msgid ""
+"Not entirely network specific, but it contains information about the "
+"instance that is utilizing the ``fixed_ip`` and optional ``floating_ip``."
+msgstr ""
+"ネットワーク特有のテーブルではありませんが、 ``fixed_ip`` と ``floating_ip`` "
+"を使っているインスタンスの情報を管理します。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -5637,6 +6441,9 @@ msgstr "ユーザーごとの最大キーペア数"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Number of metadata items allowed per instance."
 msgstr "インスタンスごとのメタデータ項目数"
+
+msgid "Number of security group rules per project."
+msgstr "プロジェクトごとのセキュリティグループルール数"
 
 msgid "Number of security groups per project."
 msgstr "プロジェクトごとのセキュリティグループ数"
@@ -5736,6 +6543,15 @@ msgstr ""
 
 msgid "On all nodes:"
 msgstr "すべてのノード:"
+
+msgid ""
+"On compute nodes and nodes running ``nova-network``, use the following "
+"command to see information about interfaces, including information about "
+"IPs, VLANs, and whether your interfaces are up:"
+msgstr ""
+"コンピュートノードおよび ``nova-network`` を実行しているノードにおいて、以下"
+"のコマンドを使用して、IP、VLAN、起動状態などのインターフェースに関する情報を"
+"参照します。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -5937,6 +6753,27 @@ msgstr ""
 "せの間で ping を実行した。"
 
 msgid ""
+"One common networking problem is that an instance boots successfully but is "
+"not reachable because it failed to obtain an IP address from dnsmasq, which "
+"is the DHCP server that is launched by the ``nova-network`` service."
+msgstr ""
+"よくあるネットワークの問題に、インスタンスが起動しているにも関わらず、"
+"dnsmasq からの IP アドレス取得に失敗し、到達できないという現象があります。 "
+"dnsmasq は ``nova-network`` サービスから起動される DHCP サーバです。"
+
+msgid ""
+"One great, although very in-depth, way of troubleshooting network issues is "
+"to use ``tcpdump``. We recommended using ``tcpdump`` at several points along "
+"the network path to correlate where a problem might be. If you prefer "
+"working with a GUI, either live or by using a ``tcpdump`` capture, check out "
+"`Wireshark <https://www.wireshark.org/>`_."
+msgstr ""
+"ネットワーク問題の解決を徹底的に行う方法のひとつは、 ``tcpdump`` です。 "
+"``tcpdump`` を使い、ネットワーク経路上の数点、問題のありそうなところから情報"
+"を収集することをおすすめします。もし GUI が好みであれば、 `Wireshark "
+"<https://www.wireshark.org/>`_ を試してみてはいかがでしょう。"
+
+msgid ""
 "One interesting example is modifying the table of images and the owner of "
 "that image. This can be easily done if you simply display the unique ID of "
 "the owner. This example goes one step further and displays the readable name "
@@ -5945,6 +6782,24 @@ msgstr ""
 "興味深い例の一つは、イメージとそのイメージの所有者の表の表示内容を変更するこ"
 "とです。これは、所有者のユニーク ID を表示するようにするだけで実現できます。"
 "この例はさらに一歩進め、所有者の読みやすい形式の名前を表示します:"
+
+msgid ""
+"One key element of systems administration that is often overlooked is that "
+"end users are the reason systems administrators exist. Don't go the BOFH "
+"route and terminate every user who causes an alert to go off. Work with "
+"users to understand what they're trying to accomplish and see how your "
+"environment can better assist them in achieving their goals. Meet your users "
+"needs by organizing your users into projects, applying policies, managing "
+"quotas, and working with them."
+msgstr ""
+"システム管理の見過ごされがちな大事な要素の一つに、エンドユーザのためにシステ"
+"ム管理者が存在するという点があります。BOFH (Bastard Operator From Hell; 「地"
+"獄から来た最悪の管理者」) の道に入って、問題の原因となっているユーザーを全員"
+"停止させるようなことはしないでください。ユーザーがやりたいことを一緒になって"
+"理解し、どうするとあなたの環境がユーザーが目的を達成するのにもっと支援できる"
+"かを見つけてください。ユーザーをプロジェクトの中に組織して、ポリシーを適用し"
+"て、クォータを管理して、彼らと一緒に作業することにより、ユーザーのニーズを満"
+"たしてください。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -6008,6 +6863,43 @@ msgstr ""
 "には後方互換性の動作まで戻れることを目的としています。これにより、古いバー"
 "ジョンをいくつか残しながら、いくつかのコンポーネントの新しいバージョンを実行"
 "できるようになります。"
+
+msgid ""
+"One way to plan for cloud controller or storage proxy maintenance is to "
+"simply do it off-hours, such as at 1 a.m. or 2 a.m. This strategy affects "
+"fewer users. If your cloud controller or storage proxy is too important to "
+"have unavailable at any point in time, you must look into high-availability "
+"options."
+msgstr ""
+"クラウドコントローラーやストレージプロキシのメンテナンスを計画する一つの方法"
+"は、単に午前 1 時や 2 時のような利用の少ない時間帯に実行することです。この戦"
+"略はあまり多くのユーザーに影響を与えません。クラウドコントローラーやストレー"
+"ジプロキシが、いかなる時間帯においても、サービスが利用できないことによる影響"
+"が大きければ、高可用性オプションについて検討する必要があります。"
+
+msgid ""
+"Open OpenStack Dashboard and launch an instance. If the instance launches, "
+"the issue is resolved."
+msgstr ""
+"OpenStack Dashboard を開き、インスタンスを起動します。インスタンスが起動する"
+"と、問題が解決されています。"
+
+msgid ""
+"Open vSwitch, as used in the previous OpenStack Networking examples is a "
+"full-featured multilayer virtual switch licensed under the open source "
+"Apache 2.0 license. Full documentation can be found at `the project's "
+"website <http://www.openvswitch.org/>`_. In practice, given the preceding "
+"configuration, the most common issues are being sure that the required "
+"bridges (``br-int``, ``br-tun``, and ``br-ex``) exist and have the proper "
+"ports connected to them."
+msgstr ""
+"前の OpenStack Networking の例で使用されていたように、Open vSwitch は、オープ"
+"ンソースの Apache 2.0 license にてライセンスされている、完全な機能を持つマル"
+"チレイヤー仮想スイッチです。ドキュメント全体は ``プロジェクトの Web サイト "
+"<http://www.openvswitch.org/>`_ にあります。実際のところ、前述の設定を用いた"
+"場合、最も一般的な問題は、必要となるブリッジ (``br-int`` 、 ``br-tun`` 、 "
+"``br-ex``) が存在し、それらに接続される適切なポートを持つことを確認することで"
+"す。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "OpenStack"
@@ -6077,6 +6969,18 @@ msgstr "OpenStack Identity サービス"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "OpenStack Image service"
 msgstr "OpenStack Image service"
+
+msgid ""
+"OpenStack Networking has many more degrees of freedom than ``nova-network`` "
+"does because of its pluggable back end. It can be configured with open "
+"source or vendor proprietary plug-ins that control software defined "
+"networking (SDN) hardware or plug-ins that use Linux native facilities on "
+"your hosts, such as Open vSwitch or Linux Bridge."
+msgstr ""
+"OpenStack Networking は、バックエンドをプラグインできるので、 ``nova-"
+"network`` よりも自由度が大きいです。SDN ハードウェアを制御するオープンソース"
+"やベンダー製品のプラグイン、ホストで動作する Open vSwitch や Linux Bridge な"
+"どの Linux ネイティブの機能を使用するプラグインを用いて設定できます。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "OpenStack Networking service"
@@ -6569,11 +7473,21 @@ msgid "Process Monitoring"
 msgstr "プロセス監視"
 
 msgid ""
+"Profit. You can now see traffic on ``patch-tun`` by running :command:"
+"`tcpdump -i snooper0`."
+msgstr ""
+"これでうまくいきます。 :command:`tcpdump -i snooper0` を実行して、 ``patch-"
+"tun`` の通信を参照できます。"
+
+msgid ""
 "Project ``771ed149ef7e4b2b88665cc1c98f77ca`` will now have access to image "
 "``733d1c44-a2ea-414b-aca7-69decf20d810``."
 msgstr ""
 "これで、プロジェクト ``771ed149ef7e4b2b88665cc1c98f77ca`` がイメージ "
 "``733d1c44-a2ea-414b-aca7-69decf20d810`` にアクセスできます。"
+
+msgid "Projects or Tenants?"
+msgstr "プロジェクトかテナントか?"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Property name"
@@ -6653,6 +7567,15 @@ msgstr "RXTX_Factor"
 msgid "RabbitMQ Web Management Interface or rabbitmqctl"
 msgstr "RabbitMQ Web管理インターフェイス および rabbitmqctl"
 
+msgid "RabbitMQ alerts"
+msgstr "RabbitMQ アラート"
+
+msgid "RabbitMQ service hangs"
+msgstr "RabbitMQ サービス停止"
+
+msgid "RabbitMQ troubleshooting"
+msgstr "RabbitMQ トラブルシューティング"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Rate limits"
 msgstr "レートリミット"
@@ -6725,6 +7648,9 @@ msgstr ""
 msgid "Regions"
 msgstr "リージョン"
 
+msgid "Remote management"
+msgstr "リモート管理"
+
 msgid ""
 "RemoteGroups are a dynamic way of defining the CIDR of allowed sources. The "
 "user specifies a RemoteGroup (security group name) and then all the users' "
@@ -6776,6 +7702,17 @@ msgstr "共有状態のリセット"
 msgid "Resource Alerting"
 msgstr "リソースのアラート"
 
+msgid ""
+"Resource alerting provides notifications when one or more resources are "
+"critically low. While the monitoring thresholds should be tuned to your "
+"specific OpenStack environment, monitoring resource usage is not specific to "
+"OpenStack at all—any generic type of alert will work fine."
+msgstr ""
+"リソースアラート機能は、1 つ以上のリソースが致命的に少なくなった際に通知しま"
+"す。閾値監視がお使いの OpenStack 環境で有効化されているべきですが、リソース使"
+"用状況の監視は、まったく OpenStack 固有のことではありません。あらゆる汎用のア"
+"ラート機能が適切に動作するでしょう。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Resource based"
 msgstr "リソースベース"
@@ -6798,6 +7735,9 @@ msgstr ""
 "OpenStackの場合、インスタンスを起動するために必要なリソースが確実に存在するか"
 "の確認という点でも重要です。OpenStackのリソースを見るためには幾つかの方法が存"
 "在します。 1 番目は :command:`nova` コマンド経由です。"
+
+msgid "Restart the RabbitMQ service on all of the controller nodes:"
+msgstr "すべてのコントローラーにおいて RabbitMQ サービスを再起動します。"
 
 msgid ""
 "Restart the ``swift proxy`` service to make swift use your middleware. Start "
@@ -6866,6 +7806,17 @@ msgstr "クラウドの追加の必要性を検討し、計画を立てます。
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Review common actions in your cloud."
 msgstr "構築したクラウドにおいて一般的なアクションをレビューする"
+
+msgid ""
+"Review the component's configuration file to see how each OpenStack "
+"component accesses its corresponding database. Look for a ``connection`` "
+"option. The following command uses ``grep`` to display the SQL connection "
+"string for nova, glance, cinder, and keystone:"
+msgstr ""
+"コンポーネントの設定ファイルを確認して、それぞれの OpenStack コンポーネントが"
+"対応するデータベースにどのようにアクセスするかを把握ください。 "
+"``connection`` オプションを探します。以下のコマンドは、 ``grep`` を使用して、"
+"nova、glance、cinder、keystone の SQL 接続文字列を表示します。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Review usage and trends over the past quarter."
@@ -7124,6 +8075,13 @@ msgstr ""
 "加することにより、Key Manager サービスをセットアップします。"
 
 msgid ""
+"Several minutes after ``nova-network`` is restarted, you should see new "
+"dnsmasq processes running:"
+msgstr ""
+"``nova-network`` の再起動から数分後、新たな dnsmasq プロセスが動いていること"
+"が確認できるでしょう。"
+
+msgid ""
 "Several options are available for MySQL load balancing, and the supported "
 "AMQP brokers have built-in clustering support. Information on how to "
 "configure these and many of the other services can be found in the "
@@ -7287,6 +8245,16 @@ msgstr ""
 "ピングは cinder、glance、nova、swift などの標準システムアカウントや、グループ"
 "にユーザーが 1 人しかいない場合に発生します。"
 
+msgid ""
+"Sometimes an instance is terminated but the floating IP was not correctly "
+"disassociated from that instance. Because the database is in an inconsistent "
+"state, the usual tools to disassociate the IP no longer work. To fix this, "
+"you must manually update the database."
+msgstr ""
+"しばしば、 Floating IP を正しく開放しないままインスタンスが終了されることがあ"
+"ります。するとデータベースは不整合状態となるため、通常のツールではうまく開放"
+"できません。解決するには、手動でデータベースを更新する必要があります。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Source ``openrc`` to set up your environment variables for the CLI:"
 msgstr "``openrc`` を読み込み、CLI の環境変数を設定します。"
@@ -7428,6 +8396,9 @@ msgid ""
 msgstr ""
 "``n-sch`` 画面に切り替えます。ログ出力の中に、以下の行を見つけられます。"
 
+msgid "Syslog choices"
+msgstr "Syslog の選択肢"
+
 msgid "Systems Administration"
 msgstr "システム管理"
 
@@ -7442,6 +8413,9 @@ msgstr ""
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Table OpenStack log locations"
 msgstr "表: OpenStack のログの場所"
+
+msgid "Table. Example service restoration priority list"
+msgstr "表: サービス復旧優先度一覧の例"
 
 msgid "Table. Flavor parameters"
 msgstr "表: フレーバーのパラメーター"
@@ -7479,6 +8453,9 @@ msgstr "ハリウッド^H^H^H^H^Hクラウドナイトメア"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/glossary/locale/glossary
 msgid "Telemetry"
 msgstr "Telemetry"
+
+msgid "Telemetry Service"
+msgstr "Telemetry サービス"
 
 msgid ""
 "Telemetry service - In typical environments, updating the Telemetry service "
@@ -7657,6 +8634,10 @@ msgstr ""
 "バーであり、あなたも OpenStack Foundation に参加できます。`Foundation のウェ"
 "ブサイト <https://www.openstack.org/join>`_ に行ってみてください。"
 
+msgid "The OpenStack command-line client can provide some additional details:"
+msgstr ""
+"OpenStack コマンドラインクライアントでは、もう少し詳しい情報が得られます。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "The OpenStack community has had a database-as-a-service tool in development "
@@ -7714,6 +8695,13 @@ msgstr ""
 "公開されているイメージをカスタマイズするために、非常に便利です。このように "
 "CLI を使用して、実行中のインスタンスをイメージにスナップショットをとります。"
 
+msgid ""
+"The RabbitMQ web management interface is accessible on your cloud controller "
+"at *http://localhost:55672*."
+msgstr ""
+"RabbitMQ Web 管理インターフェイスは、クラウドコントローラーから *http://"
+"localhost:55672* でアクセスできます。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "The Real Estate team at Rackspace in Austin, also known as \"The Victors,\" "
@@ -7730,6 +8718,50 @@ msgstr ""
 "Shared File Systems サービスは、ユーザーが自身のデータをリストアする支援をす"
 "るために、スナップショットの機能を提供します。次のような :command:`manila "
 "snapshot-create` コマンドを使用して、スナップショットを作成します。"
+
+msgid ""
+"The TAP device is connected to the integration bridge, ``br-int``. This "
+"bridge connects all the instance TAP devices and any other bridges on the "
+"system. In this example, we have ``int-br-eth1`` and ``patch-tun``. ``int-br-"
+"eth1`` is one half of a veth pair connecting to the bridge ``br-eth1``, "
+"which handles VLAN networks trunked over the physical Ethernet device "
+"``eth1``. ``patch-tun`` is an Open vSwitch internal port that connects to "
+"the ``br-tun`` bridge for GRE networks."
+msgstr ""
+"TAP デバイスは統合ブリッジ ``br-int`` に接続されます。このブリッジは、すべて"
+"のインスタンスの TAP デバイスや他のシステム上のブリッジを接続します。この例で"
+"は、 ``int-br-eth1`` と ``patch-tun`` があります。``int-br-eth1`` は、ブリッ"
+"ジ ``br-eth1`` に接続している veth ペアの片側です。これは、物理イーサネットデ"
+"バイス ``eth1`` 経由でトランクされる VLAN ネットワークを処理します。``patch-"
+"tun`` は、GRE ネットワークの ``br-tun`` ブリッジに接続している Open vSwitch "
+"内部ポートです。"
+
+msgid ""
+"The TAP device name is constructed using the first 11 characters of the port "
+"ID (10 hex digits plus an included '-'), so another means of finding the "
+"device name is to use the :command:`neutron` command. This returns a pipe-"
+"delimited list, the first item of which is the port ID. For example, to get "
+"the port ID associated with IP address 10.0.0.10, do this:"
+msgstr ""
+"TAP デバイス名は、ポート ID の先頭 11 文字 (10 桁の16進数とハイフン) を使用し"
+"て作られます。そのため、デバイス名を見つける別の手段として、 ``neutron`` コマ"
+"ンドを使用できます。これは、パイプ区切りの一覧を返し、最初の項目がポート ID "
+"です。例えば、次のように IP アドレス 10.0.0.10 に関連づけられているポート ID "
+"を取得します。"
+
+msgid ""
+"The TAP devices and veth devices are normal Linux network devices and may be "
+"inspected with the usual tools, such as :command:`ip` and :command:"
+"`tcpdump`. Open vSwitch internal devices, such as ``patch-tun``, are only "
+"visible within the Open vSwitch environment. If you try to run :command:"
+"`tcpdump -i patch-tun`, it will raise an error, saying that the device does "
+"not exist."
+msgstr ""
+"TAP デバイスと veth デバイスは、通常の Linux ネットワークデバイスです。 :"
+"command:`ip` や :command:`tcpdump` などの通常のツールを用いて調査できるでしょ"
+"う。 ``patch-tun`` のような Open vSwitch 内部デバイスは、Open vSwitch 環境の"
+"中だけで参照できます。 :command:`tcpdump -i patch-tun`` を実行しようとした場"
+"合、デバイスが存在しないというエラーが発生するでしょう。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "The Valentine's Day Compute Node Massacre"
@@ -7948,6 +8980,13 @@ msgstr ""
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "The bonded 10gb network device (bond0) was in a DOWN state"
 msgstr "冗長化された 10Gb ネットワークデバイス(bond0）は DOWN 状態だった。"
+
+msgid ""
+"The choice of central logging engine will be dependent on the operating "
+"system in use as well as any organizational requirements for logging tools."
+msgstr ""
+"一元化したロギングエンジンの選択は、使用するオペレーティングシステム、組織の"
+"ロギングツールに関する要件に依存します。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -8174,6 +9213,17 @@ msgstr ""
 "の上部にあるフィルターフィールドに、探しているユーザー名の部分文字列を入力す"
 "ることにより、表示を絞り込むことができます。"
 
+msgid ""
+"The first is the ``_base`` directory. This contains all the cached base "
+"images from glance for each unique image that has been launched on that "
+"compute node. Files ending in ``_20`` (or a different number) are the "
+"ephemeral base images."
+msgstr ""
+"一つ目は ``_base`` ディレクトリです。ここには、そのコンピュートノードで起動さ"
+"れたそれぞれのイメージに関して、glance から取得したすべてのベースイメージの"
+"キャッシュが置かれます。``_20`` (または他の番号) で終わるファイルは一時ディス"
+"クのベースイメージです。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "The first place to look is the log file related to the command you are "
@@ -8372,6 +9422,19 @@ msgstr ""
 msgid "The horizon dashboard web application"
 msgstr "horizon dashboard Web アプリケーション"
 
+msgid ""
+"The initial implementation of OpenStack Compute had its own authentication "
+"system and used the term ``project``. When authentication moved into the "
+"OpenStack Identity (keystone) project, it used the term ``tenant`` to refer "
+"to a group of users. Because of this legacy, some of the OpenStack tools "
+"refer to projects and some refer to tenants."
+msgstr ""
+"OpenStack Compute の初期実装は独自の認証システムを持ち、``プロジェクト`` とい"
+"う用語を使用していました。認証が OpenStack Identity (Keystone) プロジェクトに"
+"移行したとき、ユーザーのグループを参照するために``テナント``という用語が使用"
+"されました。このような経緯のため、いくつかの OpenStack ツールはプロジェクトを"
+"使用し、いくつかはテナントを使用します。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "The instance finally gives up."
 msgstr "最終的に、インスタンスはIPアドレス取得を諦める。"
@@ -8383,6 +9446,13 @@ msgid ""
 msgstr ""
 "インスタンスはパケットを生成し、インスタンス内の仮想NIC、例えば eth0にそれを"
 "渡します。"
+
+msgid ""
+"The instance generates a packet and places it on the virtual Network "
+"Interface Card (NIC) inside the instance, such as ``eth0``."
+msgstr ""
+"インスタンスはパケットを生成し、インスタンス内の仮想NIC、例えば ``eth0`` にそ"
+"れを渡します。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -8411,6 +9481,10 @@ msgstr ""
 "逆の操作が :command:`openstack security group rule delete` です。セキュリ"
 "ティーグループのルールの ID を指定します。:command:`openstack security group "
 "delete` を使用して、セキュリティグループ全体を削除できます。"
+
+msgid "The keystone processes are run within Apache as WSGI applications."
+msgstr ""
+"keystone プロセスは、WSGI アプリケーションとして Apache の中で動作します。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "The keystone service"
@@ -8459,6 +9533,19 @@ msgstr ""
 "が出るまで待つことを選ぶ場合もあります。しかしながら、重要な環境の場合には、"
 "リリース版の開発やテストに参加することで、あなたのユースケースでのバグを確実"
 "に修正することもできるでしょう。"
+
+msgid ""
+"The networking chapter of the `OpenStack Administrator Guide <https://docs."
+"openstack.org/admin-guide/>`_ shows a variety of networking scenarios and "
+"their connection paths. The purpose of this section is to give you the tools "
+"to troubleshoot the various components involved however they are plumbed "
+"together in your environment."
+msgstr ""
+"`OpenStack Administrator Guide <https://docs.openstack.org/admin-guide/>`_ の"
+"ネットワークの章に、さまざまな種類のネットワークのシナリオや接続パスがありま"
+"す。このセクションの目的は、どのようにお使いの環境に一緒に関わっているかによ"
+"らず、さまざまなコンポーネントをトラブルシューティングするためのツールを提供"
+"します。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -8525,6 +9612,19 @@ msgstr ""
 "サービスをアップグレードすべき順番、一般的なアップグレード手順との違いは、以"
 "下に示す通りです。"
 
+msgid ""
+"The other directories are titled ``instance-xxxxxxxx``. These directories "
+"correspond to instances running on that compute node. The files inside are "
+"related to one of the files in the ``_base`` directory. They're essentially "
+"differential-based files containing only the changes made from the original "
+"``_base`` directory."
+msgstr ""
+"もう一つのディレクトリは ``instance-xxxxxxxx`` という名前です。これらのディレ"
+"クトリはコンピュートノードにおいて実行中のインスタンスと対応します。中にある"
+"ファイルは ``_base`` ディレクトリにあるファイルのどれかと関連があります。これ"
+"らは基本的に、元々の ``_base`` ディレクトリからの変更点のみ含む、差分ベースの"
+"ファイルです。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "The output looks like the following:"
 msgstr "出力は以下のようになります。"
@@ -8532,6 +9632,17 @@ msgstr "出力は以下のようになります。"
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "The output looks something like the following:"
 msgstr "出力は以下のようになります。"
+
+msgid ""
+"The output of this command varies depending on the hypervisor because "
+"hypervisors support different attributes. The following demonstrates the "
+"difference between the two most popular hypervisors. Here is example output "
+"when the hypervisor is Xen:"
+msgstr ""
+"ハイパーバイザーによってサポートする属性が異なるため、コマンドの出力はハイ"
+"パーバイザーによって異なります。以下の実例は、最もよく使用されている 2 つのハ"
+"イパーバイザーの間で出力がどのように異なるかを示しています。ハイパーバイザー"
+"が Xen の場合の例は以下のようになります。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -8546,6 +9657,20 @@ msgstr ""
 "スが起動しており稼働中であることを示します。あるサービスが down 状態の場合、"
 "そのサービスは利用できません。この場合は、サービスが停止している理由をトラブ"
 "ルシューティングする必要があります。"
+
+msgid ""
+"The output shows three different dnsmasq processes. The dnsmasq process that "
+"has the DHCP subnet range of 192.168.122.0 belongs to libvirt and can be "
+"ignored. The other two dnsmasq processes belong to ``nova-network``. The two "
+"processes are actually related—one is simply the parent process of the "
+"other. The arguments of the dnsmasq processes should correspond to the "
+"details you configured ``nova-network`` with."
+msgstr ""
+"出力は 3 種類の dnsmasq プロセスを示しています。192.168.122.0 の DHCP サブ"
+"ネット範囲を持つ dnsmasq プロセスが、libvirt に属していますが、無視できます。"
+"他の 2 つのプロセスは実際に関連します。1 つは単純なもう一つの親プロセスです。"
+"dnsmasq プロセスの引数は、 ``nova-network`` に設定した詳細に対応するでしょ"
+"う。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -8577,6 +9702,33 @@ msgstr ""
 "<router-uuid>`` という形式の名前です。名前空間の中で :command:`ip a` を実行す"
 "ることにより、TAP デバイスの名前を表示します。この例では qr-e6256f7d-31 で"
 "す。"
+
+msgid ""
+"The packet transfers to a Test Access Point (TAP) device on the compute "
+"host, such as tap690466bc-92. You can find out what TAP is being used by "
+"looking at the ``/etc/libvirt/qemu/instance-xxxxxxxx.xml`` file."
+msgstr ""
+"そのパケットはコンピュートホストの Test Access Point (TAP)、例えば "
+"tap690466bc-92 に転送されます。TAP の構成は、 ``/etc/libvirt/qemu/instance-"
+"xxxxxxxx.xml`` を見ることで把握できます。"
+
+msgid ""
+"The packet transfers to the main NIC of the compute node. You can also see "
+"this NIC in the :command:`brctl` output, or you can find it by referencing "
+"the ``flat_interface`` option in ``nova.conf``."
+msgstr ""
+"パケットはコンピュートノードの物理NICに送られます。このNICは :command:"
+"`brctl` コマンドの出力から、もしくは ``nova.conf`` の ``flat_interface`` オプ"
+"ションから確認できます。"
+
+msgid ""
+"The packet transfers to the virtual NIC of the compute host, such as, "
+"``vnet1``. You can find out what vnet NIC is being used by looking at the ``/"
+"etc/libvirt/qemu/instance-xxxxxxxx.xml`` file."
+msgstr ""
+"そのパケットはコンピュートホストの仮想NIC、例えば ``vnet1`` に転送されます。 "
+"vnet NIC の構成は、 ``/etc/libvirt/qemu/instance-xxxxxxxx.xml`` を見ることで"
+"把握できます。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -8649,6 +9801,21 @@ msgstr ""
 "セキュリティーグループルールによって突き合わせが行われるプロトコル。有効な値"
 "は、 ``null``、``tcp``、``udp``、 ``icmp`` および ``icmpv6`` です。"
 
+msgid ""
+"The purpose of automatic configuration management is to establish and "
+"maintain the consistency of a system without using human intervention. You "
+"want to maintain consistency in your deployments so that you can have the "
+"same cloud every time, repeatably. Proper use of automatic configuration-"
+"management tools ensures that components of the cloud systems are in "
+"particular states, in addition to simplifying deployment, and configuration "
+"change propagation."
+msgstr ""
+"自動環境設定管理の目的は、人間の介在なしにシステムの整合性を確保、維持するこ"
+"とにあります。毎回、同じクラウド環境を繰り返し作るために、デプロイメントにお"
+"ける整合性を確保します。自動環境設定管理ツールを正しく利用することによって、"
+"デプロイメントと環境設定の変更を伝搬する作業を簡素化するだけでなく、クラウド"
+"システムのコンポーネントが必ず特定の状態にあるようにすることができます。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "The purpose of the screen windows are as follows:"
 msgstr "screen ウィンドウの目的は、以下のとおりです。"
@@ -8704,6 +9871,15 @@ msgstr ""
 "す。これらの場合、失敗したインスタンスに対して :command:`openstack server "
 "show` を実行するとエラーが表示されます。"
 
+msgid ""
+"The simplest way to identify that this is the problem with your instance is "
+"to look at the console output of your instance. If DHCP failed, you can "
+"retrieve the console log by doing:"
+msgstr ""
+"もっともシンプルにこの問題を特定する方法は、インスタンス上のコンソール出力を"
+"確認することです。もし DHCP が正しく動いていなければ、下記のようにコンソール"
+"ログを参照してください。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "The size of the volume in gigabytes. It is safe to leave this blank and have "
@@ -8727,6 +9903,11 @@ msgstr ""
 "合わせはOpenStack のみならず研究所全体で使用されています。単一のクラウドコン"
 "トローラーノードがあり、これはネットワークコントローラーとしても動作します"
 "が、他のコンピュータ・ハードウェアはコンピュートノードに使用されています。"
+
+msgid ""
+"The source files are located in ``/usr/lib/python2.7/dist-packages/nova``."
+msgstr ""
+"ソースファイルは ``/usr/lib/python2.7/dist-packages/nova`` にあります。"
 
 msgid ""
 "The starting point is the core count of your cloud. By applying some ratios, "
@@ -8855,6 +10036,13 @@ msgstr ""
 "インスタンスに SSH ログインして、 ``ping openstack.org`` を試すと、以下のよう"
 "なメッセージが確認できるでしょう。"
 
+msgid ""
+"There are a large number of syslogs engines available, each have differing "
+"capabilities and configuration requirements."
+msgstr ""
+"数多くの syslog エンジンが利用できます。それぞれ異なる機能や設定要件を持ちま"
+"す。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "There are a number of optional items that can be specified. You should read "
@@ -8877,6 +10065,9 @@ msgstr ""
 
 msgid "There are currently two categories of quotas for Object Storage:"
 msgstr "現在、Object Storage に対する 2 種類のクォータがあります。"
+
+msgid "There are four major layers in Logstash setup which are:"
+msgstr "Logstash は 4 つのおもなレイヤーがあります。"
 
 msgid ""
 "There are other books on the `OpenStack documentation website <https://docs."
@@ -8907,6 +10098,17 @@ msgid ""
 "There are two main types of instance-specific data: metadata and user data."
 msgstr ""
 "インスタンス固有のデータには 2 種類あります。メタデータとユーザーデータです。"
+
+msgid ""
+"There are two types of monitoring: watching for problems and watching usage "
+"trends. The former ensures that all services are up and running, creating a "
+"functional cloud. The latter involves monitoring resource usage over time in "
+"order to make informed decisions about potential bottlenecks and upgrades."
+msgstr ""
+"二つの監視のタイプがあります。問題の監視と、利用傾向の監視です。前者は全ての"
+"サービスが動作していることを保証するものであり、後者は時間に沿ったリソース利"
+"用状況を監視することで、潜在的なボトルネックの発見とアップグレードのための情"
+"報を得るものです。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -9054,6 +10256,30 @@ msgstr ""
 "ドの中に出てきたディレクトリにある不要なファイルを探します。データベースを適"
 "切にアンインストールする方法については、使用しているソフトウェアの適切なマ"
 "ニュアルを参照して下さい。"
+
+msgid ""
+"These tools also make it possible to test and roll back changes, as they are "
+"fully repeatable. Conveniently, a large body of work has been done by the "
+"OpenStack community in this space. Puppet, a configuration management tool, "
+"even provides official modules for OpenStack projects in an OpenStack "
+"infrastructure system known as `Puppet OpenStack <https://wiki.openstack.org/"
+"wiki/Puppet>`_. Chef configuration management is provided within `OpenStack "
+"Chef Repo <https://git.openstack.org/cgit/openstack/openstack-chef-repo>`_. "
+"Additional configuration management systems include Juju, Ansible, and Salt. "
+"Also, PackStack is a command-line utility for Red Hat Enterprise Linux and "
+"derivatives that uses Puppet modules to support rapid deployment of "
+"OpenStack on existing servers over an SSH connection."
+msgstr ""
+"また、これらのツールでは、完全に繰り返しが可能であるため、変更のテストやロー"
+"ルバックが可能です。従来、OpenStack コミュニティーにより多くの作業が行われて"
+"いました。Puppet (設定管理ツール) は、 `Puppet OpenStack <https://wiki."
+"openstack.org/wiki/Puppet>` __ で知られる OpenStack インフラストラクチャーシ"
+"ステム内の OpenStack の公式モジュールも提供しています。 Chef の設定管理は、 "
+"`OpenStack Chef Repo <https://git.openstack.org/cgit/openstack/openstack-"
+"chef-repo>`_ で提供されています。他の設定管理システムには、Juju、Ansible、"
+"Salt などがあります。また、PackStack は Red Hat Enterprise Linux のコマンドラ"
+"インユーティリティーで、SSH 接続を使用して既存のサーバーに OpenStack を迅速に"
+"デプロイできるように Puppet モジュールを使用する派生プロダクトです。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -9401,6 +10627,20 @@ msgstr ""
 "``eth2`` です。これは、最終的に外部ルーターや送信先に向けた外部ネットワークの"
 "パケットを受け取ります。"
 
+msgid ""
+"This formatting is used to support translation of logging messages into "
+"different languages using the `gettext <https://docs.python.org/2/library/"
+"gettext.html>`_ internationalization library. You don't need to do this for "
+"your own custom log messages. However, if you want to contribute the code "
+"back to the OpenStack project that includes logging statements, you must "
+"surround your log messages with underscores and parentheses."
+msgstr ""
+"このフォーマットは、ログメッセージを異なる言語に翻訳するために `gettext "
+"<https://docs.python.org/2/library/gettext.html>`_ 国際化ライブラリーを利用し"
+"ているためです。カスタムログには必要ありませんが、もし、OpenStackプロジェクト"
+"にログステートメントを含むコードを提供する場合は、アンダースコアと括弧でログ"
+"メッセージを囲わなければなりません。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "This functionality is an important piece of the puzzle when it comes to live "
@@ -9452,6 +10692,13 @@ msgstr ""
 "このガイドは、OpenStack Networking (neutron) を導入して管理する方法を探してい"
 "る、OpenStack 管理者を対象にしています。"
 
+msgid ""
+"This guide uses the term ``project``, unless an example shows interaction "
+"with a tool that uses the term ``tenant``."
+msgstr ""
+"このガイドは ``プロジェクト`` という用語を使用します。 ``テナント`` という用"
+"語を使用するツールとやりとりする例もあります。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "This infrastructure includes systems to automatically install the operating "
@@ -9467,6 +10714,13 @@ msgstr ""
 "Ansible、CFEngine、Chef、Puppet、Salt などのシステムです。OpenStack を使用し"
 "て、OpenStack をデプロイすることも可能です。これは、TripleO (OpenStack 上の "
 "OpenStack) という愛称で呼ばれています。"
+
+msgid ""
+"This instructs rsyslog to send all logs to the IP listed. In this example, "
+"the IP points to the cloud controller."
+msgstr ""
+"これは、rsyslogに全てのログを指定したIPアドレスに送るように命令しています。こ"
+"の例では、IPアドレスはクラウドコントローラーを指しています。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -9532,9 +10786,28 @@ msgstr ""
 "上記のリストはリリース間で変更されることもあります。最新の情報については設定"
 "ガイドを参照してください。"
 
+msgid ""
+"This may be a dnsmasq and/or ``nova-network`` related issue. (For the "
+"preceding example, the problem happened to be that dnsmasq did not have any "
+"more IP addresses to give away because there were no more fixed IPs "
+"available in the OpenStack Compute database.)"
+msgstr ""
+"これは dnsmasq の、もしくは dnsmasq と``nova-network`` 両方の問題です。(例え"
+"ば上記では、OpenStack Compute データベース上に利用可能な固定IPがなく、 "
+"dnsmasq が IP アドレスを払い出せない問題が発生しています)"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "This might print the error and cause of the problem."
 msgstr "これにより、エラーと問題の原因が表示されるかもしれません。"
+
+msgid ""
+"This output shows that an instance named ``devstack`` was created from an "
+"Ubuntu 12.04 image using a flavor of ``m1.small`` and is hosted on the "
+"compute node ``c02.example.com``."
+msgstr ""
+"この出力は、 ``devstack`` という名前のインスタンスが Ubuntu 12.04 イメージか"
+"ら ``m1.small`` のフレーバーで作成され、コンピュートノード ``c02.example."
+"com`` でホストされていることを示しています。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -9603,6 +10876,19 @@ msgstr ""
 "この節では、調整を検討した方がよい設定オプションの個別の具体例を扱います。決"
 "して完全なリストではありません。"
 
+msgid ""
+"This section describes the process to upgrade a basic OpenStack deployment "
+"based on the basic two-node architecture in the `Installation Tutorials and "
+"Guides <https://docs.openstack.org/rocky/install/>`_. All nodes must run a "
+"supported distribution of Linux with a recent kernel and the current release "
+"packages."
+msgstr ""
+"このセクションは、 `Installation Tutorials and Guides <https://docs."
+"openstack.org/rocky/install/>`_ にある、基本的な 2 ノードアーキテクチャーを参"
+"照しています。すべてのノードでは、サポートする Linux ディストリビューション"
+"で、最新のカーネルとカレントのリリースパッケージが実行されている必要がありま"
+"す。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "This section discusses which files and directories should be backed up "
@@ -9627,6 +10913,9 @@ msgstr ""
 "このセクションは、前のリリースの OpenStack にロールバックするためのガイドを提"
 "供します。すべてのディストリビューションは、同様の手順に従います。"
 
+msgid "This section provides tips on resolving common RabbitMQ issues."
+msgstr "このセクションは一般的な RabbitMQ の問題を解決するヒントを提供します。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "This section was intended as a brief introduction to some of the most useful "
@@ -9642,6 +10931,13 @@ msgstr ""
 "い。ユーザーが幸せなままであり、あなたのハードワークに気づくことを願います。"
 "（さらなるハードワークは、次の章にページを進んでください。システムが直面する"
 "運用、メンテナンス、障害、デバッグについて議論しています。）"
+
+msgid ""
+"This step applies if you have already restarted only the OpenStack "
+"components, and cannot connect to the RabbitMQ service."
+msgstr ""
+"すでに OpenStack コンポーネントのみを再起動して、RabbitMQ サービスに接続でき"
+"ない場合、この手順が適用されます。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -9741,6 +11037,13 @@ msgstr ""
 "アントを使用する必要があります。"
 
 msgid ""
+"To add logging statements, the following line should be near the top of the "
+"file. For most files, these should already be there:"
+msgstr ""
+"ログステートメントを追加するには、次の行をファイルの先頭に置きます。ほとんど"
+"のファイルでは、これらは既に存在します。"
+
+msgid ""
 "To add new volumes, you need only a volume size in gigabytes. Either put "
 "these into the :guilabel:`Create Volume` web form or use the command line:"
 msgstr ""
@@ -9783,6 +11086,17 @@ msgstr ""
 "す。このことは、このドキュメントの範囲外ですが、 `OpenStack High "
 "Availability Guide <https://docs.openstack.org/ha-guide/index.html>`_ に情報"
 "があります。"
+
+msgid ""
+"To begin, configure all OpenStack components to log to the syslog log file "
+"in addition to their standard log file location. Also, configure each "
+"component to log to a different syslog facility. This makes it easier to "
+"split the logs into individual components on the central server:"
+msgstr ""
+"まず始めに、全ての OpenStack コンポーネントのログを標準ログに加えて syslog の"
+"ログファイルに出力するように設定します。また、各コンポーネントが異なる "
+"syslog ファシリティーになるように設定します。これによりログサーバー上で、個々"
+"のコンポーネントのログを分離しやすくなります。"
 
 msgid ""
 "To boot normally from an image and attach block storage, map to a device "
@@ -9894,6 +11208,14 @@ msgstr ""
 "openstack.org/api-guide/quick-start/index.html>`_ を参照してください。jq を使"
 "用した応答についての詳しい説明は `jq Manual <http://stedolan.github.io/jq/"
 "manual/>`_ を参照してください。"
+
+msgid ""
+"To do this, generate a list of instance UUIDs that are hosted on the failed "
+"node by running the following query on the nova database:"
+msgstr ""
+"これを実行するために、nova データベースにおいて以下のクエリーを実行することに"
+"より、故障したノードにおいてホストされているインスタンスの UUID の一覧を生成"
+"します。"
 
 msgid ""
 "To effectively disable the libvirt live snapshotting, until the problem is "
@@ -10064,6 +11386,14 @@ msgstr ""
 msgid "To schedule a group of hosts with common features."
 msgstr "共通の機能を持ったホストのグループに対してスケジューリングしたい場合"
 
+msgid "To see a list of projects that have been added to the cloud, run:"
+msgstr ""
+"クラウドに追加されたプロジェクトの一覧を確認するには、以下のコマンドを実行し"
+"ます:"
+
+msgid "To see a list of running instances, run:"
+msgstr "実行中のインスタンスを確認するには、以下のコマンドを実行します:"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "To see a list of users, run:"
 msgstr "ユーザーのリストを見るためには、"
@@ -10072,6 +11402,18 @@ msgstr "ユーザーのリストを見るためには、"
 msgid "To see whether you are using namespaces, run :command:`ip netns`:"
 msgstr ""
 ":command:`ip netns` を実行して、名前空間を使用しているかどうかを確認します。"
+
+msgid "To see which bridge the packet will use, run the command:"
+msgstr ""
+"下記コマンドを実行することで、パケットがどのブリッジを使うか確認できます。"
+
+msgid ""
+"To see which fixed IP networks are configured in your cloud, you can use "
+"the :command:`openstack` command-line client to get the IP ranges:"
+msgstr ""
+"クラウドでどの Fixed IP ネットワークが設定されているかを確認するために、 :"
+"command:`openstack` コマンドラインクライアントを使用して IP アドレスの範囲を"
+"取得することができます。"
 
 msgid ""
 "To set a configuration option to zero, include a line such as "
@@ -10161,6 +11503,9 @@ msgstr ""
 "行います。いくつかのサービスは、違う手順を必要とします。次のサービスに進む前"
 "に、各サービスの動作を検証することを推奨します。"
 
+msgid "To verify the quota, run the :command:`swift stat` command again:"
+msgstr "再び :command:`swift stat` コマンドを実行して、クォータを検証します。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "To view a flavor's access list, do the following:"
 msgstr "以下のように、フレーバーのアクセスリストを表示します。"
@@ -10202,6 +11547,9 @@ msgstr "Tom Fifield"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Total Cloud Controller Failure"
 msgstr "全体的なクラウドコントローラーの故障"
+
+msgid "Total Compute Node Failure"
+msgstr "コンピュートノード全体の故障"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Toward a Python SDK"
@@ -10289,6 +11637,21 @@ msgstr ""
 msgid "Under Identity tab, click :guilabel:`Projects`."
 msgstr "ユーザー管理タブの :guilabel:`プロジェクト` をクリックします。"
 
+msgid ""
+"Underlying the use of the command-line tools is the OpenStack API, which is "
+"a RESTful API that runs over HTTP. There may be cases where you want to "
+"interact with the API directly or need to use it because of a suspected bug "
+"in one of the CLI tools. The best way to do this is to use a combination "
+"of `cURL <https://curl.haxx.se/>`_ and another tool, such as `jq <http://"
+"stedolan.github.io/jq/>`_, to parse the JSON from the responses."
+msgstr ""
+"コマンドラインツールの使用の根底にあるのは、HTTP を介して実行する RESTful "
+"API である OpenStack API です。API と直接対話を行いたい場合や、CLI ツールにバ"
+"グがあることが疑われるために使用する必要がある場合があります。この場合の最善"
+"の対処方法は、 `cURL <https://curl.haxx.se/>`_ と `jq <http://stedolan."
+"github.io/jq/>`_ などの他のツールを組み合わせて使用し、その応答から JSON を解"
+"析することです。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "Unfortunately, sometimes the error is not apparent from the log files. In "
@@ -10302,6 +11665,17 @@ msgstr ""
 "直接サービスを実行することです。たとえば、``glance-api`` サービスが起動しな"
 "かったり、実行状態にとどまらない場合は、コマンドラインからデーモンを起動して"
 "みます。"
+
+msgid ""
+"Unfortunately, this command does not tell you various details about the "
+"running instances, such as what compute node the instance is running on, "
+"what flavor the instance is, and so on. You can use the following command to "
+"view details about individual instances:"
+msgstr ""
+"残念ながら、このコマンドは、インスタンスを実行しているコンピュートノードやイ"
+"ンスタンスのフレーバーなどのような、実行中のインスタンスについての多様な情報"
+"は提供しません。個別のインスタンスについての詳しい情報を確認するには以下のコ"
+"マンドを使用してください。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -10439,6 +11813,13 @@ msgstr ""
 msgid "Use Cases"
 msgstr "事例"
 
+msgid ""
+"Use ``openstack-nova-network`` on RHEL/CentOS/Fedora but ``nova-network`` on "
+"Ubuntu/Debian."
+msgstr ""
+"RHEL/CentOS/Fedora の場合は ``openstack-nova-network`` を使用しますが、"
+"Ubuntu/Debian の場合は ``nova-network`` を使用します。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Use a public cloud"
 msgstr "パブリッククラウドの利用"
@@ -10472,9 +11853,28 @@ msgstr ""
 "て、各パッケージの特定のバージョンをインストールします。前の手順にあるスクリ"
 "プトは、利便性のために ``package=version`` のペアの一覧を作成しました。"
 
+msgid "Use the port when creating an instance:"
+msgstr "インスタンスの作成時にポートを使用します。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Use this command to register an existing key with OpenStack:"
 msgstr "このコマンドを使用して、既存の鍵を OpenStack に登録します。"
+
+msgid ""
+"Use this example priority list to ensure that user-affected services are "
+"restored as soon as possible, but not before a stable environment is in "
+"place. Of course, despite being listed as a single-line item, each step "
+"requires significant work. For example, just after starting the database, "
+"you should check its integrity, or, after starting the nova services, you "
+"should verify that the hypervisor matches the database and fix any "
+"mismatches."
+msgstr ""
+"この例にある優先度一覧を使用すると、きちんと安定した状態になる前であっても、"
+"できる限り早くユーザーに影響するサービスを復旧させることができます。もちろ"
+"ん、1 行の項目として一覧化されていますが、各ステップは多大な作業が必要です。"
+"たとえば、データベースを開始した後、その完全性を確認すべきです。また、nova "
+"サービスを開始した後、ハイパーバイザーがデータベースに一致しているかを確認"
+"し、不一致があれば修正すべきです。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Use your own cloud"
@@ -10544,6 +11944,14 @@ msgstr ""
 "題となり得る。"
 
 msgid ""
+"Users must be associated with at least one project, though they may belong "
+"to many. Therefore, you should add at least one project before adding users."
+msgstr ""
+"ユーザーは、多数のプロジェクトに所属することは可能ですが、最低でも 1 つのプロ"
+"ジェクトと関連付ける必要があります。そのため、ユーザー追加の前にプロジェクト"
+"を 1 つ追加しておく必要があります。"
+
+msgid ""
 "Users on your cloud can disrupt other users, sometimes intentionally and "
 "maliciously and other times by accident. Understanding the situation allows "
 "you to make a better decision on how to handle the disruption."
@@ -10598,6 +12006,9 @@ msgstr ""
 msgid "Using cURL for further inspection"
 msgstr "cURL を使用したさらなる検査"
 
+msgid "Using ip a to Check Interface States"
+msgstr "「ip a」を使ってインタフェース状態をチェックする"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Using the OpenStack Dashboard for Administration"
 msgstr "管理目的での OpenStack Dashboard の使用"
@@ -10631,6 +12042,18 @@ msgstr ""
 msgid "VCPUs"
 msgstr "仮想 CPU"
 
+msgid ""
+"VLAN tags are translated between the external tag defined in the network "
+"settings, and internal tags in several places. On the ``br-int``, incoming "
+"packets from the ``int-br-eth1`` are translated from external tags to "
+"internal tags. Other translations also happen on the other bridges and will "
+"be discussed in those sections."
+msgstr ""
+"VLAN タグは、ネットワーク設定において定義された外部タグといくつかの場所にある"
+"内部タグの間で変換されます。 ``br-int`` において、 ``int-br-eth1`` からの受信"
+"パケットは、外部タグから内部タグへと変換されます。他の変換が他のブリッジにお"
+"いても発生します。これらのセクションで議論されます。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "VLAN-based networks are received as tagged packets on a physical network "
@@ -10658,6 +12081,9 @@ msgstr ""
 msgid "Value"
 msgstr "値"
 
+msgid "Verify RabbitMQ processes are running:"
+msgstr "RabbitMQ プロセスが動作していることを確認します。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Verify proper operation of your environment. Then, notify your users that "
@@ -10670,6 +12096,9 @@ msgstr ""
 msgid "Verify that all hosted instances have been moved off the node:"
 msgstr ""
 "すべてのホストのインスタンスがノードからいなくなっていることを確認します。"
+
+msgid "Verify the instance has the correct IP address:"
+msgstr "インスタンスが適切な IP アドレスを持っていることを検証します。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Verify your alert mechanisms are still working."
@@ -10725,6 +12154,9 @@ msgstr "仮想化"
 msgid "Visualizing OpenStack Networking Service Traffic in the Cloud"
 msgstr "クラウド上の OpenStack Networking サービス通信の仮想化"
 
+msgid "Visualizing nova-network Traffic in the Cloud"
+msgstr "クラウド上の nova-network 通信の仮想化"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "VlanManager is used extensively for network management. All servers have two "
@@ -10739,6 +12171,9 @@ msgstr ""
 "ンス用のゲートウェイとなる、単一ノードのネットワーキングを使用する設定がされ"
 "ています。内部の OpenStack 通信（例：ストレージ通信）はクラウドコントローラー"
 "を経由していません。"
+
+msgid "Volumes"
+msgstr "ボリューム"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Wash, rinse, and repeat until you find the core cause of the problem."
@@ -10802,6 +12237,19 @@ msgid ""
 msgstr ""
 "我々は、このインスタンス上で ``tcpdump`` を実行して、操作で再びこの現象に遭遇"
 "するか見てみることにした。実際、我々はやってみた。"
+
+msgid ""
+"We hope you have enjoyed this quick tour of your working environment, "
+"including how to interact with your cloud and extract useful information. "
+"From here, you can use the `OpenStack Administrator Guide <https://docs."
+"openstack.org/latest/admin/>`_ as your reference for all of the command-line "
+"functionality in your cloud."
+msgstr ""
+"クラウドとの対話や有用な情報の抽出の方法など、作業環境の概観を確認する手順を"
+"簡単にご紹介しました。役立てていただければ幸いです。ここで説明した内容よりも"
+"さらに詳しい情報は、クラウドの全コマンドライン機能についての参考資料として"
+"`OpenStack 管理ガイド <https://docs.openstack.org/latest/admin/>`_ を参照して"
+"ください。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -11236,6 +12684,15 @@ msgstr ""
 "要です。本書は、OpenStack クラウド用のラックを 1 つ用意しているとの前提で、何"
 "をどのタイミングでスケールするかの提案をしていきます。"
 
+msgid ""
+"While the command should work with any hypervisor that is controlled through "
+"libvirt (KVM, QEMU, or LXC), it has been tested only with KVM. Here is the "
+"example output when the hypervisor is KVM:"
+msgstr ""
+"このコマンドは、libvirt によって管理されている任意のハイパーバイザー  (例: "
+"KVM、QEMU、LXC) で機能するはずですが、KVM でのみテスト済みです。ハイパーバイ"
+"ザーが KVM の場合の例は以下のようになります。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "While we'd always recommend using your automated deployment system to "
@@ -11329,6 +12786,13 @@ msgstr ""
 "成されると、VSS サービスが VSS ライターをフリーズ解除して、通常の I/O アク"
 "ティビティーが再開されます。"
 
+msgid ""
+"With ``nova-network``, the nova database table contains a few tables with "
+"networking information:"
+msgstr ""
+"``nova-network`` を用いると、nova データベーステーブルは、いくつかのネット"
+"ワーク情報を持つテーブルがあります。"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "With our upgrade to Grizzly in August 2013, we moved to OpenStack "
@@ -11399,6 +12863,19 @@ msgstr ""
 "この情報により、我々は問題が DHCP 実行に起因するものと確信した。何らかの理由"
 "でインスタンスが新しいIPアドレスを取得できず、その結果IPアドレスがなくなり、"
 "インスタンスは自分自身をネットワークから切り離した、と考えた。"
+
+msgid ""
+"With this option, you can assign different partitions to different RAID "
+"arrays. You can allocate partition 1 of disk one and two to the ``/boot`` "
+"partition mirror. You can make partition 2 of all disks the root partition "
+"mirror. You can use partition 3 of all disks for a ``cinder-volumes`` LVM "
+"partition running on a RAID 10 array."
+msgstr ""
+"このオプションでは、パーティションごとに異なる RAID アレイにおくことができま"
+"す。例えば、ディスク 1 とディスク 2 のパーティション 1 を ``/boot`` パーティ"
+"ションのミラーとして、すべてのディスクのパーティション 2 をルートパーティショ"
+"ンのミラーとして、すべてのディスクのパーティション 3 を RAID10 アレイの上の "
+"``cinder-volumes`` の LVM パーティションとして割り当てることができます。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -11507,6 +12984,14 @@ msgstr ""
 "nova コマンドラインクライアントに以下のようにオプションを付けて、インスタンス"
 "の起動時にブロックデバイスのマッピングを指定することもできます。"
 
+msgid ""
+"You can also use the Identity service (keystone) to see what services are "
+"available in your cloud as well as what endpoints have been configured for "
+"the services."
+msgstr ""
+"また、Identity サービス (keystone) を使用してクラウドで利用可能なサービスと、"
+"サービス用に設定済みのエンドポイントを確認することもできます。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "You can attach block storage to instances from the dashboard on the :"
@@ -11573,6 +13058,13 @@ msgstr ""
 "があります。"
 
 msgid ""
+"You can find the version of the Compute installation by using the OpenStack "
+"command-line client:"
+msgstr ""
+"以下の OpenStack コマンドラインクライアントを使用して、インストールされてい"
+"る Compute のバージョンを確認できます。"
+
+msgid ""
 "You can follow a similar pattern in other projects that use the Python Paste "
 "framework. Simply create a middleware module and plug it in through "
 "configuration. The middleware runs in sequence as part of that project's "
@@ -11611,11 +13103,26 @@ msgstr ""
 "これで ``/mnt`` の中身にアクセスできます。これは、インスタンスのディスクの 1 "
 "番目のパーティションに対応します。"
 
+msgid "You can now get the related floating IP entry:"
+msgstr "関連する Floating IP のエントリーが見つかります。"
+
+msgid ""
+"You can obtain extra information about virtual machines that are running—"
+"their CPU usage, the memory, the disk I/O or network I/O—per instance, by "
+"running the :command:`nova diagnostics` command with a server ID:"
+msgstr ""
+"実行中の仮想マシンの CPU 使用状況、メモリー、ディスク I/O、ネットワーク I/O "
+"などの追加情報を取得するには、 ``nova diagnostics`` コマンドにサーバー ID を"
+"指定して実行します:"
+
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "You can obtain further statistics by looking for the number of successful "
 "requests:"
 msgstr "成功したリクエストを検索することで、更なる情報を取得できます。"
+
+msgid "You can optionally also deallocate the IP from the user's pool:"
+msgstr "また、ユーザプールから IP を開放することもできます。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -11653,6 +13160,13 @@ msgstr ""
 "る場合、クラウドの全プロジェクトが、5 GB 以内のイメージやスナップショットのみ"
 "を保存できます。"
 
+msgid ""
+"You can safely ignore the state of ``virbr0``, which is a default bridge "
+"created by libvirt and not used by OpenStack."
+msgstr ""
+"``virbr0`` の状態は無視することができます。なぜならそれは libvirt が作成する"
+"デフォルトのブリッジで、OpenStack からは使われないからです。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "You can save resources by looking at the best fit for the hardware you have "
@@ -11667,6 +13181,31 @@ msgstr ""
 "サーバーの用途を変更することができます。ユーザーからのこのような検討やイン"
 "プットすべてをベースにすることで、ユースケースやデプロイメントプランの作成が"
 "容易になります。"
+
+msgid ""
+"You can save time by understanding the use cases for the cloud you want to "
+"create. Use cases for OpenStack are varied. Some include object storage "
+"only; others require preconfigured compute resources to speed development-"
+"environment set up; and others need fast provisioning of compute resources "
+"that are already secured per tenant with private networks. Your users may "
+"have need for highly redundant servers to make sure their legacy "
+"applications continue to run. Perhaps a goal would be to architect these "
+"legacy applications so that they run on multiple instances in a cloudy, "
+"fault-tolerant way, but not make it a goal to add to those clusters over "
+"time. Your users may indicate that they need scaling considerations because "
+"of heavy Windows server use."
+msgstr ""
+"作成するクラウドのユースケースを理解することで時間を節約することあできます。"
+"OpenStack のユースケースはさまざまで、オブジェクトストレージのみのもの、開発"
+"環境設定を加速するために事前設定されたコンピュートリソースが必要なもの、プラ"
+"イベートネットワークでテナントごとにセキュリティが確保されたコンピュートリ"
+"ソースの迅速にプロビジョニングするものもあります。ユーザーは、レガシーアプリ"
+"ケーションが継続して実行されるように、非常に冗長化されたサーバーが必要な場合"
+"もあります。おそらく、時間をかけてこれらのクラスターを追加するのが目的ではな"
+"く、クラウドの耐障害性を確保したかたちで、複数のインスタンス上で実行するため"
+"に、レガシーのアプリケーションを構築するのが目的の場合もあります。ユーザーに"
+"よっては、負荷の高い Windows サーバーを使用するため、スケーリングを考慮する必"
+"要があると指定する場合もあるでしょう。"
 
 msgid ""
 "You can use these ratios to determine how much additional infrastructure you "
@@ -11707,6 +13246,17 @@ msgstr ""
 "割することもできます。"
 
 msgid ""
+"You may find that you can automate the partitioning itself. For example, MIT "
+"uses `Fully Automatic Installation (FAI) <http://fai-project.org/>`_ to do "
+"the initial PXE-based partition and then install using a combination of min/"
+"max and percentage-based partitioning."
+msgstr ""
+"パーティショニング自体を自動化可能であることが分かります。例えば、MIT は "
+"`Fully Automatic Installation (FAI) <http://fai-project.org/>`_ を使用して、"
+"初期の PXE ベースのパーティション分割を行い、min/max およびパーセントベースの"
+"パーティショニングを組み合わせてインストールしていきます。"
+
+msgid ""
 "You may need to explicitly install the ``ipset`` package if your "
 "distribution does not install it as a dependency."
 msgstr ""
@@ -11721,6 +13271,9 @@ msgid ""
 msgstr ""
 "以下に例を示しますが、全てのログメッセージはアンダースコアで始まり、括弧で括"
 "られていることに気づいたでしょうか?"
+
+msgid "You might also see a message such as this:"
+msgstr "このようなメッセージも確認できるかもしれません。"
 
 msgid ""
 "You must also consider key hardware specifications for the performance of "
@@ -11790,6 +13343,15 @@ msgstr ""
 "削除できるかのテストにしてしまえば、さらによいです。"
 
 msgid ""
+"You should be doing sanity checks on the interfaces using command such as :"
+"command:`ip a` and :command:`brctl show` to ensure that the interfaces are "
+"actually up and configured the way that you think that they are."
+msgstr ""
+"また、 :command:`ip a` や :command:`brctl show` などのコマンドを使って、イン"
+"ターフェイスが実際にUPしているか、あなたが考えたとおりに設定されているか、正"
+"当性を検査をすべきです。"
+
+msgid ""
 "You should load balance user-facing services such as dashboard, ``nova-"
 "api``, or the Object Storage proxy. Use any standard HTTP load-balancing "
 "method (DNS round robin, hardware load balancer, or software such as Pound "
@@ -11809,6 +13371,9 @@ msgstr ""
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "You should see a message about ``/dev/sdb``."
 msgstr "``/dev/sdb`` に関するメッセージを確認したほうがいいです。"
+
+msgid "You should see a result similar to the following:"
+msgstr "以下のような結果を確認できます:"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
@@ -11874,6 +13439,20 @@ msgstr ""
 "`A tcpdump Tutorial and Primer <https://danielmiessler.com/study/tcpdump/>`_"
 
 msgid ""
+"`Bare Metal service (ironic) upgrades <https://docs.openstack.org/ironic/"
+"latest/admin/upgrade-guide.html>`_"
+msgstr ""
+"`Bare Metal サービス (ironic) のアップグレード <https://docs.openstack.org/"
+"ironic/latest/admin/upgrade-guide.html>`_"
+
+msgid ""
+"`Block Storage service (cinder) upgrades <https://docs.openstack.org/cinder/"
+"latest/upgrade.html>`_"
+msgstr ""
+"`Block Storage サービス (cinder) のアップグレード <https://docs.openstack."
+"org/cinder/latest/upgrade.html>`_"
+
+msgid ""
 "`CERN Cloud Infrastructure User Guide <http://information-technology.web."
 "cern.ch/book/cern-private-cloud-user-guide>`_"
 msgstr ""
@@ -11883,12 +13462,33 @@ msgstr ""
 msgid "`CSAIL homepage <https://www.csail.mit.edu/>`_"
 msgstr "`CSAIL ホームページ <https://www.csail.mit.edu/>`_"
 
+msgid ""
+"`Compute service (nova) upgrades <https://docs.openstack.org/nova/latest/"
+"user/upgrade.html>`_"
+msgstr ""
+"`Compute サービス (nova) のアップグレード <https://docs.openstack.org/nova/"
+"latest/user/upgrade.html>`_"
+
 msgid "`DAIR homepage <https://www.canarie.ca/cloud/>`__"
 msgstr "`DAIR ホームページ <https://www.canarie.ca/cloud/>`__"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "`Dive Into Python (Apress) <http://www.diveintopython.net/>`_"
 msgstr "`Dive Into Python (Apress) <http://www.diveintopython.net/>`_"
+
+msgid ""
+"`Identity service (keystone) upgrades <https://docs.openstack.org/keystone/"
+"latest/admin/identity-upgrading.html>`_"
+msgstr ""
+"`Identity サービス (keystone) のアップグレード <https://docs.openstack.org/"
+"keystone/latest/admin/identity-upgrading.html>`_"
+
+msgid ""
+"`Image service (glance) database upgrades <https://docs.openstack.org/glance/"
+"latest/admin/db.html>`_"
+msgstr ""
+"`Image サービス (glance) のデータベースのアップグレード <https://docs."
+"openstack.org/glance/latest/admin/db.html>`_"
 
 msgid ""
 "`List of individual code changes under review <https://review.openstack.org/"
@@ -11899,6 +13499,21 @@ msgstr ""
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "`NeCTAR-RC GitHub <https://github.com/NeCTAR-RC/>`_"
 msgstr "`NeCTAR-RC GitHub <https://github.com/NeCTAR-RC/>`_"
+
+msgid ""
+"`Networking service (neutron) upgrades <https://docs.openstack.org/neutron/"
+"latest/contributor/internals/upgrade.html>`_"
+msgstr ""
+"`Networking サービス (neutron) のアップグレード <https://docs.openstack.org/"
+"neutron/latest/contributor/internals/upgrade.html>`_"
+
+msgid ""
+"`Object Storage service (swift) upgrades <https://docs.openstack.org/swift/"
+"latest/overview_policies.html#upgrading-and-confirming-functionality>`_"
+msgstr ""
+"`Object Storage サービス (swift) のアップグレード <https://docs.openstack."
+"org/swift/latest/overview_policies.html#upgrading-and-confirming-"
+"functionality>`_"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
@@ -12045,6 +13660,13 @@ msgstr ""
 "Protocols/9780321336316.page>`_"
 
 msgid ""
+"`Telemetry service (ceilometer) upgrades <https://docs.openstack.org/"
+"ceilometer/ocata/install/upgrade.html>`_"
+msgstr ""
+"`Telemetry サービス (ceilometer) のアップグレード <https://docs.openstack."
+"org/ceilometer/ocata/install/upgrade.html>`_"
+
+msgid ""
 "`The Book of Xen (No Starch Press) <https://nostarch.com/releases/xen.html>`_"
 msgstr ""
 "`The Book of Xen (No Starch Press) <https://nostarch.com/releases/xen.html>`_"
@@ -12153,6 +13775,9 @@ msgstr "``/var/lib/neutron`` もまたバックアップされるべきです。
 msgid "``/var/lib/nova/instances/instance-<instance id>/console.log``"
 msgstr "``/var/lib/nova/instances/instance-<instance id>/console.log``"
 
+msgid "``/var/lib/nova/instances`` contains two types of directories."
+msgstr "``/var/lib/nova/instances`` には 2 種類のディレクトリがあります。"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "``/var/lib/nova`` is another important directory to back up. The exception "
@@ -12242,6 +13867,15 @@ msgstr "``base_image_ref``"
 msgid "``cinder-*``"
 msgstr "``cinder-*``"
 
+msgid "``cinder-api``"
+msgstr "``cinder-api``"
+
+msgid "``cinder-scheduler``"
+msgstr "``cinder-scheduler``"
+
+msgid "``cinder.conf``:"
+msgstr "``cinder.conf``:"
+
 msgid "``cores``"
 msgstr "``cores``"
 
@@ -12257,13 +13891,22 @@ msgstr "``deleted_at``"
 msgid "``fixed-ips``"
 msgstr "``fixed-ips``"
 
+msgid "``fixed_ips``"
+msgstr "``fixed_ips``"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "``floating-ips``"
 msgstr "``floating-ips``"
 
+msgid "``floating_ips``"
+msgstr "``floating_ips``"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "``glance-*``"
 msgstr "``glance-*``"
+
+msgid "``glance-api.conf`` and ``glance-registry.conf``:"
+msgstr "``glance-api.conf`` と ``glance-registry.conf``:"
 
 msgid "``heal_instance_info_cache_interval``"
 msgstr "``heal_instance_info_cache_interval``"
@@ -12307,6 +13950,9 @@ msgstr "``instance_delete_interval``"
 msgid "``instance_uuid``"
 msgstr "``instance_uuid``"
 
+msgid "``instances``"
+msgstr "``instances``"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "``ip``: authenticates an instance through its IP address. A valid format is "
@@ -12330,6 +13976,9 @@ msgstr "``key``"
 msgid "``keystone-*``"
 msgstr "``keystone-*``"
 
+msgid "``keystone.conf``:"
+msgstr "``keystone.conf``:"
+
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "``launched_at``"
 msgstr "``launched_at``"
@@ -12351,6 +14000,21 @@ msgstr "``neutron-*``"
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "``nova-*``"
 msgstr "``nova-*``"
+
+msgid "``nova-api`` services"
+msgstr "``nova-api`` サービス"
+
+msgid "``nova-compute``, cinder hosts"
+msgstr "``nova-compute``, cinder ホスト"
+
+msgid "``nova-scheduler`` services"
+msgstr "``nova-scheduler`` サービス"
+
+msgid "``nova.conf``:"
+msgstr "``nova.conf``:"
+
+msgid "``ram``"
+msgstr "``ram``"
 
 msgid "``reclaim_instance_interval``"
 msgstr "``reclaim_instance_interval``"
@@ -12484,6 +14148,12 @@ msgstr "extra_specs"
 msgid "gigabytes"
 msgstr "gigabytes"
 
+msgid "glance-api"
+msgstr "glance-api"
+
+msgid "glance-registry"
+msgstr "glance-registry"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "guest-file-flush"
 msgstr "guest-file-flush"
@@ -12562,12 +14232,42 @@ msgstr "member"
 msgid "misc (swift, dnsmasq)"
 msgstr "その他 (swift, dnsmasq)"
 
+msgid "neutron-api"
+msgstr "neutron-api"
+
+msgid "neutron-dhcp-agent"
+msgstr "neutron-dhcp-agent"
+
+msgid "neutron-l3-agent"
+msgstr "neutron-l3-agent"
+
+msgid "neutron-metadata-agent"
+msgstr "neutron-metadata-agent"
+
+msgid "neutron-openvswitch-agent"
+msgstr "neutron-openvswitch-agent"
+
+msgid "neutron-server"
+msgstr "neutron-server"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "nova-api"
 msgstr "nova-api"
 
+msgid "nova-compute"
+msgstr "nova-compute"
+
 msgid "nova-compute servers first need to be updated by the following steps:"
 msgstr "まず nova-compute を以下の手順でアップデートする必要があります。"
+
+msgid "nova-conductor"
+msgstr "nova-conductor"
+
+msgid "nova-novncproxy"
+msgstr "nova-novncproxy"
+
+msgid "nova-scheduler"
+msgstr "nova-scheduler"
 
 msgid ""
 "or the `Command-Line Interface Reference <https://docs.openstack.org/cli-"
@@ -12591,6 +14291,15 @@ msgstr "プロトコル"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "remote_ip_prefix"
 msgstr "remote_ip_prefix"
+
+msgid "rsyslog"
+msgstr "rsyslog"
+
+msgid "rsyslog client configuration"
+msgstr "rsyslog クライアント設定"
+
+msgid "rsyslog server configuration"
+msgstr "rsyslog サーバー設定"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "showed this particular node in a down state."
