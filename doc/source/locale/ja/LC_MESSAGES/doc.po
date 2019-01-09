@@ -3,15 +3,16 @@
 # Hiroshi Tsuji <ho-tsuji@kddi.com>, 2018. #zanata
 # Yuki Kasuya <yu-kasuya@kddilabs.jp>, 2018. #zanata
 # hitomi koba <hi-koba@kddi.com>, 2018. #zanata
+# Yuki Kasuya <yu-kasuya@kddilabs.jp>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: operations-guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-21 08:22+0000\n"
+"POT-Creation-Date: 2019-01-02 07:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-12-25 02:53+0000\n"
+"PO-Revision-Date: 2019-01-09 06:33+0000\n"
 "Last-Translator: Yuki Kasuya <yu-kasuya@kddilabs.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -8300,6 +8301,17 @@ msgstr ""
 "コンピュートノードは、予期せずクラッシュしたり、メンテナンスのために再起動が"
 "必要になったりすることがときどきあります。"
 
+msgid ""
+"Sometimes a share may appear and then hang in an erroneous or a transitional "
+"state. Unprivileged users do not have the appropriate access rights to "
+"correct this situation. However, having cloud administrator's permissions, "
+"you can reset the share's state by using"
+msgstr ""
+"時々、共有はエラーや状態遷移で固まって見えることがあります。権限を持たない"
+"ユーザはこの状況を修正する適切なアクセス権限をもっていません。しかし、クラウ"
+"ド管理者権限のパーミッションをもっていれば、共有の状態をリセットするコマンド"
+"を利用して共有の状態をリセットできます。"
+
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Sometimes a user and a group have a one-to-one mapping. This happens for "
@@ -14262,6 +14274,15 @@ msgstr "cinder-scheduler"
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "cinder-volume"
 msgstr "cinder-volume"
+
+msgid ""
+"command to reset share state, where state indicates which state to assign "
+"the share to. Options include: ``available, error, creating, deleting, "
+"error_deleting`` states."
+msgstr ""
+"ここでの状態は、共有がどの状態にアサインされているかを示します。オプションと"
+"して、``available, error, creating, deleting, error_deleting`` の状態がありま"
+"す。"
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "delete-on-terminate"
