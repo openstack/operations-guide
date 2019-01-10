@@ -2003,7 +2003,7 @@ is now attached as ``/dev/vda``:
 
 .. code-block:: console
 
-   $ openstck server create --flavor 2 --key-name mykey \
+   $ openstack server create --flavor 2 --key-name mykey \
      --block-device-mapping vda=13:::0 boot-from-vol-test
 
 Read more detailed instructions for launching an instance from a
