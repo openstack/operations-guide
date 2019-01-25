@@ -1,16 +1,17 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2018. #zanata
 # Frank Kloeker <eumel@arcor.de>, 2018. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2019. #zanata
 # Robert Simai <robert.simai@suse.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: operations-guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-11 08:01+0000\n"
+"POT-Creation-Date: 2019-01-18 07:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-01-11 03:19+0000\n"
-"Last-Translator: Robert Simai <robert.simai@suse.com>\n"
+"PO-Revision-Date: 2019-01-24 09:10+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -3072,7 +3073,7 @@ msgid ""
 msgstr ""
 "Die Datenschutzbestimmungen in Europa richten sich derzeit nach den "
 "Bestimmungen der `Datenschutzbehörde <https://edpb.europa.eu/>`_. Die "
-"\"Financial Industry Regulatory Authority\" <http://finra.complinet.com/>`_ "
+"`Financial Industry Regulatory Authority <http://finra.complinet.com/>`_ "
 "arbeitet in den Vereinigten Staaten daran."
 
 # auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
