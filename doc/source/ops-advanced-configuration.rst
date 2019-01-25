@@ -34,7 +34,7 @@ different tuning requirements.
    <https://docs.openstack.org/ocata/config-reference/compute/hypervisors.html>`__.
    You can see a matrix of the various features in OpenStack Compute
    (nova) hypervisor drivers at the `Hypervisor support matrix
-   page <ttps://docs.openstack.org/nova/latest/user/support-matrix.html>`_.
+   page <https://docs.openstack.org/nova/latest/user/support-matrix.html>`_.
 
 The point we are trying to make here is that just because an option
 exists doesn't mean that option is relevant to your driver choices.
