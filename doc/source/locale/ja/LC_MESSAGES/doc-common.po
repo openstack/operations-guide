@@ -1,15 +1,16 @@
 # Akihiro Motoki <amotoki@gmail.com>, 2018. #zanata
 # Andreas Jaeger <jaegerandi@gmail.com>, 2018. #zanata
+# masahito muroi <muroi.masahito@lab.ntt.co.jp>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: operations-guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-08 09:00+0000\n"
+"POT-Creation-Date: 2019-01-29 12:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-12-08 01:46+0000\n"
-"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"PO-Revision-Date: 2019-03-06 11:01+0000\n"
+"Last-Translator: masahito muroi <muroi.masahito@lab.ntt.co.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -6162,6 +6163,9 @@ msgstr "horizon"
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "iSCSI Qualified Name (IQN)"
 msgstr "iSCSI Qualified Name (IQN)"
+
+msgid "instance"
+msgstr "インスタンス"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/glossary/locale/glossary
 msgid "instance UUID"
