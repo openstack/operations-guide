@@ -338,4 +338,4 @@ the community know on the OpenStack mailing list. Perhaps others need
 the same functionality. They can use your code, provide feedback, and
 possibly contribute. If enough support exists for it, perhaps you can
 propose that it be added to the official swift
-`middleware <https://git.openstack.org/cgit/openstack/swift/tree/swift/common/middleware>`_.
+`middleware <https://opendev.org/openstack/swift/src/branch/master/swift/common/middleware>`_.

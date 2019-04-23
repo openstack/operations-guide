@@ -50,7 +50,6 @@ configuration of the environment, but can include:
 
 **Networking service (neutron)**
 
-* neutron-api
 * neutron-server
 * neutron-openvswitch-agent
 * neutron-dhcp-agent
@@ -105,7 +104,7 @@ overall health of the server. When dealing with OpenStack specifically,
 these resources are important for a second reason: ensuring that enough
 are available to launch instances. There are a few ways you can see
 OpenStack resource usage.
-The first is through the :command:`nova` command:
+The first is through the :command:`openstack` command:
 
 .. code-block:: console
 
@@ -398,7 +397,7 @@ by using the browser interface or command-line tool,
 `Stacky <https://github.com/rackerlabs/stacky>`_. Since StackTach is
 relatively new and constantly changing, installation instructions
 quickly become outdated. Refer to the `StackTach Git
-repository <https://git.openstack.org/cgit/openstack/stacktach>`_ for
+repository <https://opendev.org/x/stacktach>`_ for
 instructions as well as a demostration video. Additional details on the latest
 developments can be discovered at the `official
 page <http://stacktach.com/>`_

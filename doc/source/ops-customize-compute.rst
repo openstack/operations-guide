@@ -306,4 +306,4 @@ the community know on the OpenStack mailing list. Perhaps others need
 the same functionality. They can use your code, provide feedback, and
 possibly contribute. If enough support exists for it, perhaps you can
 propose that it be added to the official Compute
-`schedulers <https://git.openstack.org/cgit/openstack/nova/tree/nova/scheduler>`_.
+`schedulers <https://opendev.org/openstack/nova/src/branch/master/nova/scheduler>`_.
