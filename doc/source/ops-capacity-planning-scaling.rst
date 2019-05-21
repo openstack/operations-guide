@@ -197,8 +197,8 @@ segregation method currently provided by OpenStack Compute.
      - Availability zones
      - Host aggregates
    * - **Use**
-     - A single :term:`API endpoint` for compute, or you require a second
-       level of scheduling.
+     - Shard and scale compute deployment while maintaining a single
+       :term:`API endpoint`.
      - Discrete regions with separate API endpoints and no coordination
        between regions.
      - Logical separation within your nova deployment for physical isolation
@@ -212,8 +212,8 @@ segregation method currently provided by OpenStack Compute.
      - A single-site cloud with equipment fed by separate power supplies.
      - Scheduling to hosts with trusted hardware support.
    * - **Overhead**
-     - Considered experimental. A new service, nova-cells. Each cell has a full
-       nova installation except nova-api.
+     - Each Cell contains instances of services with overlapping
+       functionality.
      - A different API endpoint for every region. Each region has a full nova
        installation.
      - Configuration changes to ``nova.conf``.
@@ -227,22 +227,20 @@ segregation method currently provided by OpenStack Compute.
 Cells and regions
 -----------------
 
-OpenStack Compute cells are designed to allow running the cloud in a
+`OpenStack Compute Cells <https://docs.openstack.org/nova/latest/user/cells.html>`_
+are designed to allow running the cloud in a
 distributed fashion without having to use more complicated technologies,
 or be invasive to existing nova installations. Hosts in a cloud are
-partitioned into groups called *cells*. Cells are configured in a tree.
-The top-level cell ("API cell") has a host that runs the ``nova-api``
-service, but no ``nova-compute`` services. Each child cell runs all of
-the other typical ``nova-*`` services found in a regular installation,
-except for the ``nova-api`` service. Each cell has its own message queue
-and database service and also runs ``nova-cells``, which manages the
-communication between the API cell and child cells.
+partitioned into groups called *Cells*. Cells are configured in a tree.
+The top-level Cell ("API cell") has a host that runs the ``nova-api``
+service, but no ``nova-compute`` services. The ``nova-compute`` runs
+in a child Cell.
+Each Cell has its own message queue and database service.
 
 This allows for a single API server being used to control access to
-multiple cloud installations. Introducing a second level of scheduling
-(the cell selection), in addition to the regular ``nova-scheduler``
-selection of hosts, provides greater flexibility to control where
-virtual machines are run.
+multiple compute installations with the usage of multiple Cells.
+See `Nova Cells V2 Layout <https://docs.openstack.org/nova/latest/user/cellsv2-layout.html>`_
+for further documentation.
 
 Unlike having a single API endpoint, regions have a separate API
 endpoint per installation, allowing for a more discrete separation.
