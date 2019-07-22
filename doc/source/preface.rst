@@ -180,7 +180,7 @@ Installation Tutorials and Guides
     This guide targets OpenStack administrators seeking to deploy and
     manage OpenStack Networking (neutron).
 
-`OpenStack API Guide <https://developer.openstack.org/api-guide/quick-start/>`_
+`OpenStack API Guide <https://docs.openstack.org/api-quick-start/>`_
     A brief overview of how to send REST API requests to endpoints for
     OpenStack services
 
