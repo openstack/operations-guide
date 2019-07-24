@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: operations-guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 15:20+0000\n"
+"POT-Creation-Date: 2019-07-24 04:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -7009,12 +7009,6 @@ msgstr "ZeroMQ"
 
 msgid "Zuul"
 msgstr "Zuul"
-
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
-msgid ""
-"`API Documentation <https://developer.openstack.org/api-guide/quick-start/>`_"
-msgstr ""
-"`API Dokumentation <https://developer.openstack.org/api-guide/quick-start/>`_"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "`Architecture Design Guide <https://docs.openstack.org/arch-design/>`_"

@@ -3,17 +3,18 @@
 # Hiroshi Tsuji <ho-tsuji@kddi.com>, 2018. #zanata
 # Yuki Kasuya <yu-kasuya@kddilabs.jp>, 2018. #zanata
 # hitomi koba <hi-koba@kddi.com>, 2018. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2019. #zanata
 # Yuki Kasuya <yu-kasuya@kddilabs.jp>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: operations-guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 11:39+0000\n"
+"POT-Creation-Date: 2019-07-24 04:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-06-17 07:25+0000\n"
-"Last-Translator: Yuki Kasuya <yu-kasuya@kddilabs.jp>\n"
+"PO-Revision-Date: 2019-07-23 10:51+0000\n"
+"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -726,14 +727,6 @@ msgstr ""
 "ドは一切修正しません。ドライバーアーキテクチャーを使っているプロジェクトを確"
 "認するには、``/etc/<project>`` に格納されている、プロジェクトの ``.conf`` 設"
 "定ファイルの中で　driver 変数を探してください。"
-
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/source/locale/arch-design
-msgid ""
-"A single :term:`API endpoint` for compute, or you require a second level of "
-"scheduling."
-msgstr ""
-"コンピュート資源に対する単一の :term:`API エンドポイント <API endpoint>` 、も"
-"しくは２段階スケジューリングが必要な場合"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "A single-site cloud with equipment fed by separate power supplies."
@@ -2714,14 +2707,6 @@ msgstr ""
 "するために、パブリッククラウドを使用することを考慮します。多くのパブリックク"
 "ラウドは時間単位で課金されます。つまり、多くのノードを用いてテストしても、そ"
 "れほど費用がかかりません。"
-
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/source/locale/arch-design
-msgid ""
-"Considered experimental. A new service, nova-cells. Each cell has a full "
-"nova installation except nova-api."
-msgstr ""
-"試験的とみなされます。新しいサービス nova-cells。各セルには nova-api 以外の"
-"全 nova 設定が含まれています。"
 
 # auto translated by TM merge from project: operations-guide, version: master, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Console (boot up messages) for VM instances:"
@@ -7084,30 +7069,6 @@ msgstr ""
 msgid "OpenStack Block Storage service"
 msgstr "OpenStack Block Storage サービス"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/source/locale/arch-design
-msgid ""
-"OpenStack Compute cells are designed to allow running the cloud in a "
-"distributed fashion without having to use more complicated technologies, or "
-"be invasive to existing nova installations. Hosts in a cloud are partitioned "
-"into groups called *cells*. Cells are configured in a tree. The top-level "
-"cell (\"API cell\") has a host that runs the ``nova-api`` service, but no "
-"``nova-compute`` services. Each child cell runs all of the other typical "
-"``nova-*`` services found in a regular installation, except for the ``nova-"
-"api`` service. Each cell has its own message queue and database service and "
-"also runs ``nova-cells``, which manages the communication between the API "
-"cell and child cells."
-msgstr ""
-"OpenStack Compute のセルによって、より複雑な技術を持ち込むことなしに、また既"
-"存のNovaシステムに悪影響を与えることなしに、クラウドを分散された環境で運用す"
-"ることができます。１つのクラウドの中のホストは、 *セル* と呼ばれるグループに"
-"分割されます。セルは、木構造に構成されてます。最上位のセル (「API セル」) は "
-"``nova-api`` サービスを実行するホストを持ちますが、 ``nova-compute`` サービス"
-"を実行するホストは持ちません。それぞれの子セルは、 ``nova-api`` サービス以外"
-"の、普通のNovaシステムに見られる他のすべての典型的な ``nova-*`` サービスを実"
-"行します。それぞれのセルは自分のメッセージキューとデータベースサービスを持"
-"ち、またAPIセルと子セルの間の通信を制御する ``nova-cells`` サービスを実行しま"
-"す。"
-
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "OpenStack Compute service"
 msgstr "OpenStack Compute サービス"
@@ -8159,6 +8120,17 @@ msgstr ""
 
 msgid "Segregating your cloud"
 msgstr "クラウドの分離"
+
+msgid ""
+"Segregating your cloud is needed when users require different regions for "
+"legal considerations for data storage, redundancy across earthquake fault "
+"lines, or for low-latency API calls. It can be segregated by *cells*, "
+"*regions*, *availability zones*, or *host aggregates*."
+msgstr ""
+"クラウドの分離は、ユーザがデータストレージについて法的な考慮や地震断層をまた"
+"がる冗長性のための異なるリージョン、もしくはAPIコールの低遅延のための要求があ"
+"るときに必要になります。 *cells*, *regions*, *availability zones*, もしくは "
+"*host aggregates* によって分離されます。"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid "Select the :guilabel:`Identity` tab in the left navigation bar."
@@ -10505,19 +10477,6 @@ msgstr ""
 "これは単なる１回限りの問題と思ったので、私はインスタンスを削除して、新しいイ"
 "ンスタンスを起動した。その後電話会議は終了し、私はデータセンターを離れた。"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/source/locale/arch-design
-msgid ""
-"This allows for a single API server being used to control access to multiple "
-"cloud installations. Introducing a second level of scheduling (the cell "
-"selection), in addition to the regular ``nova-scheduler`` selection of "
-"hosts, provides greater flexibility to control where virtual machines are "
-"run."
-msgstr ""
-"これによって、複数のクラウドシステムに対するアクセスを、１つのAPIサーバで制御"
-"することができます。通常の ``nova-scheduler`` によるホストの選択に加えて、第"
-"二段階のスケジューリング(セルの選択)を導入することにより、仮想マシンを実行す"
-"る場所の制御の柔軟性が大きく向上します。"
-
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
 "This appendix contains a small selection of use cases from the community, "
@@ -11415,18 +11374,6 @@ msgid ""
 msgstr ""
 "DEBUG レベルのロギングを無効にするには、``/etc/nova/nova.conf`` を以下のよう"
 "に編集します。"
-
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
-msgid ""
-"To discover how API requests should be structured, read the `OpenStack API "
-"Reference <https://developer.openstack.org/api-guide/quick-start/index."
-"html>`_. To chew through the responses using jq, see the `jq Manual <http://"
-"stedolan.github.io/jq/manual/>`_."
-msgstr ""
-"API 要求の構成方法については、 `OpenStack API Reference <https://developer."
-"openstack.org/api-guide/quick-start/index.html>`_ を参照してください。jq を使"
-"用した応答についての詳しい説明は `jq Manual <http://stedolan.github.io/jq/"
-"manual/>`_ を参照してください。"
 
 msgid ""
 "To do this, generate a list of instance UUIDs that are hosted on the failed "
@@ -13411,6 +13358,14 @@ msgstr ""
 "要があると指定する場合もあるでしょう。"
 
 msgid ""
+"You can use availability zones, host aggregates, or both to partition a nova "
+"deployment. Both methods are configured and implemented in a similar way."
+msgstr ""
+"アベイラビリティゾーン、ホストアグリゲート、もしくは両方をnovaデプロイメント"
+"を分離するために利用できます。両方の手法は同じような方法で設定、実装されてい"
+"ます。"
+
+msgid ""
 "You can use these ratios to determine how much additional infrastructure you "
 "need to support your cloud."
 msgstr ""
@@ -13726,14 +13681,6 @@ msgstr ""
 "`Object Storage サービス (swift) のアップグレード <https://docs.openstack."
 "org/swift/latest/overview_policies.html#upgrading-and-confirming-"
 "functionality>`_"
-
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
-msgid ""
-"`OpenStack API Guide <https://developer.openstack.org/api-guide/quick-start/"
-">`_"
-msgstr ""
-"`OpenStack API ガイド <https://developer.openstack.org/ja/api-guide/quick-"
-"start/>`_"
 
 # auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ops-guide/source/locale/ops-guide
 msgid ""
