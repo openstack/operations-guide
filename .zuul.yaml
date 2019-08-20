@@ -1,6 +1,6 @@
 - project:
     templates:
       - build-openstack-docs-pti
-    post:
+    promote:
       jobs:
-        - publish-openstack-tox-docs-direct
+        - promote-openstack-tox-docs-direct
