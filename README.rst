@@ -41,7 +41,7 @@ couple times through. Here is a suggested workflow to help you along the way.
 
 .. code-block:: console
 
-  git clone https://git.openstack.org/openstack/operations-guide
+  git clone https://opendev.org/openstack/operations-guide
   cd operations-guide
   
   # it is useful to make changes on a separate branch in case you need to make
