@@ -192,7 +192,7 @@ OpenStack services:
 * `Compute service (nova) upgrades
   <https://docs.openstack.org/nova/latest/user/upgrade.html>`_
 * `Identity service (keystone) upgrades
-  <https://docs.openstack.org/keystone/latest/admin/identity-upgrading.html>`_
+  <https://docs.openstack.org/keystone/latest/admin/upgrading.html>`_
 * `Block Storage service (cinder) upgrades
   <https://docs.openstack.org/cinder/latest/upgrade.html>`_
 * `Image service (glance) database upgrades
