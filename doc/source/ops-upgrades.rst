@@ -203,6 +203,8 @@ OpenStack services:
   <https://docs.openstack.org/swift/latest/overview_policies.html#upgrading-and-confirming-functionality>`_
 * `Telemetry service (ceilometer) upgrades
   <https://docs.openstack.org/ceilometer/ocata/install/upgrade.html>`_
+* `Orchestration service (heat) upgrades
+  <https://docs.openstack.org/heat/latest/operating_guides/upgrades_guide.html>`_
 
 Prerequisites
 -------------
