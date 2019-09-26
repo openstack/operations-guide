@@ -6,12 +6,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: operations-guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-26 11:19+0000\n"
+"POT-Creation-Date: 2019-09-20 10:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-09-19 01:43+0000\n"
-"Last-Translator: Robert Simai <robert.simai@suse.com>\n"
+"PO-Revision-Date: 2019-09-26 06:36+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -66,7 +66,6 @@ msgstr ""
 msgid "**Example of Complexity**"
 msgstr "**Beispiel für Komplexität**"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/install-guide/source/locale/install-guide
 msgid "**Example**"
 msgstr "**Beispiel**"
 
@@ -174,7 +173,6 @@ msgstr "1"
 msgid "1 GB"
 msgstr "1 GB"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "10"
 msgstr "10"
 
@@ -214,11 +212,9 @@ msgstr "21"
 msgid "22"
 msgstr "22"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "3"
 msgstr "3"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ha-guide/source/locale/ha-guide
 msgid "4"
 msgstr "4"
 
@@ -1593,7 +1589,6 @@ msgstr ""
 "der Root-Partition erfordern. Wenn dies der Fall ist, kann der Benutzer die "
 "Dashboard VNC-Konsole verwenden, um dies zu beheben."
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ha-guide/source/locale/ha-guide
 msgid "Appendix"
 msgstr "Anhang"
 
@@ -2071,7 +2066,6 @@ msgstr "Automatisierte Bereitstellung"
 msgid "Availability zone"
 msgstr "Verfügbarkeitszone"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Availability zones"
 msgstr "Verfügbarkeitszone"
 
@@ -2144,7 +2138,6 @@ msgstr ""
 "einem Anmeldebildschirm befindet, bevor Sie die oben genannten Schritte "
 "ausführen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Because it is recommended to not use partitions on a swift disk, simply "
 "format the disk as a whole:"
@@ -2163,7 +2156,6 @@ msgstr ""
 "Netzwerkverkehr zu verfolgen, die Ursache von Netzwerkausfällen zu finden "
 "und verwandte Dienste wie DHCP und DNS zu debuggen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Because of the high redundancy of Object Storage, dealing with object "
 "storage node issues is a lot easier than dealing with compute node issues."
@@ -2214,7 +2206,6 @@ msgstr ""
 "Betsy Hagemeier, eine fanatische Assistentin der Geschäftsleitung, kümmerte "
 "sich um eine Raumumstellung und half uns, uns für die Woche einzuleben."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Block Storage"
 msgstr "Block Speicher"
 
@@ -2238,7 +2229,6 @@ msgstr ""
 msgid "Block Storage nodes"
 msgstr "Blockspeicher-Knoten"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "Block Storage service"
 msgstr "Blockspeicherdienst (cinder)"
 
@@ -2596,7 +2586,6 @@ msgstr ""
 "\"tenant_id:%(tenant_id)s\"`` erfolgreich, wenn die Mandantenkennung in der "
 "Ressource gleich der Mandantenkennung des anfragenden Benutzers ist."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Compute"
 msgstr "Compute"
 
@@ -2641,7 +2630,6 @@ msgstr ""
 msgid "Compute service, including networking components."
 msgstr "Rechendienst, einschließlich Netzwerkkomponenten."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Conclusion"
 msgstr "Schlussfolgerung"
 
@@ -2795,7 +2783,6 @@ msgstr ""
 "die für Ihre Anwendungsfälle wie Speicher, Computer oder softwaredefinierte "
 "Netzwerke erforderlich sind"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ha-guide/source/locale/ha-guide
 msgid "Contents"
 msgstr "Inhalt"
 
@@ -2987,7 +2974,6 @@ msgstr ""
 "nicht sieht. Um ``tcpdump`` zu verwenden, um die Ports 67 und 68 auf br100 "
 "zu hören, würden Sie es tun:"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "DNS service (designate)"
 msgstr "DNS Dienst (designate)"
 
@@ -3062,7 +3048,6 @@ msgstr ""
 "`Financial Industry Regulatory Authority <http://finra.complinet.com/>`_ "
 "arbeitet in den Vereinigten Staaten daran."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Database Backups"
 msgstr "Datenbank Backups"
 
@@ -3072,7 +3057,6 @@ msgstr "Datenbank-Konnektivität"
 msgid "Database as a Service (trove)"
 msgstr "Datenbank als Dienst (trove)"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Databases"
 msgstr "Datenbanken"
 
@@ -3178,7 +3162,6 @@ msgstr ""
 "Beschreibt mögliche Strategien, um Ihre OpenStack-Dienste und die damit "
 "verbundenen Steuerungen und Datenspeicher hochverfügbar zu machen"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -3344,7 +3327,6 @@ msgstr ""
 "Diskrete Regionen mit separaten API-Endpunkten und keiner Koordination "
 "zwischen den Regionen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Disk"
 msgstr "Disk"
 
@@ -3602,7 +3584,6 @@ msgstr ""
 "Stellen Sie sicher, dass cryptsetup installiert ist, und stellen Sie sicher, "
 "dass ``pythin-barbicanclient`` Python-Paket installiert ist"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Ensure that the operating system has recognized the new disk:"
 msgstr ""
 "Stellen Sie sicher, daß das Betriebssystem die neue Platte erkannt hat:"
@@ -3786,7 +3767,6 @@ msgstr ""
 "nova/instances/_base`` entfernt wurde. Nichts davon machte Sinn, aber es war "
 "das Beste, was mir einfiel."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Finally, mount the disk:"
 msgstr "Zum Schluss hängen Sie die Platte wieder ein:"
 
@@ -3854,14 +3834,12 @@ msgstr "Suchen Sie den Port, der der Instanz entspricht. Zum Beispiel:"
 msgid "Finding a Failure in the Path"
 msgstr "Finden eines Fehlers im Pfad"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/arch-design/locale/arch-design
 msgid "Firewalls"
 msgstr "Firewalls"
 
 msgid "First, find the UUID of the instance in question:"
 msgstr "Suchen Sie zunächst die UUID der betreffenden Instanz:"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "First, unmount the disk:"
 msgstr "Als Erstes, hängen Sie die Platte aus:"
 
@@ -3872,11 +3850,9 @@ msgstr ""
 "Zunächst können Sie feststellen, welche Server zu Ihrer OpenStack-Cloud "
 "gehören, indem Sie sie ausführen:"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Fixed IPs"
 msgstr "Feste IPs"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Flavors"
 msgstr "Varianten"
 
@@ -3895,7 +3871,6 @@ msgstr ""
 "``extra_specs``, mit dem Sie Freiformmerkmale definieren können, die eine "
 "große Flexibilität über die Größe von RAM, CPU und Festplatte hinaus bieten."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Floating IPs"
 msgstr "\"Floating IPs\""
 
@@ -4045,7 +4020,6 @@ msgstr ""
 "Sie einen einfachen 1 GB-Switch in einem privaten Netzwerk verwenden, in dem "
 "nur Ihre Cloud kommuniziert."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "For example:"
 msgstr "Zum Beispiel:"
 
@@ -4834,11 +4808,9 @@ msgstr ""
 "Knoten kamen, und schlossen sofort die Ports, um Spanning-Tree-Schleifen zu "
 "verhindern:"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "ID"
 msgstr "ID"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Identity"
 msgstr "Identität"
 
@@ -5541,14 +5513,12 @@ msgstr "Abbildkatalog und Lieferung"
 msgid "Image Catalog and Delivery services"
 msgstr "Imagekatalog und Lieferservice"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "Image service"
 msgstr "Image service [Abbilddienst (glance)]"
 
 msgid "Image usage"
 msgstr "Abbildnutzung"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Images"
 msgstr "Bild"
 
@@ -5851,7 +5821,6 @@ msgstr ""
 "Installieren Sie die Clients ``keystone`` und ``swift`` auf Ihrem lokalen "
 "Rechner:"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: releasenotes/source/locale/releasenotes
 msgid "Installation Tutorials and Guides"
 msgstr "Installations-Tutorien und Anleitungen"
 
@@ -5879,7 +5848,6 @@ msgstr "Die Instanz versucht, die IP zu erneuern."
 msgid "Instance user data"
 msgstr "Instanz Benutzerdaten"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Instances"
 msgstr "Instanz"
 
@@ -6118,14 +6086,12 @@ msgstr ""
 "unter Ubuntu ausgeführt wird, installieren Sie das util-linux-Paket, um "
 "``fsfsfreeze`` zu erhalten:"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "Kerberos"
 msgstr "Kerberos"
 
 msgid "Key pairs"
 msgstr "Schlüsselpaare"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Keystone"
 msgstr "Keystone"
 
@@ -6577,7 +6543,6 @@ msgstr "Maximale Gesamtzahl aller Schattenkopien"
 msgid "Megabytes of instance RAM allowed per project."
 msgstr "Megabyte Instanz-RAM pro Projekt erlaubt."
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ha-guide/source/locale/ha-guide
 msgid "Memory"
 msgstr "Speicher"
 
@@ -6618,7 +6583,6 @@ msgstr ""
 "indem Sie :guilabel:`Edit` aus dem Dropdown-Menü Aktionen am Ende der Zeile "
 "für den Benutzer, den Sie ändern, auswählen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Monitoring"
 msgstr "Überwachung"
 
@@ -6741,7 +6705,6 @@ msgstr ""
 "Überwachungsdienste verfügbar sind, ist Nagios ein bewährtes "
 "Systemadministrations-Tool."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Name"
 msgstr "Name"
 
@@ -6800,7 +6763,6 @@ msgstr ""
 msgid "Network usage (bandwidth and IP usage)"
 msgstr "Netzwerknutzung (Bandbreite und IP-Nutzung)"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Networking"
 msgstr "Netzwerk"
 
@@ -6810,7 +6772,6 @@ msgstr "Netzwerkkonfiguration nur für das PXE-Booten"
 msgid "Networking security"
 msgstr "Netzwerksicherheit"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "Networking service"
 msgstr "Netzwerkdienst (neutron)"
 
@@ -6870,7 +6831,6 @@ msgstr ""
 "Server und zurück voll funktionsfähig ist, sehen Sie so etwas wie das "
 "Folgende:"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "Next, physically remove the disk from the server and replace it with a "
 "working disk."
@@ -6878,7 +6838,6 @@ msgstr ""
 "Als Nächstes, entfernen SIe die Platte aus dem Server und ersetzen sie sie "
 "durch eine funktionierende."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Next, redistribute the ring files to the other nodes:"
 msgstr "Als Nächstes, verteilen Sie die Ring Dateien zu den anderen Nodes neu:"
 
@@ -6932,7 +6891,6 @@ msgstr ""
 "Instanzen, die bisher auf c01.example.com gehostet wurden, nun auf c02."
 "example.com gehostet werden:"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ha-guide/source/locale/ha-guide
 msgid "Node type"
 msgstr "Knotentyp"
 
@@ -7048,7 +7006,6 @@ msgstr ""
 "andere nicht. Diese Art der Fehlersuche fühlte sich jedoch nicht richtig an. "
 "Wir sollten in diesen Bereichen nicht die MTU wechseln müssen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Object Storage"
 msgstr "Objekt Speicher"
 
@@ -7201,6 +7158,31 @@ msgstr ""
 "möchten. Die umgekehrte Aktion, Dissoziate Floating IP, ist auf der "
 "Registerkarte :guilabel:`Floating IPs` der Seite :guilabel:`Access & "
 "Security` und auf der Seite :guilabel:`Instances` verfügbar."
+
+msgid ""
+"Once nova is sending notifications, install and configure StackTach. "
+"StackTach works for queue consumption and pipeline processing are configured "
+"to read these notifications from RabbitMQ servers and store them in a "
+"database. Users can inquire on instances, requests, and servers by using the "
+"browser interface or command-line tool, `Stacky <https://github.com/"
+"rackerlabs/stacky>`_. Since StackTach is relatively new and constantly "
+"changing, installation instructions quickly become outdated. Refer to the "
+"`StackTach Git repository <https://opendev.org/x/stacktach>`_ for "
+"instructions as well as a demostration video. Additional details on the "
+"latest developments can be discovered at the `official page <http://"
+"stacktach.com/>`_"
+msgstr ""
+"Sobald nova Benachrichtigungen sendet, installieren und konfigurieren Sie "
+"StackTach. StackTach arbeitet für den Queue-Verbrauch und die Pipeline-"
+"Verarbeitung sind so konfiguriert, dass sie diese Benachrichtigungen von "
+"RabbitMQ-Servern lesen und in einer Datenbank speichern. Benutzer können "
+"Instanzen, Anforderungen und Server abfragen, indem sie die "
+"Browseroberfläche oder das Befehlszeilentool `Stacky <https://github.com/"
+"rackerlabs/stacky>`_ verwenden. Da StackTach relativ neu ist und sich "
+"ständig ändert, werden Installationsanweisungen schnell veraltet. "
+"Anweisungen sowie ein Demovideo finden Sie im `StackTach Git-Repository "
+"<https://opendev.org/x/stacktach>`_. Weitere Details zu den neuesten "
+"Entwicklungen finden Sie auf der `offiziellen Seite <http://stacktach.com/>`_"
 
 msgid "Once the files are restored, start everything back up:"
 msgstr "Sobald die Dateien wiederhergestellt sind, starten Sie die Sicherung:"
@@ -7461,7 +7443,6 @@ msgstr ""
 "erforderlichen Brücken (``br-int``, ``br-tun``, `br-tun`` und ``br-ex``) "
 "existieren und die richtigen Ports mit ihnen verbunden sind."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "OpenStack"
 msgstr "OpenStack"
 
@@ -7807,11 +7788,9 @@ msgstr ""
 "Optional können Sie die Instanzen wieder auf ihren ursprünglichen Compute-"
 "Knoten migrieren."
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/install-guide/source/locale/install-guide
 msgid "Orchestration"
 msgstr "Orchestrierung"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "Orchestration service"
 msgstr "Orchestrierungsdienst (heat)"
 
@@ -7880,7 +7859,6 @@ msgstr ""
 "Partitionierung, die eine größere Flexibilität für das Layout von "
 "Betriebssystem und Swap Space bietet, wie im Folgenden beschrieben."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Password"
 msgstr "Passwort"
 
@@ -7992,7 +7970,6 @@ msgstr "Überlegungen zur Vorbereitung des Upgrades"
 msgid "Pre-upgrade testing environment"
 msgstr "Vorab-Upgrade-Testumgebung"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Preface"
 msgstr "Vorwort"
 
@@ -8000,7 +7977,6 @@ msgid "Prepare any quarterly reports on usage and statistics."
 msgstr ""
 "Erstellen Sie alle vierteljährlichen Berichte über Nutzung und Statistiken."
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ha-guide/source/locale/ha-guide
 msgid "Prerequisites"
 msgstr "Voraussetzungen"
 
@@ -8141,7 +8117,6 @@ msgstr ""
 "Fügen Sie die Image-ID für das einzige installierte Image in eine "
 "Umgebungsvariable ein:"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Python"
 msgstr "Python"
 
@@ -8161,11 +8136,9 @@ msgstr ""
 msgid "Quarterly"
 msgstr "Vierteljährlich"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Quota"
 msgstr "Kontingent"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Quotas"
 msgstr "Kontingente"
 
@@ -8181,7 +8154,6 @@ msgstr ""
 "Sie stattdessen für die Produktion mehr als eine Festplatte. Die Anzahl der "
 "Festplatten bestimmt, welche Arten von RAID-Arrays erstellt werden sollen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "RAM"
 msgstr "RAM"
 
@@ -8247,7 +8219,6 @@ msgstr "Lesen der Protokolle"
 msgid "Rebooting a Cloud Controller or Storage Proxy"
 msgstr "Neustart eines Cloud Controllers oder Storage Proxy"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Rebooting a Storage Node"
 msgstr "Neustarten eines Storage Node"
 
@@ -8350,7 +8321,6 @@ msgstr "Austausch des Open vSwitch Plugins durch Modular Layer 2"
 msgid "Replacing Components"
 msgstr "Austausch von Komponenten"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Replacing a Swift Disk"
 msgstr "Ersetzen einer Swift DIsk"
 
@@ -8375,9 +8345,24 @@ msgstr ""
 msgid "Resource based"
 msgstr "Ressourcenbasiert"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Resources"
 msgstr "Resourcen"
+
+msgid ""
+"Resources such as memory, disk, and CPU are generic resources that all "
+"servers (even non-OpenStack servers) have and are important to the overall "
+"health of the server. When dealing with OpenStack specifically, these "
+"resources are important for a second reason: ensuring that enough are "
+"available to launch instances. There are a few ways you can see OpenStack "
+"resource usage. The first is through the :command:`openstack` command:"
+msgstr ""
+"Ressourcen wie Speicher, Festplatte und CPU sind generische Ressourcen, die "
+"alle Server (auch Nicht-OpenStack-Server) haben und für den allgemeinen "
+"Zustand des Servers wichtig sind. Wenn es um OpenStack geht, sind diese "
+"Ressourcen aus einem zweiten Grund wichtig: Sicherstellen, dass genügend "
+"verfügbar ist, um Instanzen zu starten. Es gibt einige Möglichkeiten, wie "
+"Sie die Nutzung von OpenStack-Ressourcen sehen können. Die erste ist durch "
+"den Befehl :command:`openstack`:"
 
 msgid "Restart the RabbitMQ service on all of the controller nodes:"
 msgstr "Starten Sie den RabbitMQ-Dienst auf allen Controller-Knoten neu:"
@@ -8465,7 +8450,6 @@ msgstr ""
 msgid "Review usage and trends over the past quarter."
 msgstr "Überprüfung der Nutzung und der Trends im vergangenen Quartal."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Role"
 msgstr "Rolle"
 
@@ -8599,7 +8583,6 @@ msgstr ""
 msgid "Security Configuration for Compute, Networking, and Storage"
 msgstr "Sicherheitskonfiguration für Compute, Networking und Storage"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Security Groups"
 msgstr "Sicherheitsgruppen"
 
@@ -8732,14 +8715,12 @@ msgstr "Serverauslastung"
 msgid "Servers and Services"
 msgstr "Server und Dienste"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Service"
 msgstr "Dienst"
 
 msgid "Service specific upgrade instructions"
 msgstr "Dienstspezifische Upgrade-Anweisungen"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Services"
 msgstr "Dienste"
 
@@ -8896,7 +8877,6 @@ msgstr ""
 "Fahren Sie Ihren Compute-Knoten herunter, führen Sie die Wartung durch und "
 "schalten Sie den Knoten wieder ein."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Shutting Down a Storage Node"
 msgstr "Herunterfahren eines Storage Node"
 
@@ -9141,7 +9121,6 @@ msgstr ""
 msgid "Specify quotas for existing users or tenants"
 msgstr "Geben Sie Quoten für bestehende Benutzer oder Mandanten an"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "StackTach"
 msgstr "StackTach"
 
@@ -9186,7 +9165,6 @@ msgstr "Stoppen Sie alle OpenStack-Dienste."
 msgid "Stop the ``nova-compute`` service:"
 msgstr "Beenden Sie den Dienst ``nova-compute``:"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Storage Node Failures and Maintenance"
 msgstr "Storage Node Fehler und Wartung"
 
@@ -9197,7 +9175,6 @@ msgstr ""
 "Stärkung des Systems gegen Vorfälle, im Allgemeinen durch Reduzierung oder "
 "gar Beseitigung von Schwachstellen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Summary"
 msgstr "Zusammenfassung"
 
@@ -9326,7 +9303,6 @@ msgstr ""
 msgid "Tales From the Cryp^H^H^H^H Cloud"
 msgstr "Geschichten aus der Cryp^H^H^H^H^H^H^H Cloud"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/ha-guide/source/locale/ha-guide
 msgid "Telemetry"
 msgstr "Telemetrie"
 
@@ -11357,7 +11333,6 @@ msgstr ""
 "losing-your-mind/>`_ aus der Perspektive von Victoria Martínez, einer "
 "Praktikantin für Entwickler."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid ""
 "These actions effectively take the storage node out of the storage cluster."
 msgstr "Diese Aktion nimmt den Storage Node aus dem Storage Cluster heraus."
@@ -11431,6 +11406,33 @@ msgstr ""
 "in den Verzeichnissen, auf die in diesem Handbuch verwiesen wird, nach "
 "verwaisten Dateien suchen. Um die Datenbank ordnungsgemäß zu deinstallieren, "
 "lesen Sie bitte das für das verwendete Produkt entsprechende Handbuch."
+
+msgid ""
+"These tools also make it possible to test and roll back changes, as they are "
+"fully repeatable. Conveniently, a large body of work has been done by the "
+"OpenStack community in this space. Puppet, a configuration management tool, "
+"even provides official modules for OpenStack projects in an OpenStack "
+"infrastructure system known as `Puppet OpenStack <https://wiki.openstack.org/"
+"wiki/Puppet>`_. Chef configuration management is provided within `OpenStack "
+"Chef Repo <https://opendev.org/openstack/openstack-chef-repo>`_. Additional "
+"configuration management systems include Juju, Ansible, and Salt. Also, "
+"PackStack is a command-line utility for Red Hat Enterprise Linux and "
+"derivatives that uses Puppet modules to support rapid deployment of "
+"OpenStack on existing servers over an SSH connection."
+msgstr ""
+"Diese Tools ermöglichen es auch, Änderungen zu testen und zurückzusetzen, da "
+"sie vollständig wiederholbar sind. Praktischerweise wurde in diesem Bereich "
+"ein großer Teil der Arbeit von der OpenStack-Community geleistet. Puppet, "
+"ein Konfigurationsmanagement-Tool, bietet sogar offizielle Module für "
+"OpenStack-Projekte in einem OpenStack-Infrastruktursystem namens `Puppet "
+"OpenStack <https://wiki.openstack.org/wiki/Puppet>`_. Das "
+"Konfigurationsmanagement für Chef wird innerhalb von `OpenStack Chef Repo "
+"<https://opendev.org/openstack/openstack-chef-repo>`_ bereitgestellt. "
+"Weitere Konfigurationsmanagementsysteme sind Juju, Ansible und Salt. "
+"Außerdem ist PackStack ein Befehlszeilenprogramm für Red Hat Enterprise "
+"Linux und Derivate, das Puppet-Module verwendet, um eine schnelle "
+"Bereitstellung von OpenStack auf bestehenden Servern über eine SSH-"
+"Verbindung zu unterstützen."
 
 msgid ""
 "These tunnels use the regular routing tables on the host to route the "
@@ -12380,6 +12382,17 @@ msgstr ""
 "Datei ``/etc/nova/nova.conf`` wie folgt:"
 
 msgid ""
+"To discover how API requests should be structured, read the `OpenStack API "
+"Reference <https://docs.openstack.org/api-quick-start/index.html>`_. To chew "
+"through the responses using jq, see the `jq Manual <http://stedolan.github."
+"io/jq/manual/>`_."
+msgstr ""
+"Um herauszufinden, wie API-Anfragen strukturiert sein sollten, lesen Sie die "
+"`OpenStack API Referenz <https://docs.openstack.org/api-quick-start/index."
+"html>`_. Um die Antworten mit jq durchzukauen, lesen Sie bitte das `jq "
+"Handbuch <http://stedolan.github.io/jq/manual/>`_."
+
+msgid ""
 "To do this, generate a list of instance UUIDs that are hosted on the failed "
 "node by running the following query on the nova database:"
 msgstr ""
@@ -13110,7 +13123,6 @@ msgstr "Virtuelle Maschinen verwenden"
 msgid "User-Facing Operations"
 msgstr "Benutzerorientierte Operationen"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Username"
 msgstr "Benutzername"
 
@@ -13267,7 +13279,6 @@ msgstr ""
 "Betreiber mit dem Upgrade von nova-conductor fortfahren und die "
 "Versionssperre für nova-compute in ``nova.conf`` entfernen."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "VCPUs"
 msgstr "VCPUs"
 
@@ -13307,7 +13318,6 @@ msgstr ""
 "Schnittstelle kommen mit internen VLAN-Tags an und werden in umgekehrter "
 "Reihenfolge des oben beschriebenen Prozesses in externe Tags übersetzt:"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Value"
 msgstr "Wert"
 
@@ -13399,7 +13409,6 @@ msgstr ""
 "Instanzen auf allen Compute-Knoten ist. Der interne OpenStack-Verkehr (z.B. "
 "Speicher-Verkehr) läuft nicht über den Cloud-Controller."
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Volumes"
 msgstr "Datenträger"
 
@@ -14237,7 +14246,6 @@ msgstr ""
 msgid "Working with Hardware"
 msgstr "Arbeiten mit Hardware"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "Working with Roadmaps"
 msgstr "Arbeiten mit Plänen"
 
@@ -14870,6 +14878,13 @@ msgstr ""
 "bereitgestellten Netzwerkfunktionalität bietet."
 
 msgid ""
+"`Identity service (keystone) upgrades <https://docs.openstack.org/keystone/"
+"latest/admin/upgrading.html>`_"
+msgstr ""
+"`Aktualisierungen des Identitätsdienstes (Keystone) <https://docs.openstack."
+"org/keystone/latest/admin/upgrading.html>`_"
+
+msgid ""
 "`Image service (glance) database upgrades <https://docs.openstack.org/glance/"
 "latest/admin/db.html>`_"
 msgstr ""
@@ -14907,6 +14922,10 @@ msgstr ""
 "`Object Storage Service (swift) Upgrades <https://docs.openstack.org/swift/"
 "latest/overview_policies.html#upgrading-and-confirming-functionality>`_"
 
+msgid "`OpenStack API Guide <https://docs.openstack.org/api-quick-start/>`_"
+msgstr ""
+"`OpenStack API Leitfaden <https://docs.openstack.org/api-quick-start/>`_"
+
 msgid ""
 "`OpenStack Administrator Guide <https://docs.openstack.org/admin-guide/>`_"
 msgstr ""
@@ -14921,6 +14940,26 @@ msgstr ""
 
 msgid "`OpenStack Cloud Computing Cookbook <https://openstackcookbook.com/>`_"
 msgstr "`OpenStack Cloud Computing Kochbuch <https://openstackcookbook.com/>`_"
+
+msgid ""
+"`OpenStack Compute Cells <https://docs.openstack.org/nova/latest/user/cells."
+"html>`_ are designed to allow running the cloud in a distributed fashion "
+"without having to use more complicated technologies, or be invasive to "
+"existing nova installations. Hosts in a cloud are partitioned into groups "
+"called *Cells*. Cells are configured in a tree. The top-level Cell (\"API "
+"cell\") has a host that runs the ``nova-api`` service, but no ``nova-"
+"compute`` services. The ``nova-compute`` runs in a child Cell. Each Cell has "
+"its own message queue and database service."
+msgstr ""
+"`OpenStack Compute-Zellen <https://docs.openstack.org/nova/latest/user/cells."
+"html>`_ sind so konzipiert, dass sie den verteilten Betrieb der Cloud "
+"ermöglichen, ohne kompliziertere Technologien einsetzen zu müssen oder in "
+"bestehende nova-Installationen einzugreifen. Hosts in einer Cloud werden in "
+"Gruppen unterteilt, die *Zellen* genannt werden. Die Zellen werden in einem "
+"Baum konfiguriert. Die oberste Zelle (\"API-Zelle\") hat einen Host, der den "
+"Dienst ``nova-api`` ausführt, aber keine ``nova-compute`` Dienste.  Der "
+"``nova-compute`` Service läuft in den Kinder Zellen. Jede Zelle hat ihre "
+"eigene Message Queue und Datenbank Service."
 
 msgid ""
 "`OpenStack Configuration Reference <https://docs.openstack.org/ocata/config-"
@@ -14995,6 +15034,13 @@ msgstr ""
 "`OpenStack in der Produktion: Eine Geschichte von 3 OpenStack Clouds "
 "<https://openstack-in-production.blogspot.de/2013/09/a-tale-of-3-openstack-"
 "clouds-50000.html>`_"
+
+msgid ""
+"`Orchestration service (heat) upgrades <https://docs.openstack.org/heat/"
+"latest/operating_guides/upgrades_guide.html>`_"
+msgstr ""
+"`Aktualisierung des Orchestrierungs-Dienst (Heat) <https://docs.openstack."
+"org/heat/latest/operating_guides/upgrades_guide.html>`_"
 
 msgid "`Pro Puppet (Apress) <https://www.apress.com/9781430230571>`_"
 msgstr "`Pro Puppe (Apress) <https://www.apress.com/9781430230571>`_"
@@ -15488,14 +15534,12 @@ msgstr "und die folgende Log-Anweisung in das ``__call__`` Verfahren:"
 msgid "check the share's status:"
 msgstr "den Status der Freigabe überprüfen:"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "cinder-api"
 msgstr "cinder-api"
 
 msgid "cinder-scheduler"
 msgstr "cinder-scheduler"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "cinder-volume"
 msgstr "cinder-volume"
 
@@ -15526,11 +15570,9 @@ msgstr "extra_specs"
 msgid "gigabytes"
 msgstr "Gigabyte"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "glance-api"
 msgstr "glance-api"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "glance-registry"
 msgstr "glance-registry"
 
@@ -15543,11 +15585,9 @@ msgstr "guest-fsfreeze"
 msgid "guest-fsfreeze-thaw"
 msgstr "gast-fsfsfreeze-thaw"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "horizon"
 msgstr "horizon"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "id"
 msgstr "ID"
 
@@ -15567,11 +15607,9 @@ msgstr "img_signature_hash_method passt zu'SHA-256' in Abschnitt 2 oben"
 msgid "img_signature_key_type matches 'RSA-PSS' in section 2 above"
 msgstr "img_signature_key_type entspricht 'RSA-PSS' in Abschnitt 2 oben"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "iptables"
 msgstr "iptables"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "libvirt"
 msgstr "libvirt"
 
@@ -15581,11 +15619,9 @@ msgstr "m1.large"
 msgid "m1.medium"
 msgstr "m1.medium"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "m1.small"
 msgstr "m1.small"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "m1.tiny"
 msgstr "m1.tiny"
 
@@ -15610,14 +15646,12 @@ msgstr "neutron-metadata-agent"
 msgid "neutron-openvswitch-agent"
 msgstr "neutron-openvswitch-agent"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/common/source/locale/common
 msgid "neutron-server"
 msgstr "neutron-server"
 
 msgid "nova-api"
 msgstr "nova-api"
 
-# auto translated by TM merge from project: openstack-manuals, version: master, DocId: doc/config-reference/locale/config-reference
 msgid "nova-compute"
 msgstr "nova-compute"
 
@@ -15670,7 +15704,6 @@ msgstr ""
 msgid "size (GB)"
 msgstr "Größe (GB)"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "snapshot"
 msgstr "Momentaufnahme"
 
@@ -15680,7 +15713,6 @@ msgstr "Schattenkopien"
 msgid "tcpdump"
 msgstr "tcpdump"
 
-# auto translated by TM merge from project: operations-guide, version: master_2016, DocId: doc/openstack-ops/locale/openstack-ops
 msgid "type"
 msgstr "Typ"
 
