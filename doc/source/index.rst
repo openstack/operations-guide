@@ -2,6 +2,16 @@
 OpenStack Operations Guide
 ==========================
 
+.. important::
+
+   The OpenStack Operations Guide was published in 2014, the last
+   partial update was in 2017.
+   Since then it has seen some minor updates to document newer
+   releases and fix broken links.
+
+   The guide thus might not apply anymore to current releases.
+
+
 Abstract
 ~~~~~~~~
 
