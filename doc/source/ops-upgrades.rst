@@ -154,12 +154,12 @@ For example:
 .. code-block:: ini
 
    [upgrade_levels]
-   compute=X+1
-   conductor=X+1
-   scheduler=X+1
+   compute=X
+   conductor=X
+   scheduler=X
 
 will keep the RPC version locked across the specified services to the
-RPC version used in X+1. As all instances of a particular service are
+RPC version used in X. As all instances of a particular service are
 upgraded to the newer version, the corresponding line can be removed
 from ``nova.conf``.
 
