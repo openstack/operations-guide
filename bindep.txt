@@ -5,7 +5,5 @@ gettext
 graphviz
 libjpeg-dev [platform:dpkg]
 libjpeg-turbo-devel [platform:rpm]
-python-dev [platform:dpkg]
-python-devel [platform:rpm]
 zlib-devel [platform:rpm]
 zlib1g-dev [platform:dpkg]
