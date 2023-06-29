@@ -68,7 +68,7 @@ a couple extra steps.
 
 The jobs are run using a tool called `tox`. You will need to install tox on
 your platform first following its `installation guide
-<https://tox.readthedocs.io/en/latest/install.html>`_.
+<https://tox.wiki/en/latest/installation.html>`_.
 
 You can then run the following to perform a local build with some tests:
 
