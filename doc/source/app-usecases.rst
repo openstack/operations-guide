@@ -184,4 +184,4 @@ Resources
    Infrastructure <http://cds.cern.ch/record/1457989/files/chep%202012%20CERN%20infrastructure%20final.pdf?version=1>`_
 
 -  `CERN Cloud Infrastructure User
-   Guide <http://information-technology.web.cern.ch/book/cern-private-cloud-user-guide>`_
+   Guide <https://clouddocs.web.cern.ch>`_
