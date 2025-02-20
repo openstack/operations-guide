@@ -3,11 +3,11 @@ Quotas
 ======
 
 To prevent system capacities from being exhausted without notification,
-you can set up :term:`quotas <quota>`. Quotas are operational limits. For example,
-the number of gigabytes allowed per tenant can be controlled to ensure that
-a single tenant cannot consume all of the disk space. Quotas are
-currently enforced at the tenant (or project) level, rather than the
-user level.
+you can set up :term:`quotas <quota>`. Quotas are operational limits.
+For example, the number of gigabytes allowed per tenant can be controlled
+to ensure thata single tenant cannot consume all of the disk space.
+Quotas are currently enforced at the tenant (or project) level, rather than
+the user level.
 
 .. warning::
 
