@@ -24,10 +24,10 @@ OpenStack packages and dependencies on your cloud.
 
 While it is important for an operator to be familiar with the steps
 involved in deploying OpenStack, we also strongly encourage you to
-evaluate `OpenStack deployment tools
-<https://docs.openstack.org/rocky/deploy/>`_
+evaluate `OpenStack Deployment Guides
+<https://docs.openstack.org/2025.1/deploy/>`_
 and configuration-management tools, such as :term:`Puppet` or
-:term:`Chef`, which can help automate this deployment process.
+Kolla Ansible, which can help automate this deployment process.
 
 In this guide, we assume that you have successfully deployed an
 OpenStack cloud and are able to perform basic operations

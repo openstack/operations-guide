@@ -12,14 +12,14 @@ A critical part of a cloud's scalability is the amount of effort that it
 takes to run your cloud. To minimize the operational cost of running
 your cloud, set up and use an automated deployment and configuration
 infrastructure with a configuration management system, such as :term:`Puppet`
-or :term:`Chef`. Combined, these systems greatly reduce manual effort and the
+or Kolla Ansible. Combined, these systems greatly reduce manual effort and the
 chance for operator error.
 
 This infrastructure includes systems to automatically install the
 operating system's initial configuration and later coordinate the
 configuration of all services automatically and centrally, which reduces
 both manual effort and the chance for error. Examples include Ansible,
-CFEngine, Chef, Puppet, and Salt. You can even use OpenStack to deploy
+CFEngine, Kolla Ansible, Puppet and Salt. You can even use OpenStack to deploy
 OpenStack, named TripleO (OpenStack On OpenStack).
 
 Automated deployment
