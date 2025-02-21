@@ -76,7 +76,7 @@ experience, such as Mirantis or Metacloud.
 
 If your preference is to build your own OpenStack expertise internally,
 a good way to kick-start that might be to attend or arrange a training
-session. The OpenStack Foundation has a `Training
+session. The OpenInfra Foundation has a `Training
 Marketplace <https://www.openstack.org/marketplace/training>`_ where you
 can look for nearby events. Also, the OpenStack community is `working to
 produce <https://wiki.openstack.org/wiki/Training-guides>`_ open source
@@ -139,15 +139,15 @@ Installation Tutorials and Guides
     automation, for multiple distributions based on a packaging system:
 
     -  `OpenStack Installation Tutorial for openSUSE and SUSE Linux Enterprise
-       <https://docs.openstack.org/ocata/install-guide-obs/>`_
+       <https://docs.openstack.org/install-guide/>`_
 
     -  `OpenStack Installation Tutorial for Red Hat Enterprise Linux and CentOS
-       <https://docs.openstack.org/ocata/install-guide-rdo/>`_
+       <https://docs.openstack.org/install-guide/>`_
 
     -  `OpenStack Installation Tutorial for Ubuntu
-       <https://docs.openstack.org/ocata/install-guide-ubuntu/>`_
+       <https://docs.openstack.org/install-guide/>`_
 
-`OpenStack Configuration Reference <https://docs.openstack.org/ocata/config-reference/>`_
+`OpenStack Configuration Reference <https://docs.openstack.org/2024.2/configuration/>`_
     Contains a reference listing of all configuration options for core
     and integrated OpenStack services by release version
 
@@ -176,7 +176,7 @@ Installation Tutorials and Guides
     OpenStack cloud with the OpenStack dashboard and OpenStack client
     commands
 
-`OpenStack Networking Guide <https://docs.openstack.org/ocata/networking-guide/>`_
+`OpenStack Networking Guide <https://docs.openstack.org/neutron/latest/admin/index.html>`_
     This guide targets OpenStack administrators seeking to deploy and
     manage OpenStack Networking (neutron).
 
@@ -402,7 +402,7 @@ Documentation Contributor
 Guide <https://docs.openstack.org/doc-contrib-guide/>`_.
 
 If you find a bug and can't fix it or aren't sure it's really a doc bug,
-log a bug in `
-Storyboard <https://storyboard.openstack.org/#!/project/openstack/operations-guide>`_. You can assign the bug to yourself if you know how to
+log a bug in `Storyboard <https://storyboard.openstack.org/#!/project/openstack/operations-guide>`__.
+You can assign the bug to yourself if you know how to
 fix it. Also, a member of the OpenStack operations-doc team can triage the doc
 bug.

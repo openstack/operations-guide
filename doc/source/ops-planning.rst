@@ -18,8 +18,9 @@ chance for operator error.
 This infrastructure includes systems to automatically install the
 operating system's initial configuration and later coordinate the
 configuration of all services automatically and centrally, which reduces
-both manual effort and the chance for error. Examples include Ansible,
-CFEngine, Kolla Ansible, Puppet and Salt. You can even use OpenStack to deploy
+both manual effort and the chance for error.
+Examples include OpenStack-Ansible, Kolla Ansible and Puppet.
+You can even use OpenStack to deploy
 OpenStack, named TripleO (OpenStack On OpenStack).
 
 Automated deployment
@@ -121,7 +122,7 @@ Option 3
 
    You may find that you can automate the partitioning itself. For
    example, MIT uses `Fully Automatic Installation
-   (FAI) <http://fai-project.org/>`_ to do the initial PXE-based
+   (FAI) <https://fai-project.org/>`_ to do the initial PXE-based
    partition and then install using a combination of min/max and
    percentage-based partitioning.
 
@@ -178,15 +179,13 @@ and configuration change propagation.
 
 These tools also make it possible to test and roll back changes, as they
 are fully repeatable. Conveniently, a large body of work has been done
-by the OpenStack community in this space. Puppet, a configuration
-management tool, even provides official modules for OpenStack projects
-in an OpenStack infrastructure system known as `Puppet
-OpenStack <https://wiki.openstack.org/wiki/Puppet>`_. Chef
-configuration management is provided within
-`OpenStack Chef Repo
-<https://opendev.org/openstack/openstack-chef-repo>`_. Additional
-configuration management systems include Juju, Ansible, and Salt. Also,
-PackStack is a command-line utility for Red Hat Enterprise Linux and
+by the OpenStack community in this space. Puppet or Ansible, a configuration
+management tools, even provides official modules for OpenStack projects
+in an OpenStack infrastructure system known as
+`Puppet OpenStack <https://docs.openstack.org/puppet-openstack-guide/latest/>`_,
+`OpenStack-Ansible <https://docs.openstack.org/project-deploy-guide/openstack-ansible/latest/>`_
+and `Kolla Ansible <https://docs.openstack.org/kolla-ansible/latest/>`_.
+Also, PackStack is a command-line utility for Red Hat Enterprise Linux and
 derivatives that uses Puppet modules to support rapid deployment of
 OpenStack on existing servers over an SSH connection.
 

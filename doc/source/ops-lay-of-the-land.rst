@@ -578,8 +578,8 @@ For example:
    | user_id                              | 7aaa9b5573ce441b98dae857a82ecc68                         |
    +--------------------------------------+----------------------------------------------------------+
 
-This output shows that an instance named ``devstack`` was created from
-an Ubuntu 12.04 image using a flavor of ``m1.small`` and is hosted on
+This output shows that an instance named ``instance-00000001`` was created from
+an ``cirros`` image using a flavor of ``m1.small`` and is hosted on
 the compute node ``c02.example.com``.
 
 Summary

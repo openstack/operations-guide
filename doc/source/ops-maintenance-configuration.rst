@@ -16,14 +16,8 @@ configuration options) in a version-controlled repository.
    not recommend a specific one. The most popular ones in the OpenStack
    community are:
 
-   * `Puppet <https://puppet.com/>`_, with available `OpenStack
-     Puppet modules <https://github.com/puppetlabs/puppetlabs-openstack>`_
-   * `Ansible <https://www.ansible.com/>`_, with `OpenStack Ansible
-     <https://github.com/openstack/openstack-ansible>`_
-   * `Chef <https://www.chef.io/chef/>`_, with available `OpenStack Chef
-     recipes <https://github.com/openstack/openstack-chef-repo>`_
-
-   Other newer configuration tools include `Juju <https://jujucharms.com/>`_
-   and `Salt <http://www.saltstack.com/>`_; and more mature configuration
-   management tools include `CFEngine <https://cfengine.com/>`_ and `Bcfg2
-   <http://bcfg2.org/>`_.
+   * `Kolla Ansible <https://docs.openstack.org/kolla-ansible/latest/>`_
+   * `Puppet <https://puppet.com/>`_, with available `Puppet OpenStack
+     <https://docs.openstack.org/puppet-openstack-guide/latest/>`_
+   * `Ansible <https://www.redhat.com/en/ansible-collaborative/>`_, with `OpenStack-Ansible
+     <https://docs.openstack.org/project-deploy-guide/openstack-ansible/latest/>`_
