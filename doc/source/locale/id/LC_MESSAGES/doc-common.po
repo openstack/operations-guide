@@ -4,9 +4,9 @@
 # suhartono <cloudsuhartono@gmail.com>, 2021. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: operations-guide 2013.2.1.dev1181\n"
+"Project-Id-Version: operations-guide 2013.2.1.dev1207\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-28 12:25+0000\n"
+"POT-Creation-Date: 2025-04-15 20:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,9 +16,6 @@ msgstr ""
 "Language: id\n"
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-
-msgid "(RADOS)"
-msgstr "(RADOS)"
 
 msgid ""
 "**CentOS, Fedora, and Red Hat Enterprise Linux:** https://www.rdoproject.org/"
@@ -66,13 +63,6 @@ msgid "A Block Storage node that runs the cinder-volume daemon."
 msgstr "Sebuah node Block Storage yang menjalankan daemon cinder-volume."
 
 msgid ""
-"A Block Storage volume plug-in that enables communication with the Xen "
-"Storage Manager API."
-msgstr ""
-"Sebuah Block Storage volume plug-in yang mengaktifkan komunikasi dengan Xen "
-"Storage Manager API."
-
-msgid ""
 "A Ceph component that communicates with external clients, checks data state "
 "and consistency, and performs quorum functions."
 msgstr ""
@@ -87,15 +77,6 @@ msgstr ""
 "Daftar Pencabutan Sertifikat (Certificate Cancellation List / CRL) dalam "
 "model PKI adalah daftar sertifikat yang telah dicabut. Entitas akhir yang "
 "mempresentasikan sertifikat ini tidak boleh dipercaya."
-
-msgid ""
-"A Compute API parameter that downloads changes to the requested item since "
-"your last request, instead of downloading a new, fresh set of data and "
-"comparing it against the old data."
-msgstr ""
-"Sebuah parameter API Compute yang mendownload perubahan pada item yang "
-"diminta sejak permintaan terakhir Anda, bukan men-download yang baru, "
-"melakukan penyegaran set data dan membandingkannya terhadap data lama."
 
 msgid ""
 "A Compute RabbitMQ message queue that remains active when the server "
@@ -362,9 +343,6 @@ msgstr ""
 "Sebuah proyek komunitas dapat diangkat ke status ini dan kemudian "
 "dipromosikan untuk sebuah proyek inti."
 
-msgid "A compute service that creates VPNs on a per-project basis."
-msgstr "Sebuah layanan komputasi yang menciptakan VPN pada basis per-proyek."
-
 msgid ""
 "A computing environment residing behind a firewall that delivers software, "
 "infrastructure and platform services to an enterprise."
@@ -409,13 +387,6 @@ msgid "A database engine supported by the Database service."
 msgstr "Sebuah mesin database yang didukung oleh layanan Database."
 
 msgid ""
-"A default role in the Compute RBAC system that can quarantine an instance in "
-"any project."
-msgstr ""
-"Peran standar dalam sistem Compute RBAC yang dapat melakukan karantina "
-"sebuah instance dalam setiap proyek."
-
-msgid ""
 "A device that moves data in the form of blocks. These device nodes interface "
 "the devices, such as hard disks, CD-ROM drives, flash drives, and other "
 "addressable regions of memory."
@@ -430,13 +401,6 @@ msgid ""
 msgstr ""
 "Sebuah layanan direktori, yang memungkinkan pengguna untuk login dengan user "
 "name dan password. Ini adalah sumber khas token otentikasi."
-
-msgid ""
-"A discrete OpenStack environment with dedicated API endpoints that typically "
-"shares only the Identity (keystone) with other regions."
-msgstr ""
-"Lingkungan OpenStack diskrit dengan dedicated API endpoint yang biasanya "
-"berbagi hanya Identity (keystone) dengan wilayah lain."
 
 msgid "A disk storage protocol tunneled within Ethernet."
 msgstr "Sebuah protokol penyimpanan disk terowongan (tunneled) dalam Ethernet."
@@ -551,14 +515,6 @@ msgstr ""
 "proyek."
 
 msgid ""
-"A group of interrelated web development techniques used on the client-side "
-"to create asynchronous web applications. Used extensively in horizon."
-msgstr ""
-"Sekelompok teknik pengembangan web saling terkait yang digunakan pada sisi "
-"klien untuk membuat aplikasi web asynchronous. Digunakan secara luas di "
-"horizon."
-
-msgid ""
 "A group of related button types within horizon. Buttons to start, stop, and "
 "suspend VMs are in one class. Buttons to associate and disassociate floating "
 "IP addresses are in another class, and so on."
@@ -574,21 +530,6 @@ msgid ""
 msgstr ""
 "Sekelompok pengguna; digunakan untuk mengisolasi akses ke sumber daya "
 "Compute. Istilah alternatif untuk sebuah proyek."
-
-msgid ""
-"A grouped release of projects related to OpenStack that came out in April "
-"2012, the fifth release of OpenStack. It included Compute (nova 2012.1), "
-"Object Storage (swift 1.4.8), Image (glance), Identity (keystone), and "
-"Dashboard (horizon). Essex is the code name for the fifth release of "
-"OpenStack. The design summit took place in Boston, Massachusetts, US and "
-"Essex is a nearby city."
-msgstr ""
-"Sebuah rilis dikelompokkan proyek yang terkait dengan OpenStack yang keluar "
-"pada bulan April 2012, rilis kelima OpenStack. Ini termasuk Hitung (nova "
-"2012.1), Object Storage (swift 1.4.8), Image (glance), Identity (keystone), "
-"dan Dashboard (horizon). Essex adalah nama kode untuk rilis kelima "
-"OpenStack. KTT desain berlangsung di Boston, Massachusetts, Amerika Serikat "
-"dan Essex adalah sebuah kota di dekatnya."
 
 msgid ""
 "A grouped release of projects related to OpenStack that came out in February "
@@ -642,13 +583,6 @@ msgstr ""
 "level) kinerja operasional akan terpenuhi selama periode persetujuan kontrak "
 "(contractual measurement). Sistem ketersediaan tinggi berusaha untuk "
 "meminimalkan downtime sistem dan kehilangan data."
-
-msgid ""
-"A horizon component that stores and tracks client session information. "
-"Implemented through the Django sessions framework."
-msgstr ""
-"Sebuah komponen horizon informasi sesi penyimpanan dan trek klien. "
-"Dilaksanakan melalui sesi kerangka Django."
 
 msgid ""
 "A hybrid cloud is a composition of two or more clouds (private, community or "
@@ -1013,13 +947,6 @@ msgstr ""
 "membuat cadangan data, atau sebagai \"gold\" image untuk server tambahan."
 
 msgid ""
-"A pre-made VM image that serves as a cloudpipe server. Essentially, OpenVPN "
-"running on Linux."
-msgstr ""
-"Sebuah image VM pre-made yang berfungsi sebagai server cloudpipe. Pada "
-"dasarnya, OpenVPN berjalan di Linux."
-
-msgid ""
 "A process that is created when a RPC call is executed; used to push the "
 "message to the topic exchange."
 msgstr ""
@@ -1058,12 +985,6 @@ msgstr ""
 "Commitee. Jika proyek cukup berhasil, itu mungkin diangkat ke proyek "
 "inkubasi dan kemudian ke proyek inti, atau mungkin digabungkan dengan batang "
 "kode utama (main code trunk)."
-
-msgid ""
-"A project that ports the shell script-based project named DevStack to Python."
-msgstr ""
-"Sebuah proyek yang port proyek berbasis shell script bernama DevStack untuk "
-"Python."
 
 msgid "A recommended architecture for an OpenStack cloud."
 msgstr "Sebuah arsitektur dianjurkan untuk cloud OpenStack."
@@ -1329,9 +1250,6 @@ msgstr ""
 "Sebuah ruang virtual tempat perangkat lunak baru atau yang belum teruji "
 "dapat dijalankan dengan aman."
 
-msgid "A web framework used extensively in horizon."
-msgstr "Sebuah kerangka web yang digunakan secara luas di horizon."
-
 msgid ""
 "A worker process that verifies the integrity of Object Storage objects, "
 "containers, and accounts. Auditors is the collective term for the Object "
@@ -1348,24 +1266,6 @@ msgstr ""
 "Sebuah wrapper digunakan oleh layanan Image yang berisi image VM dan "
 "metadata yang terkait, seperti keadaan mesin, ukuran disk OS, dan sebagainya."
 
-msgid "API endpoint"
-msgstr "API endpoint (endpoint API)"
-
-msgid "API extension"
-msgstr "API extension (ekstensi API)"
-
-msgid "API extension plug-in"
-msgstr "API ekstensi plug-in"
-
-msgid "API key"
-msgstr "API key"
-
-msgid "API server"
-msgstr "API server"
-
-msgid "API token"
-msgstr "API Token"
-
 msgid ""
 "API used to access OpenStack :term:`Object Storage <Object Storage service "
 "(swift)>`."
@@ -1380,9 +1280,6 @@ msgstr ""
 "API yang digunakan untuk mengakses OpenStack Networking. Memberikan sebuah "
 "arsitektur extensible untuk mengaktifkan pembuatan plug-in kustom."
 
-msgid "API version"
-msgstr "API version (versi API)"
-
 msgid "ATA over Ethernet (AoE)"
 msgstr "ATA over Ethernet (AoE)"
 
@@ -1394,16 +1291,6 @@ msgstr ""
 "AWS CloudFormation memungkinkan pengguna Amazon Web Services (AWS) untuk "
 "membuat dan mengelola koleksi sumber daya terkait. Layanan Orchestration "
 "mendukung format CloudFormation-kompatibel (CFN)."
-
-msgid "AWS CloudFormation template"
-msgstr "AWS CloudFormation template"
-
-msgid ""
-"Absolute limit on the amount of network traffic a Compute VM instance can "
-"send and receive."
-msgstr ""
-"Batas absolut pada jumlah lalu lintas jaringan instance Compute VM dapat "
-"mengirim dan menerima."
 
 msgid "Active Directory"
 msgstr "Active Directory"
@@ -1462,9 +1349,6 @@ msgstr "Istilah alternatif untuk image VM."
 msgid "Alternative term for a VM instance type."
 msgstr "Istilah alternatif untuk VM jenis instance (VM instance type)."
 
-msgid "Alternative term for a VM or guest."
-msgstr "Istilah alternatif untuk VM atau guest."
-
 msgid "Alternative term for a cloud controller node."
 msgstr "Istilah alternatif untuk cloud controller node."
 
@@ -1500,10 +1384,6 @@ msgstr ""
 
 msgid "Alternative term for an API token."
 msgstr "Istilah alternatif untuk token API."
-
-msgid "Alternative term for an Amazon EC2 access key. See EC2 access key."
-msgstr ""
-"Istilah alternatif untuk kunci akses Amazon EC2. Lihat tombol akses EC2."
 
 msgid "Alternative term for an Identity service catalog."
 msgstr "Istilah alternatif untuk katalog layanan Identity."
@@ -1579,13 +1459,6 @@ msgid ""
 msgstr ""
 "Volume penyimpanan Amazon EBS yang berisi image VM bootable, saat ini tidak "
 "didukung di OpenStack."
-
-msgid ""
-"An Amazon EC2 concept of an isolated area that is used for fault tolerance. "
-"Do not confuse with an OpenStack Compute zone or cell."
-msgstr ""
-"Konsep Amazon EC2 dari daerah terisolasi yang digunakan untuk toleransi "
-"kesalahan. Jangan rancu dengan zona OpenStack Compute atau sel."
 
 msgid ""
 "An HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP "
@@ -1668,12 +1541,6 @@ msgstr ""
 "titik. Misalnya, yahoo.com, usa.gov, harvard.edu, atau mail.yahoo.com. Juga, "
 "domain adalah suatu entitas atau wadah (container) dari semua informasi yang "
 "terkait DNS yang mengandung satu atau lebih catatan."
-
-msgid ""
-"An Identity service API access token that is associated with a specific "
-"project."
-msgstr ""
-"API access token layanan Identity yang berhubungan dengan proyek tertentu."
 
 msgid ""
 "An Identity service API endpoint that is associated with one or more "
@@ -2018,28 +1885,6 @@ msgstr ""
 msgid "An object within Object Storage that is larger than 5 GB."
 msgstr "Sebuah objek dalam Storage Object yang lebih besar dari 5GB."
 
-msgid ""
-"An official OpenStack service defined as core by DefCore Committee. "
-"Currently, consists of Block Storage service (cinder), Compute service "
-"(nova), Identity service (keystone), Image service (glance), Networking "
-"service (neutron), and Object Storage service (swift)."
-msgstr ""
-"Layanan OpenStack resmi didefinisikan sebagai inti oleh Komite DefCore. Saat "
-"ini, terdiri dari layanan Block Storage (cinder), Compute layanan (nova), "
-"layanan Identity (keystone), layanan Image (glance), layanan Networking "
-"(neutron), dan layanan Object Storage (swift)."
-
-msgid ""
-"An official OpenStack service defined as optional by DefCore Committee. "
-"Currently, consists of Dashboard (horizon), Telemetry service (Telemetry), "
-"Orchestration service (heat), Database service (trove), Bare Metal service "
-"(ironic), and so on."
-msgstr ""
-"Layanan OpenStack resmi didefinisikan sebagai opsional oleh DefCore "
-"Committee. Saat ini, terdiri dari Dashboard (horizon), layanan telemetri "
-"(Telemetry), layanan Orchestration (heat), layanan Database (trove), layanan "
-"Bare Metal (ironic), dan sebagainya."
-
 msgid "An open source LDAP server. Supported by both Compute and Identity."
 msgstr "Open source server LDAP.  Didukung oleh Compute dan Identity."
 
@@ -2053,13 +1898,6 @@ msgstr ""
 "Proyek komunitas open source dengan SUSE yang bertujuan untuk menyediakan "
 "semua layanan yang diperlukan untuk pengerahan (deploy) dengan cepat dan "
 "pengelolaan cloud."
-
-msgid ""
-"An operating system configuration management tool supporting OpenStack "
-"deployments."
-msgstr ""
-"Alat operasi manajemen konfigurasi sistem yang mendukung OpenStack "
-"pengerahan (deployment)."
 
 msgid ""
 "An operating system configuration-management tool supported by OpenStack."
@@ -2092,9 +1930,6 @@ msgid ""
 msgstr ""
 "Pilihan dalam layanan Image sehingga image dihapus setelah sejumlah detik "
 "standar (predefined) bukannya segera."
-
-msgid "Anvil"
-msgstr "Anvil (landasan)"
 
 msgid ""
 "Any business that provides Internet access to individuals or businesses."
@@ -2161,9 +1996,6 @@ msgstr "Apache License 2.0"
 msgid "Apache Web Server"
 msgstr "Apache Web Server (Server Web Apache)"
 
-msgid "Application Catalog service (murano)"
-msgstr "Layanan Application Catalog (murano)"
-
 msgid "Application Programming Interface (API)"
 msgstr "Application Programming Interface (API)"
 
@@ -2227,12 +2059,6 @@ msgstr "B"
 msgid "BMC (Baseboard Management Controller)"
 msgstr "BMC (Baseboard Management Controller)"
 
-msgid "Backup, Restore, and Disaster Recovery service (freezer)"
-msgstr "Backup, Restore, dan layanan Disaster Recovery (freezer)"
-
-msgid "Bare Metal service (ironic)"
-msgstr "Layanan Bare Metal (ironic)"
-
 msgid ""
 "Be sure to include the software and package versions that you are using, "
 "especially if you are using a development branch, such as, ``\"Kilo release"
@@ -2241,9 +2067,6 @@ msgstr ""
 "Pastikan untuk menyertakan perangkat lunak dan paket versi yang Anda "
 "gunakan, terutama jika Anda menggunakan cabang pengembangan, seperti, ``"
 "\"Kilo release\" vs git commit bc79c3ecc55929bac585d04a03475b72e06a3208``."
-
-msgid "Bell-LaPadula model"
-msgstr "Bell-LaPadula model"
 
 msgid ""
 "Belongs to a particular domain and is used to specify information about the "
@@ -2259,17 +2082,11 @@ msgstr ""
 "termasuk mail exchange (MX), yang merinci mail server untuk domain tertentu; "
 "dan nama server (NS) rekor, yang merinci server nama otoritatif untuk domain."
 
-msgid "Benchmark service (rally)"
-msgstr "Layanan Benchmark (rally)"
-
 msgid "Bexar"
 msgstr "Bexar"
 
 msgid "Block Storage API"
 msgstr "Block Storage API"
-
-msgid "Block Storage service (cinder)"
-msgstr "Layanan Block Storage (cinder)"
 
 msgid ""
 "Block storage that is simultaneously accessible by multiple clients, for "
@@ -2382,9 +2199,6 @@ msgstr ""
 "Cek untuk kehilangan replika atau benda yang salah dalam wadah (container) "
 "Obyek Storage ditentukan melalui query ke SQLite database back-end."
 
-msgid "Chef"
-msgstr "Chef"
-
 msgid ""
 "Choosing a host based on the existence of a GPU is currently unsupported in "
 "OpenStack."
@@ -2393,9 +2207,6 @@ msgstr ""
 
 msgid "CirrOS"
 msgstr "CirrOS"
-
-msgid "Cisco neutron plug-in"
-msgstr "Cisco neutron plug-in"
 
 msgid "Cloud Auditing Data Federation (CADF)"
 msgstr "Cloud Auditing Data Federation (CADF)"
@@ -2436,23 +2247,8 @@ msgstr ""
 "dan otomatisasi. Ini termasuk, kekuatan pemrosesan mentah (raw processing "
 "power)  , memori, jaringan, penyimpanan aplikasi berbasis cloud."
 
-msgid "Clustering service (senlin)"
-msgstr "Layanan Clustering (senlin)"
-
 msgid "Code name for :term:`Workflow service <Workflow service (mistral)>`."
 msgstr "Code name untuk :term:`Workflow service <Workflow service (mistral)>`."
-
-msgid ""
-"Code name for the :term:`Backup, Restore, and Disaster Recovery service "
-"<Backup, Restore, and Disaster Recovery service (freezer)>`."
-msgstr ""
-"Nama kode untuk :term:`Backup, Restore, and Disaster Recovery service "
-"<Backup, Restore, and Disaster Recovery service (freezer)>`."
-
-msgid ""
-"Code name for the :term:`Clustering service <Clustering service (senlin)>`."
-msgstr ""
-"Kode nama untuk :term:`Clustering service <Clustering service (senlin)>`."
 
 msgid ""
 "Code name for the :term:`Containers Infrastructure Management "
@@ -2463,11 +2259,6 @@ msgstr ""
 
 msgid "Code name for the :term:`DNS service <DNS service (designate)>`."
 msgstr "Nama kode untuk :term:`DNS service <DNS service (designate)>`."
-
-msgid ""
-"Code name for the :term:`Governance service <Governance service (congress)>`."
-msgstr ""
-"Nama kode untuk :term:`Governance service <Governance service (congress)>`."
 
 msgid ""
 "Code name for the :term:`Infrastructure Optimization service <Infrastructure "
@@ -2482,13 +2273,6 @@ msgid ""
 msgstr ""
 "Nama kode untuk :term:`Load-balancing service <Load-balancing service "
 "(octavia)>`."
-
-msgid ""
-"Code name for the :term:`NFV Orchestration service <NFV Orchestration "
-"service (tacker)>`"
-msgstr ""
-"Nama kode untuk :term:`NFV Orchestration service <NFV Orchestration service "
-"(tacker)>`"
 
 msgid ""
 "Code name for the :term:`Root Cause Analysis service <Root Cause Analysis "
@@ -2551,13 +2335,6 @@ msgstr ""
 "Systems service (manila)>`."
 
 msgid ""
-"Codename for the :term:`Application Catalog service <Application Catalog "
-"service (murano)>`."
-msgstr ""
-"Codename untuk :term:`Application Catalog service <Application Catalog "
-"service (murano)>`."
-
-msgid ""
 "Codename for the :term:`Bare Metal service <Bare Metal service (ironic)>`."
 msgstr ""
 "Codename untuk :term:`Bare Metal service <Bare Metal service (ironic)>`."
@@ -2572,13 +2349,6 @@ msgstr ""
 
 msgid "Codename for the :term:`Dashboard <Dashboard (horizon)>`."
 msgstr "Codename untuk :term:`Dashboard <Dashboard (horizon)>`."
-
-msgid ""
-"Codename for the :term:`Data Processing service<Data Processing service "
-"(sahara)>`."
-msgstr ""
-"Codename untuk :term:`Data Processing service<Data Processing service "
-"(sahara)>`."
 
 msgid "Codename for the :term:`Image service<Image service (glance)>`."
 msgstr "Codename untuk :term:`Image service<Image service (glance)>`."
@@ -2681,11 +2451,8 @@ msgstr ""
 "Komponen Identity yang menyediakan antarmuka aturan-manajemen dan mesin "
 "otorisasi berbasis aturan."
 
-msgid "Compute API (nova API)"
-msgstr "Compute API (nova API)"
-
-msgid "Compute service (nova)"
-msgstr "Layanan Compute (nova)"
+msgid "Compute API (Nova API)"
+msgstr "Compute API (Nova API)"
 
 msgid ""
 "Computer that provides explicit services to the client software running on "
@@ -2723,9 +2490,6 @@ msgid ""
 msgstr ""
 "Terhubung oleh konsumen langsung di RabbitMQ-Compute, pesan dapat dikonsumsi "
 "hanya dengan sambungan saat ini."
-
-msgid "Container Infrastructure Management service (magnum)"
-msgstr "Layanan Container Infrastructure Management (magnum)"
 
 msgid ""
 "Contains code, examples, and documentation that you use to create "
@@ -2794,15 +2558,6 @@ msgstr "Modul kustom yang memperpanjang beberapa API OpenStack inti."
 msgid "D"
 msgstr "D"
 
-msgid "DHCP agent"
-msgstr "Agen DHCP"
-
-msgid "DNS record"
-msgstr "DNS record"
-
-msgid "DNS service (designate)"
-msgstr "Layanan DNS (menunjuk)"
-
 msgid ""
 "Daemon that provides DNS, DHCP, BOOTP, and TFTP services for virtual "
 "networks."
@@ -2810,17 +2565,8 @@ msgstr ""
 "Daemon yang menyediakan DNS, DHCP, BOOTP, dan layanan TFTP untuk jaringan "
 "virtual."
 
-msgid "Dashboard (horizon)"
-msgstr "Dashboard (horizon)"
-
-msgid "Data Processing service (sahara)"
-msgstr "Layanan Data Processing (sahara)"
-
 msgid "Data centers available to many users over the Internet."
 msgstr "Pusat data tersedia untuk banyak pengguna melalui Internet."
-
-msgid "Data loss prevention (DLP) software"
-msgstr "Data loss prevention (DLP) software"
 
 msgid ""
 "Data that is only known to or accessible by a user and used to verify that "
@@ -2833,9 +2579,6 @@ msgstr ""
 "disajikan ke server selama otentikasi. Contohnya termasuk password, kunci "
 "rahasia (secret key), sertifikat digital (digital certificate), dan sidik "
 "jari (fingerprint)."
-
-msgid "Database service (trove)"
-msgstr "Layanan Database (trove)"
 
 msgid "Debian"
 msgstr "Debian"
@@ -2957,9 +2700,6 @@ msgstr "Dynamic HyperText Markup Language (DHTML)"
 msgid "E"
 msgstr "E"
 
-msgid "EBS boot volume"
-msgstr "EBS boot volume"
-
 msgid "EC2"
 msgstr "EC2"
 
@@ -2969,28 +2709,11 @@ msgstr "EC2 API"
 msgid "EC2 Compatibility API"
 msgstr "EC2 Compatibility API"
 
-msgid "EC2 access key"
-msgstr "EC2 access key"
-
-msgid "EC2 secret key"
-msgstr "EC2 secret key"
-
 msgid "ESXi"
 msgstr "ESXi"
 
 msgid "ETag"
 msgstr "ETag"
-
-msgid ""
-"Each OpenStack release has a code name. Code names ascend in alphabetical "
-"order: Austin, Bexar, Cactus, Diablo, Essex, Folsom, Grizzly, Havana, "
-"Icehouse, Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike, Queens, Rocky, "
-"Stein, Train, Ussuri, Victoria, and Wallaby."
-msgstr ""
-"Setiap rilis OpenStack memiliki nama kode. Nama kode naik dalam urutan "
-"abjad: Austin, Bexar, Cactus, Diablo, Essex, Folsom, Grizzly, Havana, "
-"Icehouse, Juno, Kilo, Liberty, Mitaka, Newton, Ocata, Pike, Queens, Rocky, "
-"Stein, Train, Ussuri, Victoria , dan Wallaby."
 
 msgid ""
 "Either a soft or hard reboot of a server. With a soft reboot, the operating "
@@ -3189,9 +2912,6 @@ msgstr "Glosarium"
 msgid "GlusterFS"
 msgstr "GlusterFS"
 
-msgid "Governance service (congress)"
-msgstr "Layanan Governance (congress)"
-
 msgid ""
 "Governs the ability of subjects to access objects, while enabling users to "
 "make policy decisions and assign security attributes. The traditional UNIX "
@@ -3263,9 +2983,6 @@ msgstr ""
 msgid "Host Bus Adapter (HBA)"
 msgstr "Host Bus Adapter (HBA)"
 
-msgid "Hyper-V"
-msgstr "Hyper-V"
-
 msgid "Hypertext Transfer Protocol (HTTP)"
 msgstr "Hypertext Transfer Protocol (HTTP)"
 
@@ -3275,14 +2992,8 @@ msgstr "Hypertext Transfer Protocol Secure (HTTPS)"
 msgid "I"
 msgstr "I"
 
-msgid "ID number"
-msgstr "ID number"
-
 msgid "IETF"
 msgstr "IETF"
-
-msgid "INI format"
-msgstr "Format INI"
 
 msgid "IO"
 msgstr "IO"
@@ -3354,15 +3065,6 @@ msgstr "Icehouse"
 msgid "Identity API"
 msgstr "Identity API"
 
-msgid "Identity back end"
-msgstr "Identity back end"
-
-msgid "Identity service (keystone)"
-msgstr "Layanan Identity (keystone)"
-
-msgid "Identity service API"
-msgstr "Identity service API"
-
 msgid ""
 "If Object Storage finds objects, containers, or accounts that are corrupt, "
 "they are placed in this state, are not replicated, cannot be read by "
@@ -3395,9 +3097,6 @@ msgstr ""
 
 msgid "Image API"
 msgstr "Image API"
-
-msgid "Image service (glance)"
-msgstr "Layanan Image (glance)"
 
 msgid ""
 "Impassable limits for guest VMs. Settings include total RAM size, maximum "
@@ -3507,9 +3206,6 @@ msgstr ""
 "Informasi yang hanya terdiri dari satu dan nol, yang merupakan bahasa "
 "komputer."
 
-msgid "Infrastructure Optimization service (watcher)"
-msgstr "Layanan Infrastructure Optimization (watcher)"
-
 msgid "Infrastructure-as-a-Service (IaaS)"
 msgstr "Infrastructure-as-a-Service (IaaS)"
 
@@ -3553,9 +3249,6 @@ msgstr "Internet Service Provider (ISP)"
 msgid "Internet Small Computer System Interface (iSCSI)"
 msgstr "Internet Small Computer System Interface (iSCSI)"
 
-msgid "Internet protocol (IP)"
-msgstr "Internet protocol (IP)"
-
 msgid "J"
 msgstr "J"
 
@@ -3577,9 +3270,6 @@ msgstr "K"
 msgid "Kerberos"
 msgstr "Kerberos"
 
-msgid "Key Manager service (barbican)"
-msgstr "Layanan Key Manager (barbican)"
-
 msgid "Kickstart"
 msgstr "Kickstart"
 
@@ -3599,18 +3289,6 @@ msgstr ""
 msgid "Launchpad"
 msgstr "Launchpad"
 
-msgid "Layer-2 (L2) agent"
-msgstr "Layer-2 (L2) agent"
-
-msgid "Layer-2 network"
-msgstr "Layer-2 network (jaringan lapisan-2)"
-
-msgid "Layer-3 (L3) agent"
-msgstr "Layer-3 (L3) agent"
-
-msgid "Layer-3 network"
-msgstr "Layer-3 network (jaringan lapisan-3)"
-
 msgid "Liberty"
 msgstr "Liberty"
 
@@ -3619,15 +3297,6 @@ msgstr "Lightweight Directory Access Protocol (LDAP)"
 
 msgid "Linux"
 msgstr "Linux"
-
-msgid "Linux Bridge neutron plug-in"
-msgstr "Linux Bridge neutron plug-in"
-
-msgid "Linux bridge"
-msgstr "Linux bridge (jembatan Linux)"
-
-msgid "Linux containers (LXC)"
-msgstr "Linux containers (LXC)"
 
 msgid ""
 "Linux kernel feature that provides independent virtual networking instances "
@@ -3657,9 +3326,6 @@ msgstr ""
 
 msgid "Load-Balancer-as-a-Service (LBaaS)"
 msgstr "Load-Balancer-as-a-Service (LBaaS)"
-
-msgid "Load-balancing service (octavia)"
-msgstr "Layanan Load Balancing (octavia)"
 
 msgid "Logical Volume Manager (LVM)"
 msgstr "Logical Volume Manager (LVM)"
@@ -3710,13 +3376,6 @@ msgstr ""
 "1500 byte untuk jaringan Ethernet."
 
 msgid ""
-"Mechanism for highly available multi-host routing when using OpenStack "
-"Networking (neutron)."
-msgstr ""
-"Mekanisme untuk routing multi-host yang sangat tersedia ketika menggunakan "
-"OpenStack Networking (neutron)."
-
-msgid ""
 "Mechanism in IP networks to detect end-to-end MTU and adjust packet size "
 "accordingly."
 msgstr ""
@@ -3731,13 +3390,6 @@ msgstr ""
 "ke penyimpanan persisten."
 
 msgid ""
-"Message queue software supported by OpenStack. An alternative to RabbitMQ. "
-"Also spelled 0MQ."
-msgstr ""
-"Message queue software supported by OpenStack. An alternative to RabbitMQ. "
-"Also spelled 0MQ."
-
-msgid ""
 "Message queue software supported by OpenStack; an alternative to RabbitMQ."
 msgstr ""
 "Software pesan antrian didukung oleh OpenStack; alternatif untuk RabbitMQ."
@@ -3749,14 +3401,8 @@ msgstr ""
 "Antrian pesan yang dihapus ketika layanan restart. datanya tidak ditulis ke "
 "penyimpanan persisten."
 
-msgid "Message service (zaqar)"
-msgstr "Layanan Message (zaqar)"
-
 msgid "Meta-Data Server (MDS)"
 msgstr "Meta-Data Server (MDS)"
-
-msgid "Metadata agent"
-msgstr "Agen Metadata"
 
 msgid ""
 "Method of keeping a clock for a host or node correct via communication with "
@@ -3775,36 +3421,17 @@ msgstr ""
 msgid "Mitaka"
 msgstr "Mitaka"
 
-msgid "Modular Layer 2 (ML2) neutron plug-in"
-msgstr "Modular Layer 2 (ML2) neutron plug-in"
-
-msgid ""
-"Modular system that allows the underlying message queue software of Compute "
-"to be changed. For example, from RabbitMQ to ZeroMQ or Qpid."
-msgstr ""
-"Sistem modular yang memungkinkan perangkat lunak antrian pesan yang "
-"mendasari Compute harus diubah. Misalnya, dari RabbitMQ ke ZeroMQ atau Qpid."
-
 msgid "Monitor (LBaaS)"
 msgstr "Monitor (LBaaS)"
 
 msgid "Monitor (Mon)"
 msgstr "Monitor (Mon)"
 
-msgid "Monitoring (monasca)"
-msgstr "Monitoring (monasca)"
-
 msgid "N"
 msgstr "N"
 
-msgid "NFV Orchestration service (tacker)"
-msgstr "Layanan NFV Orchestration (tacker)"
-
 msgid "Nebula"
 msgstr "Nebula"
-
-msgid "NetApp volume driver"
-msgstr "NetApp volume driver"
 
 msgid "Network Address Translation (NAT)"
 msgstr "Network Address Translation (NAT)"
@@ -3827,18 +3454,8 @@ msgstr ""
 "(selatan), atau lalu lintas ke dalam cloud (selatan) dan keluar dari cloud "
 "(utara). Lihat juga lalu lintas timur-barat."
 
-msgid ""
-"Network traffic between servers in the same cloud or data center. See also "
-"north-south traffic."
-msgstr ""
-"Lalu lintas jaringan antara server di awan yang sama atau datacenter. Lihat "
-"juga lalu lintas utara-selatan."
-
 msgid "Networking API (Neutron API)"
 msgstr "Networking API (Neutron API)"
-
-msgid "Networking service (neutron)"
-msgstr "Layanan Networking (neutron)"
 
 msgid ""
 "New users are assigned to this project if no project is specified when a "
@@ -3849,9 +3466,6 @@ msgstr ""
 
 msgid "Newton"
 msgstr "Newton"
-
-msgid "Nexenta volume driver"
-msgstr "Nexenta volume driver"
 
 msgid "Nginx"
 msgstr "Nginx"
@@ -3890,9 +3504,6 @@ msgid ""
 msgstr ""
 "Object Storage middleware yang di upload (posting) image melalui formulir di "
 "halaman web."
-
-msgid "Object Storage service (swift)"
-msgstr "Layanan Object Storage (swift)"
 
 msgid "Ocata"
 msgstr "Ocata"
@@ -3959,9 +3570,6 @@ msgstr ""
 "Salah satu peran default di sistem Compute RBAC. Melakukan hibah (grant) "
 "akses sistem yang lengkap."
 
-msgid "One of the hypervisors supported by OpenStack."
-msgstr "Salah satu hypervisors didukung oleh OpenStack."
-
 msgid "One of the supported response formats in OpenStack."
 msgstr "Salah satu format respon didukung dalam OpenStack."
 
@@ -3988,9 +3596,6 @@ msgstr ""
 msgid "Open vSwitch"
 msgstr "Open vSwitch"
 
-msgid "Open vSwitch (OVS) agent"
-msgstr "Open vSwitch (OVS) agent"
-
 msgid ""
 "Open vSwitch is a production quality, multilayer virtual switch licensed "
 "under the open source Apache 2.0 license. It is designed to enable massive "
@@ -4003,9 +3608,6 @@ msgstr ""
 "untuk memungkinkan otomatisasi jaringan besar melalui ekstensi program, "
 "sementara masih mendukung antarmuka manajemen standar dan protokol (misalnya "
 "NetFlow, sFlow, SPAN, RSPAN, CLI, LACP, 802.1ag)."
-
-msgid "Open vSwitch neutron plug-in"
-msgstr "Open vSwitch neutron plug-in"
 
 msgid "OpenDev"
 msgstr "OpenDev"
@@ -4058,9 +3660,6 @@ msgid ""
 "OpenStack Networking agent that provides metadata services for instances."
 msgstr ""
 "Agen OpenStack Networking yang menyediakan layanan metadata untuk instance."
-
-msgid "OpenStack code name"
-msgstr "OpenStack code name"
 
 msgid "OpenStack distribution packages"
 msgstr "Paket distribusi OpenStack"
@@ -4160,20 +3759,11 @@ msgstr ""
 "sertifikat digital, dan enkripsi data."
 
 msgid ""
-"OpenStack-on-OpenStack program. The code name for the OpenStack Deployment "
-"program."
-msgstr ""
-"Program OpenStack-on-OpenStack. Nama kode untuk program OpenStack Deployment."
-
-msgid ""
 "Opens all objects for an object server and verifies the MD5 hash, size, and "
 "metadata for each object."
 msgstr ""
 "Membuka semua objek untuk server objek dan memverifikasi MD5 hash, ukuran, "
 "dan metadata untuk setiap objek."
-
-msgid "Orchestration service (heat)"
-msgstr "Layanan Orchestration (heat)"
 
 msgid ""
 "Organizes and stores objects in Object Storage. Similar to the concept of a "
@@ -4189,9 +3779,6 @@ msgstr "Oslo"
 
 msgid "P"
 msgstr "P"
-
-msgid "PCI passthrough"
-msgstr "PCI passthrough"
 
 msgid ""
 "Pages that use HTML, JavaScript, and Cascading Style Sheets to enable users "
@@ -4222,13 +3809,6 @@ msgid ""
 msgstr ""
 "Bagian dari OpenStack :term:`Telemetry service <Telemetry service "
 "(telemetry)>`; menyediakan database indexer dan time-series."
-
-msgid ""
-"Part of the OpenStack :term:`Telemetry service <Telemetry service "
-"(telemetry)>`; provides event storage."
-msgstr ""
-"Bagian dari OpenStack :term:`Telemetry service <Telemetry service "
-"(telemetry)>`; menyediakan event storage."
 
 msgid ""
 "Passed to API requests and used by OpenStack to verify that the client is "
@@ -4433,9 +4013,6 @@ msgstr "Python"
 msgid "Q"
 msgstr "Q"
 
-msgid "QEMU Copy On Write 2 (QCOW2)"
-msgstr "QEMU Copy On Write 2 (QCOW2)"
-
 msgid ""
 "QEMU is a generic and open source machine emulator and virtualizer. One of "
 "the hypervisors supported by OpenStack, generally used for development "
@@ -4472,15 +4049,6 @@ msgstr "RAM overcommit"
 msgid "RESTful"
 msgstr "RESTful"
 
-msgid "RPC driver"
-msgstr "RPC driver"
-
-msgid "RXTX cap"
-msgstr "RXTX cap"
-
-msgid "RXTX quota"
-msgstr "RXTX quota"
-
 msgid "RabbitMQ"
 msgstr "RabbitMQ"
 
@@ -4515,9 +4083,6 @@ msgstr ""
 "Dirilis sebagai open source oleh Rackspace pada tahun 2010; dasar Object "
 "Storage."
 
-msgid "Reliable, Autonomic Distributed Object Store"
-msgstr "Reliable, Autonomic Distributed Object Store"
-
 msgid "Remote Procedure Call (RPC)"
 msgstr "Remote Procedure Call (RPC)"
 
@@ -4544,9 +4109,6 @@ msgstr "Rocky"
 msgid "Role Based Access Control (RBAC)"
 msgstr "Role Based Access Control (RBAC)"
 
-msgid "Root Cause Analysis (RCA) service (Vitrage)"
-msgstr "Layanan Root Cause Analysis (RCA) (vitrage)"
-
 msgid ""
 "Running fewer processes in the cloud and moving those processes to local "
 "places."
@@ -4554,15 +4116,8 @@ msgstr ""
 "Menjalankan lebih sedikit proses di cloud dan memindahkan proses tersebut ke "
 "tempat lokal."
 
-msgid "Runs automated tests against the core OpenStack API; written in Rails."
-msgstr ""
-"Menjalankan tes otomatis terhadap inti OpenStack API; ditulis dalam Rails."
-
 msgid "S"
 msgstr "S"
-
-msgid "SAML assertion"
-msgstr "SAML assertion"
 
 msgid ""
 "SDKs that provide a multi-cloud abstraction layer and include support for "
@@ -4604,9 +4159,6 @@ msgstr "SUSE Linux Enterprise Server (SLES)"
 msgid "Sandbox"
 msgstr "Sandbox"
 
-msgid "See API endpoint."
-msgstr "Lihat API endpoint."
-
 msgid "Service Function Chain (SFC)"
 msgstr "Service Function Chain (SFC)"
 
@@ -4629,9 +4181,6 @@ msgstr ""
 msgid "Shared File Systems API"
 msgstr "Shared File Systems API"
 
-msgid "Shared File Systems service (manila)"
-msgstr "Layanan Shared File Systems (manila)"
-
 msgid "Sheepdog"
 msgstr "Sheepdog"
 
@@ -4643,16 +4192,6 @@ msgstr "Simple Protocol for Independent Computing Environments (SPICE)"
 
 msgid "Single-root I/O Virtualization (SR-IOV)"
 msgstr "Single-root I/O Virtualization (SR-IOV)"
-
-msgid "SmokeStack"
-msgstr "SmokeStack"
-
-msgid ""
-"Soft limit on the amount of network traffic a Compute VM instance can send "
-"and receive."
-msgstr ""
-"Batas lunak pada jumlah lalu lintas jaringan instance VM Compute dapat "
-"mengirim dan menerima."
 
 msgid "Software Development Kit (SDK)"
 msgstr "Software Development Kit (SDK)"
@@ -4695,9 +4234,6 @@ msgid ""
 msgstr ""
 "Software yang berjalan pada host atau node dan menyediakan fitur dan fungsi "
 "dari switch jaringan berbasis hardware."
-
-msgid "Software-defined networking (SDN)"
-msgstr "Software-defined networking (SDN)"
 
 msgid "SolidFire Volume Driver"
 msgstr "SolidFire Volume Driver"
@@ -4790,9 +4326,6 @@ msgstr "Interaksi dukungan (support) dengan produk VMware di Compute."
 msgid "T"
 msgstr "T"
 
-msgid "Telemetry service (telemetry)"
-msgstr "Layanan Telemetry (telemetry)"
-
 msgid "TempAuth"
 msgstr "TempAuth"
 
@@ -4832,13 +4365,6 @@ msgstr ""
 "Istilah yang digunakan dalam arsitektur jaringan OSI untuk lapisan jaringan. "
 "Lapisan jaringan yang bertanggung jawab untuk forwarding paket termasuk rute "
 "dari satu node ke yang lain."
-
-msgid ""
-"The API used to access the OpenStack Identity service provided through "
-"keystone."
-msgstr ""
-"API yang digunakan untuk mengakses layanan OpenStack Identity disediakan "
-"melalui keystone."
 
 msgid "The Amazon commercial block storage product."
 msgstr "Amazon produk penyimpanan blok komersial."
@@ -5059,35 +4585,6 @@ msgid "The OpenStack IRC channel"
 msgstr "OpenStack IRC channel (saluran IRC OpenStack)"
 
 msgid ""
-"The OpenStack community lives in the #openstack IRC channel on the Freenode "
-"network. You can hang out, ask questions, or get immediate feedback for "
-"urgent and pressing issues. To install an IRC client or use a browser-based "
-"client, go to `https://webchat.freenode.net/ <https://webchat.freenode."
-"net>`_. You can also use `Colloquy <http://colloquy.info/>`_ (Mac OS X), "
-"`mIRC <http://www.mirc.com/>`_ (Windows), or XChat (Linux). When you are in "
-"the IRC channel and want to share code or command output, the generally "
-"accepted method is to use a Paste Bin. The OpenStack project has one at "
-"`Paste <http://paste.openstack.org>`_. Just paste your longer amounts of "
-"text or logs in the web form and you get a URL that you can paste into the "
-"channel. The OpenStack IRC channel is ``#openstack`` on ``irc.freenode."
-"net``. You can find a list of all OpenStack IRC channels on the `IRC page on "
-"the wiki <https://wiki.openstack.org/wiki/IRC>`_."
-msgstr ""
-"The OpenStack community lives in the #openstack IRC channel on the Freenode "
-"network. You can hang out, ask questions, or get immediate feedback for "
-"urgent and pressing issues. To install an IRC client or use a browser-based "
-"client, go to `https://webchat.freenode.net/ <https://webchat.freenode."
-"net>`_. You can also use `Colloquy <http://colloquy.info/>`_ (Mac OS X), "
-"`mIRC <http://www.mirc.com/>`_ (Windows), or XChat (Linux). When you are in "
-"the IRC channel and want to share code or command output, the generally "
-"accepted method is to use a Paste Bin. The OpenStack project has one at "
-"`Paste <http://paste.openstack.org>`_. Just paste your longer amounts of "
-"text or logs in the web form and you get a URL that you can paste into the "
-"channel. The OpenStack IRC channel is ``#openstack`` on ``irc.freenode."
-"net``. You can find a list of all OpenStack IRC channels on the `IRC page on "
-"the wiki <https://wiki.openstack.org/wiki/IRC>`_."
-
-msgid ""
 "The OpenStack community values your set up and testing efforts and wants "
 "your feedback. To log a bug, you must `sign up for a Launchpad account "
 "<https://launchpad.net/+login>`_. You can view existing bugs and report bugs "
@@ -5152,26 +4649,6 @@ msgstr ""
 "agnostic"
 
 msgid ""
-"The OpenStack service that implement services and libraries to provide on-"
-"demand, self-service access to Block Storage resources via abstraction and "
-"automation on top of other block storage devices."
-msgstr ""
-"Layanan OpenStack yang menerapkan layanan dan perpustakaan untuk menyediakan "
-"sumber on-demand , self-service akses ke Block Storage melalui abstraksi dan "
-"otomatisasi di atas perangkat penyimpanan blok lainnya."
-
-msgid ""
-"The OpenStack service that provide services and associated libraries to "
-"store, browse, share, distribute and manage bootable disk images, other data "
-"closely associated with initializing compute resources, and metadata "
-"definitions."
-msgstr ""
-"Layanan OpenStack yang menyediakan layanan dan perpustakaan terkait untuk "
-"menyimpan, menelusuri, membagikan, mendistribusikan dan mengelola image disk "
-"bootable, data lain yang terkait erat dengan inisialisasi sumber daya "
-"komputasi, dan definisi metadata."
-
-msgid ""
 "The OpenStack service that provides a multi-project, highly scalable, "
 "performant, fault-tolerant monitoring-as-a-service solution for metrics, "
 "complex event processing and logging. To build an extensible platform for "
@@ -5234,9 +4711,6 @@ msgstr ""
 "kabupaten di dekat tempat pertemuan puncak desain OpenStack. Pengecualian, "
 "yang disebut pengecualian Waldon, diberikan kepada elemen-elemen bendera "
 "negara yang terdengar sangat keren. Nama kode dipilih dengan suara populer."
-
-msgid "The Xen administrative API, which is supported by Compute."
-msgstr "Xen administrative API, yang didukung oleh Compute."
 
 msgid ""
 "The `OpenStack wiki <https://wiki.openstack.org/>`_ contains a broad range "
@@ -5697,13 +5171,6 @@ msgid "The number of replicas of the data in an Object Storage ring."
 msgstr "Jumlah replika data dalam cincin Object Storage."
 
 msgid ""
-"The open standard messaging protocol used by OpenStack components for intra-"
-"service communications, provided by RabbitMQ, Qpid, or ZeroMQ."
-msgstr ""
-"Protokol standar pesan terbuka yang digunakan oleh komponen OpenStack untuk "
-"komunikasi intra-service, yang disediakan oleh RabbitMQ, Qpid, vs ZeroMQ."
-
-msgid ""
 "The persistent data store used to save and retrieve information for a "
 "service, such as lists of Object Storage objects, current state of guest "
 "VMs, lists of user names, and so on. Also, the method that the Image service "
@@ -5887,15 +5354,6 @@ msgstr ""
 "otentikasi yang umum."
 
 msgid ""
-"The project that implements clustering services and libraries for the "
-"management of groups of homogeneous objects exposed by other OpenStack "
-"services."
-msgstr ""
-"Proyek yang mengimplementasikan layanan clustering dan perpustakaan untuk "
-"pengelolaan kelompok objek homogen yang dibuka oleh layanan OpenStack "
-"lainnya."
-
-msgid ""
 "The project that produces a secret storage and generation system capable of "
 "providing key management for services wishing to enable encryption features."
 msgstr ""
@@ -5914,25 +5372,6 @@ msgstr ""
 "berlaku umum."
 
 msgid ""
-"The project that provides Governance-as-a-Service across any collection of "
-"cloud services in order to monitor, enforce, and audit policy over dynamic "
-"infrastructure."
-msgstr ""
-"Proyek yang menyediakan Governance-as-a-Service di setiap koleksi layanan "
-"cloud untuk memantau, menegakkan, dan melakukan audit kebijakan atas "
-"infrastruktur yang dinamis."
-
-msgid ""
-"The project that provides a messaging service that affords a variety of "
-"distributed application patterns in an efficient, scalable and highly "
-"available manner, and to create and maintain associated Python libraries and "
-"documentation."
-msgstr ""
-"Proyek yang menyediakan layanan pesan yang memberi berbagai pola aplikasi "
-"terdistribusi secara efisien, terukur dan sangat tersedia, dan untuk membuat "
-"dan memelihara perpustakaan Python terkait dan dokumentasi."
-
-msgid ""
 "The project that provides an application catalog service so that users can "
 "compose and deploy composite environments on an application abstraction "
 "level while managing the application lifecycle."
@@ -5940,13 +5379,6 @@ msgstr ""
 "Proyek yang menyediakan layanan katalog aplikasi sehingga pengguna dapat "
 "menulis dan mengerahkan lingkungan komposit pada tingkat abstraksi aplikasi "
 "dan juga mengelola siklus hidup aplikasi (application lifecycle)."
-
-msgid ""
-"The project that provides integrated tooling for backing up, restoring, and "
-"recovering file systems, instances, or database backups."
-msgstr ""
-"Proyek yang menyediakan perkakas terintegrasi untuk pembuatan cadangan, "
-"penyimpanan, dan pemulihan sistem file, instance, atau backup basis data."
 
 msgid ""
 "The project which provides a set of services for provisioning, scaling, and "
@@ -6073,17 +5505,6 @@ msgstr ""
 "file sumber ``doc/common/glossary.rst`` melalui Proses kontribusi OpenStack."
 
 msgid ""
-"To provide feedback on documentation, join our IRC channel ``#openstack-"
-"doc`` on the Freenode IRC network, or `report a bug in Launchpad <https://"
-"bugs.launchpad.net/openstack/+filebug>`_ and choose the particular project "
-"that the documentation is a part of."
-msgstr ""
-"Untuk memberikan masukan tentang dokumentasi, ikuti saluran IRC ``#openstack-"
-"doc`` kami di jaringan Freenode IRC, atau `report a bug in Launchpad "
-"<https://bugs.launchpad.net/openstack/+filebug>`_ dan pilih proyek tertentu "
-"yang menjadi bagian dokumentasi."
-
-msgid ""
 "Tool used for maintaining Address Resolution Protocol packet filter rules in "
 "the Linux kernel firewall modules. Used along with iptables, ebtables, and "
 "ip6tables in Compute to provide firewall services for VMs."
@@ -6109,9 +5530,6 @@ msgstr "Torpedo"
 
 msgid "Train"
 msgstr "Train"
-
-msgid "TripleO"
-msgstr "TripleO"
 
 msgid ""
 "Two Project Team Gathering meetings in Denver were held at a hotel next to "
@@ -6302,13 +5720,6 @@ msgstr ""
 "Digunakan untuk menandai objek Object Storage yang telah dihapus; memastikan "
 "bahwa objek tidak diperbarui pada node lain setelah sudah dihapus."
 
-msgid ""
-"Used to restrict communications between hosts and/or nodes, implemented in "
-"Compute using iptables, arptables, ip6tables, and ebtables."
-msgstr ""
-"Digunakan untuk membatasi komunikasi antara host dan/atau node, dilaksanakan "
-"di Compute menggunakan iptables, arptables, ip6tables, dan iptables."
-
 msgid "Used to track segments of a large object within Object Storage."
 msgstr "Digunakan untuk melacak segmen dari objek besar dalam Object Storage."
 
@@ -6333,29 +5744,14 @@ msgstr "V"
 msgid "VIF UUID"
 msgstr "VIF UUID"
 
-msgid "VLAN manager"
-msgstr "VLAN manager"
-
-msgid "VLAN network"
-msgstr "VLAN network"
-
 msgid "VM Remote Control (VMRC)"
 msgstr "VM Remote Control (VMRC)"
-
-msgid "VM disk (VMDK)"
-msgstr "VM disk (VMDK)"
-
-msgid "VM image"
-msgstr "VM image"
 
 msgid "VM image container format supported by Image service."
 msgstr "VM format kontainer image yang didukung oleh layanan Image."
 
 msgid "VMware API"
 msgstr "VMware API"
-
-msgid "VMware NSX Neutron plug-in"
-msgstr "VMware NSX Neutron plug-in"
 
 msgid "VNC proxy"
 msgstr "VNC proxy"
@@ -6392,9 +5788,6 @@ msgstr ""
 "biasanya memerlukan antarmuka fisik yang mendasari terpisah yang "
 "didefinisikan oleh pemetaan jembatan (bridge mapping). Namun, jaringan datar "
 "dapat berisi beberapa subnet."
-
-msgid "VirtualBox"
-msgstr "VirtualBox"
 
 msgid ""
 "Virtualization API library used by OpenStack to interact with many of its "
@@ -6452,9 +5845,6 @@ msgstr ""
 "layanan scheduler untuk menerima pesan kemampuan dari node komputasi, "
 "volume, dan jaringan."
 
-msgid "Workflow service (mistral)"
-msgstr "Layanan Workflow (mistral)"
-
 msgid "X"
 msgstr "X"
 
@@ -6477,35 +5867,8 @@ msgstr ""
 msgid "XFS"
 msgstr "XFS"
 
-msgid "Xen"
-msgstr "Xen"
-
-msgid "Xen API"
-msgstr "Xen API"
-
-msgid "Xen Cloud Platform (XCP)"
-msgstr "Xen Cloud Platform (XCP)"
-
-msgid "Xen Storage Manager Volume Driver"
-msgstr "Xen Storage Manager Volume Driver"
-
-msgid ""
-"Xen is a hypervisor using a microkernel design, providing services that "
-"allow multiple computer operating systems to execute on the same computer "
-"hardware concurrently."
-msgstr ""
-"Xen hypervisor menggunakan desain microkernel, menyediakan layanan yang "
-"mengaktifkan beberapa sistem operasi komputer untuk mengeksekusi pada "
-"perangkat keras komputer yang sama secara bersamaan."
-
-msgid "XenServer"
-msgstr "XenServer"
-
 msgid "Z"
 msgstr "Z"
-
-msgid "ZeroMQ"
-msgstr "ZeroMQ"
 
 msgid "Zuul"
 msgstr "Zuul"
@@ -6703,1370 +6066,23 @@ msgstr ""
 "mengkhususkan diri dalam perubahan gating di beberapa sistem dan aplikasi "
 "sebelum mendarat patch tunggal."
 
-msgid "absolute limit"
-msgstr "absolute limit"
-
-msgid "access control list (ACL)"
-msgstr "access control list (ACL)"
-
-msgid "access key"
-msgstr "access key (kunci akses)"
-
-msgid "account"
-msgstr "account (akun)"
-
-msgid "account auditor"
-msgstr "account auditor (akun auditor)"
-
-msgid "account database"
-msgstr "account database (akun database)"
-
-msgid "account reaper"
-msgstr "account reaper (akun reaper)"
-
-msgid "account server"
-msgstr "account server (akun server)"
-
-msgid "account service"
-msgstr "account service (akun layanan)"
-
-msgid "accounting"
-msgstr "accounting (akuntansi)"
-
-msgid "active/active configuration"
-msgstr "active/active configuration (konfigurasi aktif/aktif)"
-
-msgid "active/passive configuration"
-msgstr "active/passive configuration (konfigurasi pasif/aktif)"
-
-msgid "address pool"
-msgstr "address pool (kolam alamat)"
-
-msgid "admin API"
-msgstr "admin API "
-
-msgid "admin server"
-msgstr "admin server"
-
-msgid "administrator"
-msgstr "administrator"
-
-msgid "alert"
-msgstr "alert (peringatan)"
-
-msgid "allocate"
-msgstr "allocate (alokasi)"
-
-msgid "aodh"
-msgstr "aodh"
-
-msgid "applet"
-msgstr "applet"
-
-msgid "application server"
-msgstr "application server"
-
 msgid "arptables"
 msgstr "arptables"
-
-msgid "associate"
-msgstr "associate"
-
-msgid "attach"
-msgstr "attach (menghubungkan/melekatkan)"
-
-msgid "attachment (network)"
-msgstr "attachment (network)"
-
-msgid "auditing"
-msgstr "auditing"
-
-msgid "auditor"
-msgstr "auditor"
-
-msgid "auth node"
-msgstr "auth node"
-
-msgid "authentication"
-msgstr "authentication (otentikasi)"
-
-msgid "authentication token"
-msgstr "authentication token"
-
-msgid "authorization"
-msgstr "authorization (otorisasi)"
-
-msgid "authorization node"
-msgstr "authorization node"
-
-msgid "auto declare"
-msgstr "auto declare"
-
-msgid "availability zone"
-msgstr "Zona ketersediaan"
-
-msgid "back end"
-msgstr "back end"
-
-msgid "back-end catalog"
-msgstr "back-end catalog"
-
-msgid "back-end store"
-msgstr "back-end store"
-
-msgid "bandwidth"
-msgstr "bandwidth"
-
-msgid "barbican"
-msgstr "barbican"
-
-msgid "bare"
-msgstr "bare"
-
-msgid "base image"
-msgstr "base image"
-
-msgid "binary"
-msgstr "binary"
-
-msgid "bit"
-msgstr "bit"
-
-msgid "bits per second (BPS)"
-msgstr "bits per second (BPS)"
-
-msgid "block device"
-msgstr "block device (perangkat blok)"
-
-msgid "block migration"
-msgstr "block migration"
-
-msgid "bootable disk image"
-msgstr "bootable disk image"
-
-msgid "browser"
-msgstr "browser"
-
-msgid "builder file"
-msgstr "builder file"
-
-msgid "bursting"
-msgstr "bursting"
-
-msgid "button class"
-msgstr "button class"
-
-msgid "byte"
-msgstr "byte"
-
-msgid "cache pruner"
-msgstr "cache pruner"
-
-msgid "capability"
-msgstr "capability"
-
-msgid "capacity cache"
-msgstr "capacity cache"
-
-msgid "capacity updater"
-msgstr "capacity updater (kapasitas updater)"
-
-msgid "catalog"
-msgstr "catalog"
-
-msgid "catalog service"
-msgstr "catalog service"
-
-msgid "ceilometer"
-msgstr "ceilometer"
-
-msgid "cell"
-msgstr "cell (sel)"
-
-msgid "cell forwarding"
-msgstr "cell forwarding"
-
-msgid "cell manager"
-msgstr "cell manager"
-
-msgid "certificate authority (CA)"
-msgstr "certificate authority (CA)"
-
-msgid "chance scheduler"
-msgstr "chance scheduler"
-
-msgid "changes since"
-msgstr "changes since"
-
-msgid "child cell"
-msgstr "child cell"
-
-msgid "cinder"
-msgstr "cinder"
-
-msgid "cloud architect"
-msgstr "cloud architect"
-
-msgid "cloud computing"
-msgstr "cloud computing"
-
-msgid "cloud computing infrastructure"
-msgstr "infrastruktur komputasi awan"
-
-msgid "cloud computing platform software"
-msgstr "perangkat lunak platform komputasi awan"
-
-msgid "cloud computing service architecture"
-msgstr "arsitektur layanan komputasi awan"
-
-msgid "cloud controller"
-msgstr "cloud controller"
-
-msgid "cloud controller node"
-msgstr "cloud controller node"
-
-msgid "cloud technology"
-msgstr "teknologi cloud"
-
-msgid "cloud-init"
-msgstr "cloud-init"
-
-msgid "cloudadmin"
-msgstr "cloudadmin"
-
-msgid "cloudpipe"
-msgstr "cloudpipe"
-
-msgid "cloudpipe image"
-msgstr "cloudpipe image"
-
-msgid "command filter"
-msgstr "command filter"
-
-msgid "community project"
-msgstr "community project"
-
-msgid "compression"
-msgstr "compression"
-
-msgid "compute controller"
-msgstr "compute controller"
-
-msgid "compute host"
-msgstr "compute host"
-
-msgid "compute node"
-msgstr "compute node"
-
-msgid "compute worker"
-msgstr "compute worker"
-
-msgid "concatenated object"
-msgstr "concatenated object"
-
-msgid "conductor"
-msgstr "conductor"
-
-msgid "congress"
-msgstr "congress"
-
-msgid "consistency window"
-msgstr "consistency window"
-
-msgid "console log"
-msgstr "console log"
-
-msgid "container"
-msgstr "container"
-
-msgid "container auditor"
-msgstr "container auditor"
-
-msgid "container database"
-msgstr "container database"
-
-msgid "container format"
-msgstr "container format"
-
-msgid "container server"
-msgstr "container server"
-
-msgid "container service"
-msgstr "container service"
-
-msgid "content delivery network (CDN)"
-msgstr "content delivery network (CDN)"
-
-msgid "continuous delivery"
-msgstr "continuous delivery"
-
-msgid "continuous deployment"
-msgstr "continuous deployment"
-
-msgid "continuous integration"
-msgstr "continuous integration"
-
-msgid "controller node"
-msgstr "controller node"
-
-msgid "core API"
-msgstr "core API (inti API)"
-
-msgid "core service"
-msgstr "core service"
-
-msgid "cost"
-msgstr "cost"
-
-msgid "credentials"
-msgstr "credentials"
-
-msgid "current workload"
-msgstr "current workload"
-
-msgid "customer"
-msgstr "customer"
-
-msgid "customization module"
-msgstr "customization module"
-
-msgid "daemon"
-msgstr "daemon"
-
-msgid "data encryption"
-msgstr "data encryption"
-
-msgid "data store"
-msgstr "data store"
-
-msgid "database ID"
-msgstr "database ID"
-
-msgid "database replicator"
-msgstr "database replicator"
-
-msgid "deallocate"
-msgstr "deallocate"
-
-msgid "deduplication"
-msgstr "deduplication"
-
-msgid "default panel"
-msgstr "default panel"
-
-msgid "default project"
-msgstr "default project"
-
-msgid "default token"
-msgstr "default token"
-
-msgid "delayed delete"
-msgstr "delayed delete"
-
-msgid "delivery mode"
-msgstr "delivery mode"
-
-msgid "denial of service (DoS)"
-msgstr "denial of service (DoS)"
-
-msgid "deprecated auth"
-msgstr "deprecated auth"
-
-msgid "designate"
-msgstr "designate"
-
-msgid "developer"
-msgstr "developer"
-
-msgid "device ID"
-msgstr "device ID"
-
-msgid "device weight"
-msgstr "device weight"
-
-msgid "direct consumer"
-msgstr "direct consumer"
-
-msgid "direct exchange"
-msgstr "direct exchange"
-
-msgid "direct publisher"
-msgstr "direct publisher"
-
-msgid "disassociate"
-msgstr "disassociate"
-
-msgid "disk encryption"
-msgstr "disk encryption"
-
-msgid "disk format"
-msgstr "disk format"
-
-msgid "dispersion"
-msgstr "dispersion"
-
-msgid "distributed virtual router (DVR)"
-msgstr "distributed virtual router (DVR)"
-
-msgid "dnsmasq"
-msgstr "dnsmasq"
-
-msgid "domain"
-msgstr "domain"
-
-msgid "download"
-msgstr "download"
-
-msgid "durable exchange"
-msgstr "durable exchange"
-
-msgid "durable queue"
-msgstr "durable queue"
-
-msgid "east-west traffic"
-msgstr "east-west traffic"
-
-msgid "ebtables"
-msgstr "ebtables"
-
-msgid "edge computing"
-msgstr "edge computing"
-
-msgid "encapsulation"
-msgstr "encapsulation"
-
-msgid "encryption"
-msgstr "encryption"
-
-msgid "endpoint"
-msgstr "endpoint"
-
-msgid "endpoint registry"
-msgstr "endpoint registry"
-
-msgid "endpoint template"
-msgstr "endpoint template"
-
-msgid "enterprise cloud computing"
-msgstr "enterprise cloud computing"
-
-msgid "entity"
-msgstr "entity"
-
-msgid "ephemeral image"
-msgstr "ephemeral image"
-
-msgid "ephemeral volume"
-msgstr "ephemeral volume"
-
-msgid "euca2ools"
-msgstr "euca2ools"
-
-msgid "evacuate"
-msgstr "evacuate"
-
-msgid "exchange"
-msgstr "exchange"
-
-msgid "exchange type"
-msgstr "exchange type"
-
-msgid "exclusive queue"
-msgstr "exclusive queue"
-
-msgid "extended attributes (xattr)"
-msgstr "extended attributes (xattr)"
-
-msgid "extension"
-msgstr "extension"
-
-msgid "external network"
-msgstr "external network"
-
-msgid "extra specs"
-msgstr "extra specs"
-
-msgid "fan-out exchange"
-msgstr "fan-out exchange"
-
-msgid "federated identity"
-msgstr "federated identity"
-
-msgid "fill-first scheduler"
-msgstr "fill-first scheduler"
-
-msgid "filter"
-msgstr "Filter"
-
-msgid "firewall"
-msgstr "firewall"
-
-msgid "fixed IP address"
-msgstr "fixed IP address"
-
-msgid "flat mode injection"
-msgstr "flat mode injection"
-
-msgid "flat network"
-msgstr "flat network (jaringan datar)"
-
-msgid "flavor"
-msgstr "Flavor"
-
-msgid "flavor ID"
-msgstr "Flavor ID (ID flavor)"
-
-msgid "floating IP address"
-msgstr "Floating IP Address (alamat IP mengambang)"
-
-msgid "freezer"
-msgstr "freezer"
-
-msgid "front end"
-msgstr "front end"
-
-msgid "gateway"
-msgstr "gateway"
-
-msgid "generic receive offload (GRO)"
-msgstr "generic receive offload (GRO)"
-
-msgid "generic routing encapsulation (GRE)"
-msgstr "generic routing encapsulation (GRE)"
-
-msgid "glance"
-msgstr "glance"
-
-msgid "glance API server"
-msgstr "glance API server"
-
-msgid "glance registry"
-msgstr "glance registry"
-
-msgid "global endpoint template"
-msgstr "global endpoint template"
-
-msgid "gnocchi"
-msgstr "gnocchi"
-
-msgid "golden image"
-msgstr "golden image"
-
-msgid "guest OS"
-msgstr "guest OS"
-
-msgid "handover"
-msgstr "handover"
-
-msgid "hard reboot"
-msgstr "hard reboot"
-
-msgid "health monitor"
-msgstr "health monitor"
-
-msgid "heat"
-msgstr "heat"
-
-msgid "high availability (HA)"
-msgstr "high availability (HA)"
-
-msgid "horizon"
-msgstr "horizon"
-
-msgid "horizon plug-in"
-msgstr "horizon plug-in"
-
-msgid "host"
-msgstr "host"
-
-msgid "host aggregate"
-msgstr "host aggregate"
-
-msgid "hybrid cloud"
-msgstr "hybrid cloud (awan hibrida)"
-
-msgid "hybrid cloud computing"
-msgstr "hybrid cloud computing"
-
-msgid "hyperlink"
-msgstr "hyperlink"
-
-msgid "hypervisor"
-msgstr "hypervisor"
-
-msgid "hypervisor pool"
-msgstr "hypervisor pool"
 
 msgid "iSCSI Qualified Name (IQN)"
 msgstr "iSCSI Qualified Name (IQN)"
 
-msgid "identity provider"
-msgstr "identity provider"
-
-msgid "image"
-msgstr "image"
-
-msgid "image ID"
-msgstr "image ID"
-
-msgid "image UUID"
-msgstr "image UUID"
-
-msgid "image cache"
-msgstr "image cache"
-
-msgid "image membership"
-msgstr "image membership"
-
-msgid "image owner"
-msgstr "image owner"
-
-msgid "image registry"
-msgstr "image registry"
-
-msgid "image status"
-msgstr "image status"
-
-msgid "image store"
-msgstr "image store"
-
-msgid "incubated project"
-msgstr "incubated project"
-
-msgid "ingress filtering"
-msgstr "ingress filtering"
-
-msgid "injection"
-msgstr "injection"
-
-msgid "instance"
-msgstr "instance"
-
-msgid "instance ID"
-msgstr "instance ID"
-
-msgid "instance UUID"
-msgstr "instance UUID"
-
-msgid "instance state"
-msgstr "instance state"
-
-msgid "instance tunnels network"
-msgstr "instance tunnels network"
-
-msgid "instance type"
-msgstr "instance type"
-
-msgid "instance type ID"
-msgstr "instance type ID"
-
-msgid "interface"
-msgstr "interface"
-
-msgid "interface ID"
-msgstr "interface ID"
-
 msgid "ip6tables"
 msgstr "ip6tables"
-
-msgid "ipset"
-msgstr "ipset"
 
 msgid "iptables"
 msgstr "iptables"
 
-msgid "ironic"
-msgstr "ironic"
-
-msgid "itsec"
-msgstr "itsec"
-
-msgid "jumbo frame"
-msgstr "jumbo frame"
-
-msgid "kernel-based VM (KVM)"
-msgstr "kernel-based VM (KVM)"
-
-msgid "keystone"
-msgstr "keystone"
-
-msgid "large object"
-msgstr "large object"
-
 msgid "libvirt"
 msgstr "libvirt"
-
-msgid "live migration"
-msgstr "live migration"
-
-msgid "load balancer"
-msgstr "load balancer (penyeimbang beban)"
-
-msgid "load balancing"
-msgstr "load balancing"
-
-msgid "magnum"
-msgstr "magnum"
-
-msgid "management API"
-msgstr "management API"
-
-msgid "management network"
-msgstr "management network"
-
-msgid "manager"
-msgstr "manager"
-
-msgid "manifest"
-msgstr "manifest"
-
-msgid "manifest object"
-msgstr "manifest object"
-
-msgid "manila"
-msgstr "manila"
-
-msgid "manila-share"
-msgstr "manila-share"
-
-msgid "maximum transmission unit (MTU)"
-msgstr "maximum transmission unit (MTU)"
-
-msgid "mechanism driver"
-msgstr "mechanism driver"
-
-msgid "melange"
-msgstr "melange"
-
-msgid "membership"
-msgstr "membership"
-
-msgid "membership list"
-msgstr "membership list"
-
-msgid "memcached"
-msgstr "memcached"
-
-msgid "memory overcommit"
-msgstr "memory overcommit"
-
-msgid "message broker"
-msgstr "message broker"
-
-msgid "message bus"
-msgstr "message bus"
-
-msgid "message queue"
-msgstr "message queue"
-
-msgid "migration"
-msgstr "migration"
-
-msgid "mistral"
-msgstr "mistral"
-
-msgid "monasca"
-msgstr "monasca"
-
-msgid "multi-cloud SDKs"
-msgstr "multi-cloud SDKs"
-
-msgid "multi-cloud computing"
-msgstr "multi-cloud computing"
-
-msgid "multi-factor authentication"
-msgstr "multi-factor authentication"
-
-msgid "multi-host"
-msgstr "multi-host"
-
-msgid "multinic"
-msgstr "multinic"
-
-msgid "murano"
-msgstr "murano"
-
-msgid "netadmin"
-msgstr "netadmin"
-
-msgid "network"
-msgstr "network"
-
-msgid "network ID"
-msgstr "Network ID (ID Jaringan)"
-
-msgid "network UUID"
-msgstr "network UUID"
-
-msgid "network controller"
-msgstr "network controller"
-
-msgid "network manager"
-msgstr "network manager"
-
-msgid "network namespace"
-msgstr "network namespace"
-
-msgid "network node"
-msgstr "network node (simpul jaringan)"
-
-msgid "network segment"
-msgstr "network segment"
-
-msgid "network worker"
-msgstr "network worker"
-
-msgid "neutron"
-msgstr "neutron"
-
-msgid "neutron API"
-msgstr "neutron API"
-
-msgid "neutron manager"
-msgstr "neutron manager"
-
-msgid "neutron plug-in"
-msgstr "neutron plug-in"
-
-msgid "node"
-msgstr "node (simpul)"
-
-msgid "non-durable exchange"
-msgstr "non-durable exchange"
-
-msgid "non-durable queue"
-msgstr "non-durable queue"
-
-msgid "non-persistent volume"
-msgstr "non-persistent volume"
-
-msgid "north-south traffic"
-msgstr "north-south traffic"
-
-msgid "nova"
-msgstr "nova"
-
-msgid "nova-network"
-msgstr "nova-network"
-
-msgid "object"
-msgstr "object"
-
-msgid "object auditor"
-msgstr "object auditor"
-
-msgid "object expiration"
-msgstr "object expiration (objek kedaluwarsa)"
-
-msgid "object hash"
-msgstr "object hash"
-
-msgid "object path hash"
-msgstr "object path hash"
-
-msgid "object replicator"
-msgstr "object replicator"
-
-msgid "object server"
-msgstr "object server"
-
-msgid "object versioning"
-msgstr "object versioning"
 
 msgid "openSUSE"
 msgstr "openSUSE"
 
-msgid "operator"
-msgstr "operator"
-
-msgid "optional service"
-msgstr "optional service (layanan opsional)"
-
-msgid "orphan"
-msgstr "orphan"
-
-msgid "panko"
-msgstr "panko"
-
-msgid "parent cell"
-msgstr "parent cell"
-
-msgid "partition"
-msgstr "partition"
-
-msgid "partition index"
-msgstr "partition index"
-
-msgid "partition shift value"
-msgstr "partition shift value"
-
-msgid "path MTU discovery (PMTUD)"
-msgstr "path MTU discovery (PMTUD)"
-
-msgid "pause"
-msgstr "pause"
-
-msgid "persistent message"
-msgstr "persistent message"
-
-msgid "persistent volume"
-msgstr "persistent volume"
-
-msgid "personality file"
-msgstr "personality file"
-
-msgid "plug-in"
-msgstr "plug-in"
-
-msgid "policy service"
-msgstr "policy service"
-
-msgid "policy-based routing (PBR)"
-msgstr "policy-based routing (PBR)"
-
-msgid "pool"
-msgstr "pool (kolam besar)"
-
-msgid "pool member"
-msgstr "pool member"
-
-msgid "port"
-msgstr "port"
-
-msgid "port UUID"
-msgstr "port UUID"
-
-msgid "preseed"
-msgstr "preseed"
-
-msgid "private IP address"
-msgstr "private IP address (alamat IP private)"
-
-msgid "private cloud"
-msgstr "private cloud"
-
-msgid "private image"
-msgstr "private image"
-
-msgid "private network"
-msgstr "private network"
-
-msgid "project"
-msgstr "Project"
-
-msgid "project ID"
-msgstr "Project ID"
-
-msgid "project VPN"
-msgstr "project VPN"
-
-msgid "promiscuous mode"
-msgstr "promiscuous mode"
-
-msgid "protected property"
-msgstr "protected property"
-
-msgid "provider"
-msgstr "provider (penyedia)"
-
-msgid "proxy node"
-msgstr "proxy node"
-
-msgid "proxy server"
-msgstr "proxy server"
-
-msgid "public API"
-msgstr "public API"
-
-msgid "public IP address"
-msgstr "public IP address"
-
-msgid "public cloud"
-msgstr "public cloud"
-
-msgid "public image"
-msgstr "public image"
-
-msgid "public key authentication"
-msgstr "public key authentication"
-
-msgid "public network"
-msgstr "public network"
-
-msgid "quarantine"
-msgstr "quarantine"
-
-msgid "quota"
-msgstr "quota"
-
-msgid "radvd"
-msgstr "radvd"
-
-msgid "rally"
-msgstr "rally"
-
-msgid "rate limit"
-msgstr "rate limit"
-
-msgid "raw"
-msgstr "raw"
-
-msgid "rebalance"
-msgstr "rebalance"
-
-msgid "reboot"
-msgstr "reboot"
-
-msgid "rebuild"
-msgstr "Membangun kembali"
-
-msgid "record"
-msgstr "record"
-
-msgid "record ID"
-msgstr "record ID"
-
-msgid "reference architecture"
-msgstr "reference architecture"
-
-msgid "region"
-msgstr "region"
-
-msgid "registry"
-msgstr "registry"
-
-msgid "registry server"
-msgstr "registry server"
-
-msgid "replica"
-msgstr "replica (replika)"
-
-msgid "replica count"
-msgstr "replica count"
-
-msgid "replication"
-msgstr "replication (tiruan)"
-
-msgid "replicator"
-msgstr "replicator"
-
-msgid "request ID"
-msgstr "request ID"
-
-msgid "rescue image"
-msgstr "rescue image"
-
-msgid "resize"
-msgstr "resize (merubah ukuran)"
-
-msgid "ring"
-msgstr "ring"
-
-msgid "ring builder"
-msgstr "ring builder"
-
-msgid "role"
-msgstr "role"
-
-msgid "role ID"
-msgstr "role ID"
-
-msgid "rootwrap"
-msgstr "rootwrap"
-
-msgid "round-robin scheduler"
-msgstr "round-robin scheduler"
-
-msgid "router"
-msgstr "router"
-
-msgid "routing key"
-msgstr "routing key"
-
-msgid "rsync"
-msgstr "rsync"
-
-msgid "sahara"
-msgstr "sahara"
-
-msgid "scheduler manager"
-msgstr "scheduler manager"
-
-msgid "scoped token"
-msgstr "scoped token"
-
-msgid "scrubber"
-msgstr "scrubber"
-
-msgid "secret key"
-msgstr "secret key"
-
-msgid "secure boot"
-msgstr "secure boot"
-
-msgid "secure shell (SSH)"
-msgstr "secure shell (SSH)"
-
-msgid "security group"
-msgstr "security group (kelompok keamanan)"
-
-msgid "segmented object"
-msgstr "segmented object"
-
-msgid "self-service"
-msgstr "self-service"
-
-msgid "senlin"
-msgstr "senlin"
-
-msgid "server"
-msgstr "server"
-
-msgid "server UUID"
-msgstr "server UUID"
-
-msgid "server image"
-msgstr "server image"
-
-msgid "service"
-msgstr "service (layanan)"
-
-msgid "service ID"
-msgstr "service ID"
-
-msgid "service catalog"
-msgstr "service catalog"
-
-msgid "service project"
-msgstr "service project"
-
-msgid "service provider"
-msgstr "service provider"
-
-msgid "service registration"
-msgstr "service registration"
-
-msgid "service token"
-msgstr "service token"
-
-msgid "session back end"
-msgstr "session back end"
-
-msgid "session persistence"
-msgstr "session persistence (sesi persistensi)"
-
-msgid "session storage"
-msgstr "session storage"
-
-msgid "share"
-msgstr "share (berbagi)"
-
-msgid "share network"
-msgstr "share network (jaringan berbagi)"
-
-msgid "shared IP address"
-msgstr "shared IP address"
-
-msgid "shared IP group"
-msgstr "shared IP group"
-
-msgid "shared storage"
-msgstr "shared storage"
-
-msgid "snapshot"
-msgstr "snapshot"
-
-msgid "soft reboot"
-msgstr "soft reboot (reboot lembut)"
-
-msgid "solum"
-msgstr "solum"
-
-msgid "spread-first scheduler"
-msgstr "spread-first scheduler"
-
-msgid "stack"
-msgstr "stack"
-
-msgid "static IP address"
-msgstr "static IP address"
-
-msgid "storage back end"
-msgstr "storage back end"
-
-msgid "storage manager"
-msgstr "storage manager"
-
-msgid "storage manager back end"
-msgstr "storage manager back end"
-
-msgid "storage node"
-msgstr "storage node"
-
-msgid "storage services"
-msgstr "storage service (layanan penyimpanan)"
-
-msgid "strategy"
-msgstr "strategy"
-
-msgid "subdomain"
-msgstr "subdomain"
-
-msgid "subnet"
-msgstr "subnet"
-
-msgid "suspend"
-msgstr "suspend (menangguhkan)"
-
-msgid "swap"
-msgstr "swap"
-
-msgid "swift"
-msgstr "swift"
-
-msgid "swift All in One (SAIO)"
-msgstr "swift All in One (SAIO)"
-
-msgid "swift middleware"
-msgstr "swift middleware"
-
-msgid "swift proxy server"
-msgstr "swift proxy server"
-
-msgid "swift storage node"
-msgstr "swift storage node"
-
-msgid "sync point"
-msgstr "sync point"
-
-msgid "sysadmin"
-msgstr "sysadmin"
-
-msgid "system usage"
-msgstr "system usage"
-
-msgid "tacker"
-msgstr "tacker"
-
-msgid "tenant"
-msgstr "tenant (penyewa)"
-
-msgid "tenant ID"
-msgstr "tenant ID"
-
-msgid "tenant endpoint"
-msgstr "tenant endpoint"
-
-msgid "token"
-msgstr "token"
-
-msgid "token services"
-msgstr "token services"
-
-msgid "tombstone"
-msgstr "tombstone"
-
-msgid "topic publisher"
-msgstr "topic publisher"
-
-msgid "transaction ID"
-msgstr "transaction ID"
-
-msgid "transient"
-msgstr "transient"
-
-msgid "transient exchange"
-msgstr "transient exchange"
-
-msgid "transient message"
-msgstr "transient message"
-
-msgid "transient queue"
-msgstr "transient queue"
-
-msgid "trove"
-msgstr "trove"
-
-msgid "trusted platform module (TPM)"
-msgstr "trusted platform module (TPM)"
-
-msgid "unscoped token"
-msgstr "unscoped token"
-
-msgid "updater"
-msgstr "updater"
-
-msgid "user"
-msgstr "user (pengguna)"
-
-msgid "user data"
-msgstr "user data"
-
 msgid "vSphere"
 msgstr "vSphere"
-
-msgid "virtual IP address (VIP)"
-msgstr "virtual IP address (VIP)"
-
-msgid "virtual VLAN"
-msgstr "virtual VLAN"
-
-msgid "virtual machine (VM)"
-msgstr "virtual machine (VM)"
-
-msgid "virtual network"
-msgstr "virtual network"
-
-msgid "virtual networking"
-msgstr "virtual networking"
-
-msgid "virtual port"
-msgstr "virtual port"
-
-msgid "virtual private network (VPN)"
-msgstr "virtual private network (VPN)"
-
-msgid "virtual server"
-msgstr "virtual server"
-
-msgid "virtual switch (vSwitch)"
-msgstr "virtual switch (vSwitch)"
-
-msgid "volume"
-msgstr "volume"
-
-msgid "volume ID"
-msgstr "ID Volume"
-
-msgid "volume controller"
-msgstr "volume controller"
-
-msgid "volume driver"
-msgstr "volume driver"
-
-msgid "volume manager"
-msgstr "volume manager"
-
-msgid "volume node"
-msgstr "volume node"
-
-msgid "volume plug-in"
-msgstr "volume plug-in"
-
-msgid "volume worker"
-msgstr "volume worker"
-
-msgid "weight"
-msgstr "weight"
-
-msgid "weighted cost"
-msgstr "weighted cost"
-
-msgid "weighting"
-msgstr "weighting"
-
-msgid "worker"
-msgstr "worker"
-
-msgid "zaqar"
-msgstr "zaqar"
