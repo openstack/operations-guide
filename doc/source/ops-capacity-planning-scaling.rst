@@ -179,8 +179,8 @@ into two groups:
 -  Cells and regions, which segregate an entire cloud and result in
    running separate Compute deployments.
 
--  :term:`Availability Zones (AZ) <Availability Zones (AZ)>`
-   and host aggregates, which merely divide a single Compute deployment.
+-  :term:`Availability zones <availability zone>` and host aggregates,
+   which merely divide a single Compute deployment.
 
 :ref:`table_segregation_methods` provides a comparison view of each
 segregation method currently provided by OpenStack Compute.
