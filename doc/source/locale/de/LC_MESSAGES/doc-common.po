@@ -3,9 +3,9 @@
 # Robert Simai <robert.simai@suse.com>, 2019. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: operations-guide 2013.2.1.dev1207\n"
+"Project-Id-Version: operations-guide 2013.2.1.dev1209\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 20:32+0000\n"
+"POT-Creation-Date: 2025-05-02 22:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,6 +15,9 @@ msgstr ""
 "Language: de\n"
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "(RADOS)"
+msgstr "(RADOS)"
 
 msgid ""
 "**CentOS, Fedora, and Red Hat Enterprise Linux:** https://www.rdoproject.org/"
@@ -61,6 +64,13 @@ msgstr ""
 
 msgid "A Block Storage node that runs the cinder-volume daemon."
 msgstr "Ein Blockspeicherknoten, auf dem der Cinder-volume Dämon läuft."
+
+msgid ""
+"A Block Storage volume plug-in that enables communication with the Xen "
+"Storage Manager API."
+msgstr ""
+"Ein Plug-in für Blockspeichervolumen, das die Kommunikation mit der Xen "
+"Storage Manager API ermöglicht."
 
 msgid ""
 "A Ceph component that communicates with external clients, checks data state "
@@ -353,6 +363,9 @@ msgstr ""
 "Ein Gemeinschaftsprojekt kann zu diesem Status erhoben werden und wird dann "
 "zu einem Kernprojekt befördert."
 
+msgid "A compute service that creates VPNs on a per-project basis."
+msgstr "Ein Compute-Dienst, der VPNs auf Projektbasis erstellt."
+
 msgid ""
 "A configurable option within Object Storage to automatically delete objects "
 "after a specified amount of time has passed or a certain date is reached."
@@ -390,6 +403,13 @@ msgid "A database engine supported by the Database service."
 msgstr "Eine Datenbankmaschine, die vom Datenbankdienst unterstützt wird."
 
 msgid ""
+"A default role in the Compute RBAC system that can quarantine an instance in "
+"any project."
+msgstr ""
+"Eine Standardrolle im Compute-RBAC-System, die eine Instanz in jedem Projekt "
+"quarantieren kann."
+
+msgid ""
 "A device that moves data in the form of blocks. These device nodes interface "
 "the devices, such as hard disks, CD-ROM drives, flash drives, and other "
 "addressable regions of memory."
@@ -405,6 +425,13 @@ msgstr ""
 "Ein Verzeichnisdienst, der es Benutzern ermöglicht, sich mit einem "
 "Benutzernamen und Passwort anzumelden. Es ist eine typische Quelle von "
 "Authentifizierungs-Token."
+
+msgid ""
+"A discrete OpenStack environment with dedicated API endpoints that typically "
+"shares only the Identity (keystone) with other regions."
+msgstr ""
+"Eine diskrete OpenStack-Umgebung mit dedizierten API-Endpunkten, die "
+"typischerweise nur die Identity (Keystone) mit anderen Regionen teilt."
 
 msgid "A disk storage protocol tunneled within Ethernet."
 msgstr "Ein Plattenspeicherprotokoll, das durch Ethernet getunnelt ist."
@@ -521,6 +548,14 @@ msgstr ""
 "zugewiesen werden können."
 
 msgid ""
+"A group of interrelated web development techniques used on the client-side "
+"to create asynchronous web applications. Used extensively in horizon."
+msgstr ""
+"Eine Gruppe zusammenhängender Web-Entwicklungstechniken, die auf der Client-"
+"Seite verwendet werden, um asynchrone Web-Anwendungen zu erstellen. Benutzt "
+"weitgehend im Horizont."
+
+msgid ""
 "A group of related button types within horizon. Buttons to start, stop, and "
 "suspend VMs are in one class. Buttons to associate and disassociate floating "
 "IP addresses are in another class, and so on."
@@ -536,6 +571,21 @@ msgid ""
 msgstr ""
 "Eine Gruppe von Benutzern; Verwendet, um den Zugriff auf "
 "Berechnungsressourcen zu isolieren. Ein alternativer Begriff für ein Projekt."
+
+msgid ""
+"A grouped release of projects related to OpenStack that came out in April "
+"2012, the fifth release of OpenStack. It included Compute (nova 2012.1), "
+"Object Storage (swift 1.4.8), Image (glance), Identity (keystone), and "
+"Dashboard (horizon). Essex is the code name for the fifth release of "
+"OpenStack. The design summit took place in Boston, Massachusetts, US and "
+"Essex is a nearby city."
+msgstr ""
+"Eine gruppierte Version von Projekten im Zusammenhang mit OpenStack, die im "
+"April 2012 veröffentlicht wurde, die fünfte Version von OpenStack. Dazu "
+"gehörten Compute (nova 2012.1), Object Storage (swift 1.4.8), Image "
+"(glance), Identity (Keystone) und Dashboard (Horizon). Essex ist der "
+"Codename für die fünfte Version von OpenStack. Der Design-Gipfel fand in "
+"Boston, Massachusetts, USA statt, und Essex ist eine nahegelegene Stadt."
 
 msgid ""
 "A grouped release of projects related to OpenStack that came out in February "
@@ -590,6 +640,13 @@ msgstr ""
 "Messperiode ein vorgegebenes operatives Leistungsniveau erreicht wird. "
 "Hochverfügbarkeits-Systeme versuchen, Systemausfallzeiten und Datenverluste "
 "zu minimieren."
+
+msgid ""
+"A horizon component that stores and tracks client session information. "
+"Implemented through the Django sessions framework."
+msgstr ""
+"Eine Horizontkomponente, die Client-Sitzungsinformationen speichert und "
+"verfolgt. Implementiert durch das Django-Sessions-Framework."
 
 msgid ""
 "A hybrid cloud is a composition of two or more clouds (private, community or "
@@ -959,6 +1016,13 @@ msgstr ""
 "Abbilder für zusätzliche Server."
 
 msgid ""
+"A pre-made VM image that serves as a cloudpipe server. Essentially, OpenVPN "
+"running on Linux."
+msgstr ""
+"Ein vorgefertigtes VM-Abbild, das als Cloudpipe-Server dient. Im "
+"Wesentlichen ist OpenVPN unter Linux lauffähig."
+
+msgid ""
 "A process that is created when a RPC call is executed; used to push the "
 "message to the topic exchange."
 msgstr ""
@@ -1229,6 +1293,9 @@ msgstr ""
 "Netzwerkkonnektivität teilen. In der Netzwerkterminologie ist ein Netzwerk "
 "immer ein Layer-2-Netzwerk."
 
+msgid "A web framework used extensively in horizon."
+msgstr "Ein von Horizon ausgiebig genutztes Web-Framework."
+
 msgid ""
 "A worker process that verifies the integrity of Object Storage objects, "
 "containers, and accounts. Auditors is the collective term for the Object "
@@ -1246,12 +1313,33 @@ msgstr ""
 "die zugehörigen Metadaten enthält, z. B. den Maschinenzustand, die Größe des "
 "Betriebssystems und so weiter."
 
+msgid "API endpoint"
+msgstr "API-Endpunkt"
+
+msgid "API extension"
+msgstr "API-Erweiterung"
+
+msgid "API extension plug-in"
+msgstr "API-Erweiterungs-Plugin"
+
+msgid "API key"
+msgstr "API-Schlüssel"
+
+msgid "API server"
+msgstr "API-Server"
+
+msgid "API token"
+msgstr "API Token"
+
 msgid ""
 "API used to access OpenStack Networking. Provides an extensible architecture "
 "to enable custom plug-in creation."
 msgstr ""
 "API für den Zugriff auf OpenStack Networking. Bietet eine erweiterbare "
 "Architektur, um die Erstellung benutzerdefinierter Plug-Ins zu ermöglichen."
+
+msgid "API version"
+msgstr "API Version"
 
 msgid "ATA over Ethernet (AoE)"
 msgstr "ATA over Ethernet (AoE)"
@@ -1265,6 +1353,16 @@ msgstr ""
 "Sammlung von verwandten Ressourcen zu erstellen und zu verwalten. Der "
 "Orchestrierungsdienst unterstützt ein CloudFormation-kompatibles Format "
 "(CFN)."
+
+msgid "AWS CloudFormation template"
+msgstr "AWS CloudFormation Vorlage"
+
+msgid ""
+"Absolute limit on the amount of network traffic a Compute VM instance can "
+"send and receive."
+msgstr ""
+"Absolute Begrenzung der Menge des Netzwerkverkehrs, die eine Compute VM-"
+"Instanz senden und empfangen kann."
 
 msgid "Active Directory"
 msgstr "Active Directory"
@@ -1314,6 +1412,9 @@ msgstr "Alternativer Begriff für ein VM-Abbild."
 
 msgid "Alternative term for a VM instance type."
 msgstr "Alternativer Ausdruck für VM Instanz-Typ."
+
+msgid "Alternative term for a VM or guest."
+msgstr "Alternativer Begriff für eine VM oder einen Gast."
 
 msgid "Alternative term for a cloud controller node."
 msgstr "Alternative Bezeichnung für einen Cloud-Controller-Knoten."
@@ -1429,6 +1530,14 @@ msgstr ""
 "das derzeit in OpenStack nicht unterstützt wird."
 
 msgid ""
+"An Amazon EC2 concept of an isolated area that is used for fault tolerance. "
+"Do not confuse with an OpenStack Compute zone or cell."
+msgstr ""
+"Ein Amazon EC2 Konzept eines isolierten Bereichs, der zur Fehlertoleranz "
+"verwendet wird. Nicht zu verwechseln mit einer OpenStack Compute Zone oder "
+"Zelle."
+
+msgid ""
 "An HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP "
 "proxy server."
 msgstr ""
@@ -1512,6 +1621,13 @@ msgstr ""
 "mail.yahoo.com. Außerdem ist eine Domäne eine Entität oder ein Container "
 "aller DNS-bezogenen Informationen, die einen oder mehrere Datensätze "
 "enthalten."
+
+msgid ""
+"An Identity service API access token that is associated with a specific "
+"project."
+msgstr ""
+"Ein Identitätsdienst-API-Zugriffstoken, der einem bestimmten Projekt "
+"zugeordnet ist."
 
 msgid ""
 "An Identity service API endpoint that is associated with one or more "
@@ -1980,6 +2096,9 @@ msgstr "Apache Lizenz 2.0"
 msgid "Apache Web Server"
 msgstr "Apache Web Server"
 
+msgid "Application Catalog service (murano)"
+msgstr "Applikationskatalog Dienst (murano)"
+
 msgid "Application Programming Interface (API)"
 msgstr "Anwendungsprogrammierschnittstelle (API)"
 
@@ -2046,6 +2165,9 @@ msgstr "B"
 msgid "BMC (Baseboard Management Controller)"
 msgstr "BMC (Baseboard Management Controller)"
 
+msgid "Bare Metal service (ironic)"
+msgstr "Bare Metal service (ironic)"
+
 msgid ""
 "Be sure to include the software and package versions that you are using, "
 "especially if you are using a development branch, such as, ``\"Kilo release"
@@ -2055,6 +2177,9 @@ msgstr ""
 "verwenden, angeben, insbesondere wenn Sie einen Entwicklungszweig verwenden, "
 "wie z.B. ``\"Kilo release\" vs. git commit "
 "bc79c3ecc55929bac585d04a03475b72e06a3208``."
+
+msgid "Bell-LaPadula model"
+msgstr "Bell-LaPadula model"
 
 msgid ""
 "Belongs to a particular domain and is used to specify information about the "
@@ -2072,11 +2197,17 @@ msgstr ""
 "Nameserver (NS) Datensätze, die die autorisierenden Nameserver für eine "
 "Domain angeben."
 
+msgid "Benchmark service (rally)"
+msgstr "Benchmark service (rally)"
+
 msgid "Bexar"
 msgstr "Bexar"
 
 msgid "Block Storage API"
 msgstr "Blockspeicher-API"
+
+msgid "Block Storage service (cinder)"
+msgstr "**Block Storage service (cinder)**"
 
 msgid ""
 "Block storage that is simultaneously accessible by multiple clients, for "
@@ -2202,6 +2333,9 @@ msgstr ""
 msgid "CirrOS"
 msgstr "CirrOS"
 
+msgid "Cisco neutron plug-in"
+msgstr "Cisco Neutron-Plug-in"
+
 msgid "Cloud Auditing Data Federation (CADF)"
 msgstr "Cloud Auditing Data Federation (CADF)"
 
@@ -2221,8 +2355,16 @@ msgstr "Cloud Infrastructure Management Schnittstelle (CIMI)"
 msgid "Cloudbase-Init"
 msgstr "Cloudbase-Init"
 
+msgid "Clustering service (senlin)"
+msgstr "Clustering-Dienst (senlin)"
+
 msgid "Code name for :term:`Workflow service <Workflow service (mistral)>`."
 msgstr "Code name für :term:`Workflow service <Workflow service (mistral)>`."
+
+msgid ""
+"Code name for the :term:`Clustering service <Clustering service (senlin)>`."
+msgstr ""
+"Codename für den :Begriff:`Clustering-Service <Clustering-Service (senlin)>`."
 
 msgid ""
 "Code name for the :term:`Containers Infrastructure Management "
@@ -2247,6 +2389,13 @@ msgid ""
 msgstr ""
 "Codename für den :Begriff:`Lastausgleichsservice <Lastausgleichsservice "
 "(Oktavia)>`."
+
+msgid ""
+"Code name for the :term:`NFV Orchestration service <NFV Orchestration "
+"service (tacker)>`"
+msgstr ""
+"Code name für den :term:`NFV Orchestration service <NFV Orchestration "
+"service (tacker)>`"
 
 msgid ""
 "Code name for the :term:`Root Cause Analysis service <Root Cause Analysis "
@@ -2301,6 +2450,13 @@ msgstr ""
 "Systems service (manila)>`."
 
 msgid ""
+"Codename for the :term:`Application Catalog service <Application Catalog "
+"service (murano)>`."
+msgstr ""
+"Codename für den :Begriff:`Anwendungskatalogdienst <Anwendungskatalogdienst "
+"(murano)>`."
+
+msgid ""
 "Codename for the :term:`Bare Metal service <Bare Metal service (ironic)>`."
 msgstr ""
 "Codename für den :term:`Bare Metal Dienst <Bare Metal service (ironic)>`."
@@ -2310,6 +2466,13 @@ msgstr "Codename für den :Begriff:`Benchmarkdienst<Benchmarkdienst (rally)>`."
 
 msgid "Codename for the :term:`Dashboard <Dashboard (horizon)>`."
 msgstr "Codename für das :term:`Dashboard <Dashboard (horizon)>`."
+
+msgid ""
+"Codename for the :term:`Data Processing service<Data Processing service "
+"(sahara)>`."
+msgstr ""
+"Codename für den :Begriff:`Datenverarbeitungsdienst<Datenverarbeitungsdienst "
+"(Sahara)>`."
 
 msgid "Codename for the :term:`Image service<Image service (glance)>`."
 msgstr "Codename für den :Begriff:`Abbilddienst<Abbilddienst (glance)>`."
@@ -2412,8 +2575,8 @@ msgstr ""
 "Komponente von Identity, die eine Regel-Management-Schnittstelle und eine "
 "regelbasierte Berechtigungs-Engine zur Verfügung stellt."
 
-msgid "Compute API (Nova API)"
-msgstr "Compute-API (Nova-API)"
+msgid "Compute service (nova)"
+msgstr "Compute Dienst (nova)"
 
 msgid ""
 "Computer that provides explicit services to the client software running on "
@@ -2446,6 +2609,9 @@ msgid ""
 msgstr ""
 "Verbunden mit einem direkten Verbraucher in RabbitMQ-Compute, kann die "
 "Nachricht nur durch die aktuelle Verbindung verwendet werden."
+
+msgid "Container Infrastructure Management service (magnum)"
+msgstr "Container Infrastructure Management Dienst (magnum)"
 
 msgid ""
 "Contains configuration information that Object Storage uses to reconfigure a "
@@ -2514,12 +2680,30 @@ msgstr "Benutzerdefinierte Module, die einige OpenStack-Kern-APIs erweitern."
 msgid "D"
 msgstr "D"
 
+msgid "DHCP agent"
+msgstr "DHCP Agent"
+
+msgid "DNS record"
+msgstr "DNS-Datensatz"
+
+msgid "DNS service (designate)"
+msgstr "DNS Dienst (designate)"
+
 msgid ""
 "Daemon that provides DNS, DHCP, BOOTP, and TFTP services for virtual "
 "networks."
 msgstr ""
 "Ein Dämon, der die Dienst DNS, DHCP, BOOTP und TFTP für virtuelle Netzwerke "
 "bereitstellt."
+
+msgid "Dashboard (horizon)"
+msgstr "Dashboard (horizon)"
+
+msgid "Data Processing service (sahara)"
+msgstr "Datenverarbeitungsdienst (Sahara)"
+
+msgid "Data loss prevention (DLP) software"
+msgstr "Software zur Verhinderung von Datenverlust (DLP)"
 
 msgid ""
 "Data that is only known to or accessible by a user and used to verify that "
@@ -2532,6 +2716,9 @@ msgstr ""
 "ausgibt. Anmeldeinformationen werden dem Server während der "
 "Authentifizierung präsentiert. Beispiele sind ein Passwort, ein geheimer "
 "Schlüssel, ein digitales Zertifikat und ein Fingerabdruck."
+
+msgid "Database service (trove)"
+msgstr "Datenbankservice (trove)"
 
 msgid "Debian"
 msgstr "Debian"
@@ -2654,6 +2841,9 @@ msgstr "Dynamic HyperText Markup Language (DHTML)"
 msgid "E"
 msgstr "E"
 
+msgid "EBS boot volume"
+msgstr "EBS Boot-Datenträger"
+
 msgid "EC2"
 msgstr "EC2"
 
@@ -2662,6 +2852,12 @@ msgstr "EC2 API"
 
 msgid "EC2 Compatibility API"
 msgstr "EC2 Kompatibilität API"
+
+msgid "EC2 access key"
+msgstr "EC2 Zugriffsschlüssel"
+
+msgid "EC2 secret key"
+msgstr "EC2 Geheimschlüssel"
 
 msgid "ESXi"
 msgstr "ESXi"
@@ -2943,6 +3139,9 @@ msgstr ""
 msgid "Host Bus Adapter (HBA)"
 msgstr "Host Bus Adapter (HBA)"
 
+msgid "Hyper-V"
+msgstr "Hyper-V"
+
 msgid "Hypertext Transfer Protocol (HTTP)"
 msgstr "Hypertext Transfer Protocol (HTTP)"
 
@@ -2952,8 +3151,14 @@ msgstr "Hypertext Transfer Protocol Secure (HTTPS)"
 msgid "I"
 msgstr "Ich"
 
+msgid "ID number"
+msgstr "ID Nummer"
+
 msgid "IETF"
 msgstr "IETF"
+
+msgid "INI format"
+msgstr "INI-Format"
 
 msgid ""
 "IOPS are a common performance measurement used to benchmark computer storage "
@@ -3023,6 +3228,15 @@ msgstr "Icehouse"
 msgid "Identity API"
 msgstr "Identität API"
 
+msgid "Identity back end"
+msgstr "Identitäts-Backend"
+
+msgid "Identity service (keystone)"
+msgstr "Identitätsdienst (keystone)"
+
+msgid "Identity service API"
+msgstr "Identitätsdienst API"
+
 msgid ""
 "If Object Storage finds objects, containers, or accounts that are corrupt, "
 "they are placed in this state, are not replicated, cannot be read by "
@@ -3055,6 +3269,9 @@ msgstr ""
 
 msgid "Image API"
 msgstr "Abbild-API"
+
+msgid "Image service (glance)"
+msgstr "Abbild-Dienst (glance)**"
 
 msgid ""
 "Impassable limits for guest VMs. Settings include total RAM size, maximum "
@@ -3166,6 +3383,9 @@ msgstr ""
 "Informationen, die nur aus Einsen und Nullen bestehen, was die Sprache der "
 "Computer ist."
 
+msgid "Infrastructure Optimization service (watcher)"
+msgstr "Infrastruktur-Optimierungsdienst (watcher)"
+
 msgid "Infrastructure-as-a-Service (IaaS)"
 msgstr "Infrastruktur-as-a-Service (IaaS)"
 
@@ -3210,6 +3430,9 @@ msgstr "Internet Service Provider (ISP)"
 msgid "Internet Small Computer System Interface (iSCSI)"
 msgstr "Internet Small Computer System Interface (iSCSI)"
 
+msgid "Internet protocol (IP)"
+msgstr "Internetprotokoll (IP)"
+
 msgid "J"
 msgstr "J"
 
@@ -3231,6 +3454,9 @@ msgstr "K"
 msgid "Kerberos"
 msgstr "Kerberos"
 
+msgid "Key Manager service (barbican)"
+msgstr "Key Manager service (barbican) [Schlüsselmanager-Dienst (barbican)]"
+
 msgid "Kickstart"
 msgstr "Kickstart"
 
@@ -3250,6 +3476,18 @@ msgstr ""
 msgid "Launchpad"
 msgstr "Launchpad"
 
+msgid "Layer-2 (L2) agent"
+msgstr "Layer-2 (L2) Agent"
+
+msgid "Layer-2 network"
+msgstr "Layer-2-Netzwerk"
+
+msgid "Layer-3 (L3) agent"
+msgstr "Layer-3 (L3) Agent"
+
+msgid "Layer-3 network"
+msgstr "Layer-3-Netzwerk"
+
 msgid "Liberty"
 msgstr "Liberty"
 
@@ -3258,6 +3496,15 @@ msgstr "Lightweight Directory Access Protocol (LDAP)"
 
 msgid "Linux"
 msgstr "Linux"
+
+msgid "Linux Bridge neutron plug-in"
+msgstr "Linux Bridge neutron plug-in"
+
+msgid "Linux bridge"
+msgstr "Linux-Bridge"
+
+msgid "Linux containers (LXC)"
+msgstr "Linux-Container (LXC)"
 
 msgid ""
 "Linux kernel feature that provides independent virtual networking instances "
@@ -3288,6 +3535,9 @@ msgstr ""
 
 msgid "Load-Balancer-as-a-Service (LBaaS)"
 msgstr "Load-Balancer-as-a-Service (LBaaS)"
+
+msgid "Load-balancing service (octavia)"
+msgstr "Lastausgleichsdienst (Octavia)"
 
 msgid "Logical Volume Manager (LVM)"
 msgstr "Logical Volume Manager (LVM)"
@@ -3338,6 +3588,13 @@ msgstr ""
 "1500 Bytes für Ethernet-Netzwerke."
 
 msgid ""
+"Mechanism for highly available multi-host routing when using OpenStack "
+"Networking (neutron)."
+msgstr ""
+"Mechanismus zum hochverfügbaren multi-host Routing bei der Verwendung von "
+"OpenStack Netzwerk (neutron)."
+
+msgid ""
 "Mechanism in IP networks to detect end-to-end MTU and adjust packet size "
 "accordingly."
 msgstr ""
@@ -3364,8 +3621,14 @@ msgstr ""
 "Nachrichtenwarteschlange, die gelöscht wird, wenn der Dienst neu gestartet "
 "wird. Seine Daten werden nicht in persistente Speicherung geschrieben."
 
+msgid "Message service (zaqar)"
+msgstr "Message service (zaqar) [Nachrichtendienst (zaqar)]"
+
 msgid "Meta-Data Server (MDS)"
 msgstr "Meta-Data Server (MDS)"
+
+msgid "Metadata agent"
+msgstr "Metadatenagent"
 
 msgid ""
 "Method of keeping a clock for a host or node correct via communication with "
@@ -3384,17 +3647,26 @@ msgstr ""
 msgid "Mitaka"
 msgstr "Mitaka"
 
+msgid "Modular Layer 2 (ML2) neutron plug-in"
+msgstr "Modular Layer 2 (ML2) neutron Plug-In"
+
 msgid "Monitor (LBaaS)"
 msgstr "Monitor (LBaaS)"
 
 msgid "Monitor (Mon)"
 msgstr "Monitor (Mon)"
 
+msgid "Monitoring (monasca)"
+msgstr "Monitoring (monasca)"
+
 msgid "N"
 msgstr "N"
 
 msgid "Nebula"
 msgstr "Nebula"
+
+msgid "NetApp volume driver"
+msgstr "NetApp Volume Treiber"
 
 msgid "Network Address Translation (NAT)"
 msgstr "Netzwerk-Adressübersetzung (NAT)"
@@ -3420,6 +3692,9 @@ msgstr ""
 msgid "Networking API (Neutron API)"
 msgstr "Netzwerk-API (Neutronen-API)"
 
+msgid "Networking service (neutron)"
+msgstr "Netzwerkdienst (Neutron)"
+
 msgid ""
 "New users are assigned to this project if no project is specified when a "
 "user is created."
@@ -3429,6 +3704,9 @@ msgstr ""
 
 msgid "Newton"
 msgstr "Newton"
+
+msgid "Nexenta volume driver"
+msgstr "Nexenta volume driver"
 
 msgid "Nginx"
 msgstr "Nginx"
@@ -3468,6 +3746,9 @@ msgid ""
 msgstr ""
 "Objektspeicher-Middleware, die ein Abbild über ein Formular auf einer "
 "Webseite hochlädt (veröffentlicht)."
+
+msgid "Object Storage service (swift)"
+msgstr "Object Storage service (swift)"
 
 msgid "Ocata"
 msgstr "Ocata"
@@ -3538,6 +3819,9 @@ msgstr ""
 "Eine der Standardrollen im Compute RBAC-System. Gewährt vollständigen "
 "Systemzugriff."
 
+msgid "One of the hypervisors supported by OpenStack."
+msgstr "Eine der Hypervisor unterstützt von OpenStack."
+
 msgid "One of the supported response formats in OpenStack."
 msgstr "Eines der unterstützten Antwortformate in OpenStack."
 
@@ -3565,6 +3849,9 @@ msgstr ""
 msgid "Open vSwitch"
 msgstr "Open vSwitch"
 
+msgid "Open vSwitch (OVS) agent"
+msgstr "Open vSwitch (OVS) agent"
+
 msgid ""
 "Open vSwitch is a production quality, multilayer virtual switch licensed "
 "under the open source Apache 2.0 license. It is designed to enable massive "
@@ -3578,6 +3865,9 @@ msgstr ""
 "programmatische Erweiterung zu ermöglichen, während es gleichzeitig Standard-"
 "Management-Schnittstellen und -Protokolle unterstützt (z.B. NetFlow, sFlow, "
 "SPAN, RSPAN, CLI, LACP, 802.1ag)."
+
+msgid "Open vSwitch neutron plug-in"
+msgstr "Open vSwitch neutron plug-in"
 
 msgid "OpenDev"
 msgstr "OpenDev"
@@ -3629,6 +3919,9 @@ msgid ""
 "OpenStack Networking agent that provides metadata services for instances."
 msgstr ""
 "OpenStack Networking Agent, der Metadatendienste für Instanzen bereitstellt."
+
+msgid "OpenStack code name"
+msgstr "OpenStack-Codename"
 
 msgid "OpenStack distribution packages"
 msgstr "OpenStack Distributionspakete"
@@ -3730,11 +4023,21 @@ msgstr ""
 "digitale Zertifikate und Datenverschlüsselung."
 
 msgid ""
+"OpenStack-on-OpenStack program. The code name for the OpenStack Deployment "
+"program."
+msgstr ""
+"OpenStack-on-OpenStack-Programm. Der Codename für das OpenStack-"
+"Bereitstellungsprogramm."
+
+msgid ""
 "Opens all objects for an object server and verifies the MD5 hash, size, and "
 "metadata for each object."
 msgstr ""
 "Öffnet alle Objekte für einen Objektserver und überprüft den MD5-Hash, die "
 "Größe und die Metadaten für jedes Objekt."
+
+msgid "Orchestration service (heat)"
+msgstr "Orchestrierungsservice (heat)"
 
 msgid ""
 "Organizes and stores objects in Object Storage. Similar to the concept of a "
@@ -3750,6 +4053,9 @@ msgstr "OSLO"
 
 msgid "P"
 msgstr "P"
+
+msgid "PCI passthrough"
+msgstr "PCI passthrough"
 
 msgid ""
 "Pages that use HTML, JavaScript, and Cascading Style Sheets to enable users "
@@ -3779,6 +4085,13 @@ msgid ""
 msgstr ""
 "Teil des OpenStack :Begriffs:`Telemetriedienst <Telemetriedienst "
 "(Telemetrie)>`; bietet einen Indexer und eine Zeitseriendatenbank."
+
+msgid ""
+"Part of the OpenStack :term:`Telemetry service <Telemetry service "
+"(telemetry)>`; provides event storage."
+msgstr ""
+"Teil des OpenStack :Begriffs:`Telemetriedienst <Telemetriedienst "
+"(Telemetry)>`; bietet Ereignisspeicherung."
 
 msgid ""
 "Passed to API requests and used by OpenStack to verify that the client is "
@@ -3991,6 +4304,9 @@ msgstr "Python"
 msgid "Q"
 msgstr "Q"
 
+msgid "QEMU Copy On Write 2 (QCOW2)"
+msgstr "QEMU Copy On Write 2 (QCOW2)"
+
 msgid ""
 "QEMU is a generic and open source machine emulator and virtualizer. One of "
 "the hypervisors supported by OpenStack, generally used for development "
@@ -4027,6 +4343,15 @@ msgstr "RAM-Überlastung"
 msgid "RESTful"
 msgstr "RESTful"
 
+msgid "RPC driver"
+msgstr "RPC-Treiber"
+
+msgid "RXTX cap"
+msgstr "RXTX Kappe"
+
+msgid "RXTX quota"
+msgstr "RXTX-Quota"
+
 msgid "RabbitMQ"
 msgstr "RabbitMQ"
 
@@ -4062,6 +4387,9 @@ msgstr ""
 "Veröffentlicht als Open Source von Rackspace im Jahr 2010; die Basis für "
 "Object Storage."
 
+msgid "Reliable, Autonomic Distributed Object Store"
+msgstr "Reliable, Autonomic Distributed Object Store"
+
 msgid "Remote Procedure Call (RPC)"
 msgstr "Remote Procedure Call (RPC)"
 
@@ -4088,8 +4416,19 @@ msgstr "Rocky"
 msgid "Role Based Access Control (RBAC)"
 msgstr "Role Based Access Control (RBAC)"
 
+msgid "Root Cause Analysis (RCA) service (Vitrage)"
+msgstr "Root Cause Analysis (RCA) service (Vitrage)"
+
+msgid "Runs automated tests against the core OpenStack API; written in Rails."
+msgstr ""
+"Führt automatisierte Tests gegen die Kern-OpenStack-API aus; Geschrieben in "
+"Rails."
+
 msgid "S"
 msgstr "S"
+
+msgid "SAML assertion"
+msgstr "SAML-Assertion"
 
 msgid "SELinux"
 msgstr "SELinux"
@@ -4140,6 +4479,9 @@ msgstr ""
 msgid "Shared File Systems API"
 msgstr "Shared File Systems API"
 
+msgid "Shared File Systems service (manila)"
+msgstr "Shared File Systems service (manila)"
+
 msgid "Sheepdog"
 msgstr "Sheepdog"
 
@@ -4151,6 +4493,16 @@ msgstr "Simple Protocol for Independent Computing Environments (SPICE)"
 
 msgid "Single-root I/O Virtualization (SR-IOV)"
 msgstr "Single-root I/O Virtualization (SR-IOV)"
+
+msgid "SmokeStack"
+msgstr "SmokeStack"
+
+msgid ""
+"Soft limit on the amount of network traffic a Compute VM instance can send "
+"and receive."
+msgstr ""
+"Soft-Limit für die Menge des Netzwerkverkehrs, die eine Compute VM-Instanz "
+"senden und empfangen kann."
 
 msgid "Software Development Lifecycle Automation service (solum)"
 msgstr "Softwareentwicklung Lifecycle Automation Service (Solum)"
@@ -4191,6 +4543,9 @@ msgid ""
 msgstr ""
 "Software, die auf einem Host oder Knoten läuft und die Funktionen eines "
 "hardwarebasierten Netzwerkswitches bietet."
+
+msgid "Software-defined networking (SDN)"
+msgstr "Software-definierte Netzwerke (SDN)"
 
 msgid "SolidFire Volume Driver"
 msgstr "SolidFire Volumentreiber"
@@ -4284,6 +4639,9 @@ msgstr "Unterstützt die Interaktion mit VMware Produkten in Compute."
 msgid "T"
 msgstr "T"
 
+msgid "Telemetry service (telemetry)"
+msgstr "Telemetry service (telemetry)"
+
 msgid "TempAuth"
 msgstr "TempAuth"
 
@@ -4316,6 +4674,13 @@ msgstr ""
 "Begriff, der in der OSI-Netzwerkarchitektur für die Netzwerkschicht "
 "verwendet wird. Die Netzwerkschicht ist für die Paketweiterleitung "
 "einschließlich der Weiterleitung von einem Knoten zum anderen verantwortlich."
+
+msgid ""
+"The API used to access the OpenStack Identity service provided through "
+"keystone."
+msgstr ""
+"Die API wurde für den Zugriff auf den OpenStack Identitätsdienst verwendet, "
+"der über Keystone bereitgestellt wird."
 
 msgid "The Amazon commercial block storage product."
 msgstr "Das kommerzielle Blockspeicherprodukt von Amazon."
@@ -4663,6 +5028,9 @@ msgid "The VM instance is paused and its state is saved to disk of the host."
 msgstr ""
 "Die VM-Instanz wird angehalten und ihr Zustand wird auf der Festplatte des "
 "Hosts gespeichert."
+
+msgid "The Xen administrative API, which is supported by Compute."
+msgstr "Die Xen-Administrations-API, die von Compute."
 
 msgid ""
 "The `OpenStack wiki <https://wiki.openstack.org/>`_ contains a broad range "
@@ -5254,6 +5622,15 @@ msgstr ""
 "für OpenStack-Dienste und fungiert als gemeinsames Authentifizierungssystem."
 
 msgid ""
+"The project that implements clustering services and libraries for the "
+"management of groups of homogeneous objects exposed by other OpenStack "
+"services."
+msgstr ""
+"Das Projekt, das Clustering-Dienste und Bibliotheken für die Verwaltung von "
+"Gruppen homogener Objekte implementiert, die von anderen OpenStack-Diensten "
+"bereitgestellt werden."
+
+msgid ""
 "The project that produces a secret storage and generation system capable of "
 "providing key management for services wishing to enable encryption features."
 msgstr ""
@@ -5426,6 +5803,9 @@ msgstr "Torpedo"
 
 msgid "Train"
 msgstr "Train (Zug)"
+
+msgid "TripleO"
+msgstr "TripleO"
 
 msgid ""
 "Two Project Team Gathering meetings in Denver were held at a hotel next to "
@@ -5619,6 +5999,14 @@ msgstr ""
 "Stellt sicher, dass das Objekt nach dem Löschen nicht auf einem anderen "
 "Knoten aktualisiert wird."
 
+msgid ""
+"Used to restrict communications between hosts and/or nodes, implemented in "
+"Compute using iptables, arptables, ip6tables, and ebtables."
+msgstr ""
+"Wird verwendet, um die Kommunikation zwischen Hosts und/oder Knoten zu "
+"beschränken, die in Compute mit iptables, arptables, ip6tables und ebtables "
+"implementiert wurden."
+
 msgid "Used to track segments of a large object within Object Storage."
 msgstr ""
 "Wird verwendet, um Segmente eines großen Objekts innerhalb des "
@@ -5642,14 +6030,29 @@ msgstr "V"
 msgid "VIF UUID"
 msgstr "VIF UUID"
 
+msgid "VLAN manager"
+msgstr "VLAN Manager"
+
+msgid "VLAN network"
+msgstr "VLAN Netzwerk"
+
 msgid "VM Remote Control (VMRC)"
 msgstr "VM Remote Control (VMRC)"
+
+msgid "VM disk (VMDK)"
+msgstr "VM disk (VMDK)"
+
+msgid "VM image"
+msgstr "VM Abbild"
 
 msgid "VM image container format supported by Image service."
 msgstr "VM-Abbildcontainerformat, das vom Abbild-Dienst unterstützt wird."
 
 msgid "VMware API"
 msgstr "VMware API"
+
+msgid "VMware NSX Neutron plug-in"
+msgstr "VMware NSX Neutron Plug-in"
 
 msgid "VNC proxy"
 msgstr "VNC-Proxy"
@@ -5683,6 +6086,9 @@ msgstr ""
 "separate zugrunde liegende physikalische Schnittstelle, die durch "
 "Brückenabbildungen definiert ist. Ein flaches Netzwerk kann jedoch mehrere "
 "Subnetze enthalten."
+
+msgid "VirtualBox"
+msgstr "VirtualBox"
 
 msgid ""
 "Virtualization API library used by OpenStack to interact with many of its "
@@ -5727,6 +6133,9 @@ msgstr ""
 "vom Scheduler-Dienst verwendet wird, um Leistungsdaten von den Compute-, "
 "Volume- und Netzwerkknoten zu empfangen."
 
+msgid "Workflow service (mistral)"
+msgstr "Workflow Dienst (mistral)"
+
 msgid "X"
 msgstr "X"
 
@@ -5749,6 +6158,30 @@ msgstr ""
 
 msgid "XFS"
 msgstr "XFS"
+
+msgid "Xen"
+msgstr "Xen"
+
+msgid "Xen API"
+msgstr "Xen-API"
+
+msgid "Xen Cloud Platform (XCP)"
+msgstr "Xen Cloud Plattform (XCP)"
+
+msgid "Xen Storage Manager Volume Driver"
+msgstr "Xen Storage Manager Volumentreiber"
+
+msgid ""
+"Xen is a hypervisor using a microkernel design, providing services that "
+"allow multiple computer operating systems to execute on the same computer "
+"hardware concurrently."
+msgstr ""
+"Xen ist ein Hypervisor, der ein Mikrokernel-Design verwendet und Dienste "
+"bereitstellt, die es mehreren Computerbetriebssystemen ermöglichen, auf "
+"derselben Computerhardware gleichzeitig auszuführen."
+
+msgid "XenServer"
+msgstr "XenServer"
 
 msgid "Z"
 msgstr "Z"
@@ -5950,23 +6383,1325 @@ msgstr ""
 "spezialisiert auf die Überprüfung (Gating) von Änderungen über mehrere "
 "Systeme und Applikationen, bevor ein einzelner Patch integriert wird."
 
+msgid "absolute limit"
+msgstr "absolutes Limit"
+
+msgid "access control list (ACL)"
+msgstr "access control list (ACL) [Zugriffskontrollliste]"
+
+msgid "access key"
+msgstr "access key [Zugriffsschlüssel]"
+
+msgid "account"
+msgstr "account [Konto]"
+
+msgid "account auditor"
+msgstr "account auditor [Rechnungsprüfer]"
+
+msgid "account database"
+msgstr "account database [Kontodatenbank]"
+
+msgid "account reaper"
+msgstr "account reaper [Konto Reaper]"
+
+msgid "account server"
+msgstr "account server [Kontoserver]"
+
+msgid "account service"
+msgstr "account service [Kontodienst]"
+
+msgid "accounting"
+msgstr "accounting [Abrechnung]"
+
+msgid "active/active configuration"
+msgstr "aktiv/aktiv Konfiguration"
+
+msgid "active/passive configuration"
+msgstr "aktive/passive Konfiguration"
+
+msgid "address pool"
+msgstr "Adresspool"
+
+msgid "admin API"
+msgstr "Admin-API"
+
+msgid "admin server"
+msgstr "Admin-Server"
+
+msgid "administrator"
+msgstr "Administrator"
+
+msgid "alert"
+msgstr "Alarm"
+
+msgid "allocate"
+msgstr "allocate"
+
+msgid "aodh"
+msgstr "aodh"
+
+msgid "applet"
+msgstr "Applet"
+
+msgid "application server"
+msgstr "Applikationsserver"
+
 msgid "arptables"
 msgstr "arptables"
+
+msgid "associate"
+msgstr "associate [zuweisen]"
+
+msgid "attach"
+msgstr "anhängen"
+
+msgid "attachment (network)"
+msgstr "Anhang (Netzwerk)"
+
+msgid "auditing"
+msgstr "Auditieren"
+
+msgid "auditor"
+msgstr "Auditor"
+
+msgid "auth node"
+msgstr "Authentifizierungsknoten"
+
+msgid "authentication"
+msgstr "Authentifizierung"
+
+msgid "authentication token"
+msgstr "Authentifizierungstoken"
+
+msgid "authorization"
+msgstr "Autorisierung"
+
+msgid "authorization node"
+msgstr "Autorisierungsknoten"
+
+msgid "auto declare"
+msgstr "automatisch deklarieren"
+
+msgid "availability zone"
+msgstr "Verfügbarkeitszone"
+
+msgid "back end"
+msgstr "Backend"
+
+msgid "back-end catalog"
+msgstr "Backend-Katalog"
+
+msgid "back-end store"
+msgstr "Backend-Shop"
+
+msgid "bandwidth"
+msgstr "Bandbreite"
+
+msgid "barbican"
+msgstr "barbican"
+
+msgid "bare"
+msgstr "bare"
+
+msgid "base image"
+msgstr "Basisabbild"
+
+msgid "binary"
+msgstr "binär"
+
+msgid "bit"
+msgstr "bit"
+
+msgid "bits per second (BPS)"
+msgstr "Bits pro Sekunde (BPS)"
+
+msgid "block device"
+msgstr "Blockgerät"
+
+msgid "block migration"
+msgstr "Blockmigration"
+
+msgid "bootable disk image"
+msgstr "bootfähiges Disk-Abbild"
+
+msgid "browser"
+msgstr "Browser"
+
+msgid "builder file"
+msgstr "Builder-Datei"
+
+msgid "bursting"
+msgstr "bursting"
+
+msgid "button class"
+msgstr "button class [Schaltfläche]"
+
+msgid "byte"
+msgstr "Byte"
+
+msgid "cache pruner"
+msgstr "Cache-Pruner"
+
+msgid "capability"
+msgstr "capability [Fähigkeit]"
+
+msgid "capacity cache"
+msgstr "capacity cache [Kapazitätszwischenspeicher]"
+
+msgid "capacity updater"
+msgstr "capacity updater [Kapazitätsaktualisierer]"
+
+msgid "catalog"
+msgstr "Katalog"
+
+msgid "catalog service"
+msgstr "catalog service [Katalogdienst]"
+
+msgid "ceilometer"
+msgstr "ceilometer"
+
+msgid "cell"
+msgstr "cell [Zelle]"
+
+msgid "cell forwarding"
+msgstr "cell forwarding [Zellenweiterleitung]"
+
+msgid "cell manager"
+msgstr "cell manager [Zellenverwaltung]"
+
+msgid "certificate authority (CA)"
+msgstr "Certificate Authority (CA)"
+
+msgid "chance scheduler"
+msgstr "Chance-Scheduler"
+
+msgid "changes since"
+msgstr "changes since [Änderungen seit]"
+
+msgid "child cell"
+msgstr "child cell"
+
+msgid "cinder"
+msgstr "cinder"
+
+msgid "cloud architect"
+msgstr "Cloud-Architekt"
+
+msgid "cloud computing"
+msgstr "Cloud-Computing"
+
+msgid "cloud controller"
+msgstr "Cloud controller"
+
+msgid "cloud controller node"
+msgstr "Cloud-Controller-Knoten"
+
+msgid "cloud-init"
+msgstr "cloud-init"
+
+msgid "cloudadmin"
+msgstr "Cloudadmin"
+
+msgid "cloudpipe"
+msgstr "cloudpipe"
+
+msgid "cloudpipe image"
+msgstr "cloudpipe image"
+
+msgid "command filter"
+msgstr "command filter"
+
+msgid "community project"
+msgstr "Gemeinschaftsprojekt"
+
+msgid "compression"
+msgstr "Kompression"
+
+msgid "compute controller"
+msgstr "compute controller"
+
+msgid "compute host"
+msgstr "Compute Host"
+
+msgid "compute node"
+msgstr "Compute Knoten"
+
+msgid "compute worker"
+msgstr "Compute Worker"
+
+msgid "concatenated object"
+msgstr "concatenated object [Verkettetes Objekt]"
+
+msgid "conductor"
+msgstr "Conductor"
+
+msgid "consistency window"
+msgstr "consistency window [Konsistenzfenster]"
+
+msgid "console log"
+msgstr "console log [Konsolen-Log]"
+
+msgid "container"
+msgstr "Container"
+
+msgid "container auditor"
+msgstr "container auditor [Rechnungsprüfer]"
+
+msgid "container database"
+msgstr "Containerdatenbank"
+
+msgid "container format"
+msgstr "Containerformat"
+
+msgid "container server"
+msgstr "Containerserver"
+
+msgid "container service"
+msgstr "Containerdienst"
+
+msgid "content delivery network (CDN)"
+msgstr "content delivery network (CDN)"
+
+msgid "controller node"
+msgstr "Controller-Knoten"
+
+msgid "core API"
+msgstr "core API [Kern API]"
+
+msgid "core service"
+msgstr "core service [Kerndienst]"
+
+msgid "cost"
+msgstr "cost [Kosten]"
+
+msgid "credentials"
+msgstr "credentials [Zugangsdaten]"
+
+msgid "current workload"
+msgstr "aktuelle Arbeitsbelastung"
+
+msgid "customer"
+msgstr "Kunde"
+
+msgid "customization module"
+msgstr "Anpassungsmodul"
+
+msgid "daemon"
+msgstr "Dämon"
+
+msgid "data encryption"
+msgstr "Datenverschlüsselung"
+
+msgid "data store"
+msgstr "Datenspeicher"
+
+msgid "database ID"
+msgstr "Datenbank-ID"
+
+msgid "database replicator"
+msgstr "Datenbank-Replikator"
+
+msgid "deallocate"
+msgstr "freigeben"
+
+msgid "deduplication"
+msgstr "Deduplizierung"
+
+msgid "default panel"
+msgstr "Standard-Panel"
+
+msgid "default project"
+msgstr "default project"
+
+msgid "default token"
+msgstr "Standard-Token"
+
+msgid "delayed delete"
+msgstr "verzögertes Löschen"
+
+msgid "delivery mode"
+msgstr "Liefermodus"
+
+msgid "denial of service (DoS)"
+msgstr "Denial-of-Service (DoS)"
+
+msgid "deprecated auth"
+msgstr "veraltetes auth"
+
+msgid "designate"
+msgstr "designate"
+
+msgid "developer"
+msgstr "Entwickler"
+
+msgid "device ID"
+msgstr "device ID [Geräte ID]"
+
+msgid "device weight"
+msgstr "device weight [Gerätegewichtung]"
+
+msgid "direct consumer"
+msgstr "Direktverbraucher"
+
+msgid "direct exchange"
+msgstr "Direkter Austausch"
+
+msgid "direct publisher"
+msgstr "Direktpublisher"
+
+msgid "disassociate"
+msgstr "disassoziieren"
+
+msgid "disk encryption"
+msgstr "disk encryption [Festplattenverschlüsselung]"
+
+msgid "disk format"
+msgstr "disk format [Festplattenformat]"
+
+msgid "dispersion"
+msgstr "Dispergierung"
+
+msgid "distributed virtual router (DVR)"
+msgstr "Distributed Virtual Router (DVR)"
+
+msgid "dnsmasq"
+msgstr "dnsmasq"
+
+msgid "domain"
+msgstr "Domäne"
+
+msgid "download"
+msgstr "download"
+
+msgid "durable exchange"
+msgstr "Dauerhafter Austausch"
+
+msgid "durable queue"
+msgstr "Dauerhafte Warteschlange"
+
+msgid "east-west traffic"
+msgstr "Ost-West-Verkehr"
+
+msgid "ebtables"
+msgstr "ebtables"
+
+msgid "encapsulation"
+msgstr "Verkapselung"
+
+msgid "encryption"
+msgstr "encryption"
+
+msgid "endpoint"
+msgstr "endpunkt"
+
+msgid "endpoint registry"
+msgstr "Endpunkt-Registrierung"
+
+msgid "endpoint template"
+msgstr "Endpunktvorlage"
+
+msgid "entity"
+msgstr "Entität"
+
+msgid "ephemeral image"
+msgstr "flüchtiges Abbild"
+
+msgid "ephemeral volume"
+msgstr "ephemerer Datenträger"
+
+msgid "euca2ools"
+msgstr "euca2ools"
+
+msgid "evacuate"
+msgstr "evakuieren"
+
+msgid "exchange"
+msgstr "exchange"
+
+msgid "exchange type"
+msgstr "exchange type [Austauschtyp]"
+
+msgid "exclusive queue"
+msgstr "Exklusive Warteschlange"
+
+msgid "extended attributes (xattr)"
+msgstr "Erweiterte Attribute (xattr)"
+
+msgid "extension"
+msgstr "Erweiterung"
+
+msgid "external network"
+msgstr "externes Netzwerk"
+
+msgid "extra specs"
+msgstr "Extra Spezifikationen"
+
+msgid "fan-out exchange"
+msgstr "Fan-Out Austausch"
+
+msgid "federated identity"
+msgstr "Föderierte Identität"
+
+msgid "fill-first scheduler"
+msgstr "fill-first scheduler"
+
+msgid "filter"
+msgstr "Filter"
+
+msgid "firewall"
+msgstr "Firewall"
+
+msgid "fixed IP address"
+msgstr "feste IP-Adresse"
+
+msgid "flat mode injection"
+msgstr "flat mode injection"
+
+msgid "flat network"
+msgstr "flat network [Flaches Netzwerk]"
+
+msgid "flavor"
+msgstr "flavor [Variante]"
+
+msgid "flavor ID"
+msgstr "flavor ID [Varianten-ID]"
+
+msgid "floating IP address"
+msgstr "floating IP address"
+
+msgid "freezer"
+msgstr "freezer"
+
+msgid "front end"
+msgstr "Frontend"
+
+msgid "gateway"
+msgstr "Zahlungs-Gateway"
+
+msgid "generic receive offload (GRO)"
+msgstr "generische Empfangsentlastung (GRO)"
+
+msgid "generic routing encapsulation (GRE)"
+msgstr "generische Routing-Kapselung (GRE)"
+
+msgid "glance"
+msgstr "glance"
+
+msgid "glance API server"
+msgstr "glance API-Server"
+
+msgid "glance registry"
+msgstr "glance-registry"
+
+msgid "global endpoint template"
+msgstr "globale Endpunktvorlage"
+
+msgid "gnocchi"
+msgstr "Gnocchi"
+
+msgid "golden image"
+msgstr "goldenes Abbild"
+
+msgid "guest OS"
+msgstr "Gastbetriebssystem"
+
+msgid "handover"
+msgstr "Übergabe"
+
+msgid "hard reboot"
+msgstr "harter Reboot"
+
+msgid "health monitor"
+msgstr "health monitor [Gesundheitsmonitor]"
+
+msgid "heat"
+msgstr "Heat"
+
+msgid "high availability (HA)"
+msgstr "hochverfügbar (HA)"
+
+msgid "horizon"
+msgstr "horizon"
+
+msgid "horizon plug-in"
+msgstr "Horizon Plugin"
+
+msgid "host"
+msgstr "Host"
+
+msgid "host aggregate"
+msgstr "Host-Aggregat"
+
+msgid "hybrid cloud"
+msgstr "hybrid cloud"
+
+msgid "hyperlink"
+msgstr "Hyperlink"
+
+msgid "hypervisor"
+msgstr "Hypervisor"
+
+msgid "hypervisor pool"
+msgstr "Hypervisor Bestand"
 
 msgid "iSCSI Qualified Name (IQN)"
 msgstr "iSCSI Qualified Name (IQN)"
 
+msgid "identity provider"
+msgstr "Identitätsanbieter"
+
+msgid "image"
+msgstr "Abbild"
+
+msgid "image ID"
+msgstr "Abbild-ID"
+
+msgid "image UUID"
+msgstr "Abbild UUID"
+
+msgid "image cache"
+msgstr "Abbilder-Cache"
+
+msgid "image membership"
+msgstr "Abbildmitgliedschaft"
+
+msgid "image owner"
+msgstr "Abbildbesitzer"
+
+msgid "image registry"
+msgstr "Abbildregistrierung"
+
+msgid "image status"
+msgstr "Abbildstatus"
+
+msgid "image store"
+msgstr "Abbildspeicher"
+
+msgid "incubated project"
+msgstr "Inkubationsprojekt"
+
+msgid "ingress filtering"
+msgstr "Ingress-Filterung"
+
+msgid "injection"
+msgstr "Datei-Injektion"
+
+msgid "instance"
+msgstr "Instanz"
+
+msgid "instance ID"
+msgstr "instance ID"
+
+msgid "instance UUID"
+msgstr "Instanz-UUID"
+
+msgid "instance state"
+msgstr "Instanzstatus"
+
+msgid "instance tunnels network"
+msgstr "Instanztunnel Netzwerk"
+
+msgid "instance type"
+msgstr "Instanztyp"
+
+msgid "instance type ID"
+msgstr "Instanztyp-ID"
+
+msgid "interface"
+msgstr "interface [Schnittstelle]"
+
+msgid "interface ID"
+msgstr "interface ID [Schnittstellen-ID]"
+
 msgid "ip6tables"
 msgstr "ip6tables"
+
+msgid "ipset"
+msgstr "ipset"
 
 msgid "iptables"
 msgstr "iptables"
 
+msgid "ironic"
+msgstr "ironic"
+
+msgid "itsec"
+msgstr "itsec"
+
+msgid "jumbo frame"
+msgstr "Jumbo Frame"
+
+msgid "kernel-based VM (KVM)"
+msgstr "kernel-based VM (KVM)"
+
+msgid "keystone"
+msgstr "Keystone"
+
+msgid "large object"
+msgstr "großes Objekt"
+
 msgid "libvirt"
 msgstr "libvirt"
+
+msgid "live migration"
+msgstr "Live-Migration"
+
+msgid "load balancer"
+msgstr "Lastausgleichsvorrichtung"
+
+msgid "load balancing"
+msgstr "Lastausgleich"
+
+msgid "magnum"
+msgstr "Magnum"
+
+msgid "management API"
+msgstr "Management-API"
+
+msgid "management network"
+msgstr "Managementnetzwerk"
+
+msgid "manager"
+msgstr "Manager"
+
+msgid "manifest"
+msgstr "Manifest"
+
+msgid "manifest object"
+msgstr "Manifestobjekt"
+
+msgid "manila"
+msgstr "manila"
+
+msgid "manila-share"
+msgstr "manila-share"
+
+msgid "maximum transmission unit (MTU)"
+msgstr "maximum transmission unit (MTU)"
+
+msgid "mechanism driver"
+msgstr "Mechanismus-Treiber"
+
+msgid "melange"
+msgstr "Melange"
+
+msgid "membership"
+msgstr "Mitgliedschaft"
+
+msgid "membership list"
+msgstr "Mitgliederliste"
+
+msgid "memcached"
+msgstr "memcached"
+
+msgid "memory overcommit"
+msgstr "memory overcommit [Speicherüberbelegung]"
+
+msgid "message broker"
+msgstr "message broker  [Nachrichtenmakler]"
+
+msgid "message bus"
+msgstr "message bus [Nachrichtenbus]"
+
+msgid "message queue"
+msgstr "Nachrichtenwarteschlange"
+
+msgid "migration"
+msgstr "Migration"
+
+msgid "mistral"
+msgstr "mistral"
+
+msgid "monasca"
+msgstr "monasca"
+
+msgid "multi-factor authentication"
+msgstr "Multi-Faktor-Authentifizierung"
+
+msgid "multi-host"
+msgstr "Multi-Host"
+
+msgid "multinic"
+msgstr "multinic"
+
+msgid "murano"
+msgstr "murano"
+
+msgid "netadmin"
+msgstr "netadmin"
+
+msgid "network"
+msgstr "Netzwerk"
+
+msgid "network ID"
+msgstr "Netzwerk-ID"
+
+msgid "network UUID"
+msgstr "Netzwerk-UUID"
+
+msgid "network controller"
+msgstr "network controller"
+
+msgid "network manager"
+msgstr "network manager"
+
+msgid "network namespace"
+msgstr "network namespace"
+
+msgid "network node"
+msgstr "network node"
+
+msgid "network segment"
+msgstr "network segment"
+
+msgid "network worker"
+msgstr "network worker"
+
+msgid "neutron"
+msgstr "Neutron"
+
+msgid "neutron API"
+msgstr "neutron-api"
+
+msgid "neutron manager"
+msgstr "neutron manager"
+
+msgid "neutron plug-in"
+msgstr "neutron plug-in"
+
+msgid "node"
+msgstr "Knoten"
+
+msgid "non-durable exchange"
+msgstr "non-durable exchange"
+
+msgid "non-durable queue"
+msgstr "non-durable queue"
+
+msgid "non-persistent volume"
+msgstr "non-persistent volume"
+
+msgid "north-south traffic"
+msgstr "north-south traffic"
+
+msgid "nova"
+msgstr "Nova"
+
+msgid "nova-network"
+msgstr "nova-network"
+
+msgid "object"
+msgstr "Objekt"
+
+msgid "object auditor"
+msgstr "object auditor"
+
+msgid "object expiration"
+msgstr "object expiration"
+
+msgid "object hash"
+msgstr "object hash"
+
+msgid "object path hash"
+msgstr "object path hash"
+
+msgid "object replicator"
+msgstr "object replicator"
+
+msgid "object server"
+msgstr "Objektserver"
+
+msgid "object versioning"
+msgstr "Objektversionierung"
 
 msgid "openSUSE"
 msgstr "openSUSE"
 
+msgid "operator"
+msgstr "Betreiber"
+
+msgid "optional service"
+msgstr "optionaler Service"
+
+msgid "orphan"
+msgstr "orphan"
+
+msgid "panko"
+msgstr "Panko"
+
+msgid "parent cell"
+msgstr "parent cell"
+
+msgid "partition"
+msgstr "partition"
+
+msgid "partition index"
+msgstr "Partitionsindex"
+
+msgid "partition shift value"
+msgstr "Partitionsverschiebungswert"
+
+msgid "path MTU discovery (PMTUD)"
+msgstr "Pfad MTU-Entdeckung (PMTUD)"
+
+msgid "pause"
+msgstr "Pause"
+
+msgid "persistent message"
+msgstr "persistent message"
+
+msgid "persistent volume"
+msgstr "persistent volume"
+
+msgid "personality file"
+msgstr "personality file"
+
+msgid "plug-in"
+msgstr "plug-in"
+
+msgid "policy service"
+msgstr "policy service"
+
+msgid "policy-based routing (PBR)"
+msgstr "policy-based routing (PBR)"
+
+msgid "pool"
+msgstr "pool [Bestand]"
+
+msgid "pool member"
+msgstr "pool member [Bestandteil]"
+
+msgid "port"
+msgstr "Port"
+
+msgid "port UUID"
+msgstr "port UUID"
+
+msgid "preseed"
+msgstr "preseed"
+
+msgid "private IP address"
+msgstr "private IP-Adresse"
+
+msgid "private image"
+msgstr "private image [privates Abbild]"
+
+msgid "private network"
+msgstr "privates Netzwerk"
+
+msgid "project"
+msgstr "Projekt"
+
+msgid "project ID"
+msgstr "Projektkennung"
+
+msgid "project VPN"
+msgstr "project VPN"
+
+msgid "promiscuous mode"
+msgstr "promiscuous mode"
+
+msgid "protected property"
+msgstr "protected property [Geschützte Eigenschaft]"
+
+msgid "provider"
+msgstr "provider"
+
+msgid "proxy node"
+msgstr "proxy node"
+
+msgid "proxy server"
+msgstr "Proxyserver"
+
+msgid "public API"
+msgstr "public API"
+
+msgid "public IP address"
+msgstr "public IP address"
+
+msgid "public image"
+msgstr "public image"
+
+msgid "public key authentication"
+msgstr "Public-Key-Authentifizierung"
+
+msgid "public network"
+msgstr "public network"
+
+msgid "quarantine"
+msgstr "quarantine"
+
+msgid "quota"
+msgstr "quota"
+
+msgid "radvd"
+msgstr "radvd"
+
+msgid "rally"
+msgstr "rally"
+
+msgid "rate limit"
+msgstr "Ratenbegrenzung"
+
+msgid "raw"
+msgstr "roh"
+
+msgid "rebalance"
+msgstr "Neugewichtung"
+
+msgid "reboot"
+msgstr "Neu starten"
+
+msgid "rebuild"
+msgstr "wieder aufbauen"
+
+msgid "record"
+msgstr "record"
+
+msgid "record ID"
+msgstr "record ID"
+
+msgid "reference architecture"
+msgstr "reference architecture [Referenzarchitektur]"
+
+msgid "region"
+msgstr "Region"
+
+msgid "registry"
+msgstr "registry [Registrierung]"
+
+msgid "registry server"
+msgstr "registry server [Registrierungungsserver]"
+
+msgid "replica"
+msgstr "replica"
+
+msgid "replica count"
+msgstr "replica count"
+
+msgid "replication"
+msgstr "replication"
+
+msgid "replicator"
+msgstr "replicator"
+
+msgid "request ID"
+msgstr "request ID"
+
+msgid "rescue image"
+msgstr "rescue image"
+
+msgid "resize"
+msgstr "resize"
+
+msgid "ring"
+msgstr "ring"
+
+msgid "ring builder"
+msgstr "ring builder"
+
+msgid "role"
+msgstr "role"
+
+msgid "role ID"
+msgstr "role ID"
+
+msgid "rootwrap"
+msgstr "Rootwrap"
+
+msgid "round-robin scheduler"
+msgstr "Round-Robin-Scheduler"
+
+msgid "router"
+msgstr "Router"
+
+msgid "routing key"
+msgstr "Routing-Key"
+
+msgid "rsync"
+msgstr "rsync"
+
+msgid "sahara"
+msgstr "Sahara"
+
+msgid "scheduler manager"
+msgstr "Scheduler-Manager"
+
+msgid "scoped token"
+msgstr "Scoped Token"
+
+msgid "scrubber"
+msgstr "Schrubber"
+
+msgid "secret key"
+msgstr "Geheimschlüssel"
+
+msgid "secure boot"
+msgstr "sicherer Start"
+
+msgid "secure shell (SSH)"
+msgstr "sichere Shell (SSH)"
+
+msgid "security group"
+msgstr "Sicherheitsgruppe"
+
+msgid "segmented object"
+msgstr "segmentiertes Objekt"
+
+msgid "self-service"
+msgstr "Selbstbedienung"
+
+msgid "senlin"
+msgstr "senlin"
+
+msgid "server"
+msgstr "Server"
+
+msgid "server UUID"
+msgstr "Server-UUID"
+
+msgid "server image"
+msgstr "Server-Abbild"
+
+msgid "service"
+msgstr "Dienst"
+
+msgid "service ID"
+msgstr "service ID [Dienstkennung]"
+
+msgid "service catalog"
+msgstr "service catalog [Dienstekatalog]"
+
+msgid "service project"
+msgstr "service project"
+
+msgid "service provider"
+msgstr "service provider"
+
+msgid "service registration"
+msgstr "service registration"
+
+msgid "service token"
+msgstr "service token"
+
+msgid "session back end"
+msgstr "session back end"
+
+msgid "session persistence"
+msgstr "session persistence"
+
+msgid "session storage"
+msgstr "session storage"
+
+msgid "share"
+msgstr "Share [Freigabe]"
+
+msgid "share network"
+msgstr "Share network [Freigabenetzwerk]"
+
+msgid "shared IP address"
+msgstr "shared IP address [geteilte IP-Adresse]"
+
+msgid "shared IP group"
+msgstr "shared IP group"
+
+msgid "shared storage"
+msgstr "shared storage"
+
+msgid "snapshot"
+msgstr "Momentaufnahme"
+
+msgid "soft reboot"
+msgstr "soft reboot"
+
+msgid "solum"
+msgstr "Solum"
+
+msgid "spread-first scheduler"
+msgstr "Spread-First-Scheduler"
+
+msgid "stack"
+msgstr "Stapel"
+
+msgid "static IP address"
+msgstr "statische IP-Adresse"
+
+msgid "storage back end"
+msgstr "Speicher-Backend"
+
+msgid "storage manager"
+msgstr "Speichermanager"
+
+msgid "storage manager back end"
+msgstr "Speichermanager Backend"
+
+msgid "storage node"
+msgstr "Speicherknoten"
+
+msgid "storage services"
+msgstr "Speicherdienstleistungen"
+
+msgid "strategy"
+msgstr "Strategie"
+
+msgid "subdomain"
+msgstr "Subdomäne"
+
+msgid "subnet"
+msgstr "Subnetz"
+
+msgid "suspend"
+msgstr "sperren"
+
+msgid "swap"
+msgstr "Swap"
+
+msgid "swift"
+msgstr "swift"
+
+msgid "swift All in One (SAIO)"
+msgstr "swift All in One (SAIO)"
+
+msgid "swift middleware"
+msgstr "swift middleware"
+
+msgid "swift proxy server"
+msgstr "swift proxy server"
+
+msgid "swift storage node"
+msgstr "swift storage node"
+
+msgid "sync point"
+msgstr "sync point"
+
+msgid "sysadmin"
+msgstr "sysadmin"
+
+msgid "system usage"
+msgstr "Systemauslastung"
+
+msgid "tacker"
+msgstr "tacker"
+
+msgid "tenant"
+msgstr "tenant"
+
+msgid "tenant ID"
+msgstr "tenant ID"
+
+msgid "tenant endpoint"
+msgstr "tenant endpoint"
+
+msgid "token"
+msgstr "Token"
+
+msgid "token services"
+msgstr "token services"
+
+msgid "tombstone"
+msgstr "tombstone"
+
+msgid "topic publisher"
+msgstr "topic publisher"
+
+msgid "transaction ID"
+msgstr "transaction ID"
+
+msgid "transient"
+msgstr "transient"
+
+msgid "transient exchange"
+msgstr "transient exchange"
+
+msgid "transient message"
+msgstr "transient message"
+
+msgid "transient queue"
+msgstr "transient queue"
+
+msgid "trove"
+msgstr "trove"
+
+msgid "trusted platform module (TPM)"
+msgstr "vertrauenswürdiges Plattformmodul (TPM)"
+
+msgid "unscoped token"
+msgstr "unskopiertes Token"
+
+msgid "updater"
+msgstr "Updater"
+
+msgid "user"
+msgstr "user"
+
+msgid "user data"
+msgstr "user data"
+
 msgid "vSphere"
 msgstr "vSphere"
+
+msgid "virtual IP address (VIP)"
+msgstr "virtuelle IP-Adresse (VIP)"
+
+msgid "virtual VLAN"
+msgstr "virtuelles VLAN"
+
+msgid "virtual machine (VM)"
+msgstr "virtuelle Maschine (VM)"
+
+msgid "virtual network"
+msgstr "virtual network"
+
+msgid "virtual networking"
+msgstr "virtual networking"
+
+msgid "virtual port"
+msgstr "virtual port"
+
+msgid "virtual private network (VPN)"
+msgstr "Virtuelles Privates Netzwerk (VPN)"
+
+msgid "virtual server"
+msgstr "virtual server"
+
+msgid "virtual switch (vSwitch)"
+msgstr "virtueller Switch (vSwitch)"
+
+msgid "volume"
+msgstr "Datenträger"
+
+msgid "volume ID"
+msgstr "Datenträger ID"
+
+msgid "volume controller"
+msgstr "Datenträger Controller"
+
+msgid "volume driver"
+msgstr "Datenträgertreiber"
+
+msgid "volume manager"
+msgstr "Volume Manager"
+
+msgid "volume node"
+msgstr "volume node [Datenträger-Knoten]"
+
+msgid "volume plug-in"
+msgstr "volume plug-in [Datenträger Plug-in]"
+
+msgid "volume worker"
+msgstr "Volume Worker"
+
+msgid "weight"
+msgstr "weight [Gewichtung]"
+
+msgid "weighted cost"
+msgstr "weighted cost [Gewichtungskosten]"
+
+msgid "weighting"
+msgstr "gewichten"
+
+msgid "worker"
+msgstr "worker"
+
+msgid "zaqar"
+msgstr "Zaqar"

@@ -1,19 +1,23 @@
 # Akihiro Motoki <amotoki@gmail.com>, 2018. #zanata
 # Andreas Jaeger <jaegerandi@gmail.com>, 2018. #zanata
+# masahito muroi <muroi.masahito@lab.ntt.co.jp>, 2019. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: operations-guide 2013.2.1.dev1207\n"
+"Project-Id-Version: operations-guide 2013.2.1.dev1209\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 20:32+0000\n"
+"POT-Creation-Date: 2025-05-02 22:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-12-08 01:46+0000\n"
-"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"PO-Revision-Date: 2019-03-06 11:01+0000\n"
+"Last-Translator: masahito muroi <muroi.masahito@lab.ntt.co.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.3.3\n"
 "Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "(RADOS)"
+msgstr "(RADOS)"
 
 msgid ""
 "**CentOS, Fedora, and Red Hat Enterprise Linux:** https://www.rdoproject.org/"
@@ -49,6 +53,12 @@ msgstr ""
 
 msgid "A Block Storage node that runs the cinder-volume daemon."
 msgstr "cinder-volume デーモンを実行する Block Storage ノード。"
+
+msgid ""
+"A Block Storage volume plug-in that enables communication with the Xen "
+"Storage Manager API."
+msgstr ""
+"Xen Storage Manager API と通信できる Block Storage ボリュームプラグイン。"
 
 msgid ""
 "A Compute RabbitMQ message queue that remains active when the server "
@@ -256,6 +266,9 @@ msgstr ""
 msgid "A comment with additional information that explains a part of the text."
 msgstr "本文を補足する説明コメントです。"
 
+msgid "A compute service that creates VPNs on a per-project basis."
+msgstr "プロジェクトごとの VPN を作成する Compute のサービス。"
+
 msgid ""
 "A configurable option within Object Storage to automatically delete objects "
 "after a specified amount of time has passed or a certain date is reached."
@@ -292,6 +305,13 @@ msgid "A database engine supported by the Database service."
 msgstr "Database サービスがサポートしているデータベースエンジン。"
 
 msgid ""
+"A default role in the Compute RBAC system that can quarantine an instance in "
+"any project."
+msgstr ""
+"あらゆるプロジェクトにあるインスタンスを検疫できる、Compute RBAC システムにお"
+"けるデフォルトのロール。"
+
+msgid ""
 "A device that moves data in the form of blocks. These device nodes interface "
 "the devices, such as hard disks, CD-ROM drives, flash drives, and other "
 "addressable regions of memory."
@@ -299,6 +319,13 @@ msgstr ""
 "ブロック状態のデータを移動するデバイス。これらのデバイスノードにはハードディ"
 "スク、CD-ROM ドライブ、フラッシュドライブ、その他のアドレス可能なメモリの範囲"
 "等がある。"
+
+msgid ""
+"A discrete OpenStack environment with dedicated API endpoints that typically "
+"shares only the Identity (keystone) with other regions."
+msgstr ""
+"専用の API エンドポイントを持つ、分離した OpenStack 環境。一般的に Identity "
+"(keystone) のみを他のリージョンと共有する。"
 
 msgid "A disk storage protocol tunneled within Ethernet."
 msgstr "Ethernet 内をトンネルされるディスクストレージプロトコル。"
@@ -407,6 +434,13 @@ msgstr ""
 "りできる、 Fixed IP アドレスや Floating IP アドレスのグループ。"
 
 msgid ""
+"A group of interrelated web development techniques used on the client-side "
+"to create asynchronous web applications. Used extensively in horizon."
+msgstr ""
+"非同期ウェブアプリケーションを作成するためにクライアント側で使用される相互に"
+"関係するウェブ開発技術の総称。Horizon で広く使用されている。"
+
+msgid ""
 "A group of related button types within horizon. Buttons to start, stop, and "
 "suspend VMs are in one class. Buttons to associate and disassociate floating "
 "IP addresses are in another class, and so on."
@@ -421,6 +455,20 @@ msgid ""
 msgstr ""
 "ユーザーのグループ。Compute リソースへのアクセスを分離するために使用される。"
 "プロジェクトの別名。"
+
+msgid ""
+"A grouped release of projects related to OpenStack that came out in April "
+"2012, the fifth release of OpenStack. It included Compute (nova 2012.1), "
+"Object Storage (swift 1.4.8), Image (glance), Identity (keystone), and "
+"Dashboard (horizon). Essex is the code name for the fifth release of "
+"OpenStack. The design summit took place in Boston, Massachusetts, US and "
+"Essex is a nearby city."
+msgstr ""
+"2012年４月に登場した OpenStack 関連プロジェクトのリリース。Compute (nova "
+"2012.1), Object Storage (swift 1.4.8), Image (glance), Identity (keystone), "
+"Dashboard (horizon) が含まれる。Essex は、OpenStack の 5 番目のリリースのコー"
+"ド名。デザインサミットは、アメリカ合衆国マサチューセッツ州ボストンで開催され"
+"た。Essex はその近郊都市。"
 
 msgid ""
 "A grouped release of projects related to OpenStack that came out in February "
@@ -469,6 +517,13 @@ msgstr ""
 "高可用性システムの設計手法および関連サービスの実装により、契約された計測期間"
 "中、合意された運用レベルを満たします。高可用性システムは、システムの停止時間"
 "とデータ損失を最小化しようとします。"
+
+msgid ""
+"A horizon component that stores and tracks client session information. "
+"Implemented through the Django sessions framework."
+msgstr ""
+"クライアントセッションの保持と追跡を行う Horizon のコンポーネント。 Django の"
+"セッションフレームワークを用いて実装されている。"
 
 msgid ""
 "A kind of web service API that uses REST, or Representational State "
@@ -720,6 +775,13 @@ msgstr ""
 "する。"
 
 msgid ""
+"A pre-made VM image that serves as a cloudpipe server. Essentially, OpenVPN "
+"running on Linux."
+msgstr ""
+"cloudpipe サーバーとしてサービスを行うための、あらかじめ用意された VM イメー"
+"ジ。本質的には Linux 上で実行される OpenVPN。"
+
+msgid ""
 "A process that is created when a RPC call is executed; used to push the "
 "message to the topic exchange."
 msgstr ""
@@ -941,6 +1003,9 @@ msgstr ""
 "Networking 内の仮想ネットワークポート。仮想インターフェースや仮想 NIC は、"
 "ポートに接続されます。"
 
+msgid "A web framework used extensively in horizon."
+msgstr "Horizon 中で広く使用されているウェブフレームワーク。"
+
 msgid ""
 "A worker process that verifies the integrity of Object Storage objects, "
 "containers, and accounts. Auditors is the collective term for the Object "
@@ -957,12 +1022,30 @@ msgstr ""
 "仮想マシンイメージ、および、マシンの状態や OS ディスク容量などの関連メタデー"
 "タを含む、Image サービスにより使用されるラッパー。"
 
+msgid "API endpoint"
+msgstr "API エンドポイント"
+
+msgid "API extension"
+msgstr "API 拡張"
+
+msgid "API extension plug-in"
+msgstr "API 拡張プラグイン"
+
+msgid "API key"
+msgstr "API キー"
+
+msgid "API token"
+msgstr "API トークン"
+
 msgid ""
 "API used to access OpenStack Networking. Provides an extensible architecture "
 "to enable custom plug-in creation."
 msgstr ""
 "OpenStack Networking にアクセスするために利用する API。独自プラグインを作成で"
 "きる拡張性を持ったアーキテクチャーになっている。"
+
+msgid "API version"
+msgstr "API バージョン"
 
 msgid "ATA over Ethernet (AoE)"
 msgstr "ATA over Ethernet (AoE)"
@@ -975,6 +1058,15 @@ msgstr ""
 "AWS CloudFormation を使うと、Amazon Web Services (AWS) ユーザーは関連するリ"
 "ソース群の作成、管理が可能。オーケストレーションサービスは CloudFormation 互"
 "換形式 (CFN) をサポートしている。"
+
+msgid "AWS CloudFormation template"
+msgstr "AWS CloudFormation テンプレート"
+
+msgid ""
+"Absolute limit on the amount of network traffic a Compute VM instance can "
+"send and receive."
+msgstr ""
+"Compute の仮想マシンインスタンスが送受信できるネットワーク通信量の絶対制限。"
 
 msgid "Active Directory"
 msgstr "Active Directory"
@@ -1020,6 +1112,9 @@ msgstr "VM イメージの別名。"
 
 msgid "Alternative term for a VM instance type."
 msgstr "VM インスタンスタイプの別名。"
+
+msgid "Alternative term for a VM or guest."
+msgstr "仮想マシンやゲストの別名。"
 
 msgid "Alternative term for a cloud controller node."
 msgstr "クラウドコントローラーノードの別名。"
@@ -1119,6 +1214,13 @@ msgstr ""
 "OpenStack では未サポート。"
 
 msgid ""
+"An Amazon EC2 concept of an isolated area that is used for fault tolerance. "
+"Do not confuse with an OpenStack Compute zone or cell."
+msgstr ""
+"耐障害性のために使用するエリアを分離する Amazon EC2 の概念。OpenStack "
+"Compute のゾーンやセルと混同しないこと。"
+
+msgid ""
 "An HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP "
 "proxy server."
 msgstr ""
@@ -1193,6 +1295,12 @@ msgstr ""
 "yahoo.com, usa.gov, harvard.edu, mail.yahoo.com など。また、ドメインは、DNS "
 "関連情報のエンティティーや  1 つ以上のレコードを持つ DNS 関連の情報の入れ物を"
 "表すのにも使用される。"
+
+msgid ""
+"An Identity service API access token that is associated with a specific "
+"project."
+msgstr ""
+"特定のプロジェクトに関連付けられた Identity サービス API アクセストークン。"
 
 msgid ""
 "An Identity service API endpoint that is associated with one or more "
@@ -1530,6 +1638,9 @@ msgstr "Apache License 2.0"
 msgid "Apache Web Server"
 msgstr "Apache ウェブサーバー"
 
+msgid "Application Catalog service (murano)"
+msgstr "Application Catalog サービス (murano)"
+
 msgid "Application Programming Interface (API)"
 msgstr "Application Programming Interface (API)"
 
@@ -1579,6 +1690,9 @@ msgstr "B"
 msgid "BMC (Baseboard Management Controller)"
 msgstr "BMC (Baseboard Management Controller)"
 
+msgid "Bare Metal service (ironic)"
+msgstr "Bare Metal サービス (ironic)"
+
 msgid ""
 "Be sure to include the software and package versions that you are using, "
 "especially if you are using a development branch, such as, ``\"Kilo release"
@@ -1587,6 +1701,9 @@ msgstr ""
 "使用しているソフトウェアとパッケージのバージョンを明確にします。とくに開発ブ"
 "ランチを使用している場合は、``\"Kilo release\" vs git commit "
 "bc79c3ecc55929bac585d04a03475b72e06a3208`` などを明確にします。"
+
+msgid "Bell-LaPadula model"
+msgstr "Bell-LaPadula モデル"
 
 msgid ""
 "Belongs to a particular domain and is used to specify information about the "
@@ -1602,11 +1719,17 @@ msgstr ""
 "のドメインのメールサーバーを指定する。name server (NS) レコードは、ドメインの"
 "権威ネームサーバーを指定する。"
 
+msgid "Benchmark service (rally)"
+msgstr "Benchmark サービス (rally)"
+
 msgid "Bexar"
 msgstr "Bexar"
 
 msgid "Block Storage API"
 msgstr "Block Storage API"
+
+msgid "Block Storage service (cinder)"
+msgstr "Block Storage サービス (cinder)"
 
 msgid ""
 "Block storage that is simultaneously accessible by multiple clients, for "
@@ -1706,6 +1829,9 @@ msgstr ""
 msgid "CirrOS"
 msgstr "CirrOS"
 
+msgid "Cisco neutron plug-in"
+msgstr "Cisco neutron プラグイン"
+
 msgid "Cloud Auditing Data Federation (CADF)"
 msgstr "Cloud Auditing Data Federation (CADF)"
 
@@ -1726,6 +1852,14 @@ msgstr "Cloud Infrastructure Management Interface (CIMI)"
 msgid "Cloudbase-Init"
 msgstr "Cloudbase-Init"
 
+msgid "Clustering service (senlin)"
+msgstr "Clustering サービス (senlin)"
+
+msgid ""
+"Code name for the :term:`Clustering service <Clustering service (senlin)>`."
+msgstr ""
+" :term:`Clustering サービス <Clustering service (senlin)>` のコード名。"
+
 msgid ""
 "Code name for the :term:`Containers Infrastructure Management "
 "service<Container Infrastructure Management service (magnum)>`."
@@ -1742,6 +1876,13 @@ msgid ""
 msgstr ""
 "term:`Infrastructure Optimization サービス <Infrastructure Optimization "
 "service (watcher)>` のコード名。"
+
+msgid ""
+"Code name for the :term:`NFV Orchestration service <NFV Orchestration "
+"service (tacker)>`"
+msgstr ""
+":term:`NFV Orchestration サービス <NFV Orchestration service (tacker)>` の"
+"コード名。"
 
 msgid ""
 "Code name for the :term:`Root Cause Analysis service <Root Cause Analysis "
@@ -1801,6 +1942,13 @@ msgstr ":term:`Benchmark サービス <Benchmark service (rally)>` のコード�
 
 msgid "Codename for the :term:`Dashboard <Dashboard (horizon)>`."
 msgstr ":term:`Dashboard <Dashboard (horizon)>` のコード名。"
+
+msgid ""
+"Codename for the :term:`Data Processing service<Data Processing service "
+"(sahara)>`."
+msgstr ""
+":term:`Data Processing サービス <Data Processing service (sahara)>` のコード"
+"名。"
 
 msgid "Codename for the :term:`Image service<Image service (glance)>`."
 msgstr ":term:`Image サービス <Image service (glance)>` のコード名。"
@@ -1878,8 +2026,8 @@ msgstr ""
 "ルール管理インターフェースやルールベースの認可エンジンを提供する Identity の"
 "コンポーネント。"
 
-msgid "Compute API (Nova API)"
-msgstr "Compute API (Nova API)"
+msgid "Compute service (nova)"
+msgstr "Compute サービス (nova)"
 
 msgid ""
 "Computer that provides explicit services to the client software running on "
@@ -1912,6 +2060,9 @@ msgid ""
 msgstr ""
 "RabbitMQ—Compute において直接利用者により接続される。メッセージは、現在の接続"
 "だけにより使用される。"
+
+msgid "Container Infrastructure Management service (magnum)"
+msgstr "コンテナー基盤管理サービス (magnum)"
 
 msgid ""
 "Contains configuration information that Object Storage uses to reconfigure a "
@@ -1967,11 +2118,29 @@ msgstr "いくつかの OpenStack コア API を拡張するカスタムモジ�
 msgid "D"
 msgstr "D"
 
+msgid "DHCP agent"
+msgstr "DHCP エージェント"
+
+msgid "DNS record"
+msgstr "DNS レコード"
+
+msgid "DNS service (designate)"
+msgstr "DNS service (designate)"
+
 msgid ""
 "Daemon that provides DNS, DHCP, BOOTP, and TFTP services for virtual "
 "networks."
 msgstr ""
 "仮想ネットワーク向けに DNS、DHCP、BOOTP、TFTP サービスを提供するデーモン。"
+
+msgid "Dashboard (horizon)"
+msgstr "Dashboard (horizon)"
+
+msgid "Data Processing service (sahara)"
+msgstr "Data Processing サービス (sahara)"
+
+msgid "Data loss prevention (DLP) software"
+msgstr "情報漏えい防止 (DLP) ソフトウェア"
 
 msgid ""
 "Data that is only known to or accessible by a user and used to verify that "
@@ -1982,6 +2151,9 @@ msgstr ""
 "ユーザーのみが知っている、またはアクセスできるデータ。ユーザーが正当であるこ"
 "とを検証するために使用される。クレデンシャルは、認証中にサーバーに提示され"
 "る。例えば、パスワード、秘密鍵、電子証明書、フィンガープリントなどがある。"
+
+msgid "Database service (trove)"
+msgstr "Database サービス (trove)"
 
 msgid "Debian"
 msgstr "Debian"
@@ -2095,6 +2267,9 @@ msgstr "Dynamic HyperText Markup Language (DHTML)"
 msgid "E"
 msgstr "E"
 
+msgid "EBS boot volume"
+msgstr "EBS ブートボリューム"
+
 msgid "EC2"
 msgstr "EC2"
 
@@ -2103,6 +2278,12 @@ msgstr "EC2 API"
 
 msgid "EC2 Compatibility API"
 msgstr "EC2 互換API"
+
+msgid "EC2 access key"
+msgstr "EC2 アクセスキー"
+
+msgid "EC2 secret key"
+msgstr "EC2 シークレットキー"
 
 msgid "ESXi"
 msgstr "ESXi"
@@ -2313,6 +2494,9 @@ msgstr ""
 "Silicon Graphics 社により作成された、高性能な 64 ビットファイルシステム。並"
 "列 I/O 処理とデータの一貫性に優れる。"
 
+msgid "Hyper-V"
+msgstr "Hyper-V"
+
 msgid "IP Address Management (IPAM)"
 msgstr "IP Address Management (IPAM)"
 
@@ -2503,6 +2687,9 @@ msgstr "Internet Service Provider (ISP)"
 msgid "Internet Small Computer System Interface (iSCSI)"
 msgstr "Internet Small Computer System Interface (iSCSI)"
 
+msgid "Internet protocol (IP)"
+msgstr "インターネットプロトコル (IP)"
+
 msgid "J"
 msgstr "J"
 
@@ -2536,6 +2723,9 @@ msgstr ""
 
 msgid "Lists allowed commands within the Compute rootwrap facility."
 msgstr "Compute rootwrap 機能内で許可されるコマンドの一覧。"
+
+msgid "Load-balancing service (octavia)"
+msgstr "Load-balancing サービス (octavia)"
 
 msgid "Logical Volume Manager (LVM)"
 msgstr "論理ボリュームマネージャー (LVM)"
@@ -2585,6 +2775,13 @@ msgstr ""
 "サネット向けは 1500 バイト。"
 
 msgid ""
+"Mechanism for highly available multi-host routing when using OpenStack "
+"Networking (neutron)."
+msgstr ""
+"OpenStack Networking (neutron) の使用時に、高可用なマルチホストルーティングを"
+"行うための仕組み。"
+
+msgid ""
 "Mechanism in IP networks to detect end-to-end MTU and adjust packet size "
 "accordingly."
 msgstr ""
@@ -2610,8 +2807,14 @@ msgstr ""
 "サービスの再起動時に削除されるメッセージキュー。このデータは永続ストレージに"
 "書き込まれない。"
 
+msgid "Message service (zaqar)"
+msgstr "Message サービス (zaqar)"
+
 msgid "Meta-Data Server (MDS)"
 msgstr "Meta-Data Server (MDS)"
+
+msgid "Metadata agent"
+msgstr "メタデータエージェント"
 
 msgid ""
 "Method of keeping a clock for a host or node correct via communication with "
@@ -2637,6 +2840,9 @@ msgstr ""
 msgid "Networking API (Neutron API)"
 msgstr "Networking API (Neutron API)"
 
+msgid "Networking service (neutron)"
+msgstr "Networking サービス (neutron)"
+
 msgid ""
 "New users are assigned to this project if no project is specified when a "
 "user is created."
@@ -2646,6 +2852,9 @@ msgstr ""
 
 msgid "Newton"
 msgstr "Newton"
+
+msgid "Nexenta volume driver"
+msgstr "Nexenta ボリュームドライバー"
 
 msgid "Nginx"
 msgstr "Nginx"
@@ -2747,6 +2956,9 @@ msgstr ""
 msgid "Open vSwitch"
 msgstr "Open vSwitch"
 
+msgid "Open vSwitch (OVS) agent"
+msgstr "Open vSwitch (OVS) エージェント"
+
 msgid ""
 "Open vSwitch is a production quality, multilayer virtual switch licensed "
 "under the open source Apache 2.0 license. It is designed to enable massive "
@@ -2758,6 +2970,9 @@ msgstr ""
 "2.0 license に基づき許諾される。標準的な管理インターフェースやプロトコルと使"
 "用ながら、プログラム拡張により大規模なネットワーク自動化を実現できるよう設計"
 "されている (例えば、NetFlow、sFlow、SPAN、RSPAN、CLI、LACP、802.1ag)。"
+
+msgid "Open vSwitch neutron plug-in"
+msgstr "Open vSwitch neutron プラグイン"
 
 msgid "OpenLDAP"
 msgstr "OpenLDAP"
@@ -2776,6 +2991,9 @@ msgid ""
 msgstr ""
 "インスタンスにメタデータサービスを提供する OpenStack Networking エージェン"
 "ト。"
+
+msgid "OpenStack code name"
+msgstr "OpenStack コード名"
 
 msgid "OpenStack distribution packages"
 msgstr "OpenStack ディストリビューション"
@@ -2864,11 +3082,21 @@ msgstr ""
 "をサポートします。"
 
 msgid ""
+"OpenStack-on-OpenStack program. The code name for the OpenStack Deployment "
+"program."
+msgstr ""
+"OpenStack-on-OpenStack プログラム。OpenStack Deployment プログラムのコード"
+"名。"
+
+msgid ""
 "Opens all objects for an object server and verifies the MD5 hash, size, and "
 "metadata for each object."
 msgstr ""
 "あるオブジェクトサーバー用の全オブジェクトを開き、各オブジェクトの MD5 ハッ"
 "シュ、サイズ、メタデータを検証する。"
+
+msgid "Orchestration service (heat)"
+msgstr "Orchestration サービス (heat)"
 
 msgid ""
 "Organizes and stores objects in Object Storage. Similar to the concept of a "
@@ -2877,6 +3105,9 @@ msgid ""
 msgstr ""
 "Object Storage でオブジェクトを整理して保存する。Linux のディレクトリと似てい"
 "るが、入れ子にできない。Image service のコンテナー形式の別名。"
+
+msgid "PCI passthrough"
+msgstr "PCI パススルー"
 
 msgid ""
 "Pages that use HTML, JavaScript, and Cascading Style Sheets to enable users "
@@ -2905,6 +3136,13 @@ msgid ""
 msgstr ""
 "OpenStack :term:`Telemetry サービス <Telemetry service (telemetry)>` の 1 つ"
 "で、インデックス作成機能と時系列データベースを提供する。"
+
+msgid ""
+"Part of the OpenStack :term:`Telemetry service <Telemetry service "
+"(telemetry)>`; provides event storage."
+msgstr ""
+"OpenStack :term:`Telemetry サービス <Telemetry service (telemetry)>` の 1 つ"
+"で、イベントストレージを提供する。"
 
 msgid ""
 "Passed to API requests and used by OpenStack to verify that the client is "
@@ -3067,6 +3305,9 @@ msgstr "Python"
 msgid "Q"
 msgstr "Q"
 
+msgid "QEMU Copy On Write 2 (QCOW2)"
+msgstr "QEMU Copy On Write 2 (QCOW2)"
+
 msgid ""
 "QEMU is a generic and open source machine emulator and virtualizer. One of "
 "the hypervisors supported by OpenStack, generally used for development "
@@ -3103,6 +3344,15 @@ msgstr "RAM オーバーコミット"
 msgid "RESTful"
 msgstr "RESTful"
 
+msgid "RPC driver"
+msgstr "RPC ドライバー"
+
+msgid "RXTX cap"
+msgstr "RXTX キャップ"
+
+msgid "RXTX quota"
+msgstr "RXTX クォータ"
+
 msgid "RabbitMQ"
 msgstr "RabbitMQ"
 
@@ -3132,6 +3382,9 @@ msgstr ""
 "Rackspace により 2010 年にオープンソースとして公開された。Object Storage の"
 "ベース。"
 
+msgid "Reliable, Autonomic Distributed Object Store"
+msgstr "Reliable, Autonomic Distributed Object Store"
+
 msgid "Remote Procedure Call (RPC)"
 msgstr "Remote Procedure Call (RPC)"
 
@@ -3155,8 +3408,18 @@ msgstr "Rocky"
 msgid "Role Based Access Control (RBAC)"
 msgstr "Role Based Access Control (RBAC)"
 
+msgid "Root Cause Analysis (RCA) service (Vitrage)"
+msgstr "Root Cause Analysis (RCA) サービス (Vitrage)"
+
+msgid "Runs automated tests against the core OpenStack API; written in Rails."
+msgstr ""
+"コア OpenStack API に対して自動テストを実行する。Rails で書かれている。"
+
 msgid "S"
 msgstr "S"
+
+msgid "SAML assertion"
+msgstr "SAML アサーション"
 
 msgid "SELinux"
 msgstr "SELinux"
@@ -3205,6 +3468,9 @@ msgstr ""
 msgid "Shared File Systems API"
 msgstr "共有ファイルシステム API"
 
+msgid "Shared File Systems service (manila)"
+msgstr "Shared File Systems サービス (manila)"
+
 msgid "Sheepdog"
 msgstr "Sheepdog"
 
@@ -3216,6 +3482,16 @@ msgstr "Simple Protocol for Independent Computing Environments (SPICE)"
 
 msgid "Single-root I/O Virtualization (SR-IOV)"
 msgstr "Single-root I/O Virtualization (SR-IOV)"
+
+msgid "SmokeStack"
+msgstr "SmokeStack"
+
+msgid ""
+"Soft limit on the amount of network traffic a Compute VM instance can send "
+"and receive."
+msgstr ""
+"Compute の仮想マシンインスタンスが送受信できるネットワーク通信量のソフト制"
+"限。"
 
 msgid "Software Development Lifecycle Automation service (solum)"
 msgstr "Software Development Lifecycle Automation サービス (solum)"
@@ -3241,6 +3517,9 @@ msgid ""
 msgstr ""
 "ホストやノードで実行され、ハードウェアのネットワークスイッチの機能を提供する"
 "ソフトウェア。"
+
+msgid "Software-defined networking (SDN)"
+msgstr "Software-defined networking (SDN)"
 
 msgid "SolidFire Volume Driver"
 msgstr "SolidFire Volume Driver"
@@ -3325,6 +3604,9 @@ msgstr "Compute で VMware 製品の操作をサポートする。"
 
 msgid "T"
 msgstr "T"
+
+msgid "Telemetry service (telemetry)"
+msgstr "Telemetry サービス (telemetry)"
 
 msgid "TempAuth"
 msgstr "TempAuth"
@@ -3587,6 +3869,9 @@ msgstr "OpenStack wiki"
 
 msgid "The POSIX-compliant file system provided by Ceph."
 msgstr "Ceph により提供される POSIX 互換ファイルシステム。"
+
+msgid "The Xen administrative API, which is supported by Compute."
+msgstr "Xen 管理 API。Compute によりサポートされる。"
 
 msgid ""
 "The `OpenStack wiki <https://wiki.openstack.org/>`_ contains a broad range "
@@ -3971,6 +4256,14 @@ msgstr ""
 "その他の方法をにより本人確認を行うプロセス。"
 
 msgid ""
+"The project that implements clustering services and libraries for the "
+"management of groups of homogeneous objects exposed by other OpenStack "
+"services."
+msgstr ""
+"他の OpenStack サービスにより公開された均質なオブジェクトグループを管理するた"
+"めのクラスタリングサービスと関連ライブラリーを実装するプロジェクト。"
+
+msgid ""
 "The project that produces a set of python libraries containing code shared "
 "by OpenStack projects. The APIs provided by these libraries should be high "
 "quality, stable, consistent, documented and generally applicable."
@@ -4088,6 +4381,9 @@ msgstr ""
 
 msgid "Torpedo"
 msgstr "Torpedo"
+
+msgid "TripleO"
+msgstr "TripleO"
 
 msgid ""
 "Type of Compute scheduler that evenly distributes instances among available "
@@ -4207,6 +4503,13 @@ msgstr ""
 "Object Storage のオブジェクトが削除済みであることを示す印をつけるために使用さ"
 "れる。オブジェクトの削除後、他のノードにおいて更新されないことを保証する。"
 
+msgid ""
+"Used to restrict communications between hosts and/or nodes, implemented in "
+"Compute using iptables, arptables, ip6tables, and ebtables."
+msgstr ""
+"ホストノード間の通信を制限するために使用される。 Compute において iptables, "
+"arptables, ip6tables, ebtables を使用して 実装される。"
+
 msgid "Used to track segments of a large object within Object Storage."
 msgstr "Object Storage 内で大きなオブジェクトを管理するために使用される。"
 
@@ -4219,14 +4522,29 @@ msgstr "V"
 msgid "VIF UUID"
 msgstr "VIF UUID"
 
+msgid "VLAN manager"
+msgstr "VLAN マネージャー"
+
+msgid "VLAN network"
+msgstr "VLAN ネットワーク"
+
 msgid "VM Remote Control (VMRC)"
 msgstr "VM Remote Control (VMRC)"
+
+msgid "VM disk (VMDK)"
+msgstr "VM disk (VMDK)"
+
+msgid "VM image"
+msgstr "仮想マシンイメージ"
 
 msgid "VM image container format supported by Image service."
 msgstr "Image service によりサポートされる仮想マシンイメージのコンテナー形式。"
 
 msgid "VMware API"
 msgstr "VMware API"
+
+msgid "VMware NSX Neutron plug-in"
+msgstr "VMware NSX Neutron プラグイン"
 
 msgid "VNC proxy"
 msgstr "VNC プロキシ"
@@ -4259,6 +4577,9 @@ msgstr ""
 "式。各フラットネットワークは、一般的にブリッジマッピングにより定義される専用"
 "の物理インターフェースを必要とする。ただし、フラットネットワークに複数のサブ"
 "ネットを割り当てることはできる。"
+
+msgid "VirtualBox"
+msgstr "VirtualBox"
 
 msgid "Vitrage"
 msgstr "Vitrage"
@@ -4295,6 +4616,9 @@ msgstr ""
 "クノードからのメッセージを受け付ける機能のために、スケジューラーサービスによ"
 "り使用されるメッセージングインターフェース。"
 
+msgid "Workflow service (mistral)"
+msgstr "Workflow サービス (mistral)"
+
 msgid "X"
 msgstr "X"
 
@@ -4303,6 +4627,30 @@ msgstr "X.509"
 
 msgid "XFS"
 msgstr "XFS"
+
+msgid "Xen"
+msgstr "Xen"
+
+msgid "Xen API"
+msgstr "Xen API"
+
+msgid "Xen Cloud Platform (XCP)"
+msgstr "Xen Cloud Platform (XCP)"
+
+msgid "Xen Storage Manager Volume Driver"
+msgstr "Xen Storage Manager Volume Driver"
+
+msgid ""
+"Xen is a hypervisor using a microkernel design, providing services that "
+"allow multiple computer operating systems to execute on the same computer "
+"hardware concurrently."
+msgstr ""
+"Xen は、マイクロカーネル設計を使用したハイパーバイザー。複数のコンピューター"
+"オペレーティングシステムを同じコンピューターハードウェアで同時に実行できるよ"
+"うにするサービスを提供する。"
+
+msgid "XenServer"
+msgstr "XenServer"
 
 msgid "Z"
 msgstr "Z"
@@ -4439,20 +4787,1118 @@ msgid ""
 msgstr ""
 "`仮想マシンイメージガイド <https://docs.openstack.org/ja/image-guide/>`_"
 
+msgid "account service"
+msgstr "アカウントサービス"
+
+msgid "accounting"
+msgstr "アカウンティング"
+
+msgid "active/active configuration"
+msgstr "アクティブ/アクティブ設定"
+
+msgid "active/passive configuration"
+msgstr "アクティブ/パッシブ設定"
+
+msgid "address pool"
+msgstr "アドレスプール"
+
+msgid "admin API"
+msgstr "管理 API"
+
+msgid "admin server"
+msgstr "管理サーバー"
+
+msgid "administrator"
+msgstr "管理者"
+
+msgid "alert"
+msgstr "アラート"
+
+msgid "allocate"
+msgstr "確保 (allocate)"
+
+msgid "aodh"
+msgstr "aodh"
+
+msgid "applet"
+msgstr "アプレット"
+
+msgid "associate"
+msgstr "割り当て (associate)"
+
+msgid "attach"
+msgstr "接続 (attach)"
+
+msgid "attachment (network)"
+msgstr "アタッチ（ネットワーク）"
+
+msgid "auditing"
+msgstr "監査 (auditing)"
+
+msgid "auditor"
+msgstr "auditor"
+
+msgid "auth node"
+msgstr "認可ノード"
+
+msgid "authentication"
+msgstr "認証"
+
+msgid "authentication token"
+msgstr "認証トークン"
+
+msgid "authorization"
+msgstr "認可"
+
+msgid "authorization node"
+msgstr "認可ノード"
+
+msgid "auto declare"
+msgstr "自動宣言 (auto declare)"
+
+msgid "availability zone"
+msgstr "アベイラビリティーゾーン"
+
+msgid "back end"
+msgstr "バックエンド"
+
+msgid "back-end catalog"
+msgstr "バックエンドカタログ"
+
+msgid "back-end store"
+msgstr "バックエンドストア"
+
+msgid "bandwidth"
+msgstr "帯域"
+
+msgid "barbican"
+msgstr "barbican"
+
+msgid "bare"
+msgstr "bare"
+
+msgid "base image"
+msgstr "ベースイメージ"
+
+msgid "binary"
+msgstr "バイナリー"
+
+msgid "bit"
+msgstr "ビット"
+
+msgid "bits per second (BPS)"
+msgstr "bps"
+
+msgid "block device"
+msgstr "ブロックデバイス"
+
+msgid "block migration"
+msgstr "ブロックマイグレーション"
+
+msgid "bootable disk image"
+msgstr "ブータブルディスクイメージ"
+
+msgid "browser"
+msgstr "ブラウザー"
+
+msgid "builder file"
+msgstr "ビルダーファイル"
+
+msgid "bursting"
+msgstr "超過利用"
+
+msgid "button class"
+msgstr "ボタンクラス"
+
+msgid "byte"
+msgstr "バイト"
+
+msgid "cache pruner"
+msgstr "cache pruner"
+
+msgid "capability"
+msgstr "キャパシティ"
+
+msgid "capacity cache"
+msgstr "capacity cache"
+
+msgid "capacity updater"
+msgstr "capacity updater"
+
+msgid "catalog"
+msgstr "カタログ"
+
+msgid "catalog service"
+msgstr "カタログサービス"
+
+msgid "ceilometer"
+msgstr "ceilometer"
+
+msgid "cell"
+msgstr "セル"
+
+msgid "cell forwarding"
+msgstr "セルフォワーディング"
+
+msgid "cell manager"
+msgstr "セルマネージャー"
+
+msgid "certificate authority (CA)"
+msgstr "認証局 (CA)"
+
+msgid "chance scheduler"
+msgstr "チャンススケジューラー"
+
+msgid "changes since"
+msgstr "changes since"
+
+msgid "child cell"
+msgstr "子セル"
+
+msgid "cinder"
+msgstr "cinder"
+
+msgid "cloud architect"
+msgstr "クラウドアーキテクト"
+
+msgid "cloud computing"
+msgstr "クラウドコンピューティング"
+
+msgid "cloud controller"
+msgstr "クラウドコントローラー"
+
+msgid "cloud controller node"
+msgstr "クラウドコントローラーノード"
+
+msgid "cloud-init"
+msgstr "cloud-init"
+
+msgid "cloudadmin"
+msgstr "cloudadmin"
+
+msgid "cloudpipe"
+msgstr "cloudpipe"
+
+msgid "cloudpipe image"
+msgstr "cloudpipe イメージ"
+
+msgid "command filter"
+msgstr "コマンドフィルター"
+
+msgid "community project"
+msgstr "コミュニティープロジェクト"
+
+msgid "compression"
+msgstr "圧縮"
+
+msgid "compute controller"
+msgstr "コンピュートコントローラー"
+
+msgid "compute host"
+msgstr "コンピュートホスト"
+
+msgid "compute node"
+msgstr "コンピュートノード"
+
+msgid "compute worker"
+msgstr "コンピュートワーカー"
+
+msgid "concatenated object"
+msgstr "連結オブジェクト"
+
+msgid "conductor"
+msgstr "コンダクター"
+
+msgid "consistency window"
+msgstr "一貫性ウインドウ"
+
+msgid "console log"
+msgstr "コンソールログ"
+
+msgid "container"
+msgstr "コンテナー"
+
+msgid "container auditor"
+msgstr "コンテナーオーディター"
+
+msgid "container database"
+msgstr "コンテナーデータベース"
+
+msgid "container format"
+msgstr "コンテナーフォーマット"
+
+msgid "container server"
+msgstr "コンテナーサーバー"
+
+msgid "container service"
+msgstr "コンテナーサービス"
+
+msgid "content delivery network (CDN)"
+msgstr "コンテンツ配信ネットワーク (CDN)"
+
+msgid "controller node"
+msgstr "コントローラーノード"
+
+msgid "core API"
+msgstr "コア API"
+
+msgid "core service"
+msgstr "コアサービス"
+
+msgid "cost"
+msgstr "コスト"
+
+msgid "credentials"
+msgstr "クレデンシャル"
+
+msgid "current workload"
+msgstr "カレントワークロード"
+
+msgid "customer"
+msgstr "カスタマー"
+
+msgid "customization module"
+msgstr "カスタムモジュール"
+
+msgid "daemon"
+msgstr "デーモン"
+
+msgid "data encryption"
+msgstr "データ暗号化"
+
+msgid "data store"
+msgstr "データストア"
+
+msgid "database ID"
+msgstr "データベース ID"
+
+msgid "database replicator"
+msgstr "データベースレプリケーター"
+
+msgid "deallocate"
+msgstr "割り当て解除"
+
+msgid "deduplication"
+msgstr "重複排除"
+
+msgid "default panel"
+msgstr "デフォルトパネル"
+
+msgid "default project"
+msgstr "デフォルトプロジェクト"
+
+msgid "default token"
+msgstr "デフォルトトークン"
+
+msgid "delayed delete"
+msgstr "遅延削除"
+
+msgid "delivery mode"
+msgstr "デリバリーモード"
+
+msgid "denial of service (DoS)"
+msgstr "サービス妨害 (DoS)"
+
+msgid "deprecated auth"
+msgstr "非推奨認証"
+
+msgid "designate"
+msgstr "designate"
+
+msgid "developer"
+msgstr "developer"
+
+msgid "device ID"
+msgstr "デバイス ID"
+
+msgid "device weight"
+msgstr "デバイスウェイト"
+
+msgid "direct consumer"
+msgstr "ダイレクトコンシューマー (direct consumer)"
+
+msgid "direct exchange"
+msgstr "ダイレクトエクスチェンジ (direct exchange)"
+
+msgid "direct publisher"
+msgstr "ダイレクトパブリッシャー (direct publisher)"
+
+msgid "disassociate"
+msgstr "関連付け解除 (disassociate)"
+
+msgid "disk encryption"
+msgstr "ディスク暗号化"
+
+msgid "disk format"
+msgstr "ディスクフォーマット"
+
+msgid "dispersion"
+msgstr "分散 (dispersion)"
+
+msgid "distributed virtual router (DVR)"
+msgstr "分散仮想ルーター (DVR)"
+
+msgid "dnsmasq"
+msgstr "dnsmasq"
+
+msgid "domain"
+msgstr "ドメイン"
+
+msgid "download"
+msgstr "ダウンロード"
+
+msgid "durable exchange"
+msgstr "永続エクスチェンジ (durable exchange)"
+
+msgid "durable queue"
+msgstr "永続キュー"
+
+msgid "east-west traffic"
+msgstr "イースト・ウエスト通信"
+
+msgid "ebtables"
+msgstr "ebtables"
+
+msgid "encapsulation"
+msgstr "カプセル化"
+
+msgid "encryption"
+msgstr "暗号化"
+
+msgid "endpoint"
+msgstr "エンドポイント"
+
+msgid "endpoint registry"
+msgstr "エンドポイントレジストリ"
+
+msgid "endpoint template"
+msgstr "エンドポイントテンプレート"
+
+msgid "entity"
+msgstr "エンティティー"
+
+msgid "ephemeral image"
+msgstr "一時イメージ"
+
+msgid "ephemeral volume"
+msgstr "一時ボリューム"
+
+msgid "euca2ools"
+msgstr "euca2ools"
+
+msgid "evacuate"
+msgstr "退避 (evacuate)"
+
+msgid "exchange"
+msgstr "エクスチェンジ (exchange)"
+
+msgid "exchange type"
+msgstr "エクスチェンジ種別"
+
+msgid "exclusive queue"
+msgstr "排他キュー"
+
+msgid "extended attributes (xattr)"
+msgstr "拡張属性 (xattr)"
+
+msgid "extension"
+msgstr "エクステンション"
+
+msgid "external network"
+msgstr "外部ネットワーク"
+
+msgid "extra specs"
+msgstr "追加スペック"
+
+msgid "fan-out exchange"
+msgstr "ファンアウトエクスチェンジ (exchange)"
+
+msgid "fill-first scheduler"
+msgstr "充填優先スケジューラー"
+
+msgid "filter"
+msgstr "フィルター"
+
+msgid "firewall"
+msgstr "ファイアウォール"
+
+msgid "fixed IP address"
+msgstr "Fixed IP アドレス"
+
+msgid "flat mode injection"
+msgstr "フラットモードインジェクション (flat mode injection)"
+
+msgid "flat network"
+msgstr "フラットネットワーク"
+
+msgid "flavor"
+msgstr "フレーバー"
+
+msgid "flavor ID"
+msgstr "フレーバー ID"
+
+msgid "floating IP address"
+msgstr "Floating IP アドレス"
+
+msgid "freezer"
+msgstr "freezer"
+
+msgid "front end"
+msgstr "フロントエンド"
+
+msgid "gateway"
+msgstr "ゲートウェイ"
+
+msgid "generic receive offload (GRO)"
+msgstr "generic receive offload (GRO)"
+
+msgid "generic routing encapsulation (GRE)"
+msgstr "generic routing encapsulation (GRE)"
+
+msgid "glance"
+msgstr "glance"
+
+msgid "glance API server"
+msgstr "glance API サーバー"
+
+msgid "glance registry"
+msgstr "Glance レジストリー"
+
+msgid "global endpoint template"
+msgstr "グローバルエンドポイントテンプレート"
+
+msgid "gnocchi"
+msgstr "gnocchi"
+
+msgid "golden image"
+msgstr "ゴールデンイメージ"
+
+msgid "guest OS"
+msgstr "ゲスト OS"
+
+msgid "handover"
+msgstr "ハンドオーバー (handover)"
+
+msgid "hard reboot"
+msgstr "ハードリブート"
+
+msgid "health monitor"
+msgstr "ヘルスモニター"
+
+msgid "heat"
+msgstr "heat"
+
+msgid "high availability (HA)"
+msgstr "高可用性"
+
+msgid "horizon"
+msgstr "horizon"
+
 msgid "iSCSI Qualified Name (IQN)"
 msgstr "iSCSI Qualified Name (IQN)"
+
+msgid "instance"
+msgstr "インスタンス"
+
+msgid "instance UUID"
+msgstr "インスタンス UUID"
+
+msgid "instance state"
+msgstr "インスタンス状態"
+
+msgid "instance tunnels network"
+msgstr "インスタンストンネルネットワーク"
+
+msgid "instance type"
+msgstr "インスタンスタイプ"
+
+msgid "instance type ID"
+msgstr "インスタンスタイプ ID"
+
+msgid "interface"
+msgstr "インターフェース"
+
+msgid "interface ID"
+msgstr "インターフェース ID"
 
 msgid "ip6tables"
 msgstr "ip6tables"
 
+msgid "ipset"
+msgstr "ipset"
+
 msgid "iptables"
 msgstr "iptables"
+
+msgid "ironic"
+msgstr "ironic"
+
+msgid "itsec"
+msgstr "itsec"
 
 msgid "libvirt"
 msgstr "libvirt"
 
+msgid "magnum"
+msgstr "magnum"
+
+msgid "management API"
+msgstr "マネジメント API"
+
+msgid "management network"
+msgstr "管理ネットワーク"
+
+msgid "manager"
+msgstr "マネージャー"
+
+msgid "manifest"
+msgstr "マニフェスト"
+
+msgid "manifest object"
+msgstr "マニフェストオブジェクト"
+
+msgid "manila"
+msgstr "manila"
+
+msgid "manila-share"
+msgstr "manila-share"
+
+msgid "maximum transmission unit (MTU)"
+msgstr "最大転送単位 (MTU)"
+
+msgid "mechanism driver"
+msgstr "メカニズムドライバー"
+
+msgid "melange"
+msgstr "melange"
+
+msgid "membership"
+msgstr "メンバーシップ"
+
+msgid "membership list"
+msgstr "メンバーシップリスト"
+
+msgid "memcached"
+msgstr "memcached"
+
+msgid "memory overcommit"
+msgstr "メモリーオーバーコミット"
+
+msgid "message broker"
+msgstr "メッセージブローカー"
+
+msgid "message bus"
+msgstr "メッセージバス"
+
+msgid "message queue"
+msgstr "メッセージキュー"
+
+msgid "migration"
+msgstr "マイグレーション"
+
+msgid "mistral"
+msgstr "mistral"
+
+msgid "network UUID"
+msgstr "ネットワーク UUID"
+
+msgid "network worker"
+msgstr "ネットワークワーカー"
+
+msgid "neutron"
+msgstr "neutron"
+
+msgid "neutron API"
+msgstr "neutron API"
+
+msgid "neutron manager"
+msgstr "neutron マネージャー"
+
+msgid "neutron plug-in"
+msgstr "neutron プラグイン"
+
+msgid "node"
+msgstr "ノード"
+
+msgid "non-durable exchange"
+msgstr "非永続交換"
+
+msgid "non-durable queue"
+msgstr "非永続キュー"
+
+msgid "non-persistent volume"
+msgstr "非永続ボリューム"
+
+msgid "north-south traffic"
+msgstr "ノース・サウス通信"
+
+msgid "nova"
+msgstr "nova"
+
+msgid "nova-network"
+msgstr "nova-network"
+
+msgid "object"
+msgstr "オブジェクト"
+
+msgid "object auditor"
+msgstr "オブジェクトオーディター"
+
+msgid "object expiration"
+msgstr "オブジェクト有効期限"
+
 msgid "openSUSE"
 msgstr "openSUSE"
 
+msgid "operator"
+msgstr "運用者"
+
+msgid "optional service"
+msgstr "オプションサービス"
+
+msgid "orphan"
+msgstr "orphan"
+
+msgid "panko"
+msgstr "panko"
+
+msgid "parent cell"
+msgstr "親セル"
+
+msgid "partition"
+msgstr "パーティション"
+
+msgid "partition index"
+msgstr "パーティションインデックス"
+
+msgid "partition shift value"
+msgstr "パーティションシフト値"
+
+msgid "path MTU discovery (PMTUD)"
+msgstr "path MTU discovery (PMTUD)"
+
+msgid "pause"
+msgstr "一時停止"
+
+msgid "persistent message"
+msgstr "永続メッセージ"
+
+msgid "persistent volume"
+msgstr "永続ボリューム"
+
+msgid "personality file"
+msgstr "パーソナリティーファイル"
+
+msgid "plug-in"
+msgstr "プラグイン"
+
+msgid "policy service"
+msgstr "ポリシーサービス"
+
+msgid "policy-based routing (PBR)"
+msgstr "ポリシーベースルーティング (PBR)"
+
+msgid "pool"
+msgstr "プール"
+
+msgid "pool member"
+msgstr "プールメンバー"
+
+msgid "port"
+msgstr "ポート"
+
+msgid "port UUID"
+msgstr "ポート UUID"
+
+msgid "preseed"
+msgstr "preseed"
+
+msgid "private IP address"
+msgstr "プライベート IP アドレス"
+
+msgid "private image"
+msgstr "プライベートイメージ"
+
+msgid "private network"
+msgstr "プライベートネットワーク"
+
+msgid "project"
+msgstr "プロジェクト"
+
+msgid "quarantine"
+msgstr "隔離"
+
+msgid "quota"
+msgstr "クォータ"
+
+msgid "radvd"
+msgstr "radvd"
+
+msgid "rally"
+msgstr "rally"
+
+msgid "rate limit"
+msgstr "レートリミット"
+
+msgid "raw"
+msgstr "raw"
+
+msgid "rebalance"
+msgstr "リバランス"
+
+msgid "reboot"
+msgstr "リブート"
+
+msgid "rebuild"
+msgstr "リビルド"
+
+msgid "record"
+msgstr "レコード"
+
+msgid "record ID"
+msgstr "レコード ID"
+
+msgid "reference architecture"
+msgstr "リファレンスアーキテクチャー"
+
+msgid "region"
+msgstr "リージョン"
+
+msgid "registry"
+msgstr "レジストリー"
+
+msgid "registry server"
+msgstr "レジストリサーバー"
+
+msgid "replica"
+msgstr "レプリカ"
+
+msgid "replica count"
+msgstr "レプリカ数"
+
+msgid "replication"
+msgstr "レプリケーション"
+
+msgid "replicator"
+msgstr "レプリケーター"
+
+msgid "request ID"
+msgstr "リクエスト ID"
+
+msgid "rescue image"
+msgstr "レスキューイメージ"
+
+msgid "resize"
+msgstr "リサイズ"
+
+msgid "ring"
+msgstr "リング"
+
+msgid "ring builder"
+msgstr "リングビルダー"
+
+msgid "role"
+msgstr "ロール"
+
+msgid "role ID"
+msgstr "ロール ID"
+
+msgid "rootwrap"
+msgstr "rootwrap"
+
+msgid "round-robin scheduler"
+msgstr "ラウンドロビンスケジューラー"
+
+msgid "router"
+msgstr "ルーター"
+
+msgid "routing key"
+msgstr "ルーティングキー"
+
+msgid "rsync"
+msgstr "rsync"
+
+msgid "sahara"
+msgstr "sahara"
+
+msgid "scheduler manager"
+msgstr "スケジューラーマネージャー"
+
+msgid "scoped token"
+msgstr "スコープ付きトークン"
+
+msgid "scrubber"
+msgstr "スクラバー"
+
+msgid "secret key"
+msgstr "シークレットキー"
+
+msgid "secure boot"
+msgstr "セキュアブート (secure boot)"
+
+msgid "secure shell (SSH)"
+msgstr "secure shell (SSH)"
+
+msgid "security group"
+msgstr "セキュリティグループ"
+
+msgid "segmented object"
+msgstr "分割オブジェクト"
+
+msgid "self-service"
+msgstr "セルフサービス"
+
+msgid "senlin"
+msgstr "senlin"
+
+msgid "server"
+msgstr "サーバー"
+
+msgid "server UUID"
+msgstr "サーバー UUID"
+
+msgid "server image"
+msgstr "サーバーイメージ"
+
+msgid "service"
+msgstr "サービス"
+
+msgid "service ID"
+msgstr "サービス ID"
+
+msgid "service catalog"
+msgstr "サービスカタログ"
+
+msgid "service project"
+msgstr "サービスプロジェクト"
+
+msgid "service provider"
+msgstr "サービスプロバイダー"
+
+msgid "service registration"
+msgstr "サービス登録"
+
+msgid "service token"
+msgstr "サービストークン"
+
+msgid "session back end"
+msgstr "セッションバックエンド"
+
+msgid "session persistence"
+msgstr "セッション持続性"
+
+msgid "session storage"
+msgstr "セッションストレージ"
+
+msgid "share"
+msgstr "共有"
+
+msgid "share network"
+msgstr "共有用ネットワーク"
+
+msgid "shared IP address"
+msgstr "共有 IP アドレス"
+
+msgid "shared IP group"
+msgstr "共有 IP グループ"
+
+msgid "shared storage"
+msgstr "共有ストレージ"
+
+msgid "snapshot"
+msgstr "スナップショット"
+
+msgid "soft reboot"
+msgstr "ソフトリブート"
+
+msgid "solum"
+msgstr "solum"
+
+msgid "spread-first scheduler"
+msgstr "分散優先スケジューラー"
+
+msgid "stack"
+msgstr "スタック"
+
+msgid "static IP address"
+msgstr "静的 IP アドレス"
+
+msgid "storage back end"
+msgstr "ストレージバックエンド"
+
+msgid "storage manager"
+msgstr "ストレージマネージャー"
+
+msgid "storage manager back end"
+msgstr "ストレージマネージャーバックエンド"
+
+msgid "storage node"
+msgstr "ストレージノード"
+
+msgid "storage services"
+msgstr "ストレージサービス"
+
+msgid "strategy"
+msgstr "ストラテジー"
+
+msgid "subdomain"
+msgstr "サブドメイン"
+
+msgid "subnet"
+msgstr "サブネット"
+
+msgid "suspend"
+msgstr "休止"
+
+msgid "swap"
+msgstr "スワップ"
+
+msgid "swift"
+msgstr "swift"
+
+msgid "swift All in One (SAIO)"
+msgstr "swift All in One (SAIO)"
+
+msgid "swift middleware"
+msgstr "swift ミドルウェア"
+
+msgid "swift proxy server"
+msgstr "swift プロキシサーバー"
+
+msgid "swift storage node"
+msgstr "swift ストレージノード"
+
+msgid "sync point"
+msgstr "同期ポイント"
+
+msgid "sysadmin"
+msgstr "sysadmin"
+
+msgid "system usage"
+msgstr "システム使用状況"
+
+msgid "tacker"
+msgstr "tacker"
+
+msgid "tenant"
+msgstr "テナント"
+
+msgid "tenant ID"
+msgstr "テナント ID"
+
+msgid "tenant endpoint"
+msgstr "テナントエンドポイント"
+
+msgid "token"
+msgstr "トークン"
+
+msgid "token services"
+msgstr "トークンサービス"
+
+msgid "tombstone"
+msgstr "tombstone"
+
+msgid "topic publisher"
+msgstr "トピック発行者"
+
+msgid "transaction ID"
+msgstr "トランザクション ID"
+
+msgid "transient"
+msgstr "一時 (transient)"
+
+msgid "transient exchange"
+msgstr "一時交換"
+
+msgid "transient message"
+msgstr "一時メッセージ"
+
+msgid "transient queue"
+msgstr "一時キュー"
+
+msgid "trove"
+msgstr "trove"
+
+msgid "trusted platform module (TPM)"
+msgstr "trusted platform module (TPM)"
+
+msgid "unscoped token"
+msgstr "スコープなしトークン"
+
+msgid "updater"
+msgstr "アップデーター"
+
+msgid "user"
+msgstr "ユーザー"
+
+msgid "user data"
+msgstr "ユーザーデータ"
+
 msgid "vSphere"
 msgstr "vSphere"
+
+msgid "virtual IP address (VIP)"
+msgstr "仮想 IP アドレス (VIP)"
+
+msgid "virtual VLAN"
+msgstr "仮想 VLAN"
+
+msgid "virtual machine (VM)"
+msgstr "仮想マシン (VM)"
+
+msgid "virtual network"
+msgstr "仮想ネットワーク"
+
+msgid "virtual networking"
+msgstr "仮想ネットワーク"
+
+msgid "virtual port"
+msgstr "仮想ポート"
+
+msgid "virtual private network (VPN)"
+msgstr "仮想プライベートネットワーク (VPN)"
+
+msgid "virtual server"
+msgstr "仮想サーバー"
+
+msgid "virtual switch (vSwitch)"
+msgstr "仮想スイッチ (vSwitch)"
+
+msgid "volume"
+msgstr "ボリューム"
+
+msgid "volume ID"
+msgstr "ボリューム ID"
+
+msgid "volume controller"
+msgstr "ボリュームコントローラー"
+
+msgid "volume driver"
+msgstr "ボリュームドライバー"
+
+msgid "volume manager"
+msgstr "ボリュームマネージャー"
+
+msgid "volume node"
+msgstr "ボリュームノード"
+
+msgid "volume plug-in"
+msgstr "ボリュームプラグイン"
+
+msgid "volume worker"
+msgstr "ボリュームワーカー"
+
+msgid "weight"
+msgstr "ウェイト"
+
+msgid "weighted cost"
+msgstr "重み付けコスト"
+
+msgid "weighting"
+msgstr "重み付け"
+
+msgid "worker"
+msgstr "ワーカー"
+
+msgid "zaqar"
+msgstr "zaqar"
