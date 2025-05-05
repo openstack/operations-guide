@@ -21,7 +21,7 @@ with it preinstalled, but you can review the `installation instructions
 do not have it by default.
 
 Once git is installed, you can follow the instructions for your platform to
-`install git-review <https://www.mediawiki.org/wiki/Gerrit/git-review>`_.
+`install git-review <https://docs.opendev.org/opendev/git-review/latest/installation.html>`_.
 
 The last step is to configure git with your name and email address used for
 your Gerrit account set up so it can link you patch to your user. Run the
@@ -35,6 +35,7 @@ following to set these values:
 
 Submitting Updates
 ------------------
+
 Proposing updates to the documentation is fairly straight forward once you've
 done it, but there are a few steps that can appear intimidating your first
 couple times through. Here is a suggested workflow to help you along the way.
@@ -43,7 +44,7 @@ couple times through. Here is a suggested workflow to help you along the way.
 
   git clone https://opendev.org/openstack/operations-guide
   cd operations-guide
-  
+
   # it is useful to make changes on a separate branch in case you need to make
   # other changes
   git checkout -b my-topic
@@ -62,6 +63,7 @@ to the docs.openstack.org site.
 
 Local Testing
 -------------
+
 If you would like to build the docs locally to make sure there are no issues
 with the changes, and to view locally generated HTML files, you will need to do
 a couple extra steps.
