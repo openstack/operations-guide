@@ -814,22 +814,6 @@ C
       A Windows project providing guest initialization features,
       similar to cloud-init.
 
-   cloudpipe
-
-      A compute service that creates VPNs on a per-project
-      basis.
-
-   cloudpipe image
-
-      A pre-made VM image that serves as a cloudpipe server.
-      Essentially, OpenVPN running on Linux.
-
-   Clustering service (senlin)
-
-      The project that implements clustering services and libraries
-      for the management of groups of homogeneous objects exposed
-      by other OpenStack services.
-
    command filter
 
       Lists allowed commands within the Compute rootwrap
@@ -2553,11 +2537,6 @@ M
       Facility in Compute that allows each virtual machine instance to
       have more than one VIF connected to it.
 
-   murano
-
-      Codename for the :term:`Application Catalog service <Application Catalog
-      service (murano)>`.
-
 N
 ~
 
@@ -2740,12 +2719,6 @@ N
    Nova API
 
       Alternative term for the :term:`Compute API <Compute API (nova API)>`.
-
-   nova-network
-
-      A Compute component that manages IP address allocation,
-      firewalls, and other network-related tasks. This is the legacy
-      networking option and an alternative to Networking.
 
 O
 ~
@@ -2945,11 +2918,6 @@ P
 ~
 
 .. glossary::
-
-   panko
-
-      Part of the OpenStack :term:`Telemetry service <Telemetry
-      service (telemetry)>`; provides event storage.
 
    parent cell
 
@@ -3486,11 +3454,6 @@ S
 
 .. glossary::
 
-   sahara
-
-      Codename for the :term:`Data Processing service<Data Processing
-      service (sahara)>`.
-
    SAML assertion
 
       Contains information about a user as provided by the identity
@@ -3554,11 +3517,6 @@ S
 
       Linux kernel security module that provides the mechanism for
       supporting access control policies.
-
-   senlin
-
-      Code name for the :term:`Clustering service
-      <Clustering service (senlin)>`.
 
    server
 
@@ -4022,11 +3980,6 @@ T
 
       Alternative term for a non-durable queue.
 
-   TripleO
-
-      OpenStack-on-OpenStack program. The code name for the
-      OpenStack Deployment program.
-
    trove
 
       Codename for OpenStack :term:`Database service <Database service
@@ -4331,34 +4284,10 @@ X
       attributes as well depending upon the version. The most recent
       and standard version of X.509 is v3.
 
-   Xen
-
-      Xen is a hypervisor using a microkernel design, providing
-      services that allow multiple computer operating systems to
-      execute on the same computer hardware concurrently.
-
-   Xen API
-
-      The Xen administrative API, which is supported by
-      Compute.
-
-   Xen Cloud Platform (XCP)
-
-      An OpenStack-supported hypervisor.
-
-   Xen Storage Manager Volume Driver
-
-      A Block Storage volume plug-in that enables communication with
-      the Xen Storage Manager API.
-
    Xena
 
       The code name for the twenty fourth release of OpenStack.
       The release is named after a fictional warrior princess.
-
-   XenServer
-
-      An OpenStack-supported hypervisor.
 
    XFS
 
