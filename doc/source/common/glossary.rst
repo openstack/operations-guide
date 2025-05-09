@@ -392,9 +392,11 @@ A
 
    availability zone
 
-      An Amazon EC2 concept of an isolated area that is used for fault
-      tolerance. Do not confuse with an OpenStack Compute zone or
-      cell.
+     An Availability Zone (AZ) is a logical subdivision of cloud storage,
+     compute and network services. It provides a way for cloud operators
+     to logically segment their compute based on arbitrary factors like
+     location (country, data center, rack), network layout and/or power
+     source.
 
    AWS CloudFormation template
 
@@ -804,11 +806,6 @@ C
       retrieves from the metadata service, such as the SSH public key and
       user data.
 
-   cloudadmin
-
-      One of the default roles in the Compute RBAC system. Grants
-      complete system access.
-
    Cloudbase-Init
 
       A Windows project providing guest initialization features,
@@ -1155,11 +1152,6 @@ D
       that users access to receive a desktop experience from
       any location. This may provide general use, development, or
       even homogeneous testing environments.
-
-   developer
-
-      One of the default roles in the Compute RBAC system and the
-      default role assigned to a new user.
 
    device ID
 
@@ -1646,6 +1638,14 @@ G
 
       An IP address, typically assigned to a router, that
       passes network traffic between different networks.
+
+   generic network virtualization encapsulation (Geneve)
+
+      A flexible network protocol that adapts to the changing needs
+      and capabilities of devices in virtualized networks. It provides
+      a tunneling framework without being prescriptive, supporting
+      evolving network requirements. Geneve is predominantly used for
+      OVN projects networks.
 
    generic receive offload (GRO)
 
@@ -2148,11 +2148,6 @@ I
       One of the VM image disk formats supported by Image
       service.
 
-   itsec
-
-      A default role in the Compute RBAC system that can quarantine an
-      instance in any project.
-
 J
 ~
 
@@ -2547,12 +2542,6 @@ N
       Released as open source by NASA in 2010 and is the basis for
       Compute.
 
-   netadmin
-
-      One of the default roles in the Compute RBAC system. Enables the
-      user to allocate publicly accessible IP addresses to instances and
-      change firewall rules.
-
    NetApp volume driver
 
       Enables Compute to communicate with NetApp storage devices
@@ -2801,6 +2790,14 @@ O
       A standardized interface for managing compute, data, and network
       resources, currently unsupported in OpenStack.
 
+   Open Virtual Network (OVN)
+
+      OVN (Open Virtual Network) is a set of services that convert
+      virtual network setups into OpenFlow rules, and apply them into
+      Open vSwitch. OVN provides a more abstract layer than Open vSwitch,
+      allowing working with logical routers and logical switches, instead of
+      flows.
+
    Open Virtualization Format (OVF)
 
       Standard for packaging VM images. Supported in OpenStack.
@@ -2909,10 +2906,12 @@ O
       In the context of Object Storage, this is a process that is not
       terminated after an upgrade, restart, or reload of the service.
 
-   Oslo
+   oslo
 
       Codename for the :term:`Common Libraries project <Common Libraries
-      (oslo)>`.
+      (oslo)>`. It's a collection of tools and libraries that help
+      OpenStack services share common features like logging, configuration,
+      and messaging.
 
 P
 ~
@@ -3295,11 +3294,16 @@ R
 
       A recommended architecture for an OpenStack cloud.
 
-   region
+   Region
 
-      A discrete OpenStack environment with dedicated API endpoints
-      that typically shares only the Identity (keystone) with other
-      regions.
+      A region in OpenStack represents a complete OpenStack
+      cluster that has a dedicated control plane and set
+      of API endpoints. It is common for operators
+      of large clouds to offer their users several OpenStack
+      regions, which differ by their geographical
+      location or purpose. In order to easily navigate
+      in a multi-region environment, cloud users need
+      a way to distinguish clusters by their names.
 
    registry
 
@@ -3472,8 +3476,12 @@ S
 
    scoped token
 
-      An Identity service API access token that is associated with a
-      specific project.
+      An Identity service API access token that is associated
+      with a single scope of operation. This token provides
+      access based on defined scopes, which can vary depending
+      on the level of access required. Scopes can include
+      system-level access, domain-level access, or
+      project-specific access.
 
    scrubber
 
@@ -3852,12 +3860,6 @@ S
 
       Point in time since the last container and accounts database
       sync among nodes within Object Storage.
-
-   sysadmin
-
-      One of the default roles in the Compute RBAC system. Enables a
-      user to add other users to a project, interact with VM images that are
-      associated with the project, and start and stop VM instances.
 
    system usage
 
