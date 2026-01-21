@@ -116,9 +116,9 @@ The following Launchpad Bugs areas are available:
 *  `Bugs: OpenStack Object Storage
    (swift) <https://bugs.launchpad.net/swift>`_
 
-*  `Bugs: Bare metal service (ironic) <https://bugs.launchpad.net/ironic>`_
+*  `Bugs: OpenStack Placement (placement) <https://bugs.launchpad.net/placement>`_
 
-*  `Bugs: Clustering service (senlin) <https://bugs.launchpad.net/senlin>`_
+*  `Bugs: Bare metal service (ironic) <https://bugs.launchpad.net/ironic>`_
 
 *  `Bugs: Container Infrastructure Management service (magnum) <https://bugs.launchpad.net/magnum>`_
 
@@ -128,9 +128,7 @@ The following Launchpad Bugs areas are available:
 
 *  `Bugs: Key Manager Service (barbican) <https://bugs.launchpad.net/barbican>`_
 
-*  `Bugs: Monitoring (monasca) <https://storyboard.openstack.org/#!/project_group/monasca>`_
-
-*  `Bugs: Orchestration (heat) <https://bugs.launchpad.net/heat>`_
+*  `Bugs: Orchestration (heat) <https://storyboard.openstack.org/#!/project_group/heat>`_
 
 *  `Bugs: Rating (cloudkitty) <https://bugs.launchpad.net/cloudkitty>`_
 
@@ -138,6 +136,9 @@ The following Launchpad Bugs areas are available:
 
 *  `Bugs: Telemetry
    (ceilometer) <https://bugs.launchpad.net/ceilometer>`_
+
+*  `Bugs: Alarming
+   (aodh) <https://bugs.launchpad.net/aodh>`_
 
 *  `Bugs: Workflow service
    (mistral) <https://bugs.launchpad.net/mistral>`_
