@@ -56,6 +56,10 @@ OpenStack contribution process.
 
       The code name for the thirty fourth release of OpenStack.
 
+   2027.1 Indri
+
+      The code name for the thirty fifth release of OpenStack.
+
    6to4
 
       A mechanism that allows IPv6 packets to be transmitted
@@ -185,6 +189,12 @@ A
 
       Lower power consumption CPU often found in mobile and embedded
       devices. Supported by OpenStack.
+
+   Aetos
+
+      The aetos service provides a multi-tenancy layer and OpenStack
+      authentication for Prometheus. Part of the OpenStack
+      :term:`Telemetry service <Telemetry service (telemetry)>`.
 
    alert
 
@@ -2473,10 +2483,6 @@ M
       Can concurrently use multiple layer-2 networking technologies,
       such as 802.1Q and VXLAN, in Networking.
 
-   monasca
-
-      Codename for OpenStack :term:`Monitoring <Monitoring (monasca)>`.
-
    Monitor (LBaaS)
 
       LBaaS feature that provides availability monitoring using the
@@ -2486,15 +2492,6 @@ M
 
       A Ceph component that communicates with external clients, checks
       data state and consistency, and performs quorum functions.
-
-   Monitoring (monasca)
-
-      The OpenStack service that provides a multi-project, highly scalable,
-      performant, fault-tolerant monitoring-as-a-service solution for metrics,
-      complex event processing and logging. To build an extensible platform for
-      advanced monitoring services that can be used by both operators and
-      projects to gain operational insight and visibility, ensuring availability
-      and stability.
 
    multi-cloud computing
 
@@ -2870,7 +2867,8 @@ O
       `"year"."release count within the year"` and the name will be
       used mostly for marketing purposes. The first such release is
       2023.1 Antelope. Followed by, respectively, 2023.2 Bobcat,
-      2024.1 Caracal, 2024.2 Dalmatian, 2025.1 Epoxy, 2025.2 Flamingo.
+      2024.1 Caracal, 2024.2 Dalmatian, 2025.1 Epoxy, 2025.2 Flamingo,
+      2026.1 Gazpacho, 2026.2 Hibiscus, 2027.1 Indri.
 
    OpenStack-Ansible
 
@@ -3064,6 +3062,10 @@ P
    project VPN
 
       Alternative term for a cloudpipe.
+
+   Prometheus
+
+      Open source metrics and monitoring for systems and services.
 
    promiscuous mode
 
@@ -3731,11 +3733,6 @@ S
 
       The Block Storage driver for the SolidFire iSCSI storage
       appliance.
-
-   solum
-
-      Code name for the :term:`Software Development Lifecycle Automation
-      service <Software Development Lifecycle Automation service (solum)>`.
 
    spread-first scheduler
 
